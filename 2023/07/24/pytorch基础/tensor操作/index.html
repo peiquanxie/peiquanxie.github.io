@@ -5,8 +5,8 @@
   <meta name="Volantis" content="5.8.0">
   <meta charset="utf-8">
   <!-- SEO相关 -->
-  <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="http://example.com/categories/建站/"/>
+  
+  <link rel="canonical" href="http://example.com/2023/07/24/pytorch基础/tensor操作/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -33,19 +33,21 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>分类：建站 - PQ.XIE BLOG</title>
-  <meta name="keywords" content="日常唠嗑">
+  <title>tensor基础 - PQ.XIE BLOG</title>
+  <meta name="keywords" content="Pytorch基础,日常唠嗑">
   <meta desc name="description" content="个人博客 - PQ.XIE - PQ.XIE BLOG">
   
-<meta property="og:type" content="website">
-<meta property="og:title" content="PQ.XIE BLOG">
-<meta property="og:url" content="http://example.com/categories/%E5%BB%BA%E7%AB%99/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="tensor基础">
+<meta property="og:url" content="http://example.com/2023/07/24/pytorch%E5%9F%BA%E7%A1%80/tensor%E6%93%8D%E4%BD%9C/index.html">
 <meta property="og:site_name" content="PQ.XIE BLOG">
-<meta property="og:description" content="个人博客">
+<meta property="og:description" content="1 tensor属性1.1 tensor初始化1234shape &#x3D; (2,3,)rand_tensor &#x3D; torch.rand(shape)ones_tensor &#x3D; torch.ones(shape)zeros_tensor &#x3D; torch.zeros(shape)  1.2 tensor性质1234tensor &#x3D; torch.rand(3,4)print(f&quot;Shape of">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+<meta property="article:published_time" content="2023-07-24T09:18:03.276Z">
+<meta property="article:modified_time" content="2023-07-24T09:18:03.324Z">
 <meta property="article:author" content="PQ.XIE">
-<meta property="article:tag" content="日常唠嗑">
+<meta property="article:tag" content="Pytorch基础">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -2502,7 +2504,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="none" class='cover-wrapper  search' style="display: none;">
+      <div id="none" class='cover-wrapper post search' style="display: none;">
         
   <div class='cover-bg lazyload placeholder' data-bg="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/background.jpeg"></div>
 
@@ -2579,25 +2581,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div id="safearea">
         <div class="body-wrapper">
           
-
 <div id="l_main" class=''>
-  
-    
-      
-  <section class="post-list">
-    
-      
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/21/hello-world/">
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/24/pytorch基础/tensor操作/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="PQ.XIE BLOG">
   </span>
@@ -2606,68 +2592,277 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <meta itemprop="description" content="个人博客">
   </span>
   
-  
+
+
   
     <span hidden>
       <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
     </span>
   
-  
+  <div class="article-meta" id="top">
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/07/21/hello-world/"  itemprop="url">
-        Hello World
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
     
-      
-        今天坑坑洼洼可算是把网站给搭好了，看着简洁漂亮的首页，想着以后就有专属自己的网站，就很开心。背景图是《权游》里面的某一幕的简画，守夜人面对夜鬼的来袭，背水一战，颇为壮观。
-为什么要做个人博客呢？说实话，没有特别的理由。或许是出于新鲜感；或许是工作太无聊；或许是外界太嘈杂，想在数字世界中寻找一片净土；或许是想把有趣的、新奇的东西系统地放进来，有一天可以带朋友来参观，看！这是我曾经的快乐和珍藏。...
-      
     
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
+      <h1 class="title" itemprop="name headline">
+        tensor基础
+      </h1>
+      <div class='new-meta-box'>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-07-21T18:28:18+08:00">2023-07-21</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%BB%BA%E7%AB%99/">建站</a>
           
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E5%BB%BA%E7%AB%99/" itemprop="url"><span itemprop="name">建站</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/07/21/hello-world/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-
-  
-
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' href="/" rel="nofollow">
+    <img itemprop="image" src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    <p itemprop="name">PQ.XIE</p>
+  </a>
 </div>
 
+          
+        
+          
+            
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Pytorch%E5%9F%BA%E7%A1%80/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Pytorch基础</p></a></div>
+  <span hidden itemprop="keywords">Pytorch基础</span>
+
+
+          
+        
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-07-24T17:18:03+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>2023年7月24日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：335 字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：1 分钟</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+
+
+<div class="new-meta-item browse">
+  <a class='notlink'>
+    <p>
+      <i class="fa-solid fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span id="busuanzi_value_page_pv"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+      
+      <span>次</span>
+    </p>
+  </a>
+</div>
+
+
+          
+        
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
+      </div>
+    
+  </div>
+
+
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    <h2 id="1-tensor属性"><a href="#1-tensor属性" class="headerlink" title="1 tensor属性"></a>1 tensor属性</h2><h3 id="1-1-tensor初始化"><a href="#1-1-tensor初始化" class="headerlink" title="1.1 tensor初始化"></a>1.1 tensor初始化</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">shape = (<span class="number">2</span>,<span class="number">3</span>,)</span><br><span class="line">rand_tensor = torch.rand(shape)</span><br><span class="line">ones_tensor = torch.ones(shape)</span><br><span class="line">zeros_tensor = torch.zeros(shape)</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-2-tensor性质"><a href="#1-2-tensor性质" class="headerlink" title="1.2 tensor性质"></a>1.2 tensor性质</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tensor = torch.rand(<span class="number">3</span>,<span class="number">4</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;Shape of tensor: <span class="subst">&#123;tensor.shape&#125;</span>&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;Datatype of tensor: <span class="subst">&#123;tensor.dtype&#125;</span>&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;Device tensor is stored on: <span class="subst">&#123;tensor.device&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="2-对象转换"><a href="#2-对象转换" class="headerlink" title="2 对象转换"></a>2 对象转换</h2><h3 id="2-1-list-–-tensor"><a href="#2-1-list-–-tensor" class="headerlink" title="2.1 list – tensor"></a>2.1 list – tensor</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">data = [[<span class="number">1</span>, <span class="number">2</span>], [<span class="number">3</span>, <span class="number">4</span>]]</span><br><span class="line"><span class="comment"># list--&gt; tensor</span></span><br><span class="line"><span class="comment"># 数据类型是自动推断出来</span></span><br><span class="line">x_tensor = torch.tensor(data)</span><br><span class="line"><span class="comment"># tensor--&gt; list</span></span><br><span class="line">x_list = x_tensor.tolist()</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-2-numpy-–-tensor"><a href="#2-2-numpy-–-tensor" class="headerlink" title="2.2 numpy – tensor"></a>2.2 numpy – tensor</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">np_array = np.array(data)</span><br><span class="line"><span class="comment"># numpy --&gt; tensor</span></span><br><span class="line">x_tensor = torch.from_numpy(np_array)</span><br><span class="line"><span class="comment"># tensor --&gt; numpy</span></span><br><span class="line">x_numpy = x_tensor.numpy()</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-3-tensor-–-tensor"><a href="#2-3-tensor-–-tensor" class="headerlink" title="2.3 tensor – tensor"></a>2.3 tensor – tensor</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x_ones = torch.ones_like(x_data) <span class="comment"># retains the properties of x_data</span></span><br><span class="line">x_rand = torch.rand_like(x_data, dtype=torch.<span class="built_in">float</span>) <span class="comment"># overrides the datatype of x_data</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="3-运算-操作"><a href="#3-运算-操作" class="headerlink" title="3 运算&amp;操作"></a>3 运算&amp;操作</h2><h3 id="3-1-矩阵乘法"><a href="#3-1-矩阵乘法" class="headerlink" title="3.1 矩阵乘法"></a>3.1 矩阵乘法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">y1 = tensor @ tensor.T</span><br><span class="line">y2 = tensor.matmul(tensor.T)</span><br><span class="line">y3 = torch.rand_like(tensor)</span><br><span class="line">torch.matmul(tensor, tensor.T, out=y3)</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-2-矩阵点乘"><a href="#3-2-矩阵点乘" class="headerlink" title="3.2 矩阵点乘"></a>3.2 矩阵点乘</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">z1 = tensor * tensor</span><br><span class="line">z2 = tensor.mul(tensor)</span><br><span class="line"></span><br><span class="line">z3 = torch.rand_like(tensor)</span><br><span class="line">torch.mul(tensor, tensor, out=z3)</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-3-矩阵拼接"><a href="#3-3-矩阵拼接" class="headerlink" title="3.3 矩阵拼接"></a>3.3 矩阵拼接</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 指定的dim 数量增加，除了dim之外的dim需要相同才行</span></span><br><span class="line">t1 = torch.cat([tensor, tensor, tensor], dim=<span class="number">1</span>)</span><br><span class="line"><span class="comment"># 两个要进行stack的tensor的dim数量应该相同，stack操作之后得到的结果会多出一维，即dim的数量会+1。</span></span><br><span class="line">t1 = torch.stack([tensor, tensor, tensor], dim=<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-4-矩阵升降维"><a href="#3-4-矩阵升降维" class="headerlink" title="3.4 矩阵升降维"></a>3.4 矩阵升降维</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 升维。插入指定维度，值为1</span></span><br><span class="line">tensor.unsqueeze(dim=<span class="number">0</span>)</span><br><span class="line"><span class="comment"># 降维。压缩指定维度，该维度值必须为1</span></span><br><span class="line"><span class="comment"># 当dim不指定时，压缩所有维度值为1的维</span></span><br><span class="line">tensor.squeeze(dim=<span class="number">0</span>)</span><br><span class="line">tensor.squeeze()</span><br></pre></td></tr></table></figure>
+
+
+  </div>
+  
+  
+    
+    <div class='footer'>
+       <!-- 参考资料、相关资料等 -->
+      
+       <!-- 相关文章 -->
+      
+      <!-- 版权声明组件 -->
+      
+        
+          <div class='copyright'>
+            <blockquote>
+              
+                
+                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+                
+              
+            </blockquote>
           </div>
         
       
-    
-  </section>
+      <!-- 打赏组件 -->
+      
+    </div>
+  
   
     
+
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-07-24T17:18:03+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2023年7月24日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Pytorch%E5%9F%BA%E7%A1%80/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Pytorch基础</p></a></div>
+  <span hidden itemprop="keywords">Pytorch基础</span>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2023/07/24/pytorch%E5%9F%BA%E7%A1%80/tensor%E6%93%8D%E4%BD%9C/&title=tensor基础 - PQ.XIE BLOG&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2023/07/24/pytorch%E5%9F%BA%E7%A1%80/tensor%E6%93%8D%E4%BD%9C/&title=tensor基础 - PQ.XIE BLOG&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2023/07/24/pytorch%E5%9F%BA%E7%A1%80/tensor%E6%93%8D%E4%BD%9C/&title=tensor基础 - PQ.XIE BLOG&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+    <!-- Custom Files bottomMeta begin -->
+    
+    <!-- Custom Files bottomMeta end -->
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+      
+        <a class='next' href='/2023/07/24/pytorch%E5%9F%BA%E7%A1%80/pytorch%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B/'>
+          <p class='title'>pytorch快速开始<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>0 导库123456import torchfrom torch import nnfrom torch.utils.data import DataLoaderfrom torchvision...</p>
+        </a>
+      
+    </div>
+  
+  <!-- Custom Files postEnd begin-->
+  
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> 
+  <!-- Custom Files postEnd end-->
+</article>
+
+
   
 
 
+  <article class="post white-box shadow floatable blur" id="comments">
+    <span hidden>
+      <meta itemprop="discussionUrl" content="/2023/07/24/pytorch%E5%9F%BA%E7%A1%80/tensor%E6%93%8D%E4%BD%9C/index.html#comments">
+    </span>
+    <p ct><i class='fas fa-comments'></i> 评论区</p>
     
-  
+
+    <div id="layoutHelper-comments"></div>
+
+  </article>
+
+
+
+
+
+
 </div>
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   
@@ -2676,182 +2871,48 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       
-<section class="widget blogger desktop pjax">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box circle' href='/about/'>
-          <img no-lazy src='https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/touxiang.jpg'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-        
-        
-          <p><span id="jinrishici-sentence">PQ.XIE BLOG</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:212951692@qq.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://gitee.com/xie-peiquan"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://t1.kugou.com/dER5jedBdV2"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
-
-    
-  
-
-  
-    
-    
-      
-  
-  <section class="widget category desktop pjax">
-    
-  <header>
-    
-      <a href='/categories/'><i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/Pytorch%E5%9F%BA%E7%A1%80/" href="/categories/Pytorch%E5%9F%BA%E7%A1%80/"
-            active-action="action-categoriesPytorchE59FBAE7A180"
-            ><div class='name'>Pytorch基础</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%BB%BA%E7%AB%99/" href="/categories/%E5%BB%BA%E7%AB%99/"
-            active-action="action-categoriesE5BBBAE7AB99"
-            ><div class='name'>建站</div><div class='badge'>(1)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
-
-
-    
-  
-
-  
-    
-    
-      
-<section class="widget desktop pjax">
-  
-  <header>
-    
-      <i class="fa-solid fa-award fa-fw" aria-hidden="true"></i><span class='name'>站点信息</span>
-    
-  </header>
-
-
-  <div class='content'>
-    <div class="webinfo">
-      
-        <div class="webinfo-item">
-          <div>文章数目：</div>
-          <div>3 篇</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>已运行时间：</div>
-          <div id="webinfo-runtime-count"></div>
-        </div>
-      
-
-
-      
-        <div class="webinfo-item">
-          <div>本站总字数：</div>
-          <div>1.4k 字</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>本站访客数：</div>
-          
-          <div><span id="busuanzi_value_site_uv"><i class="fa-solid fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 人</div>
-          
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>本站总访问量：</div>
-          
-          <div><span id="busuanzi_value_site_pv"><i class="fa-solid fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 次</div>
-          
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>最后活动时间：</div>
-          <div id="last-update-show">2023-07-24 日</div>
-        </div>
-      
-    </div>
-  </div>
-</section>
-
     
   
 
 
 <div class="widget-sticky pjax">
 
+  
+  
+
+
+  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
+    
+  <header>
+    
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-tensor%E5%B1%9E%E6%80%A7"><span class="toc-text">1 tensor属性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-tensor%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-text">1.1 tensor初始化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-tensor%E6%80%A7%E8%B4%A8"><span class="toc-text">1.2 tensor性质</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%AF%B9%E8%B1%A1%E8%BD%AC%E6%8D%A2"><span class="toc-text">2 对象转换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-list-%E2%80%93-tensor"><span class="toc-text">2.1 list – tensor</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-numpy-%E2%80%93-tensor"><span class="toc-text">2.2 numpy – tensor</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-tensor-%E2%80%93-tensor"><span class="toc-text">2.3 tensor – tensor</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E8%BF%90%E7%AE%97-%E6%93%8D%E4%BD%9C"><span class="toc-text">3 运算&amp;操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E7%9F%A9%E9%98%B5%E4%B9%98%E6%B3%95"><span class="toc-text">3.1 矩阵乘法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E7%9F%A9%E9%98%B5%E7%82%B9%E4%B9%98"><span class="toc-text">3.2 矩阵点乘</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-%E7%9F%A9%E9%98%B5%E6%8B%BC%E6%8E%A5"><span class="toc-text">3.3 矩阵拼接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-%E7%9F%A9%E9%98%B5%E5%8D%87%E9%99%8D%E7%BB%B4"><span class="toc-text">3.4 矩阵升降维</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
+  
+
 </div>
 
 
 <!-- 没有 pjax 占位会报错 万恶的 pjax -->
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
 
   <div class="pjax">
     <!-- pjax占位 -->
@@ -2879,13 +2940,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </aside>
 
 
+
           <!--此文件用来存放一些不方便取值的变量-->
 <!--思路大概是将值藏到重加载的区域内-->
 
 <pjax>
 <script>
   window.pdata={}
-  pdata.ispage=false;
+  pdata.ispage=true;
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -3909,7 +3971,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"PQ.XIE BLOG","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"PQ.XIE BLOG"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/建站/","name":"建站"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"PQ.XIE BLOG","url":"http://example.com/","keywords":"日常唠嗑","description":"个人博客","author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"个人博客"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"个人博客","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"PQ.XIE BLOG","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"PQ.XIE BLOG"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/Pytorch基础/","name":"Pytorch基础"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/07/24/pytorch基础/tensor操作/","name":"tensor基础"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"PQ.XIE BLOG","url":"http://example.com/","keywords":"日常唠嗑","description":"个人博客","author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"个人博客"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"tensor基础","description":"个人博客","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/07/24/pytorch%E5%9F%BA%E7%A1%80/tensor%E6%93%8D%E4%BD%9C/"},"author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/07/24/pytorch%E5%9F%BA%E7%A1%80/tensor%E6%93%8D%E4%BD%9C/","wordCount":0,"datePublished":"2023-07-24T09:18:03.276Z","dateModified":"2023-07-24T09:18:03.324Z","articleSection":"Pytorch基础","keywords":"Pytorch基础","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
