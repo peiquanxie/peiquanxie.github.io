@@ -34,21 +34,21 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>PQ.XIE BLOG</title>
-  <meta name="keywords" content="日常唠嗑">
+  <title>5-模型调参 - PQ.XIE BLOG</title>
+  <meta name="keywords" content="Pytorch基础,日常唠嗑">
   <meta desc name="description" content="个人博客 - PQ.XIE - PQ.XIE BLOG">
   
 <meta property="og:type" content="article">
-<meta property="og:title" content="PQ.XIE BLOG">
+<meta property="og:title" content="5-模型调参">
 <meta property="og:url" content="http://example.com/2023/07/26/pytorch%E5%9F%BA%E7%A1%80/5-%E6%A8%A1%E5%9E%8B%E8%B0%83%E5%8F%82/index.html">
 <meta property="og:site_name" content="PQ.XIE BLOG">
-<meta property="og:description" content="title: 5-模型调参comments: true #是否可评论toc: true #是否显示文章目录categories: “Pytorch基础” #分类tags: “Pytorch基础” 1 超参数超参数是可调整的参数，让你控制模型优化过程。不同的超参数值会影响模型的训练和收敛率。 常用的超参数如下：  epoch : 在整个数据集上迭代的次数。 batch : 每一次更新参数（反向传播）">
+<meta property="og:description" content="1 超参数超参数是可调整的参数，让你控制模型优化过程。不同的超参数值会影响模型的训练和收敛率。 常用的超参数如下：  epoch : 在整个数据集上迭代的次数。 batch : 每一次更新参数（反向传播）所用到的数据样本数。 学习率 : 每个batch 更新模型参数的步进幅度。  123learning_rate &#x3D; 1e-3batch_size &#x3D; 64epochs &#x3D; 5    2 损失函数当">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2023-07-26T09:18:44.711Z">
-<meta property="article:modified_time" content="2023-07-26T09:18:44.763Z">
+<meta property="article:published_time" content="2023-07-26T09:21:38.260Z">
+<meta property="article:modified_time" content="2023-07-26T09:21:38.312Z">
 <meta property="article:author" content="PQ.XIE">
-<meta property="article:tag" content="日常唠嗑">
+<meta property="article:tag" content="Pytorch基础">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -1801,7 +1801,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1690363141802),
+    lastupdate: new Date(1690363302865),
     sidebar: {
       for_page: ["blogger","category","webinfo","music"],
       for_post: ["toc"],
@@ -2604,17 +2604,91 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
     
-      <span hidden itemprop="name headline">
+      <h1 class="title" itemprop="name headline">
+        5-模型调参
+      </h1>
+      <div class='new-meta-box'>
         
-      </span>
+          
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' href="/" rel="nofollow">
+    <img itemprop="image" src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/202307251013361.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/202307251013361.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    <p itemprop="name">PQ.XIE</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Pytorch%E5%9F%BA%E7%A1%80/" rel="nofollow"><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><p>Pytorch基础</p></a></div>
+  <span hidden itemprop="keywords">Pytorch基础</span>
+
+
+          
+        
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-07-26T17:21:38+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>2023年7月26日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：1.1k 字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：4 分钟</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+
+
+<div class="new-meta-item browse">
+  <a class='notlink'>
+    <p>
+      <i class="fa-solid fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span id="busuanzi_value_page_pv"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+      
+      <span>次</span>
+    </p>
+  </a>
+</div>
+
+
+          
+        
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
+      </div>
     
   </div>
 
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <p>title: 5-模型调参<br>comments: true #是否可评论<br>toc: true #是否显示文章目录<br>categories: “Pytorch基础” #分类<br>tags: “Pytorch基础”</p>
-<h2 id="1-超参数"><a href="#1-超参数" class="headerlink" title="1 超参数"></a>1 超参数</h2><p>超参数是可调整的参数，让你控制模型优化过程。不同的超参数值会影响模型的训练和收敛率。</p>
+    <h2 id="1-超参数"><a href="#1-超参数" class="headerlink" title="1 超参数"></a>1 超参数</h2><p>超参数是可调整的参数，让你控制模型优化过程。不同的超参数值会影响模型的训练和收敛率。</p>
 <p>常用的超参数如下：</p>
 <ul>
 <li>epoch : 在整个数据集上迭代的次数。</li>
@@ -2693,7 +2767,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-07-26T17:18:44+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-07-26T17:21:38+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2023年7月26日</p>
@@ -2710,7 +2784,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2023/07/26/pytorch%E5%9F%BA%E7%A1%80/5-%E6%A8%A1%E5%9E%8B%E8%B0%83%E5%8F%82/&title= - PQ.XIE BLOG&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2023/07/26/pytorch%E5%9F%BA%E7%A1%80/5-%E6%A8%A1%E5%9E%8B%E8%B0%83%E5%8F%82/&title=5-模型调参 - PQ.XIE BLOG&summary="
           
           >
           
@@ -2722,7 +2796,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2023/07/26/pytorch%E5%9F%BA%E7%A1%80/5-%E6%A8%A1%E5%9E%8B%E8%B0%83%E5%8F%82/&title= - PQ.XIE BLOG&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2023/07/26/pytorch%E5%9F%BA%E7%A1%80/5-%E6%A8%A1%E5%9E%8B%E8%B0%83%E5%8F%82/&title=5-模型调参 - PQ.XIE BLOG&summary="
           
           >
           
@@ -2734,7 +2808,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2023/07/26/pytorch%E5%9F%BA%E7%A1%80/5-%E6%A8%A1%E5%9E%8B%E8%B0%83%E5%8F%82/&title= - PQ.XIE BLOG&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2023/07/26/pytorch%E5%9F%BA%E7%A1%80/5-%E6%A8%A1%E5%9E%8B%E8%B0%83%E5%8F%82/&title=5-模型调参 - PQ.XIE BLOG&summary="
           
           >
           
@@ -2887,7 +2961,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <pjax>
 <script>
   window.pdata={}
-  pdata.ispage=false;
+  pdata.ispage=true;
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -3887,7 +3961,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"PQ.XIE BLOG","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"PQ.XIE BLOG"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/07/26/pytorch基础/5-模型调参/"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"PQ.XIE BLOG","url":"http://example.com/","keywords":"日常唠嗑","description":"个人博客","author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"个人博客"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"个人博客","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/07/26/pytorch%E5%9F%BA%E7%A1%80/5-%E6%A8%A1%E5%9E%8B%E8%B0%83%E5%8F%82/"},"author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/07/26/pytorch%E5%9F%BA%E7%A1%80/5-%E6%A8%A1%E5%9E%8B%E8%B0%83%E5%8F%82/","wordCount":0,"datePublished":"2023-07-26T09:18:44.711Z","dateModified":"2023-07-26T09:18:44.763Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"PQ.XIE BLOG","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"PQ.XIE BLOG"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/Pytorch基础/","name":"Pytorch基础"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/07/26/pytorch基础/5-模型调参/","name":"5-模型调参"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"PQ.XIE BLOG","url":"http://example.com/","keywords":"日常唠嗑","description":"个人博客","author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"个人博客"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"5-模型调参","description":"个人博客","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/07/26/pytorch%E5%9F%BA%E7%A1%80/5-%E6%A8%A1%E5%9E%8B%E8%B0%83%E5%8F%82/"},"author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/07/26/pytorch%E5%9F%BA%E7%A1%80/5-%E6%A8%A1%E5%9E%8B%E8%B0%83%E5%8F%82/","wordCount":0,"datePublished":"2023-07-26T09:21:38.260Z","dateModified":"2023-07-26T09:21:38.312Z","articleSection":"Pytorch基础","keywords":"Pytorch基础","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
