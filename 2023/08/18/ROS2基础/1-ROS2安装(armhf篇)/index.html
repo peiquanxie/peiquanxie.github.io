@@ -5,8 +5,8 @@
   <meta name="Volantis" content="5.8.0">
   <meta charset="utf-8">
   <!-- SEO相关 -->
-  <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="http://example.com/archives/"/>
+  
+  <link rel="canonical" href="http://example.com/2023/08/18/ros2基础/1-ros2安装(armhf篇)/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -34,19 +34,21 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>归档 - PQ.XIE BLOG</title>
-  <meta name="keywords" content="日常唠嗑">
+  <title>1-ROS2安装(armhf篇) - PQ.XIE BLOG</title>
+  <meta name="keywords" content="ROS2基础,日常唠嗑">
   <meta desc name="description" content="个人博客 - PQ.XIE - PQ.XIE BLOG">
   
-<meta property="og:type" content="website">
-<meta property="og:title" content="PQ.XIE BLOG">
-<meta property="og:url" content="http://example.com/archives/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="1-ROS2安装(armhf篇)">
+<meta property="og:url" content="http://example.com/2023/08/18/ROS2%E5%9F%BA%E7%A1%80/1-ROS2%E5%AE%89%E8%A3%85(armhf%E7%AF%87)/index.html">
 <meta property="og:site_name" content="PQ.XIE BLOG">
-<meta property="og:description" content="个人博客">
+<meta property="og:description" content="由于ROS官方并没有提供armhf CPU架构的ROS2二进制安装文件，本篇整理了从ROS2源码编译安装的方法。本篇安装环境如下： CPU架构：armv7l操作系统：ubuntu20.04 1 更换镜像源（可选）更换镜像源可以加速各种依赖库下载速度，这里提供常用的 ubuntu镜像源 和 pip源。 1.1 更换ubuntu镜像源这里采用清华源，同学们可到该网站  https:&#x2F;&#x2F;mirror.t">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+<meta property="article:published_time" content="2023-08-18T09:34:12.047Z">
+<meta property="article:modified_time" content="2023-08-18T09:34:12.091Z">
 <meta property="article:author" content="PQ.XIE">
-<meta property="article:tag" content="日常唠嗑">
+<meta property="article:tag" content="ROS2基础">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -2234,7 +2236,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <!-- Custom Files bodyBegin end-->
     <!-- front-matter body_begin begin -->
     <!-- front-matter body_begin end -->
-    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur " style='opacity: 0' >
+    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -2503,7 +2505,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="half" class='cover-wrapper  search' style="display: ;">
+      <div id="none" class='cover-wrapper post search' style="display: none;">
         
   <div class='cover-bg lazyload placeholder' data-bg="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/background.jpeg"></div>
 
@@ -2581,143 +2583,279 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="body-wrapper">
           
 <div id="l_main" class=''>
-	
-	  <article id="arc" class="post article white-box reveal shadow floatable blur">
-			
-			
-				
-				
-					
-						
-						<h2>2023</h2>
-					
-						<div class='timenode'>
-								<a class="meta" href="/2023/08/18/ROS2%E5%9F%BA%E7%A1%80/1-ROS2%E5%AE%89%E8%A3%85(armhf%E7%AF%87)/">
-									<time>08-18</time>
-									
-										1-ROS2安装(armhf篇)
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2023/07/27/%E5%93%B2%E5%AD%A6%E6%80%9D%E8%80%83/1-%E8%A5%BF%E6%96%B9%E5%93%B2%E5%AD%A6%E6%91%98%E5%BD%95/">
-									<time>07-27</time>
-									
-										1-西方哲学摘录
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2023/07/26/pytorch%E5%9F%BA%E7%A1%80/5-%E6%A8%A1%E5%9E%8B%E8%B0%83%E5%8F%82/">
-									<time>07-26</time>
-									
-										5-模型调参
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2023/07/26/pytorch%E5%9F%BA%E7%A1%80/4-%E6%A8%A1%E5%9E%8B%E6%90%AD%E5%BB%BA/">
-									<time>07-26</time>
-									
-										4-模型搭建
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2023/07/25/pytorch%E5%9F%BA%E7%A1%80/3-%E6%95%B0%E6%8D%AE%E5%87%86%E5%A4%87/">
-									<time>07-25</time>
-									
-										3-数据准备
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2023/07/24/pytorch%E5%9F%BA%E7%A1%80/2-tensor%E6%93%8D%E4%BD%9C/">
-									<time>07-24</time>
-									
-										2-tensor基础
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2023/07/24/pytorch%E5%9F%BA%E7%A1%80/1-pytorch%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B/">
-									<time>07-24</time>
-									
-										1-pytorch快速开始
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2023/07/21/hello-world/">
-									<time>07-21</time>
-									
-										Hello World
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-	  </article>
-	
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/18/ROS2基础/1-ROS2安装(armhf篇)/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="PQ.XIE BLOG">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="PQ.XIE BLOG">
+    <meta itemprop="description" content="个人博客">
+  </span>
+  
+
+
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  <div class="article-meta" id="top">
+    
+    
+    
+      <h1 class="title" itemprop="name headline">
+        1-ROS2安装(armhf篇)
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' href="/" rel="nofollow">
+    <img itemprop="image" src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/202307251013361.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/202307251013361.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    <p itemprop="name">PQ.XIE</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/ROS2%E5%9F%BA%E7%A1%80/" rel="nofollow"><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><p>ROS2基础</p></a></div>
+  <span hidden itemprop="keywords">ROS2基础</span>
+
+
+          
+        
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-08-18T17:34:12+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>2023年8月18日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：815 字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：4 分钟</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+
+
+<div class="new-meta-item browse">
+  <a class='notlink'>
+    <p>
+      <i class="fa-solid fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span id="busuanzi_value_page_pv"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+      
+      <span>次</span>
+    </p>
+  </a>
+</div>
+
+
+          
+        
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
+      </div>
+    
+  </div>
+
+
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    <p>由于ROS官方并没有提供armhf CPU架构的ROS2二进制安装文件，本篇整理了从ROS2源码编译安装的方法。本篇安装环境如下：</p>
+<p>CPU架构：armv7l<br>操作系统：ubuntu20.04</p>
+<h2 id="1-更换镜像源（可选）"><a href="#1-更换镜像源（可选）" class="headerlink" title="1 更换镜像源（可选）"></a>1 更换镜像源（可选）</h2><p>更换镜像源可以加速各种依赖库下载速度，这里提供常用的 ubuntu镜像源 和 pip源。</p>
+<h3 id="1-1-更换ubuntu镜像源"><a href="#1-1-更换ubuntu镜像源" class="headerlink" title="1.1 更换ubuntu镜像源"></a>1.1 更换ubuntu镜像源</h3><p>这里采用清华源，同学们可到该网站  <a target="_blank" rel="noopener" href="https://mirror.tuna.tsinghua.edu.cn/help/ubuntu/">https://mirror.tuna.tsinghua.edu.cn/help/ubuntu/</a> 寻找自己系统版本对应的源。需要注意的是，大部分高校提供的源都是X86架构的，对于arm设备需要在源加上‘-ports’ 。armv7l &#x2F; ubuntu20.04的源如下：</p>
+<blockquote>
+<p>mv &#x2F;etc&#x2F;apt&#x2F;sources.list  &#x2F;etc&#x2F;apt&#x2F;sources.list.bak<br>vim &#x2F;etc&#x2F;apt&#x2F;sources.list</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释</span></span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ focal main restricted universe multiverse</span><br><span class="line"><span class="comment"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal main restricted universe multiverse</span></span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-updates main restricted universe multiverse</span><br><span class="line"><span class="comment"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-updates main restricted universe multiverse</span></span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-backports main restricted universe multiverse</span><br><span class="line"><span class="comment"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-backports main restricted universe multiverse</span></span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-security main restricted universe multiverse</span><br><span class="line"><span class="comment"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-security main restricted universe multiverse</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="1-2-更换-PIP-源"><a href="#1-2-更换-PIP-源" class="headerlink" title="1.2 更换 PIP 源"></a>1.2 更换 PIP 源</h3><p>这里同样采用清华的pip源，可加速python第三方库的下载（后面需要），命令行输入以下命令即可。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip config <span class="built_in">set</span> global.index-url https://pypi.tuna.tsinghua.edu.cn/simple</span><br><span class="line">pip config <span class="built_in">set</span> global.trusted-host https://pypi.tuna.tsinghua.edu.cn</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-设置-locale"><a href="#2-设置-locale" class="headerlink" title="2 设置 locale"></a>2 设置 locale</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update &amp;&amp; sudo apt install locales</span><br><span class="line">sudo locale-gen en_US en_US.UTF-8</span><br><span class="line">sudo update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8</span><br><span class="line"><span class="built_in">export</span> LANG=en_US.UTF-8</span><br><span class="line">locale  <span class="comment"># verify settings</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="3-添加ROS2-存储库"><a href="#3-添加ROS2-存储库" class="headerlink" title="3 添加ROS2 存储库"></a>3 添加ROS2 存储库</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1 确保启用universe存储库</span></span><br><span class="line">sudo apt install software-properties-common</span><br><span class="line">sudo add-apt-repository universe</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2 添加ROS2 GPG 密钥</span></span><br><span class="line">sudo apt update &amp;&amp; sudo apt install curl -y</span><br><span class="line">sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3 添加存储库到 sources list</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;deb [arch=<span class="subst">$(dpkg --print-architecture)</span> signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu <span class="subst">$(. /etc/os-release &amp;&amp; echo $UBUNTU_CODENAME)</span> main&quot;</span> | sudo <span class="built_in">tee</span> /etc/apt/sources.list.d/ros2.list &gt; /dev/null</span><br><span class="line"></span><br><span class="line"><span class="comment"># 4 更新apt</span></span><br><span class="line">sudo apt apdate</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-安装编译工具"><a href="#4-安装编译工具" class="headerlink" title="4 安装编译工具"></a>4 安装编译工具</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update &amp;&amp; sudo apt install -y \</span><br><span class="line">  libbullet-dev \</span><br><span class="line">  python3-pip \</span><br><span class="line">  python3-pytest-cov \</span><br><span class="line">  ros-dev-tools</span><br><span class="line"></span><br><span class="line"><span class="comment"># install some pip packages needed for testing</span></span><br><span class="line">python3 -m pip install -U \</span><br><span class="line">  argcomplete \</span><br><span class="line">  flake8-blind-except \</span><br><span class="line">  flake8-builtins \</span><br><span class="line">  flake8-class-newline \</span><br><span class="line">  flake8-comprehensions \</span><br><span class="line">  flake8-deprecated \</span><br><span class="line">  flake8-docstrings \</span><br><span class="line">  flake8-import-order \</span><br><span class="line">  flake8-quotes \</span><br><span class="line">  pytest-repeat \</span><br><span class="line">  pytest-rerunfailures \</span><br><span class="line">  pytest</span><br><span class="line"><span class="comment"># install Fast-RTPS dependencies</span></span><br><span class="line">sudo apt install --no-install-recommends -y \</span><br><span class="line">  libasio-dev \</span><br><span class="line">  libtinyxml2-dev</span><br><span class="line"><span class="comment"># install Cyclone DDS dependencies</span></span><br><span class="line">sudo apt install --no-install-recommends -y \</span><br><span class="line">  libcunit1-dev</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-获取ROS2源码"><a href="#5-获取ROS2源码" class="headerlink" title="5 获取ROS2源码"></a>5 获取ROS2源码</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p ~/ros2_foxy/src</span><br><span class="line"><span class="built_in">cd</span> ~/ros2_foxy</span><br><span class="line">wget https://raw.githubusercontent.com/ros2/ros2/foxy/ros2.repos --no-check-certificate</span><br><span class="line"><span class="comment">## github下载不稳定，可自行修改repos文件，添加代理前缀 https://ghproxy.com/</span></span><br><span class="line">vcs import --input ./ros2.repos src</span><br></pre></td></tr></table></figure>
+
+<h2 id="6-使用Rosdep安装依赖"><a href="#6-使用Rosdep安装依赖" class="headerlink" title="6 使用Rosdep安装依赖"></a>6 使用Rosdep安装依赖</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo apt upgrade</span><br><span class="line"><span class="built_in">cd</span> /etc/ros/rosdep/sources.list.d &amp;&amp; wget https://mirrors.tuna.tsinghua.edu.cn/github-raw/ros/rosdistro/master/rosdep/sources.list.d/20-default.list</span><br><span class="line">rosdep update</span><br><span class="line">rosdep install --from-paths src --ignore-src -y --skip-keys <span class="string">&quot;fastcdr rti-connext-dds-5.3.1 urdfdom_headers&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="7-编译ROS2源码"><a href="#7-编译ROS2源码" class="headerlink" title="7 编译ROS2源码"></a>7 编译ROS2源码</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/ros2_foxy/</span><br><span class="line">colcon build --symlink-install</span><br></pre></td></tr></table></figure>
+
+<h2 id="8-设置环境变量"><a href="#8-设置环境变量" class="headerlink" title="8 设置环境变量"></a>8 设置环境变量</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">. ~/ros2_foxy/install/local_setup.bash</span><br></pre></td></tr></table></figure>
+
+<h2 id="9-测试"><a href="#9-测试" class="headerlink" title="9 测试"></a>9 测试</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 运行talker</span></span><br><span class="line">. ~/ros2_foxy/install/local_setup.bash</span><br><span class="line">ros2 run demo_nodes_cpp talker</span><br><span class="line"></span><br><span class="line"><span class="comment">## 新起另一个终端，运行listener</span></span><br><span class="line">. ~/ros2_foxy/install/local_setup.bash</span><br><span class="line">ros2 run demo_nodes_py listener</span><br></pre></td></tr></table></figure>
+  </div>
+  
+  
+    
+    <div class='footer'>
+       <!-- 参考资料、相关资料等 -->
+      
+       <!-- 相关文章 -->
+      
+      <!-- 版权声明组件 -->
+      
+      <!-- 打赏组件 -->
+      
+        <div class='donate'>
+          <div class='imgs'>
+            
+              <img src='https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/%E8%B5%9E%E8%B5%8F%E7%A0%81.JPG'>
+            
+          </div>
+        </div>
+      
+    </div>
+  
+  
+    
+
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-08-18T17:34:12+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2023年8月18日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2023/08/18/ROS2%E5%9F%BA%E7%A1%80/1-ROS2%E5%AE%89%E8%A3%85(armhf%E7%AF%87)/&title=1-ROS2安装(armhf篇) - PQ.XIE BLOG&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2023/08/18/ROS2%E5%9F%BA%E7%A1%80/1-ROS2%E5%AE%89%E8%A3%85(armhf%E7%AF%87)/&title=1-ROS2安装(armhf篇) - PQ.XIE BLOG&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2023/08/18/ROS2%E5%9F%BA%E7%A1%80/1-ROS2%E5%AE%89%E8%A3%85(armhf%E7%AF%87)/&title=1-ROS2安装(armhf篇) - PQ.XIE BLOG&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+        
+      
+    </div>
+    <!-- Custom Files bottomMeta begin -->
+    
+    <!-- Custom Files bottomMeta end -->
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+      
+        <a class='next' href='/2023/07/27/%E5%93%B2%E5%AD%A6%E6%80%9D%E8%80%83/1-%E8%A5%BF%E6%96%B9%E5%93%B2%E5%AD%A6%E6%91%98%E5%BD%95/'>
+          <p class='title'>1-西方哲学摘录<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>黑格尔哲学形而上学形而上学的根本特征是以思维（概念）规定感性（事物），在概念中确认哲学所追求的“最高原因的基本原理”。这种基本原理可以使人类经验中的各种各样的事物得到统一性的解释，或者可以被解释...</p>
+        </a>
+      
+    </div>
+  
+  <!-- Custom Files postEnd begin-->
+  
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> 
+  <!-- Custom Files postEnd end-->
+</article>
+
+
+  
+
+
+  <article class="post white-box shadow floatable blur" id="comments">
+    <span hidden>
+      <meta itemprop="discussionUrl" content="/2023/08/18/ROS2%E5%9F%BA%E7%A1%80/1-ROS2%E5%AE%89%E8%A3%85(armhf%E7%AF%87)/index.html#comments">
+    </span>
+    <p ct><i class='fas fa-comments'></i> 评论区</p>
+    
+
+    <div id="layoutHelper-comments"></div>
+
+  </article>
+
+
+
+
+
+
 </div>
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   
@@ -2726,227 +2864,48 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       
-<section class="widget blogger desktop pjax">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box circle' href='/about/'>
-          <img no-lazy src='https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/touxiang.jpg'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-        
-        
-          <p><span id="jinrishici-sentence">PQ.XIE BLOG</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:212951692@qq.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://gitee.com/xie-peiquan"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://t1.kugou.com/dER5jedBdV2"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
-
-    
-  
-
-  
-    
-    
-      
-  
-  <section class="widget category desktop pjax">
-    
-  <header>
-    
-      <a href='/categories/'><i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/Pytorch%E5%9F%BA%E7%A1%80/" href="/categories/Pytorch%E5%9F%BA%E7%A1%80/"
-            active-action="action-categoriesPytorchE59FBAE7A180"
-            ><div class='name'>Pytorch基础</div><div class='badge'>(5)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/ROS2%E5%9F%BA%E7%A1%80/" href="/categories/ROS2%E5%9F%BA%E7%A1%80/"
-            active-action="action-categoriesROS2E59FBAE7A180"
-            ><div class='name'>ROS2基础</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%93%B2%E5%AD%A6%E7%AC%94%E8%AE%B0/" href="/categories/%E5%93%B2%E5%AD%A6%E7%AC%94%E8%AE%B0/"
-            active-action="action-categoriesE593B2E5ADA6E7AC94E8AEB0"
-            ><div class='name'>哲学笔记</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%BB%BA%E7%AB%99/" href="/categories/%E5%BB%BA%E7%AB%99/"
-            active-action="action-categoriesE5BBBAE7AB99"
-            ><div class='name'>建站</div><div class='badge'>(1)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
-
-
-    
-  
-
-  
-    
-    
-      
-<section class="widget desktop pjax">
-  
-  <header>
-    
-      <i class="fa-solid fa-award fa-fw" aria-hidden="true"></i><span class='name'>站点信息</span>
-    
-  </header>
-
-
-  <div class='content'>
-    <div class="webinfo">
-      
-        <div class="webinfo-item">
-          <div>文章数目：</div>
-          <div>8 篇</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>已运行时间：</div>
-          <div id="webinfo-runtime-count"></div>
-        </div>
-      
-
-
-      
-        <div class="webinfo-item">
-          <div>本站总字数：</div>
-          <div>6.5k 字</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>本站访客数：</div>
-          
-          <div><span id="busuanzi_value_site_uv"><i class="fa-solid fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 人</div>
-          
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>本站总访问量：</div>
-          
-          <div><span id="busuanzi_value_site_pv"><i class="fa-solid fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 次</div>
-          
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>最后活动时间：</div>
-          <div id="last-update-show">2023-08-18 日</div>
-        </div>
-      
-    </div>
-  </div>
-</section>
-
-    
-  
-
-  
-    
-    
-      
-
-  <section class='widget desktop  music'>
-    
-
-    <div class='content'>
-      
-
-  
-    <meting-js
-      theme='#1BCDFC'
-      autoplay='false'
-      volume='0.7'
-      loop='all'
-      order='random'
-      fixed='false'
-      list-max-height='320px'
-      server='tencent'
-      type='playlist'
-      id='8969031959'
-      list-folded='true'>
-    </meting-js>
-  
-
-
-    </div>
-  </section>
-
-
     
   
 
 
 <div class="widget-sticky pjax">
 
+  
+  
+
+
+  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
+    
+  <header>
+    
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%9B%B4%E6%8D%A2%E9%95%9C%E5%83%8F%E6%BA%90%EF%BC%88%E5%8F%AF%E9%80%89%EF%BC%89"><span class="toc-text">1 更换镜像源（可选）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E6%9B%B4%E6%8D%A2ubuntu%E9%95%9C%E5%83%8F%E6%BA%90"><span class="toc-text">1.1 更换ubuntu镜像源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E6%9B%B4%E6%8D%A2-PIP-%E6%BA%90"><span class="toc-text">1.2 更换 PIP 源</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E8%AE%BE%E7%BD%AE-locale"><span class="toc-text">2 设置 locale</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%B7%BB%E5%8A%A0ROS2-%E5%AD%98%E5%82%A8%E5%BA%93"><span class="toc-text">3 添加ROS2 存储库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%AE%89%E8%A3%85%E7%BC%96%E8%AF%91%E5%B7%A5%E5%85%B7"><span class="toc-text">4 安装编译工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E8%8E%B7%E5%8F%96ROS2%E6%BA%90%E7%A0%81"><span class="toc-text">5 获取ROS2源码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E4%BD%BF%E7%94%A8Rosdep%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96"><span class="toc-text">6 使用Rosdep安装依赖</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E7%BC%96%E8%AF%91ROS2%E6%BA%90%E7%A0%81"><span class="toc-text">7 编译ROS2源码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-%E8%AE%BE%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-text">8 设置环境变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-%E6%B5%8B%E8%AF%95"><span class="toc-text">9 测试</span></a></li></ol>
+    </div>
+  </section>
+
+  
+
 </div>
 
 
 <!-- 没有 pjax 占位会报错 万恶的 pjax -->
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
 
   <div class="pjax">
     <!-- pjax占位 -->
@@ -2974,13 +2933,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </aside>
 
 
+
           <!--此文件用来存放一些不方便取值的变量-->
 <!--思路大概是将值藏到重加载的区域内-->
 
 <pjax>
 <script>
   window.pdata={}
-  pdata.ispage=false;
+  pdata.ispage=true;
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -2989,14 +2949,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     // header
     var l_header=document.getElementById("l_header");
     
-    l_header.classList.remove("show");
+    l_header.classList.add("show");
     
     
       // cover
       var cover_wrapper=document.querySelector('#l_cover .cover-wrapper');
       var scroll_down=document.getElementById('scroll-down');
-      cover_wrapper.id="half";
-      cover_wrapper.style.display="";
+      cover_wrapper.id="none";
+      cover_wrapper.style.display="none";
       scroll_down.style.display="none";
     
   
@@ -3980,7 +3940,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"PQ.XIE BLOG","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"PQ.XIE BLOG"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/archives/","name":"Archive"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"PQ.XIE BLOG","url":"http://example.com/","keywords":"日常唠嗑","description":"个人博客","author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"个人博客"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"个人博客","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"PQ.XIE BLOG","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"PQ.XIE BLOG"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/ROS2基础/","name":"ROS2基础"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/08/18/ROS2基础/1-ROS2安装(armhf篇)/","name":"1-ROS2安装(armhf篇)"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"PQ.XIE BLOG","url":"http://example.com/","keywords":"日常唠嗑","description":"个人博客","author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"个人博客"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"1-ROS2安装(armhf篇)","description":"个人博客","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/08/18/ROS2%E5%9F%BA%E7%A1%80/1-ROS2%E5%AE%89%E8%A3%85(armhf%E7%AF%87)/"},"author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/08/18/ROS2%E5%9F%BA%E7%A1%80/1-ROS2%E5%AE%89%E8%A3%85(armhf%E7%AF%87)/","wordCount":0,"datePublished":"2023-08-18T09:34:12.047Z","dateModified":"2023-08-18T09:34:12.091Z","articleSection":"ROS2基础","keywords":"ROS2基础","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
