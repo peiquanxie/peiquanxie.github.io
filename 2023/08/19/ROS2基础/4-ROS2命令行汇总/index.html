@@ -34,21 +34,21 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>PQ.XIE BLOG</title>
-  <meta name="keywords" content="日常唠嗑">
+  <title>4-ROS2命令行汇总 - PQ.XIE BLOG</title>
+  <meta name="keywords" content="ROS2基础,日常唠嗑">
   <meta desc name="description" content="个人博客 - PQ.XIE - PQ.XIE BLOG">
   
 <meta property="og:type" content="article">
-<meta property="og:title" content="PQ.XIE BLOG">
+<meta property="og:title" content="4-ROS2命令行汇总">
 <meta property="og:url" content="http://example.com/2023/08/19/ROS2%E5%9F%BA%E7%A1%80/4-ROS2%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%B1%87%E6%80%BB/index.html">
 <meta property="og:site_name" content="PQ.XIE BLOG">
 <meta property="og:description" content="0 节点运行命令命令格式： ros2 run   1 pkg相关命令1.1 ros2 pkg create命令功能：创建功能包并指定包相关参数命令格式：ros2 pkg create pkgname –build-type ament_python –node-name xx_node –dependencies rclpy参数列表：    参数 参数作用 参数示例    –build-type">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2023-08-19T13:16:52.266Z">
-<meta property="article:modified_time" content="2023-08-19T13:16:52.318Z">
+<meta property="article:modified_time" content="2023-08-20T03:24:19.634Z">
 <meta property="article:author" content="PQ.XIE">
-<meta property="article:tag" content="日常唠嗑">
+<meta property="article:tag" content="ROS2基础">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -1801,7 +1801,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1692501605505),
+    lastupdate: new Date(1692501894991),
     sidebar: {
       for_page: ["blogger","category","webinfo","music"],
       for_post: ["toc"],
@@ -2604,9 +2604,84 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
     
-      <span hidden itemprop="name headline">
+      <h1 class="title" itemprop="name headline">
+        4-ROS2命令行汇总
+      </h1>
+      <div class='new-meta-box'>
         
-      </span>
+          
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' href="/" rel="nofollow">
+    <img itemprop="image" src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/202307251013361.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/202307251013361.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    <p itemprop="name">PQ.XIE</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/ROS2%E5%9F%BA%E7%A1%80/" rel="nofollow"><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><p>ROS2基础</p></a></div>
+  <span hidden itemprop="keywords">ROS2基础</span>
+
+
+          
+        
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-08-19T21:16:52+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>2023年8月19日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：712 字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：3 分钟</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+
+
+<div class="new-meta-item browse">
+  <a class='notlink'>
+    <p>
+      <i class="fa-solid fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span id="busuanzi_value_page_pv"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+      
+      <span>次</span>
+    </p>
+  </a>
+</div>
+
+
+          
+        
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
+      </div>
     
   </div>
 
@@ -2689,10 +2764,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-08-19T21:16:52+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-08-20T11:24:19+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2023年8月19日</p>
+    <p>更新于：2023年8月20日</p>
   </a>
 </div>
 
@@ -2706,7 +2781,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2023/08/19/ROS2%E5%9F%BA%E7%A1%80/4-ROS2%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%B1%87%E6%80%BB/&title= - PQ.XIE BLOG&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2023/08/19/ROS2%E5%9F%BA%E7%A1%80/4-ROS2%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%B1%87%E6%80%BB/&title=4-ROS2命令行汇总 - PQ.XIE BLOG&summary="
           
           >
           
@@ -2718,7 +2793,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2023/08/19/ROS2%E5%9F%BA%E7%A1%80/4-ROS2%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%B1%87%E6%80%BB/&title= - PQ.XIE BLOG&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2023/08/19/ROS2%E5%9F%BA%E7%A1%80/4-ROS2%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%B1%87%E6%80%BB/&title=4-ROS2命令行汇总 - PQ.XIE BLOG&summary="
           
           >
           
@@ -2730,7 +2805,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2023/08/19/ROS2%E5%9F%BA%E7%A1%80/4-ROS2%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%B1%87%E6%80%BB/&title= - PQ.XIE BLOG&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2023/08/19/ROS2%E5%9F%BA%E7%A1%80/4-ROS2%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%B1%87%E6%80%BB/&title=4-ROS2命令行汇总 - PQ.XIE BLOG&summary="
           
           >
           
@@ -2766,7 +2841,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class="prev-next">
       
         <a class='prev' href='/2023/08/19/ROS2%E5%9F%BA%E7%A1%80/5-ROS2%E5%88%9B%E5%BB%BA%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%8A%82%E7%82%B9/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>2023年8月19日</p>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>5-ROS2创建第一个节点</p>
           <p class='content'>1 创建cpp节点1.1 创建工作空间1mkdir -p workspace/src/
 
 1.2 创建功能包12cd workspace/srcros2 pkg create example_c...</p>
@@ -2774,7 +2849,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
       
         <a class='next' href='/2023/08/19/ROS2%E5%9F%BA%E7%A1%80/3-ROS2%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84/'>
-          <p class='title'>2023年8月19日<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='title'>3-ROS2系统架构<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
           <p class='content'>1 ROS2总体架构图
 1.1 DDS实现层DDS，全称 Data Distribution Service (数据分发服务)。是由对象管理组 (OMG) 于 2003 年发布并于 2007 年...</p>
         </a>
@@ -2891,7 +2966,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <pjax>
 <script>
   window.pdata={}
-  pdata.ispage=false;
+  pdata.ispage=true;
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -3891,7 +3966,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"PQ.XIE BLOG","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"PQ.XIE BLOG"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/08/19/ROS2基础/4-ROS2命令行汇总/"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"PQ.XIE BLOG","url":"http://example.com/","keywords":"日常唠嗑","description":"个人博客","author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"个人博客"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"个人博客","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/08/19/ROS2%E5%9F%BA%E7%A1%80/4-ROS2%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%B1%87%E6%80%BB/"},"author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/08/19/ROS2%E5%9F%BA%E7%A1%80/4-ROS2%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%B1%87%E6%80%BB/","wordCount":0,"datePublished":"2023-08-19T13:16:52.266Z","dateModified":"2023-08-19T13:16:52.318Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"PQ.XIE BLOG","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"PQ.XIE BLOG"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/ROS2基础/","name":"ROS2基础"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/08/19/ROS2基础/4-ROS2命令行汇总/","name":"4-ROS2命令行汇总"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"PQ.XIE BLOG","url":"http://example.com/","keywords":"日常唠嗑","description":"个人博客","author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"个人博客"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"4-ROS2命令行汇总","description":"个人博客","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/08/19/ROS2%E5%9F%BA%E7%A1%80/4-ROS2%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%B1%87%E6%80%BB/"},"author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/08/19/ROS2%E5%9F%BA%E7%A1%80/4-ROS2%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%B1%87%E6%80%BB/","wordCount":0,"datePublished":"2023-08-19T13:16:52.266Z","dateModified":"2023-08-20T03:24:19.634Z","articleSection":"ROS2基础","keywords":"ROS2基础","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
