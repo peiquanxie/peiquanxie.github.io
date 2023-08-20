@@ -1799,7 +1799,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1692507573808),
+    lastupdate: new Date(1692523780644),
     sidebar: {
       for_page: ["blogger","category","webinfo","music"],
       for_post: ["toc"],
@@ -2614,6 +2614,206 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/20/ROS2基础/7-ROS2 通信汇总(Python篇)/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="PQ.XIE BLOG">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="PQ.XIE BLOG">
+    <meta itemprop="description" content="个人博客">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/08/20/ROS2%E5%9F%BA%E7%A1%80/7-ROS2%20%E9%80%9A%E4%BF%A1%E6%B1%87%E6%80%BB(Python%E7%AF%87)/"  itemprop="url">
+        7-ROS2通信汇总(Python篇)
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        1 topic发布与订阅发布端接口：
+12publisher_ = node.create_publisher(msg_type,&quot;topic_name&quot;, 10) publisher_.publish(msg) 
+
+订阅者接口：
+1subscribe_ = node.create_subscription(msg_type, &quot;topic_name&quot;...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-08-20T17:29:20+08:00">2023-08-20</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/ROS2%E5%9F%BA%E7%A1%80/">ROS2基础</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/ROS2%E5%9F%BA%E7%A1%80/" itemprop="url"><span itemprop="name">ROS2基础</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/08/20/ROS2%E5%9F%BA%E7%A1%80/7-ROS2%20%E9%80%9A%E4%BF%A1%E6%B1%87%E6%80%BB(Python%E7%AF%87)/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/20/ROS2基础/6-ROS2 接口介绍/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="PQ.XIE BLOG">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="PQ.XIE BLOG">
+    <meta itemprop="description" content="个人博客">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/08/20/ROS2%E5%9F%BA%E7%A1%80/6-ROS2%20%E6%8E%A5%E5%8F%A3%E4%BB%8B%E7%BB%8D/"  itemprop="url">
+        6-ROS2 接口介绍
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        ROS2提供了四种通信方式，包括：话题（topic）、服务（service）、动作（action）和 参数（parameter）。通信会涉及到接口，我们可以通过 ros2 interface list 列出ROS2提供的所有接口，通过 ros2 interface show &lt;interface_name&gt; 或  ros2 interface proto &lt;message_...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-08-20T17:29:20+08:00">2023-08-20</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/ROS2%E5%9F%BA%E7%A1%80/">ROS2基础</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/ROS2%E5%9F%BA%E7%A1%80/" itemprop="url"><span itemprop="name">ROS2基础</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/08/20/ROS2%E5%9F%BA%E7%A1%80/6-ROS2%20%E6%8E%A5%E5%8F%A3%E4%BB%8B%E7%BB%8D/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/20/ROS2基础/5-ROS2创建第一个节点/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="PQ.XIE BLOG">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="PQ.XIE BLOG">
+    <meta itemprop="description" content="个人博客">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/08/20/ROS2%E5%9F%BA%E7%A1%80/5-ROS2%E5%88%9B%E5%BB%BA%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%8A%82%E7%82%B9/"  itemprop="url">
+        5-ROS2创建第一个节点
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        1 创建cpp节点1.1 创建工作空间1mkdir -p workspace/src/
+
+1.2 创建功能包12cd workspace/srcros2 pkg create example_cpp --build-type ament_cmake --dependencies rclcpp
+
+此时可以看到ROS2为我们创建了example_cpp文件夹，且该文件夹下包含include、sr...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-08-20T17:29:19+08:00">2023-08-20</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/ROS2%E5%9F%BA%E7%A1%80/">ROS2基础</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/ROS2%E5%9F%BA%E7%A1%80/" itemprop="url"><span itemprop="name">ROS2基础</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/08/20/ROS2%E5%9F%BA%E7%A1%80/5-ROS2%E5%88%9B%E5%BB%BA%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%8A%82%E7%82%B9/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
   <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/20/ROS2基础/4-ROS2命令行汇总/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="PQ.XIE BLOG">
@@ -2652,7 +2852,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-08-20T12:59:26+08:00">2023-08-20</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-08-20T17:29:19+08:00">2023-08-20</time>
         
           <span class="dot"></span>
           <a class="category-link" href="/categories/ROS2%E5%9F%BA%E7%A1%80/">ROS2基础</a>
@@ -2682,7 +2882,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/19/ROS2基础/5-ROS2创建第一个节点/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/20/ROS2基础/3-ROS2系统架构/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="PQ.XIE BLOG">
   </span>
@@ -2700,75 +2900,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/08/19/ROS2%E5%9F%BA%E7%A1%80/5-ROS2%E5%88%9B%E5%BB%BA%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%8A%82%E7%82%B9/"  itemprop="url">
-        5-ROS2创建第一个节点
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        1 创建cpp节点1.1 创建工作空间1mkdir -p workspace/src/
-
-1.2 创建功能包12cd workspace/srcros2 pkg create example_cpp --build-type ament_cmake --dependencies rclcpp
-
-此时可以看到ROS2为我们创建了example_cpp文件夹，且该文件夹下包含include、sr...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-08-19T21:16:52+08:00">2023-08-19</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/ROS2%E5%9F%BA%E7%A1%80/">ROS2基础</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/ROS2%E5%9F%BA%E7%A1%80/" itemprop="url"><span itemprop="name">ROS2基础</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/08/19/ROS2%E5%9F%BA%E7%A1%80/5-ROS2%E5%88%9B%E5%BB%BA%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%8A%82%E7%82%B9/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/19/ROS2基础/3-ROS2系统架构/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-    <meta itemprop="description" content="个人博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/08/19/ROS2%E5%9F%BA%E7%A1%80/3-ROS2%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84/"  itemprop="url">
+      <a href="/2023/08/20/ROS2%E5%9F%BA%E7%A1%80/3-ROS2%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84/"  itemprop="url">
         3-ROS2系统架构
       </a>
     </h2>
@@ -2786,7 +2918,7 @@ DDS实现层其实就是对不同常见的DDS接口进行再次的封装，让�
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-08-19T21:16:51+08:00">2023-08-19</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-08-20T17:29:19+08:00">2023-08-20</time>
         
           <span class="dot"></span>
           <a class="category-link" href="/categories/ROS2%E5%9F%BA%E7%A1%80/">ROS2基础</a>
@@ -2799,7 +2931,7 @@ DDS实现层其实就是对不同常见的DDS接口进行再次的封装，让�
       </div>
       
         <div>
-          <a class='readmore' href='/2023/08/19/ROS2%E5%9F%BA%E7%A1%80/3-ROS2%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84/' itemprop="url">
+          <a class='readmore' href='/2023/08/20/ROS2%E5%9F%BA%E7%A1%80/3-ROS2%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -2816,7 +2948,7 @@ DDS实现层其实就是对不同常见的DDS接口进行再次的封装，让�
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/18/ROS2基础/2-ROS2安装(X86篇)/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/20/ROS2基础/2-ROS2安装(X86篇)/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="PQ.XIE BLOG">
   </span>
@@ -2834,7 +2966,7 @@ DDS实现层其实就是对不同常见的DDS接口进行再次的封装，让�
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/08/18/ROS2%E5%9F%BA%E7%A1%80/2-ROS2%E5%AE%89%E8%A3%85(X86%E7%AF%87)/"  itemprop="url">
+      <a href="/2023/08/20/ROS2%E5%9F%BA%E7%A1%80/2-ROS2%E5%AE%89%E8%A3%85(X86%E7%AF%87)/"  itemprop="url">
         2-ROS2安装(X86篇)
       </a>
     </h2>
@@ -2853,7 +2985,7 @@ CPU架构：amd_64操作系统：ubuntu20.04
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-08-18T21:49:43+08:00">2023-08-18</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-08-20T17:29:18+08:00">2023-08-20</time>
         
           <span class="dot"></span>
           <a class="category-link" href="/categories/ROS2%E5%9F%BA%E7%A1%80/">ROS2基础</a>
@@ -2866,7 +2998,7 @@ CPU架构：amd_64操作系统：ubuntu20.04
       </div>
       
         <div>
-          <a class='readmore' href='/2023/08/18/ROS2%E5%9F%BA%E7%A1%80/2-ROS2%E5%AE%89%E8%A3%85(X86%E7%AF%87)/' itemprop="url">
+          <a class='readmore' href='/2023/08/20/ROS2%E5%9F%BA%E7%A1%80/2-ROS2%E5%AE%89%E8%A3%85(X86%E7%AF%87)/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -2883,7 +3015,7 @@ CPU架构：amd_64操作系统：ubuntu20.04
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/18/ROS2基础/1-ROS2安装(armhf篇)/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/20/ROS2基础/1-ROS2安装(armhf篇)/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="PQ.XIE BLOG">
   </span>
@@ -2901,7 +3033,7 @@ CPU架构：amd_64操作系统：ubuntu20.04
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/08/18/ROS2%E5%9F%BA%E7%A1%80/1-ROS2%E5%AE%89%E8%A3%85(armhf%E7%AF%87)/"  itemprop="url">
+      <a href="/2023/08/20/ROS2%E5%9F%BA%E7%A1%80/1-ROS2%E5%AE%89%E8%A3%85(armhf%E7%AF%87)/"  itemprop="url">
         1-ROS2安装(armhf篇)
       </a>
     </h2>
@@ -2920,7 +3052,7 @@ CPU架构：armv7l操作系统：ubuntu20.04
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-08-18T17:34:12+08:00">2023-08-18</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-08-20T17:29:18+08:00">2023-08-20</time>
         
           <span class="dot"></span>
           <a class="category-link" href="/categories/ROS2%E5%9F%BA%E7%A1%80/">ROS2基础</a>
@@ -2933,7 +3065,7 @@ CPU架构：armv7l操作系统：ubuntu20.04
       </div>
       
         <div>
-          <a class='readmore' href='/2023/08/18/ROS2%E5%9F%BA%E7%A1%80/1-ROS2%E5%AE%89%E8%A3%85(armhf%E7%AF%87)/' itemprop="url">
+          <a class='readmore' href='/2023/08/20/ROS2%E5%9F%BA%E7%A1%80/1-ROS2%E5%AE%89%E8%A3%85(armhf%E7%AF%87)/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3152,136 +3284,6 @@ batch : 每一次更新参数（反向传播）所用到的数据样本数。
           </div>
         
       
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/25/pytorch基础/3-数据准备/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-    <meta itemprop="description" content="个人博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/07/25/pytorch%E5%9F%BA%E7%A1%80/3-%E6%95%B0%E6%8D%AE%E5%87%86%E5%A4%87/"  itemprop="url">
-        3-数据准备
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        1 Dataset1.1  图像（path+label形式）12345678910111213141516171819202122232425import osimport pandas as pdfrom torchvision.io import read_imagefrom torchvision import datasetsfrom torchvision import trans...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-07-25T14:38:09+08:00">2023-07-25</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Pytorch%E5%9F%BA%E7%A1%80/">Pytorch基础</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Pytorch%E5%9F%BA%E7%A1%80/" itemprop="url"><span itemprop="name">Pytorch基础</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/07/25/pytorch%E5%9F%BA%E7%A1%80/3-%E6%95%B0%E6%8D%AE%E5%87%86%E5%A4%87/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/24/pytorch基础/2-tensor操作/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-    <meta itemprop="description" content="个人博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/07/24/pytorch%E5%9F%BA%E7%A1%80/2-tensor%E6%93%8D%E4%BD%9C/"  itemprop="url">
-        2-tensor基础
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        1 tensor属性1.1 tensor初始化1234shape = (2,3,)rand_tensor = torch.rand(shape)ones_tensor = torch.ones(shape)zeros_tensor = torch.zeros(shape) 
-
-1.2 tensor性质1234tensor = torch.rand(3,4)print(f&quot;Shape...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-07-24T17:18:03+08:00">2023-07-24</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Pytorch%E5%9F%BA%E7%A1%80/">Pytorch基础</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Pytorch%E5%9F%BA%E7%A1%80/" itemprop="url"><span itemprop="name">Pytorch基础</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/07/24/pytorch%E5%9F%BA%E7%A1%80/2-tensor%E6%93%8D%E4%BD%9C/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-
-  
-
-</div>
-
-          </div>
-        
-      
     
   </section>
   
@@ -3404,7 +3406,7 @@ batch : 每一次更新参数（反向传播）所用到的数据样本数。
           <li><a class="flat-box"
             title="/categories/ROS2%E5%9F%BA%E7%A1%80/" href="/categories/ROS2%E5%9F%BA%E7%A1%80/"
             active-action="action-categoriesROS2E59FBAE7A180"
-            ><div class='name'>ROS2基础</div><div class='badge'>(5)</div></a></li>
+            ><div class='name'>ROS2基础</div><div class='badge'>(7)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E5%93%B2%E5%AD%A6%E7%AC%94%E8%AE%B0/" href="/categories/%E5%93%B2%E5%AD%A6%E7%AC%94%E8%AE%B0/"
@@ -3442,7 +3444,7 @@ batch : 每一次更新参数（反向传播）所用到的数据样本数。
       
         <div class="webinfo-item">
           <div>文章数目：</div>
-          <div>12 篇</div>
+          <div>14 篇</div>
         </div>
       
 
@@ -3457,7 +3459,7 @@ batch : 每一次更新参数（反向传播）所用到的数据样本数。
       
         <div class="webinfo-item">
           <div>本站总字数：</div>
-          <div>8.9k 字</div>
+          <div>10k 字</div>
         </div>
       
 
