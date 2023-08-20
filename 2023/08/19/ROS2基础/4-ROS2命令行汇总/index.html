@@ -42,11 +42,11 @@
 <meta property="og:title" content="4-ROS2命令行汇总">
 <meta property="og:url" content="http://example.com/2023/08/19/ROS2%E5%9F%BA%E7%A1%80/4-ROS2%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%B1%87%E6%80%BB/index.html">
 <meta property="og:site_name" content="PQ.XIE BLOG">
-<meta property="og:description" content="0 节点运行命令命令格式： ros2 run   1 pkg相关命令1.1 ros2 pkg create命令功能：创建功能包并指定包相关参数命令格式：ros2 pkg create pkgname –build-type ament_python –node-name xx_node –dependencies rclpy参数列表：    参数 参数作用 参数示例    –build-type">
+<meta property="og:description" content="0 节点运行命令 命令格式： ros2 run    1 pkg相关命令1.1 ros2 pkg create 命令功能：创建功能包并指定包相关参数命令格式：ros2 pkg create pkgname –build-type ament_python –node-name xx_node –dependencies rclpy参数列表：     参数 参数作用 参数示例    –build-t">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2023-08-19T13:16:52.266Z">
-<meta property="article:modified_time" content="2023-08-20T03:24:19.634Z">
+<meta property="article:modified_time" content="2023-08-20T03:34:53.881Z">
 <meta property="article:author" content="PQ.XIE">
 <meta property="article:tag" content="ROS2基础">
 <meta name="twitter:card" content="summary">
@@ -1801,7 +1801,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1692502148057),
+    lastupdate: new Date(1692502521916),
     sidebar: {
       for_page: ["blogger","category","webinfo","music"],
       for_post: ["toc"],
@@ -2688,8 +2688,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h2 id="0-节点运行命令"><a href="#0-节点运行命令" class="headerlink" title="0 节点运行命令"></a>0 节点运行命令</h2><p>命令格式： ros2 run <package_name> <node_name></p>
-<h2 id="1-pkg相关命令"><a href="#1-pkg相关命令" class="headerlink" title="1 pkg相关命令"></a>1 pkg相关命令</h2><h3 id="1-1-ros2-pkg-create"><a href="#1-1-ros2-pkg-create" class="headerlink" title="1.1 ros2 pkg create"></a>1.1 ros2 pkg create</h3><p>命令功能：创建功能包并指定包相关参数<br>命令格式：ros2 pkg create pkgname <strong>–build-type</strong> ament_python <strong>–node-name</strong> xx_node <strong>–dependencies</strong> rclpy<br>参数列表：</p>
+    <h2 id="0-节点运行命令"><a href="#0-节点运行命令" class="headerlink" title="0 节点运行命令"></a>0 节点运行命令</h2><blockquote>
+<p>命令格式： ros2 run <package_name> <node_name></p>
+</blockquote>
+<h2 id="1-pkg相关命令"><a href="#1-pkg相关命令" class="headerlink" title="1 pkg相关命令"></a>1 pkg相关命令</h2><h3 id="1-1-ros2-pkg-create"><a href="#1-1-ros2-pkg-create" class="headerlink" title="1.1 ros2 pkg create"></a>1.1 ros2 pkg create</h3><blockquote>
+<p>命令功能：创建功能包并指定包相关参数<br>命令格式：ros2 pkg create pkgname <strong>–build-type</strong> ament_python <strong>–node-name</strong> xx_node <strong>–dependencies</strong> rclpy<br>参数列表：</p>
+</blockquote>
 <table>
 <thead>
 <tr>
@@ -2714,24 +2718,60 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <td align="left">rclpy &#x2F;  std_msgs &#x2F; sensor_msgs</td>
 </tr>
 </tbody></table>
-<h3 id="1-2-ros2-pkg-list"><a href="#1-2-ros2-pkg-list" class="headerlink" title="1.2 ros2 pkg list"></a>1.2 ros2 pkg list</h3><p>命令功能：查看系统中功能包列表<br>命令格式：ros2 pkg list<br>注意：记得要通过source指令将自己的功能包添加到ROS2环境中。</p>
-<h3 id="1-3-ros2-pkg-executables"><a href="#1-3-ros2-pkg-executables" class="headerlink" title="1.3 ros2 pkg executables"></a>1.3 ros2 pkg executables</h3><p>命令功能：查看功能包内所有可执行节点<br>命令格式：ros2 pkg executables <package_name></p>
-<h2 id="2-node相关命令"><a href="#2-node相关命令" class="headerlink" title="2 node相关命令"></a>2 node相关命令</h2><h3 id="2-1-ros2-node-list"><a href="#2-1-ros2-node-list" class="headerlink" title="2.1 ros2 node list"></a>2.1 ros2 node list</h3><p>命令功能： 查看当前域内（ROS_DOMAIN_ID）的节点列表<br>命令格式： ros2 node list</p>
-<h3 id="2-2-ros2-node-info"><a href="#2-2-ros2-node-info" class="headerlink" title="2.2 ros2 node info"></a>2.2 ros2 node info</h3><p>命令功能： 查看节点详细信息，包括订阅、发布的消息，开启的服务和动作等<br>命令格式： ros2 node info <node_name></p>
-<h2 id="3-topic相关命令"><a href="#3-topic相关命令" class="headerlink" title="3 topic相关命令"></a>3 topic相关命令</h2><h3 id="3-1-ros2-topic-list"><a href="#3-1-ros2-topic-list" class="headerlink" title="3.1 ros2 topic list"></a>3.1 ros2 topic list</h3><p>命令功能：列出域内可使用的topic列表<br>命令格式：ros2 topic list</p>
-<h3 id="3-2-ros2-topic-info"><a href="#3-2-ros2-topic-info" class="headerlink" title="3.2 ros2 topic info"></a>3.2 ros2 topic info</h3><p>命令功能：显示主题消息类型，订阅者数量，发布者数量等<br>命令格式：ros2 topic info <topic_name></p>
-<h3 id="3-3-ros2-topic-type"><a href="#3-3-ros2-topic-type" class="headerlink" title="3.3 ros2 topic type"></a>3.3 ros2 topic type</h3><p>命令功能：查看主题消息类型<br>命令格式：ros2 topic type <topic_name></p>
-<h3 id="3-4-ros2-topic-find"><a href="#3-4-ros2-topic-find" class="headerlink" title="3.4 ros2 topic find"></a>3.4 ros2 topic find</h3><p>命令功能：按消息类型查找相关主题<br>命令格式：ros2 topic find <message_type></p>
-<h3 id="3-5-ros2-topic-hz"><a href="#3-5-ros2-topic-hz" class="headerlink" title="3.5 ros2 topic hz"></a>3.5 ros2 topic hz</h3><p>命令功能：显示主题平均发布频率<br>命令格式：ros2 topic hz <topic_name></p>
-<h3 id="3-6-ros2-topic-bw"><a href="#3-6-ros2-topic-bw" class="headerlink" title="3.6 ros2 topic bw"></a>3.6 ros2 topic bw</h3><p>命令功能：显示所查阅主题的带宽<br>命令格式：ros2 topic bw <topic_name></p>
-<h3 id="3-7-ros2-topic-delay"><a href="#3-7-ros2-topic-delay" class="headerlink" title="3.7 ros2 topic delay"></a>3.7 ros2 topic delay</h3><p>命令功能：通过header中的时间戳计算消息延迟<br>命令格式：ros2 topic delay <topic_name></p>
-<h3 id="3-8-ros2-topic-echo"><a href="#3-8-ros2-topic-echo" class="headerlink" title="3.8 ros2 topic echo"></a>3.8 ros2 topic echo</h3><p>命令功能：在控制台显示主题消息<br>命令格式：ros2 topic echo <topic_name></p>
-<h3 id="3-9-ros2-topic-pub"><a href="#3-9-ros2-topic-pub" class="headerlink" title="3.9 ros2 topic pub"></a>3.9 ros2 topic pub</h3><p>命令功能：通过命令行发布指定主题消息<br>命令格式：ros2 topic pub <topic_name> <message_type> <message_content><br>命令示例：ros2 topic pub control_node&#x2F;action  geometry_msgs&#x2F;msg&#x2F;TwistStamped  “{header: {stamp:{sec: 0, nanosec: 0}, frame_id: control_node}, twist: {linear: {x: 0.3, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 0.0}}}”</p>
-<h2 id="4-interface相关命令"><a href="#4-interface相关命令" class="headerlink" title="4 interface相关命令"></a>4 interface相关命令</h2><h3 id="4-1-ros2-interface-list"><a href="#4-1-ros2-interface-list" class="headerlink" title="4.1 ros2 interface list"></a>4.1 ros2 interface list</h3><p>命令功能：按类显示系统内所有的接口，包括消息（Messages）、服务（Services）、动作（Actions）<br>命令格式：ros2 interface list</p>
-<h3 id="4-3-ros2-interface-packages"><a href="#4-3-ros2-interface-packages" class="headerlink" title="4.3  ros2 interface packages"></a>4.3  ros2 interface packages</h3><p>命令功能：显示所有接口包<br>命令格式：ros2 interface packages</p>
-<h3 id="4-2-ros2-interface-package"><a href="#4-2-ros2-interface-package" class="headerlink" title="4.2 ros2 interface package"></a>4.2 ros2 interface package</h3><p>命令功能：显示指定接口包内的子接口<br>命令格式：ros2 interface package <interface_pkg></p>
-<h3 id="4-3-ros2-interface-show"><a href="#4-3-ros2-interface-show" class="headerlink" title="4.3 ros2 interface show"></a>4.3 ros2 interface show</h3><p>命令功能：显示指定接口的详细内容<br>命令格式：ros2 interface show <interface_name></p>
-<h3 id="4-4-ros2-interface-proto"><a href="#4-4-ros2-interface-proto" class="headerlink" title="4.4 ros2 interface proto"></a>4.4 ros2 interface proto</h3><p>命令功能：显示消息模板<br>命令格式：ros2 interface proto <message_name></p>
+<h3 id="1-2-ros2-pkg-list"><a href="#1-2-ros2-pkg-list" class="headerlink" title="1.2 ros2 pkg list"></a>1.2 ros2 pkg list</h3><blockquote>
+<p>命令功能：查看系统中功能包列表<br>命令格式：ros2 pkg list<br>注意：记得要通过source指令将自己的功能包添加到ROS2环境中。</p>
+</blockquote>
+<h3 id="1-3-ros2-pkg-executables"><a href="#1-3-ros2-pkg-executables" class="headerlink" title="1.3 ros2 pkg executables"></a>1.3 ros2 pkg executables</h3><blockquote>
+<p>命令功能：查看功能包内所有可执行节点<br>命令格式：ros2 pkg executables <package_name></p>
+</blockquote>
+<h2 id="2-node相关命令"><a href="#2-node相关命令" class="headerlink" title="2 node相关命令"></a>2 node相关命令</h2><h3 id="2-1-ros2-node-list"><a href="#2-1-ros2-node-list" class="headerlink" title="2.1 ros2 node list"></a>2.1 ros2 node list</h3><blockquote>
+<p>命令功能： 查看当前域内（ROS_DOMAIN_ID）的节点列表<br>命令格式： ros2 node list</p>
+</blockquote>
+<h3 id="2-2-ros2-node-info"><a href="#2-2-ros2-node-info" class="headerlink" title="2.2 ros2 node info"></a>2.2 ros2 node info</h3><blockquote>
+<p>命令功能： 查看节点详细信息，包括订阅、发布的消息，开启的服务和动作等<br>命令格式： ros2 node info <node_name></p>
+</blockquote>
+<h2 id="3-topic相关命令"><a href="#3-topic相关命令" class="headerlink" title="3 topic相关命令"></a>3 topic相关命令</h2><h3 id="3-1-ros2-topic-list"><a href="#3-1-ros2-topic-list" class="headerlink" title="3.1 ros2 topic list"></a>3.1 ros2 topic list</h3><blockquote>
+<p>命令功能：列出域内可使用的topic列表<br>命令格式：ros2 topic list</p>
+</blockquote>
+<h3 id="3-2-ros2-topic-info"><a href="#3-2-ros2-topic-info" class="headerlink" title="3.2 ros2 topic info"></a>3.2 ros2 topic info</h3><blockquote>
+<p>命令功能：显示主题消息类型，订阅者数量，发布者数量等<br>命令格式：ros2 topic info <topic_name></p>
+</blockquote>
+<h3 id="3-3-ros2-topic-type"><a href="#3-3-ros2-topic-type" class="headerlink" title="3.3 ros2 topic type"></a>3.3 ros2 topic type</h3><blockquote>
+<p>命令功能：查看主题消息类型<br>命令格式：ros2 topic type <topic_name></p>
+</blockquote>
+<h3 id="3-4-ros2-topic-find"><a href="#3-4-ros2-topic-find" class="headerlink" title="3.4 ros2 topic find"></a>3.4 ros2 topic find</h3><blockquote>
+<p>命令功能：按消息类型查找相关主题<br>命令格式：ros2 topic find <message_type></p>
+</blockquote>
+<h3 id="3-5-ros2-topic-hz"><a href="#3-5-ros2-topic-hz" class="headerlink" title="3.5 ros2 topic hz"></a>3.5 ros2 topic hz</h3><blockquote>
+<p>命令功能：显示主题平均发布频率<br>命令格式：ros2 topic hz <topic_name></p>
+</blockquote>
+<h3 id="3-6-ros2-topic-bw"><a href="#3-6-ros2-topic-bw" class="headerlink" title="3.6 ros2 topic bw"></a>3.6 ros2 topic bw</h3><blockquote>
+<p>命令功能：显示所查阅主题的带宽<br>命令格式：ros2 topic bw <topic_name></p>
+</blockquote>
+<h3 id="3-7-ros2-topic-delay"><a href="#3-7-ros2-topic-delay" class="headerlink" title="3.7 ros2 topic delay"></a>3.7 ros2 topic delay</h3><blockquote>
+<p>命令功能：通过header中的时间戳计算消息延迟<br>命令格式：ros2 topic delay <topic_name></p>
+</blockquote>
+<h3 id="3-8-ros2-topic-echo"><a href="#3-8-ros2-topic-echo" class="headerlink" title="3.8 ros2 topic echo"></a>3.8 ros2 topic echo</h3><blockquote>
+<p>命令功能：在控制台显示主题消息<br>命令格式：ros2 topic echo <topic_name></p>
+</blockquote>
+<h3 id="3-9-ros2-topic-pub"><a href="#3-9-ros2-topic-pub" class="headerlink" title="3.9 ros2 topic pub"></a>3.9 ros2 topic pub</h3><blockquote>
+<p>命令功能：通过命令行发布指定主题消息<br>命令格式：ros2 topic pub <topic_name> <message_type> <message_content><br>命令示例：ros2 topic pub control_node&#x2F;action  geometry_msgs&#x2F;msg&#x2F;TwistStamped  “{header: {stamp:{sec: 0, nanosec: 0}, frame_id: control_node}, twist: {linear: {x: 0.3, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 0.0}}}”</p>
+</blockquote>
+<h2 id="4-interface相关命令"><a href="#4-interface相关命令" class="headerlink" title="4 interface相关命令"></a>4 interface相关命令</h2><h3 id="4-1-ros2-interface-list"><a href="#4-1-ros2-interface-list" class="headerlink" title="4.1 ros2 interface list"></a>4.1 ros2 interface list</h3><blockquote>
+<p>命令功能：按类显示系统内所有的接口，包括消息（Messages）、服务（Services）、动作（Actions）<br>命令格式：ros2 interface list</p>
+</blockquote>
+<h3 id="4-3-ros2-interface-packages"><a href="#4-3-ros2-interface-packages" class="headerlink" title="4.3  ros2 interface packages"></a>4.3  ros2 interface packages</h3><blockquote>
+<p>命令功能：显示所有接口包<br>命令格式：ros2 interface packages</p>
+</blockquote>
+<h3 id="4-2-ros2-interface-package"><a href="#4-2-ros2-interface-package" class="headerlink" title="4.2 ros2 interface package"></a>4.2 ros2 interface package</h3><blockquote>
+<p>命令功能：显示指定接口包内的子接口<br>命令格式：ros2 interface package <interface_pkg></p>
+</blockquote>
+<h3 id="4-3-ros2-interface-show"><a href="#4-3-ros2-interface-show" class="headerlink" title="4.3 ros2 interface show"></a>4.3 ros2 interface show</h3><blockquote>
+<p>命令功能：显示指定接口的详细内容<br>命令格式：ros2 interface show <interface_name></p>
+</blockquote>
+<h3 id="4-4-ros2-interface-proto"><a href="#4-4-ros2-interface-proto" class="headerlink" title="4.4 ros2 interface proto"></a>4.4 ros2 interface proto</h3><blockquote>
+<p>命令功能：显示消息模板<br>命令格式：ros2 interface proto <message_name></p>
+</blockquote>
 
   </div>
   
@@ -2764,7 +2804,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-08-20T11:24:19+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-08-20T11:34:53+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2023年8月20日</p>
@@ -3966,7 +4006,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"PQ.XIE BLOG","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"PQ.XIE BLOG"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/ROS2基础/","name":"ROS2基础"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/08/19/ROS2基础/4-ROS2命令行汇总/","name":"4-ROS2命令行汇总"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"PQ.XIE BLOG","url":"http://example.com/","keywords":"日常唠嗑","description":"个人博客","author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"个人博客"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"4-ROS2命令行汇总","description":"个人博客","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/08/19/ROS2%E5%9F%BA%E7%A1%80/4-ROS2%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%B1%87%E6%80%BB/"},"author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/08/19/ROS2%E5%9F%BA%E7%A1%80/4-ROS2%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%B1%87%E6%80%BB/","wordCount":0,"datePublished":"2023-08-19T13:16:52.266Z","dateModified":"2023-08-20T03:24:19.634Z","articleSection":"ROS2基础","keywords":"ROS2基础","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"PQ.XIE BLOG","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"PQ.XIE BLOG"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/ROS2基础/","name":"ROS2基础"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/08/19/ROS2基础/4-ROS2命令行汇总/","name":"4-ROS2命令行汇总"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"PQ.XIE BLOG","url":"http://example.com/","keywords":"日常唠嗑","description":"个人博客","author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"个人博客"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"4-ROS2命令行汇总","description":"个人博客","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/08/19/ROS2%E5%9F%BA%E7%A1%80/4-ROS2%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%B1%87%E6%80%BB/"},"author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/08/19/ROS2%E5%9F%BA%E7%A1%80/4-ROS2%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%B1%87%E6%80%BB/","wordCount":0,"datePublished":"2023-08-19T13:16:52.266Z","dateModified":"2023-08-20T03:34:53.881Z","articleSection":"ROS2基础","keywords":"ROS2基础","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
