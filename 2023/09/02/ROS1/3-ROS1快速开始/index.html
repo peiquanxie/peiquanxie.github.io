@@ -5,8 +5,8 @@
   <meta name="Volantis" content="5.8.0">
   <meta charset="utf-8">
   <!-- SEO相关 -->
-  <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="http://example.com/categories/ros2基础/"/>
+  
+  <link rel="canonical" href="http://example.com/2023/09/02/ros1/3-ros1快速开始/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -34,19 +34,21 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>分类：ROS2基础 - PQ.XIE BLOG</title>
-  <meta name="keywords" content="日常唠嗑">
+  <title>3-ROS1快速开始 - PQ.XIE BLOG</title>
+  <meta name="keywords" content="ROS1,日常唠嗑">
   <meta desc name="description" content="个人博客 - PQ.XIE - PQ.XIE BLOG">
   
-<meta property="og:type" content="website">
-<meta property="og:title" content="PQ.XIE BLOG">
-<meta property="og:url" content="http://example.com/categories/ROS2%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="3-ROS1快速开始">
+<meta property="og:url" content="http://example.com/2023/09/02/ROS1/3-ROS1%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B/index.html">
 <meta property="og:site_name" content="PQ.XIE BLOG">
-<meta property="og:description" content="个人博客">
+<meta property="og:description" content="1 创建功能包1.1 创建工作空间123mkdir -p ros_ws&#x2F;srccd ros_ws&#x2F;srccatkin_init_workspace  1.2 创建功能包12catkin_create_pkg hello std_msgs roscpp rospy格式：catkin_create_pkg \&lt;pkg_name\&gt;  \&lt;depend\&gt; \&lt;depend">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+<meta property="article:published_time" content="2023-09-02T15:22:06.702Z">
+<meta property="article:modified_time" content="2023-09-02T15:22:06.754Z">
 <meta property="article:author" content="PQ.XIE">
-<meta property="article:tag" content="日常唠嗑">
+<meta property="article:tag" content="ROS1">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -2503,7 +2505,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="none" class='cover-wrapper  search' style="display: none;">
+      <div id="none" class='cover-wrapper post search' style="display: none;">
         
   <div class='cover-bg lazyload placeholder' data-bg="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/background.jpeg"></div>
 
@@ -2580,37 +2582,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div id="safearea">
         <div class="body-wrapper">
           
-
 <div id="l_main" class=''>
-  
-    
-      
-  <section class="post-list">
-    
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/20/ROS2基础/7-ROS2 通信汇总(Python篇)/">
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/09/02/ROS1/3-ROS1快速开始/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="PQ.XIE BLOG">
   </span>
@@ -2619,471 +2593,276 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <meta itemprop="description" content="个人博客">
   </span>
   
-  
+
+
   
     <span hidden>
       <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
     </span>
   
-  
+  <div class="article-meta" id="top">
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/08/20/ROS2%E5%9F%BA%E7%A1%80/7-ROS2%20%E9%80%9A%E4%BF%A1%E6%B1%87%E6%80%BB(Python%E7%AF%87)/"  itemprop="url">
-        7-ROS2通信汇总(Python篇)
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
     
-      
-        1 topic发布与订阅发布端接口：
-12publisher_ = node.create_publisher(msg_type,&quot;topic_name&quot;, 10) publisher_.publish(msg) 
+    
+      <h1 class="title" itemprop="name headline">
+        3-ROS1快速开始
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' href="/" rel="nofollow">
+    <img itemprop="image" src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/202307251013361.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/202307251013361.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    <p itemprop="name">PQ.XIE</p>
+  </a>
+</div>
 
-订阅者接口：
-1subscribe_ = node.create_subscription(msg_type, &quot;topic_name&quot;...
+          
+        
+          
+            
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/ROS1/" rel="nofollow"><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><p>ROS1</p></a></div>
+  <span hidden itemprop="keywords">ROS1</span>
+
+
+          
+        
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-09-02T23:22:06+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>2023年9月2日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：420 字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：1 分钟</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+
+
+<div class="new-meta-item browse">
+  <a class='notlink'>
+    <p>
+      <i class="fa-solid fa-eye fa-fw" aria-hidden="true"></i>
       
+      <span id="busuanzi_value_page_pv"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+      
+      <span>次</span>
+    </p>
+  </a>
+</div>
+
+
+          
+        
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
+      </div>
     
   </div>
+
+
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    <h2 id="1-创建功能包"><a href="#1-创建功能包" class="headerlink" title="1 创建功能包"></a>1 创建功能包</h2><h3 id="1-1-创建工作空间"><a href="#1-1-创建工作空间" class="headerlink" title="1.1 创建工作空间"></a>1.1 创建工作空间</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p ros_ws/src</span><br><span class="line"><span class="built_in">cd</span> ros_ws/src</span><br><span class="line">catkin_init_workspace</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-2-创建功能包"><a href="#1-2-创建功能包" class="headerlink" title="1.2 创建功能包"></a>1.2 创建功能包</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">catkin_create_pkg hello std_msgs roscpp rospy</span><br><span class="line">格式：catkin_create_pkg \&lt;pkg_name\&gt;  \&lt;depend\&gt; \&lt;depend\&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-3-编译工作空间"><a href="#1-3-编译工作空间" class="headerlink" title="1.3 编译工作空间"></a>1.3 编译工作空间</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ..</span><br><span class="line">catkin_make</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-4-激活环境变量"><a href="#1-4-激活环境变量" class="headerlink" title="1.4 激活环境变量"></a>1.4 激活环境变量</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> devel/setup.bash</span><br></pre></td></tr></table></figure>
+
+<p>注：同一个工作空间不能有同名功能包；不同工作空间可以有同名功能包。</p>
+<h2 id="2-编写CPP节点"><a href="#2-编写CPP节点" class="headerlink" title="2 编写CPP节点"></a>2 编写CPP节点</h2><h3 id="2-1-创建节点文件"><a href="#2-1-创建节点文件" class="headerlink" title="2.1 创建节点文件"></a>2.1 创建节点文件</h3><p>在 ros_ws&#x2F;src&#x2F;hello&#x2F;src 目录下创建hello.cpp 节点文件。</p>
+<h3 id="2-1-节点代码"><a href="#2-1-节点代码" class="headerlink" title="2.1 节点代码"></a>2.1 节点代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;ros/ros.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> **argv)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="comment">// ROS节点初始化</span></span><br><span class="line">  ros::<span class="built_in">init</span>(argc, argv, <span class="string">&quot;hello_node&quot;</span>);</span><br><span class="line">  <span class="comment">// 创建节点句柄</span></span><br><span class="line">  ros::NodeHandle n;</span><br><span class="line">  <span class="built_in">ROS_INFO</span>(<span class="string">&quot;Hello world.&quot;</span>);</span><br><span class="line">  ros::<span class="built_in">spin</span>();</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-2-修改CmakeLists"><a href="#2-2-修改CmakeLists" class="headerlink" title="2.2 修改CmakeLists"></a>2.2 修改CmakeLists</h3><p>修改 ros_ws&#x2F;src&#x2F;hello&#x2F;src&#x2F;CmakeLists，找到以下项，并进行如下修改：</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 编译节点源码，hello_node为节点可执行文件名字，可以与源码指定的节点名字一致</span></span><br><span class="line"><span class="keyword">add_executable</span>(hello_node src/hello.cpp)</span><br><span class="line"></span><br><span class="line"><span class="comment">## 添加链接库</span></span><br><span class="line"><span class="keyword">target_link_libraries</span>(hello_node</span><br><span class="line">  <span class="variable">$&#123;catkin_LIBRARIES&#125;</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-3-编译运行"><a href="#2-3-编译运行" class="headerlink" title="2.3 编译运行"></a>2.3 编译运行</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ros_ws</span><br><span class="line">catkin_make</span><br><span class="line"><span class="built_in">source</span> devel/setup.bash</span><br><span class="line">rosrun hello hello_node</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="3-编写Python节点"><a href="#3-编写Python节点" class="headerlink" title="3 编写Python节点"></a>3 编写Python节点</h2><h3 id="3-1-创建节点文件"><a href="#3-1-创建节点文件" class="headerlink" title="3.1 创建节点文件"></a>3.1 创建节点文件</h3><p>在 ros_ws&#x2F;src&#x2F;hello&#x2F;scripts 目录下创建hello.py节点文件。</p>
+<h3 id="2-1-节点代码-1"><a href="#2-1-节点代码-1" class="headerlink" title="2.1 节点代码"></a>2.1 节点代码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> rospy  </span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># ROS节点初始化</span></span><br><span class="line">    rospy.init_node(<span class="string">&#x27;hello_node_py&#x27;</span>)</span><br><span class="line">    rospy.loginfo(<span class="string">&#x27;hello world.&#x27;</span>)</span><br><span class="line">    rospy.spin()</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-2-修改CmakeLists-1"><a href="#2-2-修改CmakeLists-1" class="headerlink" title="2.2 修改CmakeLists"></a>2.2 修改CmakeLists</h3><p>修改 ros_ws&#x2F;src&#x2F;hello&#x2F;src&#x2F;CmakeLists，找到以下项，并进行如下修改：</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 添加节点python脚本，python无需编译，只需添加到路径即可</span></span><br><span class="line">catkin_install_python(PROGRAMS</span><br><span class="line">  scripts/hello.py</span><br><span class="line">  DESTINATION <span class="variable">$&#123;CATKIN_PACKAGE_BIN_DESTINATION&#125;</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-3-编译运行-1"><a href="#2-3-编译运行-1" class="headerlink" title="2.3 编译运行"></a>2.3 编译运行</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ros_ws</span><br><span class="line">catkin_make</span><br><span class="line"><span class="built_in">source</span> devel/setup.bash</span><br><span class="line">rosrun hello hello.py</span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p><a target="_blank" rel="noopener" href="http://wiki.ros.org/cn/ROS/Tutorials">http://wiki.ros.org/cn/ROS/Tutorials</a></p>
+</blockquote>
+
+  </div>
   
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-08-20T17:29:20+08:00">2023-08-20</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/ROS2%E5%9F%BA%E7%A1%80/">ROS2基础</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/ROS2%E5%9F%BA%E7%A1%80/" itemprop="url"><span itemprop="name">ROS2基础</span></a>
-            </span>
-          
-        
-      </div>
+  
+    
+    <div class='footer'>
+       <!-- 参考资料、相关资料等 -->
       
-        <div>
-          <a class='readmore' href='/2023/08/20/ROS2%E5%9F%BA%E7%A1%80/7-ROS2%20%E9%80%9A%E4%BF%A1%E6%B1%87%E6%80%BB(Python%E7%AF%87)/' itemprop="url">
-            阅读全文
-          </a>
+       <!-- 相关文章 -->
+      
+      <!-- 版权声明组件 -->
+      
+      <!-- 打赏组件 -->
+      
+        <div class='donate'>
+          <div class='imgs'>
+            
+              <img src='https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/%E8%B5%9E%E8%B5%8F%E7%A0%81.JPG'>
+            
+          </div>
         </div>
       
     </div>
-
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-09-02T23:22:06+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2023年9月2日</p>
+  </a>
 </div>
 
-          </div>
         
       
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/20/ROS2基础/6-ROS2 接口介绍/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-    <meta itemprop="description" content="个人博客">
-  </span>
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2023/09/02/ROS1/3-ROS1%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B/&title=3-ROS1快速开始 - PQ.XIE BLOG&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2023/09/02/ROS1/3-ROS1%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B/&title=3-ROS1快速开始 - PQ.XIE BLOG&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2023/09/02/ROS1/3-ROS1%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B/&title=3-ROS1快速开始 - PQ.XIE BLOG&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+        
+      
+    </div>
+    <!-- Custom Files bottomMeta begin -->
+    
+    <!-- Custom Files bottomMeta end -->
+  </div>
+
+
   
   
+
   
+    <div class="prev-next">
+      
+      
+        <a class='next' href='/2023/08/20/ROS2%E5%9F%BA%E7%A1%80/7-ROS2%20%E9%80%9A%E4%BF%A1%E6%B1%87%E6%80%BB(Python%E7%AF%87)/'>
+          <p class='title'>7-ROS2通信汇总(Python篇)<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>1 topic发布与订阅发布端接口：
+12publisher_ = node.create_publisher(msg_type,&quot;topic_name&quot;, 10) publ...</p>
+        </a>
+      
+    </div>
+  
+  <!-- Custom Files postEnd begin-->
+  
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> 
+  <!-- Custom Files postEnd end-->
+</article>
+
+
+  
+
+
+  <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+      <meta itemprop="discussionUrl" content="/2023/09/02/ROS1/3-ROS1%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B/index.html#comments">
     </span>
-  
-  
+    <p ct><i class='fas fa-comments'></i> 评论区</p>
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/08/20/ROS2%E5%9F%BA%E7%A1%80/6-ROS2%20%E6%8E%A5%E5%8F%A3%E4%BB%8B%E7%BB%8D/"  itemprop="url">
-        6-ROS2 接口介绍
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        ROS2提供了四种通信方式，包括：话题（topic）、服务（service）、动作（action）和 参数（parameter）。通信会涉及到接口，我们可以通过 ros2 interface list 列出ROS2提供的所有接口，通过 ros2 interface show &lt;interface_name&gt; 或  ros2 interface proto &lt;message_...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-08-20T17:29:20+08:00">2023-08-20</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/ROS2%E5%9F%BA%E7%A1%80/">ROS2基础</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/ROS2%E5%9F%BA%E7%A1%80/" itemprop="url"><span itemprop="name">ROS2基础</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/08/20/ROS2%E5%9F%BA%E7%A1%80/6-ROS2%20%E6%8E%A5%E5%8F%A3%E4%BB%8B%E7%BB%8D/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
 
-  
+    <div id="layoutHelper-comments"></div>
 
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/20/ROS2基础/5-ROS2创建第一个节点/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-    <meta itemprop="description" content="个人博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/08/20/ROS2%E5%9F%BA%E7%A1%80/5-ROS2%E5%88%9B%E5%BB%BA%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%8A%82%E7%82%B9/"  itemprop="url">
-        5-ROS2创建第一个节点
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        1 创建cpp节点1.1 创建工作空间1mkdir -p workspace/src/
-
-1.2 创建功能包12cd workspace/srcros2 pkg create example_cpp --build-type ament_cmake --dependencies rclcpp
-
-此时可以看到ROS2为我们创建了example_cpp文件夹，且该文件夹下包含include、sr...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-08-20T17:29:19+08:00">2023-08-20</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/ROS2%E5%9F%BA%E7%A1%80/">ROS2基础</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/ROS2%E5%9F%BA%E7%A1%80/" itemprop="url"><span itemprop="name">ROS2基础</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/08/20/ROS2%E5%9F%BA%E7%A1%80/5-ROS2%E5%88%9B%E5%BB%BA%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%8A%82%E7%82%B9/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/20/ROS2基础/4-ROS2命令行汇总/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-    <meta itemprop="description" content="个人博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/08/20/ROS2%E5%9F%BA%E7%A1%80/4-ROS2%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%B1%87%E6%80%BB/"  itemprop="url">
-        4-ROS2命令行汇总
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        0 节点运行命令
-命令格式： ros2 run  &lt;package_name&gt;  &lt;node_name&gt;
-
-1 pkg相关命令1.1 ros2 pkg create
-命令功能：创建功能包并指定包相关参数命令格式：ros2 pkg create &lt;pkgname&gt; –build-type &lt;ament_python&gt; –node-name &lt...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-08-20T17:29:19+08:00">2023-08-20</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/ROS2%E5%9F%BA%E7%A1%80/">ROS2基础</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/ROS2%E5%9F%BA%E7%A1%80/" itemprop="url"><span itemprop="name">ROS2基础</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/08/20/ROS2%E5%9F%BA%E7%A1%80/4-ROS2%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%B1%87%E6%80%BB/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/20/ROS2基础/3-ROS2系统架构/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-    <meta itemprop="description" content="个人博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/08/20/ROS2%E5%9F%BA%E7%A1%80/3-ROS2%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84/"  itemprop="url">
-        3-ROS2系统架构
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        1 ROS2总体架构图
-1.1 DDS实现层DDS，全称 Data Distribution Service (数据分发服务)。是由对象管理组 (OMG) 于 2003 年发布并于 2007 年修订的开分布式系统标准。通过类似于ROS中的话题发布和订阅形式来进行通信，同时提供了丰富的服务质量管理来保证可靠性、持久性、传输设置等。
-DDS实现层其实就是对不同常见的DDS接口进行再次的封装，让其...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-08-20T17:29:19+08:00">2023-08-20</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/ROS2%E5%9F%BA%E7%A1%80/">ROS2基础</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/ROS2%E5%9F%BA%E7%A1%80/" itemprop="url"><span itemprop="name">ROS2基础</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/08/20/ROS2%E5%9F%BA%E7%A1%80/3-ROS2%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/20/ROS2基础/2-ROS2安装(X86篇)/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-    <meta itemprop="description" content="个人博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/08/20/ROS2%E5%9F%BA%E7%A1%80/2-ROS2%E5%AE%89%E8%A3%85(X86%E7%AF%87)/"  itemprop="url">
-        2-ROS2安装(X86篇)
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        本篇安装环境如下：
-CPU架构：amd_64操作系统：ubuntu20.04
-1 更换镜像源（可选）更换镜像源可以加速各种依赖库下载速度，这里提供常用的 ubuntu镜像源 和 pip源。
-1.1 更换ubuntu镜像源这里采用清华源，同学们可到该网站  https://mirror.tuna.tsinghua.edu.cn/help/ubuntu/ 寻找自己系统版本对应的源。需要注意的是，...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-08-20T17:29:18+08:00">2023-08-20</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/ROS2%E5%9F%BA%E7%A1%80/">ROS2基础</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/ROS2%E5%9F%BA%E7%A1%80/" itemprop="url"><span itemprop="name">ROS2基础</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/08/20/ROS2%E5%9F%BA%E7%A1%80/2-ROS2%E5%AE%89%E8%A3%85(X86%E7%AF%87)/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/20/ROS2基础/1-ROS2安装(armhf篇)/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-    <meta itemprop="description" content="个人博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/08/20/ROS2%E5%9F%BA%E7%A1%80/1-ROS2%E5%AE%89%E8%A3%85(armhf%E7%AF%87)/"  itemprop="url">
-        1-ROS2安装(armhf篇)
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        由于ROS官方并没有提供armhf CPU架构的ROS2二进制安装文件，本篇整理了从ROS2源码编译安装的方法。本篇安装环境如下：
-CPU架构：armv7l操作系统：ubuntu20.04
-1 更换镜像源（可选）更换镜像源可以加速各种依赖库下载速度，这里提供常用的 ubuntu镜像源 和 pip源。
-1.1 更换ubuntu镜像源这里采用清华源，同学们可到该网站  https://mirro...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-08-20T17:29:18+08:00">2023-08-20</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/ROS2%E5%9F%BA%E7%A1%80/">ROS2基础</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/ROS2%E5%9F%BA%E7%A1%80/" itemprop="url"><span itemprop="name">ROS2基础</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/08/20/ROS2%E5%9F%BA%E7%A1%80/1-ROS2%E5%AE%89%E8%A3%85(armhf%E7%AF%87)/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-
-  
-
-</div>
-
-          </div>
-        
-      
-    
-  </section>
-  
-    
-  
+  </article>
 
 
-    
-  
+
+
+
+
 </div>
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   
@@ -3092,232 +2871,48 @@ CPU架构：armv7l操作系统：ubuntu20.04
     
     
       
-<section class="widget blogger desktop pjax">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box circle' href='/about/'>
-          <img no-lazy src='https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/touxiang.jpg'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-        
-        
-          <p><span id="jinrishici-sentence">PQ.XIE BLOG</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:212951692@qq.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://gitee.com/xie-peiquan"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://t1.kugou.com/dER5jedBdV2"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
-
-    
-  
-
-  
-    
-    
-      
-  
-  <section class="widget category desktop pjax">
-    
-  <header>
-    
-      <a href='/categories/'><i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/Pytorch%E5%9F%BA%E7%A1%80/" href="/categories/Pytorch%E5%9F%BA%E7%A1%80/"
-            active-action="action-categoriesPytorchE59FBAE7A180"
-            ><div class='name'>Pytorch基础</div><div class='badge'>(5)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/ROS1/" href="/categories/ROS1/"
-            active-action="action-categoriesROS1"
-            ><div class='name'>ROS1</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/ROS2%E5%9F%BA%E7%A1%80/" href="/categories/ROS2%E5%9F%BA%E7%A1%80/"
-            active-action="action-categoriesROS2E59FBAE7A180"
-            ><div class='name'>ROS2基础</div><div class='badge'>(7)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%93%B2%E5%AD%A6%E7%AC%94%E8%AE%B0/" href="/categories/%E5%93%B2%E5%AD%A6%E7%AC%94%E8%AE%B0/"
-            active-action="action-categoriesE593B2E5ADA6E7AC94E8AEB0"
-            ><div class='name'>哲学笔记</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%BB%BA%E7%AB%99/" href="/categories/%E5%BB%BA%E7%AB%99/"
-            active-action="action-categoriesE5BBBAE7AB99"
-            ><div class='name'>建站</div><div class='badge'>(1)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
-
-
-    
-  
-
-  
-    
-    
-      
-<section class="widget desktop pjax">
-  
-  <header>
-    
-      <i class="fa-solid fa-award fa-fw" aria-hidden="true"></i><span class='name'>站点信息</span>
-    
-  </header>
-
-
-  <div class='content'>
-    <div class="webinfo">
-      
-        <div class="webinfo-item">
-          <div>文章数目：</div>
-          <div>15 篇</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>已运行时间：</div>
-          <div id="webinfo-runtime-count"></div>
-        </div>
-      
-
-
-      
-        <div class="webinfo-item">
-          <div>本站总字数：</div>
-          <div>10.4k 字</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>本站访客数：</div>
-          
-          <div><span id="busuanzi_value_site_uv"><i class="fa-solid fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 人</div>
-          
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>本站总访问量：</div>
-          
-          <div><span id="busuanzi_value_site_pv"><i class="fa-solid fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 次</div>
-          
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>最后活动时间：</div>
-          <div id="last-update-show">2023-09-02 日</div>
-        </div>
-      
-    </div>
-  </div>
-</section>
-
-    
-  
-
-  
-    
-    
-      
-
-  <section class='widget desktop  music'>
-    
-
-    <div class='content'>
-      
-
-  
-    <meting-js
-      theme='#1BCDFC'
-      autoplay='false'
-      volume='0.7'
-      loop='all'
-      order='random'
-      fixed='false'
-      list-max-height='320px'
-      server='tencent'
-      type='playlist'
-      id='8969031959'
-      list-folded='true'>
-    </meting-js>
-  
-
-
-    </div>
-  </section>
-
-
     
   
 
 
 <div class="widget-sticky pjax">
 
+  
+  
+
+
+  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
+    
+  <header>
+    
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%88%9B%E5%BB%BA%E5%8A%9F%E8%83%BD%E5%8C%85"><span class="toc-text">1 创建功能包</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E5%88%9B%E5%BB%BA%E5%B7%A5%E4%BD%9C%E7%A9%BA%E9%97%B4"><span class="toc-text">1.1 创建工作空间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E5%88%9B%E5%BB%BA%E5%8A%9F%E8%83%BD%E5%8C%85"><span class="toc-text">1.2 创建功能包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-%E7%BC%96%E8%AF%91%E5%B7%A5%E4%BD%9C%E7%A9%BA%E9%97%B4"><span class="toc-text">1.3 编译工作空间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-%E6%BF%80%E6%B4%BB%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-text">1.4 激活环境变量</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E7%BC%96%E5%86%99CPP%E8%8A%82%E7%82%B9"><span class="toc-text">2 编写CPP节点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E5%88%9B%E5%BB%BA%E8%8A%82%E7%82%B9%E6%96%87%E4%BB%B6"><span class="toc-text">2.1 创建节点文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E8%8A%82%E7%82%B9%E4%BB%A3%E7%A0%81"><span class="toc-text">2.1 节点代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E4%BF%AE%E6%94%B9CmakeLists"><span class="toc-text">2.2 修改CmakeLists</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-%E7%BC%96%E8%AF%91%E8%BF%90%E8%A1%8C"><span class="toc-text">2.3 编译运行</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E7%BC%96%E5%86%99Python%E8%8A%82%E7%82%B9"><span class="toc-text">3 编写Python节点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E5%88%9B%E5%BB%BA%E8%8A%82%E7%82%B9%E6%96%87%E4%BB%B6"><span class="toc-text">3.1 创建节点文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E8%8A%82%E7%82%B9%E4%BB%A3%E7%A0%81-1"><span class="toc-text">2.1 节点代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E4%BF%AE%E6%94%B9CmakeLists-1"><span class="toc-text">2.2 修改CmakeLists</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-%E7%BC%96%E8%AF%91%E8%BF%90%E8%A1%8C-1"><span class="toc-text">2.3 编译运行</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
+  
+
 </div>
 
 
 <!-- 没有 pjax 占位会报错 万恶的 pjax -->
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
 
   <div class="pjax">
     <!-- pjax占位 -->
@@ -3345,13 +2940,14 @@ CPU架构：armv7l操作系统：ubuntu20.04
 </aside>
 
 
+
           <!--此文件用来存放一些不方便取值的变量-->
 <!--思路大概是将值藏到重加载的区域内-->
 
 <pjax>
 <script>
   window.pdata={}
-  pdata.ispage=false;
+  pdata.ispage=true;
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -4351,7 +3947,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"PQ.XIE BLOG","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"PQ.XIE BLOG"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/ROS2基础/","name":"ROS2基础"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"PQ.XIE BLOG","url":"http://example.com/","keywords":"日常唠嗑","description":"个人博客","author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"个人博客"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"个人博客","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"PQ.XIE BLOG","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"PQ.XIE BLOG"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/ROS1/","name":"ROS1"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/09/02/ROS1/3-ROS1快速开始/","name":"3-ROS1快速开始"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"PQ.XIE BLOG","url":"http://example.com/","keywords":"日常唠嗑","description":"个人博客","author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"个人博客"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"3-ROS1快速开始","description":"个人博客","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/09/02/ROS1/3-ROS1%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B/"},"author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/09/02/ROS1/3-ROS1%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B/","wordCount":0,"datePublished":"2023-09-02T15:22:06.702Z","dateModified":"2023-09-02T15:22:06.754Z","articleSection":"ROS1","keywords":"ROS1","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
