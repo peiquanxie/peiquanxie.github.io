@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="http://example.com/2023/09/02/ros1/3-ros1快速开始/"/>
+  <link rel="canonical" href="http://example.com/2023/09/03/ros1/4-topic通信机制简汇/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -34,19 +34,19 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>3-ROS1快速开始 - PQ.XIE BLOG</title>
+  <title>4-topic通信机制简汇 - PQ.XIE BLOG</title>
   <meta name="keywords" content="ROS1,日常唠嗑">
   <meta desc name="description" content="个人博客 - PQ.XIE - PQ.XIE BLOG">
   
 <meta property="og:type" content="article">
-<meta property="og:title" content="3-ROS1快速开始">
-<meta property="og:url" content="http://example.com/2023/09/02/ROS1/3-ROS1%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B/index.html">
+<meta property="og:title" content="4-topic通信机制简汇">
+<meta property="og:url" content="http://example.com/2023/09/03/ROS1/4-topic%E9%80%9A%E4%BF%A1%E6%9C%BA%E5%88%B6%E7%AE%80%E6%B1%87/index.html">
 <meta property="og:site_name" content="PQ.XIE BLOG">
-<meta property="og:description" content="1 创建功能包1.1 创建工作空间123mkdir -p ros_ws&#x2F;srccd ros_ws&#x2F;srccatkin_init_workspace  1.2 创建功能包12catkin_create_pkg hello std_msgs roscpp rospy格式：catkin_create_pkg \&lt;pkg_name\&gt;  \&lt;depend\&gt; \&lt;depend">
+<meta property="og:description" content="1 Publisher（CPP）12345678910111213141516171819202122232425262728#include &lt;ros&#x2F;ros.h&gt;#include &lt;geometry_msgs&#x2F;Twist.h&gt;int main(int argc, char **argv)&amp;#123;    &#x2F;&#x2F; ROS节点初始化    ros::init(argc, a">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2023-09-02T15:22:06.702Z">
-<meta property="article:modified_time" content="2023-09-02T15:22:06.754Z">
+<meta property="article:published_time" content="2023-09-03T04:02:50.574Z">
+<meta property="article:modified_time" content="2023-09-03T04:02:50.626Z">
 <meta property="article:author" content="PQ.XIE">
 <meta property="article:tag" content="ROS1">
 <meta name="twitter:card" content="summary">
@@ -1801,7 +1801,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1693668621804),
+    lastupdate: new Date(1693713784858),
     sidebar: {
       for_page: ["blogger","category","webinfo","music"],
       for_post: ["toc"],
@@ -2584,7 +2584,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 <div id="l_main" class=''>
   <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/09/02/ROS1/3-ROS1快速开始/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/09/03/ROS1/4-topic通信机制简汇/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="PQ.XIE BLOG">
   </span>
@@ -2605,7 +2605,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title" itemprop="name headline">
-        3-ROS1快速开始
+        4-topic通信机制简汇
       </h1>
       <div class='new-meta-box'>
         
@@ -2630,10 +2630,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-09-02T23:22:06+08:00">
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-09-03T12:02:50+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>2023年9月2日</p>
+    <p>2023年9月3日</p>
   </a>
 </div>
 
@@ -2644,13 +2644,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：420 字</p>
+      <p>字数：907 字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：1 分钟</p>
+      <p>时长：4 分钟</p>
     </a>
   </div>
 
@@ -2688,38 +2688,42 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h2 id="1-创建功能包"><a href="#1-创建功能包" class="headerlink" title="1 创建功能包"></a>1 创建功能包</h2><h3 id="1-1-创建工作空间"><a href="#1-1-创建工作空间" class="headerlink" title="1.1 创建工作空间"></a>1.1 创建工作空间</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p ros_ws/src</span><br><span class="line"><span class="built_in">cd</span> ros_ws/src</span><br><span class="line">catkin_init_workspace</span><br></pre></td></tr></table></figure>
+    <h2 id="1-Publisher（CPP）"><a href="#1-Publisher（CPP）" class="headerlink" title="1 Publisher（CPP）"></a>1 Publisher（CPP）</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;ros/ros.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;geometry_msgs/Twist.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> **argv)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// ROS节点初始化</span></span><br><span class="line">    ros::<span class="built_in">init</span>(argc, argv, <span class="string">&quot;publisher&quot;</span>);</span><br><span class="line">    <span class="comment">// 创建节点句柄</span></span><br><span class="line">    ros::NodeHandle n;</span><br><span class="line">    <span class="comment">// 创建一个Publisher，发布名为/turtle1/cmd_vel的topic，消息类型为geometry_msgs::Twist，队列长度10</span></span><br><span class="line">    ros::Publisher = n.<span class="built_in">advertise</span>&lt;geometry_msgs::Twist&gt;(<span class="string">&quot;/turtle1/cmd_vel&quot;</span>, <span class="number">10</span>);</span><br><span class="line">    <span class="comment">// 设置循环的频率</span></span><br><span class="line">    <span class="function">ros::Rate <span class="title">loop_rate</span><span class="params">(<span class="number">10</span>)</span></span>;</span><br><span class="line">    <span class="keyword">while</span> (ros::<span class="built_in">ok</span>())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 初始化geometry_msgs::Twist类型的消息</span></span><br><span class="line">        geometry_msgs::Twist vel_msg;</span><br><span class="line">        vel_msg.linear.x = <span class="number">0.5</span>;</span><br><span class="line">        vel_msg.angular.z = <span class="number">0.2</span>;</span><br><span class="line">        <span class="comment">// 发布消息</span></span><br><span class="line">        turtle_vel_pub.<span class="built_in">publish</span>(vel_msg);</span><br><span class="line">        <span class="built_in">ROS_INFO</span>(<span class="string">&quot;Publsh turtle velocity command[%0.2f m/s, %0.2f rad/s]&quot;</span>, </span><br><span class="line">                 vel_msg.linear.x, vel_msg.angular.z);</span><br><span class="line">        <span class="comment">// 按照循环频率延时</span></span><br><span class="line">        loop_rate.<span class="built_in">sleep</span>();</span><br><span class="line">    &#125;</span><br><span class="line"> 	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="1-2-创建功能包"><a href="#1-2-创建功能包" class="headerlink" title="1.2 创建功能包"></a>1.2 创建功能包</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">catkin_create_pkg hello std_msgs roscpp rospy</span><br><span class="line">格式：catkin_create_pkg \&lt;pkg_name\&gt;  \&lt;depend\&gt; \&lt;depend\&gt;</span><br></pre></td></tr></table></figure>
+<p>cmake修改：在CmakeLists最底部添加如下修改：</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">add_executable</span>(publisher src/publisher.cpp)</span><br><span class="line"><span class="keyword">target_link_libraries</span>(publisher</span><br><span class="line">  <span class="variable">$&#123;catkin_LIBRARIES&#125;</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 
-<h3 id="1-3-编译工作空间"><a href="#1-3-编译工作空间" class="headerlink" title="1.3 编译工作空间"></a>1.3 编译工作空间</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ..</span><br><span class="line">catkin_make</span><br></pre></td></tr></table></figure>
+<h2 id="2-Publisher（Python）"><a href="#2-Publisher（Python）" class="headerlink" title="2 Publisher（Python）"></a>2 Publisher（Python）</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> rospy</span><br><span class="line"><span class="keyword">from</span> geometry_msgs.msg <span class="keyword">import</span> Twist</span><br><span class="line"></span><br><span class="line"><span class="comment"># ROS节点初始化</span></span><br><span class="line">rospy.init_node(<span class="string">&#x27;publisher&#x27;</span>, anonymous=<span class="literal">True</span>)</span><br><span class="line"><span class="comment"># 创建一个Publisher，发布名为/turtle1/cmd_vel的topic，消息类型为geometry_msgs::Twist，队列长度10</span></span><br><span class="line">turtle_vel_pub = rospy.Publisher(<span class="string">&#x27;/turtle1/cmd_vel&#x27;</span>, Twist, queue_size=<span class="number">10</span>)</span><br><span class="line"><span class="comment">#设置循环的频率</span></span><br><span class="line">rate = rospy.Rate(<span class="number">10</span>) </span><br><span class="line"><span class="keyword">while</span> <span class="keyword">not</span> rospy.is_shutdown():</span><br><span class="line">    <span class="comment"># 初始化geometry_msgs::Twist类型的消息</span></span><br><span class="line">    vel_msg = Twist()</span><br><span class="line">    vel_msg.linear.x = <span class="number">0.5</span></span><br><span class="line">    vel_msg.angular.z = <span class="number">0.2</span></span><br><span class="line">    <span class="comment"># 发布消息</span></span><br><span class="line">    turtle_vel_pub.publish(vel_msg)</span><br><span class="line">    rospy.loginfo(<span class="string">&quot;Publsh turtle velocity command[%0.2f m/s, %0.2f rad/s]&quot;</span>, </span><br><span class="line">                  vel_msg.linear.x, vel_msg.angular.z)</span><br><span class="line">    rate.sleep()</span><br></pre></td></tr></table></figure>
 
-<h3 id="1-4-激活环境变量"><a href="#1-4-激活环境变量" class="headerlink" title="1.4 激活环境变量"></a>1.4 激活环境变量</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> devel/setup.bash</span><br></pre></td></tr></table></figure>
+<p>cmake修改：找到catkin_install_python项，添加脚本。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">catkin_install_python(PROGRAMS</span><br><span class="line">  scripts/publisher.py</span><br><span class="line">  DESTINATION $&#123;CATKIN_PACKAGE_BIN_DESTINATION&#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 
-<p>注：同一个工作空间不能有同名功能包；不同工作空间可以有同名功能包。</p>
-<h2 id="2-编写CPP节点"><a href="#2-编写CPP节点" class="headerlink" title="2 编写CPP节点"></a>2 编写CPP节点</h2><h3 id="2-1-创建节点文件"><a href="#2-1-创建节点文件" class="headerlink" title="2.1 创建节点文件"></a>2.1 创建节点文件</h3><p>在 ros_ws&#x2F;src&#x2F;hello&#x2F;src 目录下创建hello.cpp 节点文件。</p>
-<h3 id="2-1-节点代码"><a href="#2-1-节点代码" class="headerlink" title="2.1 节点代码"></a>2.1 节点代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;ros/ros.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> **argv)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="comment">// ROS节点初始化</span></span><br><span class="line">  ros::<span class="built_in">init</span>(argc, argv, <span class="string">&quot;hello_node&quot;</span>);</span><br><span class="line">  <span class="comment">// 创建节点句柄</span></span><br><span class="line">  ros::NodeHandle n;</span><br><span class="line">  <span class="built_in">ROS_INFO</span>(<span class="string">&quot;Hello world.&quot;</span>);</span><br><span class="line">  ros::<span class="built_in">spin</span>();</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3-Subscriber（C-）"><a href="#3-Subscriber（C-）" class="headerlink" title="3 Subscriber（C++）"></a>3 Subscriber（C++）</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;ros/ros.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;turtlesim/Pose.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 接收到订阅的消息后，会进入消息回调函数</span></span><br><span class="line"><span class="comment">// turtlesim::Pose为消息类型，来源于 #include &quot;turtlesim/Pose.h&quot;</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">poseCallback</span><span class="params">(<span class="type">const</span> turtlesim::Pose::ConstPtr&amp; msg)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// 将接收到的消息打印出来</span></span><br><span class="line">    <span class="built_in">ROS_INFO</span>(<span class="string">&quot;Turtle pose: x:%0.6f, y:%0.6f&quot;</span>, msg-&gt;x, msg-&gt;y);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> **argv)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// 初始化ROS节点</span></span><br><span class="line">    ros::<span class="built_in">init</span>(argc, argv, <span class="string">&quot;subscriber&quot;</span>);</span><br><span class="line">    <span class="comment">// 创建节点句柄</span></span><br><span class="line">    ros::NodeHandle n;</span><br><span class="line">    <span class="comment">// 创建一个Subscriber，订阅名为/turtle1/pose的topic，注册回调函数poseCallback</span></span><br><span class="line">    ros::Subscriber pose_sub = n.<span class="built_in">subscribe</span>(<span class="string">&quot;/turtle1/pose&quot;</span>, <span class="number">10</span>, poseCallback);</span><br><span class="line">    <span class="comment">// 循环等待回调函数</span></span><br><span class="line">    ros::<span class="built_in">spin</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<h3 id="2-2-修改CmakeLists"><a href="#2-2-修改CmakeLists" class="headerlink" title="2.2 修改CmakeLists"></a>2.2 修改CmakeLists</h3><p>修改 ros_ws&#x2F;src&#x2F;hello&#x2F;src&#x2F;CmakeLists，找到以下项，并进行如下修改：</p>
-<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 编译节点源码，hello_node为节点可执行文件名字，可以与源码指定的节点名字一致</span></span><br><span class="line"><span class="keyword">add_executable</span>(hello_node src/hello.cpp)</span><br><span class="line"></span><br><span class="line"><span class="comment">## 添加链接库</span></span><br><span class="line"><span class="keyword">target_link_libraries</span>(hello_node</span><br><span class="line">  <span class="variable">$&#123;catkin_LIBRARIES&#125;</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>cmake修改：在CmakeLists最底部添加如下修改：</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">add_executable</span>(subscriber src/subscriber.cpp)</span><br><span class="line"><span class="keyword">target_link_libraries</span>(subscriber</span><br><span class="line">  <span class="variable">$&#123;catkin_LIBRARIES&#125;</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 
-<h3 id="2-3-编译运行"><a href="#2-3-编译运行" class="headerlink" title="2.3 编译运行"></a>2.3 编译运行</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ros_ws</span><br><span class="line">catkin_make</span><br><span class="line"><span class="built_in">source</span> devel/setup.bash</span><br><span class="line">rosrun hello hello_node</span><br></pre></td></tr></table></figure>
+<h2 id="4-Subscriber（Python）"><a href="#4-Subscriber（Python）" class="headerlink" title="4 Subscriber（Python）"></a>4 Subscriber（Python）</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> rospy</span><br><span class="line"><span class="keyword">from</span> turtlesim.msg <span class="keyword">import</span> Pose</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">poseCallback</span>(<span class="params">msg</span>):</span><br><span class="line">    rospy.loginfo(<span class="string">&quot;Turtle pose: x:%0.6f, y:%0.6f&quot;</span>, msg.x, msg.y)</span><br><span class="line"></span><br><span class="line"><span class="comment"># ROS节点初始化</span></span><br><span class="line">rospy.init_node(<span class="string">&#x27;subscriber&#x27;</span>, anonymous=<span class="literal">True</span>)</span><br><span class="line"><span class="comment"># 创建一个Subscriber，订阅名为/turtle1/pose的topic，注册回调函数poseCallback</span></span><br><span class="line"><span class="comment"># Pose为消息类型，来源于 from turtlesim.msg import Pose</span></span><br><span class="line">rospy.Subscriber(<span class="string">&quot;/turtle1/pose&quot;</span>, Pose, poseCallback)</span><br><span class="line"><span class="comment"># 循环等待回调函数</span></span><br><span class="line">rospy.spin()</span><br></pre></td></tr></table></figure>
 
+<p>cmake修改：找到catkin_install_python项，添加脚本。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">catkin_install_python(PROGRAMS</span><br><span class="line">  scripts/subscriber.py</span><br><span class="line">  DESTINATION $&#123;CATKIN_PACKAGE_BIN_DESTINATION&#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 
+<h2 id="5-自定义接口"><a href="#5-自定义接口" class="headerlink" title="5 自定义接口"></a>5 自定义接口</h2><h3 id="5-1-msg文件编写"><a href="#5-1-msg文件编写" class="headerlink" title="5.1 msg文件编写"></a>5.1 msg文件编写</h3><p>在 ros_ws&#x2F;src&#x2F;hello&#x2F;msg目录下创建 Person.msg 接口文件，注意首字母必须大写。接口示例如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">string name</span><br><span class="line">uint8  sex</span><br><span class="line">uint8  age</span><br><span class="line"></span><br><span class="line"># 以下相当于宏</span><br><span class="line">uint8 unknown = <span class="number">0</span></span><br><span class="line">uint8 male = <span class="number">1</span></span><br><span class="line">uint8 female = <span class="number">2</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="3-编写Python节点"><a href="#3-编写Python节点" class="headerlink" title="3 编写Python节点"></a>3 编写Python节点</h2><h3 id="3-1-创建节点文件"><a href="#3-1-创建节点文件" class="headerlink" title="3.1 创建节点文件"></a>3.1 创建节点文件</h3><p>在 ros_ws&#x2F;src&#x2F;hello&#x2F;scripts 目录下创建hello.py节点文件。</p>
-<h3 id="2-1-节点代码-1"><a href="#2-1-节点代码-1" class="headerlink" title="2.1 节点代码"></a>2.1 节点代码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> rospy  </span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># ROS节点初始化</span></span><br><span class="line">    rospy.init_node(<span class="string">&#x27;hello_node_py&#x27;</span>)</span><br><span class="line">    rospy.loginfo(<span class="string">&#x27;hello world.&#x27;</span>)</span><br><span class="line">    rospy.spin()</span><br></pre></td></tr></table></figure>
+<p>编译修改：</p>
+<ul>
+<li><p>CMakeLists修改：在对应位置进行如下修改：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">find_package(......  message_generation)</span><br><span class="line">add_message_files(FILES Person.msg)</span><br><span class="line">generate_messages(DEPENDENCIES  std_msgs)</span><br><span class="line">catkin_package(...... message_runtime)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>package.xml修改：在对应位置添加如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;build_depend&gt;message_generation&lt;/build_depend&gt;</span><br><span class="line">&lt;exec_depend&gt;message_runtime&lt;/exec_depend&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>自定义接口需经过编译形成C++和Python的引用文件，可以在devel&#x2F;include里面找到C++所需的.h接口文件。</p>
+<h3 id="5-2-发布-订阅代码编写"><a href="#5-2-发布-订阅代码编写" class="headerlink" title="5.2 发布&#x2F;订阅代码编写"></a>5.2 发布&#x2F;订阅代码编写</h3><p>发布&#x2F;订阅代码与前几节几乎一模一样，这里不再赘述。对于接口里面的宏的引用，在C++里面这样引用：learning_topic::Person::male;   Python里面这样引用：Person.male 。</p>
+<p><strong>编译修改：</strong><br>由于应用代码对接口产生依赖，因此在编译应用代码时，也应添加相应的依赖（Python不需要）：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">add_dependencies(person_subscriber $&#123;PROJECT_NAME&#125;_generate_messages_cpp)</span><br></pre></td></tr></table></figure>
 
-<h3 id="2-2-修改CmakeLists-1"><a href="#2-2-修改CmakeLists-1" class="headerlink" title="2.2 修改CmakeLists"></a>2.2 修改CmakeLists</h3><p>修改 ros_ws&#x2F;src&#x2F;hello&#x2F;src&#x2F;CmakeLists，找到以下项，并进行如下修改：</p>
-<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 添加节点python脚本，python无需编译，只需添加到路径即可</span></span><br><span class="line">catkin_install_python(PROGRAMS</span><br><span class="line">  scripts/hello.py</span><br><span class="line">  DESTINATION <span class="variable">$&#123;CATKIN_PACKAGE_BIN_DESTINATION&#125;</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-3-编译运行-1"><a href="#2-3-编译运行-1" class="headerlink" title="2.3 编译运行"></a>2.3 编译运行</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ros_ws</span><br><span class="line">catkin_make</span><br><span class="line"><span class="built_in">source</span> devel/setup.bash</span><br><span class="line">rosrun hello hello.py</span><br></pre></td></tr></table></figure>
-
-
-
-<blockquote>
-<p><a target="_blank" rel="noopener" href="http://wiki.ros.org/cn/ROS/Tutorials">http://wiki.ros.org/cn/ROS/Tutorials</a></p>
-</blockquote>
 
   </div>
   
@@ -2752,10 +2756,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-09-02T23:22:06+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-09-03T12:02:50+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2023年9月2日</p>
+    <p>更新于：2023年9月3日</p>
   </a>
 </div>
 
@@ -2769,7 +2773,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2023/09/02/ROS1/3-ROS1%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B/&title=3-ROS1快速开始 - PQ.XIE BLOG&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2023/09/03/ROS1/4-topic%E9%80%9A%E4%BF%A1%E6%9C%BA%E5%88%B6%E7%AE%80%E6%B1%87/&title=4-topic通信机制简汇 - PQ.XIE BLOG&summary="
           
           >
           
@@ -2781,7 +2785,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2023/09/02/ROS1/3-ROS1%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B/&title=3-ROS1快速开始 - PQ.XIE BLOG&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2023/09/03/ROS1/4-topic%E9%80%9A%E4%BF%A1%E6%9C%BA%E5%88%B6%E7%AE%80%E6%B1%87/&title=4-topic通信机制简汇 - PQ.XIE BLOG&summary="
           
           >
           
@@ -2793,7 +2797,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2023/09/02/ROS1/3-ROS1%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B/&title=3-ROS1快速开始 - PQ.XIE BLOG&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2023/09/03/ROS1/4-topic%E9%80%9A%E4%BF%A1%E6%9C%BA%E5%88%B6%E7%AE%80%E6%B1%87/&title=4-topic通信机制简汇 - PQ.XIE BLOG&summary="
           
           >
           
@@ -2829,10 +2833,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class="prev-next">
       
       
-        <a class='next' href='/2023/08/20/ROS2%E5%9F%BA%E7%A1%80/7-ROS2%20%E9%80%9A%E4%BF%A1%E6%B1%87%E6%80%BB(Python%E7%AF%87)/'>
-          <p class='title'>7-ROS2通信汇总(Python篇)<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>1 topic发布与订阅发布端接口：
-12publisher_ = node.create_publisher(msg_type,&quot;topic_name&quot;, 10) publ...</p>
+        <a class='next' href='/2023/09/03/ROS1/3-ROS1%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B/'>
+          <p class='title'>3-ROS1快速开始<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>1 创建功能包1.1 创建工作空间123mkdir -p ros_ws/srccd ros_ws/srccatkin_init_workspace
+
+1.2 创建功能包12catkin_crea...</p>
         </a>
       
     </div>
@@ -2849,7 +2854,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="discussionUrl" content="/2023/09/02/ROS1/3-ROS1%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B/index.html#comments">
+      <meta itemprop="discussionUrl" content="/2023/09/03/ROS1/4-topic%E9%80%9A%E4%BF%A1%E6%9C%BA%E5%88%B6%E7%AE%80%E6%B1%87/index.html#comments">
     </span>
     <p ct><i class='fas fa-comments'></i> 评论区</p>
     
@@ -2891,7 +2896,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%88%9B%E5%BB%BA%E5%8A%9F%E8%83%BD%E5%8C%85"><span class="toc-text">1 创建功能包</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E5%88%9B%E5%BB%BA%E5%B7%A5%E4%BD%9C%E7%A9%BA%E9%97%B4"><span class="toc-text">1.1 创建工作空间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E5%88%9B%E5%BB%BA%E5%8A%9F%E8%83%BD%E5%8C%85"><span class="toc-text">1.2 创建功能包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-%E7%BC%96%E8%AF%91%E5%B7%A5%E4%BD%9C%E7%A9%BA%E9%97%B4"><span class="toc-text">1.3 编译工作空间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-%E6%BF%80%E6%B4%BB%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-text">1.4 激活环境变量</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E7%BC%96%E5%86%99CPP%E8%8A%82%E7%82%B9"><span class="toc-text">2 编写CPP节点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E5%88%9B%E5%BB%BA%E8%8A%82%E7%82%B9%E6%96%87%E4%BB%B6"><span class="toc-text">2.1 创建节点文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E8%8A%82%E7%82%B9%E4%BB%A3%E7%A0%81"><span class="toc-text">2.1 节点代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E4%BF%AE%E6%94%B9CmakeLists"><span class="toc-text">2.2 修改CmakeLists</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-%E7%BC%96%E8%AF%91%E8%BF%90%E8%A1%8C"><span class="toc-text">2.3 编译运行</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E7%BC%96%E5%86%99Python%E8%8A%82%E7%82%B9"><span class="toc-text">3 编写Python节点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E5%88%9B%E5%BB%BA%E8%8A%82%E7%82%B9%E6%96%87%E4%BB%B6"><span class="toc-text">3.1 创建节点文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E8%8A%82%E7%82%B9%E4%BB%A3%E7%A0%81-1"><span class="toc-text">2.1 节点代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E4%BF%AE%E6%94%B9CmakeLists-1"><span class="toc-text">2.2 修改CmakeLists</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-%E7%BC%96%E8%AF%91%E8%BF%90%E8%A1%8C-1"><span class="toc-text">2.3 编译运行</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Publisher%EF%BC%88CPP%EF%BC%89"><span class="toc-text">1 Publisher（CPP）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Publisher%EF%BC%88Python%EF%BC%89"><span class="toc-text">2 Publisher（Python）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Subscriber%EF%BC%88C-%EF%BC%89"><span class="toc-text">3 Subscriber（C++）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Subscriber%EF%BC%88Python%EF%BC%89"><span class="toc-text">4 Subscriber（Python）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8E%A5%E5%8F%A3"><span class="toc-text">5 自定义接口</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-msg%E6%96%87%E4%BB%B6%E7%BC%96%E5%86%99"><span class="toc-text">5.1 msg文件编写</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-%E5%8F%91%E5%B8%83-%E8%AE%A2%E9%98%85%E4%BB%A3%E7%A0%81%E7%BC%96%E5%86%99"><span class="toc-text">5.2 发布&#x2F;订阅代码编写</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -3947,7 +3952,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"PQ.XIE BLOG","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"PQ.XIE BLOG"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/ROS1/","name":"ROS1"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/09/02/ROS1/3-ROS1快速开始/","name":"3-ROS1快速开始"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"PQ.XIE BLOG","url":"http://example.com/","keywords":"日常唠嗑","description":"个人博客","author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"个人博客"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"3-ROS1快速开始","description":"个人博客","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/09/02/ROS1/3-ROS1%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B/"},"author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/09/02/ROS1/3-ROS1%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B/","wordCount":0,"datePublished":"2023-09-02T15:22:06.702Z","dateModified":"2023-09-02T15:22:06.754Z","articleSection":"ROS1","keywords":"ROS1","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"PQ.XIE BLOG","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"PQ.XIE BLOG"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/ROS1/","name":"ROS1"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/09/03/ROS1/4-topic通信机制简汇/","name":"4-topic通信机制简汇"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"PQ.XIE BLOG","url":"http://example.com/","keywords":"日常唠嗑","description":"个人博客","author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"个人博客"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"4-topic通信机制简汇","description":"个人博客","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/09/03/ROS1/4-topic%E9%80%9A%E4%BF%A1%E6%9C%BA%E5%88%B6%E7%AE%80%E6%B1%87/"},"author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/09/03/ROS1/4-topic%E9%80%9A%E4%BF%A1%E6%9C%BA%E5%88%B6%E7%AE%80%E6%B1%87/","wordCount":0,"datePublished":"2023-09-03T04:02:50.574Z","dateModified":"2023-09-03T04:02:50.626Z","articleSection":"ROS1","keywords":"ROS1","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
