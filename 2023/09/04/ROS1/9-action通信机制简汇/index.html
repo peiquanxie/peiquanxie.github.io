@@ -5,8 +5,8 @@
   <meta name="Volantis" content="5.8.0">
   <meta charset="utf-8">
   <!-- SEO相关 -->
-  <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="http://example.com/tags/"/>
+  
+  <link rel="canonical" href="http://example.com/2023/09/04/ros1/9-action通信机制简汇/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -34,21 +34,21 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>所有标签 - PQ.XIE BLOG</title>
-  <meta name="keywords" content="日常唠嗑">
+  <title>9-action通信机制简汇 - PQ.XIE BLOG</title>
+  <meta name="keywords" content="ROS1,日常唠嗑">
   <meta desc name="description" content="个人博客 - PQ.XIE - PQ.XIE BLOG">
   
-<meta property="og:type" content="website">
-<meta property="og:title" content="所有标签">
-<meta property="og:url" content="http://example.com/tags/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="9-action通信机制简汇">
+<meta property="og:url" content="http://example.com/2023/09/04/ROS1/9-action%E9%80%9A%E4%BF%A1%E6%9C%BA%E5%88%B6%E7%AE%80%E6%B1%87/index.html">
 <meta property="og:site_name" content="PQ.XIE BLOG">
-<meta property="og:description" content="个人博客">
+<meta property="og:description" content="action实现了一种类似于service的请求&#x2F;响应通讯机制，区别在于action带有反馈机制，用来不断向客户端反馈任务的进度，并且还支持在任务中途中止运行。操作起来就像这样子，客户端给服务端抛出一个目标，然后客户端就可以去干别的事情了，在任务执行期间，客户端会以消息的形式，周期性地接收到来自服务端的进度反馈，如果没有终止任务的话这个过程会一直延续到收到最终的结果。当然也可以随时终止当">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2023-07-22T02:37:59.687Z">
-<meta property="article:modified_time" content="2023-07-22T02:37:59.687Z">
+<meta property="article:published_time" content="2023-09-04T09:12:07.398Z">
+<meta property="article:modified_time" content="2023-09-04T09:12:07.454Z">
 <meta property="article:author" content="PQ.XIE">
-<meta property="article:tag" content="日常唠嗑">
+<meta property="article:tag" content="ROS1">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -2505,7 +2505,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="none" class='cover-wrapper tag search' style="display: none;">
+      <div id="none" class='cover-wrapper post search' style="display: none;">
         
   <div class='cover-bg lazyload placeholder' data-bg="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/background.jpeg"></div>
 
@@ -2582,23 +2582,290 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div id="safearea">
         <div class="body-wrapper">
           
-
 <div id="l_main" class=''>
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/09/04/ROS1/9-action通信机制简汇/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="PQ.XIE BLOG">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="PQ.XIE BLOG">
+    <meta itemprop="description" content="个人博客">
+  </span>
   
+
+
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  <div class="article-meta" id="top">
     
-      <div class='post-wrapper'>
-        <article id="tag" class="post article white-box reveal shadow floatable blur">
-          <h2>所有标签</h2>
-          <div class="all-tags">
-            
-            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pytorch%E5%9F%BA%E7%A1%80/" rel="tag">Pytorch基础</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ROS1/" rel="tag">ROS1</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ROS2%E5%9F%BA%E7%A1%80/" rel="tag">ROS2基础</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%93%B2%E5%AD%A6%E7%AC%94%E8%AE%B0/" rel="tag">哲学笔记</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BB%BA%E7%AB%99/" rel="tag">建站</a><span class="tag-list-count">1</span></li></ul>
-          </div>
-          <br>
+    
+    
+      <h1 class="title" itemprop="name headline">
+        9-action通信机制简汇
+      </h1>
+      <div class='new-meta-box'>
+        
           
-        </article>
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' href="/" rel="nofollow">
+    <img itemprop="image" src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/202307251013361.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/202307251013361.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    <p itemprop="name">PQ.XIE</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/ROS1/" rel="nofollow"><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><p>ROS1</p></a></div>
+  <span hidden itemprop="keywords">ROS1</span>
+
+
+          
+        
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-09-04T17:12:07+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>2023年9月4日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：1k 字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：5 分钟</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+
+
+<div class="new-meta-item browse">
+  <a class='notlink'>
+    <p>
+      <i class="fa-solid fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span id="busuanzi_value_page_pv"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+      
+      <span>次</span>
+    </p>
+  </a>
+</div>
+
+
+          
+        
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
       </div>
     
+  </div>
+
+
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    <p>action实现了一种类似于service的请求&#x2F;响应通讯机制，区别在于action带有反馈机制，用来不断向客户端反馈任务的进度，并且还支持在任务中途中止运行。操作起来就像这样子，客户端给服务端抛出一个目标，然后客户端就可以去干别的事情了，在任务执行期间，客户端会以消息的形式，周期性地接收到来自服务端的进度反馈，如果没有终止任务的话这个过程会一直延续到收到最终的结果。当然也可以随时终止当前的操作，开始一个全新的操作。</p>
+<h2 id="1-action的实现机制"><a href="#1-action的实现机制" class="headerlink" title="1 action的实现机制"></a>1 action的实现机制</h2><p>action 的 client和server之间通过actionlib定义的“action protocol”进行通讯。这种通讯协议是基于ROS的 topic 机制实现的，为用户提供了client和server的接口，接口如下图所示：</p>
+<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/ROS1/202309041559385.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/ROS1/202309041559385.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
+<ul>
+<li>goal：client 发送任务目标</li>
+<li>cancel：client 请求取消任务</li>
+<li>status：server通知client当前的状态</li>
+<li>feedback：server周期反馈任务运行的监控数据</li>
+<li>result：server向client发送任务的执行结果，这个topic只会发布一次。</li>
+</ul>
+<h2 id="2-自定义接口"><a href="#2-自定义接口" class="headerlink" title="2 自定义接口"></a>2 自定义接口</h2><h3 id="2-1-action文件编写"><a href="#2-1-action文件编写" class="headerlink" title="2.1 action文件编写"></a>2.1 action文件编写</h3><p>在 ros_ws&#x2F;src&#x2F;hello&#x2F;action目录下创建 DoDishes.action接口文件，注意首字母必须大写。接口示例如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># Define the goal</span><br><span class="line">uint32 dishwasher_id</span><br><span class="line">---</span><br><span class="line"># Define the result</span><br><span class="line">uint32 total_dishes_cleaned</span><br><span class="line">---</span><br><span class="line"># Define a feedback message</span><br><span class="line">float32 percent_complete</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-2-编译修改"><a href="#2-2-编译修改" class="headerlink" title="2.2 编译修改"></a>2.2 编译修改</h3><ul>
+<li><p>CMakeLists修改：在对应位置进行如下修改：(查找对应项改，不要改变各项的顺序)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">find_package(catkin REQUIRED ... genmsg actionlib_msgs actionlib)</span><br><span class="line">add_action_files(DIRECTORY action FILES DoDishes.action)</span><br><span class="line">generate_messages(DEPENDENCIES ... actionlib_msgs)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>package.xml修改：在对应位置添加如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;build_depend&gt;actionlib&lt;/build_depend&gt;</span><br><span class="line">&lt;build_depend&gt;actionlib_msgs&lt;/build_depend&gt;</span><br><span class="line">&lt;exec_depend&gt;actionlib&lt;/exec_depend&gt;</span><br><span class="line">&lt;exec_depend&gt;actionlib_msgs&lt;/exec_depend&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>编译完成之后会在 devel&#x2F;share&#x2F;hello&#x2F;msg&#x2F; 目录下产生相关的.msg文件：</p>
+<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/ROS1/202309041649045.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/ROS1/202309041649045.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20230904164919214"></p>
+<h2 id="2-action-Client（CPP）"><a href="#2-action-Client（CPP）" class="headerlink" title="2 action Client（CPP）"></a>2 action Client（CPP）</h2><p>注意要将**DoDishesAction **的前缀修改为自己创建的功能包名字。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;actionlib/client/simple_action_client.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;hello/DoDishesAction.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> actionlib::SimpleActionClient&lt;hello::DoDishesAction&gt; Client;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 当action完成后会调用次回调函数一次</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">doneCb</span><span class="params">(<span class="type">const</span> actionlib::SimpleClientGoalState&amp; state,</span></span></span><br><span class="line"><span class="params"><span class="function">        <span class="type">const</span> hello::DoDishesResultConstPtr&amp; result)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">ROS_INFO</span>(<span class="string">&quot;Yay! The dishes are now clean&quot;</span>);</span><br><span class="line">    ros::<span class="built_in">shutdown</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 当action激活后会调用次回调函数一次</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">activeCb</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">ROS_INFO</span>(<span class="string">&quot;Goal just went active&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 收到feedback后调用的回调函数</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">feedbackCb</span><span class="params">(<span class="type">const</span> hello::DoDishesFeedbackConstPtr&amp; feedback)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">ROS_INFO</span>(<span class="string">&quot; percent_complete : %f &quot;</span>, feedback-&gt;percent_complete);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span>** argv)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ros::<span class="built_in">init</span>(argc, argv, <span class="string">&quot;do_dishes_client&quot;</span>);</span><br><span class="line">    <span class="comment">// 定义一个客户端</span></span><br><span class="line">    <span class="function">Client <span class="title">client</span><span class="params">(<span class="string">&quot;do_dishes&quot;</span>, <span class="literal">true</span>)</span></span>;</span><br><span class="line">    <span class="comment">// 等待服务器端</span></span><br><span class="line">    <span class="built_in">ROS_INFO</span>(<span class="string">&quot;Waiting for action server to start.&quot;</span>);</span><br><span class="line">    client.<span class="built_in">waitForServer</span>();</span><br><span class="line">    <span class="built_in">ROS_INFO</span>(<span class="string">&quot;Action server started, sending goal.&quot;</span>);</span><br><span class="line">    <span class="comment">// 创建一个action的goal</span></span><br><span class="line">    hello::DoDishesGoal goal;</span><br><span class="line">    goal.dishwasher_id = <span class="number">1</span>;</span><br><span class="line">    <span class="comment">// 发送action的goal给服务器端，并且设置回调函数</span></span><br><span class="line">    client.<span class="built_in">sendGoal</span>(goal,  &amp;doneCb, &amp;activeCb, &amp;feedbackCb);</span><br><span class="line">    ros::<span class="built_in">spin</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-action-Client（Python）"><a href="#3-action-Client（Python）" class="headerlink" title="3 action Client（Python）"></a>3 action Client（Python）</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#! /usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> roslib</span><br><span class="line">roslib.load_manifest(<span class="string">&#x27;my_pkg_name&#x27;</span>)</span><br><span class="line"><span class="keyword">import</span> rospy</span><br><span class="line"><span class="keyword">import</span> actionlib</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> chores.msg <span class="keyword">import</span> DoDishesAction, DoDishesGoal</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    rospy.init_node(<span class="string">&#x27;do_dishes_client&#x27;</span>)</span><br><span class="line">    client = actionlib.SimpleActionClient(<span class="string">&#x27;do_dishes&#x27;</span>, DoDishesAction)</span><br><span class="line">    client.wait_for_server()</span><br><span class="line"></span><br><span class="line">    goal = DoDishesGoal()</span><br><span class="line">    <span class="comment"># Fill in the goal here</span></span><br><span class="line">    client.send_goal(goal)</span><br><span class="line">    client.wait_for_result(rospy.Duration.from_sec(<span class="number">5.0</span>))</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-action-Server（CPP）"><a href="#4-action-Server（CPP）" class="headerlink" title="4 action Server（CPP）"></a>4 action Server（CPP）</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;ros/ros.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;actionlib/server/simple_action_server.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;hello/DoDishesAction.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> actionlib::SimpleActionServer&lt;hello::DoDishesAction&gt; Server;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 收到action的goal后调用的回调函数</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">execute</span><span class="params">(<span class="type">const</span> hello::DoDishesGoalConstPtr&amp; goal, Server* as)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="function">ros::Rate <span class="title">r</span><span class="params">(<span class="number">1</span>)</span></span>;</span><br><span class="line">    hello::DoDishesFeedback feedback;</span><br><span class="line">    <span class="built_in">ROS_INFO</span>(<span class="string">&quot;Dishwasher %d is working.&quot;</span>, goal-&gt;dishwasher_id);</span><br><span class="line">    <span class="comment">// 假设洗盘子的进度，并且按照1hz的频率发布进度feedback</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>; i&lt;=<span class="number">10</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        feedback.percent_complete = i * <span class="number">10</span>;</span><br><span class="line">        as-&gt;<span class="built_in">publishFeedback</span>(feedback);</span><br><span class="line">        r.<span class="built_in">sleep</span>();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 当action完成后，向客户端返回结果</span></span><br><span class="line">    <span class="built_in">ROS_INFO</span>(<span class="string">&quot;Dishwasher %d finish working.&quot;</span>, goal-&gt;dishwasher_id);</span><br><span class="line">    as-&gt;<span class="built_in">setSucceeded</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span>** argv)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ros::<span class="built_in">init</span>(argc, argv, <span class="string">&quot;do_dishes_server&quot;</span>);</span><br><span class="line">    ros::NodeHandle n;</span><br><span class="line">    <span class="comment">// 定义一个服务器</span></span><br><span class="line">    <span class="function">Server <span class="title">server</span><span class="params">(n, <span class="string">&quot;do_dishes&quot;</span>, boost::bind(&amp;execute, _1, &amp;server), <span class="literal">false</span>)</span></span>;</span><br><span class="line">    <span class="comment">// 服务器开始运行</span></span><br><span class="line">    server.<span class="built_in">start</span>();</span><br><span class="line">    ros::<span class="built_in">spin</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-action-Server（Python）"><a href="#5-action-Server（Python）" class="headerlink" title="5 action Server（Python）"></a>5 action Server（Python）</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#! /usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> roslib</span><br><span class="line">roslib.load_manifest(<span class="string">&#x27;my_pkg_name&#x27;</span>)</span><br><span class="line"><span class="keyword">import</span> rospy</span><br><span class="line"><span class="keyword">import</span> actionlib</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> chores.msg <span class="keyword">import</span> DoDishesAction</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">DoDishesServer</span>:</span><br><span class="line">  <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">    self.server = actionlib.SimpleActionServer(<span class="string">&#x27;do_dishes&#x27;</span>, DoDishesAction, self.execute, <span class="literal">False</span>)</span><br><span class="line">    self.server.start()</span><br><span class="line"></span><br><span class="line">  <span class="keyword">def</span> <span class="title function_">execute</span>(<span class="params">self, goal</span>):</span><br><span class="line">    <span class="comment"># Do lots of awesome groundbreaking robot stuff here</span></span><br><span class="line">    self.server.set_succeeded()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">  rospy.init_node(<span class="string">&#x27;do_dishes_server&#x27;</span>)</span><br><span class="line">  server = DoDishesServer()</span><br><span class="line">  rospy.spin()</span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p><a target="_blank" rel="noopener" href="http://wiki.ros.org/cn/ROS/Tutorials">http://wiki.ros.org/cn/ROS/Tutorials</a><br><a target="_blank" rel="noopener" href="https://www.guyuehome.com/">https://www.guyuehome.com/</a></p>
+</blockquote>
+
+  </div>
   
+  
+    
+    <div class='footer'>
+       <!-- 参考资料、相关资料等 -->
+      
+       <!-- 相关文章 -->
+      
+      <!-- 版权声明组件 -->
+      
+      <!-- 打赏组件 -->
+      
+        <div class='donate'>
+          <div class='imgs'>
+            
+              <img src='https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/%E8%B5%9E%E8%B5%8F%E7%A0%81.JPG'>
+            
+          </div>
+        </div>
+      
+    </div>
+  
+  
+    
+
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-09-04T17:12:07+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2023年9月4日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2023/09/04/ROS1/9-action%E9%80%9A%E4%BF%A1%E6%9C%BA%E5%88%B6%E7%AE%80%E6%B1%87/&title=9-action通信机制简汇 - PQ.XIE BLOG&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2023/09/04/ROS1/9-action%E9%80%9A%E4%BF%A1%E6%9C%BA%E5%88%B6%E7%AE%80%E6%B1%87/&title=9-action通信机制简汇 - PQ.XIE BLOG&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2023/09/04/ROS1/9-action%E9%80%9A%E4%BF%A1%E6%9C%BA%E5%88%B6%E7%AE%80%E6%B1%87/&title=9-action通信机制简汇 - PQ.XIE BLOG&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+        
+      
+    </div>
+    <!-- Custom Files bottomMeta begin -->
+    
+    <!-- Custom Files bottomMeta end -->
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+      
+        <a class='next' href='/2023/09/04/ROS1/8-%E5%9D%90%E6%A0%87%E5%8F%98%E6%8D%A2TF%E7%AE%80%E8%BF%B0/'>
+          <p class='title'>8-坐标变换TF简述<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>在一个机器人系统中，一般会存在多个部件，每个部件可能会有自己的运动轨迹，这样在一个机器人中就存在多个坐标系。通常，我们会根据坐标系间的差距来驱动某个部件的运动，这里就存在坐标变换。这里简单举例，...</p>
+        </a>
+      
+    </div>
+  
+  <!-- Custom Files postEnd begin-->
+  
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> 
+  <!-- Custom Files postEnd end-->
+</article>
+
+
+  
+
+
+  <article class="post white-box shadow floatable blur" id="comments">
+    <span hidden>
+      <meta itemprop="discussionUrl" content="/2023/09/04/ROS1/9-action%E9%80%9A%E4%BF%A1%E6%9C%BA%E5%88%B6%E7%AE%80%E6%B1%87/index.html#comments">
+    </span>
+    <p ct><i class='fas fa-comments'></i> 评论区</p>
+    
+
+    <div id="layoutHelper-comments"></div>
+
+  </article>
+
+
+
+
+
+
 </div>
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   
@@ -2617,9 +2884,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
 
 
-  <div class="">
-    <!-- pjax占位 -->
-  </div>
+  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
+    
+  <header>
+    
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-action%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%9C%BA%E5%88%B6"><span class="toc-text">1 action的实现机制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8E%A5%E5%8F%A3"><span class="toc-text">2 自定义接口</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-action%E6%96%87%E4%BB%B6%E7%BC%96%E5%86%99"><span class="toc-text">2.1 action文件编写</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E7%BC%96%E8%AF%91%E4%BF%AE%E6%94%B9"><span class="toc-text">2.2 编译修改</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-action-Client%EF%BC%88CPP%EF%BC%89"><span class="toc-text">2 action Client（CPP）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-action-Client%EF%BC%88Python%EF%BC%89"><span class="toc-text">3 action Client（Python）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-action-Server%EF%BC%88CPP%EF%BC%89"><span class="toc-text">4 action Server（CPP）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-action-Server%EF%BC%88Python%EF%BC%89"><span class="toc-text">5 action Server（Python）</span></a></li></ol>
+    </div>
+  </section>
 
   
 
@@ -2666,13 +2943,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </aside>
 
 
+
           <!--此文件用来存放一些不方便取值的变量-->
 <!--思路大概是将值藏到重加载的区域内-->
 
 <pjax>
 <script>
   window.pdata={}
-  pdata.ispage=false;
+  pdata.ispage=true;
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -3672,7 +3950,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"PQ.XIE BLOG","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"PQ.XIE BLOG"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"PQ.XIE BLOG","url":"http://example.com/","keywords":"日常唠嗑","description":"个人博客","author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"个人博客"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"所有标签","description":"个人博客","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/tags/index.html"},"author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/tags/index.html","wordCount":0,"datePublished":"2023-07-22T02:37:59.687Z","dateModified":"2023-07-22T02:37:59.687Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"PQ.XIE BLOG","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"PQ.XIE BLOG"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/ROS1/","name":"ROS1"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/09/04/ROS1/9-action通信机制简汇/","name":"9-action通信机制简汇"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"PQ.XIE BLOG","url":"http://example.com/","keywords":"日常唠嗑","description":"个人博客","author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"个人博客"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"9-action通信机制简汇","description":"个人博客","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/09/04/ROS1/9-action%E9%80%9A%E4%BF%A1%E6%9C%BA%E5%88%B6%E7%AE%80%E6%B1%87/"},"author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/09/04/ROS1/9-action%E9%80%9A%E4%BF%A1%E6%9C%BA%E5%88%B6%E7%AE%80%E6%B1%87/","wordCount":0,"datePublished":"2023-09-04T09:12:07.398Z","dateModified":"2023-09-04T09:12:07.454Z","articleSection":"ROS1","keywords":"ROS1","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
