@@ -5,8 +5,8 @@
   <meta name="Volantis" content="5.8.0">
   <meta charset="utf-8">
   <!-- SEO相关 -->
-  <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="https://xie-peiquan.gitee.io/categories/哲学笔记/"/>
+  
+  <link rel="canonical" href="https://xie-peiquan.gitee.io/2023/09/08/ros1/10-动态参数机制简汇/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -34,19 +34,21 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>分类：哲学笔记 - PQ.XIE BLOG</title>
-  <meta name="keywords" content="日常唠嗑">
+  <title>10-动态参数机制简汇 - PQ.XIE BLOG</title>
+  <meta name="keywords" content="ROS1,日常唠嗑">
   <meta desc name="description" content="个人博客 - PQ.XIE - PQ.XIE BLOG">
   
-<meta property="og:type" content="website">
-<meta property="og:title" content="PQ.XIE BLOG">
-<meta property="og:url" content="https://xie-peiquan.gitee.io/categories/%E5%93%B2%E5%AD%A6%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="10-动态参数机制简汇">
+<meta property="og:url" content="https://xie-peiquan.gitee.io/2023/09/08/ROS1/10-%E5%8A%A8%E6%80%81%E5%8F%82%E6%95%B0%E6%9C%BA%E5%88%B6%E7%AE%80%E6%B1%87/index.html">
 <meta property="og:site_name" content="PQ.XIE BLOG">
-<meta property="og:description" content="个人博客">
+<meta property="og:description" content="1 动态参数的作用​		ROS中的参数服务器无法在线动态更新，也就是说如果Listener不主动查询参数值，就无法获知Talker是否已经修改了参数。这就对ROS参数服务器的使用造成了很大的局限，很多场景下我们还是需要动态更新参数的机制，例如参数调试、功能切换等，所以ROS提供了另外一个非常有用的功能包 —— dynamic_reconfigure，实现这种动态配置参数的机制。  动态重配置的重点">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+<meta property="article:published_time" content="2023-09-08T08:51:43.255Z">
+<meta property="article:modified_time" content="2023-09-08T08:51:43.307Z">
 <meta property="article:author" content="PQ.XIE">
-<meta property="article:tag" content="日常唠嗑">
+<meta property="article:tag" content="ROS1">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -1799,7 +1801,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1693966196296),
+    lastupdate: new Date(1694163113841),
     sidebar: {
       for_page: ["blogger","category","webinfo","music"],
       for_post: ["toc"],
@@ -2503,7 +2505,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="none" class='cover-wrapper  search' style="display: none;">
+      <div id="none" class='cover-wrapper post search' style="display: none;">
         
   <div class='cover-bg lazyload placeholder' data-bg="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/background.jpeg"></div>
 
@@ -2580,25 +2582,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div id="safearea">
         <div class="body-wrapper">
           
-
 <div id="l_main" class=''>
-  
-    
-      
-  <section class="post-list">
-    
-      
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2023/07/27/哲学思考/1-西方哲学摘录/">
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2023/09/08/ROS1/10-动态参数机制简汇/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="PQ.XIE BLOG">
   </span>
@@ -2607,68 +2593,288 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <meta itemprop="description" content="个人博客">
   </span>
   
-  
+
+
   
     <span hidden>
       <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
     </span>
   
-  
+  <div class="article-meta" id="top">
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/07/27/%E5%93%B2%E5%AD%A6%E6%80%9D%E8%80%83/1-%E8%A5%BF%E6%96%B9%E5%93%B2%E5%AD%A6%E6%91%98%E5%BD%95/"  itemprop="url">
-        1-西方哲学摘录
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
     
+    
+      <h1 class="title" itemprop="name headline">
+        10-动态参数机制简汇
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' href="/" rel="nofollow">
+    <img itemprop="image" src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/202307251013361.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/202307251013361.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    <p itemprop="name">PQ.XIE</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/ROS1/" rel="nofollow"><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><p>ROS1</p></a></div>
+  <span hidden itemprop="keywords">ROS1</span>
+
+
+          
+        
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-09-08T16:51:43+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>2023年9月8日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：1.1k 字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：4 分钟</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+
+
+<div class="new-meta-item browse">
+  <a class='notlink'>
+    <p>
+      <i class="fa-solid fa-eye fa-fw" aria-hidden="true"></i>
       
-        黑格尔哲学形而上学形而上学的根本特征是以思维（概念）规定感性（事物），在概念中确认哲学所追求的“最高原因的基本原理”。这种基本原理可以使人类经验中的各种各样的事物得到统一性的解释，或者可以被解释为某种普遍本质的各种具体表现，从而使思维实现其把握和解释世界的“全体自由性”。
-黑格尔哲学特点黑格尔以辩证法改造形而上学，是通过对构成旧形而上学的抽象理性的批判，以概念的辩证运动实现思维规定感性的形而...
+      <span id="busuanzi_value_page_pv"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
       
+      <span>次</span>
+    </p>
+  </a>
+</div>
+
+
+          
+        
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
+      </div>
     
   </div>
+
+
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    <h2 id="1-动态参数的作用"><a href="#1-动态参数的作用" class="headerlink" title="1 动态参数的作用"></a>1 动态参数的作用</h2><p>​		ROS中的参数服务器无法在线动态更新，也就是说如果Listener不主动查询参数值，就无法获知Talker是否已经修改了参数。这就对ROS参数服务器的使用造成了很大的局限，很多场景下我们还是需要动态更新参数的机制，例如参数调试、功能切换等，所以ROS提供了另外一个非常有用的功能包 —— dynamic_reconfigure，实现这种动态配置参数的机制。<br>  动态重配置的重点是提供一种标准的方法，将节点的一个子集参数公开给外部重配置。使用客户端程序，例如gui，可以向节点查询一组可动态配置的参数，包括它们的名称、类型、范围，并向用户提供一个自定义接口。<br>​		以下介绍如何给功能包添加动态参数。</p>
+<h2 id="2-添加动态参数"><a href="#2-添加动态参数" class="headerlink" title="2 添加动态参数"></a>2 添加动态参数</h2><h3 id="2-1-添加-cfg-文件"><a href="#2-1-添加-cfg-文件" class="headerlink" title="2.1 添加 cfg 文件"></a>2.1 添加 cfg 文件</h3><p>在功能包下新建 cfg 目录，并新建 cfg 文件（其实是python脚本），记得给 cfg 文件添加可执行权限。这里以典型的pid.cfg文件为例，内容如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line">PACKAGE = <span class="string">&quot;learning_topic&quot;</span>  <span class="comment">#所属功能包名 </span></span><br><span class="line"><span class="comment">#初始化ROS，并导入参数生成器</span></span><br><span class="line"><span class="keyword">from</span> dynamic_reconfigure.parameter_generator_catkin <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"><span class="comment">#初始化参数生成器</span></span><br><span class="line">gen = ParameterGenerator()</span><br><span class="line"></span><br><span class="line"><span class="comment">#定义需动态配置的参数，格式为</span></span><br><span class="line"><span class="comment">#gen.add(name , type, level, description, default, min, max)</span></span><br><span class="line">gen.add(<span class="string">&quot;KP&quot;</span>,    double_t,    <span class="number">0</span>, <span class="string">&quot;KP_param&quot;</span>,  <span class="number">225.0</span>, <span class="number">0</span>, <span class="number">500</span>)</span><br><span class="line">gen.add(<span class="string">&quot;KI&quot;</span>,    double_t,    <span class="number">0</span>, <span class="string">&quot;KI_param&quot;</span>,  <span class="number">150.0</span>, <span class="number">0</span>, <span class="number">300</span>)</span><br><span class="line">gen.add(<span class="string">&quot;KD&quot;</span>,    double_t,    <span class="number">0</span>, <span class="string">&quot;KD_param&quot;</span>,  <span class="number">50.0</span>,  <span class="number">0</span>, <span class="number">300</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#生成必要文件并退出</span></span><br><span class="line"><span class="comment">#dynamic_PID为运行时的节点名，pid为生成文件的前缀</span></span><br><span class="line">exit(gen.generate(PACKAGE, <span class="string">&quot;dynamic_PID&quot;</span>, <span class="string">&quot;pid&quot;</span>))</span><br></pre></td></tr></table></figure>
+
+<p>参数解释：<br><code>gen.add(name , type, level, description, default, min, max)</code>  </p>
+<blockquote>
+<p>– name：参数名，使用字符串描述；<br>– type：定义参数的类型，可以是int_t, double_t, str_t, 或者bool_t；<br>– level：需要传入参数动态配置回调函数中的掩码，在回调函数中会修改所有参数的掩码，表示参数已经进行修改；<br>– description：描述参数作用的字符串；<br>– default：设置参数的默认值；<br>– min：可选，设置参数的最小值，对于字符串和布尔类型值不生效；<br>– max：可选，设置参数的较大值，对于字符串和布尔类型值不生效；</p>
+</blockquote>
+<p><code>gen.generate(PACKAGE, &quot;dynamic_PID&quot;, &quot;pid&quot;)</code></p>
+<blockquote>
+<p>dynamic_PID：为运行时的节点名。<br>pid：为生成文件的前缀，如pidConfig，<strong>该前缀需要与配置文件名相同</strong>。</p>
+</blockquote>
+<p>补python版本：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#! /usr/bin/env python</span></span><br><span class="line"><span class="keyword">import</span> rospy</span><br><span class="line"><span class="keyword">from</span> dynamic_reconfigure.server <span class="keyword">import</span> Server</span><br><span class="line"><span class="keyword">from</span> learning_topic.cfg <span class="keyword">import</span> pidConfig</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">dp_callback</span>(<span class="params">config,level</span>):</span><br><span class="line">    rospy.loginfo(<span class="string">&quot;Reconfigure Request:%d %d %d&quot;</span>,</span><br><span class="line">            config.KP,             </span><br><span class="line">			config.KI,             </span><br><span class="line">			config.KD</span><br><span class="line">        )</span><br><span class="line">    <span class="keyword">return</span> config</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    rospy.init_node(<span class="string">&quot;pid_app&quot;</span>)</span><br><span class="line">    server = Server(pidConfig, dp_callback)</span><br><span class="line">    rospy.loginfo(<span class="string">&quot;Spinning node&quot;</span>)</span><br><span class="line">    rospy.spin()</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="2-2-编译修改"><a href="#2-2-编译修改" class="headerlink" title="2.2 编译修改"></a>2.2 编译修改</h3><p>cmake修改：在CmakeLists找到如下项进行修改：</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">generate_dynamic_reconfigure_options(... cfg/pid.cfg)</span><br></pre></td></tr></table></figure>
+
+<p>catkin_make 后便可在devel&#x2F;include 目录下发现 pidConfig.h 头文件.</p>
+<h2 id="3-应用节点编写"><a href="#3-应用节点编写" class="headerlink" title="3 应用节点编写"></a>3 应用节点编写</h2><h3 id="3-1-添加动态参数应用节点"><a href="#3-1-添加动态参数应用节点" class="headerlink" title="3.1 添加动态参数应用节点"></a>3.1 添加动态参数应用节点</h3><p>在功能包 src 目录下新增 pid_app.cpp 文件，内容如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;ros/ros.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;dynamic_reconfigure/server.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;learning_topic/pidConfig.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//定义回调函数，当客户端请求修改参数时，服务端即可跳转到回调函数中进行处理。</span></span><br><span class="line"><span class="comment">//传入值有两个，一个是参数更新的配置值，一个是表示参数修改的掩码</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">callback</span><span class="params">(learning_topic::pidConfig &amp;config, <span class="type">uint32_t</span> level)</span> </span></span><br><span class="line"><span class="function"></span>&#123;  </span><br><span class="line">	<span class="built_in">ROS_INFO</span>(<span class="string">&quot;Reconfigure Request: %f %f %f&quot;</span>,             </span><br><span class="line">			config.KP,             </span><br><span class="line">			config.KI,             </span><br><span class="line">			config.KD);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> **argv)</span></span></span><br><span class="line"><span class="function"></span>&#123;    </span><br><span class="line">	<span class="comment">//初始化ROS节点</span></span><br><span class="line">	ros::<span class="built_in">init</span>(argc, argv, <span class="string">&quot;pid_app&quot;</span>);</span><br><span class="line">	<span class="comment">//创建了一个参数动态配置的服务端实例，参数配置的类型就是配置文件中描述的类型</span></span><br><span class="line">	<span class="comment">//该服务端实例会监听客户端的参数配置请求。</span></span><br><span class="line">	dynamic_reconfigure::Server&lt;learning_topic::pidConfig&gt; server;    </span><br><span class="line">	dynamic_reconfigure::Server&lt;learning_topic::pidConfig&gt;::CallbackType f;    </span><br><span class="line">	<span class="comment">//并将回调函数和服务端绑定</span></span><br><span class="line">	f = boost::<span class="built_in">bind</span>(&amp;callback, _1, _2);    </span><br><span class="line">	server.<span class="built_in">setCallback</span>(f);    </span><br><span class="line">	<span class="built_in">ROS_INFO</span>(<span class="string">&quot;Spinning node&quot;</span>);    </span><br><span class="line">	ros::<span class="built_in">spin</span>();    </span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-2-编译修改"><a href="#3-2-编译修改" class="headerlink" title="3.2 编译修改"></a>3.2 编译修改</h3><p>cmake修改：在CmakeLists末尾添加如下修改：</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">add_executable</span>(pid_app src/pid_app.cpp)</span><br><span class="line"><span class="keyword">target_link_libraries</span>(pid_app <span class="variable">$&#123;catkin_LIBRARIES&#125;</span>)</span><br><span class="line"><span class="keyword">add_dependencies</span>(pid_app <span class="variable">$&#123;PROJECT_NAME&#125;</span>_gencfg)</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-3-GUI动态调参"><a href="#3-3-GUI动态调参" class="headerlink" title="3.3 GUI动态调参"></a>3.3 GUI动态调参</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">终端1：roscore</span><br><span class="line">终端2：rosrun learning_topic pid_app</span><br><span class="line">终端3：rosrun rqt_reconfigure rqt_reconfigure</span><br></pre></td></tr></table></figure>
+
+<p>效果如下：</p>
+<img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/ROS1/202309081629039.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/ROS1/202309081629039.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20230908162907240"  />
+
+
+
+<blockquote>
+<p><a target="_blank" rel="noopener" href="http://wiki.ros.org/cn/ROS/Tutorials">http://wiki.ros.org/cn/ROS/Tutorials</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43569276/article/details/102928817">https://blog.csdn.net/weixin_43569276/article/details/102928817</a></p>
+</blockquote>
+
+  </div>
   
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-07-27T00:16:41+08:00">2023-07-27</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%93%B2%E5%AD%A6%E7%AC%94%E8%AE%B0/">哲学笔记</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E5%93%B2%E5%AD%A6%E7%AC%94%E8%AE%B0/" itemprop="url"><span itemprop="name">哲学笔记</span></a>
-            </span>
-          
-        
-      </div>
+  
+    
+    <div class='footer'>
+       <!-- 参考资料、相关资料等 -->
       
-        <div>
-          <a class='readmore' href='/2023/07/27/%E5%93%B2%E5%AD%A6%E6%80%9D%E8%80%83/1-%E8%A5%BF%E6%96%B9%E5%93%B2%E5%AD%A6%E6%91%98%E5%BD%95/' itemprop="url">
-            阅读全文
-          </a>
+       <!-- 相关文章 -->
+      
+      <!-- 版权声明组件 -->
+      
+      <!-- 打赏组件 -->
+      
+        <div class='donate'>
+          <div class='imgs'>
+            
+              <img src='https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/%E8%B5%9E%E8%B5%8F%E7%A0%81.JPG'>
+            
+          </div>
         </div>
       
     </div>
-
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-09-08T16:51:43+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2023年9月8日</p>
+  </a>
 </div>
 
-          </div>
         
       
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
-  </section>
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://xie-peiquan.gitee.io/2023/09/08/ROS1/10-%E5%8A%A8%E6%80%81%E5%8F%82%E6%95%B0%E6%9C%BA%E5%88%B6%E7%AE%80%E6%B1%87/&title=10-动态参数机制简汇 - PQ.XIE BLOG&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://xie-peiquan.gitee.io/2023/09/08/ROS1/10-%E5%8A%A8%E6%80%81%E5%8F%82%E6%95%B0%E6%9C%BA%E5%88%B6%E7%AE%80%E6%B1%87/&title=10-动态参数机制简汇 - PQ.XIE BLOG&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://xie-peiquan.gitee.io/2023/09/08/ROS1/10-%E5%8A%A8%E6%80%81%E5%8F%82%E6%95%B0%E6%9C%BA%E5%88%B6%E7%AE%80%E6%B1%87/&title=10-动态参数机制简汇 - PQ.XIE BLOG&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        
+        <div class='hoverbox'>
+          <a class='share'><img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/wechat.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/wechat.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></a>
+          <div class='target'>
+            <img src="data:image/png;base64,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">
+          </div>
+        </div>
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+        
+      
+    </div>
+    <!-- Custom Files bottomMeta begin -->
+    
+    <!-- Custom Files bottomMeta end -->
+  </div>
+
+
   
-    
+  
+
+  
+    <div class="prev-next">
+      
+      
+        <a class='next' href='/2023/09/04/ROS1/9-action%E9%80%9A%E4%BF%A1%E6%9C%BA%E5%88%B6%E7%AE%80%E6%B1%87/'>
+          <p class='title'>9-action通信机制简汇<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>action实现了一种类似于service的请求&#x2F;响应通讯机制，区别在于action带有反馈机制，用来不断向客户端反馈任务的进度，并且还支持在任务中途中止运行。操作起来就像这样子，客户...</p>
+        </a>
+      
+    </div>
+  
+  <!-- Custom Files postEnd begin-->
+  
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> 
+  <!-- Custom Files postEnd end-->
+</article>
+
+
   
 
 
+  <article class="post white-box shadow floatable blur" id="comments">
+    <span hidden>
+      <meta itemprop="discussionUrl" content="/2023/09/08/ROS1/10-%E5%8A%A8%E6%80%81%E5%8F%82%E6%95%B0%E6%9C%BA%E5%88%B6%E7%AE%80%E6%B1%87/index.html#comments">
+    </span>
+    <p ct><i class='fas fa-comments'></i> 评论区</p>
     
-  
+
+    <div id="layoutHelper-comments"></div>
+
+  </article>
+
+
+
+
+
+
 </div>
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   
@@ -2677,232 +2883,48 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       
-<section class="widget blogger desktop pjax">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box circle' href='/about/'>
-          <img no-lazy src='https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/touxiang.jpg'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-        
-        
-          <p><span id="jinrishici-sentence">PQ.XIE BLOG</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:212951692@qq.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://gitee.com/xie-peiquan"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://t1.kugou.com/dER5jedBdV2"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
-
-    
-  
-
-  
-    
-    
-      
-  
-  <section class="widget category desktop pjax">
-    
-  <header>
-    
-      <a href='/categories/'><i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/Pytorch%E5%9F%BA%E7%A1%80/" href="/categories/Pytorch%E5%9F%BA%E7%A1%80/"
-            active-action="action-categoriesPytorchE59FBAE7A180"
-            ><div class='name'>Pytorch基础</div><div class='badge'>(5)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/ROS1/" href="/categories/ROS1/"
-            active-action="action-categoriesROS1"
-            ><div class='name'>ROS1</div><div class='badge'>(9)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/ROS2%E5%9F%BA%E7%A1%80/" href="/categories/ROS2%E5%9F%BA%E7%A1%80/"
-            active-action="action-categoriesROS2E59FBAE7A180"
-            ><div class='name'>ROS2基础</div><div class='badge'>(7)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%93%B2%E5%AD%A6%E7%AC%94%E8%AE%B0/" href="/categories/%E5%93%B2%E5%AD%A6%E7%AC%94%E8%AE%B0/"
-            active-action="action-categoriesE593B2E5ADA6E7AC94E8AEB0"
-            ><div class='name'>哲学笔记</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%BB%BA%E7%AB%99/" href="/categories/%E5%BB%BA%E7%AB%99/"
-            active-action="action-categoriesE5BBBAE7AB99"
-            ><div class='name'>建站</div><div class='badge'>(1)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
-
-
-    
-  
-
-  
-    
-    
-      
-<section class="widget desktop pjax">
-  
-  <header>
-    
-      <i class="fa-solid fa-award fa-fw" aria-hidden="true"></i><span class='name'>站点信息</span>
-    
-  </header>
-
-
-  <div class='content'>
-    <div class="webinfo">
-      
-        <div class="webinfo-item">
-          <div>文章数目：</div>
-          <div>23 篇</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>已运行时间：</div>
-          <div id="webinfo-runtime-count"></div>
-        </div>
-      
-
-
-      
-        <div class="webinfo-item">
-          <div>本站总字数：</div>
-          <div>15.9k 字</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>本站访客数：</div>
-          
-          <div><span id="busuanzi_value_site_uv"><i class="fa-solid fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 人</div>
-          
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>本站总访问量：</div>
-          
-          <div><span id="busuanzi_value_site_pv"><i class="fa-solid fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 次</div>
-          
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>最后活动时间：</div>
-          <div id="last-update-show">2023-09-06 日</div>
-        </div>
-      
-    </div>
-  </div>
-</section>
-
-    
-  
-
-  
-    
-    
-      
-
-  <section class='widget desktop  music'>
-    
-
-    <div class='content'>
-      
-
-  
-    <meting-js
-      theme='#1BCDFC'
-      autoplay='false'
-      volume='0.7'
-      loop='all'
-      order='random'
-      fixed='false'
-      list-max-height='320px'
-      server='tencent'
-      type='playlist'
-      id='8969031959'
-      list-folded='true'>
-    </meting-js>
-  
-
-
-    </div>
-  </section>
-
-
     
   
 
 
 <div class="widget-sticky pjax">
 
+  
+  
+
+
+  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
+    
+  <header>
+    
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%8A%A8%E6%80%81%E5%8F%82%E6%95%B0%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-text">1 动态参数的作用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%B7%BB%E5%8A%A0%E5%8A%A8%E6%80%81%E5%8F%82%E6%95%B0"><span class="toc-text">2 添加动态参数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E6%B7%BB%E5%8A%A0-cfg-%E6%96%87%E4%BB%B6"><span class="toc-text">2.1 添加 cfg 文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E7%BC%96%E8%AF%91%E4%BF%AE%E6%94%B9"><span class="toc-text">2.2 编译修改</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%BA%94%E7%94%A8%E8%8A%82%E7%82%B9%E7%BC%96%E5%86%99"><span class="toc-text">3 应用节点编写</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E6%B7%BB%E5%8A%A0%E5%8A%A8%E6%80%81%E5%8F%82%E6%95%B0%E5%BA%94%E7%94%A8%E8%8A%82%E7%82%B9"><span class="toc-text">3.1 添加动态参数应用节点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E7%BC%96%E8%AF%91%E4%BF%AE%E6%94%B9"><span class="toc-text">3.2 编译修改</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-GUI%E5%8A%A8%E6%80%81%E8%B0%83%E5%8F%82"><span class="toc-text">3.3 GUI动态调参</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
+  
+
 </div>
 
 
 <!-- 没有 pjax 占位会报错 万恶的 pjax -->
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
 
   <div class="pjax">
     <!-- pjax占位 -->
@@ -2930,13 +2952,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </aside>
 
 
+
           <!--此文件用来存放一些不方便取值的变量-->
 <!--思路大概是将值藏到重加载的区域内-->
 
 <pjax>
 <script>
   window.pdata={}
-  pdata.ispage=false;
+  pdata.ispage=true;
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -3936,7 +3959,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://xie-peiquan.gitee.io/","name":"PQ.XIE BLOG"}},{"@type":"ListItem","position":2,"item":{"@id":"https://xie-peiquan.gitee.io/categories/哲学笔记/","name":"哲学笔记"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","keywords":"日常唠嗑","description":"个人博客","author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","description":"个人博客"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://xie-peiquan.gitee.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"个人博客","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://xie-peiquan.gitee.io/","name":"PQ.XIE BLOG"}},{"@type":"ListItem","position":2,"item":{"@id":"https://xie-peiquan.gitee.io/categories/ROS1/","name":"ROS1"}},{"@type":"ListItem","position":3,"item":{"@id":"https://xie-peiquan.gitee.io/2023/09/08/ROS1/10-动态参数机制简汇/","name":"10-动态参数机制简汇"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","keywords":"日常唠嗑","description":"个人博客","author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","description":"个人博客"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://xie-peiquan.gitee.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"10-动态参数机制简汇","description":"个人博客","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://xie-peiquan.gitee.io/2023/09/08/ROS1/10-%E5%8A%A8%E6%80%81%E5%8F%82%E6%95%B0%E6%9C%BA%E5%88%B6%E7%AE%80%E6%B1%87/"},"author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://xie-peiquan.gitee.io/2023/09/08/ROS1/10-%E5%8A%A8%E6%80%81%E5%8F%82%E6%95%B0%E6%9C%BA%E5%88%B6%E7%AE%80%E6%B1%87/","wordCount":0,"datePublished":"2023-09-08T08:51:43.255Z","dateModified":"2023-09-08T08:51:43.307Z","articleSection":"ROS1","keywords":"ROS1","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
