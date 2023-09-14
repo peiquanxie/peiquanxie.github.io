@@ -5,8 +5,8 @@
   <meta name="Volantis" content="5.8.0">
   <meta charset="utf-8">
   <!-- SEO相关 -->
-  <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="https://xie-peiquan.gitee.io/archives/2023/page/3/"/>
+  
+  <link rel="canonical" href="https://xie-peiquan.gitee.io/2023/09/14/ros1/11-发布ros功能包/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -34,19 +34,21 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>归档：2023 - PQ.XIE BLOG</title>
-  <meta name="keywords" content="日常唠嗑">
+  <title>11-发布ROS功能包 - PQ.XIE BLOG</title>
+  <meta name="keywords" content="ROS1,日常唠嗑">
   <meta desc name="description" content="个人博客 - PQ.XIE - PQ.XIE BLOG">
   
-<meta property="og:type" content="website">
-<meta property="og:title" content="PQ.XIE BLOG">
-<meta property="og:url" content="https://xie-peiquan.gitee.io/archives/2023/page/3/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="11-发布ROS功能包">
+<meta property="og:url" content="https://xie-peiquan.gitee.io/2023/09/14/ROS1/11-%E5%8F%91%E5%B8%83ROS%E5%8A%9F%E8%83%BD%E5%8C%85/index.html">
 <meta property="og:site_name" content="PQ.XIE BLOG">
-<meta property="og:description" content="个人博客">
+<meta property="og:description" content="当我们开发完某个功能包，要将功能包发布出去。如果是带源码发布，直接将工作空间下 src 目录下的整个功能包源码直接拷贝出去，重新编译运行即可。有时候我们不想公开源码，希望不带源码发布，怎么处理呢？ROS提供了相关的工具支持，具体如下： 1 catkin_make install1.1 修改CMakeLists在功能包下的CMakeLists文件里，找到以下项进行修改：  将编译好的可执行文件，依赖">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+<meta property="article:published_time" content="2023-09-14T06:59:50.529Z">
+<meta property="article:modified_time" content="2023-09-14T06:59:50.581Z">
 <meta property="article:author" content="PQ.XIE">
-<meta property="article:tag" content="日常唠嗑">
+<meta property="article:tag" content="ROS1">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -2234,7 +2236,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <!-- Custom Files bodyBegin end-->
     <!-- front-matter body_begin begin -->
     <!-- front-matter body_begin end -->
-    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur " style='opacity: 0' >
+    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -2503,7 +2505,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="half" class='cover-wrapper  search' style="display: ;">
+      <div id="none" class='cover-wrapper post search' style="display: none;">
         
   <div class='cover-bg lazyload placeholder' data-bg="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/background.jpeg"></div>
 
@@ -2581,16 +2583,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="body-wrapper">
           
 <div id="l_main" class=''>
-	
-		
-  <section class="post-list">
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2023/07/26/pytorch基础/4-模型搭建/">
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2023/09/14/ROS1/11-发布ROS功能包/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="PQ.XIE BLOG">
   </span>
@@ -2599,341 +2593,299 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <meta itemprop="description" content="个人博客">
   </span>
   
-  
+
+
   
     <span hidden>
       <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
     </span>
   
-  
+  <div class="article-meta" id="top">
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/07/26/pytorch%E5%9F%BA%E7%A1%80/4-%E6%A8%A1%E5%9E%8B%E6%90%AD%E5%BB%BA/"  itemprop="url">
-        4-模型搭建
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
     
+    
+      <h1 class="title" itemprop="name headline">
+        11-发布ROS功能包
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' href="/" rel="nofollow">
+    <img itemprop="image" src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/202307251013361.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/202307251013361.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    <p itemprop="name">PQ.XIE</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/ROS1/" rel="nofollow"><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><p>ROS1</p></a></div>
+  <span hidden itemprop="keywords">ROS1</span>
+
+
+          
+        
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-09-14T14:59:50+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>2023年9月14日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：1k 字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：4 分钟</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+
+
+<div class="new-meta-item browse">
+  <a class='notlink'>
+    <p>
+      <i class="fa-solid fa-eye fa-fw" aria-hidden="true"></i>
       
-        1 神经网络搭建1.1 通过 forward 构建我们可以通过继承 nn.Module，构建我们自己的类来定义我们的神经网络。其中，我们在__init__方法中实现各个子Module的初始化，并在forward 方法中组织这些子Module，形成神经网络。
-12345678910111213141516171819class NeuralNetwork(nn.Module):    def ...
+      <span id="busuanzi_value_page_pv"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
       
+      <span>次</span>
+    </p>
+  </a>
+</div>
+
+
+          
+        
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
+      </div>
     
   </div>
+
+
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    <p>当我们开发完某个功能包，要将功能包发布出去。如果是带源码发布，直接将工作空间下 src 目录下的整个功能包源码直接拷贝出去，重新编译运行即可。有时候我们不想公开源码，希望不带源码发布，怎么处理呢？ROS提供了相关的工具支持，具体如下：</p>
+<h2 id="1-catkin-make-install"><a href="#1-catkin-make-install" class="headerlink" title="1 catkin_make install"></a>1 catkin_make install</h2><h3 id="1-1-修改CMakeLists"><a href="#1-1-修改CMakeLists" class="headerlink" title="1.1 修改CMakeLists"></a>1.1 修改CMakeLists</h3><p>在功能包下的CMakeLists文件里，找到以下项进行修改：</p>
+<ul>
+<li>将编译好的可执行文件，依赖库拷贝到 install 的 lib&#x2F; 和 bin&#x2F; 目录下：</li>
+</ul>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## Mark executables and/or libraries for installation</span></span><br><span class="line"> <span class="keyword">install</span>(TARGETS talker_node listener_node</span><br><span class="line">   ARCHIVE DESTINATION <span class="variable">$&#123;CATKIN_PACKAGE_LIB_DESTINATION&#125;</span></span><br><span class="line">   LIBRARY DESTINATION <span class="variable">$&#123;CATKIN_PACKAGE_LIB_DESTINATION&#125;</span></span><br><span class="line">   RUNTIME DESTINATION <span class="variable">$&#123;CATKIN_PACKAGE_BIN_DESTINATION&#125;</span></span><br><span class="line"> )</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>将头文件拷贝到 install 的 include&#x2F; 目录下，非必要。</li>
+</ul>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## Mark cpp header files for installation</span></span><br><span class="line"> <span class="keyword">install</span>(DIRECTORY <span class="keyword">include</span>/<span class="variable">$&#123;PROJECT_NAME&#125;</span>/</span><br><span class="line">   DESTINATION <span class="variable">$&#123;CATKIN_PACKAGE_INCLUDE_DESTINATION&#125;</span></span><br><span class="line">   FILES_MATCHING PATTERN <span class="string">&quot;*.h&quot;</span></span><br><span class="line">   PATTERN <span class="string">&quot;.svn&quot;</span> EXCLUDE</span><br><span class="line"> )</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>将其他资源文件拷贝到 install 的share&#x2F; 目录下，如 urdf mesh rviz ，其下的所有子目录的文件也会拷贝过去，非必要。</li>
+</ul>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">install</span>(DIRECTORY model</span><br><span class="line">           DESTINATION <span class="variable">$&#123;CATKIN_PACKAGE_SHARE_DESTINATION&#125;</span></span><br><span class="line">   )</span><br><span class="line"><span class="keyword">install</span>(DIRECTORY urdf</span><br><span class="line">           DESTINATION <span class="variable">$&#123;CATKIN_PACKAGE_SHARE_DESTINATION&#125;</span></span><br><span class="line">   )</span><br><span class="line"><span class="keyword">install</span>(DIRECTORY mesh</span><br><span class="line">           DESTINATION <span class="variable">$&#123;CATKIN_PACKAGE_SHARE_DESTINATION&#125;</span></span><br><span class="line">   )</span><br><span class="line"><span class="keyword">install</span>(DIRECTORY rviz</span><br><span class="line">           DESTINATION <span class="variable">$&#123;CATKIN_PACKAGE_SHARE_DESTINATION&#125;</span></span><br><span class="line">   )</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>将 launch 文件拷贝到 install 的 launch&#x2F; 目录下，非必要。</li>
+</ul>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## Mark other files for installation (e.g. launch and bag files, etc.)</span></span><br><span class="line"><span class="keyword">install</span>(FILES</span><br><span class="line">  launch/bringup.launch</span><br><span class="line">  DESTINATION <span class="variable">$&#123;CATKIN_PACKAGE_SHARE_DESTINATION&#125;</span>/launch</span><br><span class="line">)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>将 python 脚本拷贝到 install 的 lib&#x2F; 目录下，非必要。<br>遗憾的是，ROS并未对发布的 python 脚本进行任何加密，哪怕是转成 pyc 文件，所以用 C++ 写吧哈哈…  当然也并非没有其他方法，可以借助 pyinstaller 工具把 python 脚本打包（pyinstaller -F -w xxx.py）成可执行文件，放到 install 的 lib&#x2F; 目录下，我初步验证是可以的。当然 pyinstaller 本身也并不安全，关于python源码的保护，或许还有其他方法？</li>
+</ul>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## Mark executable scripts (Python etc.) for installation</span></span><br><span class="line"> <span class="keyword">install</span>(PROGRAMS</span><br><span class="line">   scripts/talker.py</span><br><span class="line">   scripts/listener.py</span><br><span class="line">   DESTINATION <span class="variable">$&#123;CATKIN_PACKAGE_BIN_DESTINATION&#125;</span></span><br><span class="line"> )</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-2-生成-install-目录"><a href="#1-2-生成-install-目录" class="headerlink" title="1.2 生成 install 目录"></a>1.2 生成 install 目录</h3><p>在工作空间下执行 <code>catkin_make install</code> 则会生成 install 目录，目录内容如下。发布后 source 该目录下的 <code>setup.bash</code> 便可以运行。当然运行的前提是同处理器架构，不同处理器架构得用交叉编译，后续再补一节。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line">install</span><br><span class="line">├── _setup_util.py</span><br><span class="line">├── env.sh</span><br><span class="line">├── include</span><br><span class="line">│   └── learning_service</span><br><span class="line">│       ├── Person.h</span><br><span class="line">│       ├── PersonRequest.h</span><br><span class="line">│       └── PersonResponse.h</span><br><span class="line">├── lib</span><br><span class="line">│   ├── learning_service</span><br><span class="line">│   │   ├── person_client</span><br><span class="line">│   │   ├── person_server</span><br><span class="line">│   │   ├── turtle_command_server</span><br><span class="line">│   │   └── turtle_spawn</span><br><span class="line">│   ├── pkgconfig</span><br><span class="line">│   │   └── learning_service.pc</span><br><span class="line">│   └── python3</span><br><span class="line">│       └── dist-packages</span><br><span class="line">│           └── learning_service</span><br><span class="line">│               ├── __init__.py</span><br><span class="line">│               ├── __pycache__</span><br><span class="line">│               │   └── __init__.cpython-38.pyc</span><br><span class="line">│               └── srv</span><br><span class="line">│                   ├── _Person.py</span><br><span class="line">│                   ├── __init__.py</span><br><span class="line">│                   └── __pycache__</span><br><span class="line">│                       ├── _Person.cpython-38.pyc</span><br><span class="line">│                       └── __init__.cpython-38.pyc</span><br><span class="line">├── local_setup.bash</span><br><span class="line">├── local_setup.sh</span><br><span class="line">├── local_setup.zsh</span><br><span class="line">├── setup.bash</span><br><span class="line">├── setup.sh</span><br><span class="line">├── setup.zsh</span><br><span class="line">└── share</span><br><span class="line">    ├── common-lisp</span><br><span class="line">    │   └── ros</span><br><span class="line">    │       └── learning_service</span><br><span class="line">    │           └── srv</span><br><span class="line">    │               ├── Person.lisp</span><br><span class="line">    │               ├── _package.lisp</span><br><span class="line">    │               ├── _package_Person.lisp</span><br><span class="line">    │               └── learning_service-srv.asd</span><br><span class="line">    ├── gennodejs</span><br><span class="line">    │   └── ros</span><br><span class="line">    │       └── learning_service</span><br><span class="line">    │           ├── _index.js</span><br><span class="line">    │           └── srv</span><br><span class="line">    │               ├── Person.js</span><br><span class="line">    │               └── _index.js</span><br><span class="line">    ├── learning_service</span><br><span class="line">    │   ├── cmake</span><br><span class="line">    │   │   ├── learning_service-msg-extras.cmake</span><br><span class="line">    │   │   ├── learning_service-msg-paths.cmake</span><br><span class="line">    │   │   ├── learning_serviceConfig-version.cmake</span><br><span class="line">    │   │   └── learning_serviceConfig.cmake</span><br><span class="line">    │   ├── package.xml</span><br><span class="line">    │   └── srv</span><br><span class="line">    │       └── Person.srv</span><br><span class="line">    └── roseus</span><br><span class="line">        └── ros</span><br><span class="line">            └── learning_service</span><br><span class="line">                ├── manifest.l</span><br><span class="line">                └── srv</span><br><span class="line">                    └── Person.l</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="2-bloom-generate"><a href="#2-bloom-generate" class="headerlink" title="2 bloom-generate"></a>2 bloom-generate</h2><p>从上节可以发现 <code>catkin_make install</code> 生成出来的 install 目录很庞大，有很多冗余的文件。并且以那种形式发布出去的功能包，每次运行都得 source 一下，有没有办法让我们的功能包安装进ROS的系统目录呢？ bloom-generate 提供了更简单的方法，其将源码编译成一个ROS的二进制安装包，安装时将可执行文件等必要文件注入到ROS系统目录下，在功能包的管理上更方便，具体如下：</p>
+<h3 id="2-1-修改CMakeLists"><a href="#2-1-修改CMakeLists" class="headerlink" title="2.1 修改CMakeLists"></a>2.1 修改CMakeLists</h3><p>由于bloom-generate 同样借助 catkin 编译，因此我们同样需要修改 CMakeLists 文件，步骤跟以上一模一样，这里不再赘述。</p>
+<h3 id="2-2-编译二进制安装包"><a href="#2-2-编译二进制安装包" class="headerlink" title="2.2 编译二进制安装包"></a>2.2 编译二进制安装包</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">安装工具：sudo apt install python-bloom fakeroot</span><br><span class="line"><span class="built_in">cd</span> 到功能包目录下，运行以下命令：</span><br><span class="line">bloom-generate rosdebian --os-name ubuntu --ros-distro noetic</span><br><span class="line">fakeroot debian/rules binary</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-3-安装与卸载"><a href="#2-3-安装与卸载" class="headerlink" title="2.3 安装与卸载"></a>2.3 安装与卸载</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install ros-noetic-xxxx.deb</span><br><span class="line">sudo apt remove ros-noetic-xxxx</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="3-遗留问题"><a href="#3-遗留问题" class="headerlink" title="3 遗留问题"></a>3 遗留问题</h2><p>以上两种方式发布功能包还是有问题，暂且把它记下来，等搞明白了再做更新。</p>
+<ul>
+<li>如果需要不对 python 开源，如何保护？</li>
+<li>自定义的 msg , srv, action 接口都会跟着发布出去，如果不开源，如何保护？</li>
+</ul>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="http://wiki.ros.org/cn/ROS/Tutorials">http://wiki.ros.org/cn/ROS/Tutorials</a></p>
+</blockquote>
+
+  </div>
   
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-07-26T17:18:44+08:00">2023-07-26</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Pytorch%E5%9F%BA%E7%A1%80/">Pytorch基础</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Pytorch%E5%9F%BA%E7%A1%80/" itemprop="url"><span itemprop="name">Pytorch基础</span></a>
-            </span>
-          
-        
-      </div>
+  
+    
+    <div class='footer'>
+       <!-- 参考资料、相关资料等 -->
       
-        <div>
-          <a class='readmore' href='/2023/07/26/pytorch%E5%9F%BA%E7%A1%80/4-%E6%A8%A1%E5%9E%8B%E6%90%AD%E5%BB%BA/' itemprop="url">
-            阅读全文
-          </a>
+       <!-- 相关文章 -->
+      
+      <!-- 版权声明组件 -->
+      
+      <!-- 打赏组件 -->
+      
+        <div class='donate'>
+          <div class='imgs'>
+            
+              <img src='https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/%E8%B5%9E%E8%B5%8F%E7%A0%81.JPG'>
+            
+          </div>
         </div>
       
     </div>
-
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-09-14T14:59:50+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2023年9月14日</p>
+  </a>
 </div>
 
-          </div>
         
       
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2023/07/25/pytorch基础/3-数据准备/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-    <meta itemprop="description" content="个人博客">
-  </span>
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://xie-peiquan.gitee.io/2023/09/14/ROS1/11-%E5%8F%91%E5%B8%83ROS%E5%8A%9F%E8%83%BD%E5%8C%85/&title=11-发布ROS功能包 - PQ.XIE BLOG&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://xie-peiquan.gitee.io/2023/09/14/ROS1/11-%E5%8F%91%E5%B8%83ROS%E5%8A%9F%E8%83%BD%E5%8C%85/&title=11-发布ROS功能包 - PQ.XIE BLOG&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://xie-peiquan.gitee.io/2023/09/14/ROS1/11-%E5%8F%91%E5%B8%83ROS%E5%8A%9F%E8%83%BD%E5%8C%85/&title=11-发布ROS功能包 - PQ.XIE BLOG&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        
+        <div class='hoverbox'>
+          <a class='share'><img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/wechat.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/wechat.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></a>
+          <div class='target'>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXgAAAF4CAAAAAB79r16AAAFKklEQVR42u3cO3LlMAwEQN//0t58HYgYDPW8W83MZYmfppIxUP76Nj4yvhCAB2+AB2+AB28U4L/CsX3/73l+bPBwvdN9/P3c03ynz4+9wIMHDx48ePDgwYMvwh8HgMONnL7Xhn5ad3rB0/kezw0ePHjw4MGDBw8e/AX4NIC0A9DTfFuwT80DHjx48ODBgwcPHvxvgJ8WCKbBKi1gbANYWkgBDx48ePDgwYMHD/5fgJ8CpIWM9GLTAAYePHjw4MGDBw8e/L8EP23Q2Y40sKWFmOnF/9pOMvDgwYMHDx48ePDgg3FayPhff469wIMHDx48ePDgwYMvwLfHU2CZFlTSADUtgGyD1bEPePDgwYMHDx48ePAF+FYjUXqQW4ElDYLThq1xgxN48ODBgwcPHjx48AX4VtCYBqPtumnguXVBx78HDx48ePDgwYMHD74IPy1otIPRFGpbmJkGvNb5wIMHDx48ePDgwYNvwE8LD9MgcitY3brYaSPWeD3w4MGDBw8ePHjw4Ivwp8EkPXgK3Qpc24JLehHgwYMHDx48ePDgwd+APy0YpAdtNSJt138ryIEHDx48ePDgwYMH/0n42xu/Fcy2QWz7gTzODx48ePDgwYMHDx58ET4tfGwhb8PfCoKxC3jw4MGDBw8ePHjwF+HHf+BfBpgUMC1QbAswcQMUePDgwYMHDx48ePAF+BRg+lwa0NoFidP3WkEQPHjw4MGDBw8ePPib8GnwSC8m3nh4AdPGo2uFEvDgwYMHDx48ePDgC/CtAsi20JEGnink9OK35zxuaAIPHjx48ODBgwcPvgC/HdMNp4WZKXQK3vpgwIMHDx48ePDgwYN/E751sO1723mnH0Z6fvDgwYMHDx48ePDg34DfBqJp4aH13hSqfd7x++DBgwcPHjx48ODBF+CnhYFWgNo2UqX7/D4c6byPz4MHDx48ePDgwYMH/yJ82liUBrDtuun67XOvAxR48ODBgwcPHjx48IN/3H9akEgLHK3CynRf6QW2Ah148ODBgwcPHjx48E34abCZwraCy/RCputMCzTjiwMPHjx48ODBgwcPvgCfFhTShqS3CxPToNcqtDwGKPDgwYMHDx48ePDgF/Ap1Glg2BY00gs5higVRuLkCh48ePDgwYMHDx58ET4tjKQX0wpo24tPL/z4HODBgwcPHjx48ODBF+CnjT1pwWE7/2mwSqFbjVCPP4MHDx48ePDgwYMHX4BPg03aIDQNTK3ntkFwe8HgwYMHDx48ePDgwTfhU7D2aK2bBrPtB3F8DvDgwYMHDx48ePDgL8K3IdqFjWnw2RYyTvf/uD/w4MGDBw8ePHjw4Avw6cGmoNPGoG2AaV9Y61zgwYMHDx48ePDgwTfhU5BWQWPbKJUWRFrvHc8HHjx48ODBgwcPHnwB/nTBaaCaBqPWgWuNR0vguAIFHjx48ODBgwcPHnyhr2ZaUJgGpenFT9ePCxZhgHx8Hjx48ODBgwcPHjz4AnwrqEwh4gASztP6MLb7AQ8ePHjw4MGDBw++CZ8GplYwmgah6f6n0K8FKPDgwYMHDx48ePDgC/BpYEo3vi1cnK63vdjrnWTgwYMHDx48ePDgwX8AfhvAtuu0PohpwBqfFzx48ODBgwcPHjz4XwCfbvh2YNoWZtLzggcPHjx48ODBgwf/Cfi0YDFtfEoDVRrA0g+tVTgBDx48ePDgwYMHD/4GfBpYWo1M0yDz1r62H9aP98CDBw8ePHjw4MGDL8Ab7w7w4MEb4MEb4MEbi/EHYVw5/Ioq0oQAAAAASUVORK5CYII=">
+          </div>
+        </div>
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+        
+      
+    </div>
+    <!-- Custom Files bottomMeta begin -->
+    
+    <!-- Custom Files bottomMeta end -->
+  </div>
+
+
   
   
+
   
+    <div class="prev-next">
+      
+      
+        <a class='next' href='/2023/09/09/ROS1/ROS1%E9%9B%B6%E7%A2%8E%E7%AC%94%E8%AE%B0/'>
+          <p class='title'>ROS1零碎笔记<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>ros::spin 和 ros::spinOnce 的区别这俩函数学名叫ROS消息回调处理函数，即消息回调要经过他俩中一个才能回调执行。两者区别在于 spin 有进无出，一直阻塞等待消息到来才去...</p>
+        </a>
+      
+    </div>
+  
+  <!-- Custom Files postEnd begin-->
+  
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> 
+  <!-- Custom Files postEnd end-->
+</article>
+
+
+  
+
+
+  <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+      <meta itemprop="discussionUrl" content="/2023/09/14/ROS1/11-%E5%8F%91%E5%B8%83ROS%E5%8A%9F%E8%83%BD%E5%8C%85/index.html#comments">
     </span>
-  
-  
+    <p ct><i class='fas fa-comments'></i> 评论区</p>
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/07/25/pytorch%E5%9F%BA%E7%A1%80/3-%E6%95%B0%E6%8D%AE%E5%87%86%E5%A4%87/"  itemprop="url">
-        3-数据准备
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        1 Dataset1.1  图像（path+label形式）12345678910111213141516171819202122232425import osimport pandas as pdfrom torchvision.io import read_imagefrom torchvision import datasetsfrom torchvision import trans...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-07-25T14:38:09+08:00">2023-07-25</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Pytorch%E5%9F%BA%E7%A1%80/">Pytorch基础</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Pytorch%E5%9F%BA%E7%A1%80/" itemprop="url"><span itemprop="name">Pytorch基础</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/07/25/pytorch%E5%9F%BA%E7%A1%80/3-%E6%95%B0%E6%8D%AE%E5%87%86%E5%A4%87/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
 
-  
+    <div id="layoutHelper-comments"></div>
 
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2023/07/24/pytorch基础/2-tensor操作/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-    <meta itemprop="description" content="个人博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/07/24/pytorch%E5%9F%BA%E7%A1%80/2-tensor%E6%93%8D%E4%BD%9C/"  itemprop="url">
-        2-tensor基础
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        1 tensor属性1.1 tensor初始化1234shape = (2,3,)rand_tensor = torch.rand(shape)ones_tensor = torch.ones(shape)zeros_tensor = torch.zeros(shape) 
-
-1.2 tensor性质1234tensor = torch.rand(3,4)print(f&quot;Shape...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-07-24T17:18:03+08:00">2023-07-24</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Pytorch%E5%9F%BA%E7%A1%80/">Pytorch基础</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Pytorch%E5%9F%BA%E7%A1%80/" itemprop="url"><span itemprop="name">Pytorch基础</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/07/24/pytorch%E5%9F%BA%E7%A1%80/2-tensor%E6%93%8D%E4%BD%9C/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2023/07/24/pytorch基础/1-pytorch快速开始/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-    <meta itemprop="description" content="个人博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/07/24/pytorch%E5%9F%BA%E7%A1%80/1-pytorch%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B/"  itemprop="url">
-        1-pytorch快速开始
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        0 导库123456import torchfrom torch import nnfrom torch.utils.data import DataLoaderfrom torchvision import datasetsfrom torchvision.transforms import ToTensor, Lambda, Composeimport matplotlib.pyplot...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-07-24T17:15:16+08:00">2023-07-24</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Pytorch%E5%9F%BA%E7%A1%80/">Pytorch基础</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Pytorch%E5%9F%BA%E7%A1%80/" itemprop="url"><span itemprop="name">Pytorch基础</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/07/24/pytorch%E5%9F%BA%E7%A1%80/1-pytorch%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2023/07/21/hello-world/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-    <meta itemprop="description" content="个人博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/07/21/hello-world/"  itemprop="url">
-        Hello World
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        今天坑坑洼洼可算是把网站给搭好了，看着简洁漂亮的首页，想着以后就有专属自己的网站，就很开心。背景图是《权游》里面的某一幕的简画，守夜人面对夜鬼的来袭，背水一战，颇为壮观。
-为什么要做个人博客呢？说实话，没有特别的理由。或许是出于新鲜感；或许是工作太无聊；或许是外界太嘈杂，想在数字世界中寻找一片净土；或许是想把有趣的、新奇的东西系统地放进来，有一天可以带朋友来参观，看！这是我曾经的快乐和珍藏。...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-07-21T18:28:18+08:00">2023-07-21</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%BB%BA%E7%AB%99/">建站</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E5%BB%BA%E7%AB%99/" itemprop="url"><span itemprop="name">建站</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/07/21/hello-world/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-
-  
-
-</div>
-
-          </div>
-        
-      
-    
-  </section>
-  
-    
-      <br>
-      <div class="prev-next">
-        
-          <a class="prev" rel="prev" href="/archives/2023/page/2/">
-            <section class="post prev white-box shadow floatable blur" >
-              <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页&nbsp;
-            </section>
-          </a>
-        
-        <p class="current">
-          3 / 3
-        </p>
-        
-      </div>
-    
-  
+  </article>
 
 
-	
+
+
+
+
 </div>
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   
@@ -2942,227 +2894,48 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       
-<section class="widget blogger desktop pjax">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box circle' href='/about/'>
-          <img no-lazy src='https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/touxiang.jpg'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-        
-        
-          <p><span id="jinrishici-sentence">PQ.XIE BLOG</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:212951692@qq.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://gitee.com/xie-peiquan"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://t1.kugou.com/dER5jedBdV2"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
-
-    
-  
-
-  
-    
-    
-      
-  
-  <section class="widget category desktop pjax">
-    
-  <header>
-    
-      <a href='/categories/'><i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/Pytorch%E5%9F%BA%E7%A1%80/" href="/categories/Pytorch%E5%9F%BA%E7%A1%80/"
-            active-action="action-categoriesPytorchE59FBAE7A180"
-            ><div class='name'>Pytorch基础</div><div class='badge'>(5)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/ROS1/" href="/categories/ROS1/"
-            active-action="action-categoriesROS1"
-            ><div class='name'>ROS1</div><div class='badge'>(12)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/ROS2%E5%9F%BA%E7%A1%80/" href="/categories/ROS2%E5%9F%BA%E7%A1%80/"
-            active-action="action-categoriesROS2E59FBAE7A180"
-            ><div class='name'>ROS2基础</div><div class='badge'>(7)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%BB%BA%E7%AB%99/" href="/categories/%E5%BB%BA%E7%AB%99/"
-            active-action="action-categoriesE5BBBAE7AB99"
-            ><div class='name'>建站</div><div class='badge'>(1)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
-
-
-    
-  
-
-  
-    
-    
-      
-<section class="widget desktop pjax">
-  
-  <header>
-    
-      <i class="fa-solid fa-award fa-fw" aria-hidden="true"></i><span class='name'>站点信息</span>
-    
-  </header>
-
-
-  <div class='content'>
-    <div class="webinfo">
-      
-        <div class="webinfo-item">
-          <div>文章数目：</div>
-          <div>25 篇</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>已运行时间：</div>
-          <div id="webinfo-runtime-count"></div>
-        </div>
-      
-
-
-      
-        <div class="webinfo-item">
-          <div>本站总字数：</div>
-          <div>16.7k 字</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>本站访客数：</div>
-          
-          <div><span id="busuanzi_value_site_uv"><i class="fa-solid fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 人</div>
-          
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>本站总访问量：</div>
-          
-          <div><span id="busuanzi_value_site_pv"><i class="fa-solid fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 次</div>
-          
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>最后活动时间：</div>
-          <div id="last-update-show">2023-09-14 日</div>
-        </div>
-      
-    </div>
-  </div>
-</section>
-
-    
-  
-
-  
-    
-    
-      
-
-  <section class='widget desktop  music'>
-    
-
-    <div class='content'>
-      
-
-  
-    <meting-js
-      theme='#1BCDFC'
-      autoplay='false'
-      volume='0.7'
-      loop='all'
-      order='random'
-      fixed='false'
-      list-max-height='320px'
-      server='tencent'
-      type='playlist'
-      id='8969031959'
-      list-folded='true'>
-    </meting-js>
-  
-
-
-    </div>
-  </section>
-
-
     
   
 
 
 <div class="widget-sticky pjax">
 
+  
+  
+
+
+  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
+    
+  <header>
+    
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-catkin-make-install"><span class="toc-text">1 catkin_make install</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E4%BF%AE%E6%94%B9CMakeLists"><span class="toc-text">1.1 修改CMakeLists</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E7%94%9F%E6%88%90-install-%E7%9B%AE%E5%BD%95"><span class="toc-text">1.2 生成 install 目录</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-bloom-generate"><span class="toc-text">2 bloom-generate</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E4%BF%AE%E6%94%B9CMakeLists"><span class="toc-text">2.1 修改CMakeLists</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E7%BC%96%E8%AF%91%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E8%A3%85%E5%8C%85"><span class="toc-text">2.2 编译二进制安装包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8D%B8%E8%BD%BD"><span class="toc-text">2.3 安装与卸载</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E9%81%97%E7%95%99%E9%97%AE%E9%A2%98"><span class="toc-text">3 遗留问题</span></a></li></ol>
+    </div>
+  </section>
+
+  
+
 </div>
 
 
 <!-- 没有 pjax 占位会报错 万恶的 pjax -->
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
 
   <div class="pjax">
     <!-- pjax占位 -->
@@ -3190,13 +2963,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </aside>
 
 
+
           <!--此文件用来存放一些不方便取值的变量-->
 <!--思路大概是将值藏到重加载的区域内-->
 
 <pjax>
 <script>
   window.pdata={}
-  pdata.ispage=false;
+  pdata.ispage=true;
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -3205,14 +2979,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     // header
     var l_header=document.getElementById("l_header");
     
-    l_header.classList.remove("show");
+    l_header.classList.add("show");
     
     
       // cover
       var cover_wrapper=document.querySelector('#l_cover .cover-wrapper');
       var scroll_down=document.getElementById('scroll-down');
-      cover_wrapper.id="half";
-      cover_wrapper.style.display="";
+      cover_wrapper.id="none";
+      cover_wrapper.style.display="none";
       scroll_down.style.display="none";
     
   
@@ -4196,7 +3970,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://xie-peiquan.gitee.io/","name":"PQ.XIE BLOG"}},{"@type":"ListItem","position":2,"item":{"@id":"https://xie-peiquan.gitee.io/archives/","name":"Archive"}},{"@type":"ListItem","position":3,"item":{"@id":"https://xie-peiquan.gitee.io/archives/2023/","name":"2023年"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","keywords":"日常唠嗑","description":"个人博客","author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","description":"个人博客"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://xie-peiquan.gitee.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"个人博客","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://xie-peiquan.gitee.io/","name":"PQ.XIE BLOG"}},{"@type":"ListItem","position":2,"item":{"@id":"https://xie-peiquan.gitee.io/categories/ROS1/","name":"ROS1"}},{"@type":"ListItem","position":3,"item":{"@id":"https://xie-peiquan.gitee.io/2023/09/14/ROS1/11-发布ROS功能包/","name":"11-发布ROS功能包"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","keywords":"日常唠嗑","description":"个人博客","author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","description":"个人博客"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://xie-peiquan.gitee.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"11-发布ROS功能包","description":"个人博客","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://xie-peiquan.gitee.io/2023/09/14/ROS1/11-%E5%8F%91%E5%B8%83ROS%E5%8A%9F%E8%83%BD%E5%8C%85/"},"author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://xie-peiquan.gitee.io/2023/09/14/ROS1/11-%E5%8F%91%E5%B8%83ROS%E5%8A%9F%E8%83%BD%E5%8C%85/","wordCount":0,"datePublished":"2023-09-14T06:59:50.529Z","dateModified":"2023-09-14T06:59:50.581Z","articleSection":"ROS1","keywords":"ROS1","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
