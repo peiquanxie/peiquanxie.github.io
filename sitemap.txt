@@ -1,4 +1,5 @@
 https://xie-peiquan.gitee.io/friends/index.html
+https://xie-peiquan.gitee.io/about/index.html
 https://xie-peiquan.gitee.io/2023/09/14/ROS1/11-%E5%8F%91%E5%B8%83ROS%E5%8A%9F%E8%83%BD%E5%8C%85/
 https://xie-peiquan.gitee.io/2023/09/09/ROS1/ROS1%E9%9B%B6%E7%A2%8E%E7%AC%94%E8%AE%B0/
 https://xie-peiquan.gitee.io/2023/09/03/ROS1/2-ROS1%E5%91%BD%E4%BB%A4%E6%B1%87%E6%80%BB/
@@ -20,7 +21,6 @@ https://xie-peiquan.gitee.io/2023/08/20/ROS2%E5%9F%BA%E7%A1%80/3-ROS2%E7%B3%BB%E
 https://xie-peiquan.gitee.io/2023/08/20/ROS2%E5%9F%BA%E7%A1%80/2-ROS2%E5%AE%89%E8%A3%85(X86%E7%AF%87)/
 https://xie-peiquan.gitee.io/2023/08/20/ROS2%E5%9F%BA%E7%A1%80/1-ROS2%E5%AE%89%E8%A3%85(armhf%E7%AF%87)/
 https://xie-peiquan.gitee.io/googlef847041eb4e8ca77.html
-https://xie-peiquan.gitee.io/about/index.html
 https://xie-peiquan.gitee.io/2023/07/26/pytorch%E5%9F%BA%E7%A1%80/5-%E6%A8%A1%E5%9E%8B%E8%B0%83%E5%8F%82/
 https://xie-peiquan.gitee.io/2023/07/26/pytorch%E5%9F%BA%E7%A1%80/4-%E6%A8%A1%E5%9E%8B%E6%90%AD%E5%BB%BA/
 https://xie-peiquan.gitee.io/2023/07/25/pytorch%E5%9F%BA%E7%A1%80/3-%E6%95%B0%E6%8D%AE%E5%87%86%E5%A4%87/
