@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://xie-peiquan.gitee.io/2023/10/31/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/0-Gflags%E7%9A%84%E4%BD%BF%E7%94%A8/</loc>
+    
+    <lastmod>2023-10-31</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://xie-peiquan.gitee.io/2023/10/06/%E4%B8%93%E5%B1%9E%E6%9C%BA%E5%99%A8%E4%BA%BA/0-%E6%89%93%E9%80%A0%E4%B8%93%E5%B1%9E%E6%9C%BA%E5%99%A8%E4%BA%BA(%E5%BA%8F)/</loc>
     
     <lastmod>2023-10-06</lastmod>
@@ -292,7 +301,7 @@
 
   <url>
     <loc>https://xie-peiquan.gitee.io/</loc>
-    <lastmod>2023-10-06</lastmod>
+    <lastmod>2023-10-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -300,35 +309,42 @@
   
   <url>
     <loc>https://xie-peiquan.gitee.io/tags/%E5%BB%BA%E7%AB%99/</loc>
-    <lastmod>2023-10-06</lastmod>
+    <lastmod>2023-10-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://xie-peiquan.gitee.io/tags/C-%E5%BA%93/</loc>
+    <lastmod>2023-10-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://xie-peiquan.gitee.io/tags/ROS1/</loc>
-    <lastmod>2023-10-06</lastmod>
+    <lastmod>2023-10-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://xie-peiquan.gitee.io/tags/ROS2%E5%9F%BA%E7%A1%80/</loc>
-    <lastmod>2023-10-06</lastmod>
+    <lastmod>2023-10-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://xie-peiquan.gitee.io/tags/Pytorch%E5%9F%BA%E7%A1%80/</loc>
-    <lastmod>2023-10-06</lastmod>
+    <lastmod>2023-10-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://xie-peiquan.gitee.io/tags/%E4%B8%93%E5%B1%9E%E6%9C%BA%E5%99%A8%E4%BA%BA/</loc>
-    <lastmod>2023-10-06</lastmod>
+    <lastmod>2023-10-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -337,35 +353,42 @@
   
   <url>
     <loc>https://xie-peiquan.gitee.io/categories/%E5%BB%BA%E7%AB%99/</loc>
-    <lastmod>2023-10-06</lastmod>
+    <lastmod>2023-10-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://xie-peiquan.gitee.io/categories/C-%E9%82%A3%E4%BA%9B%E4%BA%8B/</loc>
+    <lastmod>2023-10-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://xie-peiquan.gitee.io/categories/ROS1/</loc>
-    <lastmod>2023-10-06</lastmod>
+    <lastmod>2023-10-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://xie-peiquan.gitee.io/categories/ROS2%E5%9F%BA%E7%A1%80/</loc>
-    <lastmod>2023-10-06</lastmod>
+    <lastmod>2023-10-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://xie-peiquan.gitee.io/categories/Pytorch%E5%9F%BA%E7%A1%80/</loc>
-    <lastmod>2023-10-06</lastmod>
+    <lastmod>2023-10-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://xie-peiquan.gitee.io/categories/%E4%B8%93%E5%B1%9E%E6%9C%BA%E5%99%A8%E4%BA%BA/</loc>
-    <lastmod>2023-10-06</lastmod>
+    <lastmod>2023-10-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
