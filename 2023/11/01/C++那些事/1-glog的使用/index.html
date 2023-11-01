@@ -5,8 +5,8 @@
   <meta name="Volantis" content="5.8.0">
   <meta charset="utf-8">
   <!-- SEO相关 -->
-  <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="https://xie-peiquan.gitee.io/categories/"/>
+  
+  <link rel="canonical" href="https://xie-peiquan.gitee.io/2023/11/01/c++那些事/1-glog的使用/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -34,21 +34,21 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>所有分类 - PQ.XIE BLOG</title>
-  <meta name="keywords" content="日常唠嗑">
+  <title>1-glog的使用 - PQ.XIE BLOG</title>
+  <meta name="keywords" content="C++库,日常唠嗑">
   <meta desc name="description" content="个人博客 - PQ.XIE - PQ.XIE BLOG">
   
-<meta property="og:type" content="website">
-<meta property="og:title" content="所有分类">
-<meta property="og:url" content="https://xie-peiquan.gitee.io/categories/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="1-glog的使用">
+<meta property="og:url" content="https://xie-peiquan.gitee.io/2023/11/01/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/1-glog%E7%9A%84%E4%BD%BF%E7%94%A8/index.html">
 <meta property="og:site_name" content="PQ.XIE BLOG">
-<meta property="og:description" content="个人博客">
+<meta property="og:description" content="1 软件包介绍glog是google提供的一个轻量级C&#x2F;C++日志库，提供日志文件记录管理等功能。 2 软件包安装123456git clone https:&#x2F;&#x2F;github.com&#x2F;google&#x2F;glog.gitsudo apt install autoconf automake libtoolcd glog &amp;&amp; mkdir build &amp;&amp; cd b">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2023-07-22T02:37:26.591Z">
-<meta property="article:modified_time" content="2023-07-22T02:37:26.591Z">
+<meta property="article:published_time" content="2023-11-01T07:16:37.336Z">
+<meta property="article:modified_time" content="2023-11-01T07:16:37.384Z">
 <meta property="article:author" content="PQ.XIE">
-<meta property="article:tag" content="日常唠嗑">
+<meta property="article:tag" content="C++库">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -2505,7 +2505,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="none" class='cover-wrapper category search' style="display: none;">
+      <div id="none" class='cover-wrapper post search' style="display: none;">
         
   <div class='cover-bg lazyload placeholder' data-bg="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/background.jpeg"></div>
 
@@ -2582,66 +2582,287 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div id="safearea">
         <div class="body-wrapper">
           
-
 <div id="l_main" class=''>
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2023/11/01/C++那些事/1-glog的使用/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="PQ.XIE BLOG">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="PQ.XIE BLOG">
+    <meta itemprop="description" content="个人博客">
+  </span>
   
+
+
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  <div class="article-meta" id="top">
     
-      <div class='post-wrapper'>
-        <article id="cat" class="post article white-box reveal shadow floatable blur">
-          <h2>所有分类</h2>
-          <div class="all-cats">
-            
-              
-                <a class="" href="/categories/C-%E9%82%A3%E4%BA%9B%E4%BA%8B/">
-                  <span><i class='fa-solid fa-folder-open fa-fw' aria-hidden="true"></i>&nbsp;&nbsp;C++那些事</span>
-                  <span class="title">
-                    (2)
-                  </span>
-                </a>
-              
-                <a class="" href="/categories/Pytorch%E5%9F%BA%E7%A1%80/">
-                  <span><i class='fa-solid fa-folder-open fa-fw' aria-hidden="true"></i>&nbsp;&nbsp;Pytorch基础</span>
-                  <span class="title">
-                    (5)
-                  </span>
-                </a>
-              
-                <a class="" href="/categories/ROS1/">
-                  <span><i class='fa-solid fa-folder-open fa-fw' aria-hidden="true"></i>&nbsp;&nbsp;ROS1</span>
-                  <span class="title">
-                    (12)
-                  </span>
-                </a>
-              
-                <a class="" href="/categories/ROS2%E5%9F%BA%E7%A1%80/">
-                  <span><i class='fa-solid fa-folder-open fa-fw' aria-hidden="true"></i>&nbsp;&nbsp;ROS2基础</span>
-                  <span class="title">
-                    (7)
-                  </span>
-                </a>
-              
-                <a class="" href="/categories/%E4%B8%93%E5%B1%9E%E6%9C%BA%E5%99%A8%E4%BA%BA/">
-                  <span><i class='fa-solid fa-folder-open fa-fw' aria-hidden="true"></i>&nbsp;&nbsp;专属机器人</span>
-                  <span class="title">
-                    (1)
-                  </span>
-                </a>
-              
-                <a class="" href="/categories/%E5%BB%BA%E7%AB%99/">
-                  <span><i class='fa-solid fa-folder-open fa-fw' aria-hidden="true"></i>&nbsp;&nbsp;建站</span>
-                  <span class="title">
-                    (1)
-                  </span>
-                </a>
-              
-            
-          </div>
-          <br>
+    
+    
+      <h1 class="title" itemprop="name headline">
+        1-glog的使用
+      </h1>
+      <div class='new-meta-box'>
+        
           
-        </article>
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' href="/" rel="nofollow">
+    <img itemprop="image" src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/202307251013361.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/202307251013361.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    <p itemprop="name">PQ.XIE</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/C-%E5%BA%93/" rel="nofollow"><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><p>C++库</p></a></div>
+  <span hidden itemprop="keywords">C++库</span>
+
+
+          
+        
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-11-01T15:16:37+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>2023年11月1日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：491 字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：2 分钟</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+
+
+<div class="new-meta-item browse">
+  <a class='notlink'>
+    <p>
+      <i class="fa-solid fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span id="busuanzi_value_page_pv"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+      
+      <span>次</span>
+    </p>
+  </a>
+</div>
+
+
+          
+        
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
       </div>
     
+  </div>
+
+
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    <h2 id="1-软件包介绍"><a href="#1-软件包介绍" class="headerlink" title="1 软件包介绍"></a>1 软件包介绍</h2><p>glog是google提供的一个轻量级C&#x2F;C++日志库，提供日志文件记录管理等功能。</p>
+<h2 id="2-软件包安装"><a href="#2-软件包安装" class="headerlink" title="2 软件包安装"></a>2 软件包安装</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/google/glog.git</span><br><span class="line">sudo apt install autoconf automake libtool</span><br><span class="line">cd glog &amp;&amp; mkdir build &amp;&amp; cd build</span><br><span class="line">cmake ..</span><br><span class="line">make</span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="3-软件包使用"><a href="#3-软件包使用" class="headerlink" title="3 软件包使用"></a>3 软件包使用</h2><h3 id="3-1-初始化glog"><a href="#3-1-初始化glog" class="headerlink" title="3.1 初始化glog"></a>3.1 初始化glog</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;glog/logging.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;glog/raw_logging.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span>** argv)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    FLAGS_log_dir = <span class="string">&quot;~/logs&quot;</span>; <span class="comment">//日志保存目录，需要已存在</span></span><br><span class="line">	google::<span class="built_in">InitGoogleLogging</span>(<span class="string">&quot;main&quot;</span>);  <span class="comment">//括号内是程序名</span></span><br><span class="line">	...</span><br><span class="line">	google::<span class="built_in">ShutdownGoogleLogging</span>();   <span class="comment">//必要，防止内存溢出</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-2-等级记录"><a href="#3-2-等级记录" class="headerlink" title="3.2 等级记录"></a>3.2 等级记录</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">VLOG</span>(<span class="number">4</span>) &lt;&lt; <span class="string">&quot;[DEBUG] &quot;</span> &lt;&lt; ...</span><br><span class="line"><span class="built_in">LOG</span>(INFO) &lt;&lt; ...</span><br><span class="line"><span class="built_in">LOG</span>(WARNING) &lt;&lt; ...</span><br><span class="line"><span class="built_in">LOG</span>(ERROR) &lt;&lt; ...</span><br><span class="line"><span class="built_in">LOG</span>(FATAL) &lt;&lt; ...</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-3-条件记录"><a href="#3-3-条件记录" class="headerlink" title="3.3 条件记录"></a>3.3 条件记录</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">LOG_IF</span>(INFO, cond) &lt;&lt; ...</span><br><span class="line"><span class="built_in">LOG_IF</span>(ERROR, cond) &lt;&lt; ...</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-4-频次记录"><a href="#3-4-频次记录" class="headerlink" title="3.4 频次记录"></a>3.4 频次记录</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">LOG_EVERY_N</span>(INFO, freq)   <span class="comment">//每隔freq次记录一次</span></span><br><span class="line"><span class="built_in">LOG_EVERY_N</span>(WARNING, freq)</span><br><span class="line"><span class="built_in">LOG_EVERY_N</span>(ERROR, freq)</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-5-扩展参数"><a href="#3-5-扩展参数" class="headerlink" title="3.5 扩展参数"></a>3.5 扩展参数</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">FLAGS_logtostderr = <span class="literal">true</span>;  		<span class="comment">//设置日志消息是否转到标准输出而不是日志文件</span></span><br><span class="line">FLAGS_alsologtostderr = <span class="literal">true</span>;  	<span class="comment">//设置日志消息除了日志文件之外是否输出到标准输出</span></span><br><span class="line">FLAGS_colorlogtostderr = <span class="literal">true</span>;  <span class="comment">//设置记录到标准输出的颜色消息（如果终端支持）</span></span><br><span class="line">FLAGS_log_prefix = <span class="literal">true</span>;  		<span class="comment">//设置日志前缀是否应该添加到每行输出</span></span><br><span class="line">FLAGS_logbufsecs = <span class="number">0</span>;  			<span class="comment">//设置可以缓冲日志的最大秒数，0指实时输出</span></span><br><span class="line">FLAGS_max_log_size = <span class="number">10</span>;  		<span class="comment">//设置最大日志文件大小（以MB为单位）,超过会对文件进行分割</span></span><br><span class="line">FLAGS_stop_logging_if_full_disk = <span class="literal">true</span>;  	<span class="comment">//设置是否在磁盘已满时避免日志记录到磁盘</span></span><br><span class="line">FLAGS_minloglevel = google::GLOG_WARNING；	<span class="comment">//设置最小处理日志的级别</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-6-扩展函数"><a href="#3-6-扩展函数" class="headerlink" title="3.6 扩展函数"></a>3.6 扩展函数</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">google::<span class="built_in">SetLogDestination</span>(google::GLOG_FATAL, <span class="string">&quot;~/logs/FATAL_&quot;</span>);	<span class="comment">//FATAL级别的日志都存放到logs目录下且前缀为FATAL_</span></span><br><span class="line">google::<span class="built_in">SetLogFilenameExtension</span>(<span class="string">&quot;logExtension&quot;</span>);  <span class="comment">//在日志文件名中级别后添加一个扩展名,适用于所有严重级别</span></span><br><span class="line">google::<span class="built_in">SetStderrLogging</span>(google::GLOG_INFO);      <span class="comment">//大于指定级别的日志都输出到标准输出</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="4-应用编译"><a href="#4-应用编译" class="headerlink" title="4 应用编译"></a>4 应用编译</h2><p>g++ 编译添加链接 -lglog 即可。</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://github.com/google/glog">https://github.com/google/glog</a><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/xl2432/p/11825966.html">https://www.cnblogs.com/xl2432/p/11825966.html</a></p>
+</blockquote>
+
+  </div>
   
+  
+    
+    <div class='footer'>
+       <!-- 参考资料、相关资料等 -->
+      
+       <!-- 相关文章 -->
+      
+      <!-- 版权声明组件 -->
+      
+      <!-- 打赏组件 -->
+      
+        <div class='donate'>
+          <div class='imgs'>
+            
+              <img src='https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/%E8%B5%9E%E8%B5%8F%E7%A0%81.JPG'>
+            
+          </div>
+        </div>
+      
+    </div>
+  
+  
+    
+
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-11-01T15:16:37+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2023年11月1日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://xie-peiquan.gitee.io/2023/11/01/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/1-glog%E7%9A%84%E4%BD%BF%E7%94%A8/&title=1-glog的使用 - PQ.XIE BLOG&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://xie-peiquan.gitee.io/2023/11/01/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/1-glog%E7%9A%84%E4%BD%BF%E7%94%A8/&title=1-glog的使用 - PQ.XIE BLOG&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://xie-peiquan.gitee.io/2023/11/01/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/1-glog%E7%9A%84%E4%BD%BF%E7%94%A8/&title=1-glog的使用 - PQ.XIE BLOG&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        
+        <div class='hoverbox'>
+          <a class='share'><img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/wechat.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/wechat.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></a>
+          <div class='target'>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXgAAAF4CAAAAAB79r16AAAFKElEQVR42u3bS3bjMAwEQN//0jMnyBPRaMrzKe6cKCJZ4KYN5vPL+Mr4IAAP3gAP3gAP3ijAf8JxPNHD8+l7xxt+2MdP8//0XOoFHjx48ODBgwcPHnwT/hbk6UZbz5/u5/T90/0/zgMePHjw4MGDBw8e/AX4LUA7kKTztn6erh88ePDgwYMHDx48+L8ZPm0kpM+3GiHXgh948ODBgwcPHjx48P8AfPsC0bQA7QKBBw8ePHjw4MGDB/8N+PQiUAvgtCExnf8Uenuh67WbZODBgwcPHjx48ODBB+MU6l/9HHuBBw8ePHjw4MGDB1+A345pA2QahLZ/lzY+psHq2As8ePDgwYMHDx48+AJ8GhBOCzBtJLQC3TYobdcHHjx48ODBgwcPHvwb8NsNThsItwLU9n3pQTl2AQ8ePHjw4MGDBw++AL9tcKSAaaNkGtBahU4PxLgDBR48ePDgwYMHDx78Aj4NPttCpRvdQt0+EODBgwcPHjx48ODB34RPIVuAaUOj1eBIg9nx34EHDx48ePDgwYMHX4DfXvxJL0Cl4NNg09rfNmiCBw8ePHjw4MGDB9+ETwNGq3GRXgzaFug0EG0vSIEHDx48ePDgwYMHfxN++kX/5/LYNii2jZdtwwQ8ePDgwYMHDx48+G/CtwqwXfA0iKUF2TZeHvcJHjx48ODBgwcPHvwL8LcbGWkB6g2K8ALWuEDgwYMHDx48ePDgwRfgpxeUtg2M9PltYafPbYPeY4ACDx48ePDgwYMHD74APw0e08bF9KLRtIDp+rYHYHwQwYMHDx48ePDgwYMvwt8KUtNA8lZwOy1Ifb/gwYMHDx48ePDgwRfgt0HnKWi03ze9WJSup10g8ODBgwcPHjx48OBvwE8DwjaAtS44bRsgt+b/cV7w4MGDBw8ePHjw4Avw00AzDTAtoG2A2h6MWuAEDx48ePDgwYMHD74APw1G6UJT4E842g2WdF7w4MGDBw8ePHjw4G/ATwPF44u3jYLlOF3ftmESN07AgwcPHjx48ODBg78AnzY4vtUIOV33NjBuDxx48ODBgwcPHjx48Dfhp0CtBsoU+vQ9p42b2/OCBw8ePHjw4MGDB9+E3waK059vf3+rUbFt5IwDHnjw4MGDBw8ePHjwRfjthreg26DWCnZxg+O0IQQePHjw4MGDBw8efAH+dAEpeNpo2AaeWwHstACPAQo8ePDgwYMHDx48+AL8NAikG00D2xTgrQYPePDgwYMHDx48ePDfhJ8GnO3CpoVNA932gNQDFnjw4MGDBw8ePHjwF+DTIDF9TzrfaUHSA5MGxPqFJvDgwYMHDx48ePDgB/+YMG0kpBvbgk8D1/Yg/CoN8ODBgwcPHjx48OCb8OkX/mlgSRsdacHbAXF6UMGDBw8ePHjw4MGDb8KnX+y3NrK9UNQKXtv5xwEKPHjw4MGDBw8ePPgF/PqL/RByWujp/O1GSasw4MGDBw8ePHjw4ME34D/hmBYm3eD2YlT6/mkwOz4o4MGDBw8ePHjw4MEX4d+GnD43XU/aMGkFqB/XBx48ePDgwYMHDx78BfjtRaF28GgFu9bz22AJHjx48ODBgwcPHvyfBL8NZNtGRT3olD5fD1DgwYMHDx48ePDgwRcWmAaS0yB1qwBP60kbMq8FKPDgwYMHDx48ePD/Nfz0QtNjYBg+//YFqlaD49QTPHjw4MGDBw8ePPgmfHpxZ3vh57iBUL7Q1ApY6wAFHjx48ODBgwcPHnwAb7w7wIMHb4AHb4AHbyzGbxPxMYNepqDAAAAAAElFTkSuQmCC">
+          </div>
+        </div>
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+        
+      
+    </div>
+    <!-- Custom Files bottomMeta begin -->
+    
+    <!-- Custom Files bottomMeta end -->
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+      
+        <a class='next' href='/2023/10/31/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/0-Gflags%E7%9A%84%E4%BD%BF%E7%94%A8/'>
+          <p class='title'>0-Gflags的使用<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>1 软件包介绍Gflags是一种命令行解析工具(处理命令行参数的库)，主要用于C++程序 解析用命令行执行可执行文件时传入的参数。
+Gflags支持的参数定义类型如下:
+123456DEFINE...</p>
+        </a>
+      
+    </div>
+  
+  <!-- Custom Files postEnd begin-->
+  
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> 
+  <!-- Custom Files postEnd end-->
+</article>
+
+
+  
+
+
+  <article class="post white-box shadow floatable blur" id="comments">
+    <span hidden>
+      <meta itemprop="discussionUrl" content="/2023/11/01/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/1-glog%E7%9A%84%E4%BD%BF%E7%94%A8/index.html#comments">
+    </span>
+    <p ct><i class='fas fa-comments'></i> 评论区</p>
+    
+
+    <div id="layoutHelper-comments"></div>
+
+  </article>
+
+
+
+
+
+
 </div>
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   
@@ -2660,9 +2881,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
 
 
-  <div class="">
-    <!-- pjax占位 -->
-  </div>
+  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
+    
+  <header>
+    
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E8%BD%AF%E4%BB%B6%E5%8C%85%E4%BB%8B%E7%BB%8D"><span class="toc-text">1 软件包介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E8%BD%AF%E4%BB%B6%E5%8C%85%E5%AE%89%E8%A3%85"><span class="toc-text">2 软件包安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E8%BD%AF%E4%BB%B6%E5%8C%85%E4%BD%BF%E7%94%A8"><span class="toc-text">3 软件包使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E5%88%9D%E5%A7%8B%E5%8C%96glog"><span class="toc-text">3.1 初始化glog</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E7%AD%89%E7%BA%A7%E8%AE%B0%E5%BD%95"><span class="toc-text">3.2 等级记录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-%E6%9D%A1%E4%BB%B6%E8%AE%B0%E5%BD%95"><span class="toc-text">3.3 条件记录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-%E9%A2%91%E6%AC%A1%E8%AE%B0%E5%BD%95"><span class="toc-text">3.4 频次记录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-%E6%89%A9%E5%B1%95%E5%8F%82%E6%95%B0"><span class="toc-text">3.5 扩展参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-6-%E6%89%A9%E5%B1%95%E5%87%BD%E6%95%B0"><span class="toc-text">3.6 扩展函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%BA%94%E7%94%A8%E7%BC%96%E8%AF%91"><span class="toc-text">4 应用编译</span></a></li></ol>
+    </div>
+  </section>
 
   
 
@@ -2709,13 +2940,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </aside>
 
 
+
           <!--此文件用来存放一些不方便取值的变量-->
 <!--思路大概是将值藏到重加载的区域内-->
 
 <pjax>
 <script>
   window.pdata={}
-  pdata.ispage=false;
+  pdata.ispage=true;
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -3715,7 +3947,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://xie-peiquan.gitee.io/","name":"PQ.XIE BLOG"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","keywords":"日常唠嗑","description":"个人博客","author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","description":"个人博客"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://xie-peiquan.gitee.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"所有分类","description":"个人博客","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://xie-peiquan.gitee.io/categories/index.html"},"author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://xie-peiquan.gitee.io/categories/index.html","wordCount":0,"datePublished":"2023-07-22T02:37:26.591Z","dateModified":"2023-07-22T02:37:26.591Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://xie-peiquan.gitee.io/","name":"PQ.XIE BLOG"}},{"@type":"ListItem","position":2,"item":{"@id":"https://xie-peiquan.gitee.io/categories/C-那些事/","name":"C++那些事"}},{"@type":"ListItem","position":3,"item":{"@id":"https://xie-peiquan.gitee.io/2023/11/01/C++那些事/1-glog的使用/","name":"1-glog的使用"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","keywords":"日常唠嗑","description":"个人博客","author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","description":"个人博客"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://xie-peiquan.gitee.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"1-glog的使用","description":"个人博客","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://xie-peiquan.gitee.io/2023/11/01/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/1-glog%E7%9A%84%E4%BD%BF%E7%94%A8/"},"author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://xie-peiquan.gitee.io/2023/11/01/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/1-glog%E7%9A%84%E4%BD%BF%E7%94%A8/","wordCount":0,"datePublished":"2023-11-01T07:16:37.336Z","dateModified":"2023-11-01T07:16:37.384Z","articleSection":"C++那些事","keywords":"C++库","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
