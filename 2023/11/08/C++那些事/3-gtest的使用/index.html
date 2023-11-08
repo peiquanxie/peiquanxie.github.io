@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="https://xie-peiquan.gitee.io/2023/09/08/ros1/10-动态参数机制简汇/"/>
+  <link rel="canonical" href="https://xie-peiquan.gitee.io/2023/11/08/c++那些事/3-gtest的使用/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -34,21 +34,21 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>10-动态参数机制简汇 - PQ.XIE BLOG</title>
-  <meta name="keywords" content="ROS1,日常唠嗑">
+  <title>3-gtest的使用 - PQ.XIE BLOG</title>
+  <meta name="keywords" content="C++库,日常唠嗑">
   <meta desc name="description" content="个人博客 - PQ.XIE - PQ.XIE BLOG">
   
 <meta property="og:type" content="article">
-<meta property="og:title" content="10-动态参数机制简汇">
-<meta property="og:url" content="https://xie-peiquan.gitee.io/2023/09/08/ROS1/10-%E5%8A%A8%E6%80%81%E5%8F%82%E6%95%B0%E6%9C%BA%E5%88%B6%E7%AE%80%E6%B1%87/index.html">
+<meta property="og:title" content="3-gtest的使用">
+<meta property="og:url" content="https://xie-peiquan.gitee.io/2023/11/08/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/3-gtest%E7%9A%84%E4%BD%BF%E7%94%A8/index.html">
 <meta property="og:site_name" content="PQ.XIE BLOG">
-<meta property="og:description" content="1 动态参数的作用​		ROS中的参数服务器无法在线动态更新，也就是说如果Listener不主动查询参数值，就无法获知Talker是否已经修改了参数。这就对ROS参数服务器的使用造成了很大的局限，很多场景下我们还是需要动态更新参数的机制，例如参数调试、功能切换等，所以ROS提供了另外一个非常有用的功能包 —— dynamic_reconfigure，实现这种动态配置参数的机制。​		动态重配置的重">
+<meta property="og:description" content="1 软件包介绍gtest是google提供的一个轻量级单元测试框架，它提供了丰富的断言、致命和非致命失败判断，能进行值参数化测试、类型参数化测试、“死亡测试”。 2 软件包安装12345git clone https:&#x2F;&#x2F;github.com&#x2F;google&#x2F;googletest.gitcd googletest mkdir build &amp;&amp; cd buildcmake .. &amp;am">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2023-09-08T09:16:20.641Z">
-<meta property="article:modified_time" content="2023-09-08T09:16:20.693Z">
+<meta property="article:published_time" content="2023-11-08T09:07:49.376Z">
+<meta property="article:modified_time" content="2023-11-08T09:08:10.304Z">
 <meta property="article:author" content="PQ.XIE">
-<meta property="article:tag" content="ROS1">
+<meta property="article:tag" content="C++库">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -2584,7 +2584,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 <div id="l_main" class=''>
   <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2023/09/08/ROS1/10-动态参数机制简汇/">
+  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2023/11/08/C++那些事/3-gtest的使用/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="PQ.XIE BLOG">
   </span>
@@ -2605,7 +2605,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title" itemprop="name headline">
-        10-动态参数机制简汇
+        3-gtest的使用
       </h1>
       <div class='new-meta-box'>
         
@@ -2623,17 +2623,17 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
             
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/ROS1/" rel="nofollow"><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><p>ROS1</p></a></div>
-  <span hidden itemprop="keywords">ROS1</span>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/C-%E5%BA%93/" rel="nofollow"><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><p>C++库</p></a></div>
+  <span hidden itemprop="keywords">C++库</span>
 
 
           
         
           
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-09-08T17:16:20+08:00">
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-11-08T17:07:49+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>2023年9月8日</p>
+    <p>2023年11月8日</p>
   </a>
 </div>
 
@@ -2644,13 +2644,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：1.1k 字</p>
+      <p>字数：1.4k 字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：4 分钟</p>
+      <p>时长：6 分钟</p>
     </a>
   </div>
 
@@ -2688,42 +2688,184 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h2 id="1-动态参数的作用"><a href="#1-动态参数的作用" class="headerlink" title="1 动态参数的作用"></a>1 动态参数的作用</h2><p>​		ROS中的参数服务器无法在线动态更新，也就是说如果Listener不主动查询参数值，就无法获知Talker是否已经修改了参数。这就对ROS参数服务器的使用造成了很大的局限，很多场景下我们还是需要动态更新参数的机制，例如参数调试、功能切换等，所以ROS提供了另外一个非常有用的功能包 —— dynamic_reconfigure，实现这种动态配置参数的机制。<br>​		动态重配置的重点是提供一种标准的方法，将节点的一个子集参数公开给外部重配置。使用客户端程序，例如gui，可以向节点查询一组可动态配置的参数，包括它们的名称、类型、范围，并向用户提供一个自定义接口。<br>​		以下介绍如何给功能包添加动态参数。</p>
-<h2 id="2-添加动态参数"><a href="#2-添加动态参数" class="headerlink" title="2 添加动态参数"></a>2 添加动态参数</h2><h3 id="2-1-添加-cfg-文件"><a href="#2-1-添加-cfg-文件" class="headerlink" title="2.1 添加 cfg 文件"></a>2.1 添加 cfg 文件</h3><p>在功能包下新建 cfg 目录，并新建 cfg 文件（其实是python脚本），记得给 cfg 文件添加可执行权限。这里以典型的pid.cfg文件为例，内容如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line">PACKAGE = <span class="string">&quot;learning_topic&quot;</span>  <span class="comment">#所属功能包名 </span></span><br><span class="line"><span class="comment">#初始化ROS，并导入参数生成器</span></span><br><span class="line"><span class="keyword">from</span> dynamic_reconfigure.parameter_generator_catkin <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"><span class="comment">#初始化参数生成器</span></span><br><span class="line">gen = ParameterGenerator()</span><br><span class="line"></span><br><span class="line"><span class="comment">#定义需动态配置的参数，格式为</span></span><br><span class="line"><span class="comment">#gen.add(name , type, level, description, default, min, max)</span></span><br><span class="line">gen.add(<span class="string">&quot;KP&quot;</span>,    double_t,    <span class="number">0</span>, <span class="string">&quot;KP_param&quot;</span>,  <span class="number">225.0</span>, <span class="number">0</span>, <span class="number">500</span>)</span><br><span class="line">gen.add(<span class="string">&quot;KI&quot;</span>,    double_t,    <span class="number">0</span>, <span class="string">&quot;KI_param&quot;</span>,  <span class="number">150.0</span>, <span class="number">0</span>, <span class="number">300</span>)</span><br><span class="line">gen.add(<span class="string">&quot;KD&quot;</span>,    double_t,    <span class="number">0</span>, <span class="string">&quot;KD_param&quot;</span>,  <span class="number">50.0</span>,  <span class="number">0</span>, <span class="number">300</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#生成必要文件并退出</span></span><br><span class="line"><span class="comment">#dynamic_PID为运行时的节点名，pid为生成文件的前缀</span></span><br><span class="line">exit(gen.generate(PACKAGE, <span class="string">&quot;dynamic_PID&quot;</span>, <span class="string">&quot;pid&quot;</span>))</span><br></pre></td></tr></table></figure>
+    <h2 id="1-软件包介绍"><a href="#1-软件包介绍" class="headerlink" title="1 软件包介绍"></a>1 软件包介绍</h2><p>gtest是google提供的一个轻量级单元测试框架，它提供了丰富的断言、致命和非致命失败判断，能进行值参数化测试、类型参数化测试、“死亡测试”。</p>
+<h2 id="2-软件包安装"><a href="#2-软件包安装" class="headerlink" title="2 软件包安装"></a>2 软件包安装</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/google/googletest.git</span><br><span class="line">cd googletest </span><br><span class="line">mkdir build &amp;&amp; cd build</span><br><span class="line">cmake .. &amp;&amp; make</span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure>
 
-<p>参数解释：<br><code>gen.add(name , type, level, description, default, min, max)</code>  </p>
+<h2 id="3-软件包使用"><a href="#3-软件包使用" class="headerlink" title="3 软件包使用"></a>3 软件包使用</h2><h3 id="3-1-快速开始"><a href="#3-1-快速开始" class="headerlink" title="3.1 快速开始"></a>3.1 快速开始</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;gtest/gtest.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">Factorial</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">  <span class="type">int</span> result = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">    result *= i;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> sample1&#123;</span><br><span class="line"><span class="built_in">TEST</span>(FactorialTest, Zero) &#123; </span><br><span class="line">    <span class="built_in">EXPECT_EQ</span>(<span class="number">1</span>, <span class="built_in">Factorial</span>(<span class="number">0</span>)); </span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>编译运行：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">g++ ./mytest.cpp -lgtest -std=c++14 -lgtest_main -lpthread -o mytest</span><br></pre></td></tr></table></figure>
+
+<p> 其中链接 -lgtest_main 是因为测试的 main 函数在 gtest_main.a 库中，由它拉起所有的测试用例。</p>
+<h3 id="3-2-断言接口"><a href="#3-2-断言接口" class="headerlink" title="3.2 断言接口"></a>3.2 断言接口</h3><p>gtest中，断言的宏可以分为两类，一类是ASSERT系列，一类是EXPECT系列。<br><strong>ASSERT_*</strong> 系列的断言（Fatal assertion），当检查点失败时，退出当前函数（注意：并非退出当前案例）。<br><strong>EXPECT_*</strong> 系列的断言(Nonfatal assertion)，当检查点失败时，继续执行下一个检查点（每一个断言表示一个测试点）。<br>通常情况应该首选使用 EXPECT_ ，因为 ASSERT_ 在报告完错误后不会进行清理工作，有可能导致内存泄露问题。</p>
+<h4 id="3-2-1-布尔型检查"><a href="#3-2-1-布尔型检查" class="headerlink" title="3.2.1 布尔型检查"></a>3.2.1 布尔型检查</h4><table>
+<thead>
+<tr>
+<th align="left">Fatal assertion</th>
+<th align="left">Nonfatal assertion</th>
+<th align="left">Verifies</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">ASSERT_TRUE(condition);</td>
+<td align="left">EXPECT_TRUE(condition);</td>
+<td align="left">condition is true</td>
+</tr>
+<tr>
+<td align="left">ASSERT_FALSE(condition);</td>
+<td align="left">EXPECT_FALSE(condition);</td>
+<td align="left">condition is false</td>
+</tr>
+</tbody></table>
+<h4 id="3-2-2-二值检查"><a href="#3-2-2-二值检查" class="headerlink" title="3.2.2 二值检查"></a>3.2.2 二值检查</h4><table>
+<thead>
+<tr>
+<th align="left">Fatal assertion</th>
+<th align="left">Nonfatal assertion</th>
+<th align="left">Verifies</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">ASSERT_EQ(expected, actual);</td>
+<td align="left">EXPECT_EQ(expected, actual);</td>
+<td align="left">expected &#x3D;&#x3D; actual</td>
+</tr>
+<tr>
+<td align="left">ASSERT_NE(val1, val2);</td>
+<td align="left">EXPECT_NE(val1, val2);</td>
+<td align="left">val1 !&#x3D; val2</td>
+</tr>
+<tr>
+<td align="left">ASSERT_LT(val1, val2);</td>
+<td align="left">EXPECT_LT(val1, val2);</td>
+<td align="left">val1 &lt; val2</td>
+</tr>
+<tr>
+<td align="left">ASSERT_LE(val1, val2);</td>
+<td align="left">EXPECT_LE(val1, val2);</td>
+<td align="left">val1 &lt;&#x3D; val2</td>
+</tr>
+<tr>
+<td align="left">ASSERT_GT(val1, val2);</td>
+<td align="left">EXPECT_GT(val1, val2);</td>
+<td align="left">val1 &gt; val2</td>
+</tr>
+<tr>
+<td align="left">ASSERT_GE(val1, val2);</td>
+<td align="left">EXPECT_GE(val1, val2);</td>
+<td align="left">val1 &gt;&#x3D; val2</td>
+</tr>
+</tbody></table>
+<h4 id="3-2-3-字符串检查"><a href="#3-2-3-字符串检查" class="headerlink" title="3.2.3 字符串检查"></a>3.2.3 字符串检查</h4><table>
+<thead>
+<tr>
+<th align="left">Fatal assertion</th>
+<th align="left">Nonfatal assertion</th>
+<th align="left">Verifies</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">ASSERT_STREQ(expected_str, actual_str);</td>
+<td align="left">EXPECT_STREQ(expected_str,actual_str);</td>
+<td align="left">the two C strings have the same content</td>
+</tr>
+<tr>
+<td align="left">ASSERT_STRNE(str1, str2);</td>
+<td align="left">EXPECT_STRNE(str1, str2);</td>
+<td align="left">the two C strings have different content</td>
+</tr>
+<tr>
+<td align="left">ASSERT_STRCASEEQ(expected_str, actual_str);</td>
+<td align="left">EXPECT_STRCASEEQ(expected_str, actual_str);</td>
+<td align="left">the two C strings have the same content, ignoring case （忽略大小写）</td>
+</tr>
+<tr>
+<td align="left">ASSERT_STRCASENE(str1, str2);</td>
+<td align="left">EXPECT_STRCASENE(str1, str2);</td>
+<td align="left">the two C strings have different content, ignoring case （忽略大小小）</td>
+</tr>
+</tbody></table>
+<h4 id="3-2-4-异常检查"><a href="#3-2-4-异常检查" class="headerlink" title="3.2.4 异常检查"></a>3.2.4 异常检查</h4><table>
+<thead>
+<tr>
+<th align="left">Fatal assertion</th>
+<th align="left">Nonfatal assertion</th>
+<th align="left">Verifies</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">ASSERT_THROW(statement, exception_type);</td>
+<td align="left">EXPECT_THROW(statement, exception_type);</td>
+<td align="left">statement throws an exception of the given type</td>
+</tr>
+<tr>
+<td align="left">ASSERT_ANY_THROW(statement);</td>
+<td align="left">EXPECT_ANY_THROW(statement);</td>
+<td align="left">statement throws an exception of any type</td>
+</tr>
+<tr>
+<td align="left">ASSERT_NO_THROW(statement);</td>
+<td align="left">EXPECT_NO_THROW(statement);</td>
+<td align="left">statement doesn’t throw any exception</td>
+</tr>
+</tbody></table>
+<h4 id="3-2-5-浮点检查"><a href="#3-2-5-浮点检查" class="headerlink" title="3.2.5 浮点检查"></a>3.2.5 浮点检查</h4><table>
+<thead>
+<tr>
+<th align="left">Fatal assertion</th>
+<th align="left">Nonfatal assertion</th>
+<th align="left">Verifies</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">ASSERT_FLOAT_EQ(expected, actual);</td>
+<td align="left">EXPECT_FLOAT_EQ(expected, actual);</td>
+<td align="left">the two float values are almost equal</td>
+</tr>
+<tr>
+<td align="left">ASSERT_DOUBLE_EQ(expected, actual);</td>
+<td align="left">EXPECT_DOUBLE_EQ(expected, actual);</td>
+<td align="left">the two double values are almost equal</td>
+</tr>
+</tbody></table>
+<h4 id="3-2-6-相近值检查"><a href="#3-2-6-相近值检查" class="headerlink" title="3.2.6 相近值检查"></a>3.2.6 相近值检查</h4><table>
+<thead>
+<tr>
+<th align="left">Fatal assertion</th>
+<th align="left">Nonfatal assertion</th>
+<th align="left">Verifies</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">ASSERT_NEAR(val1, val2, abs_error);</td>
+<td align="left">EXPECT_NEAR(val1, val2, abs_error);</td>
+<td align="left">the difference between val1 and val2 doesn’t exceed the given absolute error</td>
+</tr>
+</tbody></table>
+<h3 id="3-3-宏测试接口"><a href="#3-3-宏测试接口" class="headerlink" title="3.3 宏测试接口"></a>3.3 宏测试接口</h3><h4 id="3-3-1-TEST"><a href="#3-3-1-TEST" class="headerlink" title="3.3.1 TEST"></a>3.3.1 TEST</h4><p><code>TEST(test_suite_name, test_name)</code></p>
+<p>其中，test_suite_name 为测试组名，test_name 为测试用例名，一个测试组可包含多个测试用例。<strong>注意这里同一个 test_suite 下的 test 会可能相互影响。</strong></p>
+<h4 id="3-3-2-TEST-F"><a href="#3-3-2-TEST-F" class="headerlink" title="3.3.2 TEST_F"></a>3.3.2 TEST_F</h4><p><code>TEST_F(test_fixture, test_name)</code></p>
+<p>TEST_F与TEST的区别是，TEST_F提供了一个初始化函数（SetUp）和一个清理函数(TearDown)，运行每一个TEST_F都会调用 SetUp 和 TearDown 函数，因此所有的TEST_F是互相独立的，都是在初始化状态下运行。<strong>多个测试场景需要相同数据配置的情况，用 TEST_F。</strong></p>
+<p>使用 TEST_F 前需要创建一个测试类，继承于::testing::Test类。在类内部使用public或者protected定义其成员，使测试子类可以使用其成员。为什么要定义这个测试类？是为了方便我们为每个 TEST_F 创建一个干净独立的环境，即需要<strong>定义初始化和清理函数</strong>。一般的，“构造函数&#x2F;析构函数” 和 “SetUp&#x2F;TearDown” 这两对都可以用来进行初始化和清理。<strong>需要注意不要在 构造&#x2F;析构函数 里抛出异常。</strong></p>
+<p>以下选自 apollo 项目的 ConfigManagerTest 片段：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">ConfigManagerTest</span> : <span class="keyword">public</span> testing::Test &#123;</span><br><span class="line"> <span class="keyword">protected</span>:</span><br><span class="line">  <span class="built_in">ConfigManagerTest</span>() : <span class="built_in">config_manager_</span>(<span class="literal">NULL</span>) &#123;&#125;</span><br><span class="line">  <span class="keyword">virtual</span> ~<span class="built_in">ConfigManagerTest</span>() &#123;&#125;</span><br><span class="line">  <span class="function"><span class="keyword">virtual</span> <span class="type">void</span> <span class="title">SetUp</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    FLAGS_work_root = <span class="string">&quot;modules/perception/data&quot;</span>;</span><br><span class="line">    FLAGS_config_manager_path = <span class="string">&quot;./config_manager_test/config_manager.config&quot;</span>;</span><br><span class="line">    config_manager_ = ConfigManager::<span class="built_in">instance</span>();</span><br><span class="line">  &#125;</span><br><span class="line"> <span class="keyword">protected</span>:</span><br><span class="line">  ConfigManager* config_manager_;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">TEST_F</span>(ConfigManagerTest, test_Init) &#123;</span><br><span class="line">  <span class="built_in">EXPECT_TRUE</span>(config_manager_-&gt;<span class="built_in">Init</span>());</span><br><span class="line">  <span class="built_in">EXPECT_EQ</span>(config_manager_-&gt;<span class="built_in">NumModels</span>(), <span class="number">3u</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">TEST_F</span>(ConfigManagerTest, test_Reset) &#123;</span><br><span class="line">  <span class="built_in">EXPECT_TRUE</span>(config_manager_-&gt;<span class="built_in">Reset</span>());</span><br><span class="line">  std::string wrong_root = <span class="string">&quot;wrong_root&quot;</span>;</span><br><span class="line">  config_manager_-&gt;<span class="built_in">SetWorkRoot</span>(wrong_root);</span><br><span class="line">  <span class="built_in">EXPECT_FALSE</span>(config_manager_-&gt;<span class="built_in">Reset</span>());</span><br><span class="line">  config_manager_-&gt;<span class="built_in">SetWorkRoot</span>(FLAGS_work_root);   </span><br></pre></td></tr></table></figure>
+
+<h3 id="3-4-预处理事件机制"><a href="#3-4-预处理事件机制" class="headerlink" title="3.4 预处理事件机制"></a>3.4 预处理事件机制</h3><p>在单元测试中，我们经常需要在某个测试套件、测试用例或者整个测试运行之前进行前置条件设置及检查，或者运行之后对运行结果进行校验等操作。在gtest中，称之为事件机制。gtest将事件按照作用的范围不同进行划分，从大到小总共分为3个层次：</p>
+<ol>
+<li>整个测试层面，即在测试工程开始前和结束后进行；（Environment层面）</li>
+<li>测试套件层面，即在某个测试套件开始前和结束后进行；（TestSuite层面）</li>
+<li>测试用例层面，即在某个测试用例开始前和结束后进行；（TestCase层面）</li>
+</ol>
+<h4 id="3-4-1-Environment层面"><a href="#3-4-1-Environment层面" class="headerlink" title="3.4.1 Environment层面"></a>3.4.1 Environment层面</h4><p>实现 Environment 层面的环境构造，需要写一个类，继承testing::Environment类，覆盖里面的 SetUp 和 TearDown 方法。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">myEnvirment</span> : <span class="keyword">public</span> testing::Environment &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="type">void</span> <span class="title">SetUp</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;environment setup&quot;</span> &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="type">void</span> <span class="title">TearDown</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;environment teardown&quot;</span> &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> **argv)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ::testing::<span class="built_in">InitGoogleTest</span>(&amp;argc, argv);</span><br><span class="line">    ::testing::<span class="built_in">AddGlobalTestEnvironment</span>(<span class="keyword">new</span> <span class="built_in">myEnvirment</span>());</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">RUN_ALL_TESTS</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-4-2-TestSuite层面"><a href="#3-4-2-TestSuite层面" class="headerlink" title="3.4.2 TestSuite层面"></a>3.4.2 TestSuite层面</h4><p>实现 TestSuite 层面的环境构造，需要写一个类，继承testing::Test类，并覆盖它的静态方法：SetUpTestCase 和 TearDownTestCase.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">FooTest</span> : <span class="keyword">public</span> testing::Test &#123;</span><br><span class="line"> <span class="keyword">protected</span>:</span><br><span class="line">  <span class="function"><span class="type">static</span> <span class="type">void</span> <span class="title">SetUpTestCase</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    shared_resource_ = <span class="keyword">new</span> ;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="type">static</span> <span class="type">void</span> <span class="title">TearDownTestCase</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">delete</span> shared_resource_;</span><br><span class="line">    shared_resource_ = <span class="literal">NULL</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="type">static</span> T* shared_resource_;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">TEST</span>(FooTest, case1)</span><br><span class="line"><span class="built_in">TEST</span>(FooTest, case2)   </span><br></pre></td></tr></table></figure>
+
+<h4 id="3-4-3-TestCase层面"><a href="#3-4-3-TestCase层面" class="headerlink" title="3.4.3 TestCase层面"></a>3.4.3 TestCase层面</h4><p>实现 TestCase 层面的环境构造，需要写一个类，继承testing::Test类，并覆盖它 SetUp 和 TearDown 方法。具体见 3.3.2 TEST_F 小节。</p>
 <blockquote>
-<p>– name：参数名，使用字符串描述；<br>– type：定义参数的类型，可以是int_t, double_t, str_t, 或者bool_t；<br>– level：需要传入参数动态配置回调函数中的掩码，在回调函数中会修改所有参数的掩码，表示参数已经进行修改；<br>– description：描述参数作用的字符串；<br>– default：设置参数的默认值；<br>– min：可选，设置参数的最小值，对于字符串和布尔类型值不生效；<br>– max：可选，设置参数的较大值，对于字符串和布尔类型值不生效；</p>
-</blockquote>
-<p><code>gen.generate(PACKAGE, &quot;dynamic_PID&quot;, &quot;pid&quot;)</code></p>
-<blockquote>
-<p>dynamic_PID：为运行时的节点名。<br>pid：为生成文件的前缀，如pidConfig，<strong>该前缀需要与配置文件名相同</strong>。</p>
-</blockquote>
-<p>补python版本：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#! /usr/bin/env python</span></span><br><span class="line"><span class="keyword">import</span> rospy</span><br><span class="line"><span class="keyword">from</span> dynamic_reconfigure.server <span class="keyword">import</span> Server</span><br><span class="line"><span class="keyword">from</span> learning_topic.cfg <span class="keyword">import</span> pidConfig</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">dp_callback</span>(<span class="params">config,level</span>):</span><br><span class="line">    rospy.loginfo(<span class="string">&quot;Reconfigure Request:%d %d %d&quot;</span>,</span><br><span class="line">            config.KP,             </span><br><span class="line">			config.KI,             </span><br><span class="line">			config.KD</span><br><span class="line">        )</span><br><span class="line">    <span class="keyword">return</span> config</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    rospy.init_node(<span class="string">&quot;pid_app&quot;</span>)</span><br><span class="line">    server = Server(pidConfig, dp_callback)</span><br><span class="line">    rospy.loginfo(<span class="string">&quot;Spinning node&quot;</span>)</span><br><span class="line">    rospy.spin()</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="2-2-编译修改"><a href="#2-2-编译修改" class="headerlink" title="2.2 编译修改"></a>2.2 编译修改</h3><p>cmake修改：在CmakeLists找到如下项进行修改：</p>
-<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">generate_dynamic_reconfigure_options(... cfg/pid.cfg)</span><br><span class="line"><span class="keyword">find_package</span>(... dynamic_reconfigure)</span><br></pre></td></tr></table></figure>
-
-<p>catkin_make 后便可在devel&#x2F;include 目录下发现 pidConfig.h 头文件.</p>
-<h2 id="3-应用节点编写"><a href="#3-应用节点编写" class="headerlink" title="3 应用节点编写"></a>3 应用节点编写</h2><h3 id="3-1-添加动态参数应用节点"><a href="#3-1-添加动态参数应用节点" class="headerlink" title="3.1 添加动态参数应用节点"></a>3.1 添加动态参数应用节点</h3><p>在功能包 src 目录下新增 pid_app.cpp 文件，内容如下：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;ros/ros.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;dynamic_reconfigure/server.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;learning_topic/pidConfig.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//定义回调函数，当客户端请求修改参数时，服务端即可跳转到回调函数中进行处理。</span></span><br><span class="line"><span class="comment">//传入值有两个，一个是参数更新的配置值，一个是表示参数修改的掩码</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">callback</span><span class="params">(learning_topic::pidConfig &amp;config, <span class="type">uint32_t</span> level)</span> </span></span><br><span class="line"><span class="function"></span>&#123;  </span><br><span class="line">	<span class="built_in">ROS_INFO</span>(<span class="string">&quot;Reconfigure Request: %f %f %f&quot;</span>,             </span><br><span class="line">			config.KP,             </span><br><span class="line">			config.KI,             </span><br><span class="line">			config.KD);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> **argv)</span></span></span><br><span class="line"><span class="function"></span>&#123;    </span><br><span class="line">	<span class="comment">//初始化ROS节点</span></span><br><span class="line">	ros::<span class="built_in">init</span>(argc, argv, <span class="string">&quot;pid_app&quot;</span>);</span><br><span class="line">	<span class="comment">//创建了一个参数动态配置的服务端实例，参数配置的类型就是配置文件中描述的类型</span></span><br><span class="line">	<span class="comment">//该服务端实例会监听客户端的参数配置请求。</span></span><br><span class="line">	dynamic_reconfigure::Server&lt;learning_topic::pidConfig&gt; server;    </span><br><span class="line">	dynamic_reconfigure::Server&lt;learning_topic::pidConfig&gt;::CallbackType f;    </span><br><span class="line">	<span class="comment">//并将回调函数和服务端绑定</span></span><br><span class="line">	f = boost::<span class="built_in">bind</span>(&amp;callback, _1, _2);    </span><br><span class="line">	server.<span class="built_in">setCallback</span>(f);    </span><br><span class="line">	<span class="built_in">ROS_INFO</span>(<span class="string">&quot;Spinning node&quot;</span>);    </span><br><span class="line">	ros::<span class="built_in">spin</span>();    </span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-2-编译修改"><a href="#3-2-编译修改" class="headerlink" title="3.2 编译修改"></a>3.2 编译修改</h3><p>cmake修改：在CmakeLists末尾添加如下修改：</p>
-<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">add_executable</span>(pid_app src/pid_app.cpp)</span><br><span class="line"><span class="keyword">target_link_libraries</span>(pid_app <span class="variable">$&#123;catkin_LIBRARIES&#125;</span>)</span><br><span class="line"><span class="keyword">add_dependencies</span>(pid_app <span class="variable">$&#123;PROJECT_NAME&#125;</span>_gencfg)</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-3-GUI动态调参"><a href="#3-3-GUI动态调参" class="headerlink" title="3.3 GUI动态调参"></a>3.3 GUI动态调参</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">终端1：roscore</span><br><span class="line">终端2：rosrun learning_topic pid_app</span><br><span class="line">终端3：rosrun rqt_reconfigure rqt_reconfigure</span><br></pre></td></tr></table></figure>
-
-<p>效果如下：</p>
-<img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/ROS1/202309081629039.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/ROS1/202309081629039.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20230908162907240"  />
-
-
-
-<blockquote>
-<p><a target="_blank" rel="noopener" href="http://wiki.ros.org/cn/ROS/Tutorials">http://wiki.ros.org/cn/ROS/Tutorials</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43569276/article/details/102928817">https://blog.csdn.net/weixin_43569276/article/details/102928817</a></p>
+<p>引用：</p>
+<p><a target="_blank" rel="noopener" href="https://google.github.io/googletest/">https://google.github.io/googletest/</a><br><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/2159398">https://cloud.tencent.com/developer/article/2159398</a></p>
 </blockquote>
 
   </div>
@@ -2757,10 +2899,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-09-08T17:16:20+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-11-08T17:08:10+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2023年9月8日</p>
+    <p>更新于：2023年11月8日</p>
   </a>
 </div>
 
@@ -2774,7 +2916,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://xie-peiquan.gitee.io/2023/09/08/ROS1/10-%E5%8A%A8%E6%80%81%E5%8F%82%E6%95%B0%E6%9C%BA%E5%88%B6%E7%AE%80%E6%B1%87/&title=10-动态参数机制简汇 - PQ.XIE BLOG&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://xie-peiquan.gitee.io/2023/11/08/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/3-gtest%E7%9A%84%E4%BD%BF%E7%94%A8/&title=3-gtest的使用 - PQ.XIE BLOG&summary="
           
           >
           
@@ -2786,7 +2928,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://xie-peiquan.gitee.io/2023/09/08/ROS1/10-%E5%8A%A8%E6%80%81%E5%8F%82%E6%95%B0%E6%9C%BA%E5%88%B6%E7%AE%80%E6%B1%87/&title=10-动态参数机制简汇 - PQ.XIE BLOG&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://xie-peiquan.gitee.io/2023/11/08/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/3-gtest%E7%9A%84%E4%BD%BF%E7%94%A8/&title=3-gtest的使用 - PQ.XIE BLOG&summary="
           
           >
           
@@ -2798,7 +2940,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://xie-peiquan.gitee.io/2023/09/08/ROS1/10-%E5%8A%A8%E6%80%81%E5%8F%82%E6%95%B0%E6%9C%BA%E5%88%B6%E7%AE%80%E6%B1%87/&title=10-动态参数机制简汇 - PQ.XIE BLOG&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://xie-peiquan.gitee.io/2023/11/08/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/3-gtest%E7%9A%84%E4%BD%BF%E7%94%A8/&title=3-gtest的使用 - PQ.XIE BLOG&summary="
           
           >
           
@@ -2812,7 +2954,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class='hoverbox'>
           <a class='share'><img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/wechat.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/wechat.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></a>
           <div class='target'>
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZgAAAGYCAAAAABaUKuJAAAF+UlEQVR42u3dUW7cMAwE0L3/pZMDBIbIIbW7LZ7+0sa2zKefwbjo68f6yvUyAjAWGDAWGDAWGOsI8wrXnxs+/P3T7z9df9rX6fp039X3Sfdd3RcYMGDAgAEDBgwYMGDqMOUANHzBE1z6+7cGV71ua55gwIABAwYMGDBgwIDpw3zbIKsvthVIpwF0PB8wYMCAAQMGDBgwYMB8DGZrMGlwTIuvdA5gwIABAwYMGDBgwID592GmEK/huvX86YEBAwYMGDBgwIABAwbMPsxWsNsKgOlAq/veCpZr8wQDBgwYMGDAgAEDBkwZJg1wfu4Vh8d5ggEDBgwYEGDAgAED5ggzXd3ANS2o0udtF2zdAq08TzBgwIABAwYMGDBgwBxh0hfZKqq2irPtgVUPyPr8wIABAwYMGDBgwIAB0w6YXYD0BW6vFLwboLugcfIHAwYMGDBgwIABAwZM+x8YpcVVegCmQbZ7//RApgXi4z7AgAEDBgwYMGDAgAFzhEkD2xSkC94FnA76UwcQDBgwYMCAAQMGDBgw9YCZBrP0hasfylX3ub2v6n62CjwwYMCAAQMGDBgwYMDsw6Qf0E0LrWmxNS3SpvdvB2YwYMCAAQMGDBgwYMCUYdKBpBtPi6V0f9Mi7G37AgMGDBgwYMCAAQMGTBlmCyAFqwbZFLwbfLfu330eGDBgwIABAwYMGDBgzjDbge12YTYtpsoDGn6AGAdsMGDAgAEDBgwYMGDAlGGmxVF1TQc1DbLbHzROD9oxYIIBAwYMGDBgwIABA+YYMKeDuAWRHojtgDk9EMc5gQEDBgwYMGDAgAEDpgyTFjzdDW4FumkA7u6/G3i7BSEYMGDAgAEDBgwYMGDuwaQF1nbxNi2ytoq1tBgDAwYMGDBgwIABAwbMHKZ9g6XCq1tkbRdq3QC8HWjBgAEDBgwYMGDAgAGzB5MGvzQYdmHSgU+D8a33BgMGDBgwYMCAAQMGTB2me+H0BbeCW7qfKVz3fdqBGQwYMGDAgAEDBgwYMOswt4LiVmGXBrvq89NACgYMGDBgwIABAwYMmH2YtHjqFkTdF+h+iNfd7zTYTgPmnz8HAwYMGDBgwIABAwZMGSYNkNNCbBoQ0wFOi7DXcD0+FwwYMGDAgAEDBgwYMEeYLYBpgZUGwukB6f5eF7x9PRgwYMCAAQMGDBgwYMoBc/qA7aA2DXTbRVl3XmvJHwwYMGDAgAEDBgwYMG/74C/9sG8r6G4F39sB9e1fYoIBAwYMGDBgwIAB8x/ATD/8q37QNy3KbhVcU9jufo4HAgwYMGDAgAEDBgwYMDFMNxjdLsC2C6k0MHbn0QYGAwYMGDBgwIABAwbMEWa7UEqLrWpA7BZa2wFzGsiP14EBAwYMGDBgwIABA6YM0w2a1cFPA+W0gNsacPe6dIEBAwYMGDBgwIABA6YPExc8y3BboGnw2zoQ7bmBAQMGDBgwYMCAAQPmCDMNTreC5vTDvO1CrLu/NHiCAQMGDBgwYMCAAQMm72O6cOl90oDbLbjeXcSl0GDAgAEDBgwYMGDAgOnDbBdQ04DYhZoGynTw3Z/bARMMGDBgwIABAwYMGDDxfzy6Fbi6wTINqFtBuQrcPRCPARMMGDBgwIABAwYMGDBlmE8VX2mAfVfQ3Sr04oAJBgwYMGDAgAEDBgyYay/SDVS3i7Fu8Lxd0B0PIBgwYMCAAQMGDBgwYMp9TLrSwiwNtLcKtDQgToPpMfmDAQMGDBgwYMCAAQOmHDDToJQOfqtou13IVZ+fwoEBAwYMGDBgwIABA6YOsxUou2BTmOkBmQbb9MCVAyYYMGDAgAEDBgwYMGCOMFuBaivobQXhtJDbDtbH+4EBAwYMGDBgwIABA+ZrYFKQ9EPCadDr7qcL2i7KwIABAwYMGDBgwIABsw6zHciqg08HPd1vWqwdrwMDBgwYMGDAgAEDBkwbZvrAabCs/v7WB4G37p/+ORgwYMCAAQMGDBgwYOow0+A3HXj3ue0XDgPiNFC3Cz8wYMCAAQMGDBgwYMAcYazvWmDAWGDAWGDAWGCsx/ULC6z9rXHPLAcAAAAASUVORK5CYII=">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXgAAAF4CAAAAAB79r16AAAFLUlEQVR42u3dQW7cMBAEwP3/p517AEecnqbiIMXbOhKXKurSaQL7+TL+yvggAA/eAA/eAA/eKMB/wvHd/U/zPt03nfd0vt+vm66j5gUePHjw4MGDBw8efBH+OACED5zOc7oxp/dNN/hp3ePnBA8ePHjw4MGDBw/+Avz0gZ6uHxcFQ+hWwEnhx17gwYMHDx48ePDgwf8A+FtBKg0+6QakwQo8ePDgwYMHDx48+H8RPg0atwDT4uRWgAQPHjx48ODBgwcP/g34VlHROhj0dF1azKQFzjogggcPHjx48ODBgwdfhG8d/PlfPsde4MGDBw8ePHjw4MEX4FsjDTrteadFyjYgjZ3AgwcPHjx48ODBgy/Atw8StYJWex3TYmRaAJ0WLODBgwcPHjx48ODBN+BPvzi9fls0TNcxhU1fmHgDwYMHDx48ePDgwYMvwm+LhGlg2YKmGz8NZu0XCDx48ODBgwcPHjz4G/Ct//DfHmTaBqbWgavT+46vBw8ePHjw4MGDBw++AD8NQtsHT4uKdvCavmi1+8GDBw8ePHjw4MGDL8CnRcatg0nbomJ7oKldBIEHDx48ePDgwYMH/wb8FLIVsLbBK93w9PniFxY8ePDgwYMHDx48+Bfgt3BpwfL2hm+D3vFn8ODBgwcPHjx48OCL8O3A8PQg2+Khff10XXEgAw8ePHjw4MGDBw++AL8+oLPcqG2QSouNNCBtgxh48ODBgwcPHjx48A346ULTwJIeIJpu9Pb7pxtSa6DAgwcPHjx48ODBgx/AT4uAODiERcZ2A07/nhYi02IFPHjw4MGDBw8ePPgmfKvIaAWy9ve/XdiMGyjw4MGDBw8ePHjw4Bfnam4Fp23hcDr/dL3TF2EaqMCDBw8ePHjw4MGDfxM+DUDTBY2LhOU6t4Dr9YMHDx48ePDgwYMHX4TfLvhrOE4DWyugjYNOKZA9Bijw4MGDBw8ePHjw4IvnaloHej4vjW1Rs13/6caBBw8ePHjw4MGDB9+APwVsHWhqBZbTYuV0/lvP+22AAg8ePHjw4MGDBw++CJ8e2PlbB5W2QWc6b/rCgAcPHjx48ODBgwffhJ8eMLp18KcFeisQnv798TN48ODBgwcPHjx48AX4bVBpBbFtcNkGpPY66weawIMHDx48ePDgwYP/ww9wpYEj3ah2QLn9gkwLnscGCjx48ODBgwcPHjz4wg9wnQKnC9jO0w58aeETrx88ePDgwYMHDx48+AL89AHTAmBbZLTuT4NhLVCCBw8ePHjw4MGDB1+Abx9Emh4kagW42xucvljgwYMHDx48ePDgwd+ATx+s9fd0nL4gt4qXuFABDx48ePDgwYMHD74IP33AVpFyvOBwHa2Na72g4MGDBw8ePHjw4ME34bdFw7aISB/0NAhN59teDx48ePDgwYMHDx78TfgWxPbf28XGrfWtvx88ePDgwYMHDx48+AL8rYNF2/vSAJdev/3+4+vBgwcPHjx48ODBgy/AtwPJdIGtomFdUFyaBzx48ODBgwcPHjz4m/C3AtN04dsAdbrx7QNdcYACDx48ePDgwYMHD74A3woQ2yKiFfBuwcZFDXjw4MGDBw8ePHjwPxA+LRqm80wPJKUbNH3Ox3nAgwcPHjx48ODBg/8B8NMglAajuHhIg87yxbseoMCDBw8ePHjw4MGD/+x/GHd6fxrU0mKmFaDSwgU8ePDgwYMHDx48+Bvw20CzPdC0LVZaB6jSjT59IcGDBw8ePHjw4MGDb8Ab7w7w4MEb4MEb4MEbi/ELb1y0x2QRQosAAAAASUVORK5CYII=">
           </div>
         </div>
       
@@ -2841,15 +2983,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2023/09/09/ROS1/ROS1%E9%9B%B6%E7%A2%8E%E7%AC%94%E8%AE%B0/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>ROS1零碎笔记</p>
-          <p class='content'>ros::spin 和 ros::spinOnce 的区别这俩函数学名叫ROS消息回调处理函数，即消息回调要经过他俩中一个才能回调执行。两者区别在于 spin 有进无出，一直阻塞等待消息到来才去...</p>
-        </a>
       
-      
-        <a class='next' href='/2023/09/04/ROS1/9-action%E9%80%9A%E4%BF%A1%E6%9C%BA%E5%88%B6%E7%AE%80%E6%B1%87/'>
-          <p class='title'>9-action通信机制简汇<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>action实现了一种类似于service的请求&#x2F;响应通讯机制，区别在于action带有反馈机制，用来不断向客户端反馈任务的进度，并且还支持在任务中途中止运行。操作起来就像这样子，客户...</p>
+        <a class='next' href='/2023/11/02/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/2-protobuf%E7%9A%84%E4%BD%BF%E7%94%A8/'>
+          <p class='title'>2-protobuf的使用<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>1 软件包介绍protobuf是google定义的一套数据传输格式和规范，用于不同应用或进程之间进行通信时使用。protobuf 支持跨平台, 跨语言, 支持目前绝大多数语言, 例如C++, C...</p>
         </a>
       
     </div>
@@ -2866,7 +3003,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="discussionUrl" content="/2023/09/08/ROS1/10-%E5%8A%A8%E6%80%81%E5%8F%82%E6%95%B0%E6%9C%BA%E5%88%B6%E7%AE%80%E6%B1%87/index.html#comments">
+      <meta itemprop="discussionUrl" content="/2023/11/08/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/3-gtest%E7%9A%84%E4%BD%BF%E7%94%A8/index.html#comments">
     </span>
     <p ct><i class='fas fa-comments'></i> 评论区</p>
     
@@ -2908,7 +3045,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%8A%A8%E6%80%81%E5%8F%82%E6%95%B0%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-text">1 动态参数的作用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%B7%BB%E5%8A%A0%E5%8A%A8%E6%80%81%E5%8F%82%E6%95%B0"><span class="toc-text">2 添加动态参数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E6%B7%BB%E5%8A%A0-cfg-%E6%96%87%E4%BB%B6"><span class="toc-text">2.1 添加 cfg 文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E7%BC%96%E8%AF%91%E4%BF%AE%E6%94%B9"><span class="toc-text">2.2 编译修改</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%BA%94%E7%94%A8%E8%8A%82%E7%82%B9%E7%BC%96%E5%86%99"><span class="toc-text">3 应用节点编写</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E6%B7%BB%E5%8A%A0%E5%8A%A8%E6%80%81%E5%8F%82%E6%95%B0%E5%BA%94%E7%94%A8%E8%8A%82%E7%82%B9"><span class="toc-text">3.1 添加动态参数应用节点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E7%BC%96%E8%AF%91%E4%BF%AE%E6%94%B9"><span class="toc-text">3.2 编译修改</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-GUI%E5%8A%A8%E6%80%81%E8%B0%83%E5%8F%82"><span class="toc-text">3.3 GUI动态调参</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E8%BD%AF%E4%BB%B6%E5%8C%85%E4%BB%8B%E7%BB%8D"><span class="toc-text">1 软件包介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E8%BD%AF%E4%BB%B6%E5%8C%85%E5%AE%89%E8%A3%85"><span class="toc-text">2 软件包安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E8%BD%AF%E4%BB%B6%E5%8C%85%E4%BD%BF%E7%94%A8"><span class="toc-text">3 软件包使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B"><span class="toc-text">3.1 快速开始</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E6%96%AD%E8%A8%80%E6%8E%A5%E5%8F%A3"><span class="toc-text">3.2 断言接口</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-1-%E5%B8%83%E5%B0%94%E5%9E%8B%E6%A3%80%E6%9F%A5"><span class="toc-text">3.2.1 布尔型检查</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-2-%E4%BA%8C%E5%80%BC%E6%A3%80%E6%9F%A5"><span class="toc-text">3.2.2 二值检查</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-3-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A3%80%E6%9F%A5"><span class="toc-text">3.2.3 字符串检查</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-4-%E5%BC%82%E5%B8%B8%E6%A3%80%E6%9F%A5"><span class="toc-text">3.2.4 异常检查</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-5-%E6%B5%AE%E7%82%B9%E6%A3%80%E6%9F%A5"><span class="toc-text">3.2.5 浮点检查</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-6-%E7%9B%B8%E8%BF%91%E5%80%BC%E6%A3%80%E6%9F%A5"><span class="toc-text">3.2.6 相近值检查</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-%E5%AE%8F%E6%B5%8B%E8%AF%95%E6%8E%A5%E5%8F%A3"><span class="toc-text">3.3 宏测试接口</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-1-TEST"><span class="toc-text">3.3.1 TEST</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-2-TEST-F"><span class="toc-text">3.3.2 TEST_F</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-%E9%A2%84%E5%A4%84%E7%90%86%E4%BA%8B%E4%BB%B6%E6%9C%BA%E5%88%B6"><span class="toc-text">3.4 预处理事件机制</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-1-Environment%E5%B1%82%E9%9D%A2"><span class="toc-text">3.4.1 Environment层面</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-2-TestSuite%E5%B1%82%E9%9D%A2"><span class="toc-text">3.4.2 TestSuite层面</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-3-TestCase%E5%B1%82%E9%9D%A2"><span class="toc-text">3.4.3 TestCase层面</span></a></li></ol></li></ol></li></ol>
     </div>
   </section>
 
@@ -3964,7 +4101,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://xie-peiquan.gitee.io/","name":"PQ.XIE BLOG"}},{"@type":"ListItem","position":2,"item":{"@id":"https://xie-peiquan.gitee.io/categories/ROS1/","name":"ROS1"}},{"@type":"ListItem","position":3,"item":{"@id":"https://xie-peiquan.gitee.io/2023/09/08/ROS1/10-动态参数机制简汇/","name":"10-动态参数机制简汇"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","keywords":"日常唠嗑","description":"个人博客","author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","description":"个人博客"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://xie-peiquan.gitee.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"10-动态参数机制简汇","description":"个人博客","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://xie-peiquan.gitee.io/2023/09/08/ROS1/10-%E5%8A%A8%E6%80%81%E5%8F%82%E6%95%B0%E6%9C%BA%E5%88%B6%E7%AE%80%E6%B1%87/"},"author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://xie-peiquan.gitee.io/2023/09/08/ROS1/10-%E5%8A%A8%E6%80%81%E5%8F%82%E6%95%B0%E6%9C%BA%E5%88%B6%E7%AE%80%E6%B1%87/","wordCount":0,"datePublished":"2023-09-08T09:16:20.641Z","dateModified":"2023-09-08T09:16:20.693Z","articleSection":"ROS1","keywords":"ROS1","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://xie-peiquan.gitee.io/","name":"PQ.XIE BLOG"}},{"@type":"ListItem","position":2,"item":{"@id":"https://xie-peiquan.gitee.io/categories/C-那些事/","name":"C++那些事"}},{"@type":"ListItem","position":3,"item":{"@id":"https://xie-peiquan.gitee.io/2023/11/08/C++那些事/3-gtest的使用/","name":"3-gtest的使用"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","keywords":"日常唠嗑","description":"个人博客","author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","description":"个人博客"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://xie-peiquan.gitee.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"3-gtest的使用","description":"个人博客","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://xie-peiquan.gitee.io/2023/11/08/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/3-gtest%E7%9A%84%E4%BD%BF%E7%94%A8/"},"author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://xie-peiquan.gitee.io/2023/11/08/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/3-gtest%E7%9A%84%E4%BD%BF%E7%94%A8/","wordCount":0,"datePublished":"2023-11-08T09:07:49.376Z","dateModified":"2023-11-08T09:08:10.304Z","articleSection":"C++那些事","keywords":"C++库","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
