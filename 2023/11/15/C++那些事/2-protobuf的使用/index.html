@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="https://xie-peiquan.gitee.io/2023/11/02/c++那些事/2-protobuf的使用/"/>
+  <link rel="canonical" href="https://xie-peiquan.gitee.io/2023/11/15/c++那些事/2-protobuf的使用/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -40,13 +40,13 @@
   
 <meta property="og:type" content="article">
 <meta property="og:title" content="2-protobuf的使用">
-<meta property="og:url" content="https://xie-peiquan.gitee.io/2023/11/02/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/2-protobuf%E7%9A%84%E4%BD%BF%E7%94%A8/index.html">
+<meta property="og:url" content="https://xie-peiquan.gitee.io/2023/11/15/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/2-protobuf%E7%9A%84%E4%BD%BF%E7%94%A8/index.html">
 <meta property="og:site_name" content="PQ.XIE BLOG">
 <meta property="og:description" content="1 软件包介绍protobuf是google定义的一套数据传输格式和规范，用于不同应用或进程之间进行通信时使用。protobuf 支持跨平台, 跨语言, 支持目前绝大多数语言, 例如C++, C#, Java, Python等。 2 Why protobuf ?先来看看目前常用的 序列化 &#x2F; 反序列化 方法:  将原始数据结构序列化为 字节流 传输。(这是一种脆弱的数据传输方法，它要求">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2023-11-02T01:47:01.537Z">
-<meta property="article:modified_time" content="2023-11-02T01:47:01.589Z">
+<meta property="article:published_time" content="2023-11-15T01:59:01.793Z">
+<meta property="article:modified_time" content="2023-11-15T01:59:01.841Z">
 <meta property="article:author" content="PQ.XIE">
 <meta property="article:tag" content="C++库">
 <meta name="twitter:card" content="summary">
@@ -1801,7 +1801,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1699434528577),
+    lastupdate: new Date(1700013555712),
     sidebar: {
       for_page: ["blogger","category","webinfo","music"],
       for_post: ["toc"],
@@ -2584,7 +2584,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 <div id="l_main" class=''>
   <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2023/11/02/C++那些事/2-protobuf的使用/">
+  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2023/11/15/C++那些事/2-protobuf的使用/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="PQ.XIE BLOG">
   </span>
@@ -2630,10 +2630,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-11-02T09:47:01+08:00">
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-11-15T09:59:01+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>2023年11月2日</p>
+    <p>2023年11月15日</p>
   </a>
 </div>
 
@@ -2798,9 +2798,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 <h3 id="4-2-反序列化"><a href="#4-2-反序列化" class="headerlink" title="4.2 反序列化"></a>4.2 反序列化</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">parse_process</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;parse_process&quot;</span> &lt;&lt; endl;</span><br><span class="line">	tutorial::Person result;</span><br><span class="line">	<span class="function">fstream <span class="title">input</span><span class="params">(<span class="string">&quot;person_file&quot;</span>, ios::in | ios::binary)</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span>(!result.<span class="built_in">ParseFromIstream</span>(&amp;input)) &#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;Fail to ParseFromIstream.&quot;</span> &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	cout &lt;&lt; result.<span class="built_in">name</span>() &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; result.<span class="built_in">id</span>() &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="function">Buy <span class="keyword">and</span> Sell Domain <span class="title">Names</span><span class="params">()</span> &lt;&lt; endl</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; result.<span class="built_in">phones_size</span>(); ++i) &#123;</span><br><span class="line">		<span class="type">const</span> tutorial::Person::PhoneNumber &amp;person_phone = result.<span class="built_in">phones</span>(i);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">switch</span>(person_phone.<span class="built_in">type</span>()) &#123;</span><br><span class="line">			<span class="keyword">case</span> tutorial::Person::MOBILE :</span><br><span class="line">				cout &lt;&lt; <span class="string">&quot;MOBILE phone : &quot;</span>;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> tutorial::Person::HOME :</span><br><span class="line">				cout &lt;&lt; <span class="string">&quot;HOME phone : &quot;</span>;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> tutorial::Person::WORK :</span><br><span class="line">				cout &lt;&lt; <span class="string">&quot;WORK phone : &quot;</span>;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">default</span>:</span><br><span class="line">				cout &lt;&lt; <span class="string">&quot;phone type err.&quot;</span> &lt;&lt; endl;</span><br><span class="line">		&#125;</span><br><span class="line">		cout &lt;&lt; person_phone.<span class="built_in">number</span>() &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="4-3-应用代码"><a href="#4-3-应用代码" class="headerlink" title="4.3 应用代码"></a>4.3 应用代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span> </span>&#123;</span><br><span class="line">	<span class="built_in">serialize_process</span>();</span><br><span class="line">	<span class="built_in">parse_process</span>();</span><br><span class="line">	google::protobuf::<span class="built_in">ShutdownProtobufLibrary</span>();	<span class="comment">//删除所有已分配的内存（Protobuf使用的堆内存）</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="4-3-应用代码"><a href="#4-3-应用代码" class="headerlink" title="4.3 应用代码"></a>4.3 应用代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;example.pb.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span> </span>&#123;</span><br><span class="line">	<span class="built_in">serialize_process</span>();</span><br><span class="line">	<span class="built_in">parse_process</span>();</span><br><span class="line">	google::protobuf::<span class="built_in">ShutdownProtobufLibrary</span>();	<span class="comment">//删除所有已分配的内存（Protobuf使用的堆内存）</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>g++编译时添加链接 -lprotobuf 即可。</p>
+<p>g++编译时添加链接 -lprotobuf -lpthread 即可。</p>
 <blockquote>
 <p><a target="_blank" rel="noopener" href="https://github.com/protocolbuffers/protobuf">https://github.com/protocolbuffers/protobuf</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/641283776">https://zhuanlan.zhihu.com/p/641283776</a></p>
 </blockquote>
@@ -2836,10 +2836,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-11-02T09:47:01+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-11-15T09:59:01+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2023年11月2日</p>
+    <p>更新于：2023年11月15日</p>
   </a>
 </div>
 
@@ -2853,7 +2853,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://xie-peiquan.gitee.io/2023/11/02/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/2-protobuf%E7%9A%84%E4%BD%BF%E7%94%A8/&title=2-protobuf的使用 - PQ.XIE BLOG&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://xie-peiquan.gitee.io/2023/11/15/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/2-protobuf%E7%9A%84%E4%BD%BF%E7%94%A8/&title=2-protobuf的使用 - PQ.XIE BLOG&summary="
           
           >
           
@@ -2865,7 +2865,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://xie-peiquan.gitee.io/2023/11/02/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/2-protobuf%E7%9A%84%E4%BD%BF%E7%94%A8/&title=2-protobuf的使用 - PQ.XIE BLOG&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://xie-peiquan.gitee.io/2023/11/15/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/2-protobuf%E7%9A%84%E4%BD%BF%E7%94%A8/&title=2-protobuf的使用 - PQ.XIE BLOG&summary="
           
           >
           
@@ -2877,7 +2877,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://xie-peiquan.gitee.io/2023/11/02/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/2-protobuf%E7%9A%84%E4%BD%BF%E7%94%A8/&title=2-protobuf的使用 - PQ.XIE BLOG&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://xie-peiquan.gitee.io/2023/11/15/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/2-protobuf%E7%9A%84%E4%BD%BF%E7%94%A8/&title=2-protobuf的使用 - PQ.XIE BLOG&summary="
           
           >
           
@@ -2891,7 +2891,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class='hoverbox'>
           <a class='share'><img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/wechat.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/wechat.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></a>
           <div class='target'>
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXgAAAF4CAAAAAB79r16AAAFLklEQVR42u3cQXLcMBADQP//08k9iUscDCjblebNWUsrNnVBMOWPX9aXrA8E4MFb4MFb4MFbBfiPcP15/dPPT/8+/fyvDS2/5+m+NS/w4MGDBw8ePHjw4IvwxwFgCPAEl8JsQU8PbLr/x4MDDx48ePDgwYMHD/4CfCtwTINVGsTS3z+9Pg1U4MGDBw8ePHjw4MF/Z/g0UE1Bp8ElBbz+AoEHDx48ePDgwYMH/43gbwWidMBqG4DAgwcPHjx48ODBg/9J8GlhkAaraeDaFi/bgLb2Ag8ePHjw4MGDBw++CL8NLP/bz7EXePDgwYMHDx48ePAF+O2aBp72INPphtNCpr3AgwcPHjx48ODBg2/ATwuL9gBTO7CkxUv6go0PGjx48ODBgwcPHjz4AvwUJt3Q0/23A0ztFyUFf3x+8ODBgwcPHjx48OAvwKcFxjYIbQ/69ouyHWQCDx48ePDgwYMHD74JPw0k6SDRaWCafj4tcI4Hj5b7OB5oAg8ePHjw4MGDBw8+gJ+uVtBIi45twLtVxBwXK+DBgwcPHjx48ODBF+CnDzj9vXbwaj33NEBugx948ODBgwcPHjx48Dfgtw+eFg6tINYKQFuPuIECDx48ePDgwYMHDz6Abxcgt4uOWwHrtYEm8ODBgwcPHjx48OCL8NvgkgacVuHQGmg6fc7xCwEePHjw4MGDBw8efAH+9MItWHq/aQFxCzi9L3jw4MGDBw8ePHjwN+CnhURaeJzCTQuY9Pq0eJke3LqBAg8ePHjw4MGDBw/+H/DpBrcHkAIeFw7DIqR1UODBgwcPHjx48ODBvwm/hZsexDRoTYuJ7T5a3//YQIEHDx48ePDgwYMHH8Cn/9GfwrWKhjQAbe8/3f9xAwUePHjw4MGDBw8e/AB+O4jUAmpDtoNXbcAKPHjw4MGDBw8ePPgCfDtApdBTkOn3t4NfOvAEHjx48ODBgwcPHvwN+O0gUBs8HaBKi5f2vo8HmsCDBw8ePHjw4MGDX8CngWRbgNwOPukBTvf/+EKABw8ePHjw4MGDB1+An94oDSyn158WKm3gbZEDHjx48ODBgwcPHvyb8OmDjINDGHy2QeZWsLrWQIEHDx48ePDgwYMHP4BvDRC9NRg0fXFS6PaLAh48ePDgwYMHDx78Dfi0IJlucAq0BUwHs9KC5tP7gQcPHjx48ODBgwdfgE83On3wdOPpQbaCUFqEgAcPHjx48ODBgwd/E35aXGwHhqaBZhq40gGnabERB0Pw4MGDBw8ePHjw4IvwxwGgXHCkQSQtLk5foPRAHw8cPHjw4MGDBw8ePPgCfApyGkimG2wHtfQFSYubx8AIHjx48ODBgwcPHnwRPi0QttfdDmKtoicNkuDBgwcPHjx48ODB34RvDfhMP28FqGng2R70a0UIePDgwYMHDx48ePDBH+6fBpA0sKTBqH3fVkH06efgwYMHDx48ePDgwRfgt2sboNrBKy1oXvt+8ODBgwcPHjx48OAL8NuAMg0e6cDT9OfTg94e1Ck4ePDgwYMHDx48ePA34KeBqfWAaUGxhU8PejpANW6gwIMHDx48ePDgwYMP4FsPlgavNNhNg1jrhRg/B3jw4MGDBw8ePHjw3wA+DVztQmQKeTtAjosQ8ODBgwcPHjx48OC/ED59sNbn2yCUHvRxEQMePHjw4MGDBw8e/AX4ViBqHdB2gGob2Fr7BQ8ePHjw4MGDBw/+BnwraNw+oNZAU7rf9UGDBw8ePHjw4MGDB1+At95d4MGDt8CDt8CDtxbrN+xRsfQuY/eZAAAAAElFTkSuQmCC">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXgAAAF4CAAAAAB79r16AAAFLklEQVR42u3cy3LcMBADQP//Tyd3p1w7g4HWdqV525dENnVBQOfjj/Et4wMBePAGePAGePBGAf4jHF/9/vP7r15Pr/v5838WFF5net2aF3jw4MGDBw8ePHjwRfhxADhO9BXYFOYKun1wWl7gwYMHDx48ePDgwT8B/3TgSO8z3cDp96e/TwMVePDgwYMHDx48ePA/GX5bUFwD1voA0RIwLXjAgwcPHjx48ODBg/+N8E8FotYBq3T+4MGDBw8ePHjw4MH/Bvi0MLgWJtOFpAeSWgHt7AUePHjw4MGDBw8efBH+Glj+t9exF3jw4MGDBw8ePHjwBfjr2Aae9kGm6YLTQqY9wIMHDx48ePDgwYNvwG8Li6cO/rQCS1q8pA/Yej3gwYMHDx48ePDgwRfh02BxDSqtA0ztByUFfzl/8ODBgwcPHjx48OAL8GnAaR8ESgNd6/PWwaWXfuDBgwcPHjx48ODBF+CvBcM1cG0DVes+0/XUD3KBBw8ePHjw4MGDB1+A345todEuOlrzaxcx42IFPHjw4MGDBw8ePPgC/HaC16By3ZDrvLeBbFvgrIsQ8ODBgwcPHjx48OAP8NuJpwVFuiHtguTbChbw4MGDBw8ePHjw4IvwU5i0QGhv0FMB6/qggAcPHjx48ODBgwf/HfDvDi7twqF1oGk6z/UDAR48ePDgwYMHDx58AX76wy3YNshsF5b+PgVOrwsePHjw4MGDBw8e/BPw2yIgDUxpAZEGttoBpLAA+vJ98ODBgwcPHjx48OAL8NsDQdsglAaYNMhdDzRdNwo8ePDgwYMHDx48+HfCb4NQCnk9oJQGs3T+1/u/bKDAgwcPHjx48ODBgw/g03/oT+FaRUMr+G2vv13/uIECDx48ePDgwYMHD/5B+C3sU4XGNeBtg1dt/eDBgwcPHjx48ODBF+GvxUY6wRRke/928EsPPIEHDx48ePDgwYMH34BPi4lrMGnfdwpyfSC26/7nffDgwYMHDx48ePDgC/DpAsaB4QjTCj6toHguesCDBw8ePHjw4MGDL8BfDxRN359u8LZQaQG31g0ePHjw4MGDBw8e/Dvg0+JiHRyOn7eLldZGnYsQ8ODBgwcPHjx48OAL52paE2ldv3VwKYVO5/XlAwAePHjw4MGDBw8e/APwTwWmadHRuv52Q7brjDcCPHjw4MGDBw8ePPgC/NNFxVNFSyvwXAPa9sEFDx48ePDgwYMHD74Bvy0u0oNF16CUFh/XddaDIXjw4MGDBw8ePHjwRfgrZFoYtAJWe37b+403HDx48ODBgwcPHjz4Avw0GGw3plWQtIuOLXT9oBd48ODBgwcPHjx48EX4a4HQCjbbDdk+MK2iJy5SwIMHDx48ePDgwYMvwreD03Uh2wC1DTzXjX5bEQIePHjw4MGDBw8e/OA/7k8DzzWwpMGofd3r715+Dh48ePDgwYMHDx58Af46thPfHoBKC4k06D1+f/DgwYMHDx48ePDgC/DXgLINHtuCI3093ejrRq0LI/DgwYMHDx48ePDgi/DbwNQ60JQWFFf4dKO3B6jWDRR48ODBgwcPHjx48AF8a2LbwJVuSBrEpt+vzwM8ePDgwYMHDx48+B8A3wpc10JkC/mu9YyLEPDgwYMHDx48ePDgvxG+BZ0WDtcglG70uIgBDx48ePDgwYMHD/4B+DRAbCG3B5S237tCbR+Ic4ACDx48ePDgwYMHD/4H/YHxdcJpwJtuzHa9540GDx48ePDgwYMHD74Ab7x3gAcP3gAP3gAP3jiMv2UdrjCyZUSmAAAAAElFTkSuQmCC">
           </div>
         </div>
       
@@ -2920,17 +2920,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2023/11/08/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/3-gtest%E7%9A%84%E4%BD%BF%E7%94%A8/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>3-gtest的使用</p>
+      
+        <a class='next' href='/2023/11/08/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/3-gtest%E7%9A%84%E4%BD%BF%E7%94%A8/'>
+          <p class='title'>3-gtest的使用<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
           <p class='content'>1 软件包介绍gtest是google提供的一个轻量级单元测试框架，它提供了丰富的断言、致命和非致命失败判断，能进行值参数化测试、类型参数化测试、“死亡测试”。
 2 软件包安装12345git ...</p>
-        </a>
-      
-      
-        <a class='next' href='/2023/11/01/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/1-glog%E7%9A%84%E4%BD%BF%E7%94%A8/'>
-          <p class='title'>1-glog的使用<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>1 软件包介绍glog是google提供的一个轻量级C&#x2F;C++日志库，提供日志文件记录管理等功能。
-2 软件包安装123456git clone https://github.com/...</p>
         </a>
       
     </div>
@@ -2947,7 +2941,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="discussionUrl" content="/2023/11/02/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/2-protobuf%E7%9A%84%E4%BD%BF%E7%94%A8/index.html#comments">
+      <meta itemprop="discussionUrl" content="/2023/11/15/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/2-protobuf%E7%9A%84%E4%BD%BF%E7%94%A8/index.html#comments">
     </span>
     <p ct><i class='fas fa-comments'></i> 评论区</p>
     
@@ -4045,7 +4039,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://xie-peiquan.gitee.io/","name":"PQ.XIE BLOG"}},{"@type":"ListItem","position":2,"item":{"@id":"https://xie-peiquan.gitee.io/categories/C-那些事/","name":"C++那些事"}},{"@type":"ListItem","position":3,"item":{"@id":"https://xie-peiquan.gitee.io/2023/11/02/C++那些事/2-protobuf的使用/","name":"2-protobuf的使用"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","keywords":"日常唠嗑","description":"个人博客","author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","description":"个人博客"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://xie-peiquan.gitee.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"2-protobuf的使用","description":"个人博客","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://xie-peiquan.gitee.io/2023/11/02/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/2-protobuf%E7%9A%84%E4%BD%BF%E7%94%A8/"},"author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://xie-peiquan.gitee.io/2023/11/02/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/2-protobuf%E7%9A%84%E4%BD%BF%E7%94%A8/","wordCount":0,"datePublished":"2023-11-02T01:47:01.537Z","dateModified":"2023-11-02T01:47:01.589Z","articleSection":"C++那些事","keywords":"C++库","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://xie-peiquan.gitee.io/","name":"PQ.XIE BLOG"}},{"@type":"ListItem","position":2,"item":{"@id":"https://xie-peiquan.gitee.io/categories/C-那些事/","name":"C++那些事"}},{"@type":"ListItem","position":3,"item":{"@id":"https://xie-peiquan.gitee.io/2023/11/15/C++那些事/2-protobuf的使用/","name":"2-protobuf的使用"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","keywords":"日常唠嗑","description":"个人博客","author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","description":"个人博客"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://xie-peiquan.gitee.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"2-protobuf的使用","description":"个人博客","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://xie-peiquan.gitee.io/2023/11/15/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/2-protobuf%E7%9A%84%E4%BD%BF%E7%94%A8/"},"author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://xie-peiquan.gitee.io/2023/11/15/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/2-protobuf%E7%9A%84%E4%BD%BF%E7%94%A8/","wordCount":0,"datePublished":"2023-11-15T01:59:01.793Z","dateModified":"2023-11-15T01:59:01.841Z","articleSection":"C++那些事","keywords":"C++库","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
