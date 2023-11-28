@@ -1801,7 +1801,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1701168034957),
+    lastupdate: new Date(1701175202901),
     sidebar: {
       for_page: ["blogger","category","webinfo","music"],
       for_post: ["toc"],
@@ -2811,13 +2811,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2023/11/28/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/1-%E7%BA%BF%E7%A8%8B%E7%AE%A1%E7%90%86/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>1-线程管理</p>
-          <p class='content'>1 新起线程123#include &lt;thread&gt;void do_some_work();std::thread my_thread(do_some_work);
-
-
-
-回收线程在...</p>
+        <a class='prev' href='/2023/11/28/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/2-%E5%85%B1%E4%BA%AB%E6%95%B0%E6%8D%AE/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>2-共享数据</p>
+          <p class='content'>如果线程间所有的共享数据都是只读，就不会有问题。多线程共享数据的问题大多由写数据引起，以下介绍线程间共享数据的安全做法。
+1 互斥锁C++中，保护共享数据最基础的方式就是互斥（std::lock...</p>
         </a>
       
       
