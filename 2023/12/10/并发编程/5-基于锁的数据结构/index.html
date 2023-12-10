@@ -5,8 +5,8 @@
   <meta name="Volantis" content="5.8.0">
   <meta charset="utf-8">
   <!-- SEO相关 -->
-  <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="https://xie-peiquan.gitee.io/categories/"/>
+  
+  <link rel="canonical" href="https://xie-peiquan.gitee.io/2023/12/10/并发编程/5-基于锁的数据结构/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -34,21 +34,21 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>所有分类 - PQ.XIE BLOG</title>
-  <meta name="keywords" content="日常唠嗑">
+  <title>5-基于锁的数据结构 - PQ.XIE BLOG</title>
+  <meta name="keywords" content="并发编程,日常唠嗑">
   <meta desc name="description" content="个人博客 - PQ.XIE - PQ.XIE BLOG">
   
-<meta property="og:type" content="website">
-<meta property="og:title" content="所有分类">
-<meta property="og:url" content="https://xie-peiquan.gitee.io/categories/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="5-基于锁的数据结构">
+<meta property="og:url" content="https://xie-peiquan.gitee.io/2023/12/10/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/5-%E5%9F%BA%E4%BA%8E%E9%94%81%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/index.html">
 <meta property="og:site_name" content="PQ.XIE BLOG">
-<meta property="og:description" content="个人博客">
+<meta property="og:description" content="1 线程安全栈基于互斥锁实现，如下： 12345678910111213141516171819202122232425262728293031323334353637383940414243444546#include &lt;exception&gt;struct empty_stack: std::exception&amp;#123;    const char* what() const thr">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2023-07-22T02:37:26.591Z">
-<meta property="article:modified_time" content="2023-07-22T02:37:26.591Z">
+<meta property="article:published_time" content="2023-12-10T09:04:46.872Z">
+<meta property="article:modified_time" content="2023-12-10T09:04:46.928Z">
 <meta property="article:author" content="PQ.XIE">
-<meta property="article:tag" content="日常唠嗑">
+<meta property="article:tag" content="并发编程">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -2505,7 +2505,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="none" class='cover-wrapper category search' style="display: none;">
+      <div id="none" class='cover-wrapper post search' style="display: none;">
         
   <div class='cover-bg lazyload placeholder' data-bg="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/background.jpeg"></div>
 
@@ -2582,73 +2582,282 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div id="safearea">
         <div class="body-wrapper">
           
-
 <div id="l_main" class=''>
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2023/12/10/并发编程/5-基于锁的数据结构/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="PQ.XIE BLOG">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="PQ.XIE BLOG">
+    <meta itemprop="description" content="个人博客">
+  </span>
   
+
+
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  <div class="article-meta" id="top">
     
-      <div class='post-wrapper'>
-        <article id="cat" class="post article white-box reveal shadow floatable blur">
-          <h2>所有分类</h2>
-          <div class="all-cats">
-            
-              
-                <a class="" href="/categories/C-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">
-                  <span><i class='fa-solid fa-folder-open fa-fw' aria-hidden="true"></i>&nbsp;&nbsp;C++并发编程</span>
-                  <span class="title">
-                    (7)
-                  </span>
-                </a>
-              
-                <a class="" href="/categories/C-%E9%82%A3%E4%BA%9B%E4%BA%8B/">
-                  <span><i class='fa-solid fa-folder-open fa-fw' aria-hidden="true"></i>&nbsp;&nbsp;C++那些事</span>
-                  <span class="title">
-                    (4)
-                  </span>
-                </a>
-              
-                <a class="" href="/categories/Pytorch%E5%9F%BA%E7%A1%80/">
-                  <span><i class='fa-solid fa-folder-open fa-fw' aria-hidden="true"></i>&nbsp;&nbsp;Pytorch基础</span>
-                  <span class="title">
-                    (5)
-                  </span>
-                </a>
-              
-                <a class="" href="/categories/ROS1/">
-                  <span><i class='fa-solid fa-folder-open fa-fw' aria-hidden="true"></i>&nbsp;&nbsp;ROS1</span>
-                  <span class="title">
-                    (12)
-                  </span>
-                </a>
-              
-                <a class="" href="/categories/ROS2%E5%9F%BA%E7%A1%80/">
-                  <span><i class='fa-solid fa-folder-open fa-fw' aria-hidden="true"></i>&nbsp;&nbsp;ROS2基础</span>
-                  <span class="title">
-                    (7)
-                  </span>
-                </a>
-              
-                <a class="" href="/categories/%E4%B8%93%E5%B1%9E%E6%9C%BA%E5%99%A8%E4%BA%BA/">
-                  <span><i class='fa-solid fa-folder-open fa-fw' aria-hidden="true"></i>&nbsp;&nbsp;专属机器人</span>
-                  <span class="title">
-                    (1)
-                  </span>
-                </a>
-              
-                <a class="" href="/categories/%E5%BB%BA%E7%AB%99/">
-                  <span><i class='fa-solid fa-folder-open fa-fw' aria-hidden="true"></i>&nbsp;&nbsp;建站</span>
-                  <span class="title">
-                    (1)
-                  </span>
-                </a>
-              
-            
-          </div>
-          <br>
+    
+    
+      <h1 class="title" itemprop="name headline">
+        5-基于锁的数据结构
+      </h1>
+      <div class='new-meta-box'>
+        
           
-        </article>
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' href="/" rel="nofollow">
+    <img itemprop="image" src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/202307251013361.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/202307251013361.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    <p itemprop="name">PQ.XIE</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/" rel="nofollow"><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><p>并发编程</p></a></div>
+  <span hidden itemprop="keywords">并发编程</span>
+
+
+          
+        
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-12-10T17:04:46+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>2023年12月10日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：1.2k 字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：7 分钟</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+
+
+<div class="new-meta-item browse">
+  <a class='notlink'>
+    <p>
+      <i class="fa-solid fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span id="busuanzi_value_page_pv"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+      
+      <span>次</span>
+    </p>
+  </a>
+</div>
+
+
+          
+        
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
       </div>
     
+  </div>
+
+
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    <h3 id="1-线程安全栈"><a href="#1-线程安全栈" class="headerlink" title="1 线程安全栈"></a>1 线程安全栈</h3><p>基于互斥锁实现，如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;exception&gt;</span></span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">empty_stack</span>: std::exception</span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="type">const</span> <span class="type">char</span>* <span class="title">what</span><span class="params">()</span> <span class="type">const</span> <span class="title">throw</span><span class="params">()</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">threadsafe_stack</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    std::stack&lt;T&gt; data;</span><br><span class="line">    <span class="keyword">mutable</span> std::mutex m;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">threadsafe_stack</span>()&#123;&#125;</span><br><span class="line">    <span class="built_in">threadsafe_stack</span>(<span class="type">const</span> threadsafe_stack&amp; other)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function">std::lock_guard&lt;std::mutex&gt; <span class="title">lock</span><span class="params">(other.m)</span></span>;</span><br><span class="line">        data=other.data;</span><br><span class="line">    &#125;</span><br><span class="line">    threadsafe_stack&amp; <span class="keyword">operator</span>=(<span class="type">const</span> threadsafe_stack&amp;) = <span class="keyword">delete</span>;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">push</span><span class="params">(T new_value)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="function">std::lock_guard&lt;std::mutex&gt; <span class="title">lock</span><span class="params">(m)</span></span>;</span><br><span class="line">        data.<span class="built_in">push</span>(std::<span class="built_in">move</span>(new_value));    ⇽---  ①</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function">std::shared_ptr&lt;T&gt; <span class="title">pop</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="function">std::lock_guard&lt;std::mutex&gt; <span class="title">lock</span><span class="params">(m)</span></span>;</span><br><span class="line">        <span class="keyword">if</span>(data.<span class="built_in">empty</span>()) <span class="keyword">throw</span> <span class="built_in">empty_stack</span>();    ⇽---  ②</span><br><span class="line">        <span class="function">std::shared_ptr&lt;T&gt; <span class="type">const</span> <span class="title">res</span><span class="params">(</span></span></span><br><span class="line"><span class="params"><span class="function">           std::make_shared&lt;T&gt;(std::move(data.top())))</span></span>;    ⇽---  ③</span><br><span class="line">        data.<span class="built_in">pop</span>();    ⇽---  ④</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">pop</span><span class="params">(T&amp; value)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="function">std::lock_guard&lt;std::mutex&gt; <span class="title">lock</span><span class="params">(m)</span></span>;</span><br><span class="line">        <span class="keyword">if</span>(data.<span class="built_in">empty</span>()) <span class="keyword">throw</span> <span class="built_in">empty_stack</span>();</span><br><span class="line">        value=std::<span class="built_in">move</span>(data.<span class="built_in">top</span>());    ⇽---  ⑤</span><br><span class="line">        data.<span class="built_in">pop</span>();    ⇽---  ⑥</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">empty</span><span class="params">()</span> <span class="type">const</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="function">std::lock_guard&lt;std::mutex&gt; <span class="title">lock</span><span class="params">(m)</span></span>;</span><br><span class="line">        <span class="keyword">return</span> data.<span class="built_in">empty</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-线程安全队列"><a href="#2-线程安全队列" class="headerlink" title="2 线程安全队列"></a>2 线程安全队列</h3><p>基于锁和条件变量实现，如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">threadsafe_queue</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">mutable</span> std::mutex mut;</span><br><span class="line">    std::queue&lt;T&gt; data_queue;</span><br><span class="line">    std::condition_variable data_cond;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">threadsafe_queue</span>()</span><br><span class="line">    &#123;&#125;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">push</span><span class="params">(T new_value)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="function">std::lock_guard&lt;std::mutex&gt; <span class="title">lk</span><span class="params">(mut)</span></span>;</span><br><span class="line">        data_queue.<span class="built_in">push</span>(std::<span class="built_in">move</span>(new_value));</span><br><span class="line">        data_cond.<span class="built_in">notify_one</span>();    ⇽---  ①</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">wait_and_pop</span><span class="params">(T&amp; value)</span>    ⇽---  ②</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="function">std::unique_lock&lt;std::mutex&gt; <span class="title">lk</span><span class="params">(mut)</span></span>;</span><br><span class="line">        data_cond.<span class="built_in">wait</span>(lk,[<span class="keyword">this</span>]&#123;<span class="keyword">return</span> !data_queue.<span class="built_in">empty</span>();&#125;);</span><br><span class="line">        value=std::<span class="built_in">move</span>(data_queue.<span class="built_in">front</span>());</span><br><span class="line">        data_queue.<span class="built_in">pop</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function">std::shared_ptr&lt;T&gt; <span class="title">wait_and_pop</span><span class="params">()</span>    ⇽---  ③</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="function">std::unique_lock&lt;std::mutex&gt; <span class="title">lk</span><span class="params">(mut)</span></span>;</span><br><span class="line">        data_cond.<span class="built_in">wait</span>(lk,[<span class="keyword">this</span>]&#123;<span class="keyword">return</span> !data_queue.<span class="built_in">empty</span>();&#125;);    ⇽---  ④</span><br><span class="line">        <span class="function">std::shared_ptr&lt;T&gt; <span class="title">res</span><span class="params">(</span></span></span><br><span class="line"><span class="params"><span class="function">            std::make_shared&lt;T&gt;(std::move(data_queue.front())))</span></span>;</span><br><span class="line">        data_queue.<span class="built_in">pop</span>();</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">try_pop</span><span class="params">(T&amp; value)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="function">std::lock_guard&lt;std::mutex&gt; <span class="title">lk</span><span class="params">(mut)</span></span>;</span><br><span class="line">        <span class="keyword">if</span>(data_queue.<span class="built_in">empty</span>())</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        value=std::<span class="built_in">move</span>(data_queue.<span class="built_in">front</span>());</span><br><span class="line">        data_queue.<span class="built_in">pop</span>();</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function">std::shared_ptr&lt;T&gt; <span class="title">try_pop</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="function">std::lock_guard&lt;std::mutex&gt; <span class="title">lk</span><span class="params">(mut)</span></span>;</span><br><span class="line">        <span class="keyword">if</span>(data_queue.<span class="built_in">empty</span>())</span><br><span class="line">            <span class="keyword">return</span> std::<span class="built_in">shared_ptr</span>&lt;T&gt;();    ⇽---  ⑤</span><br><span class="line">        <span class="function">std::shared_ptr&lt;T&gt; <span class="title">res</span><span class="params">(</span></span></span><br><span class="line"><span class="params"><span class="function">            std::make_shared&lt;T&gt;(std::move(data_queue.front())))</span></span>;</span><br><span class="line">        data_queue.<span class="built_in">pop</span>();</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">empty</span><span class="params">()</span> <span class="type">const</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="function">std::lock_guard&lt;std::mutex&gt; <span class="title">lk</span><span class="params">(mut)</span></span>;</span><br><span class="line">        <span class="keyword">return</span> data_queue.<span class="built_in">empty</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-线程安全map"><a href="#3-线程安全map" class="headerlink" title="3 线程安全map"></a>3 线程安全map</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;memory&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;mutex&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;functional&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;list&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;utility&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;boost/thread/shared_mutex.hpp&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> Key,<span class="keyword">typename</span> Value,<span class="keyword">typename</span> Hash=std::hash&lt;Key&gt; &gt;</span><br><span class="line"><span class="keyword">class</span> threadsafe_lookup_table</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">class</span> bucket_type</span><br><span class="line">    &#123;</span><br><span class="line">    <span class="keyword">private</span>:</span><br><span class="line">        <span class="keyword">typedef</span> std::pair&lt;Key,Value&gt; bucket_value;</span><br><span class="line">        <span class="keyword">typedef</span> std::list&lt;bucket_value&gt; bucket_data;</span><br><span class="line">        <span class="keyword">typedef</span> <span class="keyword">typename</span> bucket_data::iterator bucket_iterator;</span><br><span class="line"></span><br><span class="line">        bucket_data data;</span><br><span class="line">        <span class="keyword">mutable</span> boost::shared_mutex mutex;</span><br><span class="line"></span><br><span class="line">        <span class="function">bucket_iterator <span class="title">find_entry_for</span><span class="params">(Key <span class="type">const</span>&amp; key)</span> <span class="type">const</span></span></span><br><span class="line"><span class="function">        </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> std::<span class="built_in">find_if</span>(data.<span class="built_in">begin</span>(),data.<span class="built_in">end</span>(),</span><br><span class="line">                [&amp;](bucket_value <span class="type">const</span>&amp; item)</span><br><span class="line">                &#123;<span class="keyword">return</span> item.first==key;&#125;);</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        <span class="function">Value <span class="title">value_for</span><span class="params">(Key <span class="type">const</span>&amp; key,Value <span class="type">const</span>&amp; default_value)</span> <span class="type">const</span></span></span><br><span class="line"><span class="function">        </span>&#123;</span><br><span class="line">            <span class="function">boost::shared_lock&lt;boost::shared_mutex&gt; <span class="title">lock</span><span class="params">(mutex)</span></span>;</span><br><span class="line">            bucket_iterator <span class="type">const</span> found_entry=<span class="built_in">find_entry_for</span>(key);</span><br><span class="line">            <span class="keyword">return</span> (found_entry==data.<span class="built_in">end</span>())?</span><br><span class="line">                default_value : found_entry-&gt;second;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="type">void</span> <span class="title">add_or_update_mapping</span><span class="params">(Key <span class="type">const</span>&amp; key,Value <span class="type">const</span>&amp; value)</span></span></span><br><span class="line"><span class="function">        </span>&#123;</span><br><span class="line">            <span class="function">std::unique_lock&lt;boost::shared_mutex&gt; <span class="title">lock</span><span class="params">(mutex)</span></span>;</span><br><span class="line">            bucket_iterator <span class="type">const</span> found_entry=<span class="built_in">find_entry_for</span>(key);</span><br><span class="line">            <span class="keyword">if</span>(found_entry==data.<span class="built_in">end</span>())</span><br><span class="line">            &#123;</span><br><span class="line">                data.<span class="built_in">push_back</span>(<span class="built_in">bucket_value</span>(key,value));</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                found_entry-&gt;second=value;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    </span><br><span class="line">        <span class="function"><span class="type">void</span> <span class="title">remove_mapping</span><span class="params">(Key <span class="type">const</span>&amp; key)</span></span></span><br><span class="line"><span class="function">        </span>&#123;</span><br><span class="line">            <span class="function">std::unique_lock&lt;boost::shared_mutex&gt; <span class="title">lock</span><span class="params">(mutex)</span></span>;</span><br><span class="line">            bucket_iterator <span class="type">const</span> found_entry=<span class="built_in">find_entry_for</span>(key);</span><br><span class="line">            <span class="keyword">if</span>(found_entry!=data.<span class="built_in">end</span>())</span><br><span class="line">            &#123;</span><br><span class="line">                data.<span class="built_in">erase</span>(found_entry);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    </span><br><span class="line">    std::vector&lt;std::unique_ptr&lt;bucket_type&gt; &gt; buckets;</span><br><span class="line">    Hash hasher;</span><br><span class="line"></span><br><span class="line">    <span class="function">bucket_type&amp; <span class="title">get_bucket</span><span class="params">(Key <span class="type">const</span>&amp; key)</span> <span class="type">const</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        std::<span class="type">size_t</span> <span class="type">const</span> bucket_index=<span class="built_in">hasher</span>(key)%buckets.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">return</span> *buckets[bucket_index];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">typedef</span> Key key_type;</span><br><span class="line">    <span class="keyword">typedef</span> Value mapped_type;</span><br><span class="line">    <span class="keyword">typedef</span> Hash hash_type;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">threadsafe_lookup_table</span>(</span><br><span class="line">        <span class="type">unsigned</span> num_buckets=<span class="number">19</span>, Hash <span class="type">const</span>&amp; hasher_=<span class="built_in">Hash</span>()):</span><br><span class="line">        <span class="built_in">buckets</span>(num_buckets),<span class="built_in">hasher</span>(hasher_)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">unsigned</span> i=<span class="number">0</span>;i&lt;num_buckets;++i)</span><br><span class="line">        &#123;</span><br><span class="line">            buckets[i].<span class="built_in">reset</span>(<span class="keyword">new</span> bucket_type);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">threadsafe_lookup_table</span>(threadsafe_lookup_table <span class="type">const</span>&amp; other)=<span class="keyword">delete</span>;</span><br><span class="line">    threadsafe_lookup_table&amp; <span class="keyword">operator</span>=(</span><br><span class="line">        threadsafe_lookup_table <span class="type">const</span>&amp; other)=<span class="keyword">delete</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="function">Value <span class="title">value_for</span><span class="params">(Key <span class="type">const</span>&amp; key,</span></span></span><br><span class="line"><span class="params"><span class="function">        Value <span class="type">const</span>&amp; default_value=Value())</span> <span class="type">const</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">get_bucket</span>(key).<span class="built_in">value_for</span>(key,default_value);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">add_or_update_mapping</span><span class="params">(Key <span class="type">const</span>&amp; key,Value <span class="type">const</span>&amp; value)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">get_bucket</span>(key).<span class="built_in">add_or_update_mapping</span>(key,value);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">remove_mapping</span><span class="params">(Key <span class="type">const</span>&amp; key)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">get_bucket</span>(key).<span class="built_in">remove_mapping</span>(key);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">std::map&lt;Key,Value&gt; <span class="title">get_map</span><span class="params">()</span> <span class="type">const</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        std::vector&lt;std::unique_lock&lt;boost::shared_mutex&gt; &gt; locks;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">unsigned</span> i=<span class="number">0</span>;i&lt;buckets.<span class="built_in">size</span>();++i)</span><br><span class="line">        &#123;</span><br><span class="line">            locks.<span class="built_in">push_back</span>(</span><br><span class="line">                std::<span class="built_in">unique_lock</span>&lt;boost::shared_mutex&gt;(buckets[i].mutex));</span><br><span class="line">        &#125;</span><br><span class="line">        std::map&lt;Key,Value&gt; res;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">unsigned</span> i=<span class="number">0</span>;i&lt;buckets.<span class="built_in">size</span>();++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span>(bucket_iterator it=buckets[i].data.<span class="built_in">begin</span>();</span><br><span class="line">                it!=buckets[i].data.<span class="built_in">end</span>();</span><br><span class="line">                ++it)</span><br><span class="line">            &#123;</span><br><span class="line">                res.<span class="built_in">insert</span>(*it);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-线程安全链表"><a href="#4-线程安全链表" class="headerlink" title="4 线程安全链表"></a>4 线程安全链表</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">threadsafe_list</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">node</span>    ⇽---  ①</span><br><span class="line">    &#123;</span><br><span class="line">        std::mutex m;</span><br><span class="line">        std::shared_ptr&lt;T&gt; data;</span><br><span class="line">        std::unique_ptr&lt;node&gt; next;</span><br><span class="line">        <span class="built_in">node</span>():    ⇽---  ②</span><br><span class="line">            <span class="built_in">next</span>()</span><br><span class="line">        &#123;&#125;</span><br><span class="line">        <span class="built_in">node</span>(T <span class="type">const</span>&amp; value):     ⇽---  ③</span><br><span class="line">            <span class="built_in">data</span>(std::<span class="built_in">make_shared</span>&lt;T&gt;(value))</span><br><span class="line">        &#123;&#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    node head;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">threadsafe_list</span>()</span><br><span class="line">    &#123;&#125;</span><br><span class="line">    ~<span class="built_in">threadsafe_list</span>()</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">remove_if</span>([](node <span class="type">const</span>&amp;)&#123;<span class="keyword">return</span> <span class="literal">true</span>;&#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">threadsafe_list</span>(threadsafe_list <span class="type">const</span>&amp; other)=<span class="keyword">delete</span>;</span><br><span class="line">    threadsafe_list&amp; <span class="keyword">operator</span>=(threadsafe_list <span class="type">const</span>&amp; other)=<span class="keyword">delete</span>;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">push_front</span><span class="params">(T <span class="type">const</span>&amp; value)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="function">std::unique_ptr&lt;node&gt; <span class="title">new_node</span><span class="params">(<span class="keyword">new</span> node(value))</span></span>;    ⇽---  ④</span><br><span class="line">        <span class="function">std::lock_guard&lt;std::mutex&gt; <span class="title">lk</span><span class="params">(head.m)</span></span>;</span><br><span class="line">        new_node-&gt;next=std::<span class="built_in">move</span>(head.next);    ⇽---  ⑤</span><br><span class="line">        head.next=std::<span class="built_in">move</span>(new_node);    ⇽---   ⑥</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> Function&gt;</span></span><br><span class="line"><span class="function">    <span class="type">void</span> <span class="title">for_each</span><span class="params">(Function f)</span>    ⇽---  ⑦</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        node* current=&amp;head;</span><br><span class="line">        <span class="function">std::unique_lock&lt;std::mutex&gt; <span class="title">lk</span><span class="params">(head.m)</span></span>;    ⇽---  ⑧</span><br><span class="line">        <span class="keyword">while</span>(node* <span class="type">const</span> next=current-&gt;next.<span class="built_in">get</span>())    ⇽---  ⑨</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="function">std::unique_lock&lt;std::mutex&gt; <span class="title">next_lk</span><span class="params">(next-&gt;m)</span></span>;    ⇽---  ⑩</span><br><span class="line">            lk.<span class="built_in">unlock</span>();    ⇽---  ⑪</span><br><span class="line">            <span class="built_in">f</span>(*next-&gt;data);     ⇽---  ⑫</span><br><span class="line">            current=next;</span><br><span class="line">            lk=std::<span class="built_in">move</span>(next_lk);     ⇽---  ⑬</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> Predicate&gt;</span></span><br><span class="line"><span class="function">    std::shared_ptr&lt;T&gt; <span class="title">find_first_if</span><span class="params">(Predicate p)</span>     ⇽---  ⑭</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        node* current=&amp;head;</span><br><span class="line">        <span class="function">std::unique_lock&lt;std::mutex&gt; <span class="title">lk</span><span class="params">(head.m)</span></span>;</span><br><span class="line">        <span class="keyword">while</span>(node* <span class="type">const</span> next=current-&gt;next.<span class="built_in">get</span>())</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="function">std::unique_lock&lt;std::mutex&gt; <span class="title">next_lk</span><span class="params">(next-&gt;m)</span></span>;</span><br><span class="line">            lk.<span class="built_in">unlock</span>();</span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">p</span>(*next-&gt;data))    ⇽--- ⑮</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">return</span> next-&gt;data;    ⇽---  ⑯</span><br><span class="line">            &#125;</span><br><span class="line">            current=next;</span><br><span class="line">            lk=std::<span class="built_in">move</span>(next_lk);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> std::<span class="built_in">shared_ptr</span>&lt;T&gt;();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> Predicate&gt;</span></span><br><span class="line"><span class="function">    <span class="type">void</span> <span class="title">remove_if</span><span class="params">(Predicate p)</span>    ⇽---  ⑰</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        node* current=&amp;head;</span><br><span class="line">        <span class="function">std::unique_lock&lt;std::mutex&gt; <span class="title">lk</span><span class="params">(head.m)</span></span>;</span><br><span class="line">        <span class="keyword">while</span>(node* <span class="type">const</span> next=current-&gt;next.<span class="built_in">get</span>())</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="function">std::unique_lock&lt;std::mutex&gt; <span class="title">next_lk</span><span class="params">(next-&gt;m)</span></span>;</span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">p</span>(*next-&gt;data))    ⇽---  ⑱</span><br><span class="line">            &#123;</span><br><span class="line">                std::unique_ptr&lt;node&gt; old_next=std::<span class="built_in">move</span>(current-&gt;next);</span><br><span class="line">                current-&gt;next=std::<span class="built_in">move</span>(next-&gt;next);    ⇽---  ⑲</span><br><span class="line">                next_lk.<span class="built_in">unlock</span>();</span><br><span class="line">            &#125;    ⇽---  ⑳</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                lk.<span class="built_in">unlock</span>();    ⇽---  ㉑</span><br><span class="line">                current=next;</span><br><span class="line">                lk=std::<span class="built_in">move</span>(next_lk);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+  </div>
   
+  
+    
+    <div class='footer'>
+       <!-- 参考资料、相关资料等 -->
+      
+       <!-- 相关文章 -->
+      
+      <!-- 版权声明组件 -->
+      
+      <!-- 打赏组件 -->
+      
+        <div class='donate'>
+          <div class='imgs'>
+            
+              <img src='https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/%E8%B5%9E%E8%B5%8F%E7%A0%81.JPG'>
+            
+          </div>
+        </div>
+      
+    </div>
+  
+  
+    
+
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-12-10T17:04:46+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2023年12月10日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://xie-peiquan.gitee.io/2023/12/10/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/5-%E5%9F%BA%E4%BA%8E%E9%94%81%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/&title=5-基于锁的数据结构 - PQ.XIE BLOG&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://xie-peiquan.gitee.io/2023/12/10/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/5-%E5%9F%BA%E4%BA%8E%E9%94%81%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/&title=5-基于锁的数据结构 - PQ.XIE BLOG&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://xie-peiquan.gitee.io/2023/12/10/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/5-%E5%9F%BA%E4%BA%8E%E9%94%81%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/&title=5-基于锁的数据结构 - PQ.XIE BLOG&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        
+        <div class='hoverbox'>
+          <a class='share'><img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/wechat.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/wechat.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></a>
+          <div class='target'>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAbgAAAG4CAAAAAASoa1vAAAG2UlEQVR42u3ay3LjOBAEQP//T3vvOzFBVHXTj0HiJksywU5ciqWPT+tXrg8jAGeBs8CBs8BZ4K6H+yjXH//wf38//dxfN/hw3b+9Pv3e6X5Pr5f+n3be4MCBAwcOHDhw4MCBA3c6yOnnW9inA9Ne7xQ+3V/6/XTe4MCBAwcOHDhw4MCBA5feQBpEtyCm12sPYnsfU3hw4MCBAwcOHDhw4MCB+2lw2ze09UBgK8BvBX9w4MCBAwcOHDhw4MCB+264NKie7qddbwf1fyaAgwMHDhw4cODAgQMH7sfCtcVmG4DTwNoOdBrA39pPPG9w4MCBAwcOHDhw4MCBWw6uXnfF6fG8wYHzGhw4cODAgfMa3PVw0zUtQtOgvF1ctg8apkVxPW9w4MCBAwcOHDhw4MBdD9cGxHSQU7j2gEwL0vQHtOkPZ0/3Bw4cOHDgwIEDBw4cOHBp4JxuYFowTqHa/U33MQ30j0UqOHDgwIEDBw4cOHDgroPbvoHtonMK+lbxOy2Y032DAwcOHDhw4MCBAwcO3FaR2AbOdABtcdlefxqY0wN77AEOHDhw4MCBAwcOHLjr4baLyjpYLhevKXj7gOFzuOK5ggMHDhw4cODAgQMH7nq4tPhLA/r0eynY1gOCryqQ4+uCAwcOHDhw4MCBAwcO3DAQpt+fFqHTgJwOrC1q2yI2bsDBgQMHDhw4cODAgQN3HVwbIMdBcqkInR6k9jpbBW48V3DgwIEDBw4cOHDgwIF7uYBMi9r0um2xmg6uLUanQb0O4ODAgQMHDhw4cODAgftn4do1LTDbYD2F2i5e28+3gR0cOHDgwIEDBw4cOHDgvrt4bAPwOMgeBvHtIJ0+SDgO4ODAgQMHDhw4cODAgbsWLr3BdsPtxtv9tUXn9sEeP/gABw4cOHDgwIEDBw7c9XBpUE6DZVs8nr6/VZy2DxqmBzB+cAAOHDhw4MCBAwcOHLjr4b4qsKaDTh8QpIF9u8id3tfxAQEHDhw4cODAgQMHDtz1cFtF5LSAbAP11qDa620H/0dIcODAgQMHDhw4cODAgSv/cRvYp0Vkur/tYLwF/lkucODAgQMHDhw4cODAgWuDZruxdnDTYDw9YG3hu70/cODAgQMHDhw4cODAgXsroE4Lxm34x4IyLHSnRXF6MMGBAwcOHDhw4MCBAwduOvg0YL5VzJ7ubwoVB+Vwfsf7AwcOHDhw4MCBAwcO3PVwXx3A289tFbGnQf+tBwa/9skJOHDgwIEDBw4cOHDgfgxcGpinRen0RtICM93/9EHA9np8cgIOHDhw4MCBAwcOHLjr4N4uKNMiti1s06K0LVSncONCFxw4cODAgQMHDhw4cODKwb8VsLduvA3ubaDeOsCPBwQcOHDgwIEDBw4cOHDghiBbAXN63a0HBNsHow32xwEcHDhw4MCBAwcOHDhw18GdBsrtInL7OmnR2X7+7YP2+H/AgQMHDhw4cODAgQN3PdxpcZje6HTwH+U63efpQWkBXytkwYEDBw4cOHDgwIEDB+4w8G4F9bcHPj2Q7UCn+z8+6ODAgQMHDhw4cODAgbse7vQL00Gm10lvqB5EWIi2B6O9H3DgwIEDBw4cOHDgwIE7DeBt8P6qwrK98Sn4VpA+/T44cODAgQMHDhw4cODAPcFNA+i0+GyL2O2CNJ3DVz1oAAcOHDhw4MCBAwcOHLhpIG4HcPp+OpjtgX/VPo8PNDhw4MCBAwcOHDhw4K6Ha4u9dsPTv7eF5VbRebqv1wI+OHDgwIEDBw4cOHDgwA0HNg2+6WDbgvd0f9PBpsVxvD9w4MCBAwcOHDhw4MCBKwHaQnP7e2nh+TZg+gAiLYLBgQMHDhw4cODAgQMHLr3R7eLxrQPU/oB1Wthu7fMxgIMDBw4cOHDgwIEDB+5auLYInRaMaQDfAk6D+1Zhe1pEgwMHDhw4cODAgQMHDtwp3DRAt4NpB9Zed6tIPQVYPyjgwIEDBw4cOHDgwIEDtxyg24CaDmT7+tOic+uAPB4EcODAgQMHDhw4cODAXQ+3FVzb99MBngbe6eu3Ct42yIMDBw4cOHDgwIEDBw7caYBNi8I0GKeBOh1kG8DbYnk7gIMDBw4cOHDgwIEDBw7cE1xbOH5X0H77AcK0eF3fJzhw4MCBAwcOHDhw4MC9BNcGzDaQp4E9DfpbDyjSIvWPz4MDBw4cOHDgwIEDBw7cEly6oemA0wDc7istXKcFNDhw4MCBAwcOHDhw4MClcG0gnRaOb+2nPTBvQYz/Dg4cOHDgwIEDBw4cOHDDH2puBdr2h6tpsdt+7q0HB/H74MCBAwcOHDhw4MCBux7O+l0LHDgLnAUOnAXOAnft+g9jBMUx2PhnaAAAAABJRU5ErkJggg==">
+          </div>
+        </div>
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+        
+      
+    </div>
+    <!-- Custom Files bottomMeta begin -->
+    
+    <!-- Custom Files bottomMeta end -->
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+        <a class='prev' href='/2023/12/10/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/7-%E8%AE%BE%E8%AE%A1%E5%B9%B6%E5%8F%91%E4%BB%A3%E7%A0%81/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>7-设计并发代码</p>
+          <p class='content'>设计并发代码时需考虑两个层面：线程安全 和 并发性能。
+1 线程划分1.1 数据简单切分考虑将将一片较大的数据切分为若干块给各线程执行，最后按串行的方式执行规约操作。简单例子如下：
+
+
+1234...</p>
+        </a>
+      
+      
+        <a class='next' href='/2023/12/10/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/4-%E5%8E%9F%E5%AD%90%E6%93%8D%E4%BD%9C/'>
+          <p class='title'>4-原子操作<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>1 原子操作原子操作是不可分割的操作，对于操作共享数据之外的其他线程，观察到这种操作要么完全做好，要么完全没做，不会处于半完成状态。
+2 原子类型标准原子类型的定义位于头文件&lt;atomic...</p>
+        </a>
+      
+    </div>
+  
+  <!-- Custom Files postEnd begin-->
+  
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> 
+  <!-- Custom Files postEnd end-->
+</article>
+
+
+  
+
+
+  <article class="post white-box shadow floatable blur" id="comments">
+    <span hidden>
+      <meta itemprop="discussionUrl" content="/2023/12/10/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/5-%E5%9F%BA%E4%BA%8E%E9%94%81%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/index.html#comments">
+    </span>
+    <p ct><i class='fas fa-comments'></i> 评论区</p>
+    
+
+    <div id="layoutHelper-comments"></div>
+
+  </article>
+
+
+
+
+
+
 </div>
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   
@@ -2667,9 +2876,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
 
 
-  <div class="">
-    <!-- pjax占位 -->
-  </div>
+  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
+    
+  <header>
+    
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E6%A0%88"><span class="toc-text">1 线程安全栈</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E9%98%9F%E5%88%97"><span class="toc-text">2 线程安全队列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8map"><span class="toc-text">3 线程安全map</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E9%93%BE%E8%A1%A8"><span class="toc-text">4 线程安全链表</span></a></li></ol>
+    </div>
+  </section>
 
   
 
@@ -2716,13 +2935,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </aside>
 
 
+
           <!--此文件用来存放一些不方便取值的变量-->
 <!--思路大概是将值藏到重加载的区域内-->
 
 <pjax>
 <script>
   window.pdata={}
-  pdata.ispage=false;
+  pdata.ispage=true;
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -3722,7 +3942,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://xie-peiquan.gitee.io/","name":"PQ.XIE BLOG"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","keywords":"日常唠嗑","description":"个人博客","author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","description":"个人博客"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://xie-peiquan.gitee.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"所有分类","description":"个人博客","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://xie-peiquan.gitee.io/categories/index.html"},"author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://xie-peiquan.gitee.io/categories/index.html","wordCount":0,"datePublished":"2023-07-22T02:37:26.591Z","dateModified":"2023-07-22T02:37:26.591Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://xie-peiquan.gitee.io/","name":"PQ.XIE BLOG"}},{"@type":"ListItem","position":2,"item":{"@id":"https://xie-peiquan.gitee.io/categories/C-并发编程/","name":"C++并发编程"}},{"@type":"ListItem","position":3,"item":{"@id":"https://xie-peiquan.gitee.io/2023/12/10/并发编程/5-基于锁的数据结构/","name":"5-基于锁的数据结构"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","keywords":"日常唠嗑","description":"个人博客","author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","description":"个人博客"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://xie-peiquan.gitee.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"5-基于锁的数据结构","description":"个人博客","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://xie-peiquan.gitee.io/2023/12/10/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/5-%E5%9F%BA%E4%BA%8E%E9%94%81%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"},"author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://xie-peiquan.gitee.io/2023/12/10/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/5-%E5%9F%BA%E4%BA%8E%E9%94%81%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/","wordCount":0,"datePublished":"2023-12-10T09:04:46.872Z","dateModified":"2023-12-10T09:04:46.928Z","articleSection":"C++并发编程","keywords":"并发编程","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

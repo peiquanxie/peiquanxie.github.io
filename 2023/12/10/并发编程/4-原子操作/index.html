@@ -5,8 +5,8 @@
   <meta name="Volantis" content="5.8.0">
   <meta charset="utf-8">
   <!-- SEO相关 -->
-  <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="https://xie-peiquan.gitee.io/categories/"/>
+  
+  <link rel="canonical" href="https://xie-peiquan.gitee.io/2023/12/10/并发编程/4-原子操作/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -34,21 +34,21 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>所有分类 - PQ.XIE BLOG</title>
-  <meta name="keywords" content="日常唠嗑">
+  <title>4-原子操作 - PQ.XIE BLOG</title>
+  <meta name="keywords" content="并发编程,日常唠嗑">
   <meta desc name="description" content="个人博客 - PQ.XIE - PQ.XIE BLOG">
   
-<meta property="og:type" content="website">
-<meta property="og:title" content="所有分类">
-<meta property="og:url" content="https://xie-peiquan.gitee.io/categories/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="4-原子操作">
+<meta property="og:url" content="https://xie-peiquan.gitee.io/2023/12/10/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/4-%E5%8E%9F%E5%AD%90%E6%93%8D%E4%BD%9C/index.html">
 <meta property="og:site_name" content="PQ.XIE BLOG">
-<meta property="og:description" content="个人博客">
+<meta property="og:description" content="1 原子操作原子操作是不可分割的操作，对于操作共享数据之外的其他线程，观察到这种操作要么完全做好，要么完全没做，不会处于半完成状态。 2 原子类型标准原子类型的定义位于头文件&lt;atomic&gt;内，这些类型全都是原子化的。我们可以通过atomic&lt;T&gt;定义原子类型的变量，如atomic&lt;bool&gt;,atomic&lt;int&gt; 这些都是原子类型。原子类型的出现">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2023-07-22T02:37:26.591Z">
-<meta property="article:modified_time" content="2023-07-22T02:37:26.591Z">
+<meta property="article:published_time" content="2023-12-10T09:04:43.408Z">
+<meta property="article:modified_time" content="2023-12-10T09:04:43.504Z">
 <meta property="article:author" content="PQ.XIE">
-<meta property="article:tag" content="日常唠嗑">
+<meta property="article:tag" content="并发编程">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -2505,7 +2505,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="none" class='cover-wrapper category search' style="display: none;">
+      <div id="none" class='cover-wrapper post search' style="display: none;">
         
   <div class='cover-bg lazyload placeholder' data-bg="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/background.jpeg"></div>
 
@@ -2582,73 +2582,305 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div id="safearea">
         <div class="body-wrapper">
           
-
 <div id="l_main" class=''>
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2023/12/10/并发编程/4-原子操作/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="PQ.XIE BLOG">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="PQ.XIE BLOG">
+    <meta itemprop="description" content="个人博客">
+  </span>
   
+
+
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  <div class="article-meta" id="top">
     
-      <div class='post-wrapper'>
-        <article id="cat" class="post article white-box reveal shadow floatable blur">
-          <h2>所有分类</h2>
-          <div class="all-cats">
-            
-              
-                <a class="" href="/categories/C-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">
-                  <span><i class='fa-solid fa-folder-open fa-fw' aria-hidden="true"></i>&nbsp;&nbsp;C++并发编程</span>
-                  <span class="title">
-                    (7)
-                  </span>
-                </a>
-              
-                <a class="" href="/categories/C-%E9%82%A3%E4%BA%9B%E4%BA%8B/">
-                  <span><i class='fa-solid fa-folder-open fa-fw' aria-hidden="true"></i>&nbsp;&nbsp;C++那些事</span>
-                  <span class="title">
-                    (4)
-                  </span>
-                </a>
-              
-                <a class="" href="/categories/Pytorch%E5%9F%BA%E7%A1%80/">
-                  <span><i class='fa-solid fa-folder-open fa-fw' aria-hidden="true"></i>&nbsp;&nbsp;Pytorch基础</span>
-                  <span class="title">
-                    (5)
-                  </span>
-                </a>
-              
-                <a class="" href="/categories/ROS1/">
-                  <span><i class='fa-solid fa-folder-open fa-fw' aria-hidden="true"></i>&nbsp;&nbsp;ROS1</span>
-                  <span class="title">
-                    (12)
-                  </span>
-                </a>
-              
-                <a class="" href="/categories/ROS2%E5%9F%BA%E7%A1%80/">
-                  <span><i class='fa-solid fa-folder-open fa-fw' aria-hidden="true"></i>&nbsp;&nbsp;ROS2基础</span>
-                  <span class="title">
-                    (7)
-                  </span>
-                </a>
-              
-                <a class="" href="/categories/%E4%B8%93%E5%B1%9E%E6%9C%BA%E5%99%A8%E4%BA%BA/">
-                  <span><i class='fa-solid fa-folder-open fa-fw' aria-hidden="true"></i>&nbsp;&nbsp;专属机器人</span>
-                  <span class="title">
-                    (1)
-                  </span>
-                </a>
-              
-                <a class="" href="/categories/%E5%BB%BA%E7%AB%99/">
-                  <span><i class='fa-solid fa-folder-open fa-fw' aria-hidden="true"></i>&nbsp;&nbsp;建站</span>
-                  <span class="title">
-                    (1)
-                  </span>
-                </a>
-              
-            
-          </div>
-          <br>
+    
+    
+      <h1 class="title" itemprop="name headline">
+        4-原子操作
+      </h1>
+      <div class='new-meta-box'>
+        
           
-        </article>
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' href="/" rel="nofollow">
+    <img itemprop="image" src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/202307251013361.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/202307251013361.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    <p itemprop="name">PQ.XIE</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/" rel="nofollow"><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><p>并发编程</p></a></div>
+  <span hidden itemprop="keywords">并发编程</span>
+
+
+          
+        
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-12-10T17:04:43+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>2023年12月10日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：1.4k 字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：5 分钟</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+
+
+<div class="new-meta-item browse">
+  <a class='notlink'>
+    <p>
+      <i class="fa-solid fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span id="busuanzi_value_page_pv"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+      
+      <span>次</span>
+    </p>
+  </a>
+</div>
+
+
+          
+        
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
       </div>
     
+  </div>
+
+
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    <h2 id="1-原子操作"><a href="#1-原子操作" class="headerlink" title="1 原子操作"></a>1 原子操作</h2><p>原子操作是不可分割的操作，对于操作共享数据之外的其他线程，观察到这种操作要么完全做好，要么完全没做，不会处于半完成状态。</p>
+<h2 id="2-原子类型"><a href="#2-原子类型" class="headerlink" title="2 原子类型"></a>2 原子类型</h2><p>标准原子类型的定义位于头文件<code>&lt;atomic&gt;</code>内，这些类型全都是原子化的。我们可以通过<code>atomic&lt;T&gt;</code>定义原子类型的变量，如<code>atomic&lt;bool&gt;</code>,<code>atomic&lt;int&gt;</code> 这些都是原子类型。原子类型的出现是为了取代共享数据的互斥的同步方式，若原子类型是无锁实现，会带来一定的性能提升，以及让代码更加直观可靠。</p>
+<p>从C++17开始，所有的原子类型都包含一个静态成员变量，<code>std::atomic::is_always_lock_free</code>。这个成员变量的值表示在任意给定的目标硬件上，原子类型X是否始终以<strong>无锁结构</strong>形式实现。如果在所有支持该程序运行的硬件上，原子类型X都以无锁结构形式实现，那么这个成员变量的值就为true；否则为false。</p>
+<h3 id="2-1-atomic-flag"><a href="#2-1-atomic-flag" class="headerlink" title="2.1 atomic_flag"></a>2.1 atomic_flag</h3><p>atomic_flag 是一个简单的布尔类型，它一定是无锁操作，因而不提供<code>is_lock_free()</code>成员函数 。<code>atomic_flag</code>的对象在初始化时清零，随后即可通过成员函数<code>test_and_set()</code>查值并设置成立，或者由<code>clear()</code>清零。整个过程只有这两个操作。<strong>其他的<code>atomic&lt;&gt;</code>的原子类型都可以基于其实现。</strong></p>
+<p> <code>test_and_set</code>成员函数是一个原子操作，他会先检查<code>std::atomic_flag</code>当前的状态是否被设置过：</p>
+<ul>
+<li>如果没被设置过(比如初始状态或者清除后)，将<code>std::atomic_flag</code>当前的状态设置为<code>true</code>，并返回<code>false</code>。</li>
+<li>如果被设置过则直接返回<code>ture</code>。</li>
+</ul>
+<h3 id="2-2-atomic"><a href="#2-2-atomic" class="headerlink" title="2.2 atomic&lt;T&gt;"></a>2.2 atomic&lt;T&gt;</h3><p>其他的原子类型都是通过atomic&lt;T&gt; 特例化而成的，但可能不是无锁结构。通过atomic&lt;T&gt; 实例化的原子类型都具有以下接口：</p>
+<ul>
+<li><code>load()</code>：从原子对象中以原子方式读取值，并返回读取的值。</li>
+<li><code>store(val)</code>：以原子方式将给定的值<code>val</code>存储到原子对象中。</li>
+<li><code>exchange(val)</code>：以原子方式将给定的值<code>val</code>存储到原子对象中，并返回原子对象之前的值。</li>
+<li><code>compare_exchange_weak(expected, val)</code>和<code>compare_exchange_strong(expected, val)</code>：使用原子比较和交换操作，将原子对象的值与<code>expected</code>进行比较，如果相等，则将原子对象的值设置为<code>val</code>。这两个函数的区别在于对比较失败时的行为<code>compare_exchange_weak</code>可能会失败但不会给出明确的失败原因，而<code>compare_exchange_strong</code>在比较失败时会返回失败的原子对象的值。</li>
+<li><code>fetch_add(val)</code>和<code>fetch_sub(val)</code>：以原子方式将原子对象的值与<code>val</code>相加或相减，并返回操作之前的原子对象的值。</li>
+<li><code>operator T()</code>：将原子对象转换为<code>T</code>类型的操作数，可以通过此操作符获取原子对象的值。</li>
+</ul>
+<p>这些接口只是原子类型提供的一部分功能，还有其他接口可以用于原子操作。使用原子类型可以确保多个线程对共享数据的访问是安全的，避免了数据竞争的问题。<strong>请注意，原子类型只能保证单个操作的原子性，而不能保证多个操作的原子性。</strong>如果需要实现更复杂的原子操作序列，可以使用互斥锁或其他同步机制。</p>
+<h3 id="2-3-atomic"><a href="#2-3-atomic" class="headerlink" title="2.3  atomic&lt;UDT&gt;"></a>2.3  atomic&lt;UDT&gt;</h3><p>对于用户自定义类型UDT，需要满足一定条件才能被atomic&lt;&gt;具现化：</p>
+<ul>
+<li>必须具备平实拷贝赋值操作符，由编译器代其隐式生成拷贝赋值操作符。</li>
+<li>不得含有任何虚函数，不可以从虚基类派生得出。</li>
+<li>若具有基类或非静态数据成员，必须具备平实拷贝赋值操作符。</li>
+</ul>
+<p>由于以上限制，赋值操作不涉及任何用户编写的代码，因此编译器可借用memcpy()完成。另外，compare_exchange 操作采用的是逐位比较运算，效果等同于直接使用memcmp()函数，即使UDT自行定义了比较运算符，也会被忽略。编译器之所以这样限制，是为了使得可以将UDT视为原始字节，从而让UDT按无锁方式具现化。</p>
+<h2 id="3-内存次序"><a href="#3-内存次序" class="headerlink" title="3 内存次序"></a>3 内存次序</h2><p>对于原子类型上的每一种操作，我们都可以提供额外的参数，从枚举类std::memory_order取值，用于设定所需的内存次序语义。枚举类std::memory_order具有6个可能的值：</p>
+<ul>
+<li>宽松次序：memory_order_relaxed；</li>
+<li>获取-释放次序：memory_order_consume（建议不予采用）、memory_order_acquire、memory_order_release、memory_order_acq_rel；</li>
+<li>先后一致次序：memory_order_seq_cst（默认）.</li>
+</ul>
+<p><strong>先后一致次序是最严格的内存次序，同时也是默认参数</strong>。如果程序服从该次序，就简单地把一切事件视为按先后顺序发生，所有线程所见的一切操作都必须服从相同的次序。这样最符合直觉，比较容易理解。但其他次序中，不同线程看到的同一组操作的次序和效果可能呈现差异。</p>
+<p>以下以atomic_flag构成的自旋锁为例：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">spinlock_mutex</span></span><br><span class="line">&#123;</span><br><span class="line">    std::atomic_flag flag;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">spinlock_mutex</span>():</span><br><span class="line">        <span class="built_in">flag</span>(ATOMIC_FLAG_INIT)</span><br><span class="line">    &#123;&#125;    </span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">lock</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">while</span>(flag.<span class="built_in">test_and_set</span>(std::memory_order_acquire));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">unlock</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        flag.<span class="built_in">clear</span>(std::memory_order_release);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+  </div>
   
+  
+    
+    <div class='footer'>
+       <!-- 参考资料、相关资料等 -->
+      
+       <!-- 相关文章 -->
+      
+      <!-- 版权声明组件 -->
+      
+      <!-- 打赏组件 -->
+      
+        <div class='donate'>
+          <div class='imgs'>
+            
+              <img src='https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/%E8%B5%9E%E8%B5%8F%E7%A0%81.JPG'>
+            
+          </div>
+        </div>
+      
+    </div>
+  
+  
+    
+
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-12-10T17:04:43+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2023年12月10日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://xie-peiquan.gitee.io/2023/12/10/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/4-%E5%8E%9F%E5%AD%90%E6%93%8D%E4%BD%9C/&title=4-原子操作 - PQ.XIE BLOG&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://xie-peiquan.gitee.io/2023/12/10/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/4-%E5%8E%9F%E5%AD%90%E6%93%8D%E4%BD%9C/&title=4-原子操作 - PQ.XIE BLOG&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://xie-peiquan.gitee.io/2023/12/10/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/4-%E5%8E%9F%E5%AD%90%E6%93%8D%E4%BD%9C/&title=4-原子操作 - PQ.XIE BLOG&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        
+        <div class='hoverbox'>
+          <a class='share'><img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/wechat.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/wechat.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></a>
+          <div class='target'>
+            <img src="data:image/png;base64,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">
+          </div>
+        </div>
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+        
+      
+    </div>
+    <!-- Custom Files bottomMeta begin -->
+    
+    <!-- Custom Files bottomMeta end -->
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+        <a class='prev' href='/2023/12/10/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/5-%E5%9F%BA%E4%BA%8E%E9%94%81%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>5-基于锁的数据结构</p>
+          <p class='content'>1 线程安全栈基于互斥锁实现，如下：
+123456789101112131415161718192021222324252627282930313233343536373839404142434...</p>
+        </a>
+      
+      
+        <a class='next' href='/2023/11/28/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/1-%E7%BA%BF%E7%A8%8B%E7%AE%A1%E7%90%86/'>
+          <p class='title'>1-线程管理<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>每个C++程序至少有一个线程，即main线程。随后，程序可以发起更多线程，他们以别的函数作为入口。当main函数返回时，程序随即退出，其他线程也会随着终结（当然如果有detach线程，情况不一样...</p>
+        </a>
+      
+    </div>
+  
+  <!-- Custom Files postEnd begin-->
+  
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> 
+  <!-- Custom Files postEnd end-->
+</article>
+
+
+  
+
+
+  <article class="post white-box shadow floatable blur" id="comments">
+    <span hidden>
+      <meta itemprop="discussionUrl" content="/2023/12/10/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/4-%E5%8E%9F%E5%AD%90%E6%93%8D%E4%BD%9C/index.html#comments">
+    </span>
+    <p ct><i class='fas fa-comments'></i> 评论区</p>
+    
+
+    <div id="layoutHelper-comments"></div>
+
+  </article>
+
+
+
+
+
+
 </div>
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   
@@ -2667,9 +2899,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
 
 
-  <div class="">
-    <!-- pjax占位 -->
-  </div>
+  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
+    
+  <header>
+    
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%8E%9F%E5%AD%90%E6%93%8D%E4%BD%9C"><span class="toc-text">1 原子操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%8E%9F%E5%AD%90%E7%B1%BB%E5%9E%8B"><span class="toc-text">2 原子类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-atomic-flag"><span class="toc-text">2.1 atomic_flag</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-atomic"><span class="toc-text">2.2 atomic&lt;T&gt;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-atomic"><span class="toc-text">2.3  atomic&lt;UDT&gt;</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%86%85%E5%AD%98%E6%AC%A1%E5%BA%8F"><span class="toc-text">3 内存次序</span></a></li></ol>
+    </div>
+  </section>
 
   
 
@@ -2716,13 +2958,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </aside>
 
 
+
           <!--此文件用来存放一些不方便取值的变量-->
 <!--思路大概是将值藏到重加载的区域内-->
 
 <pjax>
 <script>
   window.pdata={}
-  pdata.ispage=false;
+  pdata.ispage=true;
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -3722,7 +3965,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://xie-peiquan.gitee.io/","name":"PQ.XIE BLOG"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","keywords":"日常唠嗑","description":"个人博客","author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","description":"个人博客"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://xie-peiquan.gitee.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"所有分类","description":"个人博客","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://xie-peiquan.gitee.io/categories/index.html"},"author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://xie-peiquan.gitee.io/categories/index.html","wordCount":0,"datePublished":"2023-07-22T02:37:26.591Z","dateModified":"2023-07-22T02:37:26.591Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://xie-peiquan.gitee.io/","name":"PQ.XIE BLOG"}},{"@type":"ListItem","position":2,"item":{"@id":"https://xie-peiquan.gitee.io/categories/C-并发编程/","name":"C++并发编程"}},{"@type":"ListItem","position":3,"item":{"@id":"https://xie-peiquan.gitee.io/2023/12/10/并发编程/4-原子操作/","name":"4-原子操作"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","keywords":"日常唠嗑","description":"个人博客","author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","description":"个人博客"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://xie-peiquan.gitee.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"4-原子操作","description":"个人博客","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://xie-peiquan.gitee.io/2023/12/10/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/4-%E5%8E%9F%E5%AD%90%E6%93%8D%E4%BD%9C/"},"author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://xie-peiquan.gitee.io/2023/12/10/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/4-%E5%8E%9F%E5%AD%90%E6%93%8D%E4%BD%9C/","wordCount":0,"datePublished":"2023-12-10T09:04:43.408Z","dateModified":"2023-12-10T09:04:43.504Z","articleSection":"C++并发编程","keywords":"并发编程","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

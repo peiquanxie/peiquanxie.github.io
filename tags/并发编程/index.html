@@ -1799,7 +1799,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1701912170674),
+    lastupdate: new Date(1702199110020),
     sidebar: {
       for_page: ["blogger","category","webinfo","music"],
       for_post: ["toc"],
@@ -2597,9 +2597,213 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
         
+          
+        
+          
+        
+          
+        
       
     
     
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2023/12/10/并发编程/7-设计并发代码/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="PQ.XIE BLOG">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="PQ.XIE BLOG">
+    <meta itemprop="description" content="个人博客">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/12/10/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/7-%E8%AE%BE%E8%AE%A1%E5%B9%B6%E5%8F%91%E4%BB%A3%E7%A0%81/"  itemprop="url">
+        7-设计并发代码
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        设计并发代码时需考虑两个层面：线程安全 和 并发性能。
+1 线程划分1.1 数据简单切分考虑将将一片较大的数据切分为若干块给各线程执行，最后按串行的方式执行规约操作。简单例子如下：
+
+
+1234567891011121314151617181920212223242526272829303132333435363738394041template&lt;typename Iterator,t...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-12-10T17:04:49+08:00">2023-12-10</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/C-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">C++并发编程</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/C-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/" itemprop="url"><span itemprop="name">C++并发编程</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/12/10/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/7-%E8%AE%BE%E8%AE%A1%E5%B9%B6%E5%8F%91%E4%BB%A3%E7%A0%81/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2023/12/10/并发编程/5-基于锁的数据结构/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="PQ.XIE BLOG">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="PQ.XIE BLOG">
+    <meta itemprop="description" content="个人博客">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/12/10/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/5-%E5%9F%BA%E4%BA%8E%E9%94%81%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"  itemprop="url">
+        5-基于锁的数据结构
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        1 线程安全栈基于互斥锁实现，如下：
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546#include &lt;exception&gt;struct empty_stack: std::exception&#123;    const char* what() const ...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-12-10T17:04:46+08:00">2023-12-10</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/C-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">C++并发编程</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/C-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/" itemprop="url"><span itemprop="name">C++并发编程</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/12/10/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/5-%E5%9F%BA%E4%BA%8E%E9%94%81%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2023/12/10/并发编程/4-原子操作/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="PQ.XIE BLOG">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="PQ.XIE BLOG">
+    <meta itemprop="description" content="个人博客">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/12/10/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/4-%E5%8E%9F%E5%AD%90%E6%93%8D%E4%BD%9C/"  itemprop="url">
+        4-原子操作
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        1 原子操作原子操作是不可分割的操作，对于操作共享数据之外的其他线程，观察到这种操作要么完全做好，要么完全没做，不会处于半完成状态。
+2 原子类型标准原子类型的定义位于头文件&lt;atomic&gt;内，这些类型全都是原子化的。我们可以通过atomic&lt;T&gt;定义原子类型的变量，如atomic&lt;bool&gt;,atomic&lt;int&gt; 这些都是原子类型。原子类型...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-12-10T17:04:43+08:00">2023-12-10</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/C-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">C++并发编程</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/C-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/" itemprop="url"><span itemprop="name">C++并发编程</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/12/10/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/4-%E5%8E%9F%E5%AD%90%E6%93%8D%E4%BD%9C/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+
+  
+
+</div>
+
+          </div>
+        
       
         
           <div class='post-wrapper'>
@@ -2968,7 +3172,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           <li><a class="flat-box"
             title="/categories/C-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/" href="/categories/C-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"
             active-action="action-categoriesC-E5B9B6E58F91E7BC96E7A88B"
-            ><div class='name'>C++并发编程</div><div class='badge'>(4)</div></a></li>
+            ><div class='name'>C++并发编程</div><div class='badge'>(7)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/C-%E9%82%A3%E4%BA%9B%E4%BA%8B/" href="/categories/C-%E9%82%A3%E4%BA%9B%E4%BA%8B/"
@@ -3026,7 +3230,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <div class="webinfo-item">
           <div>文章数目：</div>
-          <div>34 篇</div>
+          <div>37 篇</div>
         </div>
       
 
@@ -3041,7 +3245,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <div class="webinfo-item">
           <div>本站总字数：</div>
-          <div>26.6k 字</div>
+          <div>32.1k 字</div>
         </div>
       
 
@@ -3066,7 +3270,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <div class="webinfo-item">
           <div>最后活动时间：</div>
-          <div id="last-update-show">2023-12-07 日</div>
+          <div id="last-update-show">2023-12-10 日</div>
         </div>
       
     </div>

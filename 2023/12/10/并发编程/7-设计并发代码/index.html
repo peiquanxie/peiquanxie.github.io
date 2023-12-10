@@ -5,8 +5,8 @@
   <meta name="Volantis" content="5.8.0">
   <meta charset="utf-8">
   <!-- SEO相关 -->
-  <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="https://xie-peiquan.gitee.io/categories/"/>
+  
+  <link rel="canonical" href="https://xie-peiquan.gitee.io/2023/12/10/并发编程/7-设计并发代码/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -34,21 +34,21 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>所有分类 - PQ.XIE BLOG</title>
-  <meta name="keywords" content="日常唠嗑">
+  <title>7-设计并发代码 - PQ.XIE BLOG</title>
+  <meta name="keywords" content="并发编程,日常唠嗑">
   <meta desc name="description" content="个人博客 - PQ.XIE - PQ.XIE BLOG">
   
-<meta property="og:type" content="website">
-<meta property="og:title" content="所有分类">
-<meta property="og:url" content="https://xie-peiquan.gitee.io/categories/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="7-设计并发代码">
+<meta property="og:url" content="https://xie-peiquan.gitee.io/2023/12/10/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/7-%E8%AE%BE%E8%AE%A1%E5%B9%B6%E5%8F%91%E4%BB%A3%E7%A0%81/index.html">
 <meta property="og:site_name" content="PQ.XIE BLOG">
-<meta property="og:description" content="个人博客">
+<meta property="og:description" content="设计并发代码时需考虑两个层面：线程安全 和 并发性能。 1 线程划分1.1 数据简单切分考虑将将一片较大的数据切分为若干块给各线程执行，最后按串行的方式执行规约操作。简单例子如下：   1234567891011121314151617181920212223242526272829303132333435363738394041template&lt;typename Iterator,type">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2023-07-22T02:37:26.591Z">
-<meta property="article:modified_time" content="2023-07-22T02:37:26.591Z">
+<meta property="article:published_time" content="2023-12-10T09:04:49.532Z">
+<meta property="article:modified_time" content="2023-12-10T09:04:49.604Z">
 <meta property="article:author" content="PQ.XIE">
-<meta property="article:tag" content="日常唠嗑">
+<meta property="article:tag" content="并发编程">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -2505,7 +2505,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="none" class='cover-wrapper category search' style="display: none;">
+      <div id="none" class='cover-wrapper post search' style="display: none;">
         
   <div class='cover-bg lazyload placeholder' data-bg="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/background.jpeg"></div>
 
@@ -2582,73 +2582,313 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div id="safearea">
         <div class="body-wrapper">
           
-
 <div id="l_main" class=''>
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2023/12/10/并发编程/7-设计并发代码/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="PQ.XIE BLOG">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="PQ.XIE BLOG">
+    <meta itemprop="description" content="个人博客">
+  </span>
   
+
+
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  <div class="article-meta" id="top">
     
-      <div class='post-wrapper'>
-        <article id="cat" class="post article white-box reveal shadow floatable blur">
-          <h2>所有分类</h2>
-          <div class="all-cats">
-            
-              
-                <a class="" href="/categories/C-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">
-                  <span><i class='fa-solid fa-folder-open fa-fw' aria-hidden="true"></i>&nbsp;&nbsp;C++并发编程</span>
-                  <span class="title">
-                    (7)
-                  </span>
-                </a>
-              
-                <a class="" href="/categories/C-%E9%82%A3%E4%BA%9B%E4%BA%8B/">
-                  <span><i class='fa-solid fa-folder-open fa-fw' aria-hidden="true"></i>&nbsp;&nbsp;C++那些事</span>
-                  <span class="title">
-                    (4)
-                  </span>
-                </a>
-              
-                <a class="" href="/categories/Pytorch%E5%9F%BA%E7%A1%80/">
-                  <span><i class='fa-solid fa-folder-open fa-fw' aria-hidden="true"></i>&nbsp;&nbsp;Pytorch基础</span>
-                  <span class="title">
-                    (5)
-                  </span>
-                </a>
-              
-                <a class="" href="/categories/ROS1/">
-                  <span><i class='fa-solid fa-folder-open fa-fw' aria-hidden="true"></i>&nbsp;&nbsp;ROS1</span>
-                  <span class="title">
-                    (12)
-                  </span>
-                </a>
-              
-                <a class="" href="/categories/ROS2%E5%9F%BA%E7%A1%80/">
-                  <span><i class='fa-solid fa-folder-open fa-fw' aria-hidden="true"></i>&nbsp;&nbsp;ROS2基础</span>
-                  <span class="title">
-                    (7)
-                  </span>
-                </a>
-              
-                <a class="" href="/categories/%E4%B8%93%E5%B1%9E%E6%9C%BA%E5%99%A8%E4%BA%BA/">
-                  <span><i class='fa-solid fa-folder-open fa-fw' aria-hidden="true"></i>&nbsp;&nbsp;专属机器人</span>
-                  <span class="title">
-                    (1)
-                  </span>
-                </a>
-              
-                <a class="" href="/categories/%E5%BB%BA%E7%AB%99/">
-                  <span><i class='fa-solid fa-folder-open fa-fw' aria-hidden="true"></i>&nbsp;&nbsp;建站</span>
-                  <span class="title">
-                    (1)
-                  </span>
-                </a>
-              
-            
-          </div>
-          <br>
+    
+    
+      <h1 class="title" itemprop="name headline">
+        7-设计并发代码
+      </h1>
+      <div class='new-meta-box'>
+        
           
-        </article>
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' href="/" rel="nofollow">
+    <img itemprop="image" src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/202307251013361.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/202307251013361.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    <p itemprop="name">PQ.XIE</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/" rel="nofollow"><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><p>并发编程</p></a></div>
+  <span hidden itemprop="keywords">并发编程</span>
+
+
+          
+        
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-12-10T17:04:49+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>2023年12月10日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：2.9k 字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：13 分钟</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+
+
+<div class="new-meta-item browse">
+  <a class='notlink'>
+    <p>
+      <i class="fa-solid fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span id="busuanzi_value_page_pv"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+      
+      <span>次</span>
+    </p>
+  </a>
+</div>
+
+
+          
+        
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
       </div>
     
+  </div>
+
+
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    <p>设计并发代码时需考虑两个层面：<strong>线程安全</strong> 和 <strong>并发性能</strong>。</p>
+<h2 id="1-线程划分"><a href="#1-线程划分" class="headerlink" title="1 线程划分"></a>1 线程划分</h2><h3 id="1-1-数据简单切分"><a href="#1-1-数据简单切分" class="headerlink" title="1.1 数据简单切分"></a>1.1 数据简单切分</h3><p>考虑将将一片较大的数据切分为若干块给各线程执行，最后按串行的方式执行规约操作。简单例子如下：</p>
+<img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/multi_thread/image-20231207103707782.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/multi_thread/image-20231207103707782.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20231207103707782" style="zoom:50%;" />
+
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> Iterator,<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">accumulate_block</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">operator</span><span class="params">()</span><span class="params">(Iterator first,Iterator last,T&amp; result)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        result=std::<span class="built_in">accumulate</span>(first,last,result);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> Iterator,<span class="keyword">typename</span> T&gt;</span></span><br><span class="line"><span class="function">T <span class="title">parallel_accumulate</span><span class="params">(Iterator first,Iterator last,T init)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">long</span> <span class="type">const</span> length=std::<span class="built_in">distance</span>(first,last);</span><br><span class="line">    <span class="keyword">if</span>(!length)</span><br><span class="line">        <span class="keyword">return</span> init;    ⇽---  ①</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">long</span> <span class="type">const</span> min_per_thread=<span class="number">25</span>;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">long</span> <span class="type">const</span> max_threads=</span><br><span class="line">        (length+min_per_thread<span class="number">-1</span>)/min_per_thread;    ⇽---  ②</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">long</span> <span class="type">const</span> hardware_threads=</span><br><span class="line">        std::thread::<span class="built_in">hardware_concurrency</span>();</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">long</span> <span class="type">const</span> num_threads=</span><br><span class="line">        std::<span class="built_in">min</span>(hardware_threads!=<span class="number">0</span>?hardware_threads:<span class="number">2</span>,max_threads);    ⇽---  ③</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">long</span> <span class="type">const</span> block_size=length/num_threads;    ⇽---  ④</span><br><span class="line">    <span class="function">std::vector&lt;T&gt; <span class="title">results</span><span class="params">(num_threads)</span></span>;</span><br><span class="line">    <span class="function">std::vector&lt;std::thread&gt;  <span class="title">threads</span><span class="params">(num_threads<span class="number">-1</span>)</span></span>;    ⇽---  ⑤</span><br><span class="line">    Iterator block_start=first;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">unsigned</span> <span class="type">long</span> i=<span class="number">0</span>;i&lt;(num_threads<span class="number">-1</span>);++i)</span><br><span class="line">    &#123;</span><br><span class="line">        Iterator block_end=block_start;</span><br><span class="line">        std::<span class="built_in">advance</span>(block_end,block_size);    ⇽---  ⑥</span><br><span class="line">        threads[i]=std::<span class="built_in">thread</span>(    ⇽---  ⑦</span><br><span class="line">            <span class="built_in">accumulate_block</span>&lt;Iterator,T&gt;(),</span><br><span class="line">            block_start,block_end,std::<span class="built_in">ref</span>(results[i]));</span><br><span class="line">        block_start=block_end;    ⇽---  ⑧</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">accumulate_block</span>&lt;Iterator,T&gt;()(</span><br><span class="line">        block_start,last,results[num_threads<span class="number">-1</span>]);    ⇽---  ⑨</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span>&amp; entry: threads)</span><br><span class="line">           entry.<span class="built_in">join</span>();    ⇽---  ⑩</span><br><span class="line">    <span class="keyword">return</span> std::<span class="built_in">accumulate</span>(results.<span class="built_in">begin</span>(),results.<span class="built_in">end</span>(),init);    ⇽---  ⑪</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-2-数据递归划分"><a href="#1-2-数据递归划分" class="headerlink" title="1.2 数据递归划分"></a>1.2 数据递归划分</h3><p>以快排算法为例，数据无法一开始就划分好，因为只有经过处理后，才会清楚它会归入到哪个部分。并行化这个算法需要利用递归来进行划分。</p>
+<img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/multi_thread/image-20231207104224864.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/multi_thread/image-20231207104224864.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20231207104224864" style="zoom:67%;" />
+
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span></span><br><span class="line"><span class="function">std::list&lt;T&gt; <span class="title">parallel_quick_sort</span><span class="params">(std::list&lt;T&gt; input)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(input.<span class="built_in">empty</span>())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> input;</span><br><span class="line">    &#125;</span><br><span class="line">    std::list&lt;T&gt; result;</span><br><span class="line">    result.<span class="built_in">splice</span>(result.<span class="built_in">begin</span>(),input,input.<span class="built_in">begin</span>());</span><br><span class="line">    T <span class="type">const</span>&amp; pivot=*result.<span class="built_in">begin</span>();</span><br><span class="line">    <span class="keyword">auto</span> divide_point=std::<span class="built_in">partition</span>(input.<span class="built_in">begin</span>(),input.<span class="built_in">end</span>(),</span><br><span class="line">            [&amp;](T <span class="type">const</span>&amp; t)&#123;<span class="keyword">return</span> t&lt;pivot;&#125;);</span><br><span class="line">    std::list&lt;T&gt; lower_part;</span><br><span class="line">    lower_part.<span class="built_in">splice</span>(lower_part.<span class="built_in">end</span>(),input,input.<span class="built_in">begin</span>(),</span><br><span class="line">        divide_point);</span><br><span class="line">    std::future&lt;std::list&lt;T&gt;&gt; <span class="built_in">new_lower</span>(    ⇽---  ①</span><br><span class="line">        std::<span class="built_in">async</span>(&amp;parallel_quick_sort&lt;T&gt;,std::<span class="built_in">move</span>(lower_part)));</span><br><span class="line">    <span class="function"><span class="keyword">auto</span> <span class="title">new_higher</span><span class="params">(</span></span></span><br><span class="line"><span class="params"><span class="function">        parallel_quick_sort(std::move(input)))</span></span>;    ⇽---  ②</span><br><span class="line">    result.<span class="built_in">splice</span>(result.<span class="built_in">end</span>(),new_higher);    ⇽---  ③</span><br><span class="line">    result.<span class="built_in">splice</span>(result.<span class="built_in">begin</span>(),new_lower.<span class="built_in">get</span>());    ⇽---  ④</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>以上代码随着每一层递归的深入，都借助std::async()生成新的异步任务处理前半部分数据，这样可以让左右两部分的数据并行排序起来。这里用到std::async()其实是让C++线程库自主决定，是否新起线程来运行新数据。快排不可能让所有的数据块排序并行起来，因为太多的线程反而让程序变慢，且消耗资源。</p>
+<h3 id="1-3-任务切分"><a href="#1-3-任务切分" class="headerlink" title="1.3 任务切分"></a>1.3 任务切分</h3><p>将串行的任务切块，让块并行，块与块之间通过队列等管道传输数据。即流水线模式。</p>
+<h2 id="2-影响并发性能的因素"><a href="#2-影响并发性能的因素" class="headerlink" title="2 影响并发性能的因素"></a>2 影响并发性能的因素</h2><h3 id="2-1-处理器数量"><a href="#2-1-处理器数量" class="headerlink" title="2.1 处理器数量"></a>2.1 处理器数量</h3><p>处理器数量可谓是首要且关键的因素。当需同时运行的线程超过处理器实际能并行的线程数，各线程就会发生切换，导致浪费处理器时间，此称为线程过饱和。C++标准库提供了std::thread::hardware_concurrency()来查询硬件能并行的线程数，应用程序可以依此缩放实际执行任务的线程数量。</p>
+<h3 id="2-2-数据竞争-缓存乒乓"><a href="#2-2-数据竞争-缓存乒乓" class="headerlink" title="2.2 数据竞争&amp;缓存乒乓"></a>2.2 数据竞争&amp;缓存乒乓</h3><p>如果两个线程在不同的处理器上并行并共享数据，数据实际上会复制到两个处理器上的缓存中。如果其中一个线程改动了数据，变化必须传导至另一个处理器的缓存中，这之间可能导致另一个处理器半途暂停，以等待硬件变化。可怕的是，这种处理器暂停会让其他无关的线程也随着暂停。以以下代码为例：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">std::atomic&lt;<span class="type">unsigned</span> <span class="type">long</span>&gt; <span class="title">counter</span><span class="params">(<span class="number">0</span>)</span></span>;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">processing_loop</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(counter.<span class="built_in">fetch_add</span>(<span class="number">1</span>,std::memory_order_relaxed)&lt;<span class="number">100000000</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">do_something</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当处理器执行原子变量的自增操作时，必须先确保自身缓存载入了变量的最新副本，然后再改变它的值，再通知其他处理器。这样，当do_something()函数足够短时，大量线程会阻塞在原子变量的更改处，且处理器缓存会发生多次的同步。由于原子变量的值在不同处理器缓存之间多次来回传递，因此称缓存乒乓。</p>
+<p>互斥锁同样也会导致缓存乒乓，但其与原子争夺稍有不同。因为互斥锁是在操作系统层面的，不直接插手到处理器层面。</p>
+<h3 id="2-3-不经意共享"><a href="#2-3-不经意共享" class="headerlink" title="2.3 不经意共享"></a>2.3 不经意共享</h3><p>你以为所有线程不共享数据就不会产生缓存乒乓的问题吗？NO! (好难啊)。  缓存是一块一块读取的，也就是说，当你读取自己线程所属的数据，有可能不经意把别人的数据也读取进来，这个时候相当于不经意共享。这里的解决方法是<strong>编排数据布局，不同线程的数据在内存中彼此隔离，减少不经意共享。</strong></p>
+<h3 id="2-4-线程过饱和"><a href="#2-4-线程过饱和" class="headerlink" title="2.4 线程过饱和"></a>2.4 线程过饱和</h3><p>若线程数目过多，超过硬件可并行数，操作系统也会随之开始剧烈地切换任务，以公平分摊时间片。若数据分布不够紧凑，还会导致缓存问题，这两个问题叠加会导致严重后果。</p>
+<h2 id="3-线程异常保护"><a href="#3-线程异常保护" class="headerlink" title="3 线程异常保护"></a>3 线程异常保护</h2><p>当不对并发线程的异常进行处理，线程对象会通过析构函数调用std::terminate() 从而终结整个应用程序。</p>
+<p>以下提供并行代码进行分析：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> Iterator,<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">accumulate_block</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">operator</span><span class="params">()</span><span class="params">(Iterator first,Iterator last,T&amp; result)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        result=std::<span class="built_in">accumulate</span>(first,last,result);    ⇽---  ①</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> Iterator,<span class="keyword">typename</span> T&gt;</span></span><br><span class="line"><span class="function">T <span class="title">parallel_accumulate</span><span class="params">(Iterator first,Iterator last,T init)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">long</span> <span class="type">const</span> length=std::<span class="built_in">distance</span>(first,last);    ⇽---  ②</span><br><span class="line">    <span class="keyword">if</span>(!length)</span><br><span class="line">        <span class="keyword">return</span> init;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">long</span> <span class="type">const</span> min_per_thread=<span class="number">25</span>;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">long</span> <span class="type">const</span> max_threads=</span><br><span class="line">        (length+min_per_thread<span class="number">-1</span>)/min_per_thread;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">long</span> <span class="type">const</span> hardware_threads=</span><br><span class="line">        std::thread::<span class="built_in">hardware_concurrency</span>();</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">long</span> <span class="type">const</span> num_threads=</span><br><span class="line">        std::<span class="built_in">min</span>(hardware_threads!=<span class="number">0</span>?hardware_threads:<span class="number">2</span>,max_threads);</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">long</span> <span class="type">const</span> block_size=length/num_threads;</span><br><span class="line">    <span class="function">std::vector&lt;T&gt; <span class="title">results</span><span class="params">(num_threads)</span></span>;     ⇽---  ③</span><br><span class="line">    <span class="function">std::vector&lt;std::thread&gt;  <span class="title">threads</span><span class="params">(num_threads<span class="number">-1</span>)</span></span>;    ⇽---  ④</span><br><span class="line">    Iterator block_start=first;     ⇽---  ⑤</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">unsigned</span> <span class="type">long</span> i=<span class="number">0</span>;i&lt;(num_threads<span class="number">-1</span>);++i)</span><br><span class="line">    &#123;</span><br><span class="line">        Iterator block_end=block_start;    ⇽---  ⑥</span><br><span class="line">        std::<span class="built_in">advance</span>(block_end,block_size);</span><br><span class="line">        threads[i]=std::<span class="built_in">thread</span>(    ⇽---  ⑦</span><br><span class="line">            <span class="built_in">accumulate_block</span>&lt;Iterator,T&gt;(),</span><br><span class="line">            block_start,block_end,std::<span class="built_in">ref</span>(results[i]));</span><br><span class="line">        block_start=block_end;     ⇽---  ⑧</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">accumulate_block</span>&lt;Iterator,T&gt;()(</span><br><span class="line">        block_start,last,results[num_threads<span class="number">-1</span>]);    ⇽---  ⑨</span><br><span class="line">    std::for_each(threads.<span class="built_in">begin</span>(),threads.<span class="built_in">end</span>(),</span><br><span class="line">        std::<span class="built_in">mem_fn</span>(&amp;std::thread::join));</span><br><span class="line">    <span class="keyword">return</span> std::<span class="built_in">accumulate</span>(results.<span class="built_in">begin</span>(),results.<span class="built_in">end</span>(),init);    ⇽---  ⑩</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>以上，新线程发起的 accumulate_block 块，此处没有任何的catch块，故代码不会处理产生的异常，结果令线程库调用 std::terminate()而终止整个应用程序。</p>
+<h3 id="3-1-加入异常安全"><a href="#3-1-加入异常安全" class="headerlink" title="3.1 加入异常安全"></a>3.1 加入异常安全</h3><p>以上代码，我们希望新起线程能抛出异常，并被父线程所捕获。我们借助 std::packaged_task 和 std::future 即可实现。以下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> Iterator,<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">accumulate_block</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function">T <span class="title">operator</span><span class="params">()</span><span class="params">(Iterator first,Iterator last)</span>    ⇽---  ①</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> std::<span class="built_in">accumulate</span>(first,last,<span class="built_in">T</span>());    ⇽---  ②</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> Iterator,<span class="keyword">typename</span> T&gt;</span></span><br><span class="line"><span class="function">T <span class="title">parallel_accumulate</span><span class="params">(Iterator first,Iterator last,T init)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">long</span> <span class="type">const</span> length=std::<span class="built_in">distance</span>(first,last);</span><br><span class="line">    <span class="keyword">if</span>(!length)</span><br><span class="line">        <span class="keyword">return</span> init;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">long</span> <span class="type">const</span> min_per_thread=<span class="number">25</span>;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">long</span> <span class="type">const</span> max_threads=</span><br><span class="line">        (length+min_per_thread<span class="number">-1</span>)/min_per_thread;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">long</span> <span class="type">const</span> hardware_threads=</span><br><span class="line">        std::thread::<span class="built_in">hardware_concurrency</span>();</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">long</span> <span class="type">const</span> num_threads=</span><br><span class="line">        std::<span class="built_in">min</span>(hardware_threads!=<span class="number">0</span>?hardware_threads:<span class="number">2</span>,max_threads);</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">long</span> <span class="type">const</span> block_size=length/num_threads;</span><br><span class="line">    std::vector&lt;std::future&lt;T&gt; &gt; <span class="built_in">futures</span>(num_threads<span class="number">-1</span>);    ⇽---  ③</span><br><span class="line">    <span class="function">std::vector&lt;std::thread&gt; <span class="title">threads</span><span class="params">(num_threads<span class="number">-1</span>)</span></span>;</span><br><span class="line">    Iterator block_start=first;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">unsigned</span> <span class="type">long</span> i=<span class="number">0</span>;i&lt;(num_threads<span class="number">-1</span>);++i)</span><br><span class="line">    &#123;</span><br><span class="line">        Iterator block_end=block_start;</span><br><span class="line">        std::<span class="built_in">advance</span>(block_end,block_size);</span><br><span class="line">        <span class="function">std::packaged_task&lt;<span class="title">T</span><span class="params">(Iterator,Iterator)</span>&gt; <span class="title">task</span><span class="params">(    ⇽---  ④</span></span></span><br><span class="line"><span class="params"><span class="function">            accumulate_block&lt;Iterator,T&gt;())</span></span>;</span><br><span class="line">        futures[i]=task.<span class="built_in">get_future</span>();    ⇽---  ⑤</span><br><span class="line">        threads[i]=std::<span class="built_in">thread</span>(std::<span class="built_in">move</span>(task),block_start,block_end);    ⇽---  ⑥</span><br><span class="line">        block_start=block_end;</span><br><span class="line">    &#125;</span><br><span class="line">    T last_result=<span class="built_in">accumulate_block</span>&lt;Iterator,T&gt;()(block_start,last);    ⇽---  ⑦</span><br><span class="line">    std::for_each(threads.<span class="built_in">begin</span>(),threads.<span class="built_in">end</span>(),</span><br><span class="line">        std::<span class="built_in">mem_fn</span>(&amp;std::thread::join));</span><br><span class="line">    T result=init;     ⇽---  ⑧</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">unsigned</span> <span class="type">long</span> i=<span class="number">0</span>;i&lt;(num_threads<span class="number">-1</span>);++i)</span><br><span class="line">    &#123;</span><br><span class="line">        result+=futures[i].<span class="built_in">get</span>();    ⇽---  ⑨</span><br><span class="line">    &#125;</span><br><span class="line">    result += last_result;    ⇽---  ⑩</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>变化点：</p>
+<ul>
+<li>accumulate_block 直接返回值给 std::future.</li>
+<li>用vector容器来存储 futrue对象，并用 std::packaged_task 打包任务。<strong>这样任务运行的最终结果会返回给future，如果出现异常，也会被future捕获。</strong> </li>
+<li>最后线程汇合，利用futrue.get()获取计算的返回值并求和。<strong>如果线程抛出异常，那么此处调用get会再次抛出异常。</strong></li>
+</ul>
+<p>以上代码还有另一个问题，若有线程异常退出，则会导致线程泄漏。我们可以设计一个RAII形式的线程回收类避免这个问题。以下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">join_threads</span></span><br><span class="line">&#123;</span><br><span class="line">    std::vector&lt;std::thread&gt;&amp; threads;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">explicit</span> <span class="title">join_threads</span><span class="params">(std::vector&lt;std::thread&gt;&amp; threads_)</span>:</span></span><br><span class="line"><span class="function">        threads(threads_)</span></span><br><span class="line"><span class="function">    &#123;</span>&#125;</span><br><span class="line">    ~<span class="built_in">join_threads</span>()</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">unsigned</span> <span class="type">long</span> i=<span class="number">0</span>;i&lt;threads.<span class="built_in">size</span>();++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(threads[i].<span class="built_in">joinable</span>())</span><br><span class="line">                threads[i].<span class="built_in">join</span>();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="3-2-std-async的线程安全"><a href="#3-2-std-async的线程安全" class="headerlink" title="3.2 std::async的线程安全"></a>3.2 std::async的线程安全</h3><p>std::async()会让线程库替我们管控线程，线程一旦完成，对应的future就会进入就绪状态。<strong>如果不等future进入就绪状态就将其销毁，future对象的析构函数仍然会等待其线程运行结束</strong>。体现在，当父线程捕获到某一子线程的异常并准备向上抛时，也会等待其他子线程完成，以防止悬空线程。</p>
+<h2 id="4-线程可伸缩性"><a href="#4-线程可伸缩性" class="headerlink" title="4 线程可伸缩性"></a>4 线程可伸缩性</h2><p>程序是由串行片段和并行片段共同构成的。如果串行片段所占总体程序的比例是fs，那么N个处理器所取得的整体性能增益P是：<br>$$<br>Amdahl定律 ：P&#x3D;\frac{1}{f_s + \frac{1-f_s}{N}}<br>$$<br>若串行片段 fs 为0，则加速比为N；若串行片段为1&#x2F;3，则加速比不可能超过3.</p>
+<h2 id="5-并行代码实践"><a href="#5-并行代码实践" class="headerlink" title="5 并行代码实践"></a>5 并行代码实践</h2><h3 id="5-1-std-for-each-并行版本"><a href="#5-1-std-for-each-并行版本" class="headerlink" title="5.1 std::for_each 并行版本"></a>5.1 std::for_each 并行版本</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> Iterator,<span class="keyword">typename</span> Func&gt;</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">parallel_for_each</span><span class="params">(Iterator first,Iterator last,Func f)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">long</span> <span class="type">const</span> length=std::<span class="built_in">distance</span>(first,last);</span><br><span class="line">    <span class="keyword">if</span>(!length)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">long</span> <span class="type">const</span> min_per_thread=<span class="number">25</span>;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">long</span> <span class="type">const</span> max_threads=</span><br><span class="line">        (length+min_per_thread<span class="number">-1</span>)/min_per_thread;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">long</span> <span class="type">const</span> hardware_threads=</span><br><span class="line">        std::thread::<span class="built_in">hardware_concurrency</span>();</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">long</span> <span class="type">const</span> num_threads=</span><br><span class="line">        std::<span class="built_in">min</span>(hardware_threads!=<span class="number">0</span>?hardware_threads:<span class="number">2</span>,max_threads);</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">long</span> <span class="type">const</span> block_size=length/num_threads;</span><br><span class="line">    std::vector&lt;std::future&lt;<span class="type">void</span>&gt;&gt; <span class="built_in">futures</span>(num_threads<span class="number">-1</span>);    ⇽---  ①</span><br><span class="line">    <span class="function">std::vector&lt;std::thread&gt; <span class="title">threads</span><span class="params">(num_threads<span class="number">-1</span>)</span></span>;</span><br><span class="line">    <span class="function">join_threads <span class="title">joiner</span><span class="params">(threads)</span></span>;</span><br><span class="line">    Iterator block_start=first;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">unsigned</span> <span class="type">long</span> i=<span class="number">0</span>;i&lt;(num_threads<span class="number">-1</span>);++i)</span><br><span class="line">    &#123;</span><br><span class="line">        Iterator block_end=block_start;</span><br><span class="line">        std::<span class="built_in">advance</span>(block_end,block_size);</span><br><span class="line">        <span class="function">std::packaged_task&lt;<span class="title">void</span><span class="params">(<span class="type">void</span>)</span>&gt; <span class="title">task</span><span class="params">(    ⇽---  ②</span></span></span><br><span class="line"><span class="params"><span class="function">            [=]()</span></span></span><br><span class="line"><span class="params"><span class="function">            &#123;</span></span></span><br><span class="line"><span class="params"><span class="function">                std::for_each(block_start,block_end,f);</span></span></span><br><span class="line"><span class="params"><span class="function">            &#125;)</span></span>;</span><br><span class="line">        futures[i]=task.<span class="built_in">get_future</span>();</span><br><span class="line">        threads[i]=std::<span class="built_in">thread</span>(std::<span class="built_in">move</span>(task));    ⇽---  ③</span><br><span class="line">        block_start=block_end;</span><br><span class="line">    &#125;</span><br><span class="line">    std::for_each(block_start,last,f);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">unsigned</span> <span class="type">long</span> i=<span class="number">0</span>;i&lt;(num_threads<span class="number">-1</span>);++i)</span><br><span class="line">    &#123;</span><br><span class="line">        futures[i].<span class="built_in">get</span>();    ⇽---  ④</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>由于以上工作线程没有返回值，因此future.get()调用的意义在于提供一种捕获异常的方法。若不想传递异常，亦可以忽略这一操作。</p>
+<h3 id="5-2-std-async-递归版本"><a href="#5-2-std-async-递归版本" class="headerlink" title="5.2 std::async() 递归版本"></a>5.2 std::async() 递归版本</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> Iterator,<span class="keyword">typename</span> Func&gt;</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">parallel_for_each</span><span class="params">(Iterator first,Iterator last,Func f)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">long</span> <span class="type">const</span> length=std::<span class="built_in">distance</span>(first,last);</span><br><span class="line">    <span class="keyword">if</span>(!length)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">long</span> <span class="type">const</span> min_per_thread=<span class="number">25</span>;</span><br><span class="line">    <span class="keyword">if</span>(length&lt;(<span class="number">2</span>*min_per_thread))</span><br><span class="line">    &#123;</span><br><span class="line">        std::for_each(first,last,f);    ⇽---  ①</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        Iterator <span class="type">const</span> mid_point=first+length/<span class="number">2</span>;</span><br><span class="line">        std::future&lt;<span class="type">void</span>&gt; first_half=    ⇽---  ②</span><br><span class="line">            std::<span class="built_in">async</span>(&amp;parallel_for_each&lt;Iterator,Func&gt;,</span><br><span class="line">                       first,mid_point,f);</span><br><span class="line">        <span class="built_in">parallel_for_each</span>(mid_point,last,f);    ⇽---  ③</span><br><span class="line">        first_half.<span class="built_in">get</span>();    ⇽---  ④</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-3-std-find并行版本"><a href="#5-3-std-find并行版本" class="headerlink" title="5.3 std::find并行版本"></a>5.3 std::find并行版本</h3><p>对于find这类任务，他的特点就是尽早地完成任务，这可以避免浪费资源和时间。若某一线程找到目标元素，如何中断其他线程呢？可以将一原子变量作为标志，每处理一次元素就查验一次该标志。如果这个标志被置为成立，则表明某个线程已找到匹配的元素。这种并行的代价是要反复查验原子变量。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> Iterator,<span class="keyword">typename</span> MatchType&gt;</span></span><br><span class="line"><span class="function">Iterator <span class="title">parallel_find</span><span class="params">(Iterator first,Iterator last,MatchType match)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">find_element</span>    ⇽---  ①</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="type">void</span> <span class="title">operator</span><span class="params">()</span><span class="params">(Iterator begin,Iterator end, </span></span></span><br><span class="line"><span class="params"><span class="function">                        MatchType match,</span></span></span><br><span class="line"><span class="params"><span class="function">                        std::promise&lt;Iterator&gt;* result,</span></span></span><br><span class="line"><span class="params"><span class="function">                        std::atomic&lt;<span class="type">bool</span>&gt;* done_flag)</span></span></span><br><span class="line"><span class="function">        </span>&#123;</span><br><span class="line">            <span class="keyword">try</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">for</span>(;(begin!=end) &amp;&amp; !done_flag-&gt;<span class="built_in">load</span>();++begin)    ⇽---  ②</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">if</span>(*begin==match)</span><br><span class="line">                    &#123;</span><br><span class="line">                        result-&gt;<span class="built_in">set_value</span>(begin);    ⇽---  ③</span><br><span class="line">                        done_flag-&gt;<span class="built_in">store</span>(<span class="literal">true</span>);    ⇽---  ④</span><br><span class="line">                        <span class="keyword">return</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">catch</span>(...)    ⇽---  ⑤</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">try</span></span><br><span class="line">                &#123;</span><br><span class="line">                    result-&gt;<span class="built_in">set_exception</span>(std::<span class="built_in">current_exception</span>());    ⇽---  ⑥</span><br><span class="line">                    done_flag-&gt;<span class="built_in">store</span>(<span class="literal">true</span>);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="built_in">catch</span>(...)    ⇽---  ⑦</span><br><span class="line">                &#123;&#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">long</span> <span class="type">const</span> length=std::<span class="built_in">distance</span>(first,last);</span><br><span class="line">    <span class="keyword">if</span>(!length)</span><br><span class="line">        <span class="keyword">return</span> last;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">long</span> <span class="type">const</span> min_per_thread=<span class="number">25</span>;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">long</span> <span class="type">const</span> max_threads=</span><br><span class="line">        (length+min_per_thread<span class="number">-1</span>)/min_per_thread;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">long</span> <span class="type">const</span> hardware_threads=</span><br><span class="line">        std::thread::<span class="built_in">hardware_concurrency</span>();</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">long</span> <span class="type">const</span> num_threads=</span><br><span class="line">        std::<span class="built_in">min</span>(hardware_threads!=<span class="number">0</span>?hardware_threads:<span class="number">2</span>,max_threads);</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">long</span> <span class="type">const</span> block_size=length/num_threads;</span><br><span class="line">    std::promise&lt;Iterator&gt; result;    ⇽---  ⑧</span><br><span class="line">    <span class="function">std::atomic&lt;<span class="type">bool</span>&gt; <span class="title">done_flag</span><span class="params">(<span class="literal">false</span>)</span></span>;     ⇽---  ⑨</span><br><span class="line">    <span class="function">std::vector&lt;std::thread&gt; <span class="title">threads</span><span class="params">(num_threads<span class="number">-1</span>)</span></span>;</span><br><span class="line">    &#123;    ⇽---  ⑩</span><br><span class="line">        <span class="function">join_threads <span class="title">joiner</span><span class="params">(threads)</span></span>;</span><br><span class="line">        Iterator block_start=first;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">unsigned</span> <span class="type">long</span> i=<span class="number">0</span>;i&lt;(num_threads<span class="number">-1</span>);++i)</span><br><span class="line">        &#123;</span><br><span class="line">            Iterator block_end=block_start;</span><br><span class="line">            std::<span class="built_in">advance</span>(block_end,block_size);</span><br><span class="line">            threads[i]=std::<span class="built_in">thread</span>(<span class="built_in">find_element</span>(),    ⇽---  ⑪</span><br><span class="line">                                    block_start,block_end,match,</span><br><span class="line">                                    &amp;result,&amp;done_flag);</span><br><span class="line">            block_start=block_end;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">find_element</span>()(block_start,last,match,&amp;result,&amp;done_flag);    ⇽---  ⑫</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(!done_flag.<span class="built_in">load</span>())    ⇽---  ⑬</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> last;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result.<span class="built_in">get_future</span>().<span class="built_in">get</span>();    ⇽---  ⑭</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+  </div>
   
+  
+    
+    <div class='footer'>
+       <!-- 参考资料、相关资料等 -->
+      
+       <!-- 相关文章 -->
+      
+      <!-- 版权声明组件 -->
+      
+      <!-- 打赏组件 -->
+      
+        <div class='donate'>
+          <div class='imgs'>
+            
+              <img src='https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/%E8%B5%9E%E8%B5%8F%E7%A0%81.JPG'>
+            
+          </div>
+        </div>
+      
+    </div>
+  
+  
+    
+
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-12-10T17:04:49+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2023年12月10日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://xie-peiquan.gitee.io/2023/12/10/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/7-%E8%AE%BE%E8%AE%A1%E5%B9%B6%E5%8F%91%E4%BB%A3%E7%A0%81/&title=7-设计并发代码 - PQ.XIE BLOG&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://xie-peiquan.gitee.io/2023/12/10/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/7-%E8%AE%BE%E8%AE%A1%E5%B9%B6%E5%8F%91%E4%BB%A3%E7%A0%81/&title=7-设计并发代码 - PQ.XIE BLOG&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://xie-peiquan.gitee.io/2023/12/10/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/7-%E8%AE%BE%E8%AE%A1%E5%B9%B6%E5%8F%91%E4%BB%A3%E7%A0%81/&title=7-设计并发代码 - PQ.XIE BLOG&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        
+        <div class='hoverbox'>
+          <a class='share'><img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/wechat.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/wechat.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></a>
+          <div class='target'>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZgAAAGYCAAAAABaUKuJAAAGA0lEQVR42u3dQU4dMRAEUO5/abJPhOyqbgNS3uz4fGY8/bwplaN8fLp+5fVhBGBcYMC4wIBxgXEdYT7K6++//+cBjz//8sUO9/nqPU73u13feJ5gwIABAwYMGDBgwIC5hpm++Kvv3W6M2w2Trud28FvzBAMGDBgwYMCAAQMGTA4zffA0gE6DaAt4GwDTDZHOEwwYMGDAgAEDBgwYMO9h0kFMB9IWVGngu33vdl1gwIABAwYMGDBgwID5PTBp0HsVCLc30LRoAwMGDBgwYMCAAQMGzDuY6YPbYis9cDdd31Yxtg4JBgwYMGDAgAEDBgyYa5hpcPPz0jzBgAEDBgwIMGDAgAFzhJletwHwFjZ93jTgpQf4ps85rgMMGDBgwIABAwYMGDBHmGnxNA1c7eC3iq70ee16bt8XDBgwYMCAAQMGDBgwZ5h0ALcL3gqu7YG960E8OhDYzgsMGDBgwIABAwYMGDA9TLvA7WDW3ncKMX1uXcyBAQMGDBgwYMCAAQPmCJMGrBauhZ2uJx3QVgCtNx4YMGDAgAEDBgwYMGDGMNfBKHyh7RdvA2T7+e08btcLBgwYMGDAgAEDBgyYHGar+GlBt4q1aRHWbtit+4ABAwYMGDBgwIABA+b+wN/WgrcCa1p8xUEuDLRbByKP9wMDBgwYMGDAgAEDBkwMM13gVkBrB/MZXm2Rtx04wYABAwYMGDBgwIABcw/TFmKf5dUWXWsvvvT9adA8BkwwYMCAAQMGDBgwYMAcA2b6gPTnFDY9AJgObvr96edgwIABAwYMGDBgwIDpYaaBbjrgLcjt4m66gdIDkWDAgAEDBgwYMGDAgOlhpsXZtKCafv56oG3xdwsOBgwYMGDAgAEDBgyYe5jpANoXmAbR+MXDg3ltQVgXjmDAgAEDBgwYMGDAgDnCtMXW1sK2/q4tqNKNmK4n3nhgwIABAwYMGDBgwICJYbYHlga+Kfj2QNt51IBgwIABAwYMGDBgwIA5wkwXnAa27eLquwPydOMd7wsGDBgwYMCAAQMGDJgjTLvwtIhKN8K0GNvaQNvrOf4MBgwYMGDAgAEDBgyYa5itgNkWTdPgOd0o00JsWgSCAQMGDBgwYMCAAQOmh0mLo3bQW8XV9vq2i7X0eWDAgAEDBgwYMGDAgMn/fczrAJgGzWkwbdfxU+sCAwYMGDBgwIABAwZMDjMNVNuDmBZdaYBuB75V1IEBAwYMGDBgwIABAyaHuX3x9sBcW9BNA2R6AK+dxzjwggEDBgwYMGDAgAED5giz9WJxITQMdOkLbxVj0w19XZSBAQMGDBgwYMCAAQPmCNO+aBvI2s9fF3dtQXcLddx4YMCAAQMGDBgwYMCAOcJMD6hNB7414GnxNgVrN8zagT8wYMCAAQMGDBgwYMB8239s0xZ1bXE3LcK2g/E4YIIBAwYMGDBgwIAB8x/C3C5kO/ClBd2r9WxBTYs0MGDAgAEDBgwYMGDA3MOsFTzh36WF1U8NfqsQuy4MwYABAwYMGDBgwIABc4RpC5/pwNuC7NWGaN8n3WBgwIABAwYMGDBgwIB5B5MWXK8C2qsAvAWzNUcwYMCAAQMGDBgwYMDkMMfgEw5q6/6virN04PGAt4oyMGDAgAEDBgwYMGDAHGFuBzQd8Pb9bgHaIqwNlvHvwYABAwYMGDBgwIABc4RJQdJiKw1g08C4Vcjdrru97zFgggEDBgwYMGDAgAED5hgwtwPgVtBrC63bdUzXtR58wYABAwYMGDBgwIABU/cxaXBLB3U7mO3Ad/ucdGO26wMDBgwYMGDAgAEDBkwP0y4kDXjbQbb93nfBphsbDBgwYMCAAQMGDBgwOUx8o/IA3E8d3Gufsx3I44AJBgwYMGDAgAEDBgyYNZg0WE6LszRobgXQFL6eDxgwYMCAAQMGDBgwYL4dpgV5VbxNg2B6wG9awIEBAwYMGDBgwIABAyaH2TrwVy9s+Ps28E4LuLWgCgYMGDBgwIABAwYMmGuY7SA2hU3vlxZo08FPg/Z1wAQDBgwYMGDAgAEDBsw/MK7fdYEB4wIDxgUGjAuM68vrD3HcgA8Si8UhAAAAAElFTkSuQmCC">
+          </div>
+        </div>
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+        
+      
+    </div>
+    <!-- Custom Files bottomMeta begin -->
+    
+    <!-- Custom Files bottomMeta end -->
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+      
+        <a class='next' href='/2023/12/10/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/5-%E5%9F%BA%E4%BA%8E%E9%94%81%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/'>
+          <p class='title'>5-基于锁的数据结构<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>1 线程安全栈基于互斥锁实现，如下：
+123456789101112131415161718192021222324252627282930313233343536373839404142434...</p>
+        </a>
+      
+    </div>
+  
+  <!-- Custom Files postEnd begin-->
+  
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> 
+  <!-- Custom Files postEnd end-->
+</article>
+
+
+  
+
+
+  <article class="post white-box shadow floatable blur" id="comments">
+    <span hidden>
+      <meta itemprop="discussionUrl" content="/2023/12/10/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/7-%E8%AE%BE%E8%AE%A1%E5%B9%B6%E5%8F%91%E4%BB%A3%E7%A0%81/index.html#comments">
+    </span>
+    <p ct><i class='fas fa-comments'></i> 评论区</p>
+    
+
+    <div id="layoutHelper-comments"></div>
+
+  </article>
+
+
+
+
+
+
 </div>
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   
@@ -2667,9 +2907,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
 
 
-  <div class="">
-    <!-- pjax占位 -->
-  </div>
+  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
+    
+  <header>
+    
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%BA%BF%E7%A8%8B%E5%88%92%E5%88%86"><span class="toc-text">1 线程划分</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E6%95%B0%E6%8D%AE%E7%AE%80%E5%8D%95%E5%88%87%E5%88%86"><span class="toc-text">1.1 数据简单切分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E6%95%B0%E6%8D%AE%E9%80%92%E5%BD%92%E5%88%92%E5%88%86"><span class="toc-text">1.2 数据递归划分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-%E4%BB%BB%E5%8A%A1%E5%88%87%E5%88%86"><span class="toc-text">1.3 任务切分</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%BD%B1%E5%93%8D%E5%B9%B6%E5%8F%91%E6%80%A7%E8%83%BD%E7%9A%84%E5%9B%A0%E7%B4%A0"><span class="toc-text">2 影响并发性能的因素</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E5%A4%84%E7%90%86%E5%99%A8%E6%95%B0%E9%87%8F"><span class="toc-text">2.1 处理器数量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E6%95%B0%E6%8D%AE%E7%AB%9E%E4%BA%89-%E7%BC%93%E5%AD%98%E4%B9%92%E4%B9%93"><span class="toc-text">2.2 数据竞争&amp;缓存乒乓</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-%E4%B8%8D%E7%BB%8F%E6%84%8F%E5%85%B1%E4%BA%AB"><span class="toc-text">2.3 不经意共享</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-%E7%BA%BF%E7%A8%8B%E8%BF%87%E9%A5%B1%E5%92%8C"><span class="toc-text">2.4 线程过饱和</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E7%BA%BF%E7%A8%8B%E5%BC%82%E5%B8%B8%E4%BF%9D%E6%8A%A4"><span class="toc-text">3 线程异常保护</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E5%8A%A0%E5%85%A5%E5%BC%82%E5%B8%B8%E5%AE%89%E5%85%A8"><span class="toc-text">3.1 加入异常安全</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-std-async%E7%9A%84%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8"><span class="toc-text">3.2 std::async的线程安全</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E7%BA%BF%E7%A8%8B%E5%8F%AF%E4%BC%B8%E7%BC%A9%E6%80%A7"><span class="toc-text">4 线程可伸缩性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E5%B9%B6%E8%A1%8C%E4%BB%A3%E7%A0%81%E5%AE%9E%E8%B7%B5"><span class="toc-text">5 并行代码实践</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-std-for-each-%E5%B9%B6%E8%A1%8C%E7%89%88%E6%9C%AC"><span class="toc-text">5.1 std::for_each 并行版本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-std-async-%E9%80%92%E5%BD%92%E7%89%88%E6%9C%AC"><span class="toc-text">5.2 std::async() 递归版本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-std-find%E5%B9%B6%E8%A1%8C%E7%89%88%E6%9C%AC"><span class="toc-text">5.3 std::find并行版本</span></a></li></ol></li></ol>
+    </div>
+  </section>
 
   
 
@@ -2716,13 +2966,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </aside>
 
 
+
           <!--此文件用来存放一些不方便取值的变量-->
 <!--思路大概是将值藏到重加载的区域内-->
 
 <pjax>
 <script>
   window.pdata={}
-  pdata.ispage=false;
+  pdata.ispage=true;
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -3722,7 +3973,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://xie-peiquan.gitee.io/","name":"PQ.XIE BLOG"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","keywords":"日常唠嗑","description":"个人博客","author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","description":"个人博客"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://xie-peiquan.gitee.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"所有分类","description":"个人博客","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://xie-peiquan.gitee.io/categories/index.html"},"author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://xie-peiquan.gitee.io/categories/index.html","wordCount":0,"datePublished":"2023-07-22T02:37:26.591Z","dateModified":"2023-07-22T02:37:26.591Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://xie-peiquan.gitee.io/","name":"PQ.XIE BLOG"}},{"@type":"ListItem","position":2,"item":{"@id":"https://xie-peiquan.gitee.io/categories/C-并发编程/","name":"C++并发编程"}},{"@type":"ListItem","position":3,"item":{"@id":"https://xie-peiquan.gitee.io/2023/12/10/并发编程/7-设计并发代码/","name":"7-设计并发代码"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","keywords":"日常唠嗑","description":"个人博客","author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","description":"个人博客"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://xie-peiquan.gitee.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"7-设计并发代码","description":"个人博客","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://xie-peiquan.gitee.io/2023/12/10/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/7-%E8%AE%BE%E8%AE%A1%E5%B9%B6%E5%8F%91%E4%BB%A3%E7%A0%81/"},"author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://xie-peiquan.gitee.io/2023/12/10/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/7-%E8%AE%BE%E8%AE%A1%E5%B9%B6%E5%8F%91%E4%BB%A3%E7%A0%81/","wordCount":0,"datePublished":"2023-12-10T09:04:49.532Z","dateModified":"2023-12-10T09:04:49.604Z","articleSection":"C++并发编程","keywords":"并发编程","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
