@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="https://xie-peiquan.gitee.io/2023/11/28/并发编程/1-线程管理/"/>
+  <link rel="canonical" href="https://xie-peiquan.gitee.io/2023/12/25/并发编程基础/8-多线程消息传递/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -34,19 +34,19 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>1-线程管理 - PQ.XIE BLOG</title>
+  <title>8-多线程消息传递 - PQ.XIE BLOG</title>
   <meta name="keywords" content="并发编程,日常唠嗑">
   <meta desc name="description" content="个人博客 - PQ.XIE - PQ.XIE BLOG">
   
 <meta property="og:type" content="article">
-<meta property="og:title" content="1-线程管理">
-<meta property="og:url" content="https://xie-peiquan.gitee.io/2023/11/28/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/1-%E7%BA%BF%E7%A8%8B%E7%AE%A1%E7%90%86/index.html">
+<meta property="og:title" content="8-多线程消息传递">
+<meta property="og:url" content="https://xie-peiquan.gitee.io/2023/12/25/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/8-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%B6%88%E6%81%AF%E4%BC%A0%E9%80%92/index.html">
 <meta property="og:site_name" content="PQ.XIE BLOG">
-<meta property="og:description" content="每个C++程序至少有一个线程，即main线程。随后，程序可以发起更多线程，他们以别的函数作为入口。当main函数返回时，程序随即退出，其他线程也会随着终结（当然如果有detach线程，情况不一样）。其中，任何线程发生错误崩溃，都会导致整个进程退出。 1 新起线程123#include &lt;thread&gt;void do_some_work();std::thread my_thread(d">
+<meta property="og:description" content="1 简单阻塞消息队列12345678910111213141516171819202122232425262728#include &lt;mutex&gt;#include &lt;condition_variable&gt;#include &lt;queue&gt;#include &lt;memory&gt;template&lt;typename T&gt;class msgQueue&amp;">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2023-11-28T12:39:40.377Z">
-<meta property="article:modified_time" content="2023-11-28T12:39:40.461Z">
+<meta property="article:published_time" content="2023-12-25T12:07:06.762Z">
+<meta property="article:modified_time" content="2023-12-25T12:07:06.810Z">
 <meta property="article:author" content="PQ.XIE">
 <meta property="article:tag" content="并发编程">
 <meta name="twitter:card" content="summary">
@@ -1801,7 +1801,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1703506046185),
+    lastupdate: new Date(1703734293083),
     sidebar: {
       for_page: ["blogger","category","webinfo","music"],
       for_post: ["toc"],
@@ -2584,7 +2584,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 <div id="l_main" class=''>
   <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2023/11/28/并发编程/1-线程管理/">
+  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2023/12/25/并发编程基础/8-多线程消息传递/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="PQ.XIE BLOG">
   </span>
@@ -2605,7 +2605,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title" itemprop="name headline">
-        1-线程管理
+        8-多线程消息传递
       </h1>
       <div class='new-meta-box'>
         
@@ -2630,10 +2630,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-11-28T20:39:40+08:00">
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-12-25T20:07:06+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>2023年11月28日</p>
+    <p>2023年12月25日</p>
   </a>
 </div>
 
@@ -2644,13 +2644,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：846 字</p>
+      <p>字数：341 字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：3 分钟</p>
+      <p>时长：1 分钟</p>
     </a>
   </div>
 
@@ -2688,33 +2688,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <p>每个C++程序至少有一个线程，即main线程。随后，程序可以发起更多线程，他们以别的函数作为入口。当main函数返回时，程序随即退出，其他线程也会随着终结（当然如果有detach线程，情况不一样）。其中，任何线程发生错误崩溃，都会导致整个进程退出。</p>
-<h2 id="1-新起线程"><a href="#1-新起线程" class="headerlink" title="1 新起线程"></a>1 新起线程</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;thread&gt;</span></span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">do_some_work</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function">std::thread <span class="title">my_thread</span><span class="params">(do_some_work)</span></span>;</span><br></pre></td></tr></table></figure>
+    <h2 id="1-简单阻塞消息队列"><a href="#1-简单阻塞消息队列" class="headerlink" title="1 简单阻塞消息队列"></a>1 简单阻塞消息队列</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;mutex&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;condition_variable&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;memory&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">msgQueue</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">push</span><span class="params">(T <span class="type">const</span>&amp; msg)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="function">std::lock_guard&lt;std::mutex&gt; <span class="title">lk</span><span class="params">(m)</span></span>;</span><br><span class="line">        q.<span class="built_in">push</span>(msg);    </span><br><span class="line">        c.<span class="built_in">notify_all</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function">T <span class="title">wait_and_pop</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="function">std::unique_lock&lt;std::mutex&gt; <span class="title">lk</span><span class="params">(m)</span></span>;</span><br><span class="line">        c.<span class="built_in">wait</span>(lk,[&amp;]&#123;<span class="keyword">return</span> !q.<span class="built_in">empty</span>();&#125;);    <span class="comment">//阻塞等待队列有消息</span></span><br><span class="line">        T res = q.<span class="built_in">front</span>();</span><br><span class="line">        q.<span class="built_in">pop</span>();</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    std::mutex m;</span><br><span class="line">    std::condition_variable c;</span><br><span class="line">    std::queue&lt;T&gt; q;    </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-<p>不限于普通函数，任何可调用类型都可以初始化 <code>std::thread</code> 。如函数对象，lambda表达式等。如下：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">background_task</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">operator</span><span class="params">()</span><span class="params">()</span> <span class="type">const</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">do_something</span>();</span><br><span class="line">        <span class="built_in">do_something_else</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">background_task f;</span><br><span class="line"><span class="function">std::thread <span class="title">my_thread</span><span class="params">(f)</span></span>;</span><br></pre></td></tr></table></figure>
-
-<p>需要注意的是，这样的传参，函数对象 f 是被复制到新线程空间中的，要关注对象副本运行是否会影响正常功能。另外，<strong>请不要让新创建的线程访问当前上下文的局部变量，否则当上下文执行后，该局部变量失效。</strong></p>
-<h2 id="2-回收线程"><a href="#2-回收线程" class="headerlink" title="2 回收线程"></a>2 回收线程</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">my_thread.join()</span><br></pre></td></tr></table></figure>
-
-<p>在 <code>std:thread</code> 对象被销毁前，我们需要确保已经调用 <strong>join() 或 detach()</strong> 方法，以确保能够回收线程空间。</p>
-<p>① 若调用 join 方法，则需要格外小心，因为我们需要确保在每一个函数的出口都能调用join方法，尤其是抛出异常的情况。以下提供一种 <strong>RAII</strong> 方法，确保总能回收线程。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">thread_guard</span></span><br><span class="line">&#123;</span><br><span class="line">    std::thread&amp; t;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">explicit</span> <span class="title">thread_guard</span><span class="params">(std::thread&amp; t_)</span>:</span></span><br><span class="line"><span class="function">        t(t_)</span></span><br><span class="line"><span class="function">    &#123;</span>&#125;</span><br><span class="line">    ~<span class="built_in">thread_guard</span>()</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(t.<span class="built_in">joinable</span>()) </span><br><span class="line">        &#123;</span><br><span class="line">            t.<span class="built_in">join</span>();  </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">thread_guard</span>(thread_guard <span class="type">const</span>&amp;)=<span class="keyword">delete</span>; </span><br><span class="line">    thread_guard&amp; <span class="keyword">operator</span>=(thread_guard <span class="type">const</span>&amp;)=<span class="keyword">delete</span>;</span><br><span class="line">&#125;;  </span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">func</span>; </span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">f</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> some_local_state=<span class="number">0</span>;</span><br><span class="line">    <span class="function">func <span class="title">my_func</span><span class="params">(some_local_state)</span></span>;</span><br><span class="line">    <span class="function">std::thread <span class="title">t</span><span class="params">(my_func)</span></span>;</span><br><span class="line">    <span class="function">thread_guard <span class="title">g</span><span class="params">(t)</span></span>;</span><br><span class="line">    <span class="built_in">do_something_in_current_thread</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>以上，无论 f 函数正常退出还是异常退出，都会析构thread_guard 对象，从而保证一定会调用线程join方法。</p>
-<p>② 若使用detach方法，父线程不需要显式地等待子线程，整个进程会等到子线程运行完才完全退出，因此也回收了线程空间。</p>
-<h2 id="3-线程传参"><a href="#3-线程传参" class="headerlink" title="3 线程传参"></a>3 线程传参</h2><h3 id="3-1-直接传值"><a href="#3-1-直接传值" class="headerlink" title="3.1 直接传值"></a>3.1 直接传值</h3><p>std::thread是可以直接传递参数的，如：std::thread t(func, 3, “hello”); 需要注意的是，默认参数是拷贝到线程独立内存中。<strong>即使传递的是对象的引用，传递给函数的参数是<em>对象拷贝的引用</em>，而非对象本身的引用。</strong></p>
-<h3 id="3-2-传引用"><a href="#3-2-传引用" class="headerlink" title="3.2 传引用"></a>3.2 传引用</h3><p>当传递引用时，使用std::ref进行传参。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">std::thread <span class="title">t</span><span class="params">(update_data_for_widget, w, std::ref(data))</span></span>;</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-3-成员函数传参"><a href="#3-3-成员函数传参" class="headerlink" title="3.3 成员函数传参"></a>3.3 成员函数传参</h3><p>对于成员函数传参，采用以下形式。若添加第三个参数，则它会作为成员函数的第一个参数。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">X</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">do_lengthy_work</span><span class="params">()</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line">X my_x;</span><br><span class="line"><span class="function">std::thread <span class="title">t</span><span class="params">(&amp;X::do_lengthy_work, &amp;my_x)</span></span>;</span><br></pre></td></tr></table></figure>
-
-<h2 id="4-移交线程管理权"><a href="#4-移交线程管理权" class="headerlink" title="4 移交线程管理权"></a>4 移交线程管理权</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">f</span><span class="params">(std::thread t)</span></span>;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">g</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">some_function</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="built_in">f</span>(std::<span class="built_in">thread</span>(some_function));</span><br><span class="line">    <span class="function">std::thread <span class="title">t</span><span class="params">(some_function)</span></span>;</span><br><span class="line">    <span class="built_in">f</span>(std::<span class="built_in">move</span>(t));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>移交线程管理权，可以将线程交由类掌管。另外一个好处是，只要将线程归属权转移给某个thread_guard对象，其他对象就无法做汇合或分离操作。</p>
-<p>由于线程支持移动语义，因而标准库容器可以合适地装载 <code>std:thread</code> 对象。以下代码经常用于数据并行处理，如下：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">do_work</span><span class="params">(<span class="type">unsigned</span> id)</span></span>;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">f</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    std::vector&lt;std::thread&gt; threads;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">unsigned</span> i=<span class="number">0</span>;i&lt;<span class="number">20</span>;++i)</span><br><span class="line">    &#123;</span><br><span class="line">        threads.<span class="built_in">emplace_back</span>(do_work,i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span>&amp; entry: threads)</span><br><span class="line">        entry.<span class="built_in">join</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-简单阻塞广义队列"><a href="#2-简单阻塞广义队列" class="headerlink" title="2 简单阻塞广义队列"></a>2 简单阻塞广义队列</h2><p>相信用过python的同学都对python的容器爱不释手，其实c++稍加处理也可以实现像python那样的广义容器。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;mutex&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;condition_variable&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;memory&gt;</span></span></span><br><span class="line"><span class="keyword">namespace</span> messaging</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">message_base</span>    ⇽---  ①消息基类。队列中存储的项目</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">virtual</span> ~<span class="built_in">message_base</span>()&#123;&#125;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Msg&gt;</span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">wrapped_message</span>:     ⇽---  ②对具体消息的包装</span><br><span class="line">        message_base</span><br><span class="line">    &#123;</span><br><span class="line">        Msg contents;</span><br><span class="line">        <span class="function"><span class="keyword">explicit</span> <span class="title">wrapped_message</span><span class="params">(Msg <span class="type">const</span>&amp; contents_)</span>:</span></span><br><span class="line"><span class="function">            contents(contents_)&#123;</span>&#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">class</span> <span class="title class_">msgQueue</span> </span><br><span class="line">    &#123;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        <span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span></span><br><span class="line"><span class="function">        <span class="type">void</span> <span class="title">push</span><span class="params">(T <span class="type">const</span>&amp; msg)</span></span></span><br><span class="line"><span class="function">        </span>&#123;</span><br><span class="line">            <span class="function">std::lock_guard&lt;std::mutex&gt; <span class="title">lk</span><span class="params">(m)</span></span>;</span><br><span class="line">            q.<span class="built_in">push</span>(std::make_shared&lt;wrapped_message&lt;T&gt; &gt;(msg));     ⇽---  ⑤包装发布的消息，并存储相关的指针</span><br><span class="line">            c.<span class="built_in">notify_all</span>();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function">std::shared_ptr&lt;message_base&gt; <span class="title">wait_and_pop</span><span class="params">()</span></span></span><br><span class="line"><span class="function">        </span>&#123;</span><br><span class="line">            <span class="function">std::unique_lock&lt;std::mutex&gt; <span class="title">lk</span><span class="params">(m)</span></span>;</span><br><span class="line">            c.<span class="built_in">wait</span>(lk,[&amp;]&#123;<span class="keyword">return</span> !q.<span class="built_in">empty</span>();&#125;);    ⇽---  ⑥如果队列为空，就发生阻塞</span><br><span class="line">            <span class="keyword">auto</span> res=q.<span class="built_in">front</span>();</span><br><span class="line">            q.<span class="built_in">pop</span>();</span><br><span class="line">            <span class="keyword">return</span> res;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">private</span>:</span><br><span class="line">        std::mutex m;</span><br><span class="line">        std::condition_variable c;</span><br><span class="line">        std::queue&lt;std::shared_ptr&lt;message_base&gt; &gt; q;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
   </div>
@@ -2748,10 +2725,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-11-28T20:39:40+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-12-25T20:07:06+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2023年11月28日</p>
+    <p>更新于：2023年12月25日</p>
   </a>
 </div>
 
@@ -2765,7 +2742,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://xie-peiquan.gitee.io/2023/11/28/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/1-%E7%BA%BF%E7%A8%8B%E7%AE%A1%E7%90%86/&title=1-线程管理 - PQ.XIE BLOG&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://xie-peiquan.gitee.io/2023/12/25/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/8-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%B6%88%E6%81%AF%E4%BC%A0%E9%80%92/&title=8-多线程消息传递 - PQ.XIE BLOG&summary="
           
           >
           
@@ -2777,7 +2754,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://xie-peiquan.gitee.io/2023/11/28/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/1-%E7%BA%BF%E7%A8%8B%E7%AE%A1%E7%90%86/&title=1-线程管理 - PQ.XIE BLOG&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://xie-peiquan.gitee.io/2023/12/25/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/8-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%B6%88%E6%81%AF%E4%BC%A0%E9%80%92/&title=8-多线程消息传递 - PQ.XIE BLOG&summary="
           
           >
           
@@ -2789,7 +2766,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://xie-peiquan.gitee.io/2023/11/28/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/1-%E7%BA%BF%E7%A8%8B%E7%AE%A1%E7%90%86/&title=1-线程管理 - PQ.XIE BLOG&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://xie-peiquan.gitee.io/2023/12/25/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/8-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%B6%88%E6%81%AF%E4%BC%A0%E9%80%92/&title=8-多线程消息传递 - PQ.XIE BLOG&summary="
           
           >
           
@@ -2803,7 +2780,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class='hoverbox'>
           <a class='share'><img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/wechat.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/wechat.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></a>
           <div class='target'>
-            <img src="data:image/png;base64,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">
+            <img src="data:image/png;base64,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">
           </div>
         </div>
       
@@ -2832,17 +2809,16 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2023/12/10/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/4-%E5%8E%9F%E5%AD%90%E6%93%8D%E4%BD%9C/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>4-原子操作</p>
-          <p class='content'>1 原子操作原子操作是不可分割的操作，对于操作共享数据之外的其他线程，观察到这种操作要么完全做好，要么完全没做，不会处于半完成状态。
-2 原子类型标准原子类型的定义位于头文件&lt;atomic...</p>
+        <a class='prev' href='/2023/12/25/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/10.%E8%AE%A9pthread%E6%9B%B4%E5%A5%BD%E7%94%A8/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>10-让pthread更好用</p>
+          <p class='content'>事实上std::thread正是从pthread中继承发展而来的，你可以发现他们的用法几乎一致。由于一些历史原因，可能我们还是得用到pthread线程库。但pthread 有一些用法不太灵活，我...</p>
         </a>
       
       
-        <a class='next' href='/2023/11/28/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/3-%E7%BA%BF%E7%A8%8B%E5%90%8C%E6%AD%A5/'>
-          <p class='title'>3-线程同步<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>何为线程同步？有时候我们需要规范线程的执行顺序，令独立线程上的行为同步。以下介绍C++标准库提供的线程同步工具。
-1 信号量1234567891011121314151617#include &...</p>
+        <a class='next' href='/2023/12/20/%E6%B7%B7%E5%90%88%E7%BC%96%E7%A8%8B/2-python%E8%B0%83%E7%94%A8C/'>
+          <p class='title'>2-python调用C<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>python调用C库是一种非常常见的做法，实际上很多python第三方库底层实现就是调用C动态库，以提高执行效率。这也是为什么python被称为“胶水语言”，即便捷地把各种C库粘结在一起。
+1 ...</p>
         </a>
       
     </div>
@@ -2859,7 +2835,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="discussionUrl" content="/2023/11/28/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/1-%E7%BA%BF%E7%A8%8B%E7%AE%A1%E7%90%86/index.html#comments">
+      <meta itemprop="discussionUrl" content="/2023/12/25/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/8-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%B6%88%E6%81%AF%E4%BC%A0%E9%80%92/index.html#comments">
     </span>
     <p ct><i class='fas fa-comments'></i> 评论区</p>
     
@@ -2901,7 +2877,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%96%B0%E8%B5%B7%E7%BA%BF%E7%A8%8B"><span class="toc-text">1 新起线程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%9B%9E%E6%94%B6%E7%BA%BF%E7%A8%8B"><span class="toc-text">2 回收线程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E7%BA%BF%E7%A8%8B%E4%BC%A0%E5%8F%82"><span class="toc-text">3 线程传参</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E7%9B%B4%E6%8E%A5%E4%BC%A0%E5%80%BC"><span class="toc-text">3.1 直接传值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E4%BC%A0%E5%BC%95%E7%94%A8"><span class="toc-text">3.2 传引用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0%E4%BC%A0%E5%8F%82"><span class="toc-text">3.3 成员函数传参</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E7%A7%BB%E4%BA%A4%E7%BA%BF%E7%A8%8B%E7%AE%A1%E7%90%86%E6%9D%83"><span class="toc-text">4 移交线程管理权</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%AE%80%E5%8D%95%E9%98%BB%E5%A1%9E%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97"><span class="toc-text">1 简单阻塞消息队列</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E7%AE%80%E5%8D%95%E9%98%BB%E5%A1%9E%E5%B9%BF%E4%B9%89%E9%98%9F%E5%88%97"><span class="toc-text">2 简单阻塞广义队列</span></a></li></ol>
     </div>
   </section>
 
@@ -3957,7 +3933,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://xie-peiquan.gitee.io/","name":"PQ.XIE BLOG"}},{"@type":"ListItem","position":2,"item":{"@id":"https://xie-peiquan.gitee.io/categories/C-并发编程/","name":"C++并发编程"}},{"@type":"ListItem","position":3,"item":{"@id":"https://xie-peiquan.gitee.io/2023/11/28/并发编程/1-线程管理/","name":"1-线程管理"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","keywords":"日常唠嗑","description":"个人博客","author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","description":"个人博客"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://xie-peiquan.gitee.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"1-线程管理","description":"个人博客","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://xie-peiquan.gitee.io/2023/11/28/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/1-%E7%BA%BF%E7%A8%8B%E7%AE%A1%E7%90%86/"},"author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://xie-peiquan.gitee.io/2023/11/28/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/1-%E7%BA%BF%E7%A8%8B%E7%AE%A1%E7%90%86/","wordCount":0,"datePublished":"2023-11-28T12:39:40.377Z","dateModified":"2023-11-28T12:39:40.461Z","articleSection":"C++并发编程","keywords":"并发编程","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://xie-peiquan.gitee.io/","name":"PQ.XIE BLOG"}},{"@type":"ListItem","position":2,"item":{"@id":"https://xie-peiquan.gitee.io/categories/C-并发编程/","name":"C++并发编程"}},{"@type":"ListItem","position":3,"item":{"@id":"https://xie-peiquan.gitee.io/2023/12/25/并发编程基础/8-多线程消息传递/","name":"8-多线程消息传递"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","keywords":"日常唠嗑","description":"个人博客","author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","description":"个人博客"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://xie-peiquan.gitee.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"8-多线程消息传递","description":"个人博客","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://xie-peiquan.gitee.io/2023/12/25/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/8-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%B6%88%E6%81%AF%E4%BC%A0%E9%80%92/"},"author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://xie-peiquan.gitee.io/2023/12/25/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/8-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%B6%88%E6%81%AF%E4%BC%A0%E9%80%92/","wordCount":0,"datePublished":"2023-12-25T12:07:06.762Z","dateModified":"2023-12-25T12:07:06.810Z","articleSection":"C++并发编程","keywords":"并发编程","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

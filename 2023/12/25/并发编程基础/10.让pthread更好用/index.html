@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="https://xie-peiquan.gitee.io/2023/12/25/并发编程/10.让pthread更好用/"/>
+  <link rel="canonical" href="https://xie-peiquan.gitee.io/2023/12/25/并发编程基础/10.让pthread更好用/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -40,13 +40,13 @@
   
 <meta property="og:type" content="article">
 <meta property="og:title" content="10-让pthread更好用">
-<meta property="og:url" content="https://xie-peiquan.gitee.io/2023/12/25/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/10.%E8%AE%A9pthread%E6%9B%B4%E5%A5%BD%E7%94%A8/index.html">
+<meta property="og:url" content="https://xie-peiquan.gitee.io/2023/12/25/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/10.%E8%AE%A9pthread%E6%9B%B4%E5%A5%BD%E7%94%A8/index.html">
 <meta property="og:site_name" content="PQ.XIE BLOG">
 <meta property="og:description" content="事实上std::thread正是从pthread中继承发展而来的，你可以发现他们的用法几乎一致。由于一些历史原因，可能我们还是得用到pthread线程库。但pthread 有一些用法不太灵活，我们可以稍微对他进行包装，让它更好用。 123456789101112131415161718192021222324252627282930313233#include &lt;pthread.h&gt;#">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2023-12-25T12:07:09.874Z">
-<meta property="article:modified_time" content="2023-12-25T12:07:09.922Z">
+<meta property="article:modified_time" content="2023-12-28T03:31:03.484Z">
 <meta property="article:author" content="PQ.XIE">
 <meta property="article:tag" content="并发编程">
 <meta name="twitter:card" content="summary">
@@ -1801,7 +1801,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1703506046185),
+    lastupdate: new Date(1703734293083),
     sidebar: {
       for_page: ["blogger","category","webinfo","music"],
       for_post: ["toc"],
@@ -2584,7 +2584,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 <div id="l_main" class=''>
   <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2023/12/25/并发编程/10.让pthread更好用/">
+  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2023/12/25/并发编程基础/10.让pthread更好用/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="PQ.XIE BLOG">
   </span>
@@ -2696,7 +2696,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </ul>
 <h3 id="应用示例："><a href="#应用示例：" class="headerlink" title="应用示例："></a>应用示例：</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;unistd.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;functional&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Foo</span>&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">memfunc</span><span class="params">(<span class="type">double</span> d,<span class="type">int</span> i,<span class="type">int</span> j)</span></span>&#123;</span><br><span class="line">        std::cout&lt;&lt;d&lt;&lt;std::endl;</span><br><span class="line">        std::cout&lt;&lt;i&lt;&lt;std::endl;</span><br><span class="line">        std::cout&lt;&lt;j&lt;&lt;std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Foo foo;</span><br><span class="line">    <span class="comment">//支持回调成员函数</span></span><br><span class="line">    <span class="function">x_thread <span class="title">t1</span><span class="params">(std::bind(&amp;Foo::memfunc, &amp;foo,<span class="number">0.5</span>, <span class="number">4</span>, <span class="number">100</span>))</span></span>;</span><br><span class="line">    t1.<span class="built_in">start</span>();</span><br><span class="line">    t1.<span class="built_in">join</span>();</span><br><span class="line">    std::cout&lt;&lt;<span class="string">&quot;program over.&quot;</span>&lt;&lt;std::endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-
   </div>
   
   
@@ -2728,10 +2727,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-12-25T20:07:09+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-12-28T11:31:03+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2023年12月25日</p>
+    <p>更新于：2023年12月28日</p>
   </a>
 </div>
 
@@ -2745,7 +2744,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://xie-peiquan.gitee.io/2023/12/25/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/10.%E8%AE%A9pthread%E6%9B%B4%E5%A5%BD%E7%94%A8/&title=10-让pthread更好用 - PQ.XIE BLOG&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://xie-peiquan.gitee.io/2023/12/25/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/10.%E8%AE%A9pthread%E6%9B%B4%E5%A5%BD%E7%94%A8/&title=10-让pthread更好用 - PQ.XIE BLOG&summary="
           
           >
           
@@ -2757,7 +2756,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://xie-peiquan.gitee.io/2023/12/25/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/10.%E8%AE%A9pthread%E6%9B%B4%E5%A5%BD%E7%94%A8/&title=10-让pthread更好用 - PQ.XIE BLOG&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://xie-peiquan.gitee.io/2023/12/25/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/10.%E8%AE%A9pthread%E6%9B%B4%E5%A5%BD%E7%94%A8/&title=10-让pthread更好用 - PQ.XIE BLOG&summary="
           
           >
           
@@ -2769,7 +2768,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://xie-peiquan.gitee.io/2023/12/25/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/10.%E8%AE%A9pthread%E6%9B%B4%E5%A5%BD%E7%94%A8/&title=10-让pthread更好用 - PQ.XIE BLOG&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://xie-peiquan.gitee.io/2023/12/25/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/10.%E8%AE%A9pthread%E6%9B%B4%E5%A5%BD%E7%94%A8/&title=10-让pthread更好用 - PQ.XIE BLOG&summary="
           
           >
           
@@ -2783,7 +2782,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class='hoverbox'>
           <a class='share'><img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/wechat.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/wechat.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></a>
           <div class='target'>
-            <img src="data:image/png;base64,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">
+            <img src="data:image/png;base64,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">
           </div>
         </div>
       
@@ -2813,7 +2812,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class="prev-next">
       
       
-        <a class='next' href='/2023/12/25/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/8-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%B6%88%E6%81%AF%E4%BC%A0%E9%80%92/'>
+        <a class='next' href='/2023/12/25/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/8-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%B6%88%E6%81%AF%E4%BC%A0%E9%80%92/'>
           <p class='title'>8-多线程消息传递<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
           <p class='content'>1 简单阻塞消息队列12345678910111213141516171819202122232425262728#include &lt;mutex&gt;#include &lt;condi...</p>
         </a>
@@ -2832,7 +2831,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="discussionUrl" content="/2023/12/25/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/10.%E8%AE%A9pthread%E6%9B%B4%E5%A5%BD%E7%94%A8/index.html#comments">
+      <meta itemprop="discussionUrl" content="/2023/12/25/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/10.%E8%AE%A9pthread%E6%9B%B4%E5%A5%BD%E7%94%A8/index.html#comments">
     </span>
     <p ct><i class='fas fa-comments'></i> 评论区</p>
     
@@ -3930,7 +3929,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://xie-peiquan.gitee.io/","name":"PQ.XIE BLOG"}},{"@type":"ListItem","position":2,"item":{"@id":"https://xie-peiquan.gitee.io/categories/C-并发编程/","name":"C++并发编程"}},{"@type":"ListItem","position":3,"item":{"@id":"https://xie-peiquan.gitee.io/2023/12/25/并发编程/10.让pthread更好用/","name":"10-让pthread更好用"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","keywords":"日常唠嗑","description":"个人博客","author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","description":"个人博客"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://xie-peiquan.gitee.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"10-让pthread更好用","description":"个人博客","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://xie-peiquan.gitee.io/2023/12/25/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/10.%E8%AE%A9pthread%E6%9B%B4%E5%A5%BD%E7%94%A8/"},"author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://xie-peiquan.gitee.io/2023/12/25/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/10.%E8%AE%A9pthread%E6%9B%B4%E5%A5%BD%E7%94%A8/","wordCount":0,"datePublished":"2023-12-25T12:07:09.874Z","dateModified":"2023-12-25T12:07:09.922Z","articleSection":"C++并发编程","keywords":"并发编程","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://xie-peiquan.gitee.io/","name":"PQ.XIE BLOG"}},{"@type":"ListItem","position":2,"item":{"@id":"https://xie-peiquan.gitee.io/categories/C-并发编程基础/","name":"C++并发编程基础"}},{"@type":"ListItem","position":3,"item":{"@id":"https://xie-peiquan.gitee.io/2023/12/25/并发编程基础/10.让pthread更好用/","name":"10-让pthread更好用"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","keywords":"日常唠嗑","description":"个人博客","author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","description":"个人博客"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://xie-peiquan.gitee.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"10-让pthread更好用","description":"个人博客","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://xie-peiquan.gitee.io/2023/12/25/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/10.%E8%AE%A9pthread%E6%9B%B4%E5%A5%BD%E7%94%A8/"},"author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://xie-peiquan.gitee.io/2023/12/25/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/10.%E8%AE%A9pthread%E6%9B%B4%E5%A5%BD%E7%94%A8/","wordCount":0,"datePublished":"2023-12-25T12:07:09.874Z","dateModified":"2023-12-28T03:31:03.484Z","articleSection":"C++并发编程基础","keywords":"并发编程","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
