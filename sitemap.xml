@@ -441,6 +441,13 @@
   </url>
   
   <url>
+    <loc>https://xie-peiquan.gitee.io/tags/C-%E5%BA%93/</loc>
+    <lastmod>2024-01-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://xie-peiquan.gitee.io/tags/ROS1/</loc>
     <lastmod>2024-01-22</lastmod>
     <changefreq>weekly</changefreq>
@@ -449,13 +456,6 @@
   
   <url>
     <loc>https://xie-peiquan.gitee.io/tags/ROS2%E5%9F%BA%E7%A1%80/</loc>
-    <lastmod>2024-01-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://xie-peiquan.gitee.io/tags/C-%E5%BA%93/</loc>
     <lastmod>2024-01-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -499,6 +499,13 @@
   </url>
   
   <url>
+    <loc>https://xie-peiquan.gitee.io/categories/C-%E9%82%A3%E4%BA%9B%E4%BA%8B/</loc>
+    <lastmod>2024-01-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://xie-peiquan.gitee.io/categories/ROS1/</loc>
     <lastmod>2024-01-22</lastmod>
     <changefreq>weekly</changefreq>
@@ -507,13 +514,6 @@
   
   <url>
     <loc>https://xie-peiquan.gitee.io/categories/ROS2%E5%9F%BA%E7%A1%80/</loc>
-    <lastmod>2024-01-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://xie-peiquan.gitee.io/categories/C-%E9%82%A3%E4%BA%9B%E4%BA%8B/</loc>
     <lastmod>2024-01-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
