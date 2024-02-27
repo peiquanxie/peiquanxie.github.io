@@ -1,3 +1,4 @@
+https://xie-peiquan.gitee.io/2024/02/27/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/5-sqlite%E7%9A%84%E4%BD%BF%E7%94%A8/
 https://xie-peiquan.gitee.io/2024/02/18/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/4-cmake%E4%B8%80%E9%A1%B5%E7%BA%B8/
 https://xie-peiquan.gitee.io/2024/01/09/%E9%9F%B3%E4%B9%90/%E8%81%8A%E7%82%B9%E9%9F%B3%E4%B9%90/
 https://xie-peiquan.gitee.io/2023/12/25/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/8-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%B6%88%E6%81%AF%E4%BC%A0%E9%80%92/
@@ -50,6 +51,7 @@ https://xie-peiquan.gitee.io/
 https://xie-peiquan.gitee.io/tags/%E5%BB%BA%E7%AB%99/
 https://xie-peiquan.gitee.io/tags/C-%E5%BA%93/
 https://xie-peiquan.gitee.io/tags/CMake/
+https://xie-peiquan.gitee.io/tags/%E6%9C%AC%E5%9C%B0%E6%95%B0%E6%8D%AE%E5%BA%93/
 https://xie-peiquan.gitee.io/tags/ROS1/
 https://xie-peiquan.gitee.io/tags/ROS2%E5%9F%BA%E7%A1%80/
 https://xie-peiquan.gitee.io/tags/Pytorch%E5%9F%BA%E7%A1%80/
@@ -58,6 +60,7 @@ https://xie-peiquan.gitee.io/tags/%E6%B7%B7%E5%90%88%E7%BC%96%E7%A8%8B/
 https://xie-peiquan.gitee.io/tags/%E8%81%8A%E7%82%B9%E9%9F%B3%E4%B9%90/
 https://xie-peiquan.gitee.io/categories/%E5%BB%BA%E7%AB%99/
 https://xie-peiquan.gitee.io/categories/C-%E9%82%A3%E4%BA%9B%E4%BA%8B/
+https://xie-peiquan.gitee.io/categories/%E6%9C%AC%E5%9C%B0%E6%95%B0%E6%8D%AE%E5%BA%93/
 https://xie-peiquan.gitee.io/categories/ROS1/
 https://xie-peiquan.gitee.io/categories/ROS2%E5%9F%BA%E7%A1%80/
 https://xie-peiquan.gitee.io/categories/Pytorch%E5%9F%BA%E7%A1%80/
