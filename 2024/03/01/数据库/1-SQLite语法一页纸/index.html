@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="https://xie-peiquan.gitee.io/2024/03/01/c++那些事/6-sqlite语法一页纸/"/>
+  <link rel="canonical" href="https://xie-peiquan.gitee.io/2024/03/01/数据库/1-sqlite语法一页纸/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -34,19 +34,19 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>6-SQLite语法一页纸 - PQ.XIE BLOG</title>
+  <title>1-SQLite语法一页纸 - PQ.XIE BLOG</title>
   <meta name="keywords" content="本地数据库,日常唠嗑">
   <meta desc name="description" content="个人博客 - PQ.XIE - PQ.XIE BLOG">
   
 <meta property="og:type" content="article">
-<meta property="og:title" content="6-SQLite语法一页纸">
-<meta property="og:url" content="https://xie-peiquan.gitee.io/2024/03/01/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/6-SQLite%E8%AF%AD%E6%B3%95%E4%B8%80%E9%A1%B5%E7%BA%B8/index.html">
+<meta property="og:title" content="1-SQLite语法一页纸">
+<meta property="og:url" content="https://xie-peiquan.gitee.io/2024/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/1-SQLite%E8%AF%AD%E6%B3%95%E4%B8%80%E9%A1%B5%E7%BA%B8/index.html">
 <meta property="og:site_name" content="PQ.XIE BLOG">
 <meta property="og:description" content="基础语法创建数据库存在则连接，不存在则创建。 .database 可查询存在哪些数据库。 1.open xxx.db  创建表ID 作为主键，NOT NULL 的约束表示在表中创建纪录时这些字段不能为 NULL。.tables 可查询存在哪些表。 1234567CREATE TABLE COMPANY(   ID INT PRIMARY KEY     NOT NULL,   NAME">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2024-03-01T03:17:05.189Z">
-<meta property="article:modified_time" content="2024-03-01T03:17:05.241Z">
+<meta property="article:published_time" content="2024-03-01T08:30:21.439Z">
+<meta property="article:modified_time" content="2024-03-01T08:30:21.491Z">
 <meta property="article:author" content="PQ.XIE">
 <meta property="article:tag" content="本地数据库">
 <meta name="twitter:card" content="summary">
@@ -1801,7 +1801,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1709263037289),
+    lastupdate: new Date(1709281871550),
     sidebar: {
       for_page: ["blogger","category","webinfo","music"],
       for_post: ["toc"],
@@ -2584,7 +2584,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 <div id="l_main" class=''>
   <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2024/03/01/C++那些事/6-SQLite语法一页纸/">
+  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2024/03/01/数据库/1-SQLite语法一页纸/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="PQ.XIE BLOG">
   </span>
@@ -2605,7 +2605,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title" itemprop="name headline">
-        6-SQLite语法一页纸
+        1-SQLite语法一页纸
       </h1>
       <div class='new-meta-box'>
         
@@ -2630,7 +2630,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2024-03-01T11:17:05+08:00">
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2024-03-01T16:30:21+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
     <p>2024年3月1日</p>
@@ -2974,7 +2974,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-03-01T11:17:05+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-03-01T16:30:21+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2024年3月1日</p>
@@ -2991,7 +2991,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://xie-peiquan.gitee.io/2024/03/01/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/6-SQLite%E8%AF%AD%E6%B3%95%E4%B8%80%E9%A1%B5%E7%BA%B8/&title=6-SQLite语法一页纸 - PQ.XIE BLOG&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://xie-peiquan.gitee.io/2024/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/1-SQLite%E8%AF%AD%E6%B3%95%E4%B8%80%E9%A1%B5%E7%BA%B8/&title=1-SQLite语法一页纸 - PQ.XIE BLOG&summary="
           
           >
           
@@ -3003,7 +3003,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://xie-peiquan.gitee.io/2024/03/01/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/6-SQLite%E8%AF%AD%E6%B3%95%E4%B8%80%E9%A1%B5%E7%BA%B8/&title=6-SQLite语法一页纸 - PQ.XIE BLOG&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://xie-peiquan.gitee.io/2024/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/1-SQLite%E8%AF%AD%E6%B3%95%E4%B8%80%E9%A1%B5%E7%BA%B8/&title=1-SQLite语法一页纸 - PQ.XIE BLOG&summary="
           
           >
           
@@ -3015,7 +3015,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://xie-peiquan.gitee.io/2024/03/01/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/6-SQLite%E8%AF%AD%E6%B3%95%E4%B8%80%E9%A1%B5%E7%BA%B8/&title=6-SQLite语法一页纸 - PQ.XIE BLOG&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://xie-peiquan.gitee.io/2024/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/1-SQLite%E8%AF%AD%E6%B3%95%E4%B8%80%E9%A1%B5%E7%BA%B8/&title=1-SQLite语法一页纸 - PQ.XIE BLOG&summary="
           
           >
           
@@ -3029,7 +3029,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class='hoverbox'>
           <a class='share'><img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/wechat.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/wechat.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></a>
           <div class='target'>
-            <img src="data:image/png;base64,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">
+            <img src="data:image/png;base64,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">
           </div>
         </div>
       
@@ -3058,10 +3058,15 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
+        <a class='prev' href='/2024/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/2-SQLite%E4%B8%AD%E9%97%B4%E4%BB%B6/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>2-SQLite中间件</p>
+          <p class='content'>SQLite 提供的 C&#x2F;CPP API 实在是太简陋，使用C++开发的伙伴一定会感到极为不方便。事实上有很多用C++包装的中间件，可以极大方便我们操作数据库。这里我整理了 sqlit...</p>
+        </a>
       
-        <a class='next' href='/2024/02/27/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/5-sqlite%E7%9A%84%E4%BD%BF%E7%94%A8/'>
-          <p class='title'>5-sqlite的使用<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>最近在研究本地数据库 SQLite，SQLite 本身在业内的广泛性不用多说。但是 SQLite 提供的 C API实在是太简陋，令人发指。开发过程中逐句地组SQL语句实在是不方便，这里找到了一...</p>
+      
+        <a class='next' href='/2024/02/18/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/4-cmake%E4%B8%80%E9%A1%B5%E7%BA%B8/'>
+          <p class='title'>4-Cmake一页纸<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>1 基本设置Cmake版本控制12345cmake_minimum_required(VERSION 3.16)    # 最低版本要求if($&#123;CMAKE_VERSION&#125;...</p>
         </a>
       
     </div>
@@ -3078,7 +3083,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="discussionUrl" content="/2024/03/01/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/6-SQLite%E8%AF%AD%E6%B3%95%E4%B8%80%E9%A1%B5%E7%BA%B8/index.html#comments">
+      <meta itemprop="discussionUrl" content="/2024/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/1-SQLite%E8%AF%AD%E6%B3%95%E4%B8%80%E9%A1%B5%E7%BA%B8/index.html#comments">
     </span>
     <p ct><i class='fas fa-comments'></i> 评论区</p>
     
@@ -4176,7 +4181,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://xie-peiquan.gitee.io/","name":"PQ.XIE BLOG"}},{"@type":"ListItem","position":2,"item":{"@id":"https://xie-peiquan.gitee.io/categories/本地数据库/","name":"本地数据库"}},{"@type":"ListItem","position":3,"item":{"@id":"https://xie-peiquan.gitee.io/2024/03/01/C++那些事/6-SQLite语法一页纸/","name":"6-SQLite语法一页纸"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","keywords":"日常唠嗑","description":"个人博客","author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","description":"个人博客"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://xie-peiquan.gitee.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"6-SQLite语法一页纸","description":"个人博客","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://xie-peiquan.gitee.io/2024/03/01/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/6-SQLite%E8%AF%AD%E6%B3%95%E4%B8%80%E9%A1%B5%E7%BA%B8/"},"author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://xie-peiquan.gitee.io/2024/03/01/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/6-SQLite%E8%AF%AD%E6%B3%95%E4%B8%80%E9%A1%B5%E7%BA%B8/","wordCount":0,"datePublished":"2024-03-01T03:17:05.189Z","dateModified":"2024-03-01T03:17:05.241Z","articleSection":"本地数据库","keywords":"本地数据库","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://xie-peiquan.gitee.io/","name":"PQ.XIE BLOG"}},{"@type":"ListItem","position":2,"item":{"@id":"https://xie-peiquan.gitee.io/categories/本地数据库/","name":"本地数据库"}},{"@type":"ListItem","position":3,"item":{"@id":"https://xie-peiquan.gitee.io/2024/03/01/数据库/1-SQLite语法一页纸/","name":"1-SQLite语法一页纸"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","keywords":"日常唠嗑","description":"个人博客","author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","description":"个人博客"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://xie-peiquan.gitee.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"1-SQLite语法一页纸","description":"个人博客","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://xie-peiquan.gitee.io/2024/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/1-SQLite%E8%AF%AD%E6%B3%95%E4%B8%80%E9%A1%B5%E7%BA%B8/"},"author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://xie-peiquan.gitee.io/2024/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/1-SQLite%E8%AF%AD%E6%B3%95%E4%B8%80%E9%A1%B5%E7%BA%B8/","wordCount":0,"datePublished":"2024-03-01T08:30:21.439Z","dateModified":"2024-03-01T08:30:21.491Z","articleSection":"本地数据库","keywords":"本地数据库","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

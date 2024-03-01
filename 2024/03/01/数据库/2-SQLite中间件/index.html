@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="https://xie-peiquan.gitee.io/2024/02/27/c++那些事/5-sqlite的使用/"/>
+  <link rel="canonical" href="https://xie-peiquan.gitee.io/2024/03/01/数据库/2-sqlite中间件/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -34,19 +34,19 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>5-sqlite的使用 - PQ.XIE BLOG</title>
+  <title>2-SQLite中间件 - PQ.XIE BLOG</title>
   <meta name="keywords" content="本地数据库,日常唠嗑">
   <meta desc name="description" content="个人博客 - PQ.XIE - PQ.XIE BLOG">
   
 <meta property="og:type" content="article">
-<meta property="og:title" content="5-sqlite的使用">
-<meta property="og:url" content="https://xie-peiquan.gitee.io/2024/02/27/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/5-sqlite%E7%9A%84%E4%BD%BF%E7%94%A8/index.html">
+<meta property="og:title" content="2-SQLite中间件">
+<meta property="og:url" content="https://xie-peiquan.gitee.io/2024/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/2-SQLite%E4%B8%AD%E9%97%B4%E4%BB%B6/index.html">
 <meta property="og:site_name" content="PQ.XIE BLOG">
-<meta property="og:description" content="最近在研究本地数据库 SQLite，SQLite 本身在业内的广泛性不用多说。但是 SQLite 提供的 C API实在是太简陋，令人发指。开发过程中逐句地组SQL语句实在是不方便，这里找到了一个不错的 C++ 封装库，适合使用 C++语言较好地使用SQLite。先占个坑，后续整理用法。 源码：https:&#x2F;&#x2F;github.com&#x2F;fnc12&#x2F;sqlite_orm.git">
+<meta property="og:description" content="SQLite 提供的 C&#x2F;CPP API 实在是太简陋，使用C++开发的伙伴一定会感到极为不方便。事实上有很多用C++包装的中间件，可以极大方便我们操作数据库。这里我整理了 sqlite_modern_cpp 的使用方法，相比于一些 orm 中间件，它简单而纯粹。如果对 orm 感兴趣的话，也可以看一下 sqlite_orm 这份代码。这两份代码都是 header_only的，部署起来十">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2024-02-27T08:59:00.283Z">
-<meta property="article:modified_time" content="2024-02-27T09:09:18.239Z">
+<meta property="article:published_time" content="2024-03-01T08:30:24.427Z">
+<meta property="article:modified_time" content="2024-03-01T08:30:24.479Z">
 <meta property="article:author" content="PQ.XIE">
 <meta property="article:tag" content="本地数据库">
 <meta name="twitter:card" content="summary">
@@ -1801,7 +1801,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1709263037289),
+    lastupdate: new Date(1709281871550),
     sidebar: {
       for_page: ["blogger","category","webinfo","music"],
       for_post: ["toc"],
@@ -2584,7 +2584,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 <div id="l_main" class=''>
   <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2024/02/27/C++那些事/5-sqlite的使用/">
+  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2024/03/01/数据库/2-SQLite中间件/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="PQ.XIE BLOG">
   </span>
@@ -2605,7 +2605,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title" itemprop="name headline">
-        5-sqlite的使用
+        2-SQLite中间件
       </h1>
       <div class='new-meta-box'>
         
@@ -2630,10 +2630,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2024-02-27T16:59:00+08:00">
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2024-03-01T16:30:24+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>2024年2月27日</p>
+    <p>2024年3月1日</p>
   </a>
 </div>
 
@@ -2644,13 +2644,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：106 字</p>
+      <p>字数：886 字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：1 分钟</p>
+      <p>时长：4 分钟</p>
     </a>
   </div>
 
@@ -2688,8 +2688,34 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <p>最近在研究本地数据库 SQLite，SQLite 本身在业内的广泛性不用多说。但是 SQLite 提供的 C API实在是太简陋，令人发指。开发过程中逐句地组SQL语句实在是不方便，这里找到了一个不错的 C++ 封装库，适合使用 C++语言较好地使用SQLite。先占个坑，后续整理用法。</p>
-<p>源码：<a target="_blank" rel="noopener" href="https://github.com/fnc12/sqlite_orm.git">https://github.com/fnc12/sqlite_orm.git</a></p>
+    <p>SQLite 提供的 C&#x2F;CPP API 实在是太简陋，使用C++开发的伙伴一定会感到极为不方便。事实上有很多用C++包装的中间件，可以极大方便我们操作数据库。这里我整理了 <a target="_blank" rel="noopener" href="https://github.com/SqliteModernCpp/sqlite_modern_cpp">sqlite_modern_cpp</a> 的使用方法，相比于一些 orm 中间件，它简单而纯粹。如果对 orm 感兴趣的话，也可以看一下 <a target="_blank" rel="noopener" href="https://github.com/fnc12/sqlite_orm">sqlite_orm</a> 这份代码。这两份代码都是 header_only的，部署起来十分简单。</p>
+<h2 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt install sqlite3</span><br><span class="line">apt install libsqlite3-dev</span><br></pre></td></tr></table></figure>
+
+<h2 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h2><h3 id="包含头文件"><a href="#包含头文件" class="headerlink" title="包含头文件"></a>包含头文件</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;sqlite_modern_cpp.h&quot;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span>  sqlite;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br></pre></td></tr></table></figure>
+
+<h3 id="连接数据库"><a href="#连接数据库" class="headerlink" title="连接数据库"></a>连接数据库</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// creates a database file &#x27;dbfile.db&#x27; if it does not exists.</span></span><br><span class="line"><span class="function">database <span class="title">db</span><span class="params">(<span class="string">&quot;dbfile.db&quot;</span>)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//带上参数设置</span></span><br><span class="line">sqlite_config config;</span><br><span class="line">config.flags = OpenFlags::READONLY</span><br><span class="line">database <span class="built_in">db</span>(<span class="string">&quot;some_db&quot;</span>, config);</span><br></pre></td></tr></table></figure>
+
+<h3 id="创建表"><a href="#创建表" class="headerlink" title="创建表"></a>创建表</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// executes the query and creates a &#x27;user&#x27; table</span></span><br><span class="line">  db &lt;&lt;</span><br><span class="line">     <span class="string">&quot;create table if not exists user (&quot;</span></span><br><span class="line">     <span class="string">&quot;   _id integer primary key autoincrement not null,&quot;</span></span><br><span class="line">     <span class="string">&quot;   age int,&quot;</span></span><br><span class="line">     <span class="string">&quot;   name text,&quot;</span></span><br><span class="line">     <span class="string">&quot;   weight real&quot;</span></span><br><span class="line">     <span class="string">&quot;);&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="增"><a href="#增" class="headerlink" title="增"></a>增</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// inserts a new user record.</span></span><br><span class="line"><span class="comment">// binds the fields to &#x27;?&#x27; .</span></span><br><span class="line"><span class="comment">// note that only types allowed for bindings are :</span></span><br><span class="line"><span class="comment">//      int ,long, long long, float, double</span></span><br><span class="line"><span class="comment">//      string, u16string</span></span><br><span class="line"><span class="comment">// sqlite3 only supports utf8 and utf16 strings, you should use std::string for utf8 and std::u16string for utf16.</span></span><br><span class="line"><span class="comment">// If you&#x27;re using C++17, `std::string_view` and `std::u16string_view` can be used as string types.</span></span><br><span class="line"><span class="comment">// note that u&quot;my text&quot; is a utf16 string literal of type char16_t * .</span></span><br><span class="line">db &lt;&lt; <span class="string">&quot;insert into user (age,name,weight) values (?,?,?);&quot;</span></span><br><span class="line">   &lt;&lt; <span class="number">20</span></span><br><span class="line">   &lt;&lt; <span class="string">&quot;bob&quot;</span></span><br><span class="line">   &lt;&lt; <span class="number">83.25</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="查"><a href="#查" class="headerlink" title="查"></a>查</h3><h4 id="返回多个条目"><a href="#返回多个条目" class="headerlink" title="返回多个条目"></a>返回多个条目</h4><p>其中<code>db &lt;&lt; &quot;select age,name,weight from user where age &gt; ? ;&quot; &lt;&lt; 18;</code> 的输出结果是一个临时的 <code>sqlite::database_binder</code> 对象。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">auto</span> &amp;&amp; infer  = db &lt;&lt; <span class="string">&quot;select age,name,weight from user where age &gt; ? ;&quot;</span> &lt;&lt; <span class="number">18</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">auto</span> &amp;row : infer) &#123;</span><br><span class="line"> <span class="type">int</span> age; string name; <span class="type">double</span> weight;</span><br><span class="line"> row &gt;&gt; age &gt;&gt; name &gt;&gt; weight;</span><br><span class="line"> cout &lt;&lt; age &lt;&lt; <span class="string">&#x27; &#x27;</span> &lt;&lt; name &lt;&lt; <span class="string">&#x27; &#x27;</span> &lt;&lt; weight &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//或者是以下使用lambda函数</span></span><br><span class="line">db &lt;&lt; <span class="string">&quot;select age,name,weight from user where age &gt; ? ;&quot;</span> &lt;&lt; <span class="number">18</span></span><br><span class="line">   &gt;&gt; [&amp;](<span class="type">int</span> age, string name, <span class="type">double</span> weight) &#123;</span><br><span class="line">      cout &lt;&lt; age &lt;&lt; <span class="string">&#x27; &#x27;</span> &lt;&lt; name &lt;&lt; <span class="string">&#x27; &#x27;</span> &lt;&lt; weight &lt;&lt; endl;</span><br><span class="line">   &#125;;</span><br></pre></td></tr></table></figure>
+
+<h4 id="返回单个条目"><a href="#返回单个条目" class="headerlink" title="返回单个条目"></a>返回单个条目</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// selects the count(*) from user table</span></span><br><span class="line"><span class="comment">// note that you can extract a single column single row result only to : int,long,long,long,float,double,string,u16string</span></span><br><span class="line"><span class="type">int</span> count = <span class="number">0</span>;</span><br><span class="line">db &lt;&lt; <span class="string">&quot;select count(*) from user&quot;</span> &gt;&gt; count;</span><br><span class="line">cout &lt;&lt; <span class="string">&quot;cout : &quot;</span> &lt;&lt; count &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line"><span class="comment">// you can also extract multiple column rows</span></span><br><span class="line">db &lt;&lt; <span class="string">&quot;select age, name from user where _id=1;&quot;</span> &gt;&gt; <span class="built_in">tie</span>(age, name);</span><br><span class="line">cout &lt;&lt; <span class="string">&quot;Age = &quot;</span> &lt;&lt; age &lt;&lt; <span class="string">&quot;, name = &quot;</span> &lt;&lt; name &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line"><span class="comment">// this also works and the returned value will be automatically converted to string</span></span><br><span class="line">string str_count;</span><br><span class="line">db &lt;&lt; <span class="string">&quot;select count(*) from user&quot;</span> &gt;&gt; str_count;</span><br><span class="line">cout &lt;&lt; <span class="string">&quot;scount : &quot;</span> &lt;&lt; str_count &lt;&lt; endl;</span><br></pre></td></tr></table></figure>
+
+<h3 id="改"><a href="#改" class="headerlink" title="改"></a>改</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db &lt;&lt; <span class="string">&quot;update user set age = ? where age = ?;&quot;</span> &lt;&lt; <span class="number">22</span> &lt;&lt; <span class="number">20</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="删"><a href="#删" class="headerlink" title="删"></a>删</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db &lt;&lt; <span class="string">&quot;delete from user where age = ?;&quot;</span> &lt;&lt; <span class="number">20</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="事务操作"><a href="#事务操作" class="headerlink" title="事务操作"></a>事务操作</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">db &lt;&lt; <span class="string">&quot;begin;&quot;</span>; <span class="comment">// begin a transaction ...   </span></span><br><span class="line">db &lt;&lt; <span class="string">&quot;insert into user (age,name,weight) values (?,?,?);&quot;</span></span><br><span class="line">   &lt;&lt; <span class="number">20</span></span><br><span class="line">   &lt;&lt; <span class="string">u&quot;bob&quot;</span></span><br><span class="line">   &lt;&lt; <span class="number">83.25f</span>;</span><br><span class="line">db &lt;&lt; <span class="string">&quot;insert into user (age,name,weight) values (?,?,?);&quot;</span> <span class="comment">// utf16 string</span></span><br><span class="line">   &lt;&lt; <span class="number">21</span></span><br><span class="line">   &lt;&lt; <span class="string">u&quot;jack&quot;</span></span><br><span class="line">   &lt;&lt; <span class="number">68.5</span>;</span><br><span class="line">db &lt;&lt; <span class="string">&quot;commit;&quot;</span>; <span class="comment">// commit all the changes.</span></span><br><span class="line"></span><br><span class="line">db &lt;&lt; <span class="string">&quot;begin;&quot;</span>; <span class="comment">// begin another transaction ....</span></span><br><span class="line">db &lt;&lt; <span class="string">&quot;insert into user (age,name,weight) values (?,?,?);&quot;</span> <span class="comment">// utf16 string</span></span><br><span class="line">   &lt;&lt; <span class="number">19</span></span><br><span class="line">   &lt;&lt; <span class="string">u&quot;chirs&quot;</span></span><br><span class="line">   &lt;&lt; <span class="number">82.7</span>;</span><br><span class="line">db &lt;&lt; <span class="string">&quot;rollback;&quot;</span>; <span class="comment">// cancel this transaction ...</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>有没有发现，这个中间件保留了原始的 SQL 语句，同时它让数据的存取变得简单，简单而灵活！其他更多的操作照搬 SQLite3 的语句就可以了，请参考 <strong>1-SQLite语法一页纸</strong> ，这里不再赘述。</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://github.com/SqliteModernCpp/sqlite_modern_cpp">https://github.com/SqliteModernCpp/sqlite_modern_cpp</a></p>
+</blockquote>
 
   </div>
   
@@ -2722,10 +2748,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-02-27T17:09:18+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-03-01T16:30:24+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2024年2月27日</p>
+    <p>更新于：2024年3月1日</p>
   </a>
 </div>
 
@@ -2739,7 +2765,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://xie-peiquan.gitee.io/2024/02/27/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/5-sqlite%E7%9A%84%E4%BD%BF%E7%94%A8/&title=5-sqlite的使用 - PQ.XIE BLOG&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://xie-peiquan.gitee.io/2024/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/2-SQLite%E4%B8%AD%E9%97%B4%E4%BB%B6/&title=2-SQLite中间件 - PQ.XIE BLOG&summary="
           
           >
           
@@ -2751,7 +2777,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://xie-peiquan.gitee.io/2024/02/27/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/5-sqlite%E7%9A%84%E4%BD%BF%E7%94%A8/&title=5-sqlite的使用 - PQ.XIE BLOG&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://xie-peiquan.gitee.io/2024/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/2-SQLite%E4%B8%AD%E9%97%B4%E4%BB%B6/&title=2-SQLite中间件 - PQ.XIE BLOG&summary="
           
           >
           
@@ -2763,7 +2789,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://xie-peiquan.gitee.io/2024/02/27/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/5-sqlite%E7%9A%84%E4%BD%BF%E7%94%A8/&title=5-sqlite的使用 - PQ.XIE BLOG&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://xie-peiquan.gitee.io/2024/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/2-SQLite%E4%B8%AD%E9%97%B4%E4%BB%B6/&title=2-SQLite中间件 - PQ.XIE BLOG&summary="
           
           >
           
@@ -2777,7 +2803,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class='hoverbox'>
           <a class='share'><img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/wechat.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/wechat.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></a>
           <div class='target'>
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXgAAAF4CAAAAAB79r16AAAFMUlEQVR42u3aQY7jMAwEwPz/07P3BQKryVYm2C3dZuDIUkmXNvn6MX5lvBCAB2+AB2+AB28U4F/D8ffvp3+/XeDD+9L/P/39bl1Pz8de4MGDBw8ePHjw4MEX4Y8DQLiRp/nTg52CTQ94Ou9bH/DgwYMHDx48ePDgL8BPA9P2uVPI2yOFj73AgwcPHjx48ODBg/8C+NOAMS1UbAsl7YAGHjx48ODBgwcPHvy/AL9deAr8dZDgwYMHDx48ePDgwX8BfNqg0xqtwHZaWDltjPraTjLw4MGDBw8ePHjw4IuNP//L32Mv8ODBgwcPHjx48OAL8LeC0HYj0wC1DWZpAIt9wIMHDx48ePDgwYMvwKcLmC7sCbwdWFoNT6e/O75I4MGDBw8ePHjw4MFfgJ+CpM+dwk7naV2k+jrAgwcPHjx48ODBgy/ApwWJbcCZFjLahZDpwU8LPODBgwcPHjx48ODB34BPF5z+vhVE0sLGthErLfQ8XgTw4MGDBw8ePHjw4C/CpwtMn0sbgdrra60/boACDx48ePDgwYMHD/4D8LcKEVOgtKCRFnK28z4+Dx48ePDgwYMHDx58Af74A/6wcSkFTgNL+32thq7HQgh48ODBgwcPHjx48Av47Yf+6cGNA8jy4H/7oMGDBw8ePHjw4MGDb8BPA8atAsr2AFpBabv/twcDHjx48ODBgwcPHnwRPg1QU9B2IWIa2NIgtd0/ePDgwYMHDx48ePA34LfBJi1QTINaOn8rEKUFmTi5ggcPHjx48ODBgwcfwKewpwtJn0sLHGkjVRqApusDDx48ePDgwYMHD/4T8GnD0DS4TKFel0fr/ccHCx48ePDgwYMHDx58Ab7VAHQ70LTfn164dL63BwsePHjw4MGDBw8efBH++EN+eDDp/Nv1tJ6bFnbiChR48ODBgwcPHjx48AP4VsPQaSDZwrQam04LItuL8ViBAg8ePHjw4MGDBw9+Ad9qaGoVRLaNSa1AuG2MegxQ4MGDBw8ePHjw4MEX4acb+K0DSS9Sq3Byui7w4MGDBw8ePHjw4Jvw04LF6fNpIWI7fxr0WtBxIQQ8ePDgwYMHDx48+AV8+mH/dKPTYNQGTcf1IAkePHjw4MGDBw8efBF++qLTYJHCbAsit+DSIAUePHjw4MGDBw8e/A347Yf9VhC7fRHSQku7UAMePHjw4MGDBw8e/E34aQCZNkRNL8C00akVDMeNU+DBgwcPHjx48ODBF+DTD/7pRtuFhNsHdL3QAh48ePDgwYMHDx58Eb7dADR9Lg1e6QW4td+fwwEePHjw4MGDBw8e/Cfg0zENVtMCw3Se7QUZHyx48ODBgwcPHjx48AX47Yf9acDZvn8dZMrgcSEEPHjw4MGDBw8ePPgCfHtD24LHtlBz+r5pIJuuHzx48ODBgwcPHjz4BnwrEJ0eUKvQsC103HrP4/vBgwcPHjx48ODBgy/AtxqYToPOacBJ590Grtv7Ag8ePHjw4MGDBw++Cd8KJGlBYvr7NBC1CyrT94MHDx48ePDgwYMHfwM+DUzTBd4OUNOgc3rR6gEKPHjw4MGDBw8ePPgC/LQhKC0sTINYGvBuwY4LNeDBgwcPHjx48ODBfzH8eGFpYaFcoGn/Hzx48ODBgwcPHjz4b4TfFh7aQekU4FZD08cCFHjw4MGDBw8ePHjwr3lDU7rh7Qa3gW5asNkWXMCDBw8ePHjw4MGDvwE/feF0YWnQSQsa0wJG60K8nRc8ePDgwYMHDx48+AK88dkBHjx4Azx4Azx4YzH+AHWwL6HDcbfrAAAAAElFTkSuQmCC">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXgAAAF4CAAAAAB79r16AAAFKUlEQVR42u3cwW7jMAwE0P7/T3fvCxQWh6O4BZ5uSR2besplSrZf39Yr6wsBePAWePAWePBWAf4rXP9//ul+PxayvP/0uaf3m+7v2As8ePDgwYMHDx48+CL8cQB4KHC6gel9UsDTgzutL/UCDx48ePDgwYMHD/4G/K1A0w4sacA5hb5WH3jw4MGDBw8ePHjwvwC+fWDtoLR9vW38gAcPHjx48ODBgwf/F+C/S+v2gFU7eIEHDx48ePDgwYMH/yb8eEDnMNBMYU/rSxsw27pfnyQDDx48ePDgwYMHDz5Y7YbDX3sde4EHDx48ePDgwYMHX4BvNy7ShsH0umkj4rSBkwarYyfw4MGDBw8ePHjw4AvwaeNhOtiUNiK2wa49kDR9fzxJBh48ePDgwYMHDx58AX4KNB0ASoPUFmgKln4BwYMHDx48ePDgwYO/Cd8KJLc22ApitwPhY/3gwYMHDx48ePDgwV+AnwKmA0qtwaNtg2PaYEkDGnjw4MGDBw8ePHjwN+HTxsi04ZAeyLbeNPjUghd48ODBgwcPHjx48EX4NCClQak2IDQ88DT4TNeP9YIHDx48ePDgwYMHX4CfbuzTQNs6bh346X7BgwcPHjx48ODBg78Bf21wp9SQaNfZClJpQwU8ePDgwYMHDx48+Ab8tLDtANE0EKUDT2n9W/jHesCDBw8ePHjw4MGDL8C3A9S4MbAchGoFpdvXgwcPHjx48ODBgwffhH/64PQX/un1p1+E7fWnz0+D5eN14MGDBw8ePHjw4MEX4E8DVFr4dFCp1ZhoH0ztvuDBgwcPHjx48ODBX/i/k9NGxXZgadsoaQ04bfd9HLzAgwcPHjx48ODBg78Avx10mgao1mDR9jnb/R8fKHjw4MGDBw8ePHjwF+Fvw26DWBqAtvDrgAcePHjw4MGDBw8efAH+doBoDRaldY4DzuUABx48ePDgwYMHDx58A/604PUgz+XVCoDtQaZ1Bwo8ePDgwYMHDx48+MH/qxkHg+EGpp9vXdd6nQZA8ODBgwcPHjx48OAb8K3AlDYo2o2N9uBU/b7gwYMHDx48ePDgwRfgt8Bp4Nhed/q81kGmCzx48ODBgwcPHjz4m/DpBrYNhLcbLNv7jwMYePDgwYMHDx48ePBF+LTA7ettMGo1ZFqB7LEe8ODBgwcPHjx48OAL8NPCpwFp2xBpBZzp/tLnjifJwIMHDx48ePDgwYMvwKeFnH4+vX4a8LZBqBXcjgMUePDgwYMHDx48ePBF+HSj2wLTwNRq4LT2EQco8ODBgwcPHjx48OCDPzDeBorthrbB7PR+6RcAPHjw4MGDBw8ePPg34afBIIVOP99qmJzuc3v/x+vBgwcPHjx48ODBgy/CbxsOrQB0+2CmjZ9WgwU8ePDgwYMHDx48+CZ8WlD7YFrBZht4Ws897kCBBw8ePHjw4MGDBx/Ab9fpg+PA8XBApz8/rev05+n9wYMHDx48ePDgwYNvwLcDQjootW04tBsttxow4MGDBw8ePHjw4ME34bdg7aA1DTDTRsc2YMWDXeDBgwcPHjx48ODBX4DfBqYUdBuMpgdxKyCNGyHgwYMHDx48ePDgwf8i+GlBaXCZDki1B7dqjRDw4MGDBw8ePHjw4D8InzYStgEpPaB0wKr2BQEPHjx48ODBgwcP/gL8dqDpNMicvp8e0LYxk9b/6AcePHjw4MGDBw8efBG+NUB0GpSmDY30/bcD2mOAAg8ePHjw4MGDBw8+gLc+u8CDB2+BB2+BB28t1j+k3e/Sj8+1+wAAAABJRU5ErkJggg==">
           </div>
         </div>
       
@@ -2806,18 +2832,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2024/03/01/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/6-SQLite%E8%AF%AD%E6%B3%95%E4%B8%80%E9%A1%B5%E7%BA%B8/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>6-SQLite语法一页纸</p>
+      
+        <a class='next' href='/2024/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/1-SQLite%E8%AF%AD%E6%B3%95%E4%B8%80%E9%A1%B5%E7%BA%B8/'>
+          <p class='title'>1-SQLite语法一页纸<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
           <p class='content'>基础语法创建数据库存在则连接，不存在则创建。 .database 可查询存在哪些数据库。
 1.open xxx.db
 
 创建表ID 作为主键，NOT NULL 的约束表示在表中创建纪录时这些字段...</p>
-        </a>
-      
-      
-        <a class='next' href='/2024/02/18/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/4-cmake%E4%B8%80%E9%A1%B5%E7%BA%B8/'>
-          <p class='title'>4-Cmake一页纸<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>1 基本设置Cmake版本控制12345cmake_minimum_required(VERSION 3.16)    # 最低版本要求if($&#123;CMAKE_VERSION&#125;...</p>
         </a>
       
     </div>
@@ -2834,7 +2855,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="discussionUrl" content="/2024/02/27/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/5-sqlite%E7%9A%84%E4%BD%BF%E7%94%A8/index.html#comments">
+      <meta itemprop="discussionUrl" content="/2024/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/2-SQLite%E4%B8%AD%E9%97%B4%E4%BB%B6/index.html#comments">
     </span>
     <p ct><i class='fas fa-comments'></i> 评论区</p>
     
@@ -2866,9 +2887,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
 
 
-  <div class="">
-    <!-- pjax占位 -->
-  </div>
+  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
+    
+  <header>
+    
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83"><span class="toc-text">开发环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-text">基本操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8C%85%E5%90%AB%E5%A4%B4%E6%96%87%E4%BB%B6"><span class="toc-text">包含头文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-text">连接数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E8%A1%A8"><span class="toc-text">创建表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A2%9E"><span class="toc-text">增</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5"><span class="toc-text">查</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%94%E5%9B%9E%E5%A4%9A%E4%B8%AA%E6%9D%A1%E7%9B%AE"><span class="toc-text">返回多个条目</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%94%E5%9B%9E%E5%8D%95%E4%B8%AA%E6%9D%A1%E7%9B%AE"><span class="toc-text">返回单个条目</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%B9"><span class="toc-text">改</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A0"><span class="toc-text">删</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8B%E5%8A%A1%E6%93%8D%E4%BD%9C"><span class="toc-text">事务操作</span></a></li></ol>
+    </div>
+  </section>
 
   
 
@@ -3922,7 +3953,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://xie-peiquan.gitee.io/","name":"PQ.XIE BLOG"}},{"@type":"ListItem","position":2,"item":{"@id":"https://xie-peiquan.gitee.io/categories/本地数据库/","name":"本地数据库"}},{"@type":"ListItem","position":3,"item":{"@id":"https://xie-peiquan.gitee.io/2024/02/27/C++那些事/5-sqlite的使用/","name":"5-sqlite的使用"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","keywords":"日常唠嗑","description":"个人博客","author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","description":"个人博客"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://xie-peiquan.gitee.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"5-sqlite的使用","description":"个人博客","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://xie-peiquan.gitee.io/2024/02/27/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/5-sqlite%E7%9A%84%E4%BD%BF%E7%94%A8/"},"author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://xie-peiquan.gitee.io/2024/02/27/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/5-sqlite%E7%9A%84%E4%BD%BF%E7%94%A8/","wordCount":0,"datePublished":"2024-02-27T08:59:00.283Z","dateModified":"2024-02-27T09:09:18.239Z","articleSection":"本地数据库","keywords":"本地数据库","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://xie-peiquan.gitee.io/","name":"PQ.XIE BLOG"}},{"@type":"ListItem","position":2,"item":{"@id":"https://xie-peiquan.gitee.io/categories/本地数据库/","name":"本地数据库"}},{"@type":"ListItem","position":3,"item":{"@id":"https://xie-peiquan.gitee.io/2024/03/01/数据库/2-SQLite中间件/","name":"2-SQLite中间件"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","keywords":"日常唠嗑","description":"个人博客","author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","description":"个人博客"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://xie-peiquan.gitee.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"2-SQLite中间件","description":"个人博客","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://xie-peiquan.gitee.io/2024/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/2-SQLite%E4%B8%AD%E9%97%B4%E4%BB%B6/"},"author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://xie-peiquan.gitee.io/2024/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/2-SQLite%E4%B8%AD%E9%97%B4%E4%BB%B6/","wordCount":0,"datePublished":"2024-03-01T08:30:24.427Z","dateModified":"2024-03-01T08:30:24.479Z","articleSection":"本地数据库","keywords":"本地数据库","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
