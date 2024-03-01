@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="https://xie-peiquan.gitee.io/page/3/"/>
+  <link rel="canonical" href="https://xie-peiquan.gitee.io/archives/2024/03/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -34,13 +34,13 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>PQ.XIE BLOG</title>
+  <title>归档：2024/3 - PQ.XIE BLOG</title>
   <meta name="keywords" content="日常唠嗑">
   <meta desc name="description" content="个人博客 - PQ.XIE - PQ.XIE BLOG">
   
 <meta property="og:type" content="website">
 <meta property="og:title" content="PQ.XIE BLOG">
-<meta property="og:url" content="https://xie-peiquan.gitee.io/page/3/index.html">
+<meta property="og:url" content="https://xie-peiquan.gitee.io/archives/2024/03/index.html">
 <meta property="og:site_name" content="PQ.XIE BLOG">
 <meta property="og:description" content="个人博客">
 <meta property="og:locale" content="zh_CN">
@@ -2234,7 +2234,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <!-- Custom Files bodyBegin end-->
     <!-- front-matter body_begin begin -->
     <!-- front-matter body_begin end -->
-    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur show" style='opacity: 0' >
+    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur " style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -2503,7 +2503,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="none" class='cover-wrapper  search' style="display: none;">
+      <div id="half" class='cover-wrapper  search' style="display: ;">
         
   <div class='cover-bg lazyload placeholder' data-bg="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/background.jpeg"></div>
 
@@ -2581,15 +2581,22 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="body-wrapper">
           
 <div id="l_main" class=''>
-  
+	
+		
   <section class="post-list">
     
+      
+        
+          
+        
+      
+    
     
       
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2023/09/09/ROS1/ROS1零碎笔记/">
+  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2024/03/01/C++那些事/6-SQLite语法一页纸/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="PQ.XIE BLOG">
   </span>
@@ -2607,15 +2614,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/09/09/ROS1/ROS1%E9%9B%B6%E7%A2%8E%E7%AC%94%E8%AE%B0/"  itemprop="url">
-        ROS1零碎笔记
+      <a href="/2024/03/01/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/6-SQLite%E8%AF%AD%E6%B3%95%E4%B8%80%E9%A1%B5%E7%BA%B8/"  itemprop="url">
+        6-SQLite语法一页纸
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        ros::spin 和 ros::spinOnce 的区别这俩函数学名叫ROS消息回调处理函数，即消息回调要经过他俩中一个才能回调执行。两者区别在于 spin 有进无出，一直阻塞等待消息到来才去回调处理函数；而 **spinOnce ** 查询一次消息队列，不管有没有消息都会往下执行，spinOnce 往往需要考虑调用消息的时机，调用频率，以及消息池的大小，这些都要根据现实情况协调好，不然会...
+        基础语法创建数据库存在则连接，不存在则创建。 .database 可查询存在哪些数据库。
+1.open xxx.db
+
+创建表ID 作为主键，NOT NULL 的约束表示在表中创建纪录时这些字段不能为 NULL。.tables 可查询存在哪些表。
+1234567CREATE TABLE COMPANY(   ID INT PRIMARY KEY     NOT NULL,   NAME   ...
       
     
   </div>
@@ -2623,608 +2634,20 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-09-09T17:00:30+08:00">2023-09-09</time>
+        <time itemprop="dateCreated datePublished" datetime="2024-03-01T11:17:05+08:00">2024-03-01</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/ROS1/">ROS1</a>
+          <a class="category-link" href="/categories/%E6%9C%AC%E5%9C%B0%E6%95%B0%E6%8D%AE%E5%BA%93/">本地数据库</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/ROS1/" itemprop="url"><span itemprop="name">ROS1</span></a>
+              <a href="/categories/%E6%9C%AC%E5%9C%B0%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url"><span itemprop="name">本地数据库</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/09/09/ROS1/ROS1%E9%9B%B6%E7%A2%8E%E7%AC%94%E8%AE%B0/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2023/09/08/ROS1/10-动态参数机制简汇/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-    <meta itemprop="description" content="个人博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/09/08/ROS1/10-%E5%8A%A8%E6%80%81%E5%8F%82%E6%95%B0%E6%9C%BA%E5%88%B6%E7%AE%80%E6%B1%87/"  itemprop="url">
-        10-动态参数机制简汇
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        1 动态参数的作用​		ROS中的参数服务器无法在线动态更新，也就是说如果Listener不主动查询参数值，就无法获知Talker是否已经修改了参数。这就对ROS参数服务器的使用造成了很大的局限，很多场景下我们还是需要动态更新参数的机制，例如参数调试、功能切换等，所以ROS提供了另外一个非常有用的功能包 —— dynamic_reconfigure，实现这种动态配置参数的机制。​		动态重配...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-09-08T17:16:20+08:00">2023-09-08</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/ROS1/">ROS1</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/ROS1/" itemprop="url"><span itemprop="name">ROS1</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/09/08/ROS1/10-%E5%8A%A8%E6%80%81%E5%8F%82%E6%95%B0%E6%9C%BA%E5%88%B6%E7%AE%80%E6%B1%87/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2023/09/04/ROS1/9-action通信机制简汇/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-    <meta itemprop="description" content="个人博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/09/04/ROS1/9-action%E9%80%9A%E4%BF%A1%E6%9C%BA%E5%88%B6%E7%AE%80%E6%B1%87/"  itemprop="url">
-        9-action通信机制简汇
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        action实现了一种类似于service的请求&#x2F;响应通讯机制，区别在于action带有反馈机制，用来不断向客户端反馈任务的进度，并且还支持在任务中途中止运行。操作起来就像这样子，客户端给服务端抛出一个目标，然后客户端就可以去干别的事情了，在任务执行期间，客户端会以消息的形式，周期性地接收到来自服务端的进度反馈，如果没有终止任务的话这个过程会一直延续到收到最终的结果。当然也可以随时...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-09-04T17:12:07+08:00">2023-09-04</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/ROS1/">ROS1</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/ROS1/" itemprop="url"><span itemprop="name">ROS1</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/09/04/ROS1/9-action%E9%80%9A%E4%BF%A1%E6%9C%BA%E5%88%B6%E7%AE%80%E6%B1%87/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2023/09/04/ROS1/8-坐标变换TF简述/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-    <meta itemprop="description" content="个人博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/09/04/ROS1/8-%E5%9D%90%E6%A0%87%E5%8F%98%E6%8D%A2TF%E7%AE%80%E8%BF%B0/"  itemprop="url">
-        8-坐标变换TF简述
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        在一个机器人系统中，一般会存在多个部件，每个部件可能会有自己的运动轨迹，这样在一个机器人中就存在多个坐标系。通常，我们会根据坐标系间的差距来驱动某个部件的运动，这里就存在坐标变换。这里简单举例，如下图(古月居)，我们常见的ROS小车激光雷达测距，假设这里只存在车身和雷达两个部件，这里有两个坐标系：车身坐标系（base_link）和雷达坐标系（base_laser）。雷达测距的结果是墙面相对于...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-09-04T11:16:23+08:00">2023-09-04</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/ROS1/">ROS1</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/ROS1/" itemprop="url"><span itemprop="name">ROS1</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/09/04/ROS1/8-%E5%9D%90%E6%A0%87%E5%8F%98%E6%8D%A2TF%E7%AE%80%E8%BF%B0/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2023/09/04/ROS1/7-launch启动节点/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-    <meta itemprop="description" content="个人博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/09/04/ROS1/7-launch%E5%90%AF%E5%8A%A8%E8%8A%82%E7%82%B9/"  itemprop="url">
-        7-launch启动节点
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        1 基本语法
-&lt;launch&gt; launch文件中的根元素采用&lt;launch&gt;标签定义
-
-&lt;node&gt; 启动节点，格式：
-1&lt;node pkg=&quot;package-name&quot; name=&quot;node-name&quot; type=&quot;exec-name&quot;/&gt;
-
-其中，pkg 是节点所在功能包名称，t...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-09-04T00:46:30+08:00">2023-09-04</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/ROS1/">ROS1</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/ROS1/" itemprop="url"><span itemprop="name">ROS1</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/09/04/ROS1/7-launch%E5%90%AF%E5%8A%A8%E8%8A%82%E7%82%B9/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2023/09/04/ROS1/6-param通信机制简汇/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-    <meta itemprop="description" content="个人博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/09/04/ROS1/6-param%E9%80%9A%E4%BF%A1%E6%9C%BA%E5%88%B6%E7%AE%80%E6%B1%87/"  itemprop="url">
-        6-param通信机制简汇
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        1 全局参数模型
-
-1.1 全局参数配置（CPP）1234567891011121314151617181920212223242526272829#include &lt;string&gt;#include &lt;ros/ros.h&gt;#include &lt;std_srvs/Empty.h&gt;int main(int argc, char **argv)&#123;	int...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-09-04T00:46:29+08:00">2023-09-04</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/ROS1/">ROS1</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/ROS1/" itemprop="url"><span itemprop="name">ROS1</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/09/04/ROS1/6-param%E9%80%9A%E4%BF%A1%E6%9C%BA%E5%88%B6%E7%AE%80%E6%B1%87/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2023/09/03/ROS1/5-service通信机制简汇/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-    <meta itemprop="description" content="个人博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/09/03/ROS1/5-service%E9%80%9A%E4%BF%A1%E6%9C%BA%E5%88%B6%E7%AE%80%E6%B1%87/"  itemprop="url">
-        5-service通信机制简汇
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        1 Client（CPP）123456789101112131415161718192021222324252627#include &lt;ros/ros.h&gt;#include &lt;turtlesim/Spawn.h&gt;int main(int argc, char** argv)&#123;    // 初始化ROS节点	ros::init(argc, argv, &quo...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-09-03T16:26:35+08:00">2023-09-03</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/ROS1/">ROS1</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/ROS1/" itemprop="url"><span itemprop="name">ROS1</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/09/03/ROS1/5-service%E9%80%9A%E4%BF%A1%E6%9C%BA%E5%88%B6%E7%AE%80%E6%B1%87/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2023/09/03/ROS1/4-topic通信机制简汇/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-    <meta itemprop="description" content="个人博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/09/03/ROS1/4-topic%E9%80%9A%E4%BF%A1%E6%9C%BA%E5%88%B6%E7%AE%80%E6%B1%87/"  itemprop="url">
-        4-topic通信机制简汇
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        1 Publisher（CPP）12345678910111213141516171819202122232425262728#include &lt;ros/ros.h&gt;#include &lt;geometry_msgs/Twist.h&gt;int main(int argc, char **argv)&#123;    // ROS节点初始化    ros::init(argc...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-09-03T16:26:35+08:00">2023-09-03</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/ROS1/">ROS1</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/ROS1/" itemprop="url"><span itemprop="name">ROS1</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/09/03/ROS1/4-topic%E9%80%9A%E4%BF%A1%E6%9C%BA%E5%88%B6%E7%AE%80%E6%B1%87/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2023/09/03/ROS1/3-ROS1快速开始/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-    <meta itemprop="description" content="个人博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/09/03/ROS1/3-ROS1%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B/"  itemprop="url">
-        3-ROS1快速开始
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        0 安装工作环境：x86_64 + ubuntu20.04 + ros-noetic
-12345678sudo mkdir /etc/apt/sources.list.d/sudo sh -c &#x27;echo &quot;deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main&quot; &gt; /etc/apt/...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-09-03T16:26:34+08:00">2023-09-03</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/ROS1/">ROS1</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/ROS1/" itemprop="url"><span itemprop="name">ROS1</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/09/03/ROS1/3-ROS1%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2023/09/03/ROS1/2-ROS1命令汇总/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-    <meta itemprop="description" content="个人博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/09/03/ROS1/2-ROS1%E5%91%BD%E4%BB%A4%E6%B1%87%E6%80%BB/"  itemprop="url">
-        2-ROS1命令汇总
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        
-命令一页纸：https://blog-images-submit.oss-cn-beijing.aliyuncs.com/ROS1/ROScheatsheet_catkin.pdf
-
-1 node相关命令rosnode listrosnode info &lt;node_name&gt;rosnode ping &lt;node_name&gt;rosnode ping –allrosno...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-09-03T16:26:34+08:00">2023-09-03</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/ROS1/">ROS1</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/ROS1/" itemprop="url"><span itemprop="name">ROS1</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/09/03/ROS1/2-ROS1%E5%91%BD%E4%BB%A4%E6%B1%87%E6%80%BB/' itemprop="url">
+          <a class='readmore' href='/2024/03/01/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/6-SQLite%E8%AF%AD%E6%B3%95%E4%B8%80%E9%A1%B5%E7%BA%B8/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3242,30 +2665,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   </section>
   
     
-      <br>
-      <div class="prev-next">
-        
-          <a class="prev" rel="prev" href="/page/2/">
-            <section class="post prev white-box shadow floatable blur" >
-              <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页&nbsp;
-            </section>
-          </a>
-        
-        <p class="current">
-          3 / 5
-        </p>
-        
-          <a class="next" rel="next" href="/page/4/">
-            <section class="post next white-box shadow floatable blur">
-              &nbsp;下一页&nbsp;<i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
-            </section>
-          </a>
-        
-      </div>
-    
   
 
 
+	
 </div>
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   
@@ -3547,7 +2950,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </aside>
 
 
-
           <!--此文件用来存放一些不方便取值的变量-->
 <!--思路大概是将值藏到重加载的区域内-->
 
@@ -3563,14 +2965,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     // header
     var l_header=document.getElementById("l_header");
     
-    l_header.classList.add("show");
+    l_header.classList.remove("show");
     
     
       // cover
       var cover_wrapper=document.querySelector('#l_cover .cover-wrapper');
       var scroll_down=document.getElementById('scroll-down');
-      cover_wrapper.id="none";
-      cover_wrapper.style.display="none";
+      cover_wrapper.id="half";
+      cover_wrapper.style.display="";
       scroll_down.style.display="none";
     
   
@@ -4554,7 +3956,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://xie-peiquan.gitee.io/","name":"PQ.XIE BLOG"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","keywords":"日常唠嗑","description":"个人博客","author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","description":"个人博客"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://xie-peiquan.gitee.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"个人博客","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://xie-peiquan.gitee.io/","name":"PQ.XIE BLOG"}},{"@type":"ListItem","position":2,"item":{"@id":"https://xie-peiquan.gitee.io/archives/","name":"Archive"}},{"@type":"ListItem","position":3,"item":{"@id":"https://xie-peiquan.gitee.io/archives/2024/","name":"2024年"}},{"@type":"ListItem","position":4,"item":{"@id":"https://xie-peiquan.gitee.io/archives/2024/3/","name":"3月"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","keywords":"日常唠嗑","description":"个人博客","author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","description":"个人博客"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://xie-peiquan.gitee.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"个人博客","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

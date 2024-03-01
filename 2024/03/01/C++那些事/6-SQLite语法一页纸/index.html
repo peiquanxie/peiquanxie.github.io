@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="https://xie-peiquan.gitee.io/2024/02/29/c++那些事/6-sqlite语法一页纸/"/>
+  <link rel="canonical" href="https://xie-peiquan.gitee.io/2024/03/01/c++那些事/6-sqlite语法一页纸/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -40,13 +40,13 @@
   
 <meta property="og:type" content="article">
 <meta property="og:title" content="6-SQLite语法一页纸">
-<meta property="og:url" content="https://xie-peiquan.gitee.io/2024/02/29/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/6-SQLite%E8%AF%AD%E6%B3%95%E4%B8%80%E9%A1%B5%E7%BA%B8/index.html">
+<meta property="og:url" content="https://xie-peiquan.gitee.io/2024/03/01/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/6-SQLite%E8%AF%AD%E6%B3%95%E4%B8%80%E9%A1%B5%E7%BA%B8/index.html">
 <meta property="og:site_name" content="PQ.XIE BLOG">
 <meta property="og:description" content="基础语法创建数据库存在则连接，不存在则创建。 .database 可查询存在哪些数据库。 1.open xxx.db  创建表ID 作为主键，NOT NULL 的约束表示在表中创建纪录时这些字段不能为 NULL。.tables 可查询存在哪些表。 1234567CREATE TABLE COMPANY(   ID INT PRIMARY KEY     NOT NULL,   NAME">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2024-02-29T08:16:35.845Z">
-<meta property="article:modified_time" content="2024-02-29T08:16:35.897Z">
+<meta property="article:published_time" content="2024-03-01T03:17:05.189Z">
+<meta property="article:modified_time" content="2024-03-01T03:17:05.241Z">
 <meta property="article:author" content="PQ.XIE">
 <meta property="article:tag" content="本地数据库">
 <meta name="twitter:card" content="summary">
@@ -1801,7 +1801,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1709194606454),
+    lastupdate: new Date(1709263037289),
     sidebar: {
       for_page: ["blogger","category","webinfo","music"],
       for_post: ["toc"],
@@ -2584,7 +2584,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 <div id="l_main" class=''>
   <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2024/02/29/C++那些事/6-SQLite语法一页纸/">
+  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2024/03/01/C++那些事/6-SQLite语法一页纸/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="PQ.XIE BLOG">
   </span>
@@ -2630,10 +2630,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2024-02-29T16:16:35+08:00">
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2024-03-01T11:17:05+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>2024年2月29日</p>
+    <p>2024年3月1日</p>
   </a>
 </div>
 
@@ -2644,13 +2644,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：2k 字</p>
+      <p>字数：2.8k 字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：8 分钟</p>
+      <p>时长：11 分钟</p>
     </a>
   </div>
 
@@ -2860,9 +2860,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li>外连接 - OUTER JOIN （并集）</li>
 </ul>
 <h4 id="交叉连接-CROSS-JOIN"><a href="#交叉连接-CROSS-JOIN" class="headerlink" title="交叉连接 - CROSS JOIN"></a>交叉连接 - CROSS JOIN</h4><p>交叉连接（CROSS JOIN）把第一个表的每一行与第二个表的每一行进行匹配。如果两个输入表分别有 x 和 y 行，则结果表有 x*y 行。由于交叉连接（CROSS JOIN）有可能产生非常大的表，使用时必须谨慎，只在适当的时候使用它们。</p>
-<blockquote>
-<p>交叉连接的操作，它们都返回被连接的两个表所有数据行的笛卡尔积，返回到的数据行数等于第一个表中符合查询条件的数据行数乘以第二个表中符合查询条件的数据行数。</p>
-</blockquote>
 <p>下面是交叉连接（CROSS JOIN）的语法：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT ... FROM table1 CROSS JOIN table2 ...</span><br></pre></td></tr></table></figure>
 
@@ -2902,7 +2899,46 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>如果需要包含重复行，可以用 <strong>UNION ALL</strong> :</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SELECT EMP_ID, NAME, DEPT FROM COMPANY INNER JOIN DEPARTMENT</span><br><span class="line">        ON COMPANY.ID = DEPARTMENT.EMP_ID</span><br><span class="line">UNION ALL</span><br><span class="line">SELECT EMP_ID, NAME, DEPT FROM COMPANY LEFT OUTER JOIN DEPARTMENT</span><br><span class="line">        ON COMPANY.ID = DEPARTMENT.EMP_ID;</span><br></pre></td></tr></table></figure>
 
-<p>未完待续。。。</p>
+<h3 id="Index-索引"><a href="#Index-索引" class="headerlink" title="Index 索引"></a>Index 索引</h3><p>索引（Index）是一种特殊的查找表，数据库搜索引擎用来加快数据检索。索引有助于加快 SELECT 查询和 WHERE 子句，但它会减慢使用 UPDATE 和 INSERT 语句时的数据输入。索引可以创建或删除，但不会影响数据。<br>使用 CREATE INDEX 语句创建索引，它允许命名索引，指定表及要索引的一列或多列，并指示索引是升序排列还是降序排列。索引也可以是唯一的，与 UNIQUE 约束类似，在列上或列组合上防止重复条目。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># 单列索引</span><br><span class="line">CREATE INDEX index_name ON table_name (column_name);</span><br><span class="line"># 组合索引</span><br><span class="line">CREATE INDEX index_name ON table_name (column1, column2);</span><br><span class="line"># 唯一索引,唯一索引不允许任何重复的值插入到表中。</span><br><span class="line">CREATE UNIQUE INDEX index_name ON table_name (column_name); </span><br><span class="line"># 隐式索引，隐式索引是在创建对象时，由数据库服务器自动创建的索引。索引自动创建为主键约束和唯一约束。</span><br><span class="line"></span><br><span class="line"># 查看索引</span><br><span class="line">.indices table_name</span><br><span class="line"># 删除索引</span><br><span class="line">DROP INDEX index_name;</span><br></pre></td></tr></table></figure>
+
+<p><strong>注：以下情况不要使用索引：</strong></p>
+<ul>
+<li>索引不应该使用在较小的表上。</li>
+<li>索引不应该使用在有频繁的大批量的更新或插入操作的表上。</li>
+<li>索引不应该使用在含有大量的 NULL 值的列上。</li>
+<li>索引不应该使用在频繁操作的列上。</li>
+</ul>
+<h3 id="Indexed-By-子句"><a href="#Indexed-By-子句" class="headerlink" title="Indexed By 子句"></a>Indexed By 子句</h3><p>利用上一步创建的Index，配合Select语句，加速查询。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM COMPANY INDEXED BY salary_index WHERE salary &gt; 5000;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Alter-语句"><a href="#Alter-语句" class="headerlink" title="Alter  语句"></a>Alter  语句</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 更改表名</span><br><span class="line">ALTER TABLE COMPANY RENAME TO OLD_COMPANY;</span><br><span class="line"># 添加新列</span><br><span class="line">ALTER TABLE OLD_COMPANY ADD COLUMN SEX char(1);</span><br></pre></td></tr></table></figure>
+
+<h3 id="View-语句"><a href="#View-语句" class="headerlink" title="View 语句"></a>View 语句</h3><p>视图（View）是一种虚表，视图是只读的，因此可能无法在视图上执行 DELETE、INSERT 或 UPDATE 语句。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 创建view视图</span><br><span class="line">CREATE VIEW COMPANY_VIEW AS</span><br><span class="line">SELECT ID, NAME, AGE FROM  COMPANY;</span><br><span class="line"># 查看view视图</span><br><span class="line">SELECT * FROM COMPANY_VIEW;</span><br><span class="line"># 删除视图</span><br><span class="line">DROP VIEW COMPANY_VIEW;</span><br></pre></td></tr></table></figure>
+
+<h3 id="SQLite-事务"><a href="#SQLite-事务" class="headerlink" title="SQLite 事务"></a>SQLite 事务</h3><p>事务（Transaction）是一个对数据库执行工作单元。事务（Transaction）具有以下四个标准属性，通常根据首字母缩写为 ACID：</p>
+<ul>
+<li><strong>原子性（Atomicity）：</strong>确保工作单位内的所有操作都成功完成，否则，事务会在出现故障时终止，之前的操作也会回滚到以前的状态。</li>
+<li><strong>一致性（Consistency)：</strong>确保数据库在成功提交的事务上正确地改变状态。</li>
+<li><strong>隔离性（Isolation）：</strong>使事务操作相互独立和透明。</li>
+<li><strong>持久性（Durability）：</strong>确保已提交事务的结果或效果在系统发生故障的情况下仍然存在。</li>
+</ul>
+<p><strong>事务的控制语句</strong></p>
+<ul>
+<li>BEGIN：使用 BEGIN 或 BEGIN TRANSACTION 启动事务。直到遇到 COMMIT 或 ROLLBACK 命令。<strong>在数据库关闭或发生错误时，事务处理也会自动回滚。</strong> <strong>不使用 begin 的语句自动 commit。</strong></li>
+<li>COMMIT：执行事务，从上一个 COMMIT 或 ROLLBACK 算起。该命令能保证  ACID 。</li>
+<li>ROCKBACK：撤销事务，从上一个 COMMIT 或 ROLLBACK 算起。该命令能保证  ACID 。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">BEGIN;</span><br><span class="line">DELETE FROM COMPANY WHERE AGE = 25;</span><br><span class="line">ROLLBACK;</span><br><span class="line"></span><br><span class="line">BEGIN;</span><br><span class="line">DELETE FROM COMPANY WHERE AGE = 25;</span><br><span class="line">COMMIT;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Autoincrement-关键字"><a href="#Autoincrement-关键字" class="headerlink" title="Autoincrement 关键字"></a>Autoincrement 关键字</h3><p>用于表中的字段值自动递增。我们可以在创建表时在特定的列名称上使用 <strong>AUTOINCREMENT</strong> 关键字实现该字段值的自动增加。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE COMPANY(</span><br><span class="line">   ID INTEGER PRIMARY KEY   AUTOINCREMENT,</span><br><span class="line">   NAME           TEXT      NOT NULL,</span><br><span class="line">   AGE            INT       NOT NULL,</span><br><span class="line">   ADDRESS        CHAR(50),</span><br><span class="line">   SALARY         REAL</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"># 增加条目时不必指定ID, ID为自动增加。</span><br><span class="line">INSERT INTO COMPANY (NAME,AGE,ADDRESS,SALARY)</span><br><span class="line">VALUES ( &#x27;Paul&#x27;, 32, &#x27;California&#x27;, 20000.00 );</span><br></pre></td></tr></table></figure>
+
+<h3 id="日期-时间"><a href="#日期-时间" class="headerlink" title="日期 &amp; 时间"></a>日期 &amp; 时间</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 指定时间范围</span><br><span class="line">SELECT * FROM sales</span><br><span class="line">WHERE sales_date BETWEEN &#x27;2022-01-01&#x27; AND &#x27;2022-12-31&#x27;;</span><br><span class="line"># 指定过去七天</span><br><span class="line">SELECT * FROM sales</span><br><span class="line">WHERE sales_date BETWEEN DATE(&#x27;now&#x27;, &#x27;-7 days&#x27;) AND DATE(&#x27;now&#x27;);</span><br></pre></td></tr></table></figure>
+
+
+
 <blockquote>
 <p><a target="_blank" rel="noopener" href="https://www.runoob.com/sqlite/sqlite-tutorial.html">https://www.runoob.com/sqlite/sqlite-tutorial.html</a></p>
 </blockquote>
@@ -2938,10 +2974,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-02-29T16:16:35+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-03-01T11:17:05+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2024年2月29日</p>
+    <p>更新于：2024年3月1日</p>
   </a>
 </div>
 
@@ -2955,7 +2991,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://xie-peiquan.gitee.io/2024/02/29/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/6-SQLite%E8%AF%AD%E6%B3%95%E4%B8%80%E9%A1%B5%E7%BA%B8/&title=6-SQLite语法一页纸 - PQ.XIE BLOG&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://xie-peiquan.gitee.io/2024/03/01/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/6-SQLite%E8%AF%AD%E6%B3%95%E4%B8%80%E9%A1%B5%E7%BA%B8/&title=6-SQLite语法一页纸 - PQ.XIE BLOG&summary="
           
           >
           
@@ -2967,7 +3003,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://xie-peiquan.gitee.io/2024/02/29/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/6-SQLite%E8%AF%AD%E6%B3%95%E4%B8%80%E9%A1%B5%E7%BA%B8/&title=6-SQLite语法一页纸 - PQ.XIE BLOG&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://xie-peiquan.gitee.io/2024/03/01/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/6-SQLite%E8%AF%AD%E6%B3%95%E4%B8%80%E9%A1%B5%E7%BA%B8/&title=6-SQLite语法一页纸 - PQ.XIE BLOG&summary="
           
           >
           
@@ -2979,7 +3015,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://xie-peiquan.gitee.io/2024/02/29/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/6-SQLite%E8%AF%AD%E6%B3%95%E4%B8%80%E9%A1%B5%E7%BA%B8/&title=6-SQLite语法一页纸 - PQ.XIE BLOG&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://xie-peiquan.gitee.io/2024/03/01/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/6-SQLite%E8%AF%AD%E6%B3%95%E4%B8%80%E9%A1%B5%E7%BA%B8/&title=6-SQLite语法一页纸 - PQ.XIE BLOG&summary="
           
           >
           
@@ -2993,7 +3029,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class='hoverbox'>
           <a class='share'><img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/wechat.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/wechat.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></a>
           <div class='target'>
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZgAAAGYCAAAAABaUKuJAAAGCUlEQVR42u3dQY4bMQwEQP//05t7AkPqJsdrIKXb2jOyxNKlQSF5/RhfOV5KAMYAA8YAA8YAYxxhXuX4Z8K/Pj89f/r90/O3n99+f9pH+nxbTzBgwIABAwYMGDBgwNzDXAegy4WcAG4/T+e5fT4t5O1+x/UEAwYMGDBgwIABAwZMDNP+8BbYU0G2LdRtMN6qJxgwYMCAAQMGDBgwYD4Hkwa7aZDdatBtfw8GDBgwYMCAAQMGDJjvh2kv9rXzbTW2psF2q5EIBgwYMGDAgAEDBgyYOUzbSEoL2m4oPQBpQG7Xv1VPMGDAgAEDBgwYMGDA3MO0Aczfu4EWDBgwYMAoPBgwYMCAOcNsja0Aefte25C7nW8r8MZ1BAMGDBgwYMCAAQMGzBFmGqjSgkwv2r2WRjrfU41FMGDAgAEDBgwYMGDA5DC3gW9rQW1ATdfbBuTb79OgWzfKwIABAwYMGDBgwIABc90oawPfVkHaQDoNvNuNvPTAgwEDBgwYMGDAgAEDZv/fK5sWtA2ibUMvbext7zMO2mDAgAEDBgwYMGDAgDnCTAuQBqutQLk13/TC4HoDEAwYMGDAgAEDBgwYMHHATANSG+TSYNcG4TYoTwNvPQ8YMGDAgAEDBgwYMGCOMG1QbIGmwXTamNp6Pw2W1+sHAwYMGDBgwIABAwZMDTMNlluNq61AN234TWGuDyoYMGDAgAEDBgwYMGCuYaYNr+lFwe0LfNNA2R6UceMRDBgwYMCAAQMGDBgwR5h0o20gSwPX9Henz6eBNX3u2CgDAwYMGDBgwIABAwbM9b2yaaPr08G1DYrTRuDWhUEwYMCAAQMGDBgwYMDkMO3FtKe/bxtan17/FOq6UQYGDBgwYMCAAQMGDJi1f7BgO9DdFvx2fdNG3lP7uO5gggEDBgwYMGDAgAED5m2jbOvC3LShthXkbguZNgq3gjIYMGDAgAEDBgwYMGDmMGlht4NXG/TSgJlCTAP1OGCCAQMGDBgwYMCAAQOmbpS1G0iDaBrY2kbd7brb99t9gAEDBgwYMGDAgAEDZv7/x6QNqXHAGjbsnp5vaz1gwIABAwYMGDBgwIDpYdqAmAbIpyDbAzbdx3ZABwMGDBgwYMCAAQMGTA6TNpymC54WfLq+bbD0gIEBAwYMGDBgwIABA2YOkwazpxpKt+Bt0Ez3PT04cRAGAwYMGDBgwIABAwbMNczTDaMWNm20bQfkcWDcapSBAQMGDBgwYMCAAQOmDmZPLWgKsQX386FxDJhgwIABAwYMGDBgwIA5wmxtqG0obb23FQSn87QBFwwYMGDAgAEDBgwYMGeYtsBPNdbaBlr6u0+Per9gwIABAwYMGDBgwICJYbYDYlrorYOS7iOFmx6UOGCCAQMGDBgwYMCAAQPm1b6YXmhLLwymhW0Lv73+dP5x8gcDBgwYMGDAgAED5j+GSQsVX2AL/26DYtsoa+dpD9jxbzBgwIABAwYMGDBgwMQwv9UAmwbM9P02iE4P0nWjDAwYMGDAgAEDBgwYMEeYNBBOA9r0ol3aKJte8GuDawoNBgwYMGDAgAEDBgyYM8w0WP1WgEuhtkcbgI/7BAMGDBgwYMCAAQMGzBFmGthSiPbzaWBsA2F7sOqgDgYMGDBgwIABAwYMmBjmtODtwDUtUBrs0kC6ta/r3wMDBgwYMGDAgAEDBswRpt349CJdWpDtwLkVWNsLgm/3CQYMGDBgwIABAwYMmCPM1sW37SDWBsMUPg3S2+sBAwYMGDBgwIABAwbMXsBsC5ZeeDsVajrP1nzT+a+fBwMGDBgwYMCAAQMGzDXMNFBtzZPCpQekbYBN93FbNzBgwIABAwYMGDBgwOQwWwEqLUgaONN52mC7fYHweMDBgAEDBgwYMGDAgAHzOEz6+RbIbeE/1VDbCuRgwIABAwYMGDBgwID5XMAcL6gMrrdBtm3stUH5NmiCAQMGDBgwYMCAAQNmDrMVmNJCbl2km67vqfVfrxMMGDBgwIABAwYMGDDXMG1Q2vr86YZWu58pXPw+GDBgwIABAwYMGDBgjjDGdw0wYAwwYAwwYAwwxtvxByO+9xYrzmWQAAAAAElFTkSuQmCC">
+            <img src="data:image/png;base64,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">
           </div>
         </div>
       
@@ -3042,7 +3078,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="discussionUrl" content="/2024/02/29/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/6-SQLite%E8%AF%AD%E6%B3%95%E4%B8%80%E9%A1%B5%E7%BA%B8/index.html#comments">
+      <meta itemprop="discussionUrl" content="/2024/03/01/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/6-SQLite%E8%AF%AD%E6%B3%95%E4%B8%80%E9%A1%B5%E7%BA%B8/index.html#comments">
     </span>
     <p ct><i class='fas fa-comments'></i> 评论区</p>
     
@@ -3084,7 +3120,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95"><span class="toc-text">基础语法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-text">创建数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E8%A1%A8"><span class="toc-text">创建表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E8%A1%A8"><span class="toc-text">删除表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Insert-%E8%AF%AD%E5%8F%A5%EF%BC%88%E5%A2%9E%EF%BC%89"><span class="toc-text">Insert 语句（增）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Select-%E8%AF%AD%E5%8F%A5-%EF%BC%88%E6%9F%A5%EF%BC%89"><span class="toc-text">Select 语句 （查）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Where-%E5%AD%90%E5%8F%A5-%EF%BC%88%E6%9D%A1%E4%BB%B6%EF%BC%89"><span class="toc-text">Where 子句 （条件）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Update-%E8%AF%AD%E5%8F%A5-%EF%BC%88%E6%94%B9%EF%BC%89"><span class="toc-text">Update 语句 （改）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Delete-%E8%AF%AD%E5%8F%A5-%EF%BC%88%E5%88%A0%EF%BC%89"><span class="toc-text">Delete 语句 （删）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Like-%E5%AD%90%E5%8F%A5-%EF%BC%88%E5%8C%B9%E9%85%8D%EF%BC%89"><span class="toc-text">Like 子句 （匹配）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Glob-%E5%AD%90%E5%8F%A5-%EF%BC%88%E5%8C%B9%E9%85%8D%EF%BC%89"><span class="toc-text">Glob 子句 （匹配）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Limit-%E5%AD%90%E5%8F%A5-%EF%BC%88%E9%99%90%E5%88%B6%E6%9D%A1%E7%9B%AE%EF%BC%89"><span class="toc-text">Limit 子句 （限制条目）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Order-By-%E5%AD%90%E5%8F%A5-%EF%BC%88%E6%8E%92%E5%BA%8F%EF%BC%89"><span class="toc-text">Order By 子句  （排序）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Group-By-%E5%AD%90%E5%8F%A5-%EF%BC%88%E5%88%86%E7%BB%84%EF%BC%89"><span class="toc-text">Group By 子句 （分组）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Having-%E5%AD%90%E5%8F%A5%EF%BC%88%E8%BF%87%E6%BB%A4%E5%88%86%E7%BB%84%EF%BC%89"><span class="toc-text">Having 子句（过滤分组）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DISTINCT-%E5%85%B3%E9%94%AE%E5%AD%97%EF%BC%88%E5%8E%BB%E9%87%8D%EF%BC%89"><span class="toc-text">DISTINCT 关键字（去重）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E6%95%B0%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">算数运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">逻辑运算符</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%AB%98%E7%BA%A7%E8%AF%AD%E6%B3%95"><span class="toc-text">高级语法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BB%BA%E8%A1%A8%E7%BA%A6%E6%9D%9F"><span class="toc-text">建表约束</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JOIN-%E5%AD%90%E5%8F%A5"><span class="toc-text">JOIN 子句</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%A4%E5%8F%89%E8%BF%9E%E6%8E%A5-CROSS-JOIN"><span class="toc-text">交叉连接 - CROSS JOIN</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%85%E8%BF%9E%E6%8E%A5-INNER-JOIN"><span class="toc-text">内连接 - INNER JOIN</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%96%E8%BF%9E%E6%8E%A5-OUTER-JOIN"><span class="toc-text">外连接 - OUTER JOIN</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#UNION-%E5%AD%90%E5%8F%A5"><span class="toc-text">UNION 子句</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95"><span class="toc-text">基础语法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-text">创建数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E8%A1%A8"><span class="toc-text">创建表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E8%A1%A8"><span class="toc-text">删除表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Insert-%E8%AF%AD%E5%8F%A5%EF%BC%88%E5%A2%9E%EF%BC%89"><span class="toc-text">Insert 语句（增）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Select-%E8%AF%AD%E5%8F%A5-%EF%BC%88%E6%9F%A5%EF%BC%89"><span class="toc-text">Select 语句 （查）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Where-%E5%AD%90%E5%8F%A5-%EF%BC%88%E6%9D%A1%E4%BB%B6%EF%BC%89"><span class="toc-text">Where 子句 （条件）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Update-%E8%AF%AD%E5%8F%A5-%EF%BC%88%E6%94%B9%EF%BC%89"><span class="toc-text">Update 语句 （改）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Delete-%E8%AF%AD%E5%8F%A5-%EF%BC%88%E5%88%A0%EF%BC%89"><span class="toc-text">Delete 语句 （删）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Like-%E5%AD%90%E5%8F%A5-%EF%BC%88%E5%8C%B9%E9%85%8D%EF%BC%89"><span class="toc-text">Like 子句 （匹配）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Glob-%E5%AD%90%E5%8F%A5-%EF%BC%88%E5%8C%B9%E9%85%8D%EF%BC%89"><span class="toc-text">Glob 子句 （匹配）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Limit-%E5%AD%90%E5%8F%A5-%EF%BC%88%E9%99%90%E5%88%B6%E6%9D%A1%E7%9B%AE%EF%BC%89"><span class="toc-text">Limit 子句 （限制条目）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Order-By-%E5%AD%90%E5%8F%A5-%EF%BC%88%E6%8E%92%E5%BA%8F%EF%BC%89"><span class="toc-text">Order By 子句  （排序）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Group-By-%E5%AD%90%E5%8F%A5-%EF%BC%88%E5%88%86%E7%BB%84%EF%BC%89"><span class="toc-text">Group By 子句 （分组）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Having-%E5%AD%90%E5%8F%A5%EF%BC%88%E8%BF%87%E6%BB%A4%E5%88%86%E7%BB%84%EF%BC%89"><span class="toc-text">Having 子句（过滤分组）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DISTINCT-%E5%85%B3%E9%94%AE%E5%AD%97%EF%BC%88%E5%8E%BB%E9%87%8D%EF%BC%89"><span class="toc-text">DISTINCT 关键字（去重）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E6%95%B0%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">算数运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">逻辑运算符</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%AB%98%E7%BA%A7%E8%AF%AD%E6%B3%95"><span class="toc-text">高级语法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BB%BA%E8%A1%A8%E7%BA%A6%E6%9D%9F"><span class="toc-text">建表约束</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JOIN-%E5%AD%90%E5%8F%A5"><span class="toc-text">JOIN 子句</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%A4%E5%8F%89%E8%BF%9E%E6%8E%A5-CROSS-JOIN"><span class="toc-text">交叉连接 - CROSS JOIN</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%85%E8%BF%9E%E6%8E%A5-INNER-JOIN"><span class="toc-text">内连接 - INNER JOIN</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%96%E8%BF%9E%E6%8E%A5-OUTER-JOIN"><span class="toc-text">外连接 - OUTER JOIN</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#UNION-%E5%AD%90%E5%8F%A5"><span class="toc-text">UNION 子句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Index-%E7%B4%A2%E5%BC%95"><span class="toc-text">Index 索引</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Indexed-By-%E5%AD%90%E5%8F%A5"><span class="toc-text">Indexed By 子句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Alter-%E8%AF%AD%E5%8F%A5"><span class="toc-text">Alter  语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#View-%E8%AF%AD%E5%8F%A5"><span class="toc-text">View 语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SQLite-%E4%BA%8B%E5%8A%A1"><span class="toc-text">SQLite 事务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Autoincrement-%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-text">Autoincrement 关键字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A5%E6%9C%9F-%E6%97%B6%E9%97%B4"><span class="toc-text">日期 &amp; 时间</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -4140,7 +4176,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://xie-peiquan.gitee.io/","name":"PQ.XIE BLOG"}},{"@type":"ListItem","position":2,"item":{"@id":"https://xie-peiquan.gitee.io/categories/本地数据库/","name":"本地数据库"}},{"@type":"ListItem","position":3,"item":{"@id":"https://xie-peiquan.gitee.io/2024/02/29/C++那些事/6-SQLite语法一页纸/","name":"6-SQLite语法一页纸"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","keywords":"日常唠嗑","description":"个人博客","author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","description":"个人博客"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://xie-peiquan.gitee.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"6-SQLite语法一页纸","description":"个人博客","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://xie-peiquan.gitee.io/2024/02/29/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/6-SQLite%E8%AF%AD%E6%B3%95%E4%B8%80%E9%A1%B5%E7%BA%B8/"},"author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://xie-peiquan.gitee.io/2024/02/29/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/6-SQLite%E8%AF%AD%E6%B3%95%E4%B8%80%E9%A1%B5%E7%BA%B8/","wordCount":0,"datePublished":"2024-02-29T08:16:35.845Z","dateModified":"2024-02-29T08:16:35.897Z","articleSection":"本地数据库","keywords":"本地数据库","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://xie-peiquan.gitee.io/","name":"PQ.XIE BLOG"}},{"@type":"ListItem","position":2,"item":{"@id":"https://xie-peiquan.gitee.io/categories/本地数据库/","name":"本地数据库"}},{"@type":"ListItem","position":3,"item":{"@id":"https://xie-peiquan.gitee.io/2024/03/01/C++那些事/6-SQLite语法一页纸/","name":"6-SQLite语法一页纸"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","keywords":"日常唠嗑","description":"个人博客","author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","description":"个人博客"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://xie-peiquan.gitee.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"6-SQLite语法一页纸","description":"个人博客","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://xie-peiquan.gitee.io/2024/03/01/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/6-SQLite%E8%AF%AD%E6%B3%95%E4%B8%80%E9%A1%B5%E7%BA%B8/"},"author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://xie-peiquan.gitee.io/2024/03/01/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/6-SQLite%E8%AF%AD%E6%B3%95%E4%B8%80%E9%A1%B5%E7%BA%B8/","wordCount":0,"datePublished":"2024-03-01T03:17:05.189Z","dateModified":"2024-03-01T03:17:05.241Z","articleSection":"本地数据库","keywords":"本地数据库","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
