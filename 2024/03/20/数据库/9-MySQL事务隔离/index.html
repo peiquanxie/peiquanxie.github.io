@@ -5,8 +5,8 @@
   <meta name="Volantis" content="5.8.0">
   <meta charset="utf-8">
   <!-- SEO相关 -->
-  <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="https://xie-peiquan.gitee.io/archives/2024/02/"/>
+  
+  <link rel="canonical" href="https://xie-peiquan.gitee.io/2024/03/20/数据库/9-mysql事务隔离/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -34,19 +34,21 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>归档：2024/2 - PQ.XIE BLOG</title>
-  <meta name="keywords" content="日常唠嗑">
+  <title>9-MySQL事务隔离 - PQ.XIE BLOG</title>
+  <meta name="keywords" content="MySQL,日常唠嗑">
   <meta desc name="description" content="个人博客 - PQ.XIE - PQ.XIE BLOG">
   
-<meta property="og:type" content="website">
-<meta property="og:title" content="PQ.XIE BLOG">
-<meta property="og:url" content="https://xie-peiquan.gitee.io/archives/2024/02/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="9-MySQL事务隔离">
+<meta property="og:url" content="https://xie-peiquan.gitee.io/2024/03/20/%E6%95%B0%E6%8D%AE%E5%BA%93/9-MySQL%E4%BA%8B%E5%8A%A1%E9%9A%94%E7%A6%BB/index.html">
 <meta property="og:site_name" content="PQ.XIE BLOG">
-<meta property="og:description" content="个人博客">
+<meta property="og:description" content="1 事务并发的问题1.1 脏写（Dirty Write）如果一个事务修改了另一个未提交事务修改过的数据，那就意味着发生了 脏写。（我在写，别人也在写） 1.2 脏读（Dirty Read）如果一个事务读到了另一个未提交事务修改过的数据，那就意味着发生了 脏读。（我在读，别人在写） 1.3 不可重复读（Non-Repeatable Read）如果一个事务只能读到另一个已经提交的事务修改过的数据，并且">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+<meta property="article:published_time" content="2024-03-20T09:19:03.060Z">
+<meta property="article:modified_time" content="2024-03-20T09:19:09.628Z">
 <meta property="article:author" content="PQ.XIE">
-<meta property="article:tag" content="日常唠嗑">
+<meta property="article:tag" content="MySQL">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -2234,7 +2236,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <!-- Custom Files bodyBegin end-->
     <!-- front-matter body_begin begin -->
     <!-- front-matter body_begin end -->
-    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur " style='opacity: 0' >
+    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -2503,7 +2505,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="half" class='cover-wrapper  search' style="display: ;">
+      <div id="none" class='cover-wrapper post search' style="display: none;">
         
   <div class='cover-bg lazyload placeholder' data-bg="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/background.jpeg"></div>
 
@@ -2581,22 +2583,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="body-wrapper">
           
 <div id="l_main" class=''>
-	
-		
-  <section class="post-list">
-    
-      
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2024/02/18/C++那些事/4-cmake一页纸/">
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2024/03/20/数据库/9-MySQL事务隔离/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="PQ.XIE BLOG">
   </span>
@@ -2605,66 +2593,306 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <meta itemprop="description" content="个人博客">
   </span>
   
-  
+
+
   
     <span hidden>
       <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
     </span>
   
-  
+  <div class="article-meta" id="top">
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2024/02/18/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/4-cmake%E4%B8%80%E9%A1%B5%E7%BA%B8/"  itemprop="url">
-        4-Cmake一页纸
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
     
+    
+      <h1 class="title" itemprop="name headline">
+        9-MySQL事务隔离
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' href="/" rel="nofollow">
+    <img itemprop="image" src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/202307251013361.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/202307251013361.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    <p itemprop="name">PQ.XIE</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/MySQL/" rel="nofollow"><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><p>MySQL</p></a></div>
+  <span hidden itemprop="keywords">MySQL</span>
+
+
+          
+        
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2024-03-20T17:19:03+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>2024年3月20日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：1k 字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：3 分钟</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+
+
+<div class="new-meta-item browse">
+  <a class='notlink'>
+    <p>
+      <i class="fa-solid fa-eye fa-fw" aria-hidden="true"></i>
       
-        1 基本设置Cmake版本控制12345cmake_minimum_required(VERSION 3.16)    # 最低版本要求if($&#123;CMAKE_VERSION&#125; VERSION_LESS 3.21)  # 设置cmake特性，非必需    cmake_policy(VERSION $&#123;CMAKE_MAJOR_VERSION&#125;.$&#123...
+      <span id="busuanzi_value_page_pv"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
       
+      <span>次</span>
+    </p>
+  </a>
+</div>
+
+
+          
+        
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
+      </div>
     
   </div>
+
+
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    <h2 id="1-事务并发的问题"><a href="#1-事务并发的问题" class="headerlink" title="1 事务并发的问题"></a>1 事务并发的问题</h2><h3 id="1-1-脏写（Dirty-Write）"><a href="#1-1-脏写（Dirty-Write）" class="headerlink" title="1.1 脏写（Dirty Write）"></a>1.1 脏写（Dirty Write）</h3><p>如果一个事务修改了另一个未提交事务修改过的数据，那就意味着发生了 脏写。<strong>（我在写，别人也在写）</strong></p>
+<h3 id="1-2-脏读（Dirty-Read）"><a href="#1-2-脏读（Dirty-Read）" class="headerlink" title="1.2 脏读（Dirty Read）"></a>1.2 脏读（Dirty Read）</h3><p>如果一个事务读到了另一个未提交事务修改过的数据，那就意味着发生了 脏读。<strong>（我在读，别人在写）</strong></p>
+<h3 id="1-3-不可重复读（Non-Repeatable-Read）"><a href="#1-3-不可重复读（Non-Repeatable-Read）" class="headerlink" title="1.3 不可重复读（Non-Repeatable Read）"></a>1.3 不可重复读（Non-Repeatable Read）</h3><p>如果一个事务只能读到另一个已经提交的事务修改过的数据，并且其他事务每对该数据进行一次修改并提交后，该事务都能查询得到最新值，那就意味着发生了 不可重复读。<strong>（前后两次读不一致）</strong></p>
+<h3 id="1-4-幻读（Phantom）"><a href="#1-4-幻读（Phantom）" class="headerlink" title="1.4 幻读（Phantom）"></a>1.4 幻读（Phantom）</h3><p>如果一个事务先根据某些条件查询出一些记录，之后另一个事务又向表中插入了符合这些条件的记录，原先的事务再次按照该条件查询时，能把另一个事务插入的记录也读出来，那就意味着发生了 幻读 。强调了读到了之前读取没有获取到的记录。<strong>（后一次读比前一次多）</strong></p>
+<p>**从严重性来排序的话：脏写 &gt; 脏读 &gt; 不可重复读 &gt; 幻读 **。</p>
+<h2 id="2-SQL标准的隔离级别"><a href="#2-SQL标准的隔离级别" class="headerlink" title="2 SQL标准的隔离级别"></a>2 SQL标准的隔离级别</h2><p>如果我们让事务串行，就不会产生以上的问题，但无疑会牺牲一些性能。实际上我们会舍弃一部分隔离性来换取一部分性能。SQL标准设立四个隔离级别，针对不同的隔离级别，并发事务可以发生不同严重程度的问题：</p>
+<table>
+<thead>
+<tr>
+<th>隔离级别</th>
+<th>脏读</th>
+<th>不可重复读</th>
+<th>幻读</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>READ UNCOMMITTED （未提交读）</td>
+<td>可能</td>
+<td>可能</td>
+<td>可能</td>
+</tr>
+<tr>
+<td>READ COMMITTED （已提交读）</td>
+<td>不可能</td>
+<td>可能</td>
+<td>可能</td>
+</tr>
+<tr>
+<td>REPEATABLE READ （可重复读）</td>
+<td>不可能</td>
+<td>不可能</td>
+<td>可能</td>
+</tr>
+<tr>
+<td>SERIALIZABLE （可串行化）</td>
+<td>不可能</td>
+<td>不可能</td>
+<td>不可能</td>
+</tr>
+</tbody></table>
+<p><strong>而脏写这个问题太严重了，不论是哪种隔离级别，都不允许脏写的情况发生。</strong></p>
+<h3 id="设置隔离级别"><a href="#设置隔离级别" class="headerlink" title="设置隔离级别"></a>设置隔离级别</h3><p>MySQL 的默认隔离级别为 REPEATABLE READ ，我们可以手动修改一下事务的隔离级别。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># <span class="keyword">GLOBAL</span> 只对执行完该语句之后产生的会话起作用。</span><br><span class="line"># SESSION 对当前会话的所有后续的事务有效。</span><br><span class="line"><span class="keyword">SET</span> [<span class="keyword">GLOBAL</span><span class="operator">|</span>SESSION] TRANSACTION ISOLATION LEVEL level;</span><br><span class="line"></span><br><span class="line"># 可选level</span><br><span class="line">level: &#123;</span><br><span class="line">	REPEATABLE READ</span><br><span class="line">	READ COMMITTED</span><br><span class="line">	READ UNCOMMITTED</span><br><span class="line">	SERIALIZABLE</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-MVCC原理"><a href="#3-MVCC原理" class="headerlink" title="3 MVCC原理"></a>3 MVCC原理</h2><p>对于使用 InnoDB 存储引擎的表来说，它的聚簇索引记录中都包含两个必要的隐藏列（ row_id 并不是必要的，我们创建的表中有主键或者非NULL的UNIQUE键时都不会包含 row_id 列）：</p>
+<ul>
+<li>trx_id ：每次一个事务对某条聚簇索引记录进行改动时，都会把该事务的 事务id 赋值给 trx_id 隐藏列。</li>
+<li>roll_pointer ：每次对某条聚簇索引记录进行改动时，都会把旧的版本写入到 undo日志中，roll_pointer 就相当于一个指针，指向这条 undo 日志。</li>
+</ul>
+<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/database/image-20240319114948387.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/database/image-20240319114948387.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20240319114948387"></p>
+<p>对该记录每次更新后，都会将旧值放到一条 undo日志 中，就算是该记录的一个旧版本，随着更新次数的增多，所有的版本都会被 roll_pointer 属性连接成一个链表，我们把这个链表称之为 <strong>版本链</strong> ，版本链的头节点就是当前记录最新的值。</p>
+<p>所谓的 MVCC （Multi-Version Concurrency Control ，多版本并发控制）指的就是在使用 READ COMMITTD 、 REPEATABLE READ 这两种隔离级别的事务在执行普通的 SEELCT 操作时访问记录的版本链的过程，这样子可以使不同事务的 读-写 、 写-读 操作并发执行，从而提升系统性能。 READ COMMITTD 、REPEATABLE READ 这两个隔离级别的一个很大不同就是：生成ReadView的时机不同，READ COMMITTD在每一次进行普通SELECT操作前都会生成一个ReadView，而REPEATABLE READ只在第一次进行普通SELECT操作前生成一个ReadView，之后的查询操作都重复使用这个ReadView就好了。</p>
+<blockquote>
+<p>《MySQL是怎样运行的：从根儿上理解MySQL》</p>
+</blockquote>
+
+  </div>
   
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2024-02-18T18:48:16+08:00">2024-02-18</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/C-%E9%82%A3%E4%BA%9B%E4%BA%8B/">C++那些事</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/C-%E9%82%A3%E4%BA%9B%E4%BA%8B/" itemprop="url"><span itemprop="name">C++那些事</span></a>
-            </span>
-          
-        
-      </div>
+  
+    
+    <div class='footer'>
+       <!-- 参考资料、相关资料等 -->
       
-        <div>
-          <a class='readmore' href='/2024/02/18/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/4-cmake%E4%B8%80%E9%A1%B5%E7%BA%B8/' itemprop="url">
-            阅读全文
-          </a>
+       <!-- 相关文章 -->
+      
+      <!-- 版权声明组件 -->
+      
+      <!-- 打赏组件 -->
+      
+        <div class='donate'>
+          <div class='imgs'>
+            
+              <img src='https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/%E8%B5%9E%E8%B5%8F%E7%A0%81.JPG'>
+            
+          </div>
         </div>
       
     </div>
-
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-03-20T17:19:09+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2024年3月20日</p>
+  </a>
 </div>
 
-          </div>
         
       
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
-  </section>
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://xie-peiquan.gitee.io/2024/03/20/%E6%95%B0%E6%8D%AE%E5%BA%93/9-MySQL%E4%BA%8B%E5%8A%A1%E9%9A%94%E7%A6%BB/&title=9-MySQL事务隔离 - PQ.XIE BLOG&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://xie-peiquan.gitee.io/2024/03/20/%E6%95%B0%E6%8D%AE%E5%BA%93/9-MySQL%E4%BA%8B%E5%8A%A1%E9%9A%94%E7%A6%BB/&title=9-MySQL事务隔离 - PQ.XIE BLOG&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://xie-peiquan.gitee.io/2024/03/20/%E6%95%B0%E6%8D%AE%E5%BA%93/9-MySQL%E4%BA%8B%E5%8A%A1%E9%9A%94%E7%A6%BB/&title=9-MySQL事务隔离 - PQ.XIE BLOG&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        
+        <div class='hoverbox'>
+          <a class='share'><img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/wechat.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/wechat.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></a>
+          <div class='target'>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXgAAAF4CAAAAAB79r16AAAFIElEQVR42u3cS24bMRAFQN3/0s4+gaD+vB7bQXEnazQki9w8dMOvL+NbxgsBePAGePAGePBGAP41HGcLW86f3s/f32/fDx48ePDgwYMHDx58Er4L824h0+e6AFXw7jyf5lt7gQcPHjx48ODBgwd/AF/dwPRAtoGpG4SmBzrd58cLCB48ePDgwYMHDx78L4CfAqQKF08HQ/DgwYMHDx48ePDgfwP8dxU4xg1Fod+DBw8ePHjw4MGDB/+T4FONPtsAdP3813BsvcCDBw8ePHjw4MGDT8KnA8X//nnsBR48ePDgwYMHDx58AP6psQ1U20aobYEl5gAePHjw4MGDBw8efAB+Gyi2UNtgsi2UXO337d/BgwcPHjx48ODBgw/CTxt1ug1O3UCVOsjuBbmaBzx48ODBgwcPHjz4BHw3CEwBpwc4nWcKNS2oVOcBDx48ePDgwYMHD/4Cvlsw6AKPCwjLgJe6WGXgT4UQ8ODBgwcPHjx48OCD8NXAch1cqhurXpjq9+lCCHjw4MGDBw8ePHjwF/DTAkb3wLZBaRvwpgdeDXDlCwMePHjw4MGDBw8efAB+WxjoFgq2BYXt/E8HJ/DgwYMHDx48ePDgn4RPB5DuxqbPbQ+s3aDUXRd48ODBgwcPHjx48AH413BUg0S3INLd8PXown/8DB48ePDgwYMHDx78Afy2ENANXtvCSbehKBXIps+DBw8ePHjw4MGDB/8EfGoB6SC2bWiaFj7W+wQPHjx48ODBgwcPPgB/BbVtBGoXGMIHUg107QMCDx48ePDgwYMHDz4Anwou24ag60ak6rrO5wMPHjx48ODBgwcPPgBfDQ7d57aFh3RA2xZKpoUh8ODBgwcPHjx48OAv4acbmAaU6jzT923BtwUZ8ODBgwcPHjx48OCfgN8GhCvQK9huASTVsAUePHjw4MGDBw8efBK+26BTfT4VWFKNRddjXAgBDx48ePDgwYMHD34AP20I2hY4qgufBpzq+q8ancCDBw8ePHjw4MGDv4SfbnzbCFQ94C70FWB3X+DBgwcPHjx48ODBX8BvFzQNTNv5rxuxphepHKDAgwcPHjx48ODBgw/CpxqItkBPBa6nCivgwYMHDx48ePDgwSfhpy98DUc1gEwBu8Fte/DtCwQePHjw4MGDBw8efBB+Gli64NP5rgJa+kA+eoEHDx48ePDgwYMHH4TvBoFq4Bo3/gyBtwWT6XPl4AkePHjw4MGDBw8efAC+G1C2DT/dDW4PMlWwGTcwvQtQ4MGDBw8ePHjw4MEH4LcFiu77uhvbAqTGdr3gwYMHDx48ePDgwSfg2wHgqPFpW3DZznPVwAUePHjw4MGDBw8e/CV89UXdQkc3ME0LFtWLMj3QqdM/vwcPHjx48ODBgwcPPgDfbSy6KlhsD6ILtf1+esHAgwcPHjx48ODBg0/Apxp8UgWUaePQVQPUNoCBBw8ePHjw4MGDB38B/xqOblCZglQPsPv7baAafwYPHjx48ODBgwcPPgifChTdQkY3iKULJVcBalyBAg8ePHjw4MGDBw9+8Y+C0gGi+/dtwEs1KKWCJXjw4MGDBw8ePHjwPwm+GySqB9ANZtvGq+3FWBdCwIMHDx48ePDgwYN/EL4aIKYFkW4hpHsw0/ePDw48ePDgwYMHDx48+AP4VEPTFjb1+/R+qt+/XRd48ODBgwcPHjx48EH4bYNQd0HbRqH0+qcFkXWAAg8ePHjw4MGDBw9+AG88O8CDB2+AB2+AB28sxh8AcKeZAr6JAQAAAABJRU5ErkJggg==">
+          </div>
+        </div>
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+        
+      
+    </div>
+    <!-- Custom Files bottomMeta begin -->
+    
+    <!-- Custom Files bottomMeta end -->
+  </div>
+
+
   
-    
+  
+
+  
+    <div class="prev-next">
+      
+      
+        <a class='next' href='/2024/03/19/%E6%95%B0%E6%8D%AE%E5%BA%93/5-MySQL-InnoDB%E7%B4%A2%E5%BC%95/'>
+          <p class='title'>5-MySQL-InnoDB索引<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>快速的查找一般是建立在数据有序的基础上，而有序一般是依赖一个可以用来排序的 键 来排列。我们把这种通过键查找到对应数值的过程叫 索引查找 。如果我们要查找的目标不能通过 键 来查找，那么查找就只...</p>
+        </a>
+      
+    </div>
+  
+  <!-- Custom Files postEnd begin-->
+  
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> 
+  <!-- Custom Files postEnd end-->
+</article>
+
+
   
 
 
-	
+  <article class="post white-box shadow floatable blur" id="comments">
+    <span hidden>
+      <meta itemprop="discussionUrl" content="/2024/03/20/%E6%95%B0%E6%8D%AE%E5%BA%93/9-MySQL%E4%BA%8B%E5%8A%A1%E9%9A%94%E7%A6%BB/index.html#comments">
+    </span>
+    <p ct><i class='fas fa-comments'></i> 评论区</p>
+    
+
+    <div id="layoutHelper-comments"></div>
+
+  </article>
+
+
+
+
+
+
 </div>
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   
@@ -2673,252 +2901,48 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       
-<section class="widget blogger desktop mobile pjax">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box circle' href='/about/'>
-          <img no-lazy src='https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/touxiang.jpg'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-        
-          <p>在熟悉的异乡我将自己一年年流放，穿过鲜花走过荆棘只为自由之地</p>
-
-        
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:212951692@qq.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://gitee.com/xie-peiquan"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://t1.kugou.com/dER5jedBdV2"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
-
-    
-  
-
-  
-    
-    
-      
-  
-  <section class="widget category desktop mobile pjax">
-    
-  <header>
-    
-      <a href='/categories/'><i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/C-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/" href="/categories/C-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/"
-            active-action="action-categoriesC-E5B9B6E58F91E7BC96E7A88BE59FBAE7A180"
-            ><div class='name'>C++并发编程基础</div><div class='badge'>(9)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/C-%E9%82%A3%E4%BA%9B%E4%BA%8B/" href="/categories/C-%E9%82%A3%E4%BA%9B%E4%BA%8B/"
-            active-action="action-categoriesC-E982A3E4BA9BE4BA8B"
-            ><div class='name'>C++那些事</div><div class='badge'>(5)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Pytorch%E5%9F%BA%E7%A1%80/" href="/categories/Pytorch%E5%9F%BA%E7%A1%80/"
-            active-action="action-categoriesPytorchE59FBAE7A180"
-            ><div class='name'>Pytorch基础</div><div class='badge'>(5)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/ROS1/" href="/categories/ROS1/"
-            active-action="action-categoriesROS1"
-            ><div class='name'>ROS1</div><div class='badge'>(12)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/ROS2%E5%9F%BA%E7%A1%80/" href="/categories/ROS2%E5%9F%BA%E7%A1%80/"
-            active-action="action-categoriesROS2E59FBAE7A180"
-            ><div class='name'>ROS2基础</div><div class='badge'>(7)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%BB%BA%E7%AB%99/" href="/categories/%E5%BB%BA%E7%AB%99/"
-            active-action="action-categoriesE5BBBAE7AB99"
-            ><div class='name'>建站</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"
-            active-action="action-categoriesE695B0E68DAEE5BA93"
-            ><div class='name'>数据库</div><div class='badge'>(6)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%B7%B7%E5%90%88%E7%BC%96%E7%A8%8B/" href="/categories/%E6%B7%B7%E5%90%88%E7%BC%96%E7%A8%8B/"
-            active-action="action-categoriesE6B7B7E59088E7BC96E7A88B"
-            ><div class='name'>混合编程</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E9%9F%B3%E4%B9%90/" href="/categories/%E9%9F%B3%E4%B9%90/"
-            active-action="action-categoriesE99FB3E4B990"
-            ><div class='name'>音乐</div><div class='badge'>(1)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
-
-
-    
-  
-
-  
-    
-    
-      
-<section class="widget desktop pjax">
-  
-  <header>
-    
-      <i class="fa-solid fa-award fa-fw" aria-hidden="true"></i><span class='name'>站点信息</span>
-    
-  </header>
-
-
-  <div class='content'>
-    <div class="webinfo">
-      
-        <div class="webinfo-item">
-          <div>文章数目：</div>
-          <div>48 篇</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>已运行时间：</div>
-          <div id="webinfo-runtime-count"></div>
-        </div>
-      
-
-
-      
-        <div class="webinfo-item">
-          <div>本站总字数：</div>
-          <div>48.2k 字</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>本站访客数：</div>
-          
-          <div><span id="busuanzi_value_site_uv"><i class="fa-solid fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 人</div>
-          
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>本站总访问量：</div>
-          
-          <div><span id="busuanzi_value_site_pv"><i class="fa-solid fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 次</div>
-          
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>最后活动时间：</div>
-          <div id="last-update-show">2024-03-20 日</div>
-        </div>
-      
-    </div>
-  </div>
-</section>
-
-    
-  
-
-  
-    
-    
-      
-
-  <section class='widget desktop  music'>
-    
-
-    <div class='content'>
-      
-
-  
-    <meting-js
-      theme='#1BCDFC'
-      autoplay='false'
-      volume='0.7'
-      loop='all'
-      order='random'
-      fixed='false'
-      list-max-height='320px'
-      server='netease'
-      type='playlist'
-      id='8080945868'
-      list-folded='true'>
-    </meting-js>
-  
-
-
-    </div>
-  </section>
-
-
     
   
 
 
 <div class="widget-sticky pjax">
 
+  
+  
+
+
+  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
+    
+  <header>
+    
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%BA%8B%E5%8A%A1%E5%B9%B6%E5%8F%91%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-text">1 事务并发的问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E8%84%8F%E5%86%99%EF%BC%88Dirty-Write%EF%BC%89"><span class="toc-text">1.1 脏写（Dirty Write）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E8%84%8F%E8%AF%BB%EF%BC%88Dirty-Read%EF%BC%89"><span class="toc-text">1.2 脏读（Dirty Read）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-%E4%B8%8D%E5%8F%AF%E9%87%8D%E5%A4%8D%E8%AF%BB%EF%BC%88Non-Repeatable-Read%EF%BC%89"><span class="toc-text">1.3 不可重复读（Non-Repeatable Read）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-%E5%B9%BB%E8%AF%BB%EF%BC%88Phantom%EF%BC%89"><span class="toc-text">1.4 幻读（Phantom）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-SQL%E6%A0%87%E5%87%86%E7%9A%84%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB"><span class="toc-text">2 SQL标准的隔离级别</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB"><span class="toc-text">设置隔离级别</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-MVCC%E5%8E%9F%E7%90%86"><span class="toc-text">3 MVCC原理</span></a></li></ol>
+    </div>
+  </section>
+
+  
+
 </div>
 
 
 <!-- 没有 pjax 占位会报错 万恶的 pjax -->
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
 
   <div class="pjax">
     <!-- pjax占位 -->
@@ -2946,13 +2970,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </aside>
 
 
+
           <!--此文件用来存放一些不方便取值的变量-->
 <!--思路大概是将值藏到重加载的区域内-->
 
 <pjax>
 <script>
   window.pdata={}
-  pdata.ispage=false;
+  pdata.ispage=true;
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -2961,14 +2986,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     // header
     var l_header=document.getElementById("l_header");
     
-    l_header.classList.remove("show");
+    l_header.classList.add("show");
     
     
       // cover
       var cover_wrapper=document.querySelector('#l_cover .cover-wrapper');
       var scroll_down=document.getElementById('scroll-down');
-      cover_wrapper.id="half";
-      cover_wrapper.style.display="";
+      cover_wrapper.id="none";
+      cover_wrapper.style.display="none";
       scroll_down.style.display="none";
     
   
@@ -3952,7 +3977,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://xie-peiquan.gitee.io/","name":"PQ.XIE BLOG"}},{"@type":"ListItem","position":2,"item":{"@id":"https://xie-peiquan.gitee.io/archives/","name":"Archive"}},{"@type":"ListItem","position":3,"item":{"@id":"https://xie-peiquan.gitee.io/archives/2024/","name":"2024年"}},{"@type":"ListItem","position":4,"item":{"@id":"https://xie-peiquan.gitee.io/archives/2024/2/","name":"2月"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","keywords":"日常唠嗑","description":"个人博客","author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","description":"个人博客"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://xie-peiquan.gitee.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"个人博客","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://xie-peiquan.gitee.io/","name":"PQ.XIE BLOG"}},{"@type":"ListItem","position":2,"item":{"@id":"https://xie-peiquan.gitee.io/categories/数据库/","name":"数据库"}},{"@type":"ListItem","position":3,"item":{"@id":"https://xie-peiquan.gitee.io/2024/03/20/数据库/9-MySQL事务隔离/","name":"9-MySQL事务隔离"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","keywords":"日常唠嗑","description":"个人博客","author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","description":"个人博客"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://xie-peiquan.gitee.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"9-MySQL事务隔离","description":"个人博客","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://xie-peiquan.gitee.io/2024/03/20/%E6%95%B0%E6%8D%AE%E5%BA%93/9-MySQL%E4%BA%8B%E5%8A%A1%E9%9A%94%E7%A6%BB/"},"author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://xie-peiquan.gitee.io/2024/03/20/%E6%95%B0%E6%8D%AE%E5%BA%93/9-MySQL%E4%BA%8B%E5%8A%A1%E9%9A%94%E7%A6%BB/","wordCount":0,"datePublished":"2024-03-20T09:19:03.060Z","dateModified":"2024-03-20T09:19:09.628Z","articleSection":"数据库","keywords":"MySQL","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

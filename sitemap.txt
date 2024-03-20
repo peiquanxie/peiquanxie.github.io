@@ -1,3 +1,4 @@
+https://xie-peiquan.gitee.io/2024/03/20/%E6%95%B0%E6%8D%AE%E5%BA%93/9-MySQL%E4%BA%8B%E5%8A%A1%E9%9A%94%E7%A6%BB/
 https://xie-peiquan.gitee.io/2024/03/19/%E6%95%B0%E6%8D%AE%E5%BA%93/5-MySQL-InnoDB%E7%B4%A2%E5%BC%95/
 https://xie-peiquan.gitee.io/2024/03/19/%E6%95%B0%E6%8D%AE%E5%BA%93/7-MySQL-%E8%BF%9E%E6%8E%A5/
 https://xie-peiquan.gitee.io/2024/03/19/%E6%95%B0%E6%8D%AE%E5%BA%93/6-MySQL-B+%E6%A0%91/
