@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="https://xie-peiquan.gitee.io/tags/c-库/"/>
+  <link rel="canonical" href="https://xie-peiquan.gitee.io/tags/io复用/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -34,13 +34,13 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>标签：C++库 - PQ.XIE BLOG</title>
+  <title>标签：IO复用 - PQ.XIE BLOG</title>
   <meta name="keywords" content="日常唠嗑">
   <meta desc name="description" content="个人博客 - PQ.XIE - PQ.XIE BLOG">
   
 <meta property="og:type" content="website">
 <meta property="og:title" content="PQ.XIE BLOG">
-<meta property="og:url" content="https://xie-peiquan.gitee.io/tags/C-%E5%BA%93/index.html">
+<meta property="og:url" content="https://xie-peiquan.gitee.io/tags/IO%E5%A4%8D%E7%94%A8/index.html">
 <meta property="og:site_name" content="PQ.XIE BLOG">
 <meta property="og:description" content="个人博客">
 <meta property="og:locale" content="zh_CN">
@@ -2591,12 +2591,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
         
-          
-        
-          
-        
-          
-        
       
     
     
@@ -2604,7 +2598,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2023/11/15/C++那些事/2-protobuf的使用/">
+  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2024/07/01/C++那些事/5-IO多路复用/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="PQ.XIE BLOG">
   </span>
@@ -2622,18 +2616,15 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/11/15/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/2-protobuf%E7%9A%84%E4%BD%BF%E7%94%A8/"  itemprop="url">
-        2-protobuf的使用
+      <a href="/2024/07/01/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/5-IO%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8/"  itemprop="url">
+        5-I/O多路复用
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        1 软件包介绍protobuf是google定义的一套数据传输格式和规范，用于不同应用或进程之间进行通信时使用。protobuf 支持跨平台, 跨语言, 支持目前绝大多数语言, 例如C++, C#, Java, Python等。
-2 Why protobuf ?先来看看目前常用的 序列化 &#x2F; 反序列化 方法:
-
-将原始数据结构序列化为 字节流 传输。(这是一种脆弱的数据传输方法，它...
+        我们经常在单个线程中去管理某个数据 I&#x2F;O ，但当软件变得复杂时，尤其是高并发的生产环境中，一个线程对应一个 I&#x2F;O 会面临资源吃紧的情况。IO多路复用（Input&#x2F;Output Multiplexing）是一种在单个线程中管理多个输入&#x2F;输出通道的技术。它允许一个线程同时监听多个输入流（例如网络套接字、文件描述符等），并在有数据可读或可写时进行相应的处...
       
     
   </div>
@@ -2641,7 +2632,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-11-15T09:59:01+08:00">2023-11-15</time>
+        <time itemprop="dateCreated datePublished" datetime="2024-07-01T17:15:35+08:00">2024-07-01</time>
         
           <span class="dot"></span>
           <a class="category-link" href="/categories/C-%E9%82%A3%E4%BA%9B%E4%BA%8B/">C++那些事</a>
@@ -2654,203 +2645,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       </div>
       
         <div>
-          <a class='readmore' href='/2023/11/15/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/2-protobuf%E7%9A%84%E4%BD%BF%E7%94%A8/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2023/11/08/C++那些事/3-gtest的使用/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-    <meta itemprop="description" content="个人博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/11/08/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/3-gtest%E7%9A%84%E4%BD%BF%E7%94%A8/"  itemprop="url">
-        3-gtest的使用
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        1 软件包介绍gtest是google提供的一个轻量级单元测试框架，它提供了丰富的断言、致命和非致命失败判断，能进行值参数化测试、类型参数化测试、“死亡测试”。
-2 软件包安装12345git clone https://github.com/google/googletest.gitcd googletest mkdir build &amp;&amp; cd buildcmake .. ...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-11-08T17:07:49+08:00">2023-11-08</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/C-%E9%82%A3%E4%BA%9B%E4%BA%8B/">C++那些事</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/C-%E9%82%A3%E4%BA%9B%E4%BA%8B/" itemprop="url"><span itemprop="name">C++那些事</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/11/08/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/3-gtest%E7%9A%84%E4%BD%BF%E7%94%A8/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2023/11/01/C++那些事/1-glog的使用/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-    <meta itemprop="description" content="个人博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/11/01/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/1-glog%E7%9A%84%E4%BD%BF%E7%94%A8/"  itemprop="url">
-        1-glog的使用
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        1 软件包介绍glog是google提供的一个轻量级C&#x2F;C++日志库，提供日志文件记录管理等功能。
-2 软件包安装123456git clone https://github.com/google/glog.gitsudo apt install autoconf automake libtoolcd glog &amp;&amp; mkdir build &amp;&amp; c...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-11-01T15:16:37+08:00">2023-11-01</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/C-%E9%82%A3%E4%BA%9B%E4%BA%8B/">C++那些事</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/C-%E9%82%A3%E4%BA%9B%E4%BA%8B/" itemprop="url"><span itemprop="name">C++那些事</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/11/01/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/1-glog%E7%9A%84%E4%BD%BF%E7%94%A8/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2023/10/31/C++那些事/0-Gflags的使用/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-    <meta itemprop="description" content="个人博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/10/31/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/0-Gflags%E7%9A%84%E4%BD%BF%E7%94%A8/"  itemprop="url">
-        0-Gflags的使用
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        1 软件包介绍Gflags是一种命令行解析工具(处理命令行参数的库)，主要用于C++程序 解析用命令行执行可执行文件时传入的参数。
-Gflags支持的参数定义类型如下:
-123456DEFINE_bool:   booleanDEFINE_int32:  32-bit integerDEFINE_int64:  64-bit integerDEFINE_uint64: unsigned 64...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-10-31T14:51:42+08:00">2023-10-31</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/C-%E9%82%A3%E4%BA%9B%E4%BA%8B/">C++那些事</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/C-%E9%82%A3%E4%BA%9B%E4%BA%8B/" itemprop="url"><span itemprop="name">C++那些事</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/10/31/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/0-Gflags%E7%9A%84%E4%BD%BF%E7%94%A8/' itemprop="url">
+          <a class='readmore' href='/2024/07/01/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/5-IO%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -4160,7 +3955,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://xie-peiquan.gitee.io/","name":"PQ.XIE BLOG"}},{"@type":"ListItem","position":2,"item":{"@id":"https://xie-peiquan.gitee.io/tags/C++库/","name":"C++库"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","keywords":"日常唠嗑","description":"个人博客","author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","description":"个人博客"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://xie-peiquan.gitee.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"个人博客","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://xie-peiquan.gitee.io/","name":"PQ.XIE BLOG"}},{"@type":"ListItem","position":2,"item":{"@id":"https://xie-peiquan.gitee.io/tags/IO复用/","name":"IO复用"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","keywords":"日常唠嗑","description":"个人博客","author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","description":"个人博客"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://xie-peiquan.gitee.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"个人博客","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
