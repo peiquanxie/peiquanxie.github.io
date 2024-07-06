@@ -1,3 +1,4 @@
+https://xie-peiquan.gitee.io/2024/07/06/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/7-%E7%AE%80%E5%8D%95%E7%9A%84CLI/
 https://xie-peiquan.gitee.io/2024/07/03/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/6-%E7%AE%80%E5%8D%95%E7%9A%84Logger/
 https://xie-peiquan.gitee.io/2024/07/01/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/5-IO%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8/
 https://xie-peiquan.gitee.io/2023/10/31/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/0-Gflags%E7%9A%84%E4%BD%BF%E7%94%A8/
@@ -60,6 +61,7 @@ https://xie-peiquan.gitee.io/tags/C-%E5%BA%93/
 https://xie-peiquan.gitee.io/tags/CMake/
 https://xie-peiquan.gitee.io/tags/IO%E5%A4%8D%E7%94%A8/
 https://xie-peiquan.gitee.io/tags/%E6%97%A5%E5%BF%97%E8%AE%B0%E5%BD%95/
+https://xie-peiquan.gitee.io/tags/CLI%E7%A8%8B%E5%BA%8F/
 https://xie-peiquan.gitee.io/tags/ROS1/
 https://xie-peiquan.gitee.io/tags/ROS2%E5%9F%BA%E7%A1%80/
 https://xie-peiquan.gitee.io/tags/Pytorch%E5%9F%BA%E7%A1%80/
