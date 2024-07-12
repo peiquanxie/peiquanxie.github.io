@@ -5,8 +5,8 @@
   <meta name="Volantis" content="5.8.0">
   <meta charset="utf-8">
   <!-- SEO相关 -->
-  <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="https://xie-peiquan.gitee.io/archives/2023/page/3/"/>
+  
+  <link rel="canonical" href="https://xie-peiquan.gitee.io/2024/07/12/c++那些事/8-线程局部变量/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -34,19 +34,21 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>归档：2023 - PQ.XIE BLOG</title>
-  <meta name="keywords" content="日常唠嗑">
+  <title>8-线程局部变量 - PQ.XIE BLOG</title>
+  <meta name="keywords" content="线程局部变量,日常唠嗑">
   <meta desc name="description" content="个人博客 - PQ.XIE - PQ.XIE BLOG">
   
-<meta property="og:type" content="website">
-<meta property="og:title" content="PQ.XIE BLOG">
-<meta property="og:url" content="https://xie-peiquan.gitee.io/archives/2023/page/3/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="8-线程局部变量">
+<meta property="og:url" content="https://xie-peiquan.gitee.io/2024/07/12/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/8-%E7%BA%BF%E7%A8%8B%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F/index.html">
 <meta property="og:site_name" content="PQ.XIE BLOG">
-<meta property="og:description" content="个人博客">
+<meta property="og:description" content="今天来讨论下线程局部变量，以应对多线程开发中可能面对的需求。主要讨论以下两个问题：  对于一个全局变量，每个线程都希望拥有它的一个副本，维护专属于自己的变量值，应该如何实现？ 进一步的，如果希望一个类在每个线程中有且只有一个副本，应该如何实现？  1 线程局部变量1.1 POD 线程局部变量对于问题一，其实GCC已经提供了简单的解决方案，通过 __thread 关键字就可以实现简单类型的线程局部变">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+<meta property="article:published_time" content="2024-07-12T10:19:08.761Z">
+<meta property="article:modified_time" content="2024-07-12T10:19:08.821Z">
 <meta property="article:author" content="PQ.XIE">
-<meta property="article:tag" content="日常唠嗑">
+<meta property="article:tag" content="线程局部变量">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -2234,7 +2236,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <!-- Custom Files bodyBegin end-->
     <!-- front-matter body_begin begin -->
     <!-- front-matter body_begin end -->
-    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur " style='opacity: 0' >
+    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -2503,7 +2505,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="half" class='cover-wrapper  search' style="display: ;">
+      <div id="none" class='cover-wrapper post search' style="display: none;">
         
   <div class='cover-bg lazyload placeholder' data-bg="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/background.jpeg"></div>
 
@@ -2581,16 +2583,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="body-wrapper">
           
 <div id="l_main" class=''>
-	
-		
-  <section class="post-list">
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2023/09/04/ROS1/7-launch启动节点/">
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2024/07/12/C++那些事/8-线程局部变量/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="PQ.XIE BLOG">
   </span>
@@ -2599,684 +2593,285 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <meta itemprop="description" content="个人博客">
   </span>
   
-  
+
+
   
     <span hidden>
       <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
     </span>
   
-  
+  <div class="article-meta" id="top">
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/09/04/ROS1/7-launch%E5%90%AF%E5%8A%A8%E8%8A%82%E7%82%B9/"  itemprop="url">
-        7-launch启动节点
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
     
-      
-        1 基本语法
-&lt;launch&gt; launch文件中的根元素采用&lt;launch&gt;标签定义
+    
+      <h1 class="title" itemprop="name headline">
+        8-线程局部变量
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' href="/" rel="nofollow">
+    <img itemprop="image" src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/202307251013361.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/202307251013361.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    <p itemprop="name">PQ.XIE</p>
+  </a>
+</div>
 
-&lt;node&gt; 启动节点，格式：
-1&lt;node pkg=&quot;package-name&quot; name=&quot;node-name&quot; type=&quot;exec-name&quot;/&gt;
+          
+        
+          
+            
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E7%BA%BF%E7%A8%8B%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F/" rel="nofollow"><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><p>线程局部变量</p></a></div>
+  <span hidden itemprop="keywords">线程局部变量</span>
 
-其中，pkg 是节点所在功能包名称，t...
+
+          
+        
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2024-07-12T18:19:08+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>2024年7月12日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：1.1k 字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：4 分钟</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+
+
+<div class="new-meta-item browse">
+  <a class='notlink'>
+    <p>
+      <i class="fa-solid fa-eye fa-fw" aria-hidden="true"></i>
       
+      <span id="busuanzi_value_page_pv"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+      
+      <span>次</span>
+    </p>
+  </a>
+</div>
+
+
+          
+        
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
+      </div>
     
   </div>
+
+
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    <p>今天来讨论下线程局部变量，以应对多线程开发中可能面对的需求。主要讨论以下两个问题：</p>
+<ul>
+<li>对于一个全局变量，每个线程都希望拥有它的一个副本，维护专属于自己的变量值，应该如何实现？</li>
+<li>进一步的，如果希望一个类在每个线程中有且只有一个副本，应该如何实现？</li>
+</ul>
+<h2 id="1-线程局部变量"><a href="#1-线程局部变量" class="headerlink" title="1 线程局部变量"></a>1 线程局部变量</h2><h3 id="1-1-POD-线程局部变量"><a href="#1-1-POD-线程局部变量" class="headerlink" title="1.1 POD 线程局部变量"></a>1.1 POD 线程局部变量</h3><p>对于问题一，其实GCC已经提供了简单的解决方案，通过 <em><strong>__thread</strong></em> 关键字就可以实现简单类型的线程局部变量。其存取效率可以和全局变量相比，*__thread* 变量每一个线程有一份独立实体，各个线程的值互不干扰。那么什么是简单类型？严格讲是POD（Plain Old Data）类型，即 能用 C 的 memcpy() 进行操作的数据类型就是 POD 类型，<strong>像C的基本数据类型及指针均属于POD类型</strong>。</p>
+<p><em>__thread</em> 的使用规则：①只能用于修饰POD类型，不能修饰class类型，因为无法自动调用构造和析构函数。②可用于修饰全局变量或静态变量，不可修饰局部变量或者class普通成员函数。③其修饰的变量的初始化只能用编译期常量。以下是使用例子：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">__thread <span class="type">int</span> value_ = <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
+
+<p>这样以后线程对 value_ 的操作都是对自己副本的操作，线程间互不影响。</p>
+<h3 id="1-2-class-线程局部变量"><a href="#1-2-class-线程局部变量" class="headerlink" title="1.2 class 线程局部变量"></a>1.2 class 线程局部变量</h3><p>那如果我想要创建的变量是一个class类型咋整，pthread 给出了方案，不过需要我们自己包装一下。用到的核心API有两个，分别是 <code>pthread_key_create</code> 和 <code>pthread_key_delete</code> 。下面借助模板进行包装：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">ifndef</span> _THREADLOCAL_H</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> _THREADLOCAL_H</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;pthread.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">ThreadLocal</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">  <span class="built_in">ThreadLocal</span>()</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="built_in">pthread_key_create</span>(&amp;pkey_, &amp;ThreadLocal::destructor);</span><br><span class="line">  &#125;</span><br><span class="line">  ~<span class="built_in">ThreadLocal</span>()</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="built_in">pthread_key_delete</span>(pkey_);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function">T&amp; <span class="title">value</span><span class="params">()</span></span></span><br><span class="line"><span class="function">  </span>&#123;</span><br><span class="line">    T* perThreadValue = <span class="built_in">static_cast</span>&lt;T*&gt;(<span class="built_in">pthread_getspecific</span>(pkey_));</span><br><span class="line">    <span class="keyword">if</span> (!perThreadValue)</span><br><span class="line">    &#123;</span><br><span class="line">      T* newObj = <span class="keyword">new</span> <span class="built_in">T</span>();</span><br><span class="line">      <span class="built_in">pthread_setspecific</span>(pkey_, newObj);</span><br><span class="line">      perThreadValue = newObj;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> *perThreadValue;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"> <span class="keyword">private</span>:</span><br><span class="line">  <span class="function"><span class="type">static</span> <span class="type">void</span> <span class="title">destructor</span><span class="params">(<span class="type">void</span> *x)</span></span></span><br><span class="line"><span class="function">  </span>&#123;</span><br><span class="line">    T* obj = <span class="built_in">static_cast</span>&lt;T*&gt;(x);</span><br><span class="line">    <span class="keyword">delete</span> obj;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">  <span class="type">pthread_key_t</span> pkey_;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+
+<p>使用示例：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;ThreadLocal.h&quot;</span></span></span><br><span class="line"></span><br><span class="line">ThreadLocal&lt;Test&gt; testObj1;</span><br><span class="line">ThreadLocal&lt;Test&gt; testObj2;</span><br></pre></td></tr></table></figure>
+
+<p>这样以后线程对 testObj1 和 testObj2 的操作都是对自己副本的操作，线程间互不影响。</p>
+<h2 id="2-线程局部单例对象"><a href="#2-线程局部单例对象" class="headerlink" title="2 线程局部单例对象"></a>2 线程局部单例对象</h2><p>相信我们对进程中的单例模式不陌生，我们先来回顾下进程中的单例模式怎么写的：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">ifndef</span> _SINGLETON_H</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> _SINGLETON_H</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;pthread.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span> <span class="comment">// atexit</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Singleton</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">  <span class="built_in">Singleton</span>() = <span class="keyword">delete</span>;</span><br><span class="line">  ~<span class="built_in">Singleton</span>() = <span class="keyword">delete</span>;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="type">static</span> T&amp; <span class="title">instance</span><span class="params">()</span></span></span><br><span class="line"><span class="function">  </span>&#123;</span><br><span class="line">    <span class="built_in">pthread_once</span>(&amp;ponce_, &amp;Singleton::init);</span><br><span class="line">    <span class="keyword">return</span> *value_;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">  <span class="function"><span class="type">static</span> <span class="type">void</span> <span class="title">init</span><span class="params">()</span></span></span><br><span class="line"><span class="function">  </span>&#123;</span><br><span class="line">    value_ = <span class="keyword">new</span> <span class="built_in">T</span>();</span><br><span class="line">    ::<span class="built_in">atexit</span>(destroy);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="type">static</span> <span class="type">void</span> <span class="title">destroy</span><span class="params">()</span></span></span><br><span class="line"><span class="function">  </span>&#123;</span><br><span class="line">    <span class="keyword">delete</span> value_;</span><br><span class="line">    value_ = <span class="literal">NULL</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">  <span class="type">static</span> <span class="type">pthread_once_t</span> ponce_;</span><br><span class="line">  <span class="type">static</span> T*             value_;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="type">pthread_once_t</span> Singleton&lt;T&gt;::ponce_ = PTHREAD_ONCE_INIT;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line">T* Singleton&lt;T&gt;::value_ = <span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+
+<p>单例模式这样写有以下好处：</p>
+<ul>
+<li>把某个具体类设置为单例模式极其简单，简单修饰 <code>Singleton&lt;MyClass&gt;::instance()</code> 即可获取该类的唯一实例。</li>
+<li>相比于<code>double-check</code>方式，借助<code>pthread_once_t</code> ，可以解决生成实例的线程安全问题。</li>
+<li>相比于<code>static MyClass</code>生成实例的方式，可以在进程的生命周期删除实例，释放资源。</li>
+</ul>
+<p>而缺点是对于具体类的生成，无法传入构造参数。如果必须传入构造参数，那么可以参考以上方式，把这一套生成实例的方法移入到具体类即可。</p>
+<p>那么，对于线程局部变量，且要求类型是单例是怎么实现的呢？其实简单的组合一下就可以了，代码如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">ifndef</span> _THREADLOCALSINGLETON_H</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> _THREADLOCALSINGLETON_H</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;pthread.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">ThreadLocalSingleton</span></span><br><span class="line">&#123;</span><br><span class="line"> <span class="keyword">public</span>:</span><br><span class="line">  <span class="built_in">ThreadLocalSingleton</span>() = <span class="keyword">delete</span>;</span><br><span class="line">  ~<span class="built_in">ThreadLocalSingleton</span>() = <span class="keyword">delete</span>;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="type">static</span> T&amp; <span class="title">instance</span><span class="params">()</span></span></span><br><span class="line"><span class="function">  </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!t_value_)</span><br><span class="line">    &#123;</span><br><span class="line">      t_value_ = <span class="keyword">new</span> <span class="built_in">T</span>();</span><br><span class="line">      deleter_.<span class="built_in">set</span>(t_value_);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> *t_value_;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="type">static</span> T* <span class="title">pointer</span><span class="params">()</span></span></span><br><span class="line"><span class="function">  </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> t_value_;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"> <span class="keyword">private</span>:</span><br><span class="line">  <span class="function"><span class="type">static</span> <span class="type">void</span> <span class="title">destructor</span><span class="params">(<span class="type">void</span>* obj)</span></span></span><br><span class="line"><span class="function">  </span>&#123;</span><br><span class="line">    <span class="keyword">delete</span> t_value_;</span><br><span class="line">    t_value_ = <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">class</span> <span class="title class_">Deleter</span></span><br><span class="line">  &#123;</span><br><span class="line">   <span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">Deleter</span>()</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="built_in">pthread_key_create</span>(&amp;pkey_, &amp;ThreadLocalSingleton::destructor);</span><br><span class="line">    &#125;</span><br><span class="line">    ~<span class="built_in">Deleter</span>()</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="built_in">pthread_key_delete</span>(pkey_);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">set</span><span class="params">(T* newObj)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">      <span class="built_in">pthread_setspecific</span>(pkey_, newObj);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="type">pthread_key_t</span> pkey_;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="type">static</span> __thread T* t_value_;</span><br><span class="line">  <span class="type">static</span> Deleter deleter_;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line">__thread T* ThreadLocalSingleton&lt;T&gt;::t_value_ = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">typename</span> ThreadLocalSingleton&lt;T&gt;::Deleter ThreadLocalSingleton&lt;T&gt;::deleter_;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+
+<p>使用时，<code>ThreadLocalSingleton&lt;MyClass&gt;::instance()</code> 即可获取 线程局部单例对象。</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://github.com/chenshuo/muduo">https://github.com/chenshuo/muduo</a></p>
+</blockquote>
+
+  </div>
   
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-09-04T00:46:30+08:00">2023-09-04</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/ROS1/">ROS1</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/ROS1/" itemprop="url"><span itemprop="name">ROS1</span></a>
-            </span>
-          
-        
-      </div>
+  
+    
+    <div class='footer'>
+       <!-- 参考资料、相关资料等 -->
       
-        <div>
-          <a class='readmore' href='/2023/09/04/ROS1/7-launch%E5%90%AF%E5%8A%A8%E8%8A%82%E7%82%B9/' itemprop="url">
-            阅读全文
-          </a>
+       <!-- 相关文章 -->
+      
+      <!-- 版权声明组件 -->
+      
+      <!-- 打赏组件 -->
+      
+        <div class='donate'>
+          <div class='imgs'>
+            
+              <img src='https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/%E8%B5%9E%E8%B5%8F%E7%A0%81.JPG'>
+            
+          </div>
         </div>
       
     </div>
-
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-07-12T18:19:08+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2024年7月12日</p>
+  </a>
 </div>
 
-          </div>
         
       
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2023/09/04/ROS1/6-param通信机制简汇/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-    <meta itemprop="description" content="个人博客">
-  </span>
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://xie-peiquan.gitee.io/2024/07/12/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/8-%E7%BA%BF%E7%A8%8B%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F/&title=8-线程局部变量 - PQ.XIE BLOG&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://xie-peiquan.gitee.io/2024/07/12/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/8-%E7%BA%BF%E7%A8%8B%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F/&title=8-线程局部变量 - PQ.XIE BLOG&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://xie-peiquan.gitee.io/2024/07/12/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/8-%E7%BA%BF%E7%A8%8B%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F/&title=8-线程局部变量 - PQ.XIE BLOG&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        
+        <div class='hoverbox'>
+          <a class='share'><img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/wechat.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/wechat.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></a>
+          <div class='target'>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZgAAAGYCAAAAABaUKuJAAAGAUlEQVR42u3cy47cMAwEwPn/n07uWRgim5QzwJZus/FDUunSaCOfP8ZXjo8tAGOAAWOAAWOAMY4wn3D8e//T79N13eeern/rOd3nl/cTDBgwYMCAAQMGDBgwZZhyACpOOP330wakB6P7/uo81t8PBgwYMGDAgAEDBgyYNsw0+FUXWH1fNbhtvTcNkmv7CQYMGDBgwIABAwYMmOsw1SD41gangfDt4gwMGDBgwIABAwYMGDD/P2BOg1h3Pt2AmAbabgEGBgwYMGDAgAEDBgyY92G6L54Gvu570vu2Pvzbfj8YMGDAgAEDBgwYMGBymDTA+b0biMGAAQMGjI0HAwYMGDBnmNtjCpwWYdOA2Q3Ma/sFBgwYMGDAgAEDBgyYI0x1QumHdunztwNwd77TYN09cGDAgAEDBgwYMGDAgKnD3Apg2wspL+wS5HZRtpb8wYABAwYMGDBgwID5xTBbC6oWTGmwu/387jqmBdsxYIIBAwYMGDBgwIABA+axKNua0DRApgVbGpTTwq8dHKvvAQMGDBgwYMCAAQMGTBtmGuzeCmjT+Ux/dw9YOeCCAQMGDBgwYMCAAQOmXJSlUNUAVQ1o6QK3DkIK0L3vGDDBgAEDBgwYMGDAgAFz7GPSQNQtpLqFVhUg3YitYnCr6AMDBgwYMGDAgAEDBky9j9l+cfe+FDYNnGkwnR7c4zzAgAEDBgwYMGDAgAFzhFn7UC2cULco+5aCrrzR3QMABgwYMGDAgAEDBgyYMkx1YtX7tgqxdEOnBdatAwcGDBgwYMCAAQMGDJg5zBSoO8EtuClI9/d0fuXrwIABAwYMGDBgwIABM4ZJC6wUqLpB6XvTIu72PoEBAwYMGDBgwIABA6YOMw2OKchW4OsWUmkhlx6M6v6AAQMGDBgwYMCAAQOmDtMtgqp/ny6gu0FpMZWuZ7ov5eQPBgwYMGDAgAEDBgyYY1GWBrjbIw2U0/WlRVx3/mDAgAEDBgwYMGDAgMlhtibYDWjTgqsLMF33tQ8ewYABAwYMGDBgwIABc4TZLsK6UNsF1HZQvTWfx+vBgAEDBgwYMGDAgAFzhKluWDVgpQtJF7413+66tgLv+IM/MGDAgAEDBgwYMGB+IUw38KXFWLe4mhZt6cZPg28X8Jj8wYABAwYMGDBgwIAB8xgwu0Ft+uFb9XnthTXnnX5QOL3+ERoMGDBgwIABAwYMGDBHmHaRc3nh02CXbtD0vjRIgwEDBgwYMGDAgAEDZg9mu0BKgdL5bBdz1fl0wX/8HQwYMGDAgAEDBgwYMG2Yrd9bwfUt8GlhuAUPBgwYMGDAgAEDBgyY/D+SSyfeLaSmgbE7r+0guQULBgwYMGDAgAEDBgyYOkwa5FLYT3FUC7np/Lvz24IGAwYMGDBgwIABAwbMHOZWAdT9EG97I6vPSz9gnAbtx6IMDBgwYMCAAQMGDBgw5e/KtgPedAHTADtdx/T57X0DAwYMGDBgwIABAwZMDJOCpRs7DbC3PuzbCrLl+8CAAQMGDBgwYMCAAbMGMwVJC69uobcNnhZm8QEAAwYMGDBgwIABAwbMEaZbCHWvSzd4Pbgt/70bQMGAAQMGDBgwYMCAAbMPsxUAp0VUCrf13BRmq5gDAwYMGDBgwIABAwZMH2a72EqLo61Cqxsku9dtHSwwYMCAAQMGDBgwYMDUYaYgt4q17gamByUtvqbjGDDBgAEDBgwYMGDAgAFzDJjp2Aqib70vDY7Tg1iePxgwYMCAAQMGDBgwYI4wWwHprWJqq1C7FhCnBwEMGDBgwIABAwYMGDBlmDTgVe+fFlPdgJl++Nd9bve+49/BgAEDBgwYMGDAgAHThnmraEoLrluBuHtA0nmBAQMGDBgwYMCAAQPm+2HSwDoNbv8roHb3oVyUgQEDBgwYMGDAgAEDZg1mWphtFW/VINhdd7vo+paACQYMGDBgwIABAwbML4LpBqLthXULqHS+3YPWDZrxwQQDBgwYMGDAgAEDBkwZZvrh2u3nbAfg6XzT57SLMjBgwIABAwYMGDBgwPyAMb5rgAFjgAFjgAFjgDEex1+g5ol5nXz68AAAAABJRU5ErkJggg==">
+          </div>
+        </div>
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+        
+      
+    </div>
+    <!-- Custom Files bottomMeta begin -->
+    
+    <!-- Custom Files bottomMeta end -->
+  </div>
+
+
   
   
+
   
+    <div class="prev-next">
+      
+      
+        <a class='next' href='/2024/07/06/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/7-%E7%AE%80%E5%8D%95%E7%9A%84CLI/'>
+          <p class='title'>7-简单的CLI<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>最近写了一个简单又好用的 CLI 程序，在这里分享出来。所谓的 CLI ，就是让我们的C++程序拥有命令行操作界面，类似于MySQL的命令行操作数据库。当你的程序复杂到一定程度，我想你可能需要一...</p>
+        </a>
+      
+    </div>
+  
+  <!-- Custom Files postEnd begin-->
+  
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> 
+  <!-- Custom Files postEnd end-->
+</article>
+
+
+  
+
+
+  <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+      <meta itemprop="discussionUrl" content="/2024/07/12/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/8-%E7%BA%BF%E7%A8%8B%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F/index.html#comments">
     </span>
-  
-  
+    <p ct><i class='fas fa-comments'></i> 评论区</p>
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/09/04/ROS1/6-param%E9%80%9A%E4%BF%A1%E6%9C%BA%E5%88%B6%E7%AE%80%E6%B1%87/"  itemprop="url">
-        6-param通信机制简汇
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        1 全局参数模型
 
-1.1 全局参数配置（CPP）1234567891011121314151617181920212223242526272829#include &lt;string&gt;#include &lt;ros/ros.h&gt;#include &lt;std_srvs/Empty.h&gt;int main(int argc, char **argv)&#123;	int...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-09-04T00:46:29+08:00">2023-09-04</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/ROS1/">ROS1</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/ROS1/" itemprop="url"><span itemprop="name">ROS1</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/09/04/ROS1/6-param%E9%80%9A%E4%BF%A1%E6%9C%BA%E5%88%B6%E7%AE%80%E6%B1%87/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
+    <div id="layoutHelper-comments"></div>
 
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2023/09/03/ROS1/5-service通信机制简汇/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-    <meta itemprop="description" content="个人博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/09/03/ROS1/5-service%E9%80%9A%E4%BF%A1%E6%9C%BA%E5%88%B6%E7%AE%80%E6%B1%87/"  itemprop="url">
-        5-service通信机制简汇
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        1 Client（CPP）123456789101112131415161718192021222324252627#include &lt;ros/ros.h&gt;#include &lt;turtlesim/Spawn.h&gt;int main(int argc, char** argv)&#123;    // 初始化ROS节点	ros::init(argc, argv, &quo...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-09-03T16:26:35+08:00">2023-09-03</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/ROS1/">ROS1</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/ROS1/" itemprop="url"><span itemprop="name">ROS1</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/09/03/ROS1/5-service%E9%80%9A%E4%BF%A1%E6%9C%BA%E5%88%B6%E7%AE%80%E6%B1%87/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2023/09/03/ROS1/4-topic通信机制简汇/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-    <meta itemprop="description" content="个人博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/09/03/ROS1/4-topic%E9%80%9A%E4%BF%A1%E6%9C%BA%E5%88%B6%E7%AE%80%E6%B1%87/"  itemprop="url">
-        4-topic通信机制简汇
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        1 Publisher（CPP）12345678910111213141516171819202122232425262728#include &lt;ros/ros.h&gt;#include &lt;geometry_msgs/Twist.h&gt;int main(int argc, char **argv)&#123;    // ROS节点初始化    ros::init(argc...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-09-03T16:26:35+08:00">2023-09-03</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/ROS1/">ROS1</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/ROS1/" itemprop="url"><span itemprop="name">ROS1</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/09/03/ROS1/4-topic%E9%80%9A%E4%BF%A1%E6%9C%BA%E5%88%B6%E7%AE%80%E6%B1%87/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2023/09/03/ROS1/3-ROS1快速开始/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-    <meta itemprop="description" content="个人博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/09/03/ROS1/3-ROS1%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B/"  itemprop="url">
-        3-ROS1快速开始
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        0 安装工作环境：x86_64 + ubuntu20.04 + ros-noetic
-12345678sudo mkdir /etc/apt/sources.list.d/sudo sh -c &#x27;echo &quot;deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main&quot; &gt; /etc/apt/...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-09-03T16:26:34+08:00">2023-09-03</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/ROS1/">ROS1</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/ROS1/" itemprop="url"><span itemprop="name">ROS1</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/09/03/ROS1/3-ROS1%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2023/09/03/ROS1/2-ROS1命令汇总/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-    <meta itemprop="description" content="个人博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/09/03/ROS1/2-ROS1%E5%91%BD%E4%BB%A4%E6%B1%87%E6%80%BB/"  itemprop="url">
-        2-ROS1命令汇总
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        
-命令一页纸：https://blog-images-submit.oss-cn-beijing.aliyuncs.com/ROS1/ROScheatsheet_catkin.pdf
-
-1 node相关命令rosnode listrosnode info &lt;node_name&gt;rosnode ping &lt;node_name&gt;rosnode ping –allrosno...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-09-03T16:26:34+08:00">2023-09-03</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/ROS1/">ROS1</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/ROS1/" itemprop="url"><span itemprop="name">ROS1</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/09/03/ROS1/2-ROS1%E5%91%BD%E4%BB%A4%E6%B1%87%E6%80%BB/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2023/09/03/ROS1/1-ROS概览/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-    <meta itemprop="description" content="个人博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/09/03/ROS1/1-ROS%E6%A6%82%E8%A7%88/"  itemprop="url">
-        1-ROS概览
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        ROS: Robot Operating SystemROS已经成为机器人领域的普遍标准.ROS包含：通信框架 + 开发工具 + 应用功能 + 生态系统开发工具包括：CLI命令，rqt，Rviz，TF-Tree，Gazebo仿真等等。应用功能包括：导航Navigation，建图SLAM，机械臂规划Movelt等等。生态系统包括：发行版，软件源，wiki，Blog等等。
-相关概念：节点（Nod...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-09-03T16:26:33+08:00">2023-09-03</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/ROS1/">ROS1</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/ROS1/" itemprop="url"><span itemprop="name">ROS1</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/09/03/ROS1/1-ROS%E6%A6%82%E8%A7%88/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2023/08/20/ROS2基础/7-ROS2 通信汇总(Python篇)/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-    <meta itemprop="description" content="个人博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/08/20/ROS2%E5%9F%BA%E7%A1%80/7-ROS2%20%E9%80%9A%E4%BF%A1%E6%B1%87%E6%80%BB(Python%E7%AF%87)/"  itemprop="url">
-        7-ROS2通信汇总(Python篇)
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        1 topic发布与订阅发布端接口：
-12publisher_ = node.create_publisher(msg_type,&quot;topic_name&quot;, 10) publisher_.publish(msg) 
-
-订阅者接口：
-1subscribe_ = node.create_subscription(msg_type, &quot;topic_name&quot;...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-08-20T17:29:20+08:00">2023-08-20</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/ROS2%E5%9F%BA%E7%A1%80/">ROS2基础</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/ROS2%E5%9F%BA%E7%A1%80/" itemprop="url"><span itemprop="name">ROS2基础</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/08/20/ROS2%E5%9F%BA%E7%A1%80/7-ROS2%20%E9%80%9A%E4%BF%A1%E6%B1%87%E6%80%BB(Python%E7%AF%87)/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2023/08/20/ROS2基础/6-ROS2 接口介绍/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-    <meta itemprop="description" content="个人博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/08/20/ROS2%E5%9F%BA%E7%A1%80/6-ROS2%20%E6%8E%A5%E5%8F%A3%E4%BB%8B%E7%BB%8D/"  itemprop="url">
-        6-ROS2 接口介绍
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        ROS2提供了四种通信方式，包括：话题（topic）、服务（service）、动作（action）和 参数（parameter）。通信会涉及到接口，我们可以通过 ros2 interface list 列出ROS2提供的所有接口，通过 ros2 interface show &lt;interface_name&gt; 或  ros2 interface proto &lt;message_...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-08-20T17:29:20+08:00">2023-08-20</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/ROS2%E5%9F%BA%E7%A1%80/">ROS2基础</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/ROS2%E5%9F%BA%E7%A1%80/" itemprop="url"><span itemprop="name">ROS2基础</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/08/20/ROS2%E5%9F%BA%E7%A1%80/6-ROS2%20%E6%8E%A5%E5%8F%A3%E4%BB%8B%E7%BB%8D/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2023/08/20/ROS2基础/5-ROS2创建第一个节点/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-    <meta itemprop="description" content="个人博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/08/20/ROS2%E5%9F%BA%E7%A1%80/5-ROS2%E5%88%9B%E5%BB%BA%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%8A%82%E7%82%B9/"  itemprop="url">
-        5-ROS2创建第一个节点
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        1 创建cpp节点1.1 创建工作空间1mkdir -p workspace/src/
-
-1.2 创建功能包12cd workspace/srcros2 pkg create example_cpp --build-type ament_cmake --dependencies rclcpp
-
-此时可以看到ROS2为我们创建了example_cpp文件夹，且该文件夹下包含include、sr...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-08-20T17:29:19+08:00">2023-08-20</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/ROS2%E5%9F%BA%E7%A1%80/">ROS2基础</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/ROS2%E5%9F%BA%E7%A1%80/" itemprop="url"><span itemprop="name">ROS2基础</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/08/20/ROS2%E5%9F%BA%E7%A1%80/5-ROS2%E5%88%9B%E5%BB%BA%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%8A%82%E7%82%B9/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-
-  
-
-</div>
-
-          </div>
-        
-      
-    
-  </section>
-  
-    
-      <br>
-      <div class="prev-next">
-        
-          <a class="prev" rel="prev" href="/archives/2023/page/2/">
-            <section class="post prev white-box shadow floatable blur" >
-              <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页&nbsp;
-            </section>
-          </a>
-        
-        <p class="current">
-          3 / 4
-        </p>
-        
-          <a class="next" rel="next" href="/archives/2023/page/4/">
-            <section class="post next white-box shadow floatable blur">
-              &nbsp;下一页&nbsp;<i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
-            </section>
-          </a>
-        
-      </div>
-    
-  
+  </article>
 
 
-	
+
+
+
+
 </div>
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   
@@ -3285,252 +2880,48 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       
-<section class="widget blogger desktop mobile pjax">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box circle' href='/about/'>
-          <img no-lazy src='https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/touxiang.jpg'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-        
-          <p>在熟悉的异乡我将自己一年年流放，穿过鲜花走过荆棘只为自由之地</p>
-
-        
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:212951692@qq.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://gitee.com/xie-peiquan"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://t1.kugou.com/dER5jedBdV2"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
-
-    
-  
-
-  
-    
-    
-      
-  
-  <section class="widget category desktop mobile pjax">
-    
-  <header>
-    
-      <a href='/categories/'><i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/C-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/" href="/categories/C-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/"
-            active-action="action-categoriesC-E5B9B6E58F91E7BC96E7A88BE59FBAE7A180"
-            ><div class='name'>C++并发编程基础</div><div class='badge'>(9)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/C-%E9%82%A3%E4%BA%9B%E4%BA%8B/" href="/categories/C-%E9%82%A3%E4%BA%9B%E4%BA%8B/"
-            active-action="action-categoriesC-E982A3E4BA9BE4BA8B"
-            ><div class='name'>C++那些事</div><div class='badge'>(9)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Pytorch%E5%9F%BA%E7%A1%80/" href="/categories/Pytorch%E5%9F%BA%E7%A1%80/"
-            active-action="action-categoriesPytorchE59FBAE7A180"
-            ><div class='name'>Pytorch基础</div><div class='badge'>(5)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/ROS1/" href="/categories/ROS1/"
-            active-action="action-categoriesROS1"
-            ><div class='name'>ROS1</div><div class='badge'>(12)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/ROS2%E5%9F%BA%E7%A1%80/" href="/categories/ROS2%E5%9F%BA%E7%A1%80/"
-            active-action="action-categoriesROS2E59FBAE7A180"
-            ><div class='name'>ROS2基础</div><div class='badge'>(7)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%BB%BA%E7%AB%99/" href="/categories/%E5%BB%BA%E7%AB%99/"
-            active-action="action-categoriesE5BBBAE7AB99"
-            ><div class='name'>建站</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"
-            active-action="action-categoriesE695B0E68DAEE5BA93"
-            ><div class='name'>数据库</div><div class='badge'>(6)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%B7%B7%E5%90%88%E7%BC%96%E7%A8%8B/" href="/categories/%E6%B7%B7%E5%90%88%E7%BC%96%E7%A8%8B/"
-            active-action="action-categoriesE6B7B7E59088E7BC96E7A88B"
-            ><div class='name'>混合编程</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E9%9F%B3%E4%B9%90/" href="/categories/%E9%9F%B3%E4%B9%90/"
-            active-action="action-categoriesE99FB3E4B990"
-            ><div class='name'>音乐</div><div class='badge'>(1)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
-
-
-    
-  
-
-  
-    
-    
-      
-<section class="widget desktop pjax">
-  
-  <header>
-    
-      <i class="fa-solid fa-award fa-fw" aria-hidden="true"></i><span class='name'>站点信息</span>
-    
-  </header>
-
-
-  <div class='content'>
-    <div class="webinfo">
-      
-        <div class="webinfo-item">
-          <div>文章数目：</div>
-          <div>52 篇</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>已运行时间：</div>
-          <div id="webinfo-runtime-count"></div>
-        </div>
-      
-
-
-      
-        <div class="webinfo-item">
-          <div>本站总字数：</div>
-          <div>59k 字</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>本站访客数：</div>
-          
-          <div><span id="busuanzi_value_site_uv"><i class="fa-solid fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 人</div>
-          
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>本站总访问量：</div>
-          
-          <div><span id="busuanzi_value_site_pv"><i class="fa-solid fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 次</div>
-          
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>最后活动时间：</div>
-          <div id="last-update-show">2024-07-12 日</div>
-        </div>
-      
-    </div>
-  </div>
-</section>
-
-    
-  
-
-  
-    
-    
-      
-
-  <section class='widget desktop  music'>
-    
-
-    <div class='content'>
-      
-
-  
-    <meting-js
-      theme='#1BCDFC'
-      autoplay='false'
-      volume='0.7'
-      loop='all'
-      order='random'
-      fixed='false'
-      list-max-height='320px'
-      server='netease'
-      type='playlist'
-      id='8080945868'
-      list-folded='true'>
-    </meting-js>
-  
-
-
-    </div>
-  </section>
-
-
     
   
 
 
 <div class="widget-sticky pjax">
 
+  
+  
+
+
+  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
+    
+  <header>
+    
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%BA%BF%E7%A8%8B%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F"><span class="toc-text">1 线程局部变量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-POD-%E7%BA%BF%E7%A8%8B%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F"><span class="toc-text">1.1 POD 线程局部变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-class-%E7%BA%BF%E7%A8%8B%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F"><span class="toc-text">1.2 class 线程局部变量</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E7%BA%BF%E7%A8%8B%E5%B1%80%E9%83%A8%E5%8D%95%E4%BE%8B%E5%AF%B9%E8%B1%A1"><span class="toc-text">2 线程局部单例对象</span></a></li></ol>
+    </div>
+  </section>
+
+  
+
 </div>
 
 
 <!-- 没有 pjax 占位会报错 万恶的 pjax -->
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
 
   <div class="pjax">
     <!-- pjax占位 -->
@@ -3558,13 +2949,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </aside>
 
 
+
           <!--此文件用来存放一些不方便取值的变量-->
 <!--思路大概是将值藏到重加载的区域内-->
 
 <pjax>
 <script>
   window.pdata={}
-  pdata.ispage=false;
+  pdata.ispage=true;
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -3573,14 +2965,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     // header
     var l_header=document.getElementById("l_header");
     
-    l_header.classList.remove("show");
+    l_header.classList.add("show");
     
     
       // cover
       var cover_wrapper=document.querySelector('#l_cover .cover-wrapper');
       var scroll_down=document.getElementById('scroll-down');
-      cover_wrapper.id="half";
-      cover_wrapper.style.display="";
+      cover_wrapper.id="none";
+      cover_wrapper.style.display="none";
       scroll_down.style.display="none";
     
   
@@ -4564,7 +3956,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://xie-peiquan.gitee.io/","name":"PQ.XIE BLOG"}},{"@type":"ListItem","position":2,"item":{"@id":"https://xie-peiquan.gitee.io/archives/","name":"Archive"}},{"@type":"ListItem","position":3,"item":{"@id":"https://xie-peiquan.gitee.io/archives/2023/","name":"2023年"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","keywords":"日常唠嗑","description":"个人博客","author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","description":"个人博客"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://xie-peiquan.gitee.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"个人博客","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://xie-peiquan.gitee.io/","name":"PQ.XIE BLOG"}},{"@type":"ListItem","position":2,"item":{"@id":"https://xie-peiquan.gitee.io/categories/C-那些事/","name":"C++那些事"}},{"@type":"ListItem","position":3,"item":{"@id":"https://xie-peiquan.gitee.io/2024/07/12/C++那些事/8-线程局部变量/","name":"8-线程局部变量"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","keywords":"日常唠嗑","description":"个人博客","author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","description":"个人博客"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://xie-peiquan.gitee.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"8-线程局部变量","description":"个人博客","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://xie-peiquan.gitee.io/2024/07/12/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/8-%E7%BA%BF%E7%A8%8B%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F/"},"author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://xie-peiquan.gitee.io/2024/07/12/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/8-%E7%BA%BF%E7%A8%8B%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F/","wordCount":0,"datePublished":"2024-07-12T10:19:08.761Z","dateModified":"2024-07-12T10:19:08.821Z","articleSection":"C++那些事","keywords":"线程局部变量","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
