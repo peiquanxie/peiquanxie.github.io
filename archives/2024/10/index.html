@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="https://xie-peiquan.gitee.io/tags/cli程序/"/>
+  <link rel="canonical" href="https://xie-peiquan.gitee.io/archives/2024/10/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -34,13 +34,13 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>标签：CLI程序 - PQ.XIE BLOG</title>
+  <title>归档：2024/10 - PQ.XIE BLOG</title>
   <meta name="keywords" content="日常唠嗑">
   <meta desc name="description" content="个人博客 - PQ.XIE - PQ.XIE BLOG">
   
 <meta property="og:type" content="website">
 <meta property="og:title" content="PQ.XIE BLOG">
-<meta property="og:url" content="https://xie-peiquan.gitee.io/tags/CLI%E7%A8%8B%E5%BA%8F/index.html">
+<meta property="og:url" content="https://xie-peiquan.gitee.io/archives/2024/10/index.html">
 <meta property="og:site_name" content="PQ.XIE BLOG">
 <meta property="og:description" content="个人博客">
 <meta property="og:locale" content="zh_CN">
@@ -2234,7 +2234,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <!-- Custom Files bodyBegin end-->
     <!-- front-matter body_begin begin -->
     <!-- front-matter body_begin end -->
-    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur show" style='opacity: 0' >
+    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur " style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -2503,7 +2503,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="none" class='cover-wrapper  search' style="display: none;">
+      <div id="half" class='cover-wrapper  search' style="display: ;">
         
   <div class='cover-bg lazyload placeholder' data-bg="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/background.jpeg"></div>
 
@@ -2580,11 +2580,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div id="safearea">
         <div class="body-wrapper">
           
-
 <div id="l_main" class=''>
-  
-    
-      
+	
+		
   <section class="post-list">
     
       
@@ -2598,7 +2596,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2024/07/06/C++那些事/7-简单的CLI/">
+  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2024/10/07/STL源码笔记/4-迭代器&序列式容器/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="PQ.XIE BLOG">
   </span>
@@ -2616,17 +2614,17 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2024/07/06/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/7-%E7%AE%80%E5%8D%95%E7%9A%84CLI/"  itemprop="url">
-        7-简单的CLI
+      <a href="/2024/10/07/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/4-%E8%BF%AD%E4%BB%A3%E5%99%A8&%E5%BA%8F%E5%88%97%E5%BC%8F%E5%AE%B9%E5%99%A8/"  itemprop="url">
+        4-迭代器&序列式容器
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        最近写了一个简单又好用的 CLI 程序，在这里分享出来。所谓的 CLI ，就是让我们的C++程序拥有命令行操作界面，类似于MySQL的命令行操作数据库。当你的程序复杂到一定程度，我想你可能需要一些诊断命令来查看程序的运行状态，抑或是通过命令来临时设置一些变量（比如：动态设置日志打印等级）。或许有一些框架已经具备以上功能，但简单实现这个并不难，以下是具体的分析和实现。
-1 需求分析
-拥有命令行...
+        1 容器的分类STL容器从内存结构上可分为序列式容器和关联性容器，序列式容器更关注于快速存取，而关联性容器更关注于快速查找。两大类容器分支又有一些内含关系，具体如下。
+
+2 list先从简单的链表说起，以说明容器与迭代器的关系。每个容器都有自己的专属迭代器，正是迭代器的出现，帮助容器屏蔽了内存存储上的差异。list的结构和源码如下，由于侯捷先生的胶片展示的不能再清晰，这里不做更多解释。（懒得...
       
     
   </div>
@@ -2634,20 +2632,20 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2024-07-06T18:28:38+08:00">2024-07-06</time>
+        <time itemprop="dateCreated datePublished" datetime="2024-10-07T21:04:46+08:00">2024-10-07</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/C-%E9%82%A3%E4%BA%9B%E4%BA%8B/">C++那些事</a>
+          <a class="category-link" href="/categories/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/">STL源码笔记</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/C-%E9%82%A3%E4%BA%9B%E4%BA%8B/" itemprop="url"><span itemprop="name">C++那些事</span></a>
+              <a href="/categories/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/" itemprop="url"><span itemprop="name">STL源码笔记</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2024/07/06/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/7-%E7%AE%80%E5%8D%95%E7%9A%84CLI/' itemprop="url">
+          <a class='readmore' href='/2024/10/07/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/4-%E8%BF%AD%E4%BB%A3%E5%99%A8&%E5%BA%8F%E5%88%97%E5%BC%8F%E5%AE%B9%E5%99%A8/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -2668,8 +2666,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
 
 
-    
-  
+	
 </div>
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   
@@ -2971,14 +2968,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     // header
     var l_header=document.getElementById("l_header");
     
-    l_header.classList.add("show");
+    l_header.classList.remove("show");
     
     
       // cover
       var cover_wrapper=document.querySelector('#l_cover .cover-wrapper');
       var scroll_down=document.getElementById('scroll-down');
-      cover_wrapper.id="none";
-      cover_wrapper.style.display="none";
+      cover_wrapper.id="half";
+      cover_wrapper.style.display="";
       scroll_down.style.display="none";
     
   
@@ -3980,7 +3977,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://xie-peiquan.gitee.io/","name":"PQ.XIE BLOG"}},{"@type":"ListItem","position":2,"item":{"@id":"https://xie-peiquan.gitee.io/tags/CLI程序/","name":"CLI程序"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","keywords":"日常唠嗑","description":"个人博客","author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","description":"个人博客"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://xie-peiquan.gitee.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"个人博客","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://xie-peiquan.gitee.io/","name":"PQ.XIE BLOG"}},{"@type":"ListItem","position":2,"item":{"@id":"https://xie-peiquan.gitee.io/archives/","name":"Archive"}},{"@type":"ListItem","position":3,"item":{"@id":"https://xie-peiquan.gitee.io/archives/2024/","name":"2024年"}},{"@type":"ListItem","position":4,"item":{"@id":"https://xie-peiquan.gitee.io/archives/2024/10/","name":"10月"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","keywords":"日常唠嗑","description":"个人博客","author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","description":"个人博客"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://xie-peiquan.gitee.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"个人博客","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

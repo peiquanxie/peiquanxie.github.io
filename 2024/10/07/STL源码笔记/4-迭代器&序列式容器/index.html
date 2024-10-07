@@ -5,8 +5,8 @@
   <meta name="Volantis" content="5.8.0">
   <meta charset="utf-8">
   <!-- SEO相关 -->
-  <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="https://xie-peiquan.gitee.io/tags/cli程序/"/>
+  
+  <link rel="canonical" href="https://xie-peiquan.gitee.io/2024/10/07/stl源码笔记/4-迭代器&序列式容器/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -34,19 +34,21 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>标签：CLI程序 - PQ.XIE BLOG</title>
-  <meta name="keywords" content="日常唠嗑">
+  <title>4-迭代器&序列式容器 - PQ.XIE BLOG</title>
+  <meta name="keywords" content="STL,日常唠嗑">
   <meta desc name="description" content="个人博客 - PQ.XIE - PQ.XIE BLOG">
   
-<meta property="og:type" content="website">
-<meta property="og:title" content="PQ.XIE BLOG">
-<meta property="og:url" content="https://xie-peiquan.gitee.io/tags/CLI%E7%A8%8B%E5%BA%8F/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="4-迭代器&amp;序列式容器">
+<meta property="og:url" content="https://xie-peiquan.gitee.io/2024/10/07/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/4-%E8%BF%AD%E4%BB%A3%E5%99%A8&%E5%BA%8F%E5%88%97%E5%BC%8F%E5%AE%B9%E5%99%A8/index.html">
 <meta property="og:site_name" content="PQ.XIE BLOG">
-<meta property="og:description" content="个人博客">
+<meta property="og:description" content="1 容器的分类STL容器从内存结构上可分为序列式容器和关联性容器，序列式容器更关注于快速存取，而关联性容器更关注于快速查找。两大类容器分支又有一些内含关系，具体如下。  2 list先从简单的链表说起，以说明容器与迭代器的关系。每个容器都有自己的专属迭代器，正是迭代器的出现，帮助容器屏蔽了内存存储上的差异。list的结构和源码如下，由于侯捷先生的胶片展示的不能再清晰，这里不做更多解释。（懒得打字:">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+<meta property="article:published_time" content="2024-10-07T13:04:46.369Z">
+<meta property="article:modified_time" content="2024-10-07T13:04:46.425Z">
 <meta property="article:author" content="PQ.XIE">
-<meta property="article:tag" content="日常唠嗑">
+<meta property="article:tag" content="STL">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -2503,7 +2505,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="none" class='cover-wrapper  search' style="display: none;">
+      <div id="none" class='cover-wrapper post search' style="display: none;">
         
   <div class='cover-bg lazyload placeholder' data-bg="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/background.jpeg"></div>
 
@@ -2580,25 +2582,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div id="safearea">
         <div class="body-wrapper">
           
-
 <div id="l_main" class=''>
-  
-    
-      
-  <section class="post-list">
-    
-      
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2024/07/06/C++那些事/7-简单的CLI/">
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2024/10/07/STL源码笔记/4-迭代器&序列式容器/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="PQ.XIE BLOG">
   </span>
@@ -2607,69 +2593,302 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <meta itemprop="description" content="个人博客">
   </span>
   
-  
+
+
   
     <span hidden>
       <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
     </span>
   
-  
+  <div class="article-meta" id="top">
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2024/07/06/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/7-%E7%AE%80%E5%8D%95%E7%9A%84CLI/"  itemprop="url">
-        7-简单的CLI
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
     
+    
+      <h1 class="title" itemprop="name headline">
+        4-迭代器&序列式容器
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' href="/" rel="nofollow">
+    <img itemprop="image" src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/202307251013361.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/202307251013361.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    <p itemprop="name">PQ.XIE</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/STL/" rel="nofollow"><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><p>STL</p></a></div>
+  <span hidden itemprop="keywords">STL</span>
+
+
+          
+        
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2024-10-07T21:04:46+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>2024年10月7日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：818 字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：3 分钟</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+
+
+<div class="new-meta-item browse">
+  <a class='notlink'>
+    <p>
+      <i class="fa-solid fa-eye fa-fw" aria-hidden="true"></i>
       
-        最近写了一个简单又好用的 CLI 程序，在这里分享出来。所谓的 CLI ，就是让我们的C++程序拥有命令行操作界面，类似于MySQL的命令行操作数据库。当你的程序复杂到一定程度，我想你可能需要一些诊断命令来查看程序的运行状态，抑或是通过命令来临时设置一些变量（比如：动态设置日志打印等级）。或许有一些框架已经具备以上功能，但简单实现这个并不难，以下是具体的分析和实现。
-1 需求分析
-拥有命令行...
+      <span id="busuanzi_value_page_pv"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
       
+      <span>次</span>
+    </p>
+  </a>
+</div>
+
+
+          
+        
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
+      </div>
     
   </div>
+
+
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    <h2 id="1-容器的分类"><a href="#1-容器的分类" class="headerlink" title="1 容器的分类"></a>1 容器的分类</h2><p>STL容器从内存结构上可分为序列式容器和关联性容器，序列式容器更关注于快速存取，而关联性容器更关注于快速查找。两大类容器分支又有一些内含关系，具体如下。</p>
+<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241002211318872.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241002211318872.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241002211318872"></p>
+<h2 id="2-list"><a href="#2-list" class="headerlink" title="2 list"></a>2 list</h2><p>先从简单的链表说起，以说明容器与迭代器的关系。每个容器都有自己的专属迭代器，正是迭代器的出现，帮助容器屏蔽了内存存储上的差异。list的结构和源码如下，由于侯捷先生的胶片展示的不能再清晰，这里不做更多解释。（懒得打字:joy:）</p>
+<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241002211402034.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241002211402034.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241002211402034"></p>
+<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241002211443476.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241002211443476.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241002211443476"></p>
+<ul>
+<li><p>list是个双向的环状链表，为了实现前闭后开区间，其拥有dummy_node。list初始化时begin()和end()均指向这个dummy_node.</p>
+</li>
+<li><p>list类只有一个成员，其是指向节点（__list_node）的指针。那么，list的size函数时间复杂度是多少？答：C++98，O(n); C++11，O(1).</p>
+</li>
+</ul>
+<h2 id="3-Iterator"><a href="#3-Iterator" class="headerlink" title="3 Iterator"></a>3 Iterator</h2><p>所有的 Iterator 都要有以下的五个属性（typedef）, 以适配 algorithm 的查询。如 __list_iterator 的定义：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> <span class="title class_">T</span>,<span class="keyword">class</span> <span class="title class_">Ref</span>, <span class="keyword">class</span> <span class="title class_">Ptr</span>&gt;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">__list_iterator</span> &#123;</span><br><span class="line"><span class="keyword">typedef</span> bidirectional_iterator_tag \</span><br><span class="line">    	iterator_category;</span><br><span class="line"><span class="keyword">typedef</span> T value_type;</span><br><span class="line"><span class="keyword">typedef</span> Ptr pointer;</span><br><span class="line"><span class="keyword">typedef</span> Ref reference;</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">ptrdiff_t</span> difference_type;</span><br><span class="line">...</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>那 algorithm 如何获取 Iterator 的以上属性？利用 Iterator_traits，迭代器萃取代码如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">typename</span> iterator_traits&lt;_Iter&gt;::value_type _ValueType;</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-Iterator-traits"><a href="#4-Iterator-traits" class="headerlink" title="4 Iterator_traits"></a>4 Iterator_traits</h2><p>为什么需要要用到 traits ? 直接获取迭代器的属性不行吗？因为裸指针也是一种特殊的迭代器啊，不能放弃它。所以traits相当于是一个中间类，把迭代器与裸指针的属性给拿出来，放到一个新的结构体中，屏蔽迭代器与裸指针的区别。</p>
+<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241003171624551.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241003171624551.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241003171624551"></p>
+<p>那么对于裸指针，traits如何萃取？如下，其用到了偏特化的技术，对<code>T*</code> 和 <code>const T*</code> 分别做特殊处理，构造出五个必要属性放到结构体中去。</p>
+<img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241003172122923.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241003172122923.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241003172122923" style="zoom: 67%;" />
+
+<h2 id="5-vector"><a href="#5-vector" class="headerlink" title="5 vector"></a>5 vector</h2><p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241007152053927.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241007152053927.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241007152053927"></p>
+<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241007154727215.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241007154727215.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241007154727215"></p>
+<ul>
+<li>由于vector的空间会发生成长，新增元素时可能会发生大量的拷贝。如何避免？在vector初始化时，预留空间大小（reserve函数）。</li>
+<li>由于vector是连续空间容器，其迭代器类型是random_access类型，可以是普通指针，iterator_tarits萃取时走的是偏特化路径。</li>
+</ul>
+<h2 id="6-array"><a href="#6-array" class="headerlink" title="6 array"></a>6 array</h2><p>array可以认为是对C数组的包装，此容器的出现是为了让传统数组适配 STL 规则。</p>
+<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241007163222508.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241007163222508.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241007163222508"></p>
+<p>array的迭代器类型也是random_access类型，可以是普通指针。</p>
+<h2 id="7-deque"><a href="#7-deque" class="headerlink" title="7 deque"></a>7 deque</h2><p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241007184901354.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241007184901354.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241007184901354"></p>
+<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241007185200845.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241007185200845.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241007185200845"></p>
+<ul>
+<li>deque是一个分段连续的双向队列，为了维持“连续”的假象，需要控制中心（vector）和迭代器的支撑。</li>
+<li>BufSiz指的是每个buffer容纳的元素的的个数，当没有指定时，按 <code>sz&lt;512 ? size_t(sz / 512) : size_t(1)</code> 计算。</li>
+</ul>
+<p>deque是如何模拟连续空间的呢？全靠迭代器的操作符重载，如下：</p>
+<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241007195752310.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241007195752310.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241007195752310"></p>
+<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241007200456031.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241007200456031.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241007200456031"></p>
+<h2 id="8-queue-stack"><a href="#8-queue-stack" class="headerlink" title="8 queue &amp; stack"></a>8 queue &amp; stack</h2><p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241007201745424.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241007201745424.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241007201745424"></p>
+<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241007201758012.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241007201758012.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241007201758012"></p>
+<ul>
+<li>技术上，queue 和 stack 不是真正的容器，而是一个包装了 deque 的适配器。</li>
+<li>queue 和 stack 都不允许遍历，且都不提供迭代器。如果对遍历有要求，请转而使用deque.</li>
+<li>queue 和 stack 可以指定 list 或 deque 作为底层容器；stack可以指定vector作为底层容器，但是queue不可以。</li>
+</ul>
+<blockquote>
+<p>《STL源码剖析》侯捷</p>
+</blockquote>
+
+  </div>
   
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2024-07-06T18:28:38+08:00">2024-07-06</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/C-%E9%82%A3%E4%BA%9B%E4%BA%8B/">C++那些事</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/C-%E9%82%A3%E4%BA%9B%E4%BA%8B/" itemprop="url"><span itemprop="name">C++那些事</span></a>
-            </span>
-          
-        
-      </div>
+  
+    
+    <div class='footer'>
+       <!-- 参考资料、相关资料等 -->
       
-        <div>
-          <a class='readmore' href='/2024/07/06/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/7-%E7%AE%80%E5%8D%95%E7%9A%84CLI/' itemprop="url">
-            阅读全文
-          </a>
+       <!-- 相关文章 -->
+      
+      <!-- 版权声明组件 -->
+      
+      <!-- 打赏组件 -->
+      
+        <div class='donate'>
+          <div class='imgs'>
+            
+              <img src='https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/%E8%B5%9E%E8%B5%8F%E7%A0%81.JPG'>
+            
+          </div>
         </div>
       
     </div>
-
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-10-07T21:04:46+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2024年10月7日</p>
+  </a>
 </div>
 
-          </div>
         
       
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
-  </section>
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://xie-peiquan.gitee.io/2024/10/07/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/4-%E8%BF%AD%E4%BB%A3%E5%99%A8&%E5%BA%8F%E5%88%97%E5%BC%8F%E5%AE%B9%E5%99%A8/&title=4-迭代器&序列式容器 - PQ.XIE BLOG&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://xie-peiquan.gitee.io/2024/10/07/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/4-%E8%BF%AD%E4%BB%A3%E5%99%A8&%E5%BA%8F%E5%88%97%E5%BC%8F%E5%AE%B9%E5%99%A8/&title=4-迭代器&序列式容器 - PQ.XIE BLOG&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://xie-peiquan.gitee.io/2024/10/07/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/4-%E8%BF%AD%E4%BB%A3%E5%99%A8&%E5%BA%8F%E5%88%97%E5%BC%8F%E5%AE%B9%E5%99%A8/&title=4-迭代器&序列式容器 - PQ.XIE BLOG&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        
+        <div class='hoverbox'>
+          <a class='share'><img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/wechat.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/wechat.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></a>
+          <div class='target'>
+            <img src="data:image/png;base64,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">
+          </div>
+        </div>
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+        
+      
+    </div>
+    <!-- Custom Files bottomMeta begin -->
+    
+    <!-- Custom Files bottomMeta end -->
+  </div>
+
+
   
-    
+  
+
+  
+    <div class="prev-next">
+      
+      
+        <a class='next' href='/2024/09/28/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/3-STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0-%E5%88%86%E9%85%8D%E5%99%A8/'>
+          <p class='title'>3-STL源码笔记-分配器<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>1 内存的申请和释放C++内存管理的都是堆（Heap）内存，C++中全局的内存申请和释放函数是 operator new和 operator delete可以被重载（但不推荐）.
+operato...</p>
+        </a>
+      
+    </div>
+  
+  <!-- Custom Files postEnd begin-->
+  
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> 
+  <!-- Custom Files postEnd end-->
+</article>
+
+
   
 
 
+  <article class="post white-box shadow floatable blur" id="comments">
+    <span hidden>
+      <meta itemprop="discussionUrl" content="/2024/10/07/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/4-%E8%BF%AD%E4%BB%A3%E5%99%A8&%E5%BA%8F%E5%88%97%E5%BC%8F%E5%AE%B9%E5%99%A8/index.html#comments">
+    </span>
+    <p ct><i class='fas fa-comments'></i> 评论区</p>
     
-  
+
+    <div id="layoutHelper-comments"></div>
+
+  </article>
+
+
+
+
+
+
 </div>
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   
@@ -2678,257 +2897,48 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       
-<section class="widget blogger desktop mobile pjax">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box circle' href='/about/'>
-          <img no-lazy src='https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/touxiang.jpg'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-        
-          <p>在熟悉的异乡我将自己一年年流放，穿过鲜花走过荆棘只为自由之地</p>
-
-        
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="mailto:212951692@qq.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://space.bilibili.com/408812449"
-              class="social fa-brands fa-bilibili flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://gitee.com/xie-peiquan"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://music.163.com/#/playlist?id=61676459"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
-
-    
-  
-
-  
-    
-    
-      
-  
-  <section class="widget category desktop mobile pjax">
-    
-  <header>
-    
-      <a href='/categories/'><i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/C-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/" href="/categories/C-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/"
-            active-action="action-categoriesC-E5B9B6E58F91E7BC96E7A88BE59FBAE7A180"
-            ><div class='name'>C++并发编程基础</div><div class='badge'>(9)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/C-%E9%82%A3%E4%BA%9B%E4%BA%8B/" href="/categories/C-%E9%82%A3%E4%BA%9B%E4%BA%8B/"
-            active-action="action-categoriesC-E982A3E4BA9BE4BA8B"
-            ><div class='name'>C++那些事</div><div class='badge'>(9)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Pytorch%E5%9F%BA%E7%A1%80/" href="/categories/Pytorch%E5%9F%BA%E7%A1%80/"
-            active-action="action-categoriesPytorchE59FBAE7A180"
-            ><div class='name'>Pytorch基础</div><div class='badge'>(5)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/ROS1/" href="/categories/ROS1/"
-            active-action="action-categoriesROS1"
-            ><div class='name'>ROS1</div><div class='badge'>(12)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/ROS2%E5%9F%BA%E7%A1%80/" href="/categories/ROS2%E5%9F%BA%E7%A1%80/"
-            active-action="action-categoriesROS2E59FBAE7A180"
-            ><div class='name'>ROS2基础</div><div class='badge'>(7)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/" href="/categories/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/"
-            active-action="action-categoriesSTLE6BA90E7A081E7AC94E8AEB0"
-            ><div class='name'>STL源码笔记</div><div class='badge'>(4)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%BB%BA%E7%AB%99/" href="/categories/%E5%BB%BA%E7%AB%99/"
-            active-action="action-categoriesE5BBBAE7AB99"
-            ><div class='name'>建站</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"
-            active-action="action-categoriesE695B0E68DAEE5BA93"
-            ><div class='name'>数据库</div><div class='badge'>(6)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%B7%B7%E5%90%88%E7%BC%96%E7%A8%8B/" href="/categories/%E6%B7%B7%E5%90%88%E7%BC%96%E7%A8%8B/"
-            active-action="action-categoriesE6B7B7E59088E7BC96E7A88B"
-            ><div class='name'>混合编程</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E9%9F%B3%E4%B9%90/" href="/categories/%E9%9F%B3%E4%B9%90/"
-            active-action="action-categoriesE99FB3E4B990"
-            ><div class='name'>音乐</div><div class='badge'>(1)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
-
-
-    
-  
-
-  
-    
-    
-      
-<section class="widget desktop pjax">
-  
-  <header>
-    
-      <i class="fa-solid fa-award fa-fw" aria-hidden="true"></i><span class='name'>站点信息</span>
-    
-  </header>
-
-
-  <div class='content'>
-    <div class="webinfo">
-      
-        <div class="webinfo-item">
-          <div>文章数目：</div>
-          <div>56 篇</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>已运行时间：</div>
-          <div id="webinfo-runtime-count"></div>
-        </div>
-      
-
-
-      
-        <div class="webinfo-item">
-          <div>本站总字数：</div>
-          <div>61.7k 字</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>本站访客数：</div>
-          
-          <div><span id="busuanzi_value_site_uv"><i class="fa-solid fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 人</div>
-          
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>本站总访问量：</div>
-          
-          <div><span id="busuanzi_value_site_pv"><i class="fa-solid fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 次</div>
-          
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>最后活动时间：</div>
-          <div id="last-update-show">2024-10-07 日</div>
-        </div>
-      
-    </div>
-  </div>
-</section>
-
-    
-  
-
-  
-    
-    
-      
-
-  <section class='widget desktop  music'>
-    
-
-    <div class='content'>
-      
-
-  
-    <meting-js
-      theme='#1BCDFC'
-      autoplay='false'
-      volume='0.7'
-      loop='all'
-      order='random'
-      fixed='false'
-      list-max-height='320px'
-      server='netease'
-      type='playlist'
-      id='8822642200'
-      list-folded='true'>
-    </meting-js>
-  
-
-
-    </div>
-  </section>
-
-
     
   
 
 
 <div class="widget-sticky pjax">
 
+  
+  
+
+
+  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
+    
+  <header>
+    
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%AE%B9%E5%99%A8%E7%9A%84%E5%88%86%E7%B1%BB"><span class="toc-text">1 容器的分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-list"><span class="toc-text">2 list</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Iterator"><span class="toc-text">3 Iterator</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Iterator-traits"><span class="toc-text">4 Iterator_traits</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-vector"><span class="toc-text">5 vector</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-array"><span class="toc-text">6 array</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-deque"><span class="toc-text">7 deque</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-queue-stack"><span class="toc-text">8 queue &amp; stack</span></a></li></ol>
+    </div>
+  </section>
+
+  
+
 </div>
 
 
 <!-- 没有 pjax 占位会报错 万恶的 pjax -->
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
 
   <div class="pjax">
     <!-- pjax占位 -->
@@ -2956,13 +2966,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </aside>
 
 
+
           <!--此文件用来存放一些不方便取值的变量-->
 <!--思路大概是将值藏到重加载的区域内-->
 
 <pjax>
 <script>
   window.pdata={}
-  pdata.ispage=false;
+  pdata.ispage=true;
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -3980,7 +3991,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://xie-peiquan.gitee.io/","name":"PQ.XIE BLOG"}},{"@type":"ListItem","position":2,"item":{"@id":"https://xie-peiquan.gitee.io/tags/CLI程序/","name":"CLI程序"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","keywords":"日常唠嗑","description":"个人博客","author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","description":"个人博客"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://xie-peiquan.gitee.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"个人博客","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://xie-peiquan.gitee.io/","name":"PQ.XIE BLOG"}},{"@type":"ListItem","position":2,"item":{"@id":"https://xie-peiquan.gitee.io/categories/STL源码笔记/","name":"STL源码笔记"}},{"@type":"ListItem","position":3,"item":{"@id":"https://xie-peiquan.gitee.io/2024/10/07/STL源码笔记/4-迭代器&序列式容器/","name":"4-迭代器&序列式容器"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","keywords":"日常唠嗑","description":"个人博客","author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","description":"个人博客"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://xie-peiquan.gitee.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"4-迭代器&序列式容器","description":"个人博客","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://xie-peiquan.gitee.io/2024/10/07/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/4-%E8%BF%AD%E4%BB%A3%E5%99%A8&%E5%BA%8F%E5%88%97%E5%BC%8F%E5%AE%B9%E5%99%A8/"},"author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://xie-peiquan.gitee.io/2024/10/07/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/4-%E8%BF%AD%E4%BB%A3%E5%99%A8&%E5%BA%8F%E5%88%97%E5%BC%8F%E5%AE%B9%E5%99%A8/","wordCount":0,"datePublished":"2024-10-07T13:04:46.369Z","dateModified":"2024-10-07T13:04:46.425Z","articleSection":"STL源码笔记","keywords":"STL","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
