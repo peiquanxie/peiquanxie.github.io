@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="https://xie-peiquan.gitee.io/2024/03/01/数据库/2-sqlite中间件/"/>
+  <link rel="canonical" href="https://xie-peiquan.gitee.io/2024/10/09/stl源码笔记/5-stl源码笔记-关联式容器/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -34,21 +34,21 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>2-SQLite中间件 - PQ.XIE BLOG</title>
-  <meta name="keywords" content="SQLite,日常唠嗑">
+  <title>5-STL源码笔记-关联式容器 - PQ.XIE BLOG</title>
+  <meta name="keywords" content="STL,日常唠嗑">
   <meta desc name="description" content="个人博客 - PQ.XIE - PQ.XIE BLOG">
   
 <meta property="og:type" content="article">
-<meta property="og:title" content="2-SQLite中间件">
-<meta property="og:url" content="https://xie-peiquan.gitee.io/2024/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/2-SQLite%E4%B8%AD%E9%97%B4%E4%BB%B6/index.html">
+<meta property="og:title" content="5-STL源码笔记-关联式容器">
+<meta property="og:url" content="https://xie-peiquan.gitee.io/2024/10/09/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/5-STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0-%E5%85%B3%E8%81%94%E5%BC%8F%E5%AE%B9%E5%99%A8/index.html">
 <meta property="og:site_name" content="PQ.XIE BLOG">
-<meta property="og:description" content="SQLite 提供的 C&#x2F;CPP API 实在是太简陋，使用C++开发的伙伴一定会感到极为不方便。事实上有很多用C++包装的中间件，可以极大方便我们操作数据库。这里我整理了 sqlite_modern_cpp 的使用方法，相比于一些 orm 中间件，它简单而纯粹。如果对 orm 感兴趣的话，也可以看一下 sqlite_orm 这份代码。这两份代码都是 header_only的，部署起来十">
+<meta property="og:description" content="关联式容器对数据按一定的规则进行存储，因而擅长对数据进行查找，可以认为关联式容器是一个小型的内存数据库。STL的关联式容器依赖两个重要的数据结构，一个是红黑树，一个是哈希表。 1 rb_tree 红黑树是一种平衡的二叉搜索树，红黑树提供遍历操作及iterator，按照正常规则（++iter）遍历（中序遍历），便能获得排序状态。 不应该改变红黑树节点中的 key 部分，因为红黑树依赖其进行排序。 红">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2024-03-01T08:30:24.427Z">
-<meta property="article:modified_time" content="2024-03-15T09:43:29.052Z">
+<meta property="article:published_time" content="2024-10-08T16:08:35.369Z">
+<meta property="article:modified_time" content="2024-10-08T16:08:35.417Z">
 <meta property="article:author" content="PQ.XIE">
-<meta property="article:tag" content="SQLite">
+<meta property="article:tag" content="STL">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -2584,7 +2584,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 <div id="l_main" class=''>
   <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2024/03/01/数据库/2-SQLite中间件/">
+  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2024/10/09/STL源码笔记/5-STL源码笔记-关联式容器/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="PQ.XIE BLOG">
   </span>
@@ -2605,7 +2605,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title" itemprop="name headline">
-        2-SQLite中间件
+        5-STL源码笔记-关联式容器
       </h1>
       <div class='new-meta-box'>
         
@@ -2623,17 +2623,17 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
             
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/SQLite/" rel="nofollow"><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><p>SQLite</p></a></div>
-  <span hidden itemprop="keywords">SQLite</span>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/STL/" rel="nofollow"><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><p>STL</p></a></div>
+  <span hidden itemprop="keywords">STL</span>
 
 
           
         
           
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2024-03-01T16:30:24+08:00">
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2024-10-09T00:08:35+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>2024年3月1日</p>
+    <p>2024年10月9日</p>
   </a>
 </div>
 
@@ -2644,13 +2644,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：1.2k 字</p>
+      <p>字数：1.1k 字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：6 分钟</p>
+      <p>时长：4 分钟</p>
     </a>
   </div>
 
@@ -2688,38 +2688,70 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <p>SQLite 提供的 C&#x2F;CPP API 实在是太简陋，使用C++开发的伙伴一定会感到极为不方便。事实上有很多用C++包装的中间件，可以极大方便我们操作数据库。这里我整理了 <a target="_blank" rel="noopener" href="https://github.com/SqliteModernCpp/sqlite_modern_cpp">sqlite_modern_cpp</a> 的使用方法，相比于一些 orm 中间件，它简单而纯粹。如果对 orm 感兴趣的话，也可以看一下 <a target="_blank" rel="noopener" href="https://github.com/fnc12/sqlite_orm">sqlite_orm</a> 这份代码。这两份代码都是 header_only的，部署起来十分简单。</p>
-<h2 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt install sqlite3</span><br><span class="line">apt install libsqlite3-dev</span><br></pre></td></tr></table></figure>
-
-<h2 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h2><h3 id="包含头文件"><a href="#包含头文件" class="headerlink" title="包含头文件"></a>包含头文件</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;sqlite_modern_cpp.h&quot;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span>  sqlite;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br></pre></td></tr></table></figure>
-
-<h3 id="连接数据库"><a href="#连接数据库" class="headerlink" title="连接数据库"></a>连接数据库</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// creates a database file &#x27;dbfile.db&#x27; if it does not exists.</span></span><br><span class="line"><span class="function">database <span class="title">db</span><span class="params">(<span class="string">&quot;dbfile.db&quot;</span>)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//带上参数设置</span></span><br><span class="line">sqlite_config config;</span><br><span class="line">config.flags = OpenFlags::READONLY</span><br><span class="line">database <span class="built_in">db</span>(<span class="string">&quot;some_db&quot;</span>, config);</span><br></pre></td></tr></table></figure>
-
-<h3 id="创建表"><a href="#创建表" class="headerlink" title="创建表"></a>创建表</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// executes the query and creates a &#x27;user&#x27; table</span></span><br><span class="line">  db &lt;&lt;</span><br><span class="line">     <span class="string">&quot;create table if not exists user (&quot;</span></span><br><span class="line">     <span class="string">&quot;   _id integer primary key autoincrement not null,&quot;</span></span><br><span class="line">     <span class="string">&quot;   age int,&quot;</span></span><br><span class="line">     <span class="string">&quot;   name text,&quot;</span></span><br><span class="line">     <span class="string">&quot;   weight real&quot;</span></span><br><span class="line">     <span class="string">&quot;);&quot;</span>;</span><br></pre></td></tr></table></figure>
-
-<h3 id="增"><a href="#增" class="headerlink" title="增"></a>增</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// inserts a new user record.</span></span><br><span class="line"><span class="comment">// binds the fields to &#x27;?&#x27; .</span></span><br><span class="line"><span class="comment">// note that only types allowed for bindings are :</span></span><br><span class="line"><span class="comment">//      int ,long, long long, float, double</span></span><br><span class="line"><span class="comment">//      string, u16string</span></span><br><span class="line"><span class="comment">// sqlite3 only supports utf8 and utf16 strings, you should use std::string for utf8 and std::u16string for utf16.</span></span><br><span class="line"><span class="comment">// If you&#x27;re using C++17, `std::string_view` and `std::u16string_view` can be used as string types.</span></span><br><span class="line"><span class="comment">// note that u&quot;my text&quot; is a utf16 string literal of type char16_t * .</span></span><br><span class="line">db &lt;&lt; <span class="string">&quot;insert into user (age,name,weight) values (?,?,?);&quot;</span></span><br><span class="line">   &lt;&lt; <span class="number">20</span></span><br><span class="line">   &lt;&lt; <span class="string">&quot;bob&quot;</span></span><br><span class="line">   &lt;&lt; <span class="number">83.25</span>;</span><br></pre></td></tr></table></figure>
-
-<h3 id="查"><a href="#查" class="headerlink" title="查"></a>查</h3><h4 id="返回多个条目"><a href="#返回多个条目" class="headerlink" title="返回多个条目"></a>返回多个条目</h4><p>其中 <code>db &lt;&lt; &quot;select age,name,weight from user where age &gt; ? ;&quot; &lt;&lt; 18;</code> 的输出结果是一个临时的 <code>sqlite::database_binder</code> 对象。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">auto</span> &amp;&amp; infer  = db &lt;&lt; <span class="string">&quot;select age,name,weight from user where age &gt; ? ;&quot;</span> &lt;&lt; <span class="number">18</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">auto</span> &amp;row : infer) &#123;</span><br><span class="line"> <span class="type">int</span> age; string name; <span class="type">double</span> weight;</span><br><span class="line"> row &gt;&gt; age &gt;&gt; name &gt;&gt; weight;</span><br><span class="line"> cout &lt;&lt; age &lt;&lt; <span class="string">&#x27; &#x27;</span> &lt;&lt; name &lt;&lt; <span class="string">&#x27; &#x27;</span> &lt;&lt; weight &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//或者是以下使用lambda函数</span></span><br><span class="line">db &lt;&lt; <span class="string">&quot;select age,name,weight from user where age &gt; ? ;&quot;</span> &lt;&lt; <span class="number">18</span></span><br><span class="line">   &gt;&gt; [&amp;](<span class="type">int</span> age, string name, <span class="type">double</span> weight) &#123;</span><br><span class="line">      cout &lt;&lt; age &lt;&lt; <span class="string">&#x27; &#x27;</span> &lt;&lt; name &lt;&lt; <span class="string">&#x27; &#x27;</span> &lt;&lt; weight &lt;&lt; endl;</span><br><span class="line">   &#125;;</span><br></pre></td></tr></table></figure>
-
-<h4 id="返回单个条目"><a href="#返回单个条目" class="headerlink" title="返回单个条目"></a>返回单个条目</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// selects the count(*) from user table</span></span><br><span class="line"><span class="comment">// note that you can extract a single column single row result only to : int,long,long,long,float,double,string,u16string</span></span><br><span class="line"><span class="type">int</span> count = <span class="number">0</span>;</span><br><span class="line">db &lt;&lt; <span class="string">&quot;select count(*) from user&quot;</span> &gt;&gt; count;</span><br><span class="line">cout &lt;&lt; <span class="string">&quot;cout : &quot;</span> &lt;&lt; count &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line"><span class="comment">// you can also extract multiple column rows</span></span><br><span class="line">db &lt;&lt; <span class="string">&quot;select age, name from user where _id=1;&quot;</span> &gt;&gt; <span class="built_in">tie</span>(age, name);</span><br><span class="line">cout &lt;&lt; <span class="string">&quot;Age = &quot;</span> &lt;&lt; age &lt;&lt; <span class="string">&quot;, name = &quot;</span> &lt;&lt; name &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line"><span class="comment">// this also works and the returned value will be automatically converted to string</span></span><br><span class="line">string str_count;</span><br><span class="line">db &lt;&lt; <span class="string">&quot;select count(*) from user&quot;</span> &gt;&gt; str_count;</span><br><span class="line">cout &lt;&lt; <span class="string">&quot;scount : &quot;</span> &lt;&lt; str_count &lt;&lt; endl;</span><br></pre></td></tr></table></figure>
-
-<h3 id="改"><a href="#改" class="headerlink" title="改"></a>改</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db &lt;&lt; <span class="string">&quot;update user set age = ? where age = ?;&quot;</span> &lt;&lt; <span class="number">22</span> &lt;&lt; <span class="number">20</span>;</span><br></pre></td></tr></table></figure>
-
-<h3 id="删"><a href="#删" class="headerlink" title="删"></a>删</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db &lt;&lt; <span class="string">&quot;delete from user where age = ?;&quot;</span> &lt;&lt; <span class="number">20</span>;</span><br></pre></td></tr></table></figure>
-
-<h2 id="事务操作"><a href="#事务操作" class="headerlink" title="事务操作"></a>事务操作</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">db &lt;&lt; <span class="string">&quot;begin;&quot;</span>; <span class="comment">// begin a transaction ...   </span></span><br><span class="line">db &lt;&lt; <span class="string">&quot;insert into user (age,name,weight) values (?,?,?);&quot;</span></span><br><span class="line">   &lt;&lt; <span class="number">20</span></span><br><span class="line">   &lt;&lt; <span class="string">u&quot;bob&quot;</span></span><br><span class="line">   &lt;&lt; <span class="number">83.25f</span>;</span><br><span class="line">db &lt;&lt; <span class="string">&quot;insert into user (age,name,weight) values (?,?,?);&quot;</span> <span class="comment">// utf16 string</span></span><br><span class="line">   &lt;&lt; <span class="number">21</span></span><br><span class="line">   &lt;&lt; <span class="string">u&quot;jack&quot;</span></span><br><span class="line">   &lt;&lt; <span class="number">68.5</span>;</span><br><span class="line">db &lt;&lt; <span class="string">&quot;commit;&quot;</span>; <span class="comment">// commit all the changes.</span></span><br><span class="line"></span><br><span class="line">db &lt;&lt; <span class="string">&quot;begin;&quot;</span>; <span class="comment">// begin another transaction ....</span></span><br><span class="line">db &lt;&lt; <span class="string">&quot;insert into user (age,name,weight) values (?,?,?);&quot;</span> <span class="comment">// utf16 string</span></span><br><span class="line">   &lt;&lt; <span class="number">19</span></span><br><span class="line">   &lt;&lt; <span class="string">u&quot;chirs&quot;</span></span><br><span class="line">   &lt;&lt; <span class="number">82.7</span>;</span><br><span class="line">db &lt;&lt; <span class="string">&quot;rollback;&quot;</span>; <span class="comment">// cancel this transaction ...</span></span><br></pre></td></tr></table></figure>
-
-<p>有没有发现，这个中间件保留了原始的 SQL 语句，同时它让数据的存取变得简单，简单而灵活！其他更多的操作照搬 SQLite3 的语句就可以了，请参考 <strong>1-SQLite语法一页纸</strong> ，这里不再赘述。</p>
-<h2 id="捕获异常"><a href="#捕获异常" class="headerlink" title="捕获异常"></a>捕获异常</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">catch</span> (<span class="type">const</span> sqlite_exception&amp; e) &#123;</span><br><span class="line">   cerr  &lt;&lt; e.<span class="built_in">get_code</span>() &lt;&lt; <span class="string">&quot;: &quot;</span> &lt;&lt; e.<span class="built_in">what</span>() &lt;&lt; <span class="string">&quot; during &quot;</span></span><br><span class="line">         &lt;&lt; e.<span class="built_in">get_sql</span>() &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>其中，sqlite返回的错误码可通过 <code>e.get_code() </code>获取，标准错误码可在 sqlite.h 中查看：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> SQLITE_OK           0   <span class="comment">/* Successful result */</span></span></span><br><span class="line"><span class="comment">/* beginning-of-error-codes */</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SQLITE_ERROR        1   <span class="comment">/* Generic error */</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SQLITE_INTERNAL     2   <span class="comment">/* Internal logic error in SQLite */</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SQLITE_PERM         3   <span class="comment">/* Access permission denied */</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SQLITE_ABORT        4   <span class="comment">/* Callback routine requested an abort */</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SQLITE_BUSY         5   <span class="comment">/* The database file is locked */</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SQLITE_LOCKED       6   <span class="comment">/* A table in the database is locked */</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SQLITE_NOMEM        7   <span class="comment">/* A malloc() failed */</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SQLITE_READONLY     8   <span class="comment">/* Attempt to write a readonly database */</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SQLITE_INTERRUPT    9   <span class="comment">/* Operation terminated by sqlite3_interrupt()*/</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SQLITE_IOERR       10   <span class="comment">/* Some kind of disk I/O error occurred */</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SQLITE_CORRUPT     11   <span class="comment">/* The database disk image is malformed */</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SQLITE_NOTFOUND    12   <span class="comment">/* Unknown opcode in sqlite3_file_control() */</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SQLITE_FULL        13   <span class="comment">/* Insertion failed because database is full */</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SQLITE_CANTOPEN    14   <span class="comment">/* Unable to open the database file */</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SQLITE_PROTOCOL    15   <span class="comment">/* Database lock protocol error */</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SQLITE_EMPTY       16   <span class="comment">/* Internal use only */</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SQLITE_SCHEMA      17   <span class="comment">/* The database schema changed */</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SQLITE_TOOBIG      18   <span class="comment">/* String or BLOB exceeds size limit */</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SQLITE_CONSTRAINT  19   <span class="comment">/* Abort due to constraint violation */</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SQLITE_MISMATCH    20   <span class="comment">/* Data type mismatch */</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SQLITE_MISUSE      21   <span class="comment">/* Library used incorrectly */</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SQLITE_NOLFS       22   <span class="comment">/* Uses OS features not supported on host */</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SQLITE_AUTH        23   <span class="comment">/* Authorization denied */</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SQLITE_FORMAT      24   <span class="comment">/* Not used */</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SQLITE_RANGE       25   <span class="comment">/* 2nd parameter to sqlite3_bind out of range */</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SQLITE_NOTADB      26   <span class="comment">/* File opened that is not a database file */</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SQLITE_NOTICE      27   <span class="comment">/* Notifications from sqlite3_log() */</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SQLITE_WARNING     28   <span class="comment">/* Warnings from sqlite3_log() */</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SQLITE_ROW         100  <span class="comment">/* sqlite3_step() has another row ready */</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SQLITE_DONE        101  <span class="comment">/* sqlite3_step() has finished executing */</span></span></span><br><span class="line"><span class="comment">/* end-of-error-codes */</span></span><br></pre></td></tr></table></figure>
-
-
-
+    <p>关联式容器对数据按一定的规则进行存储，因而擅长对数据进行查找，可以认为关联式容器是一个小型的内存数据库。STL的关联式容器依赖两个重要的数据结构，一个是<strong>红黑树</strong>，一个是<strong>哈希表</strong>。</p>
+<h2 id="1-rb-tree"><a href="#1-rb-tree" class="headerlink" title="1 rb_tree"></a>1 rb_tree</h2><ul>
+<li>红黑树是一种平衡的二叉搜索树，红黑树提供遍历操作及iterator，按照正常规则（++iter）遍历（中序遍历），便能获得排序状态。</li>
+<li>不应该改变红黑树节点中的 key 部分，因为红黑树依赖其进行排序。</li>
+<li>红黑树提供两种 insert 操作：insert_unique() 和 insert_equal() .前者表示节点的 key 在整棵树中独一无二，后者表示节点的 key 可重复。</li>
+</ul>
+<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/%E6%97%A0%E6%A0%87%E9%A2%98.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/%E6%97%A0%E6%A0%87%E9%A2%98.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="无标题"></p>
+<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241008152625217.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241008152625217.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241008152625217"></p>
+<ul>
+<li>模板中，Key是键的类型，Value是<code>(key | data)</code>的合体类型，KeyOfValue是从Value中提取 key 的方法，Compare是比较 key 大小的方法。</li>
+<li>KeyOfValue 和 Compare 通常要继承 unary_function 或 binary_function，其包含函数对象的入参类型和返回类型。</li>
+<li>红黑树的实现同样也借助了dummy_node，简化代码。</li>
+</ul>
+<h2 id="2-set-multiset"><a href="#2-set-multiset" class="headerlink" title="2 set &amp; multiset"></a>2 set &amp; multiset</h2><ul>
+<li>set &amp; multiset 是以红黑树为底层结构的，因此这两个容器都是有序的。</li>
+<li>set &amp; multiset 的 key 即是 value, value 即是 key。因此无法对其 value 进行更改。（set &#x2F; multiset 的 iterator是<code>const-iterator</code>）</li>
+<li>set 的 key 是独一无二的，因此其插入使用 rb_tree的 <code>insert_unique()</code>；multiset的 key 是可以重复的，其插入使用的是 rb_tree的 <code>insert_equal()</code>。</li>
+</ul>
+<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241008155256933.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241008155256933.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241008155256933"></p>
+<ul>
+<li>技术上，set &#x2F; multiset 均是rb_tree的 container_adapter。对于rb_tree的模版参数，<code>key_type</code> 和 <code>value_type</code> 均取自于外部<code>Key</code>，<code>KeyOfValue</code>方法取自于<code>identity</code>仿函数，<code>Compare</code>方法默认取自于<code>less&lt;Key&gt;</code>。</li>
+<li>注意，若传入set &#x2F; multiset 的key不是简单类型，需要重载 &lt; 操作符以告知容器如何比较key 大小。</li>
+</ul>
+<h2 id="3-map-multimap"><a href="#3-map-multimap" class="headerlink" title="3 map &amp; multimap"></a>3 map &amp; multimap</h2><ul>
+<li>map &amp; multimap 是以红黑树为底层结构的，因此这两个容器都是有序的。</li>
+<li>map &amp; multimap 的节点值是<code>(key | data)</code>的结合体, 因此节点的 data 部分可以更改，但 key 部分不能更改。(借助 <code>std::pair&lt;const Key, T&gt;</code>)</li>
+<li>map 的 key 是独一无二的，因此其插入使用 rb_tree的 <code>insert_unique()</code>；multimap的 key 是可以重复的，其插入使用的是 rb_tree的 <code>insert_equal()</code>。</li>
+</ul>
+<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241008165056524.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241008165056524.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241008165056524"></p>
+<ul>
+<li>技术上，map &#x2F; multimap 均是rb_tree的 container_adapter。对于rb_tree的模版参数，<code>key_type</code> 取自于外部<code>Key</code>，<code>value_type</code>取自于<code>pair&lt;const Key,T&gt;</code>，<code>KeyOfValue</code>方法取自于 <code>select1st&lt;value_type&gt;</code> 仿函数，<code>Compare</code>方法默认取自于<code>less&lt;Key&gt;</code>。</li>
+<li>注意，若传入map &#x2F; multimap 的key不是简单类型，需要重载 &lt; 操作符以告知容器如何比较 key 大小。</li>
+</ul>
+<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241008172716058.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241008172716058.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241008172716058"></p>
+<ul>
+<li>operator[] 操作符，如果key不存在，则<code>&lt;key,default-value&gt;</code> 会被插入到map中。</li>
+<li>lower_bound 是二分查找的一个版本，其返回的结果指向第一个大于等于 key 的元素的迭代器（左边界）。</li>
+</ul>
+<h2 id="4-hash-table"><a href="#4-hash-table" class="headerlink" title="4 hash_table"></a>4 hash_table</h2><p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241008230312630.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241008230312630.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241008230312630"></p>
+<ul>
+<li>STL中的<code>hashtable</code>采用<code>buckets+list</code>的结构，当发生哈希碰撞时，相同哈希值的value挂在同一链表上。</li>
+<li>GNU C的hashtable默认buckets数为53，buckets扩充时选用53倍数附近的质数（经验值）.</li>
+<li><strong>当元素个数大于buckets数时，发生rehash</strong>. 为避免rehash，在hashtable初始化时指定buckets数量大小。</li>
+</ul>
+<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241008231312074.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241008231312074.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241008231312074"></p>
+<ul>
+<li>模板参数中，Value是 (key | data)结合体类型，Key是键类型，HashFcn是哈希函数，ExtractKey是指明如何从Value中提取key的方法，EqualKey是判断key是否相等的方法。</li>
+<li>hashtable 的 buckets是个vector，其元素是指向链表节点的指针，链表节点也叫hashtable_node.</li>
+<li>hashtable_iterator 包含两根指针，<code>*cur</code>指向当前遍历的链表节点，<code>*ht</code>指向当前节点所属的bucket.</li>
+</ul>
+<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241008233536959.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241008233536959.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241008233536959"></p>
+<h2 id="5-hash-function-hash-code"><a href="#5-hash-function-hash-code" class="headerlink" title="5 hash-function &amp; hash-code"></a>5 hash-function &amp; hash-code</h2><p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241008234322471.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241008234322471.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241008234322471"></p>
+<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241008234715308.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241008234715308.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241008234715308"></p>
+<ul>
+<li>hash function的目的，就是要对元素映射到一个足够散乱的值（hash code）. hash code越是散乱，越不容易发生哈希冲突。</li>
+<li>得到hash code后，还需经过mod操作计算出该元素最终应该放置于哪个bucket.</li>
+</ul>
+<h2 id="6-unordered容器"><a href="#6-unordered容器" class="headerlink" title="6 unordered容器"></a>6 unordered容器</h2><p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241009000035385.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241009000035385.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241009000035385"></p>
+<ul>
+<li>使用unordered_set &#x2F; unordered_multiset 时，如果key是基本类型，则模板参数只需要指定 类型 T 即可。</li>
+<li>使用unordered_map &#x2F; unordered_multimap 时，如果key是基本类型，则模板参数只需要指定 类型 Key和T 即可。</li>
+</ul>
 <blockquote>
-<p><a target="_blank" rel="noopener" href="https://github.com/SqliteModernCpp/sqlite_modern_cpp">https://github.com/SqliteModernCpp/sqlite_modern_cpp</a></p>
+<p>《STL源码剖析》侯捷</p>
 </blockquote>
 
   </div>
@@ -2753,10 +2785,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-03-15T17:43:29+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-10-09T00:08:35+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2024年3月15日</p>
+    <p>更新于：2024年10月9日</p>
   </a>
 </div>
 
@@ -2770,7 +2802,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://xie-peiquan.gitee.io/2024/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/2-SQLite%E4%B8%AD%E9%97%B4%E4%BB%B6/&title=2-SQLite中间件 - PQ.XIE BLOG&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://xie-peiquan.gitee.io/2024/10/09/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/5-STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0-%E5%85%B3%E8%81%94%E5%BC%8F%E5%AE%B9%E5%99%A8/&title=5-STL源码笔记-关联式容器 - PQ.XIE BLOG&summary="
           
           >
           
@@ -2782,7 +2814,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://xie-peiquan.gitee.io/2024/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/2-SQLite%E4%B8%AD%E9%97%B4%E4%BB%B6/&title=2-SQLite中间件 - PQ.XIE BLOG&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://xie-peiquan.gitee.io/2024/10/09/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/5-STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0-%E5%85%B3%E8%81%94%E5%BC%8F%E5%AE%B9%E5%99%A8/&title=5-STL源码笔记-关联式容器 - PQ.XIE BLOG&summary="
           
           >
           
@@ -2794,7 +2826,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://xie-peiquan.gitee.io/2024/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/2-SQLite%E4%B8%AD%E9%97%B4%E4%BB%B6/&title=2-SQLite中间件 - PQ.XIE BLOG&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://xie-peiquan.gitee.io/2024/10/09/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/5-STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0-%E5%85%B3%E8%81%94%E5%BC%8F%E5%AE%B9%E5%99%A8/&title=5-STL源码笔记-关联式容器 - PQ.XIE BLOG&summary="
           
           >
           
@@ -2808,7 +2840,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class='hoverbox'>
           <a class='share'><img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/wechat.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/wechat.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></a>
           <div class='target'>
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXgAAAF4CAAAAAB79r16AAAFKUlEQVR42u3cwW7jMAwE0P7/T3fvCxQWh6O4BZ5uSR2besplSrZf39Yr6wsBePAWePAWePBWAf4rXP9//ul+PxayvP/0uaf3m+7v2As8ePDgwYMHDx48+CL8cQB4KHC6gel9UsDTgzutL/UCDx48ePDgwYMHD/4G/K1A0w4sacA5hb5WH3jw4MGDBw8ePHjwvwC+fWDtoLR9vW38gAcPHjx48ODBgwf/F+C/S+v2gFU7eIEHDx48ePDgwYMH/yb8eEDnMNBMYU/rSxsw27pfnyQDDx48ePDgwYMHDz5Y7YbDX3sde4EHDx48ePDgwYMHX4BvNy7ShsH0umkj4rSBkwarYyfw4MGDBw8ePHjw4AvwaeNhOtiUNiK2wa49kDR9fzxJBh48ePDgwYMHDx58AX4KNB0ASoPUFmgKln4BwYMHDx48ePDgwYO/Cd8KJLc22ApitwPhY/3gwYMHDx48ePDgwV+AnwKmA0qtwaNtg2PaYEkDGnjw4MGDBw8ePHjwN+HTxsi04ZAeyLbeNPjUghd48ODBgwcPHjx48EX4NCClQak2IDQ88DT4TNeP9YIHDx48ePDgwYMHX4CfbuzTQNs6bh346X7BgwcPHjx48ODBg78Bf21wp9SQaNfZClJpQwU8ePDgwYMHDx48+Ab8tLDtANE0EKUDT2n9W/jHesCDBw8ePHjw4MGDL8C3A9S4MbAchGoFpdvXgwcPHjx48ODBgwffhH/64PQX/un1p1+E7fWnz0+D5eN14MGDBw8ePHjw4MEX4E8DVFr4dFCp1ZhoH0ztvuDBgwcPHjx48ODBX/i/k9NGxXZgadsoaQ04bfd9HLzAgwcPHjx48ODBg78Avx10mgao1mDR9jnb/R8fKHjw4MGDBw8ePHjwF+Fvw26DWBqAtvDrgAcePHjw4MGDBw8efAH+doBoDRaldY4DzuUABx48ePDgwYMHDx58A/604PUgz+XVCoDtQaZ1Bwo8ePDgwYMHDx48+MH/qxkHg+EGpp9vXdd6nQZA8ODBgwcPHjx48OAb8K3AlDYo2o2N9uBU/b7gwYMHDx48ePDgwRfgt8Bp4Nhed/q81kGmCzx48ODBgwcPHjz4m/DpBrYNhLcbLNv7jwMYePDgwYMHDx48ePBF+LTA7ettMGo1ZFqB7LEe8ODBgwcPHjx48OAL8NPCpwFp2xBpBZzp/tLnjifJwIMHDx48ePDgwYMvwKeFnH4+vX4a8LZBqBXcjgMUePDgwYMHDx48ePBF+HSj2wLTwNRq4LT2EQco8ODBgwcPHjx48OCDPzDeBorthrbB7PR+6RcAPHjw4MGDBw8ePPg34afBIIVOP99qmJzuc3v/x+vBgwcPHjx48ODBgy/CbxsOrQB0+2CmjZ9WgwU8ePDgwYMHDx48+CZ8WlD7YFrBZht4Ws897kCBBw8ePHjw4MGDBx/Ab9fpg+PA8XBApz8/rev05+n9wYMHDx48ePDgwYNvwLcDQjootW04tBsttxow4MGDBw8ePHjw4ME34bdg7aA1DTDTRsc2YMWDXeDBgwcPHjx48ODBX4DfBqYUdBuMpgdxKyCNGyHgwYMHDx48ePDgwf8i+GlBaXCZDki1B7dqjRDw4MGDBw8ePHjw4D8InzYStgEpPaB0wKr2BQEPHjx48ODBgwcP/gL8dqDpNMicvp8e0LYxk9b/6AcePHjw4MGDBw8efBG+NUB0GpSmDY30/bcD2mOAAg8ePHjw4MGDBw8+gLc+u8CDB2+BB2+BB28t1j+k3e/Sj8+1+wAAAABJRU5ErkJggg==">
+            <img src="data:image/png;base64,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">
           </div>
         </div>
       
@@ -2837,20 +2869,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2024/03/19/%E6%95%B0%E6%8D%AE%E5%BA%93/6-MySQL-B+%E6%A0%91/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>6-MySQL-B+树</p>
-          <p class='content'>1 索引的代价
-空间上的代价：每建立一个索引都要为它建立一棵 B+ 树，每一棵 B+ 树的每一个节点都是一个数据页，一个页默认会占用 16KB 的存储空间。
-时间上的代价：每次对表中的数据进行增...</p>
-        </a>
       
-      
-        <a class='next' href='/2024/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/1-SQLite%E8%AF%AD%E6%B3%95%E4%B8%80%E9%A1%B5%E7%BA%B8/'>
-          <p class='title'>1-SQLite语法一页纸<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>基础语法创建数据库存在则连接，不存在则创建。 .database 可查询存在哪些数据库。
-1.open xxx.db
+        <a class='next' href='/2024/10/07/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/4-%E8%BF%AD%E4%BB%A3%E5%99%A8&%E5%BA%8F%E5%88%97%E5%BC%8F%E5%AE%B9%E5%99%A8/'>
+          <p class='title'>4-迭代器&序列式容器<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>1 容器的分类STL容器从内存结构上可分为序列式容器和关联性容器，序列式容器更关注于快速存取，而关联性容器更关注于快速查找。两大类容器分支又有一些内含关系，具体如下。
 
-创建表ID 作为主键，NOT NULL 的约束表示在表中创建纪录时这些字段...</p>
+2 list先从简单的链...</p>
         </a>
       
     </div>
@@ -2867,7 +2891,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="discussionUrl" content="/2024/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/2-SQLite%E4%B8%AD%E9%97%B4%E4%BB%B6/index.html#comments">
+      <meta itemprop="discussionUrl" content="/2024/10/09/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/5-STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0-%E5%85%B3%E8%81%94%E5%BC%8F%E5%AE%B9%E5%99%A8/index.html#comments">
     </span>
     <p ct><i class='fas fa-comments'></i> 评论区</p>
     
@@ -2909,7 +2933,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83"><span class="toc-text">开发环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-text">基本操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8C%85%E5%90%AB%E5%A4%B4%E6%96%87%E4%BB%B6"><span class="toc-text">包含头文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-text">连接数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E8%A1%A8"><span class="toc-text">创建表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A2%9E"><span class="toc-text">增</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5"><span class="toc-text">查</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%94%E5%9B%9E%E5%A4%9A%E4%B8%AA%E6%9D%A1%E7%9B%AE"><span class="toc-text">返回多个条目</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%94%E5%9B%9E%E5%8D%95%E4%B8%AA%E6%9D%A1%E7%9B%AE"><span class="toc-text">返回单个条目</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%B9"><span class="toc-text">改</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A0"><span class="toc-text">删</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8B%E5%8A%A1%E6%93%8D%E4%BD%9C"><span class="toc-text">事务操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8D%95%E8%8E%B7%E5%BC%82%E5%B8%B8"><span class="toc-text">捕获异常</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-rb-tree"><span class="toc-text">1 rb_tree</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-set-multiset"><span class="toc-text">2 set &amp; multiset</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-map-multimap"><span class="toc-text">3 map &amp; multimap</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-hash-table"><span class="toc-text">4 hash_table</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-hash-function-hash-code"><span class="toc-text">5 hash-function &amp; hash-code</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-unordered%E5%AE%B9%E5%99%A8"><span class="toc-text">6 unordered容器</span></a></li></ol>
     </div>
   </section>
 
@@ -3983,7 +4007,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://xie-peiquan.gitee.io/","name":"PQ.XIE BLOG"}},{"@type":"ListItem","position":2,"item":{"@id":"https://xie-peiquan.gitee.io/categories/数据库/","name":"数据库"}},{"@type":"ListItem","position":3,"item":{"@id":"https://xie-peiquan.gitee.io/2024/03/01/数据库/2-SQLite中间件/","name":"2-SQLite中间件"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","keywords":"日常唠嗑","description":"个人博客","author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","description":"个人博客"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://xie-peiquan.gitee.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"2-SQLite中间件","description":"个人博客","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://xie-peiquan.gitee.io/2024/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/2-SQLite%E4%B8%AD%E9%97%B4%E4%BB%B6/"},"author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://xie-peiquan.gitee.io/2024/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/2-SQLite%E4%B8%AD%E9%97%B4%E4%BB%B6/","wordCount":0,"datePublished":"2024-03-01T08:30:24.427Z","dateModified":"2024-03-15T09:43:29.052Z","articleSection":"数据库","keywords":"SQLite","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://xie-peiquan.gitee.io/","name":"PQ.XIE BLOG"}},{"@type":"ListItem","position":2,"item":{"@id":"https://xie-peiquan.gitee.io/categories/STL源码笔记/","name":"STL源码笔记"}},{"@type":"ListItem","position":3,"item":{"@id":"https://xie-peiquan.gitee.io/2024/10/09/STL源码笔记/5-STL源码笔记-关联式容器/","name":"5-STL源码笔记-关联式容器"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","keywords":"日常唠嗑","description":"个人博客","author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","description":"个人博客"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://xie-peiquan.gitee.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"5-STL源码笔记-关联式容器","description":"个人博客","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://xie-peiquan.gitee.io/2024/10/09/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/5-STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0-%E5%85%B3%E8%81%94%E5%BC%8F%E5%AE%B9%E5%99%A8/"},"author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://xie-peiquan.gitee.io/2024/10/09/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/5-STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0-%E5%85%B3%E8%81%94%E5%BC%8F%E5%AE%B9%E5%99%A8/","wordCount":0,"datePublished":"2024-10-08T16:08:35.369Z","dateModified":"2024-10-08T16:08:35.417Z","articleSection":"STL源码笔记","keywords":"STL","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
