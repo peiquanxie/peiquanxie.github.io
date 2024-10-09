@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="https://xie-peiquan.gitee.io/2023/07/25/pytorch基础/3-数据准备/"/>
+  <link rel="canonical" href="https://xie-peiquan.gitee.io/2024/10/09/stl源码笔记/7-仿函数&适配器/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -34,21 +34,21 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>3-数据准备 - PQ.XIE BLOG</title>
-  <meta name="keywords" content="Pytorch基础,日常唠嗑">
+  <title>7-仿函数&适配器 - PQ.XIE BLOG</title>
+  <meta name="keywords" content="STL,日常唠嗑">
   <meta desc name="description" content="个人博客 - PQ.XIE - PQ.XIE BLOG">
   
 <meta property="og:type" content="article">
-<meta property="og:title" content="3-数据准备">
-<meta property="og:url" content="https://xie-peiquan.gitee.io/2023/07/25/pytorch%E5%9F%BA%E7%A1%80/3-%E6%95%B0%E6%8D%AE%E5%87%86%E5%A4%87/index.html">
+<meta property="og:title" content="7-仿函数&amp;适配器">
+<meta property="og:url" content="https://xie-peiquan.gitee.io/2024/10/09/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/7-%E4%BB%BF%E5%87%BD%E6%95%B0&%E9%80%82%E9%85%8D%E5%99%A8/index.html">
 <meta property="og:site_name" content="PQ.XIE BLOG">
-<meta property="og:description" content="1 Dataset1.1  图像（path+label形式）12345678910111213141516171819202122232425import osimport pandas as pdfrom torchvision.io import read_imagefrom torchvision import datasetsfrom torchvision import transfor">
+<meta property="og:description" content="1 仿函数仿函数（functors），可认为重载了operator()的类，表现上类似函数，为算法服务。      仿函数重载了 operator()操作符，以供算法调用。 仿函数继承 unary_function 或 binary_function，以记录入参和返回值类型供算法提问。 仿函数传给算法时，应该传入一个仿函数对象，如：less&lt;int&gt;().  2 适配器STL中存在多种">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2023-07-25T06:38:09.422Z">
-<meta property="article:modified_time" content="2023-07-25T06:38:09.474Z">
+<meta property="article:published_time" content="2024-10-09T09:12:53.990Z">
+<meta property="article:modified_time" content="2024-10-09T09:12:54.034Z">
 <meta property="article:author" content="PQ.XIE">
-<meta property="article:tag" content="Pytorch基础">
+<meta property="article:tag" content="STL">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -2584,7 +2584,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 <div id="l_main" class=''>
   <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2023/07/25/pytorch基础/3-数据准备/">
+  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2024/10/09/STL源码笔记/7-仿函数&适配器/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="PQ.XIE BLOG">
   </span>
@@ -2605,7 +2605,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title" itemprop="name headline">
-        3-数据准备
+        7-仿函数&适配器
       </h1>
       <div class='new-meta-box'>
         
@@ -2623,17 +2623,17 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
             
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Pytorch%E5%9F%BA%E7%A1%80/" rel="nofollow"><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><p>Pytorch基础</p></a></div>
-  <span hidden itemprop="keywords">Pytorch基础</span>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/STL/" rel="nofollow"><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><p>STL</p></a></div>
+  <span hidden itemprop="keywords">STL</span>
 
 
           
         
           
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-07-25T14:38:09+08:00">
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2024-10-09T17:12:53+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>2023年7月25日</p>
+    <p>2024年10月9日</p>
   </a>
 </div>
 
@@ -2644,7 +2644,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：300 字</p>
+      <p>字数：450 字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -2688,20 +2688,37 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h2 id="1-Dataset"><a href="#1-Dataset" class="headerlink" title="1 Dataset"></a>1 Dataset</h2><h3 id="1-1-图像（path-label形式）"><a href="#1-1-图像（path-label形式）" class="headerlink" title="1.1  图像（path+label形式）"></a>1.1  图像（path+label形式）</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> torchvision.io <span class="keyword">import</span> read_image</span><br><span class="line"><span class="keyword">from</span> torchvision <span class="keyword">import</span> datasets</span><br><span class="line"><span class="keyword">from</span> torchvision <span class="keyword">import</span> transforms</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">CustomImageDataset</span>(<span class="title class_ inherited__">Dataset</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, annotations_file, img_dir, transform=<span class="literal">None</span>, target_transform=<span class="literal">None</span></span>):</span><br><span class="line">        self.img_labels = pd.read_csv(annotations_file)</span><br><span class="line">        self.img_dir = img_dir</span><br><span class="line">        self.transform = transform</span><br><span class="line">        self.target_transform = target_transform</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__len__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">len</span>(self.img_labels)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__getitem__</span>(<span class="params">self, idx</span>):</span><br><span class="line">        img_path = os.path.join(self.img_dir, self.img_labels.iloc[idx, <span class="number">0</span>])</span><br><span class="line">        image = read_image(img_path)</span><br><span class="line">        label = self.img_labels.iloc[idx, <span class="number">1</span>]</span><br><span class="line">        <span class="keyword">if</span> self.transform:</span><br><span class="line">            image = self.transform(image)</span><br><span class="line">        <span class="keyword">if</span> self.target_transform:</span><br><span class="line">            label = self.target_transform(label)</span><br><span class="line">        <span class="keyword">return</span> image, label</span><br></pre></td></tr></table></figure>
+    <h2 id="1-仿函数"><a href="#1-仿函数" class="headerlink" title="1 仿函数"></a>1 仿函数</h2><p>仿函数（functors），可认为重载了<code>operator()</code>的类，表现上类似函数，为算法服务。</p>
+<img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241009151418254.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241009151418254.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241009151418254" style="zoom:80%;" />
 
-<h3 id="1-2-图像（文件夹名为label-形式）"><a href="#1-2-图像（文件夹名为label-形式）" class="headerlink" title="1.2 图像（文件夹名为label 形式）"></a>1.2 图像（文件夹名为label 形式）</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">data_dir = <span class="string">&#x27;data/hymenoptera_data&#x27;</span></span><br><span class="line">train_datasets = datasets.ImageFolder( os.path.join(data_dir, <span class="string">&quot;train&quot;</span>)</span><br><span class="line">                                       ,data_transforms[<span class="string">&quot;train&quot;</span>])</span><br><span class="line">val_datasets = datasets.ImageFolder( os.path.join(data_dir, <span class="string">&quot;val&quot;</span>)</span><br><span class="line">                                       ,data_transforms[<span class="string">&quot;val&quot;</span>])           </span><br></pre></td></tr></table></figure>
+<img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241009152118395.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241009152118395.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241009152118395" style="zoom:80%;" />
 
-<h3 id="1-3-图像（在线拉取）"><a href="#1-3-图像（在线拉取）" class="headerlink" title="1.3 图像（在线拉取）"></a>1.3 图像（在线拉取）</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">train_data = datasets.MNIST(root=<span class="string">&#x27;data&#x27;</span>, </span><br><span class="line">                            train=<span class="literal">True</span>, </span><br><span class="line">                            download=<span class="literal">True</span>,                   </span><br><span class="line">                            transform=data_transforms[<span class="string">&quot;train&quot;</span>],</span><br><span class="line">                            target_transform=xxx)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>仿函数重载了 <code>operator()</code>操作符，以供算法调用。</li>
+<li>仿函数继承 <code>unary_function</code> 或 <code>binary_function</code>，以记录入参和返回值类型供算法提问。</li>
+<li>仿函数传给算法时，应该传入一个仿函数对象，如：<code>less&lt;int&gt;()</code>.</li>
+</ul>
+<h2 id="2-适配器"><a href="#2-适配器" class="headerlink" title="2 适配器"></a>2 适配器</h2><p>STL中存在多种适配器，有容器适配器，有迭代器适配器，有仿函数适配器。</p>
+<h3 id="2-1-函数适配器"><a href="#2-1-函数适配器" class="headerlink" title="2.1 函数适配器"></a>2.1 函数适配器</h3><h4 id="binder2nd"><a href="#binder2nd" class="headerlink" title="binder2nd"></a>binder2nd</h4><p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241009153906787.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241009153906787.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241009153906787"></p>
+<ul>
+<li>binder2nd可以将二元函数的第二个参数写死，包装成一个一元仿函数。</li>
+<li>bind2nd函数是binder2nd的辅助函数，也是真正提供给用户使用的函数。为什么要额外再提供一个函数呢？因为仿函数得指定模板类型，麻烦！而辅助函数可借助参数类型推倒，使用起来简单。如上：<code>bind2nd(less&lt;int&gt;(), 40)</code>.</li>
+</ul>
+<h4 id="新型适配器-bind"><a href="#新型适配器-bind" class="headerlink" title="新型适配器 bind"></a>新型适配器 bind</h4><p>C++11使用了更加灵活而清晰的<code>std::bind</code>函数，函数签名如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> <span class="title class_">Fn</span>, <span class="keyword">class</span>... Args&gt; </span><br><span class="line"><span class="function">std::function <span class="title">bind</span> <span class="params">(Fn&amp;&amp; fn, Args&amp;&amp;... args)</span></span>;</span><br></pre></td></tr></table></figure>
 
-<h3 id="1-4-图片转换"><a href="#1-4-图片转换" class="headerlink" title="1.4 图片转换"></a>1.4 图片转换</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># input变换</span></span><br><span class="line">data_transforms =  transforms.Compose([</span><br><span class="line">        transforms.RandomResizedCrop(<span class="number">224</span>),</span><br><span class="line">        transforms.RandomHorizontalFlip(),</span><br><span class="line">        transforms.ToTensor(),</span><br><span class="line">        transforms.Normalize(mean=[<span class="number">0.485</span>, <span class="number">0.456</span>, <span class="number">0.406</span>], std=[<span class="number">0.229</span>, <span class="number">0.224</span>, <span class="number">0.225</span>])</span><br><span class="line">    ])</span><br><span class="line"><span class="comment"># RandomResizedCrop: 随机长宽比裁剪</span></span><br><span class="line"><span class="comment"># RandomHorizontalFlip: 随机水平翻转</span></span><br><span class="line"><span class="comment"># RandomVerticalFlip: 随机垂直翻转</span></span><br><span class="line"><span class="comment"># ToTensor: 转换为tensor</span></span><br><span class="line"><span class="comment"># Normalize: 像素值进行归一化处理</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># target 变换</span></span><br><span class="line"><span class="comment"># 把整数变成一个one-hot的tensor</span></span><br><span class="line">target_transform = Lambda(<span class="keyword">lambda</span> y: torch.zeros(<span class="number">10</span>, dtype=torch.<span class="built_in">float</span>) \</span><br><span class="line">                          .scatter_(dim=<span class="number">0</span>, index=torch.tensor(y), value=<span class="number">1</span>))</span><br></pre></td></tr></table></figure>
+<p>对于Fn，可以是普通函数、函数对象，类成员函数；对于Args，可以是固定值，也可以是占位符（<code>_1, _2</code>）. bind风格的函数适配器代码如下，其使得新函数的使用变得清晰。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">auto</span> lessfn = <span class="built_in">bind</span>(<span class="built_in">less</span>&lt;<span class="type">int</span>&gt;(), _1, <span class="number">50</span>);</span><br><span class="line"><span class="type">bool</span> flag = <span class="built_in">lessfn</span>(<span class="number">70</span>);</span><br></pre></td></tr></table></figure>
 
-
-
-<h2 id="2-DataLoader"><a href="#2-DataLoader" class="headerlink" title="2 DataLoader"></a>2 DataLoader</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">train_dataloader = torch.utils.data.DataLoader(train_data, </span><br><span class="line">                                               batch_size=<span class="number">64</span>,                                                                                                      shuffle=<span class="literal">True</span>, </span><br><span class="line">                                               num_workers=<span class="number">4</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> batch, (X, y) <span class="keyword">in</span> <span class="built_in">enumerate</span>(train_dataloader):</span><br><span class="line">    X, y = X.to(device), y.to(device)</span><br></pre></td></tr></table></figure>
-
-
-
+<h3 id="2-2-迭代器适配器"><a href="#2-2-迭代器适配器" class="headerlink" title="2.2 迭代器适配器"></a>2.2 迭代器适配器</h3><p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241009162135408.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241009162135408.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241009162135408"></p>
+<ul>
+<li>inserter将iterator的赋值 (assign) 操作改变为插入 (insert) 操作，并将iterator右移一个位置。</li>
+<li>可以看到 <code>insert_iterator</code>是对容器的iterator的一个包装，其重载原来iterator的<code>operator=</code>操作符，将其改为插入并有意的操作。</li>
+<li><code>insert_iterator</code>的类型是个output_iterator_tag，注意其适用范围。</li>
+</ul>
+<blockquote>
+<p>《STL源码剖析》侯捷</p>
+</blockquote>
 
   </div>
   
@@ -2734,10 +2751,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-07-25T14:38:09+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-10-09T17:12:54+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2023年7月25日</p>
+    <p>更新于：2024年10月9日</p>
   </a>
 </div>
 
@@ -2751,7 +2768,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://xie-peiquan.gitee.io/2023/07/25/pytorch%E5%9F%BA%E7%A1%80/3-%E6%95%B0%E6%8D%AE%E5%87%86%E5%A4%87/&title=3-数据准备 - PQ.XIE BLOG&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://xie-peiquan.gitee.io/2024/10/09/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/7-%E4%BB%BF%E5%87%BD%E6%95%B0&%E9%80%82%E9%85%8D%E5%99%A8/&title=7-仿函数&适配器 - PQ.XIE BLOG&summary="
           
           >
           
@@ -2763,7 +2780,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://xie-peiquan.gitee.io/2023/07/25/pytorch%E5%9F%BA%E7%A1%80/3-%E6%95%B0%E6%8D%AE%E5%87%86%E5%A4%87/&title=3-数据准备 - PQ.XIE BLOG&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://xie-peiquan.gitee.io/2024/10/09/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/7-%E4%BB%BF%E5%87%BD%E6%95%B0&%E9%80%82%E9%85%8D%E5%99%A8/&title=7-仿函数&适配器 - PQ.XIE BLOG&summary="
           
           >
           
@@ -2775,7 +2792,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://xie-peiquan.gitee.io/2023/07/25/pytorch%E5%9F%BA%E7%A1%80/3-%E6%95%B0%E6%8D%AE%E5%87%86%E5%A4%87/&title=3-数据准备 - PQ.XIE BLOG&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://xie-peiquan.gitee.io/2024/10/09/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/7-%E4%BB%BF%E5%87%BD%E6%95%B0&%E9%80%82%E9%85%8D%E5%99%A8/&title=7-仿函数&适配器 - PQ.XIE BLOG&summary="
           
           >
           
@@ -2789,7 +2806,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class='hoverbox'>
           <a class='share'><img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/wechat.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/wechat.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></a>
           <div class='target'>
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXgAAAF4CAAAAAB79r16AAAFLklEQVR42u3cQVIcMRAEwP3/p+0HOIhRV5eWBaduEItGSs2lKMHrj/Et44UAPHgDPHgDPHijAP8Kx5cTP3z+dJ6v5o03fLiup+duvcCDBw8ePHjw4MGDb8JvAZ42cvp1a0z3kR7E+DngwYMHDx48ePDgwV+AnwaNNGBNA87T51vrbwUq8ODBgwcPHjx48OB/AvwUJg1Wp4XK9AVIDwQ8ePDgwYMHDx48+N8An15omgarbeBKgxx48ODBgwcPHjx48J8If+siUDugpQXKadCbFjlvv0kGHjx48ODBgwcPHnwwtsXGT/869gIPHjx48ODBgwcPvgC/HdNiYrvwdL5t4VLzAg8ePHjw4MGDBw++AJ8GhFbR0T6Y6TqnBczaBzx48ODBgwcPHjz4AvwUJA0ep9/fHnT6/fQC0+l+wIMHDx48ePDgwYNvwqcgU4jtBqcvwun+bhc0j8kVPHjw4MGDBw8ePPgAvr3BNGBMg8g6yJReuHHRAx48ePDgwYMHDx58EX4Lkl5gah9U+4WaHuTjfsCDBw8ePHjw4MGDfwN8G6gVgFKoVqERv7jgwYMHDx48ePDgwRfgWws/DRZpYbENfE8/317PYxECHjx48ODBgwcPHvxF+BbYNtA8zdcKgmPIw3WBBw8ePHjw4MGDB38Dvh2IToFSsPTF2Qan1AU8ePDgwYMHDx48+Cb8dmzhpwFkW2hsA9r0wtM/84IHDx48ePDgwYMHX4A/XdA2aI2DxnBdadCaBrg0OIEHDx48ePDgwYMHfwM+DQ6tDbWLjS3U9nPjm2TgwYMHDx48ePDgwRfux08DVFqEbAPbtaBTWgd48ODBgwcPHjx48DfgbwekNmB7nafrrs0LHjx48ODBgwcPHnwBfvrgNIi0CoXtetrzjz3AgwcPHjx48ODBg79wP74VYE6D1ClQ+vzturYBEjx48ODBgwcPHjz4G/Dtizynxca7LzhtA9b1C03gwYMHDx48ePDgwS/+MCFd6OmCp8GnvvHS56eFDnjw4MGDBw8ePHjwN+BTwGnBsC0aWrBpcbK92AQePHjw4MGDBw8efAN+e7HndAHpAW4vMm2Lm+nBPj4PPHjw4MGDBw8ePPgifLvQaM97utFpMEwPPC6KwIMHDx48ePDgwYMvwKcXhE430DrANBilL8gp/PigwIMHDx48ePDgwYO/CJ9ueDvSC09pYbEtYqY/Dx48ePDgwYMHDx58A356AKdQ2yJjelDb9U0D4sfeJAMPHjx48ODBgwf/X8KfbnBbCKTFShpk0vVvi5fjAAUePHjw4MGDBw8e/MV/FHS6sXQDpxtJD759EWt8QODBgwcPHjx48ODBF+CnwadVmKTAcXA5fFG2B/zoCR48ePDgwYMHDx58EX4aGLYb3waf03Fr/mmhAx48ePDgwYMHDx58E/70F/unAapVlKQw00CYFkLxxS7w4MGDBw8ePHjw4Avw61/slwLLFKr9/OmLkh4MePDgwYMHDx48ePAN+FYR8F0XltILSNPA1Ho+ePDgwYMHDx48ePBN+GlgahUL22C0LU7a63w8GPDgwYMHDx48ePDgL8BfDxDhfNuLRe3CJL5QBR48ePDgwYMHDx78B8OnRUNaVLSDzvbgjy80gQcPHjx48ODBgwf/AfCtAmUbrG4VJ9sgCR48ePDgwYMHDx78Dfgp4DQY3T6wVqGxDXjjIgQ8ePDgwYMHDx48+Df+gXFaMEyLlG2g2xYntXWABw8ePHjw4MGDB1+AN947wIMHb4AHb4AHbyzGX4O3MJK87g61AAAAAElFTkSuQmCC">
+            <img src="data:image/png;base64,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">
           </div>
         </div>
       
@@ -2818,15 +2835,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2023/07/26/pytorch%E5%9F%BA%E7%A1%80/4-%E6%A8%A1%E5%9E%8B%E6%90%AD%E5%BB%BA/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>4-模型搭建</p>
-          <p class='content'>1 神经网络搭建1.1 通过 forward 构建我们可以通过继承 nn.Module，构建我们自己的类来定义我们的神经网络。其中，我们在__init__方法中实现各个子Module的初始化，并...</p>
-        </a>
       
-      
-        <a class='next' href='/2023/07/24/pytorch%E5%9F%BA%E7%A1%80/2-tensor%E6%93%8D%E4%BD%9C/'>
-          <p class='title'>2-tensor基础<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>1 tensor属性1.1 tensor初始化1234shape = (2,3,)rand_tensor = torch.rand(shape)ones_tensor = torch.ones(...</p>
+        <a class='next' href='/2024/10/09/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/6-%E8%BF%AD%E4%BB%A3%E5%99%A8&%E7%AE%97%E6%B3%95/'>
+          <p class='title'>6-迭代器&算法<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>算法是STL六大部件中重要的一个，其是个function template. 算法看不见容器，对其一无所知，一切信息都需要从Iterator中取得，所以Iterator需要具备能回答算法询问的东...</p>
         </a>
       
     </div>
@@ -2843,7 +2855,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="discussionUrl" content="/2023/07/25/pytorch%E5%9F%BA%E7%A1%80/3-%E6%95%B0%E6%8D%AE%E5%87%86%E5%A4%87/index.html#comments">
+      <meta itemprop="discussionUrl" content="/2024/10/09/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/7-%E4%BB%BF%E5%87%BD%E6%95%B0&%E9%80%82%E9%85%8D%E5%99%A8/index.html#comments">
     </span>
     <p ct><i class='fas fa-comments'></i> 评论区</p>
     
@@ -2885,7 +2897,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Dataset"><span class="toc-text">1 Dataset</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E5%9B%BE%E5%83%8F%EF%BC%88path-label%E5%BD%A2%E5%BC%8F%EF%BC%89"><span class="toc-text">1.1  图像（path+label形式）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E5%9B%BE%E5%83%8F%EF%BC%88%E6%96%87%E4%BB%B6%E5%A4%B9%E5%90%8D%E4%B8%BAlabel-%E5%BD%A2%E5%BC%8F%EF%BC%89"><span class="toc-text">1.2 图像（文件夹名为label 形式）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-%E5%9B%BE%E5%83%8F%EF%BC%88%E5%9C%A8%E7%BA%BF%E6%8B%89%E5%8F%96%EF%BC%89"><span class="toc-text">1.3 图像（在线拉取）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-%E5%9B%BE%E7%89%87%E8%BD%AC%E6%8D%A2"><span class="toc-text">1.4 图片转换</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-DataLoader"><span class="toc-text">2 DataLoader</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%BB%BF%E5%87%BD%E6%95%B0"><span class="toc-text">1 仿函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E9%80%82%E9%85%8D%E5%99%A8"><span class="toc-text">2 适配器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E5%87%BD%E6%95%B0%E9%80%82%E9%85%8D%E5%99%A8"><span class="toc-text">2.1 函数适配器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#binder2nd"><span class="toc-text">binder2nd</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B0%E5%9E%8B%E9%80%82%E9%85%8D%E5%99%A8-bind"><span class="toc-text">新型适配器 bind</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E8%BF%AD%E4%BB%A3%E5%99%A8%E9%80%82%E9%85%8D%E5%99%A8"><span class="toc-text">2.2 迭代器适配器</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -3959,7 +3971,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://xie-peiquan.gitee.io/","name":"PQ.XIE BLOG"}},{"@type":"ListItem","position":2,"item":{"@id":"https://xie-peiquan.gitee.io/categories/Pytorch基础/","name":"Pytorch基础"}},{"@type":"ListItem","position":3,"item":{"@id":"https://xie-peiquan.gitee.io/2023/07/25/pytorch基础/3-数据准备/","name":"3-数据准备"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","keywords":"日常唠嗑","description":"个人博客","author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","description":"个人博客"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://xie-peiquan.gitee.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"3-数据准备","description":"个人博客","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://xie-peiquan.gitee.io/2023/07/25/pytorch%E5%9F%BA%E7%A1%80/3-%E6%95%B0%E6%8D%AE%E5%87%86%E5%A4%87/"},"author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://xie-peiquan.gitee.io/2023/07/25/pytorch%E5%9F%BA%E7%A1%80/3-%E6%95%B0%E6%8D%AE%E5%87%86%E5%A4%87/","wordCount":0,"datePublished":"2023-07-25T06:38:09.422Z","dateModified":"2023-07-25T06:38:09.474Z","articleSection":"Pytorch基础","keywords":"Pytorch基础","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://xie-peiquan.gitee.io/","name":"PQ.XIE BLOG"}},{"@type":"ListItem","position":2,"item":{"@id":"https://xie-peiquan.gitee.io/categories/STL源码笔记/","name":"STL源码笔记"}},{"@type":"ListItem","position":3,"item":{"@id":"https://xie-peiquan.gitee.io/2024/10/09/STL源码笔记/7-仿函数&适配器/","name":"7-仿函数&适配器"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","keywords":"日常唠嗑","description":"个人博客","author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","description":"个人博客"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://xie-peiquan.gitee.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"7-仿函数&适配器","description":"个人博客","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://xie-peiquan.gitee.io/2024/10/09/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/7-%E4%BB%BF%E5%87%BD%E6%95%B0&%E9%80%82%E9%85%8D%E5%99%A8/"},"author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://xie-peiquan.gitee.io/2024/10/09/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/7-%E4%BB%BF%E5%87%BD%E6%95%B0&%E9%80%82%E9%85%8D%E5%99%A8/","wordCount":0,"datePublished":"2024-10-09T09:12:53.990Z","dateModified":"2024-10-09T09:12:54.034Z","articleSection":"STL源码笔记","keywords":"STL","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
