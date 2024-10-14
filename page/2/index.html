@@ -1799,7 +1799,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1728564337687),
+    lastupdate: new Date(1728872180491),
     sidebar: {
       for_page: ["blogger","category","webinfo","music"],
       for_post: ["toc"],
@@ -2589,6 +2589,72 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2024/07/06/C++那些事/7-简单的CLI/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="PQ.XIE BLOG">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="PQ.XIE BLOG">
+    <meta itemprop="description" content="个人博客">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2024/07/06/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/7-%E7%AE%80%E5%8D%95%E7%9A%84CLI/"  itemprop="url">
+        7-简单的CLI
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        最近写了一个简单又好用的 CLI 程序，在这里分享出来。所谓的 CLI ，就是让我们的C++程序拥有命令行操作界面，类似于MySQL的命令行操作数据库。当你的程序复杂到一定程度，我想你可能需要一些诊断命令来查看程序的运行状态，抑或是通过命令来临时设置一些变量（比如：动态设置日志打印等级）。或许有一些框架已经具备以上功能，但简单实现这个并不难，以下是具体的分析和实现。
+1 需求分析
+拥有命令行...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2024-07-06T18:28:38+08:00">2024-07-06</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/C-%E9%82%A3%E4%BA%9B%E4%BA%8B/">C++那些事</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/C-%E9%82%A3%E4%BA%9B%E4%BA%8B/" itemprop="url"><span itemprop="name">C++那些事</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2024/07/06/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/7-%E7%AE%80%E5%8D%95%E7%9A%84CLI/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
   <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2024/07/03/C++那些事/6-简单的Logger/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="PQ.XIE BLOG">
@@ -3176,71 +3242,6 @@ MySQL是怎么执行以上语句的呢？过程如下：...
           </div>
         
       
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2024/01/09/音乐/聊点音乐/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-    <meta itemprop="description" content="个人博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2024/01/09/%E9%9F%B3%E4%B9%90/%E8%81%8A%E7%82%B9%E9%9F%B3%E4%B9%90/"  itemprop="url">
-        聊点音乐
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        OK，今天不聊技术。技术只是为了谋生，在生存的基础上，艺术&#x2F;哲学或许才是人的最终追求和归宿。当然我没有这么高雅的追求啦，只不过在无聊和闲暇之际找一种寄托罢了。我并没有什么艺术细胞，20多年来似乎也从未真正地钻研过。只不过似乎跟艺术又有说不清道不明的关系，又加上每次稍微置身其中就有莫名感受。所以我想或许我应该记录些什么，也当做在无趣的技术文章中留点有趣的东西。
-前面讲到艺术，其实是一...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2024-01-09T22:20:03+08:00">2024-01-09</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E9%9F%B3%E4%B9%90/">音乐</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E9%9F%B3%E4%B9%90/" itemprop="url"><span itemprop="name">音乐</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2024/01/09/%E9%9F%B3%E4%B9%90/%E8%81%8A%E7%82%B9%E9%9F%B3%E4%B9%90/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-
-  
-
-</div>
-
-          </div>
-        
-      
     
   </section>
   
@@ -3255,7 +3256,7 @@ MySQL是怎么执行以上语句的呢？过程如下：...
           </a>
         
         <p class="current">
-          2 / 6
+          2 / 7
         </p>
         
           <a class="next" rel="next" href="/page/3/">
@@ -3391,6 +3392,11 @@ MySQL是怎么执行以上语句的呢？过程如下：...
             ><div class='name'>STL源码笔记</div><div class='badge'>(8)</div></a></li>
         
           <li><a class="flat-box"
+            title="/categories/%E5%85%88%E8%B4%A4%E6%96%87%E9%9B%86/" href="/categories/%E5%85%88%E8%B4%A4%E6%96%87%E9%9B%86/"
+            active-action="action-categoriesE58588E8B4A4E69687E99B86"
+            ><div class='name'>先贤文集</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
             title="/categories/%E5%BB%BA%E7%AB%99/" href="/categories/%E5%BB%BA%E7%AB%99/"
             active-action="action-categoriesE5BBBAE7AB99"
             ><div class='name'>建站</div><div class='badge'>(1)</div></a></li>
@@ -3436,7 +3442,7 @@ MySQL是怎么执行以上语句的呢？过程如下：...
       
         <div class="webinfo-item">
           <div>文章数目：</div>
-          <div>60 篇</div>
+          <div>61 篇</div>
         </div>
       
 
@@ -3451,7 +3457,7 @@ MySQL是怎么执行以上语句的呢？过程如下：...
       
         <div class="webinfo-item">
           <div>本站总字数：</div>
-          <div>64.5k 字</div>
+          <div>65.7k 字</div>
         </div>
       
 
@@ -3476,7 +3482,7 @@ MySQL是怎么执行以上语句的呢？过程如下：...
       
         <div class="webinfo-item">
           <div>最后活动时间：</div>
-          <div id="last-update-show">2024-10-10 日</div>
+          <div id="last-update-show">2024-10-14 日</div>
         </div>
       
     </div>
