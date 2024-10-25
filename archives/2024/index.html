@@ -1799,7 +1799,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1728873641635),
+    lastupdate: new Date(1729848486815),
     sidebar: {
       for_page: ["blogger","category","webinfo","music"],
       for_post: ["toc"],
@@ -2614,6 +2614,73 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2024/10/25/数字信号处理/1-动态时间规整算法/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="PQ.XIE BLOG">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="PQ.XIE BLOG">
+    <meta itemprop="description" content="个人博客">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2024/10/25/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/1-%E5%8A%A8%E6%80%81%E6%97%B6%E9%97%B4%E8%A7%84%E6%95%B4%E7%AE%97%E6%B3%95/"  itemprop="url">
+        1-动态时间规整
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        1 算法背景如何计算两个序列的相似性？这方面有很多方法，各有各的利弊，我们举最简单的方法，通过计算两个序列的欧式距离来衡量序列的相似性。如下图：
+
+两个序列的欧式距离等于相同索引的对应点的距离之和，这种算法有明显缺陷，当存在时间轴上的伸缩或偏移时，即使两个序列在形状上很相似，计算出来的距离也会很大。这便是DTW算法要针对解决的问题，更客观地计算出形状相似的两序列距离。
+2 DTW的思想如下右...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2024-10-25T17:27:54+08:00">2024-10-25</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E7%AE%97%E6%B3%95/">信号处理算法</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E7%AE%97%E6%B3%95/" itemprop="url"><span itemprop="name">信号处理算法</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2024/10/25/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/1-%E5%8A%A8%E6%80%81%E6%97%B6%E9%97%B4%E8%A7%84%E6%95%B4%E7%AE%97%E6%B3%95/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
   <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2024/10/14/先贤文集/诸葛亮集/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="PQ.XIE BLOG">
@@ -3215,75 +3282,6 @@ operator new用于申请裸空间（注意区别于new，并不调用构造函�
           </div>
         
       
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2024/07/12/C++那些事/8-线程局部变量/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-    <meta itemprop="description" content="个人博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2024/07/12/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/8-%E7%BA%BF%E7%A8%8B%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F/"  itemprop="url">
-        8-线程局部变量
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        今天来讨论下线程局部变量，以应对多线程开发中可能面对的需求。主要讨论以下两个问题：
-
-对于一个全局变量，每个线程都希望拥有它的一个副本，维护专属于自己的变量值，应该如何实现？
-进一步的，如果希望一个类在每个线程中有且只有一个副本，应该如何实现？
-
-1 线程局部变量1.1 POD 线程局部变量对于问题一，其实GCC已经提供了简单的解决方案，通过 __thread 关键字就可以实现简单类型的线程...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2024-07-12T18:19:08+08:00">2024-07-12</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/C-%E9%82%A3%E4%BA%9B%E4%BA%8B/">C++那些事</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/C-%E9%82%A3%E4%BA%9B%E4%BA%8B/" itemprop="url"><span itemprop="name">C++那些事</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2024/07/12/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/8-%E7%BA%BF%E7%A8%8B%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-
-  
-
-</div>
-
-          </div>
-        
-      
     
   </section>
   
@@ -3429,6 +3427,11 @@ operator new用于申请裸空间（注意区别于new，并不调用构造函�
             ><div class='name'>STL源码笔记</div><div class='badge'>(8)</div></a></li>
         
           <li><a class="flat-box"
+            title="/categories/%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E7%AE%97%E6%B3%95/" href="/categories/%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E7%AE%97%E6%B3%95/"
+            active-action="action-categoriesE4BFA1E58FB7E5A484E79086E7AE97E6B395"
+            ><div class='name'>信号处理算法</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
             title="/categories/%E5%85%88%E8%B4%A4%E6%96%87%E9%9B%86/" href="/categories/%E5%85%88%E8%B4%A4%E6%96%87%E9%9B%86/"
             active-action="action-categoriesE58588E8B4A4E69687E99B86"
             ><div class='name'>先贤文集</div><div class='badge'>(1)</div></a></li>
@@ -3479,7 +3482,7 @@ operator new用于申请裸空间（注意区别于new，并不调用构造函�
       
         <div class="webinfo-item">
           <div>文章数目：</div>
-          <div>61 篇</div>
+          <div>62 篇</div>
         </div>
       
 
@@ -3494,7 +3497,7 @@ operator new用于申请裸空间（注意区别于new，并不调用构造函�
       
         <div class="webinfo-item">
           <div>本站总字数：</div>
-          <div>65.7k 字</div>
+          <div>68.2k 字</div>
         </div>
       
 
@@ -3519,7 +3522,7 @@ operator new用于申请裸空间（注意区别于new，并不调用构造函�
       
         <div class="webinfo-item">
           <div>最后活动时间：</div>
-          <div id="last-update-show">2024-10-14 日</div>
+          <div id="last-update-show">2024-10-25 日</div>
         </div>
       
     </div>
