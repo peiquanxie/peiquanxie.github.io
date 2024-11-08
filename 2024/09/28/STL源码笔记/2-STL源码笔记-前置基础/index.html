@@ -42,7 +42,7 @@
 <meta property="og:title" content="2-STL源码笔记-前置基础">
 <meta property="og:url" content="https://xie-peiquan.gitee.io/2024/09/28/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/2-STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0-%E5%89%8D%E7%BD%AE%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="PQ.XIE BLOG">
-<meta property="og:description" content="1 操作符重载 对某个对象运行某个操作符时，希望该对象表现出对应的行为，需要重载操作符。以下是list的迭代器的操作符重载例子：   2 模板方法  2.1 泛化 对于类定义或者函数定义，不指定内含的数据类型，允许用户在使用时才指定具体的数据类型。即是对类定义和函数定义进行泛化。 一种是对类进行泛化，形成类模板。具体类型需在使用时指定，如图中的 complex c2(2,6), &lt;&gt;">
+<meta property="og:description" content="1 操作符重载 对某个对象运行某个操作符时，希望该对象表现出对应的行为，需要重载操作符。以下是list的迭代器的操作符重载例子：  2 模板方法 2.1 泛化 对于类定义或者函数定义，不指定内含的数据类型，允许用户在使用时才指定具体的数据类型。即是对类定义和函数定义进行泛化。 一种是对类进行泛化，形成类模板。具体类型需在使用时指定，如图中的 complex c2(2,6), &lt;&gt;内的类">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2024-09-28T15:05:29.249Z">
@@ -1801,7 +1801,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1731038511593),
+    lastupdate: new Date(1731044201349),
     sidebar: {
       for_page: ["blogger","category","webinfo","music"],
       for_post: ["toc"],
@@ -2227,7 +2227,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd end-->
   <!-- front-matter head_end begin -->
   <!-- front-matter head_end end -->
-</head>
+<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head>
   <body itemscope itemtype="http://schema.org/WebPage">
     <!-- import body_begin begin-->
     <!-- import body_begin end-->
@@ -2688,27 +2688,27 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h2 id="1-操作符重载"><a class="markdownIt-Anchor" href="#1-操作符重载"></a> 1 操作符重载</h2>
+    <h2 id="1-操作符重载">1 操作符重载</h2>
 <p>对某个对象运行某个操作符时，希望该对象表现出对应的行为，需要重载操作符。以下是list的迭代器的操作符重载例子：</p>
 <img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20240928220808805.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20240928220808805.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20240928220808805" style="zoom:80%;" />
-<h2 id="2-模板方法"><a class="markdownIt-Anchor" href="#2-模板方法"></a> 2 模板方法</h2>
-<h3 id="21-泛化"><a class="markdownIt-Anchor" href="#21-泛化"></a> 2.1 泛化</h3>
+<h2 id="2-模板方法">2 模板方法</h2>
+<h3 id="2-1-泛化">2.1 泛化</h3>
 <p>对于类定义或者函数定义，不指定内含的数据类型，允许用户在使用时才指定具体的数据类型。即是对类定义和函数定义进行泛化。</p>
 <p>一种是对类进行泛化，形成类模板。具体类型需在使用时指定，如图中的 complex<int> c2(2,6), &lt;&gt;内的类型即为指定类型。</p>
 <img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20240925222403426.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20240925222403426.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20240925222403426" style="zoom: 45%;" />
 <p>另一种是对函数进行泛化，形成函数模板。使用时不需要用户指定，编译器可自行进行类型推倒。</p>
 <img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20240925222438613.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20240925222438613.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20240925222438613" style="zoom:50%;" />
-<h3 id="22-特化"><a class="markdownIt-Anchor" href="#22-特化"></a> 2.2  特化</h3>
+<h3 id="2-2-特化">2.2  特化</h3>
 <p>如果发现泛化出来的类或函数太泛，需要对一些特殊类型进行特殊处理，则可使用特化的方法，编译器会选择最匹配的模板。</p>
-<h4 id="221-全特化"><a class="markdownIt-Anchor" href="#221-全特化"></a> 2.2.1 全特化</h4>
+<h4 id="2-2-1-全特化">2.2.1 全特化</h4>
 <p>如对以上complex类的 int 类型进行特殊处理，则特化类定义如下。当用户指定类型为 int，编译器会去匹配这个最佳版本。由于是对所有待定类型进行了特化，template&lt;&gt; 中的&lt;&gt;为空，因此也被叫做全特化。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;&gt; </span><br><span class="line"><span class="keyword">class</span> <span class="title class_">complex</span>&lt;<span class="type">int</span>&gt;&#123;</span><br><span class="line">  ......  </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h4 id="222-偏特化"><a class="markdownIt-Anchor" href="#222-偏特化"></a> 2.2.2 偏特化</h4>
+<h4 id="2-2-2-偏特化">2.2.2 偏特化</h4>
 <p>如果泛化版本中的 template&lt;…&gt; 中有多个待定类型，而我想特化其中的某个，这叫偏特化。（待定类型数量上的减少）</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//泛化版本</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> <span class="title class_">T</span>, <span class="keyword">class</span> <span class="title class_">Alloc</span>=alloc&gt;</span><br><span class="line"><span class="keyword">class</span> vector&#123;</span><br><span class="line">  ......  </span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//偏特化</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> <span class="title class_">Alloc</span>&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">vector</span>&lt;<span class="type">bool</span>, Alloc&gt;&#123;</span><br><span class="line">  ......  </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>如果我对某个待定类型不是指定，而是将其适用范围缩小，也是一种偏特化。（待定类型范围上的减少）</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//泛化版本</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> <span class="title class_">Iterator</span>&gt;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">iterator_traits</span>&#123;</span><br><span class="line">  ...  </span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//偏特化为普通指针</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> <span class="title class_">T</span>&gt;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">iterator_traits</span>&lt;T*&gt;&#123;</span><br><span class="line">  ...  </span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//偏特化为常指针</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> <span class="title class_">T</span>&gt;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">iterator_traits</span>&lt;<span class="type">const</span> T*&gt;&#123;</span><br><span class="line">  ...  </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="3-gp-泛型编程"><a class="markdownIt-Anchor" href="#3-gp-泛型编程"></a> 3 GP 泛型编程</h2>
+<h2 id="3-gp-泛型编程">3 GP 泛型编程</h2>
 <p>我们对OOP（面向对象编程）很熟悉，总是习惯于将具体的数据和函数都绑定到一个类中。而GP则是倾向于将数据和函数分开，将函数尽可能泛化为适用于多种数据，将不一样的细节上交给数据上的重载，如下：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//GP风格的min函数</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> <span class="title class_">T</span>&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">const</span> T&amp; <span class="title">min</span><span class="params">(<span class="type">const</span> T&amp; a, <span class="type">const</span> T&amp; b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> b &lt; a ? b : a;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>以上函数可以适用于任意两个相同类对象的比较大小，其比较大小的方法由类重载 &lt; 操作符实现。</p>
@@ -2833,16 +2833,16 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class='prev' href='/2024/09/28/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/3-STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0-%E5%88%86%E9%85%8D%E5%99%A8/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>3-STL源码笔记-分配器</p>
-          <p class='content'> 1 内存的申请和释放
-C内存管理的都是堆（Heap）内存，C中全局的内存申请和释放函数是 operator new和 operator delete可以被重载（但不推荐）.
-operator ...</p>
+          <p class='content'>1 内存的申请和释放
+C++内存管理的都是堆（Heap）内存，C++中全局的内存申请和释放函数是 operator new和 operator delete可以被重载（但不推荐）.
+operat...</p>
         </a>
       
       
         <a class='next' href='/2024/09/28/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/1-STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0-%E6%80%BB%E8%A7%88./'>
           <p class='title'>1-STL源码笔记-总览<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
           <p class='content'>使用一个东西，却不明白他的道理，不高明！
-我喜欢侯捷先生说的这句话，作为一个C程序员，几乎每天都要和STL打交道，如果不明白他背后的原理，不舒服。或许现在的STL足够稳定，使用指导书足够丰富，以...</p>
+我喜欢侯捷先生说的这句话，作为一个C++程序员，几乎每天都要和STL打交道，如果不明白他背后的原理，不舒服。或许现在的STL足够稳定，使用指导书足够丰富...</p>
         </a>
       
     </div>
@@ -2901,7 +2901,7 @@ operator ...</p>
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%93%8D%E4%BD%9C%E7%AC%A6%E9%87%8D%E8%BD%BD"><span class="toc-text"> 1 操作符重载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95"><span class="toc-text"> 2 模板方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#21-%E6%B3%9B%E5%8C%96"><span class="toc-text"> 2.1 泛化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#22-%E7%89%B9%E5%8C%96"><span class="toc-text"> 2.2  特化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#221-%E5%85%A8%E7%89%B9%E5%8C%96"><span class="toc-text"> 2.2.1 全特化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#222-%E5%81%8F%E7%89%B9%E5%8C%96"><span class="toc-text"> 2.2.2 偏特化</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-gp-%E6%B3%9B%E5%9E%8B%E7%BC%96%E7%A8%8B"><span class="toc-text"> 3 GP 泛型编程</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%93%8D%E4%BD%9C%E7%AC%A6%E9%87%8D%E8%BD%BD"><span class="toc-text">1 操作符重载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95"><span class="toc-text">2 模板方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E6%B3%9B%E5%8C%96"><span class="toc-text">2.1 泛化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E7%89%B9%E5%8C%96"><span class="toc-text">2.2  特化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-1-%E5%85%A8%E7%89%B9%E5%8C%96"><span class="toc-text">2.2.1 全特化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-2-%E5%81%8F%E7%89%B9%E5%8C%96"><span class="toc-text">2.2.2 偏特化</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-gp-%E6%B3%9B%E5%9E%8B%E7%BC%96%E7%A8%8B"><span class="toc-text">3 GP 泛型编程</span></a></li></ol>
     </div>
   </section>
 

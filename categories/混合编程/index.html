@@ -1799,7 +1799,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1731038511593),
+    lastupdate: new Date(1731044201349),
     sidebar: {
       for_page: ["blogger","category","webinfo","music"],
       for_post: ["toc"],
@@ -2225,7 +2225,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd end-->
   <!-- front-matter head_end begin -->
   <!-- front-matter head_end end -->
-</head>
+<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head>
   <body itemscope itemtype="http://schema.org/WebPage">
     <!-- import body_begin begin-->
     <!-- import body_begin end-->
@@ -2627,10 +2627,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       
         python调用C库是一种非常常见的做法，实际上很多python第三方库底层实现就是调用C动态库，以提高执行效率。这也是为什么python被称为“胶水语言”，即便捷地把各种C库粘结在一起。
- 1 Ctypes方法
- 1.1 C部分
+1 Ctypes方法
+1.1 C部分
 注意：如果是C++代码，需要将接口extern “C”{}，告诉编译器按C语言风格来编译接口。
-123int mul(int a,int b)&#123;    ...
+123int mul(int a,int b)&#123;    re...
       
     
   </div>
@@ -2694,9 +2694,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-         1 hello_python
+        1 hello_python
 将python视为一个第三方库，即可通过python提供的C语言API调用python解释器。简单示例如下：
-123456789#include &lt;python3.9/Python.h&gt;int main(int argc, char *argv[])&#123;  Py_SetProgramName((wchar_t*)argv[0]);  Py_...
+123456789#include &lt;python3.9/Python.h&gt;int main(int argc, char *argv[])&#123;  Py_SetProgramName((wchar_t*)argv[0]);  Py_I...
       
     
   </div>

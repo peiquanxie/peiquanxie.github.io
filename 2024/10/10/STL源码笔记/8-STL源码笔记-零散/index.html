@@ -42,7 +42,7 @@
 <meta property="og:title" content="8-STL源码笔记-零散">
 <meta property="og:url" content="https://xie-peiquan.gitee.io/2024/10/10/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/8-STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0-%E9%9B%B6%E6%95%A3/index.html">
 <meta property="og:site_name" content="PQ.XIE BLOG">
-<meta property="og:description" content="1 万能Hash 自定义hash function的形式 123456789101112131415161718#include &lt;functional&gt;class Customer&amp;#123;    ...&amp;#125;;&#x2F;&#x2F;仿函数形式class CustomerHash&amp;#123;public:    std::size_t operator()(const Customer&amp;am">
+<meta property="og:description" content="1 万能Hash 自定义hash function的形式 123456789101112131415161718#include &lt;functional&gt;class Customer&amp;#123;    ...&amp;#125;;&#x2F;&#x2F;仿函数形式class CustomerHash&amp;#123;public:    std::size_t operator()(const Customer&amp;amp">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2024-10-10T12:45:26.620Z">
@@ -1801,7 +1801,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1731038511593),
+    lastupdate: new Date(1731044201349),
     sidebar: {
       for_page: ["blogger","category","webinfo","music"],
       for_post: ["toc"],
@@ -2227,7 +2227,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd end-->
   <!-- front-matter head_end begin -->
   <!-- front-matter head_end end -->
-</head>
+<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head>
   <body itemscope itemtype="http://schema.org/WebPage">
     <!-- import body_begin begin-->
     <!-- import body_begin end-->
@@ -2688,32 +2688,32 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h2 id="1-万能hash"><a class="markdownIt-Anchor" href="#1-万能hash"></a> 1 万能Hash</h2>
+    <h2 id="1-万能hash">1 万能Hash</h2>
 <p>自定义hash function的形式</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;functional&gt;</span></span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Customer</span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//仿函数形式</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">CustomerHash</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">std::<span class="type">size_t</span> <span class="title">operator</span><span class="params">()</span><span class="params">(<span class="type">const</span> Customer&amp; c)</span> <span class="type">const</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> ...</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br><span class="line">unordered_set&lt;Customer,CustomerHash&gt; custset;</span><br><span class="line"><span class="comment">//普通函数形式</span></span><br><span class="line"><span class="function"><span class="type">size_t</span> <span class="title">customer_hash_func</span><span class="params">(<span class="type">const</span> Customer&amp; c)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> ...</span><br><span class="line">&#125;</span><br><span class="line">unordered_set&lt;Customer,<span class="built_in">size_t</span>(*)(<span class="type">const</span> Customer&amp;)&gt; <span class="built_in">custset</span>(<span class="number">20</span>,customer_hash_func);</span><br></pre></td></tr></table></figure>
 <p>一般来讲，Customer 结构体由若干基本类型组成，每个基本类型都能在STL中找到对应的哈希函数。但是如何将这若干个基本类型的哈希值合理地结合起来，形成一个足够分散的哈希值，这就是万能哈希函数要做的事。</p>
-<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241010095545846.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241010095545846.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241010095545846" /></p>
+<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241010095545846.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241010095545846.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241010095545846"></p>
 <ul>
 <li>本质上，通过一个seed(初始值为0)不断与各个基本类型的哈希值做运算（<code>seed^=std::hash&lt;T&gt;()(val)+0x9e3779b9+(seed&lt;&lt;6)+(seed&gt;&gt;2)</code>），最终得到的seed即为综合哈希值。为什么这么运算就足够散乱？emmm，或许是经验，或许是随意（9e3779b9是黄金比例的小数点后几位）。</li>
 </ul>
-<h2 id="2-tuple"><a class="markdownIt-Anchor" href="#2-tuple"></a> 2 tuple</h2>
+<h2 id="2-tuple">2 tuple</h2>
 <p>元组，元之组合，可以包含任意类型的元素。使用示例如下：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">tuple&lt;<span class="type">int</span>,<span class="type">float</span>,string&gt; <span class="title">t1</span><span class="params">(<span class="number">41</span>,<span class="number">8.3</span>,<span class="string">&quot;nico&quot;</span>)</span></span>;</span><br><span class="line"><span class="keyword">auto</span> val0 = <span class="built_in">get</span>&lt;<span class="number">0</span>&gt;(t1);</span><br><span class="line"><span class="keyword">auto</span> val1 = <span class="built_in">get</span>&lt;<span class="number">1</span>&gt;(t1);</span><br><span class="line"><span class="keyword">auto</span> t2 = <span class="built_in">make_tuple</span>(<span class="number">22</span>,<span class="number">44</span>,<span class="string">&quot;stacy&quot;</span>);</span><br><span class="line"><span class="built_in">get</span>&lt;<span class="number">1</span>&gt;(t1) = <span class="built_in">get</span>&lt;<span class="number">1</span>&gt;(t2);</span><br><span class="line"><span class="keyword">typedef</span> tuple&lt;<span class="type">int</span>,<span class="type">float</span>,string&gt; TupleType;</span><br><span class="line"><span class="keyword">typedef</span> tuple_element&lt;<span class="number">1</span>,TupleType&gt;::type T; <span class="comment">//T为float</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241010104733937.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241010104733937.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241010104733937" /></p>
+<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241010104733937.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241010104733937.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241010104733937"></p>
 <ul>
 <li>利用逐部分递归继承的方法，将多个类型的元素一步一步的继承下来。</li>
 </ul>
-<h2 id="3-type_traits"><a class="markdownIt-Anchor" href="#3-type_traits"></a> 3 type_traits</h2>
+<h2 id="3-type-traits">3 type_traits</h2>
 <p>利用泛化偏特化的方法获取类的若干属性，C++11调用type_traits相关方法可得到的类型属性可由以下链接查看：</p>
 <blockquote>
 <p><a target="_blank" rel="noopener" href="https://cplusplus.com/reference/type_traits/?kw=type_traits">https://cplusplus.com/reference/type_traits/?kw=type_traits</a></p>
 </blockquote>
 <p>如查看类是否是POD类型的使用示例如下：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// is_pod example</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;type_traits&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">A</span> &#123; <span class="type">int</span> i; &#125;;            <span class="comment">// C-struct (POD)</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">B</span> : <span class="keyword">public</span> A &#123;&#125;;          <span class="comment">// still POD (no data members added)</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">C</span> : B &#123; <span class="function"><span class="type">void</span> <span class="title">fn</span><span class="params">()</span></span>&#123;&#125; &#125;;   <span class="comment">// still POD (member function)</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">D</span> : C &#123; <span class="built_in">D</span>()&#123;&#125; &#125;;         <span class="comment">// no POD (custom default constructor)</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  std::cout &lt;&lt; std::boolalpha;</span><br><span class="line">  std::cout &lt;&lt; <span class="string">&quot;is_pod:&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">  std::cout &lt;&lt; <span class="string">&quot;int: &quot;</span> &lt;&lt; std::is_pod&lt;<span class="type">int</span>&gt;::value &lt;&lt; std::endl;</span><br><span class="line">  std::cout &lt;&lt; <span class="string">&quot;A: &quot;</span> &lt;&lt; std::is_pod&lt;A&gt;::value &lt;&lt; std::endl;</span><br><span class="line">  std::cout &lt;&lt; <span class="string">&quot;B: &quot;</span> &lt;&lt; std::is_pod&lt;B&gt;::value &lt;&lt; std::endl;</span><br><span class="line">  std::cout &lt;&lt; <span class="string">&quot;C: &quot;</span> &lt;&lt; std::is_pod&lt;C&gt;::value &lt;&lt; std::endl;</span><br><span class="line">  std::cout &lt;&lt; <span class="string">&quot;D: &quot;</span> &lt;&lt; std::is_pod&lt;D&gt;::value &lt;&lt; std::endl;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="4-moveable元素"><a class="markdownIt-Anchor" href="#4-moveable元素"></a> 4 moveable元素</h2>
+<h2 id="4-moveable元素">4 moveable元素</h2>
 <p>moveable元素可实现在拷贝时，直接接管当前元素，不走构造函数。即拷贝旧对象地址，旧对象作废。其实现如下：</p>
-<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241010202816541.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241010202816541.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241010202816541" /></p>
-<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241010203406734.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241010203406734.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241010203406734" /></p>
+<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241010202816541.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241010202816541.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241010202816541"></p>
+<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241010203406734.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241010203406734.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241010203406734"></p>
 <ul>
 <li>当使用<code>MyString S2(std::move(S1))</code> 其调用的是<code>move constructor</code>函数，拷贝地址(浅拷贝)，旧对象作废。</li>
 <li>当使用<code>MyString S2 = std::move(S1)</code> 其调用的是<code>move assignment</code>函数，拷贝地址(浅拷贝)，旧对象作废。</li>
@@ -2842,20 +2842,20 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           <p class='content'>
 富贵不可求，尽人事而听天命耳。凡举大事，非励精图治不可成。
 
- 隆中对
-自董卓已来，豪杰并起，跨州连郡者不可胜数。曹操比於袁绍，则名微而众寡，然操遂能克绍，以弱为强者，非惟天命，抑亦人谋也。今...</p>
+隆中对
+自董卓已来，豪杰并起，跨州连郡者不可胜数。曹操比於袁绍，则名微而众寡，然操遂能克绍，以弱为强者，非惟天命，抑亦人谋也。今操...</p>
         </a>
       
       
         <a class='next' href='/2024/10/09/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/7-%E4%BB%BF%E5%87%BD%E6%95%B0&%E9%80%82%E9%85%8D%E5%99%A8/'>
           <p class='title'>7-仿函数&适配器<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'> 1 仿函数
+          <p class='content'>1 仿函数
 仿函数（functors），可认为重载了operator()的类，表现上类似函数，为算法服务。
 
 
 
 仿函数重载了 operator()操作符，以供算法调用。
-仿函数继承 unar...</p>
+仿函数继承 unary...</p>
         </a>
       
     </div>
@@ -2914,7 +2914,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%B8%87%E8%83%BDhash"><span class="toc-text"> 1 万能Hash</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-tuple"><span class="toc-text"> 2 tuple</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-type_traits"><span class="toc-text"> 3 type_traits</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-moveable%E5%85%83%E7%B4%A0"><span class="toc-text"> 4 moveable元素</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%B8%87%E8%83%BDhash"><span class="toc-text">1 万能Hash</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-tuple"><span class="toc-text">2 tuple</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-type-traits"><span class="toc-text">3 type_traits</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-moveable%E5%85%83%E7%B4%A0"><span class="toc-text">4 moveable元素</span></a></li></ol>
     </div>
   </section>
 

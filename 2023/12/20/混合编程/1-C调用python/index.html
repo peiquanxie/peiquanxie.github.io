@@ -42,7 +42,7 @@
 <meta property="og:title" content="1-C调用python">
 <meta property="og:url" content="https://xie-peiquan.gitee.io/2023/12/20/%E6%B7%B7%E5%90%88%E7%BC%96%E7%A8%8B/1-C%E8%B0%83%E7%94%A8python/index.html">
 <meta property="og:site_name" content="PQ.XIE BLOG">
-<meta property="og:description" content="1 hello_python 将python视为一个第三方库，即可通过python提供的C语言API调用python解释器。简单示例如下： 123456789#include &lt;python3.9&#x2F;Python.h&gt;int main(int argc, char *argv[])&amp;#123;  Py_SetProgramName((wchar_t*)argv[0]);  Py_Ini">
+<meta property="og:description" content="1 hello_python 将python视为一个第三方库，即可通过python提供的C语言API调用python解释器。简单示例如下： 123456789#include &lt;python3.9&#x2F;Python.h&gt;int main(int argc, char *argv[])&amp;#123;  Py_SetProgramName((wchar_t*)argv[0]);  Py_Init">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2023-12-20T03:48:54.670Z">
@@ -1801,7 +1801,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1731038511593),
+    lastupdate: new Date(1731044201349),
     sidebar: {
       for_page: ["blogger","category","webinfo","music"],
       for_post: ["toc"],
@@ -2227,7 +2227,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd end-->
   <!-- front-matter head_end begin -->
   <!-- front-matter head_end end -->
-</head>
+<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head>
   <body itemscope itemtype="http://schema.org/WebPage">
     <!-- import body_begin begin-->
     <!-- import body_begin end-->
@@ -2688,14 +2688,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h3 id="1-hello_python"><a class="markdownIt-Anchor" href="#1-hello_python"></a> 1 hello_python</h3>
+    <h3 id="1-hello-python">1 hello_python</h3>
 <p>将python视为一个第三方库，即可通过python提供的C语言API调用python解释器。简单示例如下：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;python3.9/Python.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="built_in">Py_SetProgramName</span>((<span class="type">wchar_t</span>*)argv[<span class="number">0</span>]);</span><br><span class="line">  <span class="built_in">Py_Initialize</span>();</span><br><span class="line">  <span class="built_in">PyRun_SimpleString</span>(<span class="string">&quot;print(&#x27;Hello Python!&#x27;)&quot;</span>);</span><br><span class="line">  <span class="built_in">Py_Finalize</span>();</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>编译：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc -I/usr/include/python3.9 ./c_call_python.c -lpython3.9</span><br></pre></td></tr></table></figure>
 <p>如果提示某些python相关头文件找不到，则可能需要安装python-dev版本。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install python3.9-dev</span><br></pre></td></tr></table></figure>
-<h3 id="2-调用python模块"><a class="markdownIt-Anchor" href="#2-调用python模块"></a> 2 调用python模块</h3>
+<h3 id="2-调用python模块">2 调用python模块</h3>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;python3.9/Python.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">python_function_test</span><span class="params">(<span class="type">int</span> a)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> res;</span><br><span class="line">    PyObject *pModule,*pFunc;</span><br><span class="line">    PyObject *pArgs, *pValue;</span><br><span class="line">    <span class="comment">/* import */</span></span><br><span class="line">    <span class="built_in">PyRun_SimpleString</span>(<span class="string">&quot;import sys&quot;</span>);</span><br><span class="line">    <span class="built_in">PyRun_SimpleString</span>(<span class="string">&quot;sys.path.append(&#x27;./&#x27;)&quot;</span>);</span><br><span class="line">    pModule = <span class="built_in">PyImport_Import</span>(<span class="built_in">PyUnicode_FromString</span>(<span class="string">&quot;module_a&quot;</span>));</span><br><span class="line">    <span class="comment">/* module_a.test_func */</span></span><br><span class="line">    pFunc = <span class="built_in">PyObject_GetAttrString</span>(pModule, <span class="string">&quot;test_func&quot;</span>); </span><br><span class="line">    <span class="comment">/* build args */</span></span><br><span class="line">    pArgs = <span class="built_in">PyTuple_New</span>(<span class="number">1</span>);</span><br><span class="line">    <span class="built_in">PyTuple_SetItem</span>(pArgs,<span class="number">0</span>, <span class="built_in">PyLong_FromLong</span>(a)); </span><br><span class="line">    <span class="comment">/* call */</span></span><br><span class="line">    pValue = <span class="built_in">PyObject_CallObject</span>(pFunc, pArgs);</span><br><span class="line">    res = <span class="built_in">PyLong_AsLong</span>(pValue);</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="built_in">Py_SetProgramName</span>((<span class="type">wchar_t</span>*)argv[<span class="number">0</span>]);</span><br><span class="line">  <span class="built_in">Py_Initialize</span>();</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;result: %d\n&quot;</span>,<span class="built_in">python_function_test</span>(<span class="number">2</span>));</span><br><span class="line">  <span class="built_in">Py_Finalize</span>();</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>其中，module_a是python脚本的名字，test_func是脚本中的一个函数。</p>
 
@@ -2817,18 +2817,18 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <a class='prev' href='/2023/12/20/%E6%B7%B7%E5%90%88%E7%BC%96%E7%A8%8B/2-python%E8%B0%83%E7%94%A8C/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>2-python调用C</p>
           <p class='content'>python调用C库是一种非常常见的做法，实际上很多python第三方库底层实现就是调用C动态库，以提高执行效率。这也是为什么python被称为“胶水语言”，即便捷地把各种C库粘结在一起。
- 1...</p>
+1 ...</p>
         </a>
       
       
         <a class='next' href='/2023/12/10/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/7-%E8%AE%BE%E8%AE%A1%E5%B9%B6%E5%8F%91%E4%BB%A3%E7%A0%81/'>
           <p class='title'>7-设计并发代码<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
           <p class='content'>设计并发代码时需考虑两个层面：线程安全 和 并发性能。
- 1 线程划分
- 1.1 数据简单切分
+1 线程划分
+1.1 数据简单切分
 考虑将将一片较大的数据切分为若干块给各线程执行，最后按串行的方式执行规约操作。简单例子如下：
 
-1...</p>
+123...</p>
         </a>
       
     </div>
@@ -2887,7 +2887,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-hello_python"><span class="toc-text"> 1 hello_python</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E8%B0%83%E7%94%A8python%E6%A8%A1%E5%9D%97"><span class="toc-text"> 2 调用python模块</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-hello-python"><span class="toc-text">1 hello_python</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E8%B0%83%E7%94%A8python%E6%A8%A1%E5%9D%97"><span class="toc-text">2 调用python模块</span></a></li></ol>
     </div>
   </section>
 

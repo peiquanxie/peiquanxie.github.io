@@ -42,7 +42,7 @@
 <meta property="og:title" content="1-STL源码笔记-总览">
 <meta property="og:url" content="https://xie-peiquan.gitee.io/2024/09/28/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/1-STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0-%E6%80%BB%E8%A7%88./index.html">
 <meta property="og:site_name" content="PQ.XIE BLOG">
-<meta property="og:description" content="使用一个东西，却不明白他的道理，不高明！ 我喜欢侯捷先生说的这句话，作为一个C程序员，几乎每天都要和STL打交道，如果不明白他背后的原理，不舒服。或许现在的STL足够稳定，使用指导书足够丰富，以至于使用者确实可以不用关心STL的内部实现。但是，STL作为C的高水准程序库，是从业者提升内功的代码典范，加之有侯捷先生的书籍和授课资料。因此，这里把STL源码学习过程中的一些东西记录下来，以备以后查阅。">
+<meta property="og:description" content="使用一个东西，却不明白他的道理，不高明！ 我喜欢侯捷先生说的这句话，作为一个C++程序员，几乎每天都要和STL打交道，如果不明白他背后的原理，不舒服。或许现在的STL足够稳定，使用指导书足够丰富，以至于使用者确实可以不用关心STL的内部实现。但是，STL作为C++的高水准程序库，是从业者提升内功的代码典范，加之有侯捷先生的书籍和授课资料。因此，这里把STL源码学习过程中的一些东西记录下来，以备以后">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2024-09-28T15:05:28.925Z">
@@ -1801,7 +1801,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1731038511593),
+    lastupdate: new Date(1731044201349),
     sidebar: {
       for_page: ["blogger","category","webinfo","music"],
       for_post: ["toc"],
@@ -2227,7 +2227,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd end-->
   <!-- front-matter head_end begin -->
   <!-- front-matter head_end end -->
-</head>
+<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head>
   <body itemscope itemtype="http://schema.org/WebPage">
     <!-- import body_begin begin-->
     <!-- import body_begin end-->
@@ -2644,7 +2644,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：652 字</p>
+      <p>字数：653 字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -2689,13 +2689,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
     <p>使用一个东西，却不明白他的道理，不高明！</p>
-<p>我喜欢侯捷先生说的这句话，作为一个C<ins>程序员，几乎每天都要和STL打交道，如果不明白他背后的原理，不舒服。或许现在的STL足够稳定，使用指导书足够丰富，以至于使用者确实可以不用关心STL的内部实现。但是，STL作为C</ins>的高水准程序库，是从业者提升内功的代码典范，加之有侯捷先生的书籍和授课资料。因此，这里把STL源码学习过程中的一些东西记录下来，以备以后查阅。</p>
-<h2 id="何为stl"><a class="markdownIt-Anchor" href="#何为stl"></a> 何为STL？</h2>
-<p>STL (Standart Template Library，标准模板库) ，是C<ins>标准库中的一大部分，包括我们常用的数据结构和算法。关于C</ins>标准库以及STL的API，可以在以下网站中找到参考信息和demo。</p>
+<p>我喜欢侯捷先生说的这句话，作为一个C++程序员，几乎每天都要和STL打交道，如果不明白他背后的原理，不舒服。或许现在的STL足够稳定，使用指导书足够丰富，以至于使用者确实可以不用关心STL的内部实现。但是，STL作为C++的高水准程序库，是从业者提升内功的代码典范，加之有侯捷先生的书籍和授课资料。因此，这里把STL源码学习过程中的一些东西记录下来，以备以后查阅。</p>
+<h2 id="何为stl？">何为STL？</h2>
+<p>STL (Standart Template Library，标准模板库) ，是C++标准库中的一大部分，包括我们常用的数据结构和算法。关于C++标准库以及STL的API，可以在以下网站中找到参考信息和demo。</p>
 <blockquote>
 <p><a target="_blank" rel="noopener" href="https://legacy.cplusplus.com/reference/stl/">https://legacy.cplusplus.com/reference/stl/</a></p>
 </blockquote>
-<h2 id="stl六大部件"><a class="markdownIt-Anchor" href="#stl六大部件"></a> STL六大部件</h2>
+<h2 id="stl六大部件">STL六大部件</h2>
 <p>STL包含如下六大部件，其部件间关系如下图：</p>
 <ul>
 <li><strong>容器（container）</strong>：STL最主体的部分，各种用来存放数据的数据结构，分为<strong>序列式容器</strong> 和 <strong>关联式容器</strong>。（class template）</li>
@@ -2706,12 +2706,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li><strong>适配器（adapter）</strong>：一种用来修饰容器、迭代器、仿函数接口的东西。</li>
 </ul>
 <img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20240924232444865.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20240924232444865.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20240924232444865" style="zoom:50%;" />
-<h2 id="stl容器一览"><a class="markdownIt-Anchor" href="#stl容器一览"></a> STL容器一览</h2>
+<h2 id="stl容器一览">STL容器一览</h2>
 <p>STL各容器的基本数据结构如下图简单所示，左列为序列式容器，右列为关联式容器。</p>
-<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20240928224037369.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20240928224037369.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20240928224037369" /></p>
+<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20240928224037369.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20240928224037369.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20240928224037369"></p>
 <p>STL容器的内含关系如下图，其中，基于 hashtable 的容器现已被纳入标准，并在STL中被命名为unordered map/set.</p>
-<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20240928224112721.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20240928224112721.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20240928224112721" /></p>
-<h2 id="stl中的约定"><a class="markdownIt-Anchor" href="#stl中的约定"></a> STL中的约定</h2>
+<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20240928224112721.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20240928224112721.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20240928224112721"></p>
+<h2 id="stl中的约定">STL中的约定</h2>
 <ul>
 <li>容器均应具备begin() 和end() 两个成员函数，这两个成员函数所传回来的区间为<strong>前闭后开</strong>区间。</li>
 <li>算法中的函数的前两个入参是迭代器，分别是指向前闭后开区间的两个迭代器。</li>
@@ -2838,12 +2838,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class='prev' href='/2024/09/28/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/2-STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0-%E5%89%8D%E7%BD%AE%E5%9F%BA%E7%A1%80/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>2-STL源码笔记-前置基础</p>
-          <p class='content'> 1 操作符重载
+          <p class='content'>1 操作符重载
 对某个对象运行某个操作符时，希望该对象表现出对应的行为，需要重载操作符。以下是list的迭代器的操作符重载例子：
 
- 2 模板方法
- 2.1 泛化
-对于类定义或者函数定义，不指...</p>
+2 模板方法
+2.1 泛化
+对于类定义或者函数定义，不指定内含...</p>
         </a>
       
       
@@ -2911,7 +2911,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%95%E4%B8%BAstl"><span class="toc-text"> 何为STL？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#stl%E5%85%AD%E5%A4%A7%E9%83%A8%E4%BB%B6"><span class="toc-text"> STL六大部件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#stl%E5%AE%B9%E5%99%A8%E4%B8%80%E8%A7%88"><span class="toc-text"> STL容器一览</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#stl%E4%B8%AD%E7%9A%84%E7%BA%A6%E5%AE%9A"><span class="toc-text"> STL中的约定</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%95%E4%B8%BAstl%EF%BC%9F"><span class="toc-text">何为STL？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#stl%E5%85%AD%E5%A4%A7%E9%83%A8%E4%BB%B6"><span class="toc-text">STL六大部件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#stl%E5%AE%B9%E5%99%A8%E4%B8%80%E8%A7%88"><span class="toc-text">STL容器一览</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#stl%E4%B8%AD%E7%9A%84%E7%BA%A6%E5%AE%9A"><span class="toc-text">STL中的约定</span></a></li></ol>
     </div>
   </section>
 

@@ -42,7 +42,7 @@
 <meta property="og:title" content="7-仿函数&amp;适配器">
 <meta property="og:url" content="https://xie-peiquan.gitee.io/2024/10/09/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/7-%E4%BB%BF%E5%87%BD%E6%95%B0&%E9%80%82%E9%85%8D%E5%99%A8/index.html">
 <meta property="og:site_name" content="PQ.XIE BLOG">
-<meta property="og:description" content="1 仿函数 仿函数（functors），可认为重载了operator()的类，表现上类似函数，为算法服务。    仿函数重载了 operator()操作符，以供算法调用。 仿函数继承 unary_function 或 binary_function，以记录入参和返回值类型供算法提问。 仿函数传给算法时，应该传入一个仿函数对象，如：less&lt;int&gt;().   2 适配器 STL中存在">
+<meta property="og:description" content="1 仿函数 仿函数（functors），可认为重载了operator()的类，表现上类似函数，为算法服务。    仿函数重载了 operator()操作符，以供算法调用。 仿函数继承 unary_function 或 binary_function，以记录入参和返回值类型供算法提问。 仿函数传给算法时，应该传入一个仿函数对象，如：less&lt;int&gt;().  2 适配器 STL中存在多种">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2024-10-09T09:12:53.990Z">
@@ -1801,7 +1801,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1731038511593),
+    lastupdate: new Date(1731044201349),
     sidebar: {
       for_page: ["blogger","category","webinfo","music"],
       for_post: ["toc"],
@@ -2227,7 +2227,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd end-->
   <!-- front-matter head_end begin -->
   <!-- front-matter head_end end -->
-</head>
+<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head>
   <body itemscope itemtype="http://schema.org/WebPage">
     <!-- import body_begin begin-->
     <!-- import body_begin end-->
@@ -2688,7 +2688,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h2 id="1-仿函数"><a class="markdownIt-Anchor" href="#1-仿函数"></a> 1 仿函数</h2>
+    <h2 id="1-仿函数">1 仿函数</h2>
 <p>仿函数（functors），可认为重载了<code>operator()</code>的类，表现上类似函数，为算法服务。</p>
 <img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241009151418254.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241009151418254.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241009151418254" style="zoom:80%;" />
 <img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241009152118395.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241009152118395.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241009152118395" style="zoom:80%;" />
@@ -2697,22 +2697,22 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li>仿函数继承 <code>unary_function</code> 或 <code>binary_function</code>，以记录入参和返回值类型供算法提问。</li>
 <li>仿函数传给算法时，应该传入一个仿函数对象，如：<code>less&lt;int&gt;()</code>.</li>
 </ul>
-<h2 id="2-适配器"><a class="markdownIt-Anchor" href="#2-适配器"></a> 2 适配器</h2>
+<h2 id="2-适配器">2 适配器</h2>
 <p>STL中存在多种适配器，有容器适配器，有迭代器适配器，有仿函数适配器。</p>
-<h3 id="21-函数适配器"><a class="markdownIt-Anchor" href="#21-函数适配器"></a> 2.1 函数适配器</h3>
-<h4 id="binder2nd"><a class="markdownIt-Anchor" href="#binder2nd"></a> binder2nd</h4>
-<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241009153906787.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241009153906787.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241009153906787" /></p>
+<h3 id="2-1-函数适配器">2.1 函数适配器</h3>
+<h4 id="binder2nd">binder2nd</h4>
+<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241009153906787.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241009153906787.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241009153906787"></p>
 <ul>
 <li>binder2nd可以将二元函数的第二个参数写死，包装成一个一元仿函数。</li>
 <li>bind2nd函数是binder2nd的辅助函数，也是真正提供给用户使用的函数。为什么要额外再提供一个函数呢？因为仿函数得指定模板类型，麻烦！而辅助函数可借助参数类型推倒，使用起来简单。如上：<code>bind2nd(less&lt;int&gt;(), 40)</code>.</li>
 </ul>
-<h4 id="新型适配器-bind"><a class="markdownIt-Anchor" href="#新型适配器-bind"></a> 新型适配器 bind</h4>
+<h4 id="新型适配器-bind">新型适配器 bind</h4>
 <p>C++11使用了更加灵活而清晰的<code>std::bind</code>函数，函数签名如下：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> <span class="title class_">Fn</span>, <span class="keyword">class</span>... Args&gt; </span><br><span class="line"><span class="function">std::function <span class="title">bind</span> <span class="params">(Fn&amp;&amp; fn, Args&amp;&amp;... args)</span></span>;</span><br></pre></td></tr></table></figure>
 <p>对于Fn，可以是普通函数、函数对象，类成员函数；对于Args，可以是固定值，也可以是占位符（<code>_1, _2</code>）. bind风格的函数适配器代码如下，其使得新函数的使用变得清晰。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">auto</span> lessfn = <span class="built_in">bind</span>(<span class="built_in">less</span>&lt;<span class="type">int</span>&gt;(), _1, <span class="number">50</span>);</span><br><span class="line"><span class="type">bool</span> flag = <span class="built_in">lessfn</span>(<span class="number">70</span>);</span><br></pre></td></tr></table></figure>
-<h3 id="22-迭代器适配器"><a class="markdownIt-Anchor" href="#22-迭代器适配器"></a> 2.2 迭代器适配器</h3>
-<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241009162135408.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241009162135408.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241009162135408" /></p>
+<h3 id="2-2-迭代器适配器">2.2 迭代器适配器</h3>
+<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241009162135408.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241009162135408.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241009162135408"></p>
 <ul>
 <li>inserter将iterator的赋值 (assign) 操作改变为插入 (insert) 操作，并将iterator右移一个位置。</li>
 <li>可以看到 <code>insert_iterator</code>是对容器的iterator的一个包装，其重载原来iterator的<code>operator=</code>操作符，将其改为插入并有意的操作。</li>
@@ -2839,9 +2839,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class='prev' href='/2024/10/10/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/8-STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0-%E9%9B%B6%E6%95%A3/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>8-STL源码笔记-零散</p>
-          <p class='content'> 1 万能Hash
+          <p class='content'>1 万能Hash
 自定义hash function的形式
-123456789101112131415161718#include &lt;functional&gt;class Custome...</p>
+123456789101112131415161718#include &lt;functional&gt;class Customer...</p>
         </a>
       
       
@@ -2906,7 +2906,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%BB%BF%E5%87%BD%E6%95%B0"><span class="toc-text"> 1 仿函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E9%80%82%E9%85%8D%E5%99%A8"><span class="toc-text"> 2 适配器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#21-%E5%87%BD%E6%95%B0%E9%80%82%E9%85%8D%E5%99%A8"><span class="toc-text"> 2.1 函数适配器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#binder2nd"><span class="toc-text"> binder2nd</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B0%E5%9E%8B%E9%80%82%E9%85%8D%E5%99%A8-bind"><span class="toc-text"> 新型适配器 bind</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#22-%E8%BF%AD%E4%BB%A3%E5%99%A8%E9%80%82%E9%85%8D%E5%99%A8"><span class="toc-text"> 2.2 迭代器适配器</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%BB%BF%E5%87%BD%E6%95%B0"><span class="toc-text">1 仿函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E9%80%82%E9%85%8D%E5%99%A8"><span class="toc-text">2 适配器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E5%87%BD%E6%95%B0%E9%80%82%E9%85%8D%E5%99%A8"><span class="toc-text">2.1 函数适配器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#binder2nd"><span class="toc-text">binder2nd</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B0%E5%9E%8B%E9%80%82%E9%85%8D%E5%99%A8-bind"><span class="toc-text">新型适配器 bind</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E8%BF%AD%E4%BB%A3%E5%99%A8%E9%80%82%E9%85%8D%E5%99%A8"><span class="toc-text">2.2 迭代器适配器</span></a></li></ol></li></ol>
     </div>
   </section>
 

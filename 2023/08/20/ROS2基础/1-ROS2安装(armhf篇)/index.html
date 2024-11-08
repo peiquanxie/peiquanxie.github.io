@@ -42,7 +42,7 @@
 <meta property="og:title" content="1-ROS2安装(armhf篇)">
 <meta property="og:url" content="https://xie-peiquan.gitee.io/2023/08/20/ROS2%E5%9F%BA%E7%A1%80/1-ROS2%E5%AE%89%E8%A3%85(armhf%E7%AF%87)/index.html">
 <meta property="og:site_name" content="PQ.XIE BLOG">
-<meta property="og:description" content="由于ROS官方并没有提供armhf CPU架构的ROS2二进制安装文件，本篇整理了从ROS2源码编译安装的方法。本篇安装环境如下： CPU架构：armv7l 操作系统：ubuntu20.04  1 更换镜像源（可选） 更换镜像源可以加速各种依赖库下载速度，这里提供常用的 ubuntu镜像源 和 pip源。  1.1 更换ubuntu镜像源 这里采用清华源，同学们可到该网站  https:&#x2F;&#x2F;mir">
+<meta property="og:description" content="由于ROS官方并没有提供armhf CPU架构的ROS2二进制安装文件，本篇整理了从ROS2源码编译安装的方法。本篇安装环境如下： CPU架构：armv7l 操作系统：ubuntu20.04 1 更换镜像源（可选） 更换镜像源可以加速各种依赖库下载速度，这里提供常用的 ubuntu镜像源 和 pip源。 1.1 更换ubuntu镜像源 这里采用清华源，同学们可到该网站  https:&#x2F;&#x2F;mirro">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2023-08-20T09:29:18.360Z">
@@ -1801,7 +1801,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1731038511593),
+    lastupdate: new Date(1731044201349),
     sidebar: {
       for_page: ["blogger","category","webinfo","music"],
       for_post: ["toc"],
@@ -2227,7 +2227,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd end-->
   <!-- front-matter head_end begin -->
   <!-- front-matter head_end end -->
-</head>
+<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head>
   <body itemscope itemtype="http://schema.org/WebPage">
     <!-- import body_begin begin-->
     <!-- import body_begin end-->
@@ -2689,35 +2689,35 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
     <p>由于ROS官方并没有提供armhf CPU架构的ROS2二进制安装文件，本篇整理了从ROS2源码编译安装的方法。本篇安装环境如下：</p>
-<p>CPU架构：armv7l<br />
+<p>CPU架构：armv7l<br>
 操作系统：ubuntu20.04</p>
-<h2 id="1-更换镜像源可选"><a class="markdownIt-Anchor" href="#1-更换镜像源可选"></a> 1 更换镜像源（可选）</h2>
+<h2 id="1-更换镜像源-可选">1 更换镜像源（可选）</h2>
 <p>更换镜像源可以加速各种依赖库下载速度，这里提供常用的 ubuntu镜像源 和 pip源。</p>
-<h3 id="11-更换ubuntu镜像源"><a class="markdownIt-Anchor" href="#11-更换ubuntu镜像源"></a> 1.1 更换ubuntu镜像源</h3>
+<h3 id="1-1-更换ubuntu镜像源">1.1 更换ubuntu镜像源</h3>
 <p>这里采用清华源，同学们可到该网站  <a target="_blank" rel="noopener" href="https://mirror.tuna.tsinghua.edu.cn/help/ubuntu/">https://mirror.tuna.tsinghua.edu.cn/help/ubuntu/</a> 寻找自己系统版本对应的源。需要注意的是，大部分高校提供的源都是X86架构的，对于arm设备需要在源加上‘-ports’ 。armv7l / ubuntu20.04的源如下：</p>
 <blockquote>
-<p>mv /etc/apt/sources.list  /etc/apt/sources.list.bak<br />
+<p>mv /etc/apt/sources.list  /etc/apt/sources.list.bak<br>
 vim /etc/apt/sources.list</p>
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释</span></span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ focal main restricted universe multiverse</span><br><span class="line"><span class="comment"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal main restricted universe multiverse</span></span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-updates main restricted universe multiverse</span><br><span class="line"><span class="comment"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-updates main restricted universe multiverse</span></span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-backports main restricted universe multiverse</span><br><span class="line"><span class="comment"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-backports main restricted universe multiverse</span></span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-security main restricted universe multiverse</span><br><span class="line"><span class="comment"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-security main restricted universe multiverse</span></span><br></pre></td></tr></table></figure>
-<h3 id="12-更换-pip-源"><a class="markdownIt-Anchor" href="#12-更换-pip-源"></a> 1.2 更换 PIP 源</h3>
+<h3 id="1-2-更换-pip-源">1.2 更换 PIP 源</h3>
 <p>这里同样采用清华的pip源，可加速python第三方库的下载（后面需要），命令行输入以下命令即可。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip config <span class="built_in">set</span> global.index-url https://pypi.tuna.tsinghua.edu.cn/simple</span><br><span class="line">pip config <span class="built_in">set</span> global.trusted-host https://pypi.tuna.tsinghua.edu.cn</span><br></pre></td></tr></table></figure>
-<h2 id="2-设置-locale"><a class="markdownIt-Anchor" href="#2-设置-locale"></a> 2 设置 locale</h2>
+<h2 id="2-设置-locale">2 设置 locale</h2>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update &amp;&amp; sudo apt install locales</span><br><span class="line">sudo locale-gen en_US en_US.UTF-8</span><br><span class="line">sudo update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8</span><br><span class="line"><span class="built_in">export</span> LANG=en_US.UTF-8</span><br><span class="line">locale  <span class="comment"># verify settings</span></span><br></pre></td></tr></table></figure>
-<h2 id="3-添加ros2-存储库"><a class="markdownIt-Anchor" href="#3-添加ros2-存储库"></a> 3 添加ROS2 存储库</h2>
+<h2 id="3-添加ros2-存储库">3 添加ROS2 存储库</h2>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1 确保启用universe存储库</span></span><br><span class="line">sudo apt install software-properties-common</span><br><span class="line">sudo add-apt-repository universe</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2 添加ROS2 GPG 密钥</span></span><br><span class="line">sudo apt update &amp;&amp; sudo apt install curl -y</span><br><span class="line">sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3 添加存储库到 sources list</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;deb [arch=<span class="subst">$(dpkg --print-architecture)</span> signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu <span class="subst">$(. /etc/os-release &amp;&amp; echo $UBUNTU_CODENAME)</span> main&quot;</span> | sudo <span class="built_in">tee</span> /etc/apt/sources.list.d/ros2.list &gt; /dev/null</span><br><span class="line"></span><br><span class="line"><span class="comment"># 4 更新apt</span></span><br><span class="line">sudo apt apdate</span><br></pre></td></tr></table></figure>
-<h2 id="4-安装编译工具"><a class="markdownIt-Anchor" href="#4-安装编译工具"></a> 4 安装编译工具</h2>
+<h2 id="4-安装编译工具">4 安装编译工具</h2>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update &amp;&amp; sudo apt install -y \</span><br><span class="line">  libbullet-dev \</span><br><span class="line">  python3-pip \</span><br><span class="line">  python3-pytest-cov \</span><br><span class="line">  ros-dev-tools</span><br><span class="line"></span><br><span class="line"><span class="comment"># install some pip packages needed for testing</span></span><br><span class="line">python3 -m pip install -U \</span><br><span class="line">  argcomplete \</span><br><span class="line">  flake8-blind-except \</span><br><span class="line">  flake8-builtins \</span><br><span class="line">  flake8-class-newline \</span><br><span class="line">  flake8-comprehensions \</span><br><span class="line">  flake8-deprecated \</span><br><span class="line">  flake8-docstrings \</span><br><span class="line">  flake8-import-order \</span><br><span class="line">  flake8-quotes \</span><br><span class="line">  pytest-repeat \</span><br><span class="line">  pytest-rerunfailures \</span><br><span class="line">  pytest</span><br><span class="line"><span class="comment"># install Fast-RTPS dependencies</span></span><br><span class="line">sudo apt install --no-install-recommends -y \</span><br><span class="line">  libasio-dev \</span><br><span class="line">  libtinyxml2-dev</span><br><span class="line"><span class="comment"># install Cyclone DDS dependencies</span></span><br><span class="line">sudo apt install --no-install-recommends -y \</span><br><span class="line">  libcunit1-dev</span><br></pre></td></tr></table></figure>
-<h2 id="5-获取ros2源码"><a class="markdownIt-Anchor" href="#5-获取ros2源码"></a> 5 获取ROS2源码</h2>
+<h2 id="5-获取ros2源码">5 获取ROS2源码</h2>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p ~/ros2_foxy/src</span><br><span class="line"><span class="built_in">cd</span> ~/ros2_foxy</span><br><span class="line">wget https://raw.githubusercontent.com/ros2/ros2/foxy/ros2.repos --no-check-certificate</span><br><span class="line"><span class="comment">## github下载不稳定，可自行修改repos文件，添加代理前缀 https://ghproxy.com/</span></span><br><span class="line">vcs import --input ./ros2.repos src</span><br></pre></td></tr></table></figure>
-<h2 id="6-使用rosdep安装依赖"><a class="markdownIt-Anchor" href="#6-使用rosdep安装依赖"></a> 6 使用Rosdep安装依赖</h2>
+<h2 id="6-使用rosdep安装依赖">6 使用Rosdep安装依赖</h2>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo apt upgrade</span><br><span class="line"><span class="built_in">cd</span> /etc/ros/rosdep/sources.list.d &amp;&amp; wget https://mirrors.tuna.tsinghua.edu.cn/github-raw/ros/rosdistro/master/rosdep/sources.list.d/20-default.list</span><br><span class="line">rosdep update</span><br><span class="line">rosdep install --from-paths src --ignore-src -y --skip-keys <span class="string">&quot;fastcdr rti-connext-dds-5.3.1 urdfdom_headers&quot;</span></span><br></pre></td></tr></table></figure>
-<h2 id="7-编译ros2源码"><a class="markdownIt-Anchor" href="#7-编译ros2源码"></a> 7 编译ROS2源码</h2>
+<h2 id="7-编译ros2源码">7 编译ROS2源码</h2>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/ros2_foxy/</span><br><span class="line">colcon build --symlink-install</span><br></pre></td></tr></table></figure>
-<h2 id="8-设置环境变量"><a class="markdownIt-Anchor" href="#8-设置环境变量"></a> 8 设置环境变量</h2>
+<h2 id="8-设置环境变量">8 设置环境变量</h2>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">. ~/ros2_foxy/install/local_setup.bash</span><br></pre></td></tr></table></figure>
-<h2 id="9-测试"><a class="markdownIt-Anchor" href="#9-测试"></a> 9 测试</h2>
+<h2 id="9-测试">9 测试</h2>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 运行talker</span></span><br><span class="line">. ~/ros2_foxy/install/local_setup.bash</span><br><span class="line">ros2 run demo_nodes_cpp talker</span><br><span class="line"></span><br><span class="line"><span class="comment">## 新起另一个终端，运行listener</span></span><br><span class="line">. ~/ros2_foxy/install/local_setup.bash</span><br><span class="line">ros2 run demo_nodes_py listener</span><br></pre></td></tr></table></figure>
   </div>
   
@@ -2839,19 +2839,20 @@ vim /etc/apt/sources.list</p>
           <p class='content'>本篇安装环境如下：
 CPU架构：amd_64
 操作系统：ubuntu20.04
- 1 更换镜像源（可选）
-更换镜像源可以加速各种依赖库下载速度，这里提供常用的 ubuntu镜像源 和 pip源。...</p>
+1 更换镜像源（可选）
+更换镜像源可以加速各种依赖库下载速度，这里提供常用的 ubuntu镜像源 和 pip源。
+...</p>
         </a>
       
       
         <a class='next' href='/2023/07/26/pytorch%E5%9F%BA%E7%A1%80/5-%E6%A8%A1%E5%9E%8B%E8%B0%83%E5%8F%82/'>
           <p class='title'>5-模型调参<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'> 1 超参数
+          <p class='content'>1 超参数
 超参数是可调整的参数，让你控制模型优化过程。不同的超参数值会影响模型的训练和收敛率。
 常用的超参数如下：
 
 epoch : 在整个数据集上迭代的次数。
-batch : 每一次更新参...</p>
+batch : 每一次更新参数...</p>
         </a>
       
     </div>
@@ -2910,7 +2911,7 @@ batch : 每一次更新参...</p>
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%9B%B4%E6%8D%A2%E9%95%9C%E5%83%8F%E6%BA%90%E5%8F%AF%E9%80%89"><span class="toc-text"> 1 更换镜像源（可选）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#11-%E6%9B%B4%E6%8D%A2ubuntu%E9%95%9C%E5%83%8F%E6%BA%90"><span class="toc-text"> 1.1 更换ubuntu镜像源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-%E6%9B%B4%E6%8D%A2-pip-%E6%BA%90"><span class="toc-text"> 1.2 更换 PIP 源</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E8%AE%BE%E7%BD%AE-locale"><span class="toc-text"> 2 设置 locale</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%B7%BB%E5%8A%A0ros2-%E5%AD%98%E5%82%A8%E5%BA%93"><span class="toc-text"> 3 添加ROS2 存储库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%AE%89%E8%A3%85%E7%BC%96%E8%AF%91%E5%B7%A5%E5%85%B7"><span class="toc-text"> 4 安装编译工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E8%8E%B7%E5%8F%96ros2%E6%BA%90%E7%A0%81"><span class="toc-text"> 5 获取ROS2源码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E4%BD%BF%E7%94%A8rosdep%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96"><span class="toc-text"> 6 使用Rosdep安装依赖</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E7%BC%96%E8%AF%91ros2%E6%BA%90%E7%A0%81"><span class="toc-text"> 7 编译ROS2源码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-%E8%AE%BE%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-text"> 8 设置环境变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-%E6%B5%8B%E8%AF%95"><span class="toc-text"> 9 测试</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%9B%B4%E6%8D%A2%E9%95%9C%E5%83%8F%E6%BA%90-%E5%8F%AF%E9%80%89"><span class="toc-text">1 更换镜像源（可选）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E6%9B%B4%E6%8D%A2ubuntu%E9%95%9C%E5%83%8F%E6%BA%90"><span class="toc-text">1.1 更换ubuntu镜像源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E6%9B%B4%E6%8D%A2-pip-%E6%BA%90"><span class="toc-text">1.2 更换 PIP 源</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E8%AE%BE%E7%BD%AE-locale"><span class="toc-text">2 设置 locale</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%B7%BB%E5%8A%A0ros2-%E5%AD%98%E5%82%A8%E5%BA%93"><span class="toc-text">3 添加ROS2 存储库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%AE%89%E8%A3%85%E7%BC%96%E8%AF%91%E5%B7%A5%E5%85%B7"><span class="toc-text">4 安装编译工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E8%8E%B7%E5%8F%96ros2%E6%BA%90%E7%A0%81"><span class="toc-text">5 获取ROS2源码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E4%BD%BF%E7%94%A8rosdep%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96"><span class="toc-text">6 使用Rosdep安装依赖</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E7%BC%96%E8%AF%91ros2%E6%BA%90%E7%A0%81"><span class="toc-text">7 编译ROS2源码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-%E8%AE%BE%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-text">8 设置环境变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-%E6%B5%8B%E8%AF%95"><span class="toc-text">9 测试</span></a></li></ol>
     </div>
   </section>
 

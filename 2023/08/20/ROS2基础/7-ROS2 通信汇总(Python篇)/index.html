@@ -42,7 +42,7 @@
 <meta property="og:title" content="7-ROS2通信汇总(Python篇)">
 <meta property="og:url" content="https://xie-peiquan.gitee.io/2023/08/20/ROS2%E5%9F%BA%E7%A1%80/7-ROS2%20%E9%80%9A%E4%BF%A1%E6%B1%87%E6%80%BB(Python%E7%AF%87)/index.html">
 <meta property="og:site_name" content="PQ.XIE BLOG">
-<meta property="og:description" content="1 topic发布与订阅 发布端接口： 12publisher_ &#x3D; node.create_publisher(msg_type,&quot;topic_name&quot;, 10) publisher_.publish(msg)  订阅者接口： 1subscribe_ &#x3D; node.create_subscription(msg_type, &quot;topic_name&quot;,">
+<meta property="og:description" content="1 topic发布与订阅 发布端接口： 12publisher_ &#x3D; node.create_publisher(msg_type,&quot;topic_name&quot;, 10) publisher_.publish(msg)  订阅者接口： 1subscribe_ &#x3D; node.create_subscription(msg_type, &quot;topic_name&quot;, r">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2023-08-20T09:29:20.492Z">
@@ -1801,7 +1801,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1731038511593),
+    lastupdate: new Date(1731044201349),
     sidebar: {
       for_page: ["blogger","category","webinfo","music"],
       for_post: ["toc"],
@@ -2227,7 +2227,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd end-->
   <!-- front-matter head_end begin -->
   <!-- front-matter head_end end -->
-</head>
+<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head>
   <body itemscope itemtype="http://schema.org/WebPage">
     <!-- import body_begin begin-->
     <!-- import body_begin end-->
@@ -2688,17 +2688,17 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h2 id="1-topic发布与订阅"><a class="markdownIt-Anchor" href="#1-topic发布与订阅"></a> 1 topic发布与订阅</h2>
+    <h2 id="1-topic发布与订阅">1 topic发布与订阅</h2>
 <p>发布端接口：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">publisher_ = node.create_publisher(msg_type,<span class="string">&quot;topic_name&quot;</span>, <span class="number">10</span>) </span><br><span class="line">publisher_.publish(msg) </span><br></pre></td></tr></table></figure>
 <p>订阅者接口：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">subscribe_ = node.create_subscription(msg_type, <span class="string">&quot;topic_name&quot;</span>, recv_callback, <span class="number">10</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="2-service发送和接收"><a class="markdownIt-Anchor" href="#2-service发送和接收"></a> 2 service发送和接收</h2>
+<h2 id="2-service发送和接收">2 service发送和接收</h2>
 <p>client 接口：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">client = node.create_client(srv_type,<span class="string">&quot;srv_name&quot;</span>)</span><br><span class="line"><span class="keyword">while</span> <span class="keyword">not</span> client.wait_for_service(<span class="number">1.0</span>):</span><br><span class="line">	node.get_logger().warn(<span class="string">&quot;等待服务&quot;</span>)</span><br><span class="line">client.call_async(request) <span class="comment"># .add_done_callback(reponse_callback)</span></span><br></pre></td></tr></table></figure>
 <p>server 接口：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">server = node.create_service(srv_type,<span class="string">&quot;srv_name&quot;</span>, request_callback)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">request_callback</span>(<span class="params">request, response</span>):</span><br><span class="line">	......</span><br><span class="line">    <span class="keyword">return</span> response</span><br></pre></td></tr></table></figure>
-<h2 id="3-action控制与执行"><a class="markdownIt-Anchor" href="#3-action控制与执行"></a> 3 action控制与执行</h2>
+<h2 id="3-action控制与执行">3 action控制与执行</h2>
 <p>执行 接口：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> rclpy.action <span class="keyword">import</span> ActionServer</span><br><span class="line"><span class="keyword">from</span> rclpy.action.server <span class="keyword">import</span> ServerGoalHandle</span><br><span class="line"></span><br><span class="line">action_server_ = ActionServer(</span><br><span class="line">           node, action_type, <span class="string">&quot;action_name&quot;</span>, execute_callback</span><br><span class="line">           <span class="comment"># ,callback_group=MutuallyExclusiveCallbackGroup()</span></span><br><span class="line">       )</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">execute_callback</span>(<span class="params">goal_handle: ServerGoalHandle</span>):</span><br><span class="line">       ... ...</span><br><span class="line">       result = action_type.Result()</span><br><span class="line">       result = ...</span><br><span class="line">       <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
 <p>控制 接口：</p>
@@ -2889,7 +2889,7 @@ ROS包含：通信框架 + 开发工具 + 应用功能 + 生态系统
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-topic%E5%8F%91%E5%B8%83%E4%B8%8E%E8%AE%A2%E9%98%85"><span class="toc-text"> 1 topic发布与订阅</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-service%E5%8F%91%E9%80%81%E5%92%8C%E6%8E%A5%E6%94%B6"><span class="toc-text"> 2 service发送和接收</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-action%E6%8E%A7%E5%88%B6%E4%B8%8E%E6%89%A7%E8%A1%8C"><span class="toc-text"> 3 action控制与执行</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-topic%E5%8F%91%E5%B8%83%E4%B8%8E%E8%AE%A2%E9%98%85"><span class="toc-text">1 topic发布与订阅</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-service%E5%8F%91%E9%80%81%E5%92%8C%E6%8E%A5%E6%94%B6"><span class="toc-text">2 service发送和接收</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-action%E6%8E%A7%E5%88%B6%E4%B8%8E%E6%89%A7%E8%A1%8C"><span class="toc-text">3 action控制与执行</span></a></li></ol>
     </div>
   </section>
 

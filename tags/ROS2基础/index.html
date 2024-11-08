@@ -1799,7 +1799,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1731038511593),
+    lastupdate: new Date(1731044201349),
     sidebar: {
       for_page: ["blogger","category","webinfo","music"],
       for_post: ["toc"],
@@ -2225,7 +2225,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd end-->
   <!-- front-matter head_end begin -->
   <!-- front-matter head_end end -->
-</head>
+<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head>
   <body itemscope itemtype="http://schema.org/WebPage">
     <!-- import body_begin begin-->
     <!-- import body_begin end-->
@@ -2636,11 +2636,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-         1 topic发布与订阅
+        1 topic发布与订阅
 发布端接口：
 12publisher_ = node.create_publisher(msg_type,&quot;topic_name&quot;, 10) publisher_.publish(msg) 
 订阅者接口：
-1subscribe_ = node.create_subscription(msg_type, &quot;topic_name&quot...
+1subscribe_ = node.create_subscription(msg_type, &quot;topic_name&quot;...
       
     
   </div>
@@ -2768,12 +2768,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-         1 创建cpp节点
- 1.1 创建工作空间
+        1 创建cpp节点
+1.1 创建工作空间
 1mkdir -p workspace/src/
- 1.2 创建功能包
+1.2 创建功能包
 12cd workspace/srcros2 pkg create example_cpp --build-type ament_cmake --dependencies rclcpp
-此时可以看到ROS2为我们创建了example_cpp文件夹，且该文件夹下包含includ...
+此时可以看到ROS2为我们创建了example_cpp文件夹，且该文件夹下包含include、s...
       
     
   </div>
@@ -2837,15 +2837,15 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-         0 节点运行命令
+        0 节点运行命令
 
 命令格式： ros2 run  &lt;package_name&gt;  &lt;node_name&gt;
 
- 1 pkg相关命令
- 1.1 ros2 pkg create
+1 pkg相关命令
+1.1 ros2 pkg create
 
 命令功能：创建功能包并指定包相关参数
-命令格式：ros2 pkg create &lt;pkgname&gt; –build-type &lt;ament_python&gt; –node-n...
+命令格式：ros2 pkg create &lt;pkgname&gt; –build-type &lt;ament_python&gt; –node-name...
       
     
   </div>
@@ -2909,12 +2909,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-         1 ROS2总体架构图
+        1 ROS2总体架构图
 
- 1.1 DDS实现层
+1.1 DDS实现层
 DDS，全称 Data Distribution Service (数据分发服务)。是由对象管理组 (OMG) 于 2003 年发布并于 2007 年修订的开分布式系统标准。
 通过类似于ROS中的话题发布和订阅形式来进行通信，同时提供了丰富的服务质量管理来保证可靠性、持久性、传输设置等。
-DDS实现层其实就是对不同常见的DDS接口进行再次的...
+DDS实现层其实就是对不同常见的DDS接口进行再次的封装...
       
     
   </div>
@@ -2981,10 +2981,10 @@ DDS实现层其实就是对不同常见的DDS接口进行再次的...
         本篇安装环境如下：
 CPU架构：amd_64
 操作系统：ubuntu20.04
- 1 更换镜像源（可选）
+1 更换镜像源（可选）
 更换镜像源可以加速各种依赖库下载速度，这里提供常用的 ubuntu镜像源 和 pip源。
- 1.1 更换ubuntu镜像源
-这里采用清华源，同学们可到该网站  https://mirror.tuna.tsinghua.edu.cn/help/ubuntu/ 寻找自己系统版本对应的源。需要...
+1.1 更换ubuntu镜像源
+这里采用清华源，同学们可到该网站  https://mirror.tuna.tsinghua.edu.cn/help/ubuntu/ 寻找自己系统版本对应的源。需要注意...
       
     
   </div>
@@ -3051,10 +3051,10 @@ CPU架构：amd_64
         由于ROS官方并没有提供armhf CPU架构的ROS2二进制安装文件，本篇整理了从ROS2源码编译安装的方法。本篇安装环境如下：
 CPU架构：armv7l
 操作系统：ubuntu20.04
- 1 更换镜像源（可选）
+1 更换镜像源（可选）
 更换镜像源可以加速各种依赖库下载速度，这里提供常用的 ubuntu镜像源 和 pip源。
- 1.1 更换ubuntu镜像源
-这里采用清华源，同学们可到该网站  https://...
+1.1 更换ubuntu镜像源
+这里采用清华源，同学们可到该网站  https://mi...
       
     
   </div>

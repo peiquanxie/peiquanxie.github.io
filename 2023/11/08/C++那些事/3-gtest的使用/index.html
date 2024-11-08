@@ -42,7 +42,7 @@
 <meta property="og:title" content="3-gtest的使用">
 <meta property="og:url" content="https://xie-peiquan.gitee.io/2023/11/08/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/3-gtest%E7%9A%84%E4%BD%BF%E7%94%A8/index.html">
 <meta property="og:site_name" content="PQ.XIE BLOG">
-<meta property="og:description" content="1 软件包介绍 gtest是google提供的一个轻量级单元测试框架，它提供了丰富的断言、致命和非致命失败判断，能进行值参数化测试、类型参数化测试、“死亡测试”。  2 软件包安装 12345git clone https:&#x2F;&#x2F;github.com&#x2F;google&#x2F;googletest.gitcd googletest mkdir build &amp;&amp; cd buildcmake ..">
+<meta property="og:description" content="1 软件包介绍 gtest是google提供的一个轻量级单元测试框架，它提供了丰富的断言、致命和非致命失败判断，能进行值参数化测试、类型参数化测试、“死亡测试”。 2 软件包安装 12345git clone https:&#x2F;&#x2F;github.com&#x2F;google&#x2F;googletest.gitcd googletest mkdir build &amp;&amp; cd buildcmake .. &amp;">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2023-11-08T09:07:49.376Z">
@@ -1801,7 +1801,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1731038511593),
+    lastupdate: new Date(1731044201349),
     sidebar: {
       for_page: ["blogger","category","webinfo","music"],
       for_post: ["toc"],
@@ -2227,7 +2227,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd end-->
   <!-- front-matter head_end begin -->
   <!-- front-matter head_end end -->
-</head>
+<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head>
   <body itemscope itemtype="http://schema.org/WebPage">
     <!-- import body_begin begin-->
     <!-- import body_begin end-->
@@ -2688,22 +2688,22 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h2 id="1-软件包介绍"><a class="markdownIt-Anchor" href="#1-软件包介绍"></a> 1 软件包介绍</h2>
+    <h2 id="1-软件包介绍">1 软件包介绍</h2>
 <p>gtest是google提供的一个轻量级单元测试框架，它提供了丰富的断言、致命和非致命失败判断，能进行值参数化测试、类型参数化测试、“死亡测试”。</p>
-<h2 id="2-软件包安装"><a class="markdownIt-Anchor" href="#2-软件包安装"></a> 2 软件包安装</h2>
+<h2 id="2-软件包安装">2 软件包安装</h2>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/google/googletest.git</span><br><span class="line">cd googletest </span><br><span class="line">mkdir build &amp;&amp; cd build</span><br><span class="line">cmake .. &amp;&amp; make</span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure>
-<h2 id="3-软件包使用"><a class="markdownIt-Anchor" href="#3-软件包使用"></a> 3 软件包使用</h2>
-<h3 id="31-快速开始"><a class="markdownIt-Anchor" href="#31-快速开始"></a> 3.1 快速开始</h3>
+<h2 id="3-软件包使用">3 软件包使用</h2>
+<h3 id="3-1-快速开始">3.1 快速开始</h3>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;gtest/gtest.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">Factorial</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">  <span class="type">int</span> result = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">    result *= i;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> sample1&#123;</span><br><span class="line"><span class="built_in">TEST</span>(FactorialTest, Zero) &#123; </span><br><span class="line">    <span class="built_in">EXPECT_EQ</span>(<span class="number">1</span>, <span class="built_in">Factorial</span>(<span class="number">0</span>)); </span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>编译运行：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">g++ ./mytest.cpp -lgtest -std=c++14 -lgtest_main -lpthread -o mytest</span><br></pre></td></tr></table></figure>
 <p>其中链接 -lgtest_main 是因为测试的 main 函数在 gtest_main.a 库中，由它拉起所有的测试用例。</p>
-<h3 id="32-断言接口"><a class="markdownIt-Anchor" href="#32-断言接口"></a> 3.2 断言接口</h3>
-<p>gtest中，断言的宏可以分为两类，一类是ASSERT系列，一类是EXPECT系列。<br />
-<strong>ASSERT_*</strong> 系列的断言（Fatal assertion），当检查点失败时，退出当前函数（注意：并非退出当前案例）。<br />
-<strong>EXPECT_*</strong> 系列的断言(Nonfatal assertion)，当检查点失败时，继续执行下一个检查点（每一个断言表示一个测试点）。<br />
+<h3 id="3-2-断言接口">3.2 断言接口</h3>
+<p>gtest中，断言的宏可以分为两类，一类是ASSERT系列，一类是EXPECT系列。<br>
+<strong>ASSERT_*</strong> 系列的断言（Fatal assertion），当检查点失败时，退出当前函数（注意：并非退出当前案例）。<br>
+<strong>EXPECT_*</strong> 系列的断言(Nonfatal assertion)，当检查点失败时，继续执行下一个检查点（每一个断言表示一个测试点）。<br>
 通常情况应该首选使用 EXPECT_ ，因为 ASSERT_ 在报告完错误后不会进行清理工作，有可能导致内存泄露问题。</p>
-<h4 id="321-布尔型检查"><a class="markdownIt-Anchor" href="#321-布尔型检查"></a> 3.2.1 布尔型检查</h4>
+<h4 id="3-2-1-布尔型检查">3.2.1 布尔型检查</h4>
 <table>
 <thead>
 <tr>
@@ -2725,7 +2725,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </tr>
 </tbody>
 </table>
-<h4 id="322-二值检查"><a class="markdownIt-Anchor" href="#322-二值检查"></a> 3.2.2 二值检查</h4>
+<h4 id="3-2-2-二值检查">3.2.2 二值检查</h4>
 <table>
 <thead>
 <tr>
@@ -2767,7 +2767,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </tr>
 </tbody>
 </table>
-<h4 id="323-字符串检查"><a class="markdownIt-Anchor" href="#323-字符串检查"></a> 3.2.3 字符串检查</h4>
+<h4 id="3-2-3-字符串检查">3.2.3 字符串检查</h4>
 <table>
 <thead>
 <tr>
@@ -2799,7 +2799,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </tr>
 </tbody>
 </table>
-<h4 id="324-异常检查"><a class="markdownIt-Anchor" href="#324-异常检查"></a> 3.2.4 异常检查</h4>
+<h4 id="3-2-4-异常检查">3.2.4 异常检查</h4>
 <table>
 <thead>
 <tr>
@@ -2826,7 +2826,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </tr>
 </tbody>
 </table>
-<h4 id="325-浮点检查"><a class="markdownIt-Anchor" href="#325-浮点检查"></a> 3.2.5 浮点检查</h4>
+<h4 id="3-2-5-浮点检查">3.2.5 浮点检查</h4>
 <table>
 <thead>
 <tr>
@@ -2848,7 +2848,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </tr>
 </tbody>
 </table>
-<h4 id="326-相近值检查"><a class="markdownIt-Anchor" href="#326-相近值检查"></a> 3.2.6 相近值检查</h4>
+<h4 id="3-2-6-相近值检查">3.2.6 相近值检查</h4>
 <table>
 <thead>
 <tr>
@@ -2865,34 +2865,34 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </tr>
 </tbody>
 </table>
-<h3 id="33-宏测试接口"><a class="markdownIt-Anchor" href="#33-宏测试接口"></a> 3.3 宏测试接口</h3>
-<h4 id="331-test"><a class="markdownIt-Anchor" href="#331-test"></a> 3.3.1 TEST</h4>
+<h3 id="3-3-宏测试接口">3.3 宏测试接口</h3>
+<h4 id="3-3-1-test">3.3.1 TEST</h4>
 <p><code>TEST(test_suite_name, test_name)</code></p>
 <p>其中，test_suite_name 为测试组名，test_name 为测试用例名，一个测试组可包含多个测试用例。<strong>注意这里同一个 test_suite 下的 test 会可能相互影响。</strong></p>
-<h4 id="332-test_f"><a class="markdownIt-Anchor" href="#332-test_f"></a> 3.3.2 TEST_F</h4>
+<h4 id="3-3-2-test-f">3.3.2 TEST_F</h4>
 <p><code>TEST_F(test_fixture, test_name)</code></p>
 <p>TEST_F与TEST的区别是，TEST_F提供了一个初始化函数（SetUp）和一个清理函数(TearDown)，运行每一个TEST_F都会调用 SetUp 和 TearDown 函数，因此所有的TEST_F是互相独立的，都是在初始化状态下运行。<strong>多个测试场景需要相同数据配置的情况，用 TEST_F。</strong></p>
 <p>使用 TEST_F 前需要创建一个测试类，继承于::testing::Test类。在类内部使用public或者protected定义其成员，使测试子类可以使用其成员。为什么要定义这个测试类？是为了方便我们为每个 TEST_F 创建一个干净独立的环境，即需要<strong>定义初始化和清理函数</strong>。一般的，“构造函数/析构函数” 和 “SetUp/TearDown” 这两对都可以用来进行初始化和清理。<strong>需要注意不要在 构造/析构函数 里抛出异常。</strong></p>
 <p>以下选自 apollo 项目的 ConfigManagerTest 片段：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">ConfigManagerTest</span> : <span class="keyword">public</span> testing::Test &#123;</span><br><span class="line"> <span class="keyword">protected</span>:</span><br><span class="line">  <span class="built_in">ConfigManagerTest</span>() : <span class="built_in">config_manager_</span>(<span class="literal">NULL</span>) &#123;&#125;</span><br><span class="line">  <span class="keyword">virtual</span> ~<span class="built_in">ConfigManagerTest</span>() &#123;&#125;</span><br><span class="line">  <span class="function"><span class="keyword">virtual</span> <span class="type">void</span> <span class="title">SetUp</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    FLAGS_work_root = <span class="string">&quot;modules/perception/data&quot;</span>;</span><br><span class="line">    FLAGS_config_manager_path = <span class="string">&quot;./config_manager_test/config_manager.config&quot;</span>;</span><br><span class="line">    config_manager_ = ConfigManager::<span class="built_in">instance</span>();</span><br><span class="line">  &#125;</span><br><span class="line"> <span class="keyword">protected</span>:</span><br><span class="line">  ConfigManager* config_manager_;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">TEST_F</span>(ConfigManagerTest, test_Init) &#123;</span><br><span class="line">  <span class="built_in">EXPECT_TRUE</span>(config_manager_-&gt;<span class="built_in">Init</span>());</span><br><span class="line">  <span class="built_in">EXPECT_EQ</span>(config_manager_-&gt;<span class="built_in">NumModels</span>(), <span class="number">3u</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">TEST_F</span>(ConfigManagerTest, test_Reset) &#123;</span><br><span class="line">  <span class="built_in">EXPECT_TRUE</span>(config_manager_-&gt;<span class="built_in">Reset</span>());</span><br><span class="line">  std::string wrong_root = <span class="string">&quot;wrong_root&quot;</span>;</span><br><span class="line">  config_manager_-&gt;<span class="built_in">SetWorkRoot</span>(wrong_root);</span><br><span class="line">  <span class="built_in">EXPECT_FALSE</span>(config_manager_-&gt;<span class="built_in">Reset</span>());</span><br><span class="line">  config_manager_-&gt;<span class="built_in">SetWorkRoot</span>(FLAGS_work_root);   </span><br></pre></td></tr></table></figure>
-<h3 id="34-预处理事件机制"><a class="markdownIt-Anchor" href="#34-预处理事件机制"></a> 3.4 预处理事件机制</h3>
+<h3 id="3-4-预处理事件机制">3.4 预处理事件机制</h3>
 <p>在单元测试中，我们经常需要在某个测试套件、测试用例或者整个测试运行之前进行前置条件设置及检查，或者运行之后对运行结果进行校验等操作。在gtest中，称之为事件机制。gtest将事件按照作用的范围不同进行划分，从大到小总共分为3个层次：</p>
 <ol>
 <li>整个测试层面，即在测试工程开始前和结束后进行；（Environment层面）</li>
 <li>测试套件层面，即在某个测试套件开始前和结束后进行；（TestSuite层面）</li>
 <li>测试用例层面，即在某个测试用例开始前和结束后进行；（TestCase层面）</li>
 </ol>
-<h4 id="341-environment层面"><a class="markdownIt-Anchor" href="#341-environment层面"></a> 3.4.1 Environment层面</h4>
+<h4 id="3-4-1-environment层面">3.4.1 Environment层面</h4>
 <p>实现 Environment 层面的环境构造，需要写一个类，继承testing::Environment类，覆盖里面的 SetUp 和 TearDown 方法。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">myEnvirment</span> : <span class="keyword">public</span> testing::Environment &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="type">void</span> <span class="title">SetUp</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;environment setup&quot;</span> &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="type">void</span> <span class="title">TearDown</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;environment teardown&quot;</span> &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> **argv)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ::testing::<span class="built_in">InitGoogleTest</span>(&amp;argc, argv);</span><br><span class="line">    ::testing::<span class="built_in">AddGlobalTestEnvironment</span>(<span class="keyword">new</span> <span class="built_in">myEnvirment</span>());</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">RUN_ALL_TESTS</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="342-testsuite层面"><a class="markdownIt-Anchor" href="#342-testsuite层面"></a> 3.4.2 TestSuite层面</h4>
+<h4 id="3-4-2-testsuite层面">3.4.2 TestSuite层面</h4>
 <p>实现 TestSuite 层面的环境构造，需要写一个类，继承testing::Test类，并覆盖它的静态方法：SetUpTestCase 和 TearDownTestCase.</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">FooTest</span> : <span class="keyword">public</span> testing::Test &#123;</span><br><span class="line"> <span class="keyword">protected</span>:</span><br><span class="line">  <span class="function"><span class="type">static</span> <span class="type">void</span> <span class="title">SetUpTestCase</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    shared_resource_ = <span class="keyword">new</span> ;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="type">static</span> <span class="type">void</span> <span class="title">TearDownTestCase</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">delete</span> shared_resource_;</span><br><span class="line">    shared_resource_ = <span class="literal">NULL</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="type">static</span> T* shared_resource_;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">TEST</span>(FooTest, case1)</span><br><span class="line"><span class="built_in">TEST</span>(FooTest, case2)   </span><br></pre></td></tr></table></figure>
-<h4 id="343-testcase层面"><a class="markdownIt-Anchor" href="#343-testcase层面"></a> 3.4.3 TestCase层面</h4>
+<h4 id="3-4-3-testcase层面">3.4.3 TestCase层面</h4>
 <p>实现 TestCase 层面的环境构造，需要写一个类，继承testing::Test类，并覆盖它 SetUp 和 TearDown 方法。具体见 3.3.2 TEST_F 小节。</p>
 <blockquote>
 <p>引用：</p>
-<p><a target="_blank" rel="noopener" href="https://google.github.io/googletest/">https://google.github.io/googletest/</a><br />
+<p><a target="_blank" rel="noopener" href="https://google.github.io/googletest/">https://google.github.io/googletest/</a><br>
 <a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/2159398">https://cloud.tencent.com/developer/article/2159398</a></p>
 </blockquote>
 
@@ -3013,17 +3013,17 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class='prev' href='/2023/11/15/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/2-protobuf%E7%9A%84%E4%BD%BF%E7%94%A8/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>2-protobuf的使用</p>
-          <p class='content'> 0 软件包介绍
-protobuf是google定义的一套数据传输格式和规范，用于不同应用或进程之间进行通信时使用。protobuf 支持跨平台, 跨语言, 支持目前绝大多数语言, 例如C++,...</p>
+          <p class='content'>0 软件包介绍
+protobuf是google定义的一套数据传输格式和规范，用于不同应用或进程之间进行通信时使用。protobuf 支持跨平台, 跨语言, 支持目前绝大多数语言, 例如C++, ...</p>
         </a>
       
       
         <a class='next' href='/2023/11/01/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/1-glog%E7%9A%84%E4%BD%BF%E7%94%A8/'>
           <p class='title'>1-glog的使用<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'> 1 软件包介绍
+          <p class='content'>1 软件包介绍
 glog是google提供的一个轻量级C/C++日志库，提供日志文件记录管理等功能。
- 2 软件包安装
-123456git clone https://github.com/g...</p>
+2 软件包安装
+123456git clone https://github.com/goo...</p>
         </a>
       
     </div>
@@ -3082,7 +3082,7 @@ glog是google提供的一个轻量级C/C++日志库，提供日志文件记录�
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E8%BD%AF%E4%BB%B6%E5%8C%85%E4%BB%8B%E7%BB%8D"><span class="toc-text"> 1 软件包介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E8%BD%AF%E4%BB%B6%E5%8C%85%E5%AE%89%E8%A3%85"><span class="toc-text"> 2 软件包安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E8%BD%AF%E4%BB%B6%E5%8C%85%E4%BD%BF%E7%94%A8"><span class="toc-text"> 3 软件包使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#31-%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B"><span class="toc-text"> 3.1 快速开始</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#32-%E6%96%AD%E8%A8%80%E6%8E%A5%E5%8F%A3"><span class="toc-text"> 3.2 断言接口</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#321-%E5%B8%83%E5%B0%94%E5%9E%8B%E6%A3%80%E6%9F%A5"><span class="toc-text"> 3.2.1 布尔型检查</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#322-%E4%BA%8C%E5%80%BC%E6%A3%80%E6%9F%A5"><span class="toc-text"> 3.2.2 二值检查</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#323-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A3%80%E6%9F%A5"><span class="toc-text"> 3.2.3 字符串检查</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#324-%E5%BC%82%E5%B8%B8%E6%A3%80%E6%9F%A5"><span class="toc-text"> 3.2.4 异常检查</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#325-%E6%B5%AE%E7%82%B9%E6%A3%80%E6%9F%A5"><span class="toc-text"> 3.2.5 浮点检查</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#326-%E7%9B%B8%E8%BF%91%E5%80%BC%E6%A3%80%E6%9F%A5"><span class="toc-text"> 3.2.6 相近值检查</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#33-%E5%AE%8F%E6%B5%8B%E8%AF%95%E6%8E%A5%E5%8F%A3"><span class="toc-text"> 3.3 宏测试接口</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#331-test"><span class="toc-text"> 3.3.1 TEST</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#332-test_f"><span class="toc-text"> 3.3.2 TEST_F</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#34-%E9%A2%84%E5%A4%84%E7%90%86%E4%BA%8B%E4%BB%B6%E6%9C%BA%E5%88%B6"><span class="toc-text"> 3.4 预处理事件机制</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#341-environment%E5%B1%82%E9%9D%A2"><span class="toc-text"> 3.4.1 Environment层面</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#342-testsuite%E5%B1%82%E9%9D%A2"><span class="toc-text"> 3.4.2 TestSuite层面</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#343-testcase%E5%B1%82%E9%9D%A2"><span class="toc-text"> 3.4.3 TestCase层面</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E8%BD%AF%E4%BB%B6%E5%8C%85%E4%BB%8B%E7%BB%8D"><span class="toc-text">1 软件包介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E8%BD%AF%E4%BB%B6%E5%8C%85%E5%AE%89%E8%A3%85"><span class="toc-text">2 软件包安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E8%BD%AF%E4%BB%B6%E5%8C%85%E4%BD%BF%E7%94%A8"><span class="toc-text">3 软件包使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B"><span class="toc-text">3.1 快速开始</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E6%96%AD%E8%A8%80%E6%8E%A5%E5%8F%A3"><span class="toc-text">3.2 断言接口</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-1-%E5%B8%83%E5%B0%94%E5%9E%8B%E6%A3%80%E6%9F%A5"><span class="toc-text">3.2.1 布尔型检查</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-2-%E4%BA%8C%E5%80%BC%E6%A3%80%E6%9F%A5"><span class="toc-text">3.2.2 二值检查</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-3-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A3%80%E6%9F%A5"><span class="toc-text">3.2.3 字符串检查</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-4-%E5%BC%82%E5%B8%B8%E6%A3%80%E6%9F%A5"><span class="toc-text">3.2.4 异常检查</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-5-%E6%B5%AE%E7%82%B9%E6%A3%80%E6%9F%A5"><span class="toc-text">3.2.5 浮点检查</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-6-%E7%9B%B8%E8%BF%91%E5%80%BC%E6%A3%80%E6%9F%A5"><span class="toc-text">3.2.6 相近值检查</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-%E5%AE%8F%E6%B5%8B%E8%AF%95%E6%8E%A5%E5%8F%A3"><span class="toc-text">3.3 宏测试接口</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-1-test"><span class="toc-text">3.3.1 TEST</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-2-test-f"><span class="toc-text">3.3.2 TEST_F</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-%E9%A2%84%E5%A4%84%E7%90%86%E4%BA%8B%E4%BB%B6%E6%9C%BA%E5%88%B6"><span class="toc-text">3.4 预处理事件机制</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-1-environment%E5%B1%82%E9%9D%A2"><span class="toc-text">3.4.1 Environment层面</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-2-testsuite%E5%B1%82%E9%9D%A2"><span class="toc-text">3.4.2 TestSuite层面</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-3-testcase%E5%B1%82%E9%9D%A2"><span class="toc-text">3.4.3 TestCase层面</span></a></li></ol></li></ol></li></ol>
     </div>
   </section>
 

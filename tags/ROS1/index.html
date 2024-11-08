@@ -1799,7 +1799,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1731038511593),
+    lastupdate: new Date(1731044201349),
     sidebar: {
       for_page: ["blogger","category","webinfo","music"],
       for_post: ["toc"],
@@ -2225,7 +2225,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd end-->
   <!-- front-matter head_end begin -->
   <!-- front-matter head_end end -->
-</head>
+<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head>
   <body itemscope itemtype="http://schema.org/WebPage">
     <!-- import body_begin begin-->
     <!-- import body_begin end-->
@@ -2643,11 +2643,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       
         当我们开发完某个功能包，要将功能包发布出去。如果是带源码发布，直接将工作空间下 src 目录下的整个功能包源码直接拷贝出去，重新编译运行即可。有时候我们不想公开源码，希望不带源码发布，怎么处理呢？ROS提供了相关的工具支持，具体如下：
- 1 catkin_make install
- 1.1 修改CMakeLists
+1 catkin_make install
+1.1 修改CMakeLists
 在功能包下的CMakeLists文件里，找到以下项进行修改：
 
-将编译好的可...
+将编译好的可执行...
       
     
   </div>
@@ -2711,9 +2711,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-         ros::spin 和 ros::spinOnce 的区别
+        ros::spin 和 ros::spinOnce 的区别
 这俩函数学名叫ROS消息回调处理函数，即消息回调要经过他俩中一个才能回调执行。
-两者区别在于 spin 有进无出，一直阻塞等待消息到来才去回调处理函数；而 **spinOnce ** 查询一次消息队列，不管有没有消息都会往下执行，spinOnce 往往需要考虑调用消息的时机，调用频率，以及消息池的大小，这些都要根据现实情况协调好，...
+两者区别在于 spin 有进无出，一直阻塞等待消息到来才去回调处理函数；而 **spinOnce ** 查询一次消息队列，不管有没有消息都会往下执行，spinOnce 往往需要考虑调用消息的时机，调用频率，以及消息池的大小，这些都要根据现实情况协调好，不...
       
     
   </div>
@@ -2777,9 +2777,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-         1 动态参数的作用
+        1 动态参数的作用
 ​		ROS中的参数服务器无法在线动态更新，也就是说如果Listener不主动查询参数值，就无法获知Talker是否已经修改了参数。这就对ROS参数服务器的使用造成了很大的局限，很多场景下我们还是需要动态更新参数的机制，例如参数调试、功能切换等，所以ROS提供了另外一个非常有用的功能包 —— dynamic_reconfigure，实现这种动态配置参数的机制。
-​		动...
+​		动态...
       
     
   </div>
@@ -2971,7 +2971,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-         1 基本语法
+        1 基本语法
 
 
 &lt;launch&gt; launch文件中的根元素采用&lt;launch&gt;标签定义
@@ -2979,7 +2979,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 &lt;node&gt; 启动节点，格式：
 1&lt;node pkg=&quot;package-name&quot; name=&quot;node-name&quot; type=&quot;exec-name&quot;/&gt;
-其中，pkg 是节点所在功能包名...
+其中，pkg 是节点所在功能包名称...
       
     
   </div>
@@ -3043,10 +3043,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-         1 全局参数模型
+        1 全局参数模型
 
- 1.1 全局参数配置（CPP）
-1234567891011121314151617181920212223242526272829#include &lt;string&gt;#include &lt;ros/ros.h&gt;#include &lt;std_srvs/Empty.h&gt;int main(int argc, char **argv)&#123;	...
+1.1 全局参数配置（CPP）
+1234567891011121314151617181920212223242526272829#include &lt;string&gt;#include &lt;ros/ros.h&gt;#include &lt;std_srvs/Empty.h&gt;int main(int argc, char **argv)&#123;	in...
       
     
   </div>
@@ -3110,8 +3110,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-         1 Client（CPP）
-123456789101112131415161718192021222324252627#include &lt;ros/ros.h&gt;#include &lt;turtlesim/Spawn.h&gt;int main(int argc, char** argv)&#123;    // 初始化ROS节点	ros::init(argc, argv, &q...
+        1 Client（CPP）
+123456789101112131415161718192021222324252627#include &lt;ros/ros.h&gt;#include &lt;turtlesim/Spawn.h&gt;int main(int argc, char** argv)&#123;    // 初始化ROS节点	ros::init(argc, argv, &qu...
       
     
   </div>
@@ -3175,8 +3175,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-         1 Publisher（CPP）
-12345678910111213141516171819202122232425262728#include &lt;ros/ros.h&gt;#include &lt;geometry_msgs/Twist.h&gt;int main(int argc, char **argv)&#123;    // ROS节点初始化    ros::init(ar...
+        1 Publisher（CPP）
+12345678910111213141516171819202122232425262728#include &lt;ros/ros.h&gt;#include &lt;geometry_msgs/Twist.h&gt;int main(int argc, char **argv)&#123;    // ROS节点初始化    ros::init(arg...
       
     
   </div>
@@ -3240,9 +3240,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-         0 安装
+        0 安装
 工作环境：x86_64 + ubuntu20.04 + ros-noetic
-12345678sudo mkdir /etc/apt/sources.list.d/sudo sh -c &#x27;echo &quot;deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main&quot; &gt; /etc/ap...
+12345678sudo mkdir /etc/apt/sources.list.d/sudo sh -c &#x27;echo &quot;deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main&quot; &gt; /etc/apt...
       
     
   </div>

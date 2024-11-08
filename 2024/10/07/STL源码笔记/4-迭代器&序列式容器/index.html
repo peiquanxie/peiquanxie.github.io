@@ -42,7 +42,7 @@
 <meta property="og:title" content="4-迭代器&amp;序列式容器">
 <meta property="og:url" content="https://xie-peiquan.gitee.io/2024/10/07/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/4-%E8%BF%AD%E4%BB%A3%E5%99%A8&%E5%BA%8F%E5%88%97%E5%BC%8F%E5%AE%B9%E5%99%A8/index.html">
 <meta property="og:site_name" content="PQ.XIE BLOG">
-<meta property="og:description" content="1 容器的分类 STL容器从内存结构上可分为序列式容器和关联性容器，序列式容器更关注于快速存取，而关联性容器更关注于快速查找。两大类容器分支又有一些内含关系，具体如下。   2 list 先从简单的链表说起，以说明容器与迭代器的关系。每个容器都有自己的专属迭代器，正是迭代器的出现，帮助容器屏蔽了内存存储上的差异。list的结构和源码如下，由于侯捷先生的胶片展示的不能再清晰，这里不做更多解释。（懒">
+<meta property="og:description" content="1 容器的分类 STL容器从内存结构上可分为序列式容器和关联性容器，序列式容器更关注于快速存取，而关联性容器更关注于快速查找。两大类容器分支又有一些内含关系，具体如下。  2 list 先从简单的链表说起，以说明容器与迭代器的关系。每个容器都有自己的专属迭代器，正是迭代器的出现，帮助容器屏蔽了内存存储上的差异。list的结构和源码如下，由于侯捷先生的胶片展示的不能再清晰，这里不做更多解释。（懒得打">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2024-10-07T13:04:46.369Z">
@@ -1801,7 +1801,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1731038511593),
+    lastupdate: new Date(1731044201349),
     sidebar: {
       for_page: ["blogger","category","webinfo","music"],
       for_post: ["toc"],
@@ -2227,7 +2227,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd end-->
   <!-- front-matter head_end begin -->
   <!-- front-matter head_end end -->
-</head>
+<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head>
   <body itemscope itemtype="http://schema.org/WebPage">
     <!-- import body_begin begin-->
     <!-- import body_begin end-->
@@ -2644,7 +2644,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：816 字</p>
+      <p>字数：819 字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -2688,55 +2688,55 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h2 id="1-容器的分类"><a class="markdownIt-Anchor" href="#1-容器的分类"></a> 1 容器的分类</h2>
+    <h2 id="1-容器的分类">1 容器的分类</h2>
 <p>STL容器从内存结构上可分为序列式容器和关联性容器，序列式容器更关注于快速存取，而关联性容器更关注于快速查找。两大类容器分支又有一些内含关系，具体如下。</p>
-<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241002211318872.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241002211318872.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241002211318872" /></p>
-<h2 id="2-list"><a class="markdownIt-Anchor" href="#2-list"></a> 2 list</h2>
-<p>先从简单的链表说起，以说明容器与迭代器的关系。每个容器都有自己的专属迭代器，正是迭代器的出现，帮助容器屏蔽了内存存储上的差异。list的结构和源码如下，由于侯捷先生的胶片展示的不能再清晰，这里不做更多解释。（懒得打字😂）</p>
-<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241002211402034.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241002211402034.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241002211402034" /></p>
-<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241002211443476.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241002211443476.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241002211443476" /></p>
+<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241002211318872.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241002211318872.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241002211318872"></p>
+<h2 id="2-list">2 list</h2>
+<p>先从简单的链表说起，以说明容器与迭代器的关系。每个容器都有自己的专属迭代器，正是迭代器的出现，帮助容器屏蔽了内存存储上的差异。list的结构和源码如下，由于侯捷先生的胶片展示的不能再清晰，这里不做更多解释。（懒得打字:joy:）</p>
+<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241002211402034.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241002211402034.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241002211402034"></p>
+<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241002211443476.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241002211443476.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241002211443476"></p>
 <ul>
 <li>
 <p>list是个双向的环状链表，为了实现前闭后开区间，其拥有dummy_node。list初始化时begin()和end()均指向这个dummy_node.</p>
 </li>
 <li>
-<p>list类只有一个成员，其是指向节点（__list_node）的指针。那么，list的size函数时间复杂度是多少？答：C<ins>98，O(n); C</ins>11，O(1).</p>
+<p>list类只有一个成员，其是指向节点（__list_node）的指针。那么，list的size函数时间复杂度是多少？答：C++98，O(n); C++11，O(1).</p>
 </li>
 </ul>
-<h2 id="3-iterator"><a class="markdownIt-Anchor" href="#3-iterator"></a> 3 Iterator</h2>
+<h2 id="3-iterator">3 Iterator</h2>
 <p>所有的 Iterator 都要有以下的五个属性（typedef）, 以适配 algorithm 的查询。如 __list_iterator 的定义：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> <span class="title class_">T</span>,<span class="keyword">class</span> <span class="title class_">Ref</span>, <span class="keyword">class</span> <span class="title class_">Ptr</span>&gt;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">__list_iterator</span> &#123;</span><br><span class="line"><span class="keyword">typedef</span> bidirectional_iterator_tag \</span><br><span class="line">    	iterator_category;</span><br><span class="line"><span class="keyword">typedef</span> T value_type;</span><br><span class="line"><span class="keyword">typedef</span> Ptr pointer;</span><br><span class="line"><span class="keyword">typedef</span> Ref reference;</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">ptrdiff_t</span> difference_type;</span><br><span class="line">...</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>那 algorithm 如何获取 Iterator 的以上属性？利用 Iterator_traits，迭代器萃取代码如下：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">typename</span> iterator_traits&lt;_Iter&gt;::value_type _ValueType;</span><br></pre></td></tr></table></figure>
-<h2 id="4-iterator_traits"><a class="markdownIt-Anchor" href="#4-iterator_traits"></a> 4 Iterator_traits</h2>
+<h2 id="4-iterator-traits">4 Iterator_traits</h2>
 <p>为什么需要要用到 traits ? 直接获取迭代器的属性不行吗？因为裸指针也是一种特殊的迭代器啊，不能放弃它。所以traits相当于是一个中间类，把迭代器与裸指针的属性给拿出来，放到一个新的结构体中，屏蔽迭代器与裸指针的区别。</p>
-<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241003171624551.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241003171624551.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241003171624551" /></p>
+<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241003171624551.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241003171624551.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241003171624551"></p>
 <p>那么对于裸指针，traits如何萃取？如下，其用到了偏特化的技术，对<code>T*</code> 和 <code>const T*</code> 分别做特殊处理，构造出五个必要属性放到结构体中去。</p>
 <img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241003172122923.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241003172122923.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241003172122923" style="zoom: 67%;" />
-<h2 id="5-vector"><a class="markdownIt-Anchor" href="#5-vector"></a> 5 vector</h2>
-<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241007152053927.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241007152053927.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241007152053927" /></p>
-<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241007154727215.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241007154727215.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241007154727215" /></p>
+<h2 id="5-vector">5 vector</h2>
+<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241007152053927.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241007152053927.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241007152053927"></p>
+<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241007154727215.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241007154727215.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241007154727215"></p>
 <ul>
 <li>由于vector的空间会发生成长，新增元素时可能会发生大量的拷贝。如何避免？在vector初始化时，预留空间大小（reserve函数）。</li>
 <li>由于vector是连续空间容器，其迭代器类型是random_access类型，可以是普通指针，iterator_tarits萃取时走的是偏特化路径。</li>
 </ul>
-<h2 id="6-array"><a class="markdownIt-Anchor" href="#6-array"></a> 6 array</h2>
+<h2 id="6-array">6 array</h2>
 <p>array可以认为是对C数组的包装，此容器的出现是为了让传统数组适配 STL 规则。</p>
-<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241007163222508.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241007163222508.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241007163222508" /></p>
+<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241007163222508.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241007163222508.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241007163222508"></p>
 <p>array的迭代器类型也是random_access类型，可以是普通指针。</p>
-<h2 id="7-deque"><a class="markdownIt-Anchor" href="#7-deque"></a> 7 deque</h2>
-<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241007184901354.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241007184901354.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241007184901354" /></p>
-<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241007185200845.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241007185200845.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241007185200845" /></p>
+<h2 id="7-deque">7 deque</h2>
+<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241007184901354.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241007184901354.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241007184901354"></p>
+<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241007185200845.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241007185200845.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241007185200845"></p>
 <ul>
 <li>deque是一个分段连续的双向队列，为了维持“连续”的假象，需要控制中心（vector）和迭代器的支撑。</li>
 <li>BufSiz指的是每个buffer容纳的元素的的个数，当没有指定时，按 <code>sz&lt;512 ? size_t(sz / 512) : size_t(1)</code> 计算。</li>
 </ul>
 <p>deque是如何模拟连续空间的呢？全靠迭代器的操作符重载，如下：</p>
-<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241007195752310.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241007195752310.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241007195752310" /></p>
-<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241007200456031.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241007200456031.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241007200456031" /></p>
-<h2 id="8-queue-stack"><a class="markdownIt-Anchor" href="#8-queue-stack"></a> 8 queue &amp; stack</h2>
-<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241007201745424.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241007201745424.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241007201745424" /></p>
-<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241007201758012.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241007201758012.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241007201758012" /></p>
+<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241007195752310.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241007195752310.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241007195752310"></p>
+<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241007200456031.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241007200456031.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241007200456031"></p>
+<h2 id="8-queue-stack">8 queue &amp; stack</h2>
+<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241007201745424.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241007201745424.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241007201745424"></p>
+<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241007201758012.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241007201758012.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241007201758012"></p>
 <ul>
 <li>技术上，queue 和 stack 不是真正的容器，而是一个包装了 deque 的适配器。</li>
 <li>queue 和 stack 都不允许遍历，且都不提供迭代器。如果对遍历有要求，请转而使用deque.</li>
@@ -2864,15 +2864,15 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <a class='prev' href='/2024/10/09/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/5-STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0-%E5%85%B3%E8%81%94%E5%BC%8F%E5%AE%B9%E5%99%A8/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>5-STL源码笔记-关联式容器</p>
           <p class='content'>关联式容器对数据按一定的规则进行存储，因而擅长对数据进行查找，可以认为关联式容器是一个小型的内存数据库。STL的关联式容器依赖两个重要的数据结构，一个是红黑树，一个是哈希表。
- 1 rb_tre...</p>
+1 rb_tree...</p>
         </a>
       
       
         <a class='next' href='/2024/09/28/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/3-STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0-%E5%88%86%E9%85%8D%E5%99%A8/'>
           <p class='title'>3-STL源码笔记-分配器<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'> 1 内存的申请和释放
-C内存管理的都是堆（Heap）内存，C中全局的内存申请和释放函数是 operator new和 operator delete可以被重载（但不推荐）.
-operator ...</p>
+          <p class='content'>1 内存的申请和释放
+C++内存管理的都是堆（Heap）内存，C++中全局的内存申请和释放函数是 operator new和 operator delete可以被重载（但不推荐）.
+operat...</p>
         </a>
       
     </div>
@@ -2931,7 +2931,7 @@ operator ...</p>
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%AE%B9%E5%99%A8%E7%9A%84%E5%88%86%E7%B1%BB"><span class="toc-text"> 1 容器的分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-list"><span class="toc-text"> 2 list</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-iterator"><span class="toc-text"> 3 Iterator</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-iterator_traits"><span class="toc-text"> 4 Iterator_traits</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-vector"><span class="toc-text"> 5 vector</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-array"><span class="toc-text"> 6 array</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-deque"><span class="toc-text"> 7 deque</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-queue-stack"><span class="toc-text"> 8 queue &amp; stack</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%AE%B9%E5%99%A8%E7%9A%84%E5%88%86%E7%B1%BB"><span class="toc-text">1 容器的分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-list"><span class="toc-text">2 list</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-iterator"><span class="toc-text">3 Iterator</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-iterator-traits"><span class="toc-text">4 Iterator_traits</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-vector"><span class="toc-text">5 vector</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-array"><span class="toc-text">6 array</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-deque"><span class="toc-text">7 deque</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-queue-stack"><span class="toc-text">8 queue &amp; stack</span></a></li></ol>
     </div>
   </section>
 

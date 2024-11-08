@@ -1801,7 +1801,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1731038511593),
+    lastupdate: new Date(1731044201349),
     sidebar: {
       for_page: ["blogger","category","webinfo","music"],
       for_post: ["toc"],
@@ -2227,7 +2227,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd end-->
   <!-- front-matter head_end begin -->
   <!-- front-matter head_end end -->
-</head>
+<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head>
   <body itemscope itemtype="http://schema.org/WebPage">
     <!-- import body_begin begin-->
     <!-- import body_begin end-->
@@ -2690,10 +2690,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div id="post-body" itemprop="articleBody">
     <p>快速的查找一般是建立在数据有序的基础上，而有序一般是依赖一个可以用来排序的 <strong>键</strong> 来排列。我们把这种<strong>通过键查找</strong>到对应数值的过程叫 <strong>索引查找</strong> 。如果我们要查找的目标不能通过 键 来查找，那么查找就只能从头到尾的遍历所有数据页，这对于大数据库来讲，是慢得可怕的。慢得原因也很明显，<strong>它没有走索引</strong>。</p>
 <p>那么以上涉及到两个问题，一个是InnoDB是如何快速索引的？一个是如果我们的SQL查询语句不能走索引，怎么办？</p>
-<h2 id="1-innodb-如何索引"><a class="markdownIt-Anchor" href="#1-innodb-如何索引"></a> 1 InnoDB 如何索引</h2>
+<h2 id="1-innodb-如何索引">1 InnoDB 如何索引</h2>
 <p>前几章我们讲了InnoDB的存储结构：数据被划分在好多个页中，每个页中数据被分为好几组（槽），组也是有序的。那么，我们大致可以猜想，InnoDB的索引方式是：快速地定位到某个页，加载页到内存，在页中二分查找到对应的槽，在槽中遍历找到目标条目。那么，InnoDB又是怎么快速地定位到某个页的呢？</p>
 <p>明显的，想要快速地定位到某个页，也需要<strong>页是有序的</strong>。这意味着：下一个数据页中的最小主键值必须大于上一个页的主键值。因为这些 16KB 的页在物理存储上可能并不挨着，所以如果想从这么多页中根据主键值快速定位某些记录所在的页，我们需要给它们做个目录，每个页对应一个目录项，每个目录项包括下边两个部分：页的用户记录中<strong>最小的主键值</strong>，我们用 key 来表示。页号，我们用 page_no 表示。这个目录也叫 <strong>索引</strong>。</p>
-<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/database/image-20240313112719016.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/database/image-20240313112719016.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20240313112719016" /></p>
+<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/database/image-20240313112719016.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/database/image-20240313112719016.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20240313112719016"></p>
 <p>从上图，我们可以从目录中找到我们的key所对应的目录项，进而找到我们的目标页。那么怎么快速找到目录项呢？二分查找行不行？用树？那为什么是B+树？</p>
 <p>记住，在数据引擎中，I/O操作是最耗时的。如果引擎能在一次 I/O 读取中（16KB，一页）把所有的目录项都读上来，那么二分查找，平衡树查找，B树查找等等 都是差不多的。那如果目录远远超过超过16KB呢？各种查找算法所需的 I/O 次数就会远不相同。所以我们可以很快地排除二分查找。而对于树结构，我们希望树的高度越小越好，越小的高度所需的 I/O 操作越少，B树是最合适的。而InnoDB采用B+树，其实也是B树的一个变种，只不过B+树的内节点不存储数据，只做索引，所有的数据都存储在叶子节点。B+树更适合做磁盘索引，性能优于B树。（关于为什么MySQL为什么选择B+树做索引，这是一个很大的话题，后续再仔细做一下补充。B站有一个视频讲得挺好： <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1kr4y1T7Zx/?share_source=copy_web&amp;vd_source=5b5f35446e77e54d0ddbdaf99f8d5c9b%EF%BC%89">https://www.bilibili.com/video/BV1kr4y1T7Zx/?share_source=copy_web&amp;vd_source=5b5f35446e77e54d0ddbdaf99f8d5c9b）</a></p>
 <p>如果当目录项超过一页大小（16KB）, 则会再创建一页出来存储，并且会新增一个父节点，父节点的索引范围更大。这样便形成了一颗索引B+树。索引页的组织结构与数据页类似，有以下特点：</p>
@@ -2716,8 +2716,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>B+ 树的叶子节点存储的是完整的用户记录。</p>
 </li>
 </ol>
-<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/database/image-20240313143339353.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/database/image-20240313143339353.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20240313143339353" /></p>
-<h2 id="2-innodb-二级索引"><a class="markdownIt-Anchor" href="#2-innodb-二级索引"></a> 2 InnoDB 二级索引</h2>
+<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/database/image-20240313143339353.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/database/image-20240313143339353.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20240313143339353"></p>
+<h2 id="2-innodb-二级索引">2 InnoDB 二级索引</h2>
 <p>回到开头提到的第二个问题，如果我们要查找的语句不能走原来的索引，怎么办？更具体的说，如果我们一开始建表的时候是以C1这一列作为索引的，而现在需要找 满足C2=X 这个条件的所有条目怎么办？如果你没做任何优化的话，那么数据库也只能一条一条地遍历去找，效率感人。但是我们可以再创建一个 C2 列的索引啊，查找的时候走C2列索引就好了！</p>
 <p>那么现在的问题是，现在数据库中的所有页都是按照之前的 键 排序的，我创建新的索引不能破坏原来的页排列吧，难道我要把所有数据拷贝一份从头到尾重新排列？这成本也太高了吧。其实没必要，我们只需要创建一份能从 C2 映射到 C1 的索引表，再用C1的键进行一次查找即可。这个过程叫做 <strong>回表</strong>。因为这种按照 非主键列 建立的 B+ 树也被称为 <strong>二级索引</strong> （英文名 secondary index ）或者 <strong>辅助索引</strong> 。</p>
 <p>这个 B+ 树与之前的聚簇索引有几处不同：</p>
@@ -2725,14 +2725,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li>B+ 树的叶子节点存储的并不是完整的用户记录，而只是 c2列+主键 这两个列的值。</li>
 <li>目录项记录中不再是 主键+页号 的搭配，而变成了 c2列+页号 的搭配。</li>
 </ul>
-<h2 id="3-innodb-联合索引"><a class="markdownIt-Anchor" href="#3-innodb-联合索引"></a> 3 InnoDB 联合索引</h2>
+<h2 id="3-innodb-联合索引">3 InnoDB 联合索引</h2>
 <p>即联合多列作为索引的 键。其特点为：</p>
 <ul>
 <li>每条 目录项记录 都由 c2 、 c3 、 页号 这三个部分组成，各条记录先按照 c2 列排序，再按照 c3 列排序。</li>
 <li>B+ 树叶子节点处的用户记录由 c2 、 c3 和主键 c1 列组成。</li>
 </ul>
 <p><strong>需要注意的是，查询利用联合索引时，不要违背最左前缀原则，否则走不了索引。</strong></p>
-<h2 id="4-innodb-单表索引具体方式"><a class="markdownIt-Anchor" href="#4-innodb-单表索引具体方式"></a> 4 InnoDB 单表索引具体方式</h2>
+<h2 id="4-innodb-单表索引具体方式">4 InnoDB 单表索引具体方式</h2>
 <p>总体来说，单表的查询方式分为两种，一种是全表扫描，一种使用索引进行查询。而使用索引进行查询又可以进行细分，如：</p>
 <ul>
 <li>针对主键或唯一二级索引的等值查询</li>
@@ -2740,30 +2740,30 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li>针对索引列的范围查询</li>
 <li>直接扫描整个索引</li>
 </ul>
-<h3 id="41-前置"><a class="markdownIt-Anchor" href="#41-前置"></a> 4.1 前置</h3>
+<h3 id="4-1-前置">4.1 前置</h3>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> single_table (</span><br><span class="line"> id <span class="type">INT</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span> AUTO_INCREMENT,</span><br><span class="line"> key1 <span class="type">VARCHAR</span>(<span class="number">100</span>),</span><br><span class="line"> key2 <span class="type">INT</span>,</span><br><span class="line"> key3 <span class="type">VARCHAR</span>(<span class="number">100</span>),</span><br><span class="line"> key_part1 <span class="type">VARCHAR</span>(<span class="number">100</span>),</span><br><span class="line"> key_part2 <span class="type">VARCHAR</span>(<span class="number">100</span>),</span><br><span class="line"> key_part3 <span class="type">VARCHAR</span>(<span class="number">100</span>),</span><br><span class="line"> common_field <span class="type">VARCHAR</span>(<span class="number">100</span>),</span><br><span class="line"> <span class="keyword">PRIMARY</span> KEY (id),</span><br><span class="line"> KEY idx_key1 (key1),</span><br><span class="line"> <span class="keyword">UNIQUE</span> KEY idx_key2 (key2),</span><br><span class="line"> KEY idx_key3 (key3),</span><br><span class="line"> KEY idx_key_part(key_part1, key_part2, key_part3)</span><br><span class="line">) Engine<span class="operator">=</span>InnoDB CHARSET<span class="operator">=</span>utf8;</span><br></pre></td></tr></table></figure>
-<h3 id="42-const-方式"><a class="markdownIt-Anchor" href="#42-const-方式"></a> 4.2 const 方式</h3>
+<h3 id="4-2-const-方式">4.2 const 方式</h3>
 <p>通过主键或者唯一二级索引列与常数的等值比较来定位的方式叫 const . 由于其索引很快，代价几乎忽略不计，因此命名 const.</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> single_table <span class="keyword">WHERE</span> key2 <span class="operator">=</span> <span class="number">3841</span>;</span><br></pre></td></tr></table></figure>
-<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/database/image-20240318162737963.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/database/image-20240318162737963.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20240318162737963" /></p>
-<h3 id="43-ref-方式"><a class="markdownIt-Anchor" href="#43-ref-方式"></a> 4.3 ref 方式</h3>
+<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/database/image-20240318162737963.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/database/image-20240318162737963.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20240318162737963"></p>
+<h3 id="4-3-ref-方式">4.3 ref 方式</h3>
 <p>由于普通二级索引并不限制索引列值的唯一性，所以可能找到多条对应的记录，也就是说使用二级索引来执行查询的代价取决于等值匹配到的二级索引记录条数。如果匹配的记录较少，则回表的代价还是比较低的，比如一条就是 const 的方式。这种普通的二级索引称为 <strong>ref</strong>.</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> single_table <span class="keyword">WHERE</span> key1 <span class="operator">=</span> <span class="string">&#x27;abc&#x27;</span>;</span><br></pre></td></tr></table></figure>
-<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/database/image-20240318162913249.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/database/image-20240318162913249.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20240318162913249" /></p>
+<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/database/image-20240318162913249.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/database/image-20240318162913249.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20240318162913249"></p>
 <p>这种 ref 访问方法比 const 差了一点点，但是在二级索引等值比较时匹配的记录数较少时的效率还是很高的。</p>
-<h3 id="44-ref_or_null-方式"><a class="markdownIt-Anchor" href="#44-ref_or_null-方式"></a> 4.4 ref_or_null 方式</h3>
+<h3 id="4-4-ref-or-null-方式">4.4 ref_or_null 方式</h3>
 <p>当使用二级索引而不是全表扫描的方式执行该查询时，这种类型的查询使用的访问方法就称为 ref_or_null.</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> single_demo <span class="keyword">WHERE</span> key1 <span class="operator">=</span> <span class="string">&#x27;abc&#x27;</span> <span class="keyword">OR</span> key1 <span class="keyword">IS</span> <span class="keyword">NULL</span>;</span><br></pre></td></tr></table></figure>
-<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/database/image-20240318163314232.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/database/image-20240318163314232.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20240318163314232" /></p>
-<h3 id="45-range-方式"><a class="markdownIt-Anchor" href="#45-range-方式"></a> 4.5 range 方式</h3>
+<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/database/image-20240318163314232.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/database/image-20240318163314232.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20240318163314232"></p>
+<h3 id="4-5-range-方式">4.5 range 方式</h3>
 <p>索引列需要匹配某个或某些范围的值，在本查询中 key2 列的值只要匹配下列3个范围中的任何一个就算是匹配成功。</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> single_table <span class="keyword">WHERE</span> key2 <span class="keyword">IN</span> (<span class="number">1438</span>, <span class="number">6328</span>) <span class="keyword">OR</span> (key2 <span class="operator">&gt;=</span> <span class="number">38</span> <span class="keyword">AND</span> key2 <span class="operator">&lt;=</span> <span class="number">79</span>);</span><br></pre></td></tr></table></figure>
-<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/database/image-20240318163639732.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/database/image-20240318163639732.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20240318163639732" /></p>
-<h3 id="46-index-方式"><a class="markdownIt-Anchor" href="#46-index-方式"></a> 4.6 index 方式</h3>
+<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/database/image-20240318163639732.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/database/image-20240318163639732.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20240318163639732"></p>
+<h3 id="4-6-index-方式">4.6 index 方式</h3>
 <p>遍历二级索引记录的方式叫 index. 如下：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> key_part1, key_part2, key_part3 <span class="keyword">FROM</span> single_table <span class="keyword">WHERE</span> key_part2 <span class="operator">=</span> <span class="string">&#x27;abc&#x27;</span>;</span><br></pre></td></tr></table></figure>
 <p>我们可以直接通过遍历 idx_key_part 索引的叶子节点的记录来比较 key_part2 = ‘abc’ 这个条件是否成立，把匹配成功的二级索引记录的 key_part1 , key_part2 , key_part3 列的值直接加到结果集中就行了。由于二级索引记录比聚簇索记录小的多，而且这个过程也不用进行回表操作，所以直接遍历二级索引比直接遍历聚簇索引的成本要小很多。</p>
-<h3 id="47-all-方式"><a class="markdownIt-Anchor" href="#47-all-方式"></a> 4.7 all 方式</h3>
+<h3 id="4-7-all-方式">4.7 all 方式</h3>
 <p>直接全表扫描。</p>
 <blockquote>
 <p>《MySQL是怎样运行的：从根儿上理解MySQL》</p>
@@ -2886,19 +2886,20 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class='prev' href='/2024/03/20/%E6%95%B0%E6%8D%AE%E5%BA%93/9-MySQL%E4%BA%8B%E5%8A%A1%E9%9A%94%E7%A6%BB/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>9-MySQL事务隔离</p>
-          <p class='content'> 1 事务并发的问题
- 1.1 脏写（Dirty Write）
+          <p class='content'>1 事务并发的问题
+1.1 脏写（Dirty Write）
 如果一个事务修改了另一个未提交事务修改过的数据，那就意味着发生了 脏写。（我在写，别人也在写）
- 1.2 脏读（Dirty Rea...</p>
+1.2 脏读（Dirty Read）
+...</p>
         </a>
       
       
         <a class='next' href='/2024/03/19/%E6%95%B0%E6%8D%AE%E5%BA%93/7-MySQL-%E8%BF%9E%E6%8E%A5/'>
           <p class='title'>7-MySQL-连接<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'> 1 MySQL中的连接
- 1.1 交叉连接
+          <p class='content'>1 MySQL中的连接
+1.1 交叉连接
 将 A 表的每一个条目与 B 表的每一个条目都交叉一遍，这样的结果集也称为 笛卡尔积 。交叉连接出来的表很大，这种连接方式要慎用。
-1SELECT ...</p>
+1SELECT * ...</p>
         </a>
       
     </div>
@@ -2957,7 +2958,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-innodb-%E5%A6%82%E4%BD%95%E7%B4%A2%E5%BC%95"><span class="toc-text"> 1 InnoDB 如何索引</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-innodb-%E4%BA%8C%E7%BA%A7%E7%B4%A2%E5%BC%95"><span class="toc-text"> 2 InnoDB 二级索引</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-innodb-%E8%81%94%E5%90%88%E7%B4%A2%E5%BC%95"><span class="toc-text"> 3 InnoDB 联合索引</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-innodb-%E5%8D%95%E8%A1%A8%E7%B4%A2%E5%BC%95%E5%85%B7%E4%BD%93%E6%96%B9%E5%BC%8F"><span class="toc-text"> 4 InnoDB 单表索引具体方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#41-%E5%89%8D%E7%BD%AE"><span class="toc-text"> 4.1 前置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#42-const-%E6%96%B9%E5%BC%8F"><span class="toc-text"> 4.2 const 方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#43-ref-%E6%96%B9%E5%BC%8F"><span class="toc-text"> 4.3 ref 方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#44-ref_or_null-%E6%96%B9%E5%BC%8F"><span class="toc-text"> 4.4 ref_or_null 方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#45-range-%E6%96%B9%E5%BC%8F"><span class="toc-text"> 4.5 range 方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#46-index-%E6%96%B9%E5%BC%8F"><span class="toc-text"> 4.6 index 方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#47-all-%E6%96%B9%E5%BC%8F"><span class="toc-text"> 4.7 all 方式</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-innodb-%E5%A6%82%E4%BD%95%E7%B4%A2%E5%BC%95"><span class="toc-text">1 InnoDB 如何索引</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-innodb-%E4%BA%8C%E7%BA%A7%E7%B4%A2%E5%BC%95"><span class="toc-text">2 InnoDB 二级索引</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-innodb-%E8%81%94%E5%90%88%E7%B4%A2%E5%BC%95"><span class="toc-text">3 InnoDB 联合索引</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-innodb-%E5%8D%95%E8%A1%A8%E7%B4%A2%E5%BC%95%E5%85%B7%E4%BD%93%E6%96%B9%E5%BC%8F"><span class="toc-text">4 InnoDB 单表索引具体方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-%E5%89%8D%E7%BD%AE"><span class="toc-text">4.1 前置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-const-%E6%96%B9%E5%BC%8F"><span class="toc-text">4.2 const 方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-ref-%E6%96%B9%E5%BC%8F"><span class="toc-text">4.3 ref 方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-ref-or-null-%E6%96%B9%E5%BC%8F"><span class="toc-text">4.4 ref_or_null 方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-5-range-%E6%96%B9%E5%BC%8F"><span class="toc-text">4.5 range 方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-6-index-%E6%96%B9%E5%BC%8F"><span class="toc-text">4.6 index 方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-7-all-%E6%96%B9%E5%BC%8F"><span class="toc-text">4.7 all 方式</span></a></li></ol></li></ol>
     </div>
   </section>
 

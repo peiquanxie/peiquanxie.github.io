@@ -1799,7 +1799,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1731038511593),
+    lastupdate: new Date(1731044201349),
     sidebar: {
       for_page: ["blogger","category","webinfo","music"],
       for_post: ["toc"],
@@ -2225,7 +2225,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd end-->
   <!-- front-matter head_end begin -->
   <!-- front-matter head_end end -->
-</head>
+<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head>
   <body itemscope itemtype="http://schema.org/WebPage">
     <!-- import body_begin begin-->
     <!-- import body_begin end-->
@@ -2632,7 +2632,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-         1 超参数
+        1 超参数
 超参数是可调整的参数，让你控制模型优化过程。不同的超参数值会影响模型的训练和收敛率。
 常用的超参数如下：
 
@@ -2641,7 +2641,7 @@ batch : 每一次更新参数（反向传播）所用到的数据样本数。
 学习率 : 每个batch 更新模型参数的步进幅度。
 
 123learning_rate = 1e-3batch_size = 64epochs = 5
- 2 损失...
+2 损失函数...
       
     
   </div>
@@ -2705,10 +2705,10 @@ batch : 每一次更新参数（反向传播）所用到的数据样本数。
   <div class='md article-desc' itemprop="articleBody">
     
       
-         1 神经网络搭建
- 1.1 通过 forward 构建
+        1 神经网络搭建
+1.1 通过 forward 构建
 我们可以通过继承 nn.Module，构建我们自己的类来定义我们的神经网络。其中，我们在__init__方法中实现各个子Module的初始化，并在forward 方法中组织这些子Module，形成神经网络。
-12345678910111213141516171819class NeuralNetwork(nn.Module):    ...
+12345678910111213141516171819class NeuralNetwork(nn.Module):    de...
       
     
   </div>
@@ -2772,9 +2772,9 @@ batch : 每一次更新参数（反向传播）所用到的数据样本数。
   <div class='md article-desc' itemprop="articleBody">
     
       
-         1 Dataset
- 1.1  图像（path+label形式）
-12345678910111213141516171819202122232425import osimport pandas as pdfrom torchvision.io import read_imagefrom torchvision import datasetsfrom torchvision import t...
+        1 Dataset
+1.1  图像（path+label形式）
+12345678910111213141516171819202122232425import osimport pandas as pdfrom torchvision.io import read_imagefrom torchvision import datasetsfrom torchvision import tra...
       
     
   </div>
@@ -2838,11 +2838,11 @@ batch : 每一次更新参数（反向传播）所用到的数据样本数。
   <div class='md article-desc' itemprop="articleBody">
     
       
-         1 tensor属性
- 1.1 tensor初始化
+        1 tensor属性
+1.1 tensor初始化
 1234shape = (2,3,)rand_tensor = torch.rand(shape)ones_tensor = torch.ones(shape)zeros_tensor = torch.zeros(shape) 
- 1.2 tensor性质
-1234tensor = torch.rand(3,4)print(f&quot;...
+1.2 tensor性质
+1234tensor = torch.rand(3,4)print(f&quot;Sha...
       
     
   </div>
@@ -2906,8 +2906,8 @@ batch : 每一次更新参数（反向传播）所用到的数据样本数。
   <div class='md article-desc' itemprop="articleBody">
     
       
-         0 导库
-123456import torchfrom torch import nnfrom torch.utils.data import DataLoaderfrom torchvision import datasetsfrom torchvision.transforms import ToTensor, Lambda, Composeimport matplotlib.pypl...
+        0 导库
+123456import torchfrom torch import nnfrom torch.utils.data import DataLoaderfrom torchvision import datasetsfrom torchvision.transforms import ToTensor, Lambda, Composeimport matplotlib.pyplo...
       
     
   </div>

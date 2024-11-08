@@ -42,7 +42,7 @@
 <meta property="og:title" content="0-Gflags的使用">
 <meta property="og:url" content="https://xie-peiquan.gitee.io/2023/10/31/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/0-Gflags%E7%9A%84%E4%BD%BF%E7%94%A8/index.html">
 <meta property="og:site_name" content="PQ.XIE BLOG">
-<meta property="og:description" content="1 软件包介绍 Gflags是一种命令行解析工具(处理命令行参数的库)，主要用于C++程序 解析用命令行执行可执行文件时传入的参数。 Gflags支持的参数定义类型如下: 123456DEFINE_bool:   booleanDEFINE_int32:  32-bit integerDEFINE_int64:  64-bit integerDEFINE_uint64: unsigned 64-">
+<meta property="og:description" content="1 软件包介绍 Gflags是一种命令行解析工具(处理命令行参数的库)，主要用于C++程序 解析用命令行执行可执行文件时传入的参数。 Gflags支持的参数定义类型如下: 123456DEFINE_bool:   booleanDEFINE_int32:  32-bit integerDEFINE_int64:  64-bit integerDEFINE_uint64: unsigned 64-b">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2023-10-31T06:51:42.187Z">
@@ -1801,7 +1801,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1731038511593),
+    lastupdate: new Date(1731044201349),
     sidebar: {
       for_page: ["blogger","category","webinfo","music"],
       for_post: ["toc"],
@@ -2227,7 +2227,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd end-->
   <!-- front-matter head_end begin -->
   <!-- front-matter head_end end -->
-</head>
+<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head>
   <body itemscope itemtype="http://schema.org/WebPage">
     <!-- import body_begin begin-->
     <!-- import body_begin end-->
@@ -2688,24 +2688,24 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h2 id="1-软件包介绍"><a class="markdownIt-Anchor" href="#1-软件包介绍"></a> 1 软件包介绍</h2>
+    <h2 id="1-软件包介绍">1 软件包介绍</h2>
 <p>Gflags是一种命令行解析工具(处理命令行参数的库)，主要用于C++程序 <strong>解析用命令行执行可执行文件时传入的参数</strong>。</p>
 <p>Gflags支持的参数定义类型如下:</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">DEFINE_bool:   boolean</span><br><span class="line">DEFINE_int32:  <span class="number">32</span>-bit integer</span><br><span class="line">DEFINE_int64:  <span class="number">64</span>-bit integer</span><br><span class="line">DEFINE_uint64: <span class="type">unsigned</span> <span class="number">64</span>-bit integer</span><br><span class="line">DEFINE_double: <span class="type">double</span></span><br><span class="line">DEFINE_string: C++ string</span><br></pre></td></tr></table></figure>
-<h2 id="2-编译安装"><a class="markdownIt-Anchor" href="#2-编译安装"></a> 2 编译安装</h2>
+<h2 id="2-编译安装">2 编译安装</h2>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/gflags/gflags.git</span><br><span class="line">mkdir build &amp;&amp; cd build</span><br><span class="line">cmake ..</span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
-<h3 id="21-交叉编译"><a class="markdownIt-Anchor" href="#21-交叉编译"></a> 2.1 交叉编译</h3>
+<h3 id="2-1-交叉编译">2.1 交叉编译</h3>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mkdir build &amp;&amp; cd build</span><br><span class="line">cmake .. \</span><br><span class="line">-DGFLAGS_NAMESPACE=gflags \</span><br><span class="line">-DCMAKE_CXX_FLAGS=-fPIC \</span><br><span class="line">-DBUILD_SHARED_LIBS=ON \</span><br><span class="line">-DCMAKE_C_COMPILER=arm-linux-gnueabihf-gcc \</span><br><span class="line">-DCMAKE_CXX_COMPILER=arm-linux-gnueabihf-g++</span><br><span class="line">make -j20</span><br></pre></td></tr></table></figure>
-<h2 id="3-软件包使用"><a class="markdownIt-Anchor" href="#3-软件包使用"></a> 3 软件包使用</h2>
-<h3 id="31-参数变量定义声明"><a class="markdownIt-Anchor" href="#31-参数变量定义声明"></a> 3.1 参数变量定义/声明</h3>
+<h2 id="3-软件包使用">3 软件包使用</h2>
+<h3 id="3-1-参数变量定义-声明">3.1 参数变量定义/声明</h3>
 <p>参数定义通过<code>DEFINE_type</code>宏实现，具体接口见 第1节，使用如下：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//该宏的三个参数含义分别为：参数名，默认值，参数的帮助信息。</span></span><br><span class="line"><span class="built_in">DEFINE_bool</span>(big_menu, <span class="literal">true</span>, <span class="string">&quot;Include &#x27;advanced&#x27; options in the menu listing&quot;</span>); </span><br></pre></td></tr></table></figure>
 <p>参数声明通过 <code>DECLARE_type</code>宏实现，即将 第1节 的 <code>DEFINE_</code> 改为 <code>DECLARE_</code>，一般将 <code>DECLARE_type</code> 放在头文件中。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">DECLARE_bool</span>(big_menu)</span><br></pre></td></tr></table></figure>
 <p>运行程序时使用 <code>./app --port 17201</code> 即可设置参数。</p>
-<h3 id="32-参数引用"><a class="markdownIt-Anchor" href="#32-参数引用"></a> 3.2 参数引用</h3>
+<h3 id="3-2-参数引用">3.2 参数引用</h3>
 <p>参数引用通过在参数名前添加 <code>FLAGS_</code> 引用，如：<code>FLAGS_big_menu</code> .</p>
-<h3 id="33-参数解析"><a class="markdownIt-Anchor" href="#33-参数解析"></a> 3.3 参数解析</h3>
+<h3 id="3-3-参数解析">3.3 参数解析</h3>
 <p>参数解析一般放置于main函数入口对<code>argc</code>和<code>argv</code> 进行解析，使用如下：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;gflags/gflags.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span>** argv)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  gflags::<span class="built_in">ParseCommandLineFlags</span>(&amp;argc, &amp;argv, <span class="literal">true</span>);</span><br><span class="line">  ......</span><br><span class="line">  gflags::<span class="built_in">ShutDownCommandLineFlags</span>();</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>其中，<code>argc</code> 传递的参数个数，<code>argv</code>为命令行传递的参数表，第三个参数功能如下</p>
@@ -2713,21 +2713,21 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li>ture: 函数处理完成后，argv中只保留argv[0]，argc会被设置为1。</li>
 <li>false: argv和argc会被保留，但是注意函数会调整argv中的顺序。</li>
 </ul>
-<h3 id="34-参数检验"><a class="markdownIt-Anchor" href="#34-参数检验"></a> 3.4 参数检验</h3>
+<h3 id="3-4-参数检验">3.4 参数检验</h3>
 <p>Gflags库支持用户定制对输入参数的检验函数，使用如下：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">static</span> <span class="type">bool</span> <span class="title">ValidatePort</span><span class="params">(<span class="type">const</span> <span class="type">char</span>* flagname, int32 value)</span> </span>&#123;</span><br><span class="line">   <span class="keyword">if</span> (value &gt; <span class="number">0</span> &amp;&amp; value &lt; <span class="number">32768</span>)   <span class="comment">// value is ok</span></span><br><span class="line">     <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">   <span class="built_in">printf</span>(<span class="string">&quot;Invalid value for --%s: %d\n&quot;</span>, flagname, (<span class="type">int</span>)value);</span><br><span class="line">   <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">DEFINE_int32</span>(port, <span class="number">0</span>, <span class="string">&quot;What port to listen on&quot;</span>);</span><br><span class="line"><span class="type">static</span> <span class="type">const</span> <span class="type">bool</span> port_dummy = gflags::<span class="built_in">RegisterFlagValidator</span>(&amp;FLAGS_port, &amp;ValidatePort);</span><br></pre></td></tr></table></figure>
-<h3 id="35-设定程序-help-version-信息"><a class="markdownIt-Anchor" href="#35-设定程序-help-version-信息"></a> 3.5 设定程序 help /version 信息</h3>
+<h3 id="3-5-设定程序-help-version-信息">3.5 设定程序 help /version 信息</h3>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gflags::<span class="built_in">SetVersionString</span>(string_type);</span><br><span class="line">gflags::<span class="built_in">SetUsageMessage</span>(string_type);</span><br></pre></td></tr></table></figure>
-<p>运行程序时使用 <code>./app --version</code> 和 <code>./app --help</code> 即可访问版本和帮助信息。<br />
+<p>运行程序时使用 <code>./app --version</code> 和 <code>./app --help</code> 即可访问版本和帮助信息。<br>
 注意，对于bool类型置为false, 在参数前面添加no, 如 --nobig_menu</p>
-<h3 id="36-从文件加载参数"><a class="markdownIt-Anchor" href="#36-从文件加载参数"></a> 3.6 从文件加载参数</h3>
+<h3 id="3-6-从文件加载参数">3.6 从文件加载参数</h3>
 <p>配置文件 app.conf 配置信息格式如下：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">--host=172.16.12.10</span><br><span class="line">--port=8955</span><br><span class="line">--sign=false</span><br></pre></td></tr></table></figure>
 <p>运行程序时使用 <code>./app --flagfile=app.conf</code> 来加载参数文件。</p>
-<h2 id="4-程序编译"><a class="markdownIt-Anchor" href="#4-程序编译"></a> 4 程序编译</h2>
+<h2 id="4-程序编译">4 程序编译</h2>
 <p>g++ 编译添加链接 -lgflags 即可。</p>
 <blockquote>
-<p><a target="_blank" rel="noopener" href="https://gflags.github.io/gflags">https://gflags.github.io/gflags</a><br />
+<p><a target="_blank" rel="noopener" href="https://gflags.github.io/gflags">https://gflags.github.io/gflags</a><br>
 <a target="_blank" rel="noopener" href="https://blog.csdn.net/kenjianqi1647/article/details/106598057">https://blog.csdn.net/kenjianqi1647/article/details/106598057</a></p>
 </blockquote>
 
@@ -2848,10 +2848,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class='prev' href='/2023/11/01/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/1-glog%E7%9A%84%E4%BD%BF%E7%94%A8/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>1-glog的使用</p>
-          <p class='content'> 1 软件包介绍
+          <p class='content'>1 软件包介绍
 glog是google提供的一个轻量级C/C++日志库，提供日志文件记录管理等功能。
- 2 软件包安装
-123456git clone https://github.com/g...</p>
+2 软件包安装
+123456git clone https://github.com/goo...</p>
         </a>
       
       
@@ -2916,7 +2916,7 @@ glog是google提供的一个轻量级C/C++日志库，提供日志文件记录�
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E8%BD%AF%E4%BB%B6%E5%8C%85%E4%BB%8B%E7%BB%8D"><span class="toc-text"> 1 软件包介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85"><span class="toc-text"> 2 编译安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#21-%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91"><span class="toc-text"> 2.1 交叉编译</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E8%BD%AF%E4%BB%B6%E5%8C%85%E4%BD%BF%E7%94%A8"><span class="toc-text"> 3 软件包使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#31-%E5%8F%82%E6%95%B0%E5%8F%98%E9%87%8F%E5%AE%9A%E4%B9%89%E5%A3%B0%E6%98%8E"><span class="toc-text"> 3.1 参数变量定义&#x2F;声明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#32-%E5%8F%82%E6%95%B0%E5%BC%95%E7%94%A8"><span class="toc-text"> 3.2 参数引用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#33-%E5%8F%82%E6%95%B0%E8%A7%A3%E6%9E%90"><span class="toc-text"> 3.3 参数解析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#34-%E5%8F%82%E6%95%B0%E6%A3%80%E9%AA%8C"><span class="toc-text"> 3.4 参数检验</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#35-%E8%AE%BE%E5%AE%9A%E7%A8%8B%E5%BA%8F-help-version-%E4%BF%A1%E6%81%AF"><span class="toc-text"> 3.5 设定程序 help &#x2F;version 信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#36-%E4%BB%8E%E6%96%87%E4%BB%B6%E5%8A%A0%E8%BD%BD%E5%8F%82%E6%95%B0"><span class="toc-text"> 3.6 从文件加载参数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E7%A8%8B%E5%BA%8F%E7%BC%96%E8%AF%91"><span class="toc-text"> 4 程序编译</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E8%BD%AF%E4%BB%B6%E5%8C%85%E4%BB%8B%E7%BB%8D"><span class="toc-text">1 软件包介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85"><span class="toc-text">2 编译安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91"><span class="toc-text">2.1 交叉编译</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E8%BD%AF%E4%BB%B6%E5%8C%85%E4%BD%BF%E7%94%A8"><span class="toc-text">3 软件包使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E5%8F%82%E6%95%B0%E5%8F%98%E9%87%8F%E5%AE%9A%E4%B9%89-%E5%A3%B0%E6%98%8E"><span class="toc-text">3.1 参数变量定义&#x2F;声明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E5%8F%82%E6%95%B0%E5%BC%95%E7%94%A8"><span class="toc-text">3.2 参数引用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-%E5%8F%82%E6%95%B0%E8%A7%A3%E6%9E%90"><span class="toc-text">3.3 参数解析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-%E5%8F%82%E6%95%B0%E6%A3%80%E9%AA%8C"><span class="toc-text">3.4 参数检验</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-%E8%AE%BE%E5%AE%9A%E7%A8%8B%E5%BA%8F-help-version-%E4%BF%A1%E6%81%AF"><span class="toc-text">3.5 设定程序 help &#x2F;version 信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-6-%E4%BB%8E%E6%96%87%E4%BB%B6%E5%8A%A0%E8%BD%BD%E5%8F%82%E6%95%B0"><span class="toc-text">3.6 从文件加载参数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E7%A8%8B%E5%BA%8F%E7%BC%96%E8%AF%91"><span class="toc-text">4 程序编译</span></a></li></ol>
     </div>
   </section>
 

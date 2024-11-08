@@ -42,7 +42,7 @@
 <meta property="og:title" content="3-数据准备">
 <meta property="og:url" content="https://xie-peiquan.gitee.io/2023/07/25/pytorch%E5%9F%BA%E7%A1%80/3-%E6%95%B0%E6%8D%AE%E5%87%86%E5%A4%87/index.html">
 <meta property="og:site_name" content="PQ.XIE BLOG">
-<meta property="og:description" content="1 Dataset  1.1  图像（path+label形式） 12345678910111213141516171819202122232425import osimport pandas as pdfrom torchvision.io import read_imagefrom torchvision import datasetsfrom torchvision import tran">
+<meta property="og:description" content="1 Dataset 1.1  图像（path+label形式） 12345678910111213141516171819202122232425import osimport pandas as pdfrom torchvision.io import read_imagefrom torchvision import datasetsfrom torchvision import transf">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2023-07-25T06:38:09.422Z">
@@ -1801,7 +1801,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1731038511593),
+    lastupdate: new Date(1731044201349),
     sidebar: {
       for_page: ["blogger","category","webinfo","music"],
       for_post: ["toc"],
@@ -2227,7 +2227,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd end-->
   <!-- front-matter head_end begin -->
   <!-- front-matter head_end end -->
-</head>
+<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head>
   <body itemscope itemtype="http://schema.org/WebPage">
     <!-- import body_begin begin-->
     <!-- import body_begin end-->
@@ -2688,16 +2688,16 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h2 id="1-dataset"><a class="markdownIt-Anchor" href="#1-dataset"></a> 1 Dataset</h2>
-<h3 id="11-图像pathlabel形式"><a class="markdownIt-Anchor" href="#11-图像pathlabel形式"></a> 1.1  图像（path+label形式）</h3>
+    <h2 id="1-dataset">1 Dataset</h2>
+<h3 id="1-1-图像-path-label形式">1.1  图像（path+label形式）</h3>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> torchvision.io <span class="keyword">import</span> read_image</span><br><span class="line"><span class="keyword">from</span> torchvision <span class="keyword">import</span> datasets</span><br><span class="line"><span class="keyword">from</span> torchvision <span class="keyword">import</span> transforms</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">CustomImageDataset</span>(<span class="title class_ inherited__">Dataset</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, annotations_file, img_dir, transform=<span class="literal">None</span>, target_transform=<span class="literal">None</span></span>):</span><br><span class="line">        self.img_labels = pd.read_csv(annotations_file)</span><br><span class="line">        self.img_dir = img_dir</span><br><span class="line">        self.transform = transform</span><br><span class="line">        self.target_transform = target_transform</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__len__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">len</span>(self.img_labels)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__getitem__</span>(<span class="params">self, idx</span>):</span><br><span class="line">        img_path = os.path.join(self.img_dir, self.img_labels.iloc[idx, <span class="number">0</span>])</span><br><span class="line">        image = read_image(img_path)</span><br><span class="line">        label = self.img_labels.iloc[idx, <span class="number">1</span>]</span><br><span class="line">        <span class="keyword">if</span> self.transform:</span><br><span class="line">            image = self.transform(image)</span><br><span class="line">        <span class="keyword">if</span> self.target_transform:</span><br><span class="line">            label = self.target_transform(label)</span><br><span class="line">        <span class="keyword">return</span> image, label</span><br></pre></td></tr></table></figure>
-<h3 id="12-图像文件夹名为label-形式"><a class="markdownIt-Anchor" href="#12-图像文件夹名为label-形式"></a> 1.2 图像（文件夹名为label 形式）</h3>
+<h3 id="1-2-图像-文件夹名为label-形式">1.2 图像（文件夹名为label 形式）</h3>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">data_dir = <span class="string">&#x27;data/hymenoptera_data&#x27;</span></span><br><span class="line">train_datasets = datasets.ImageFolder( os.path.join(data_dir, <span class="string">&quot;train&quot;</span>)</span><br><span class="line">                                       ,data_transforms[<span class="string">&quot;train&quot;</span>])</span><br><span class="line">val_datasets = datasets.ImageFolder( os.path.join(data_dir, <span class="string">&quot;val&quot;</span>)</span><br><span class="line">                                       ,data_transforms[<span class="string">&quot;val&quot;</span>])           </span><br></pre></td></tr></table></figure>
-<h3 id="13-图像在线拉取"><a class="markdownIt-Anchor" href="#13-图像在线拉取"></a> 1.3 图像（在线拉取）</h3>
+<h3 id="1-3-图像-在线拉取">1.3 图像（在线拉取）</h3>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">train_data = datasets.MNIST(root=<span class="string">&#x27;data&#x27;</span>, </span><br><span class="line">                            train=<span class="literal">True</span>, </span><br><span class="line">                            download=<span class="literal">True</span>,                   </span><br><span class="line">                            transform=data_transforms[<span class="string">&quot;train&quot;</span>],</span><br><span class="line">                            target_transform=xxx)</span><br></pre></td></tr></table></figure>
-<h3 id="14-图片转换"><a class="markdownIt-Anchor" href="#14-图片转换"></a> 1.4 图片转换</h3>
+<h3 id="1-4-图片转换">1.4 图片转换</h3>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># input变换</span></span><br><span class="line">data_transforms =  transforms.Compose([</span><br><span class="line">        transforms.RandomResizedCrop(<span class="number">224</span>),</span><br><span class="line">        transforms.RandomHorizontalFlip(),</span><br><span class="line">        transforms.ToTensor(),</span><br><span class="line">        transforms.Normalize(mean=[<span class="number">0.485</span>, <span class="number">0.456</span>, <span class="number">0.406</span>], std=[<span class="number">0.229</span>, <span class="number">0.224</span>, <span class="number">0.225</span>])</span><br><span class="line">    ])</span><br><span class="line"><span class="comment"># RandomResizedCrop: 随机长宽比裁剪</span></span><br><span class="line"><span class="comment"># RandomHorizontalFlip: 随机水平翻转</span></span><br><span class="line"><span class="comment"># RandomVerticalFlip: 随机垂直翻转</span></span><br><span class="line"><span class="comment"># ToTensor: 转换为tensor</span></span><br><span class="line"><span class="comment"># Normalize: 像素值进行归一化处理</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># target 变换</span></span><br><span class="line"><span class="comment"># 把整数变成一个one-hot的tensor</span></span><br><span class="line">target_transform = Lambda(<span class="keyword">lambda</span> y: torch.zeros(<span class="number">10</span>, dtype=torch.<span class="built_in">float</span>) \</span><br><span class="line">                          .scatter_(dim=<span class="number">0</span>, index=torch.tensor(y), value=<span class="number">1</span>))</span><br></pre></td></tr></table></figure>
-<h2 id="2-dataloader"><a class="markdownIt-Anchor" href="#2-dataloader"></a> 2 DataLoader</h2>
+<h2 id="2-dataloader">2 DataLoader</h2>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">train_dataloader = torch.utils.data.DataLoader(train_data, </span><br><span class="line">                                               batch_size=<span class="number">64</span>,                                                                                                      shuffle=<span class="literal">True</span>, </span><br><span class="line">                                               num_workers=<span class="number">4</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> batch, (X, y) <span class="keyword">in</span> <span class="built_in">enumerate</span>(train_dataloader):</span><br><span class="line">    X, y = X.to(device), y.to(device)</span><br></pre></td></tr></table></figure>
 
   </div>
@@ -2817,17 +2817,17 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class='prev' href='/2023/07/26/pytorch%E5%9F%BA%E7%A1%80/4-%E6%A8%A1%E5%9E%8B%E6%90%AD%E5%BB%BA/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>4-模型搭建</p>
-          <p class='content'> 1 神经网络搭建
- 1.1 通过 forward 构建
-我们可以通过继承 nn.Module，构建我们自己的类来定义我们的神经网络。其中，我们在__init__方法中实现各个子Module的初...</p>
+          <p class='content'>1 神经网络搭建
+1.1 通过 forward 构建
+我们可以通过继承 nn.Module，构建我们自己的类来定义我们的神经网络。其中，我们在__init__方法中实现各个子Module的初始化...</p>
         </a>
       
       
         <a class='next' href='/2023/07/24/pytorch%E5%9F%BA%E7%A1%80/2-tensor%E6%93%8D%E4%BD%9C/'>
           <p class='title'>2-tensor基础<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'> 1 tensor属性
- 1.1 tensor初始化
-1234shape = (2,3,)rand_tensor = torch.rand(shape)ones_tensor = torch.o...</p>
+          <p class='content'>1 tensor属性
+1.1 tensor初始化
+1234shape = (2,3,)rand_tensor = torch.rand(shape)ones_tensor = torch.one...</p>
         </a>
       
     </div>
@@ -2886,7 +2886,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-dataset"><span class="toc-text"> 1 Dataset</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#11-%E5%9B%BE%E5%83%8Fpathlabel%E5%BD%A2%E5%BC%8F"><span class="toc-text"> 1.1  图像（path+label形式）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-%E5%9B%BE%E5%83%8F%E6%96%87%E4%BB%B6%E5%A4%B9%E5%90%8D%E4%B8%BAlabel-%E5%BD%A2%E5%BC%8F"><span class="toc-text"> 1.2 图像（文件夹名为label 形式）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-%E5%9B%BE%E5%83%8F%E5%9C%A8%E7%BA%BF%E6%8B%89%E5%8F%96"><span class="toc-text"> 1.3 图像（在线拉取）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14-%E5%9B%BE%E7%89%87%E8%BD%AC%E6%8D%A2"><span class="toc-text"> 1.4 图片转换</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-dataloader"><span class="toc-text"> 2 DataLoader</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-dataset"><span class="toc-text">1 Dataset</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E5%9B%BE%E5%83%8F-path-label%E5%BD%A2%E5%BC%8F"><span class="toc-text">1.1  图像（path+label形式）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E5%9B%BE%E5%83%8F-%E6%96%87%E4%BB%B6%E5%A4%B9%E5%90%8D%E4%B8%BAlabel-%E5%BD%A2%E5%BC%8F"><span class="toc-text">1.2 图像（文件夹名为label 形式）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-%E5%9B%BE%E5%83%8F-%E5%9C%A8%E7%BA%BF%E6%8B%89%E5%8F%96"><span class="toc-text">1.3 图像（在线拉取）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-%E5%9B%BE%E7%89%87%E8%BD%AC%E6%8D%A2"><span class="toc-text">1.4 图片转换</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-dataloader"><span class="toc-text">2 DataLoader</span></a></li></ol>
     </div>
   </section>
 

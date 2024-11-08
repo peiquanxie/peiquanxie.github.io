@@ -42,7 +42,7 @@
 <meta property="og:title" content="6-MySQL-B+树">
 <meta property="og:url" content="https://xie-peiquan.gitee.io/2024/03/19/%E6%95%B0%E6%8D%AE%E5%BA%93/6-MySQL-B+%E6%A0%91/index.html">
 <meta property="og:site_name" content="PQ.XIE BLOG">
-<meta property="og:description" content="1 索引的代价  空间上的代价：每建立一个索引都要为它建立一棵 B+ 树，每一棵 B+ 树的每一个节点都是一个数据页，一个页默认会占用 16KB 的存储空间。 时间上的代价：每次对表中的数据进行增、删、改操作时，都需要去修改各个 B+ 树索引。   2 B+树索引场景 这里先创建一个表作为以下说明的例子。其中 id 是主键，而 idx_name_birthday_phone_number 是二级">
+<meta property="og:description" content="1 索引的代价  空间上的代价：每建立一个索引都要为它建立一棵 B+ 树，每一棵 B+ 树的每一个节点都是一个数据页，一个页默认会占用 16KB 的存储空间。 时间上的代价：每次对表中的数据进行增、删、改操作时，都需要去修改各个 B+ 树索引。  2 B+树索引场景 这里先创建一个表作为以下说明的例子。其中 id 是主键，而 idx_name_birthday_phone_number 是二级索引">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2024-03-19T07:17:44.233Z">
@@ -1801,7 +1801,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1731038511593),
+    lastupdate: new Date(1731044201349),
     sidebar: {
       for_page: ["blogger","category","webinfo","music"],
       for_post: ["toc"],
@@ -2227,7 +2227,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd end-->
   <!-- front-matter head_end begin -->
   <!-- front-matter head_end end -->
-</head>
+<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head>
   <body itemscope itemtype="http://schema.org/WebPage">
     <!-- import body_begin begin-->
     <!-- import body_begin end-->
@@ -2688,53 +2688,53 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h2 id="1-索引的代价"><a class="markdownIt-Anchor" href="#1-索引的代价"></a> 1 索引的代价</h2>
+    <h2 id="1-索引的代价">1 索引的代价</h2>
 <ul>
 <li><strong>空间上的代价</strong>：每建立一个索引都要为它建立一棵 B+ 树，每一棵 B+ 树的每一个节点都是一个数据页，一个页默认会占用 16KB 的存储空间。</li>
 <li><strong>时间上的代价</strong>：每次对表中的数据进行增、删、改操作时，都需要去修改各个 B+ 树索引。</li>
 </ul>
-<h2 id="2-b树索引场景"><a class="markdownIt-Anchor" href="#2-b树索引场景"></a> 2 B+树索引场景</h2>
+<h2 id="2-b-树索引场景">2 B+树索引场景</h2>
 <p>这里先创建一个表作为以下说明的例子。其中 id 是主键，而 idx_name_birthday_phone_number 是二级索引。</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> person_info(</span><br><span class="line">	id <span class="type">INT</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span> auto_increment,</span><br><span class="line">	name <span class="type">VARCHAR</span>(<span class="number">100</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">	birthday <span class="type">DATE</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">	phone_number <span class="type">CHAR</span>(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">	country <span class="type">varchar</span>(<span class="number">100</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">	<span class="keyword">PRIMARY</span> KEY (id),</span><br><span class="line">	KEY idx_name_birthday_phone_number (name, birthday, phone_number)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-<h3 id="21-全值匹配"><a class="markdownIt-Anchor" href="#21-全值匹配"></a> 2.1 全值匹配</h3>
+<h3 id="2-1-全值匹配">2.1 全值匹配</h3>
 <p>如果我们的搜索条件中的列和索引列一致的话，这种情况就称为全值匹配。比如：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> person_info <span class="keyword">WHERE</span> name <span class="operator">=</span> <span class="string">&#x27;Ashburn&#x27;</span> <span class="keyword">AND</span> birthday <span class="operator">=</span> <span class="string">&#x27;1990-09-27&#x27;</span> <span class="keyword">AND</span> phone_num</span><br><span class="line">ber <span class="operator">=</span> <span class="string">&#x27;15123983239&#x27;</span>;</span><br></pre></td></tr></table></figure>
 <p>如果我们调换 name 、 birthday 、 phone_number 这几个搜索列的顺序对查询的执行过程有影响么？还能走索引吗？事实上没影响。 MySQL 会帮我们优化，它会分析这些搜索条件并且按照可以使用的索引中列的顺序来决定先使用哪个搜索条件，后使用哪个搜索条件。</p>
-<h3 id="22-最左前缀匹配"><a class="markdownIt-Anchor" href="#22-最左前缀匹配"></a> 2.2 最左前缀匹配</h3>
+<h3 id="2-2-最左前缀匹配">2.2 最左前缀匹配</h3>
 <p>如果我们匹配联合索引的最左前几列，是可以走索引的，匹配结果可能是多个条目。但如果我们跳过左边的某一列，那么会导致查询无法走索引。为啥？比如：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> person_info <span class="keyword">WHERE</span> birthday <span class="operator">=</span> <span class="string">&#x27;1990-09-27&#x27;</span>;</span><br></pre></td></tr></table></figure>
 <p>B+ 树的数据页和记录先是按照 name 列的值排序的，在 name 列的值相同的情况下才使用 birthday 列进行排序，也就是说 name 列的值不同的记录中 birthday 的值可能是无序的。而现在你跳过name 列直接根据 birthday 的值去查找，MySQL 做不到呀。</p>
 <p>所以我们查询的时候在条件语句中尽量不要漏掉最左边的某一列，即 <strong>最左前缀匹配原则</strong>。</p>
-<h3 id="23-匹配列前缀"><a class="markdownIt-Anchor" href="#23-匹配列前缀"></a> 2.3 匹配列前缀</h3>
+<h3 id="2-3-匹配列前缀">2.3 匹配列前缀</h3>
 <p>观察以下两条查询语句，有没有发现在查询过程中有什么不同？</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> person_info <span class="keyword">WHERE</span> name <span class="keyword">LIKE</span> <span class="string">&#x27;As%&#x27;</span>;</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> person_info <span class="keyword">WHERE</span> name <span class="keyword">LIKE</span> <span class="string">&#x27;%As%&#x27;</span>;</span><br></pre></td></tr></table></figure>
 <p>答案是，第一条能走索引，第二条不能走索引。为啥？因为以As开头的数据条目在数据库中已经排好序了，而以As作为中间子串的数据条目并没有排好序，存储引擎只能做全表扫描比对。好烦，那我有时候需要匹配后缀，也只能全表扫描吗？对于匹配后缀，有一个优化思路，就是让该列的字符串全部逆序存储，这样我们就可以转后缀匹配为前缀匹配了。</p>
 <p><strong>不知到这里你有没有发现规律，分析一条查询语句到底能不能走索引，只需要分析这条语句能不能利用数据库中已经排好序的B+树。</strong></p>
-<h3 id="24-匹配范围值"><a class="markdownIt-Anchor" href="#24-匹配范围值"></a> 2.4 匹配范围值</h3>
+<h3 id="2-4-匹配范围值">2.4 匹配范围值</h3>
 <p>B+树所有记录都是按照索引列的值从小到大的顺序排好序的，所以这极大的方便我们查找索引列的值在某个范围内的记录。不过在使用联合进行范围查找的时候需要注意，<strong>如果对多个列同时进行范围查找的话，只有对索引最左边的那个列进行范围查找的时候才能用到 B+ 树索引</strong>，比如：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> person_info <span class="keyword">WHERE</span> name <span class="operator">&gt;</span> <span class="string">&#x27;Asa&#x27;</span> <span class="keyword">AND</span> name <span class="operator">&lt;</span> <span class="string">&#x27;Barlow&#x27;</span> <span class="keyword">AND</span> birthday <span class="operator">&gt;</span> <span class="string">&#x27;1980-01-01&#x27;</span>;</span><br></pre></td></tr></table></figure>
 <p>这里只有 name 范围查找可以用上索引，birthday 列不能，想想为什么？问就是无序。</p>
-<h3 id="25-精确匹配某一列并范围匹配另外一列"><a class="markdownIt-Anchor" href="#25-精确匹配某一列并范围匹配另外一列"></a> 2.5 精确匹配某一列并范围匹配另外一列</h3>
-<p>对于同一个联合索引来说，虽然对多个列都进行范围查找时只能用到最左边那个索引列，但是如果左边的列是精<br />
+<h3 id="2-5-精确匹配某一列并范围匹配另外一列">2.5 精确匹配某一列并范围匹配另外一列</h3>
+<p>对于同一个联合索引来说，虽然对多个列都进行范围查找时只能用到最左边那个索引列，但是如果左边的列是精<br>
 确查找，则右边的列可以进行范围查找，比如：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> person_info <span class="keyword">WHERE</span> name <span class="operator">=</span> <span class="string">&#x27;Ashburn&#x27;</span> <span class="keyword">AND</span> birthday <span class="operator">&gt;</span> <span class="string">&#x27;1980-01-01&#x27;</span> <span class="keyword">AND</span> birthday <span class="operator">&lt;</span> <span class="string">&#x27;2000-12-31&#x27;</span> <span class="keyword">AND</span> phone_number <span class="operator">&gt;</span> <span class="string">&#x27;15100000000&#x27;</span>;</span><br></pre></td></tr></table></figure>
 <p>这里的 birthday 范围查找是可以用上索引的，为什么？问就是有序。</p>
-<h3 id="26-用于排序"><a class="markdownIt-Anchor" href="#26-用于排序"></a> 2.6 用于排序</h3>
+<h3 id="2-6-用于排序">2.6 用于排序</h3>
 <p>如果 ORDER BY 子句里使用到了我们的索引列，就有可能省去在内存或文件中排序的步骤，比如：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> person_info <span class="keyword">ORDER</span> <span class="keyword">BY</span> name, birthday, phone_number LIMIT <span class="number">10</span>;</span><br></pre></td></tr></table></figure>
 <p>由于SQL语句要求的排序与数据库存储中的顺序一致，所以直接从索引中提取数据就好了。</p>
-<h2 id="3-回表的代价"><a class="markdownIt-Anchor" href="#3-回表的代价"></a> 3 回表的代价</h2>
+<h2 id="3-回表的代价">3 回表的代价</h2>
 <p>由于我们创建的索引 idx_name_birthday_phone_number 是个二级索引，索引查完这颗B+树后获得的是真正的主键值 id，索引需要再拿这个id去找一遍，这个过程叫 <strong>回表</strong>。</p>
 <p>回表的代价在范围查找里面体现的尤为明显。比如这条语句：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> person_info <span class="keyword">WHERE</span> name <span class="operator">&gt;</span> <span class="string">&#x27;Asa&#x27;</span> <span class="keyword">AND</span> name <span class="operator">&lt;</span> <span class="string">&#x27;Barlow&#x27;</span>;</span><br></pre></td></tr></table></figure>
 <p>由于索引 idx_name_birthday_phone_number 对应的 B+ 树中的记录首先会按照 name 列的值进行排序，所以值在 Asa ～ Barlow 之间的记录在磁盘中的存储是相连的，集中分布在一个或几个数据页中，我们可以很快的把这些连着的记录从磁盘中读出来，这种读取方式我们也可以称为 顺序I/O 。以上过程取到的记录的 id 字段的值可能并不相连，而在聚簇索引中记录是根据 id （也就是主键）的顺序排列的，所以根据这些并不连续的 id 值到聚簇索引中访问完整的用户记录可能分布在不同的数据页中，这样读取完整的用户记录可能要访问更多的数据页，这种读取方式我们也可以称为 随机I/O 。<strong>一般情况下，顺序I/O比随机I/O的性能高很多，所以步骤1的执行可能很快，而步骤2就慢一些。</strong></p>
 <p><strong>需要回表的记录越多，使用二级索引的性能就越低</strong>，甚至让某些查询宁愿使用全表扫描也不使用 二级索引 。比方说 name 值在 Asa ～ Barlow 之间的用户记录数量占全部记录数量90%以上，那么如果使用 idx_name_birthday_phone_number 索引的话，有90%多的 id 值需要回表，这不是吃力不讨好么，还不如直接去扫描全表。</p>
 <p>事实上，查询优化器会事先对表中的记录计算一些统计数据，然后再利用这些统计数据根据查询的条件来计算一下<strong>需要回表的记录数</strong>，需要回表的记录数越多，就越倾向于使用全表扫描，反之倾向于使用 二级索引 + 回表 的方式。</p>
-<h3 id="31-覆盖索引"><a class="markdownIt-Anchor" href="#31-覆盖索引"></a> 3.1 覆盖索引</h3>
+<h3 id="3-1-覆盖索引">3.1 覆盖索引</h3>
 <p>为了彻底告别 回表 操作带来的性能损耗，我们建议：最好在查询列表里只包含索引列，比如：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> name, birthday, phone_number <span class="keyword">FROM</span> person_info <span class="keyword">WHERE</span> name <span class="operator">&gt;</span> <span class="string">&#x27;Asa&#x27;</span> <span class="keyword">AND</span> name <span class="operator">&lt;</span> <span class="string">&#x27;Barlow&#x27;</span></span><br></pre></td></tr></table></figure>
 <p>这样在二级索引的时候，就已经能够得到我们所关心的值了，不用回表查找更多列数据。</p>
-<h2 id="4-如何选择索引"><a class="markdownIt-Anchor" href="#4-如何选择索引"></a> 4 如何选择索引</h2>
+<h2 id="4-如何选择索引">4 如何选择索引</h2>
 <ul>
 <li>
 <p><strong>只为用于搜索、排序或分组的列创建索引</strong>。</p>
@@ -2874,16 +2874,16 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class='prev' href='/2024/03/19/%E6%95%B0%E6%8D%AE%E5%BA%93/7-MySQL-%E8%BF%9E%E6%8E%A5/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>7-MySQL-连接</p>
-          <p class='content'> 1 MySQL中的连接
- 1.1 交叉连接
+          <p class='content'>1 MySQL中的连接
+1.1 交叉连接
 将 A 表的每一个条目与 B 表的每一个条目都交叉一遍，这样的结果集也称为 笛卡尔积 。交叉连接出来的表很大，这种连接方式要慎用。
-1SELECT ...</p>
+1SELECT * ...</p>
         </a>
       
       
         <a class='next' href='/2024/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/2-SQLite%E4%B8%AD%E9%97%B4%E4%BB%B6/'>
           <p class='title'>2-SQLite中间件<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>SQLite 提供的 C/CPP API 实在是太简陋，使用C开发的伙伴一定会感到极为不方便。事实上有很多用C包装的中间件，可以极大方便我们操作数据库。这里我整理了 sqlite_modern_...</p>
+          <p class='content'>SQLite 提供的 C/CPP API 实在是太简陋，使用C++开发的伙伴一定会感到极为不方便。事实上有很多用C++包装的中间件，可以极大方便我们操作数据库。这里我整理了 sqlite_mod...</p>
         </a>
       
     </div>
@@ -2942,7 +2942,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%B4%A2%E5%BC%95%E7%9A%84%E4%BB%A3%E4%BB%B7"><span class="toc-text"> 1 索引的代价</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-b%E6%A0%91%E7%B4%A2%E5%BC%95%E5%9C%BA%E6%99%AF"><span class="toc-text"> 2 B+树索引场景</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#21-%E5%85%A8%E5%80%BC%E5%8C%B9%E9%85%8D"><span class="toc-text"> 2.1 全值匹配</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#22-%E6%9C%80%E5%B7%A6%E5%89%8D%E7%BC%80%E5%8C%B9%E9%85%8D"><span class="toc-text"> 2.2 最左前缀匹配</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#23-%E5%8C%B9%E9%85%8D%E5%88%97%E5%89%8D%E7%BC%80"><span class="toc-text"> 2.3 匹配列前缀</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#24-%E5%8C%B9%E9%85%8D%E8%8C%83%E5%9B%B4%E5%80%BC"><span class="toc-text"> 2.4 匹配范围值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#25-%E7%B2%BE%E7%A1%AE%E5%8C%B9%E9%85%8D%E6%9F%90%E4%B8%80%E5%88%97%E5%B9%B6%E8%8C%83%E5%9B%B4%E5%8C%B9%E9%85%8D%E5%8F%A6%E5%A4%96%E4%B8%80%E5%88%97"><span class="toc-text"> 2.5 精确匹配某一列并范围匹配另外一列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#26-%E7%94%A8%E4%BA%8E%E6%8E%92%E5%BA%8F"><span class="toc-text"> 2.6 用于排序</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%9B%9E%E8%A1%A8%E7%9A%84%E4%BB%A3%E4%BB%B7"><span class="toc-text"> 3 回表的代价</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#31-%E8%A6%86%E7%9B%96%E7%B4%A2%E5%BC%95"><span class="toc-text"> 3.1 覆盖索引</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%A6%82%E4%BD%95%E9%80%89%E6%8B%A9%E7%B4%A2%E5%BC%95"><span class="toc-text"> 4 如何选择索引</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%B4%A2%E5%BC%95%E7%9A%84%E4%BB%A3%E4%BB%B7"><span class="toc-text">1 索引的代价</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-b-%E6%A0%91%E7%B4%A2%E5%BC%95%E5%9C%BA%E6%99%AF"><span class="toc-text">2 B+树索引场景</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E5%85%A8%E5%80%BC%E5%8C%B9%E9%85%8D"><span class="toc-text">2.1 全值匹配</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E6%9C%80%E5%B7%A6%E5%89%8D%E7%BC%80%E5%8C%B9%E9%85%8D"><span class="toc-text">2.2 最左前缀匹配</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-%E5%8C%B9%E9%85%8D%E5%88%97%E5%89%8D%E7%BC%80"><span class="toc-text">2.3 匹配列前缀</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-%E5%8C%B9%E9%85%8D%E8%8C%83%E5%9B%B4%E5%80%BC"><span class="toc-text">2.4 匹配范围值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-%E7%B2%BE%E7%A1%AE%E5%8C%B9%E9%85%8D%E6%9F%90%E4%B8%80%E5%88%97%E5%B9%B6%E8%8C%83%E5%9B%B4%E5%8C%B9%E9%85%8D%E5%8F%A6%E5%A4%96%E4%B8%80%E5%88%97"><span class="toc-text">2.5 精确匹配某一列并范围匹配另外一列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-%E7%94%A8%E4%BA%8E%E6%8E%92%E5%BA%8F"><span class="toc-text">2.6 用于排序</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%9B%9E%E8%A1%A8%E7%9A%84%E4%BB%A3%E4%BB%B7"><span class="toc-text">3 回表的代价</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E8%A6%86%E7%9B%96%E7%B4%A2%E5%BC%95"><span class="toc-text">3.1 覆盖索引</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%A6%82%E4%BD%95%E9%80%89%E6%8B%A9%E7%B4%A2%E5%BC%95"><span class="toc-text">4 如何选择索引</span></a></li></ol>
     </div>
   </section>
 

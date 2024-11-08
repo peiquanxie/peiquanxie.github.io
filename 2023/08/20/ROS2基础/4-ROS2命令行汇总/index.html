@@ -42,7 +42,7 @@
 <meta property="og:title" content="4-ROS2命令行汇总">
 <meta property="og:url" content="https://xie-peiquan.gitee.io/2023/08/20/ROS2%E5%9F%BA%E7%A1%80/4-ROS2%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%B1%87%E6%80%BB/index.html">
 <meta property="og:site_name" content="PQ.XIE BLOG">
-<meta property="og:description" content="0 节点运行命令  命令格式： ros2 run  &lt;package_name&gt;  &lt;node_name&gt;   1 pkg相关命令  1.1 ros2 pkg create  命令功能：创建功能包并指定包相关参数 命令格式：ros2 pkg create &lt;pkgname&gt; –build-type &lt;ament_python&gt; –node-name">
+<meta property="og:description" content="0 节点运行命令  命令格式： ros2 run  &lt;package_name&gt;  &lt;node_name&gt;  1 pkg相关命令 1.1 ros2 pkg create  命令功能：创建功能包并指定包相关参数 命令格式：ros2 pkg create &lt;pkgname&gt; –build-type &lt;ament_python&gt; –node-name &amp;l">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2023-08-20T09:29:19.576Z">
@@ -1801,7 +1801,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1731038511593),
+    lastupdate: new Date(1731044201349),
     sidebar: {
       for_page: ["blogger","category","webinfo","music"],
       for_post: ["toc"],
@@ -2227,7 +2227,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd end-->
   <!-- front-matter head_end begin -->
   <!-- front-matter head_end end -->
-</head>
+<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head>
   <body itemscope itemtype="http://schema.org/WebPage">
     <!-- import body_begin begin-->
     <!-- import body_begin end-->
@@ -2688,15 +2688,15 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h2 id="0-节点运行命令"><a class="markdownIt-Anchor" href="#0-节点运行命令"></a> 0 节点运行命令</h2>
+    <h2 id="0-节点运行命令">0 节点运行命令</h2>
 <blockquote>
 <p>命令格式： ros2 run  &lt;package_name&gt;  &lt;node_name&gt;</p>
 </blockquote>
-<h2 id="1-pkg相关命令"><a class="markdownIt-Anchor" href="#1-pkg相关命令"></a> 1 pkg相关命令</h2>
-<h3 id="11-ros2-pkg-create"><a class="markdownIt-Anchor" href="#11-ros2-pkg-create"></a> 1.1 ros2 pkg create</h3>
+<h2 id="1-pkg相关命令">1 pkg相关命令</h2>
+<h3 id="1-1-ros2-pkg-create">1.1 ros2 pkg create</h3>
 <blockquote>
-<p>命令功能：创建功能包并指定包相关参数<br />
-命令格式：ros2 pkg create &lt;pkgname&gt; <strong>–build-type</strong> &lt;ament_python&gt; <strong>–node-name</strong> &lt;xx_node&gt; <strong>–dependencies</strong> &lt;rclpy&gt;<br />
+<p>命令功能：创建功能包并指定包相关参数<br>
+命令格式：ros2 pkg create &lt;pkgname&gt; <strong>–build-type</strong> &lt;ament_python&gt; <strong>–node-name</strong> &lt;xx_node&gt; <strong>–dependencies</strong> &lt;rclpy&gt;<br>
 参数列表：</p>
 </blockquote>
 <table>
@@ -2725,99 +2725,99 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </tr>
 </tbody>
 </table>
-<h3 id="12-ros2-pkg-list"><a class="markdownIt-Anchor" href="#12-ros2-pkg-list"></a> 1.2 ros2 pkg list</h3>
+<h3 id="1-2-ros2-pkg-list">1.2 ros2 pkg list</h3>
 <blockquote>
-<p>命令功能：查看系统中功能包列表<br />
-命令格式：ros2 pkg list<br />
+<p>命令功能：查看系统中功能包列表<br>
+命令格式：ros2 pkg list<br>
 注意：记得要通过source指令将自己的功能包添加到ROS2环境中。</p>
 </blockquote>
-<h3 id="13-ros2-pkg-executables"><a class="markdownIt-Anchor" href="#13-ros2-pkg-executables"></a> 1.3 ros2 pkg executables</h3>
+<h3 id="1-3-ros2-pkg-executables">1.3 ros2 pkg executables</h3>
 <blockquote>
-<p>命令功能：查看功能包内所有可执行节点<br />
+<p>命令功能：查看功能包内所有可执行节点<br>
 命令格式：ros2 pkg executables &lt;package_name&gt;</p>
 </blockquote>
-<h2 id="2-node相关命令"><a class="markdownIt-Anchor" href="#2-node相关命令"></a> 2 node相关命令</h2>
-<h3 id="21-ros2-node-list"><a class="markdownIt-Anchor" href="#21-ros2-node-list"></a> 2.1 ros2 node list</h3>
+<h2 id="2-node相关命令">2 node相关命令</h2>
+<h3 id="2-1-ros2-node-list">2.1 ros2 node list</h3>
 <blockquote>
-<p>命令功能： 查看当前域内（ROS_DOMAIN_ID）的节点列表<br />
+<p>命令功能： 查看当前域内（ROS_DOMAIN_ID）的节点列表<br>
 命令格式： ros2 node list</p>
 </blockquote>
-<h3 id="22-ros2-node-info"><a class="markdownIt-Anchor" href="#22-ros2-node-info"></a> 2.2 ros2 node info</h3>
+<h3 id="2-2-ros2-node-info">2.2 ros2 node info</h3>
 <blockquote>
-<p>命令功能： 查看节点详细信息，包括订阅、发布的消息，开启的服务和动作等<br />
+<p>命令功能： 查看节点详细信息，包括订阅、发布的消息，开启的服务和动作等<br>
 命令格式： ros2 node info &lt;node_name&gt;</p>
 </blockquote>
-<h2 id="3-topic相关命令"><a class="markdownIt-Anchor" href="#3-topic相关命令"></a> 3 topic相关命令</h2>
-<h3 id="31-ros2-topic-list"><a class="markdownIt-Anchor" href="#31-ros2-topic-list"></a> 3.1 ros2 topic list</h3>
+<h2 id="3-topic相关命令">3 topic相关命令</h2>
+<h3 id="3-1-ros2-topic-list">3.1 ros2 topic list</h3>
 <blockquote>
-<p>命令功能：列出域内可使用的topic列表<br />
+<p>命令功能：列出域内可使用的topic列表<br>
 命令格式：ros2 topic list</p>
 </blockquote>
-<h3 id="32-ros2-topic-info"><a class="markdownIt-Anchor" href="#32-ros2-topic-info"></a> 3.2 ros2 topic info</h3>
+<h3 id="3-2-ros2-topic-info">3.2 ros2 topic info</h3>
 <blockquote>
-<p>命令功能：显示主题消息类型，订阅者数量，发布者数量等<br />
+<p>命令功能：显示主题消息类型，订阅者数量，发布者数量等<br>
 命令格式：ros2 topic info &lt;topic_name&gt;</p>
 </blockquote>
-<h3 id="33-ros2-topic-type"><a class="markdownIt-Anchor" href="#33-ros2-topic-type"></a> 3.3 ros2 topic type</h3>
+<h3 id="3-3-ros2-topic-type">3.3 ros2 topic type</h3>
 <blockquote>
-<p>命令功能：查看主题消息类型<br />
+<p>命令功能：查看主题消息类型<br>
 命令格式：ros2 topic type &lt;topic_name&gt;</p>
 </blockquote>
-<h3 id="34-ros2-topic-find"><a class="markdownIt-Anchor" href="#34-ros2-topic-find"></a> 3.4 ros2 topic find</h3>
+<h3 id="3-4-ros2-topic-find">3.4 ros2 topic find</h3>
 <blockquote>
-<p>命令功能：按消息类型查找相关主题<br />
+<p>命令功能：按消息类型查找相关主题<br>
 命令格式：ros2 topic find &lt;message_type&gt;</p>
 </blockquote>
-<h3 id="35-ros2-topic-hz"><a class="markdownIt-Anchor" href="#35-ros2-topic-hz"></a> 3.5 ros2 topic hz</h3>
+<h3 id="3-5-ros2-topic-hz">3.5 ros2 topic hz</h3>
 <blockquote>
-<p>命令功能：显示主题平均发布频率<br />
+<p>命令功能：显示主题平均发布频率<br>
 命令格式：ros2 topic hz &lt;topic_name&gt;</p>
 </blockquote>
-<h3 id="36-ros2-topic-bw"><a class="markdownIt-Anchor" href="#36-ros2-topic-bw"></a> 3.6 ros2 topic bw</h3>
+<h3 id="3-6-ros2-topic-bw">3.6 ros2 topic bw</h3>
 <blockquote>
-<p>命令功能：显示所查阅主题的带宽<br />
+<p>命令功能：显示所查阅主题的带宽<br>
 命令格式：ros2 topic bw &lt;topic_name&gt;</p>
 </blockquote>
-<h3 id="37-ros2-topic-delay"><a class="markdownIt-Anchor" href="#37-ros2-topic-delay"></a> 3.7 ros2 topic delay</h3>
+<h3 id="3-7-ros2-topic-delay">3.7 ros2 topic delay</h3>
 <blockquote>
-<p>命令功能：通过header中的时间戳计算消息延迟<br />
+<p>命令功能：通过header中的时间戳计算消息延迟<br>
 命令格式：ros2 topic delay &lt;topic_name&gt;</p>
 </blockquote>
-<h3 id="38-ros2-topic-echo"><a class="markdownIt-Anchor" href="#38-ros2-topic-echo"></a> 3.8 ros2 topic echo</h3>
+<h3 id="3-8-ros2-topic-echo">3.8 ros2 topic echo</h3>
 <blockquote>
-<p>命令功能：在控制台显示主题消息<br />
+<p>命令功能：在控制台显示主题消息<br>
 命令格式：ros2 topic echo &lt;topic_name&gt;</p>
 </blockquote>
-<h3 id="39-ros2-topic-pub"><a class="markdownIt-Anchor" href="#39-ros2-topic-pub"></a> 3.9 ros2 topic pub</h3>
+<h3 id="3-9-ros2-topic-pub">3.9 ros2 topic pub</h3>
 <blockquote>
-<p>命令功能：通过命令行发布指定主题消息<br />
-命令格式：ros2 topic pub &lt;topic_name&gt; &lt;message_type&gt; &lt;message_content&gt;<br />
+<p>命令功能：通过命令行发布指定主题消息<br>
+命令格式：ros2 topic pub &lt;topic_name&gt; &lt;message_type&gt; &lt;message_content&gt;<br>
 命令示例：ros2 topic pub control_node/action  geometry_msgs/msg/TwistStamped  “{header: {stamp:{sec: 0, nanosec: 0}, frame_id: control_node}, twist: {linear: {x: 0.3, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 0.0}}}”</p>
 </blockquote>
-<h2 id="4-interface相关命令"><a class="markdownIt-Anchor" href="#4-interface相关命令"></a> 4 interface相关命令</h2>
-<h3 id="41-ros2-interface-list"><a class="markdownIt-Anchor" href="#41-ros2-interface-list"></a> 4.1 ros2 interface list</h3>
+<h2 id="4-interface相关命令">4 interface相关命令</h2>
+<h3 id="4-1-ros2-interface-list">4.1 ros2 interface list</h3>
 <blockquote>
-<p>命令功能：按类显示系统内所有的接口，包括消息（Messages）、服务（Services）、动作（Actions）<br />
+<p>命令功能：按类显示系统内所有的接口，包括消息（Messages）、服务（Services）、动作（Actions）<br>
 命令格式：ros2 interface list</p>
 </blockquote>
-<h3 id="43-ros2-interface-packages"><a class="markdownIt-Anchor" href="#43-ros2-interface-packages"></a> 4.3  ros2 interface packages</h3>
+<h3 id="4-3-ros2-interface-packages">4.3  ros2 interface packages</h3>
 <blockquote>
-<p>命令功能：显示所有接口包<br />
+<p>命令功能：显示所有接口包<br>
 命令格式：ros2 interface packages</p>
 </blockquote>
-<h3 id="42-ros2-interface-package"><a class="markdownIt-Anchor" href="#42-ros2-interface-package"></a> 4.2 ros2 interface package</h3>
+<h3 id="4-2-ros2-interface-package">4.2 ros2 interface package</h3>
 <blockquote>
-<p>命令功能：显示指定接口包内的子接口<br />
+<p>命令功能：显示指定接口包内的子接口<br>
 命令格式：ros2 interface package &lt;interface_pkg&gt;</p>
 </blockquote>
-<h3 id="43-ros2-interface-show"><a class="markdownIt-Anchor" href="#43-ros2-interface-show"></a> 4.3 ros2 interface show</h3>
+<h3 id="4-3-ros2-interface-show">4.3 ros2 interface show</h3>
 <blockquote>
-<p>命令功能：显示指定接口的详细内容<br />
+<p>命令功能：显示指定接口的详细内容<br>
 命令格式：ros2 interface show &lt;interface_name&gt;</p>
 </blockquote>
-<h3 id="44-ros2-interface-proto"><a class="markdownIt-Anchor" href="#44-ros2-interface-proto"></a> 4.4 ros2 interface proto</h3>
+<h3 id="4-4-ros2-interface-proto">4.4 ros2 interface proto</h3>
 <blockquote>
-<p>命令功能：显示消息模板<br />
+<p>命令功能：显示消息模板<br>
 命令格式：ros2 interface proto &lt;message_name&gt;</p>
 </blockquote>
 
@@ -2938,20 +2938,20 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class='prev' href='/2023/08/20/ROS2%E5%9F%BA%E7%A1%80/5-ROS2%E5%88%9B%E5%BB%BA%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%8A%82%E7%82%B9/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>5-ROS2创建第一个节点</p>
-          <p class='content'> 1 创建cpp节点
- 1.1 创建工作空间
+          <p class='content'>1 创建cpp节点
+1.1 创建工作空间
 1mkdir -p workspace/src/
- 1.2 创建功能包
-12cd workspace/srcros2 pkg create exam...</p>
+1.2 创建功能包
+12cd workspace/srcros2 pkg create example...</p>
         </a>
       
       
         <a class='next' href='/2023/08/20/ROS2%E5%9F%BA%E7%A1%80/3-ROS2%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84/'>
           <p class='title'>3-ROS2系统架构<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'> 1 ROS2总体架构图
+          <p class='content'>1 ROS2总体架构图
 
- 1.1 DDS实现层
-DDS，全称 Data Distribution Service (数据分发服务)。是由对象管理组 (OMG) 于 2003 年发布并于 20...</p>
+1.1 DDS实现层
+DDS，全称 Data Distribution Service (数据分发服务)。是由对象管理组 (OMG) 于 2003 年发布并于 2007...</p>
         </a>
       
     </div>
@@ -3010,7 +3010,7 @@ DDS，全称 Data Distribution Service (数据分发服务)。是由对象管理
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#0-%E8%8A%82%E7%82%B9%E8%BF%90%E8%A1%8C%E5%91%BD%E4%BB%A4"><span class="toc-text"> 0 节点运行命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-pkg%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4"><span class="toc-text"> 1 pkg相关命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#11-ros2-pkg-create"><span class="toc-text"> 1.1 ros2 pkg create</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-ros2-pkg-list"><span class="toc-text"> 1.2 ros2 pkg list</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-ros2-pkg-executables"><span class="toc-text"> 1.3 ros2 pkg executables</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-node%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4"><span class="toc-text"> 2 node相关命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#21-ros2-node-list"><span class="toc-text"> 2.1 ros2 node list</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#22-ros2-node-info"><span class="toc-text"> 2.2 ros2 node info</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-topic%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4"><span class="toc-text"> 3 topic相关命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#31-ros2-topic-list"><span class="toc-text"> 3.1 ros2 topic list</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#32-ros2-topic-info"><span class="toc-text"> 3.2 ros2 topic info</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#33-ros2-topic-type"><span class="toc-text"> 3.3 ros2 topic type</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#34-ros2-topic-find"><span class="toc-text"> 3.4 ros2 topic find</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#35-ros2-topic-hz"><span class="toc-text"> 3.5 ros2 topic hz</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#36-ros2-topic-bw"><span class="toc-text"> 3.6 ros2 topic bw</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#37-ros2-topic-delay"><span class="toc-text"> 3.7 ros2 topic delay</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#38-ros2-topic-echo"><span class="toc-text"> 3.8 ros2 topic echo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#39-ros2-topic-pub"><span class="toc-text"> 3.9 ros2 topic pub</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-interface%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4"><span class="toc-text"> 4 interface相关命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#41-ros2-interface-list"><span class="toc-text"> 4.1 ros2 interface list</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#43-ros2-interface-packages"><span class="toc-text"> 4.3  ros2 interface packages</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#42-ros2-interface-package"><span class="toc-text"> 4.2 ros2 interface package</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#43-ros2-interface-show"><span class="toc-text"> 4.3 ros2 interface show</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#44-ros2-interface-proto"><span class="toc-text"> 4.4 ros2 interface proto</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#0-%E8%8A%82%E7%82%B9%E8%BF%90%E8%A1%8C%E5%91%BD%E4%BB%A4"><span class="toc-text">0 节点运行命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-pkg%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4"><span class="toc-text">1 pkg相关命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-ros2-pkg-create"><span class="toc-text">1.1 ros2 pkg create</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-ros2-pkg-list"><span class="toc-text">1.2 ros2 pkg list</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-ros2-pkg-executables"><span class="toc-text">1.3 ros2 pkg executables</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-node%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4"><span class="toc-text">2 node相关命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-ros2-node-list"><span class="toc-text">2.1 ros2 node list</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-ros2-node-info"><span class="toc-text">2.2 ros2 node info</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-topic%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4"><span class="toc-text">3 topic相关命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-ros2-topic-list"><span class="toc-text">3.1 ros2 topic list</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-ros2-topic-info"><span class="toc-text">3.2 ros2 topic info</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-ros2-topic-type"><span class="toc-text">3.3 ros2 topic type</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-ros2-topic-find"><span class="toc-text">3.4 ros2 topic find</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-ros2-topic-hz"><span class="toc-text">3.5 ros2 topic hz</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-6-ros2-topic-bw"><span class="toc-text">3.6 ros2 topic bw</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-7-ros2-topic-delay"><span class="toc-text">3.7 ros2 topic delay</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-8-ros2-topic-echo"><span class="toc-text">3.8 ros2 topic echo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-9-ros2-topic-pub"><span class="toc-text">3.9 ros2 topic pub</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-interface%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4"><span class="toc-text">4 interface相关命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-ros2-interface-list"><span class="toc-text">4.1 ros2 interface list</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-ros2-interface-packages"><span class="toc-text">4.3  ros2 interface packages</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-ros2-interface-package"><span class="toc-text">4.2 ros2 interface package</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-ros2-interface-show"><span class="toc-text">4.3 ros2 interface show</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-ros2-interface-proto"><span class="toc-text">4.4 ros2 interface proto</span></a></li></ol></li></ol>
     </div>
   </section>
 

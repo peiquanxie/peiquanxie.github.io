@@ -1799,7 +1799,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1731038511593),
+    lastupdate: new Date(1731044201349),
     sidebar: {
       for_page: ["blogger","category","webinfo","music"],
       for_post: ["toc"],
@@ -2225,7 +2225,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd end-->
   <!-- front-matter head_end begin -->
   <!-- front-matter head_end end -->
-</head>
+<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head>
   <body itemscope itemtype="http://schema.org/WebPage">
     <!-- import body_begin begin-->
     <!-- import body_begin end-->
@@ -2758,11 +2758,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-         1 算法背景
+        1 算法背景
 如何计算两个序列的相似性？这方面有很多方法，各有各的利弊，我们举最简单的方法，通过计算两个序列的欧式距离来衡量序列的相似性。如下图：
 
 两个序列的欧式距离等于相同索引的对应点的距离之和，这种算法有明显缺陷，当存在时间轴上的伸缩或偏移时，即使两个序列在形状上很相似，计算出来的距离也会很大。这便是DTW算法要针对解决的问题，更客观地计算出形状相似的两序列距离。
- 2 DTW的思想...
+2 DTW的思想
+如...
       
     
   </div>
@@ -2829,9 +2830,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
 富贵不可求，尽人事而听天命耳。凡举大事，非励精图治不可成。
 
- 隆中对
+隆中对
 自董卓已来，豪杰并起，跨州连郡者不可胜数。曹操比於袁绍，则名微而众寡，然操遂能克绍，以弱为强者，非惟天命，抑亦人谋也。今操已拥百万之众，挟天子以令诸侯，此诚不可与争雄。孙权据有江东，已历三世，国险而民附，贤能为之用，此可以为援而不可图也。
-荆州北据汉、沔，利尽南海，东连吴会，西通巴、蜀，此用武之国，而其主不能守，此殆天...
+荆州北据汉、沔，利尽南海，东连吴会，西通巴、蜀，此用武之国，而其主不能守，此殆天所...
       
     
   </div>
@@ -2895,9 +2896,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-         1 万能Hash
+        1 万能Hash
 自定义hash function的形式
-123456789101112131415161718#include &lt;functional&gt;class Customer&#123;    ...&#125;;//仿函数形式class CustomerHash&#123;public:    std::size_t operator()(const Customer...
+123456789101112131415161718#include &lt;functional&gt;class Customer&#123;    ...&#125;;//仿函数形式class CustomerHash&#123;public:    std::size_t operator()(const Customer&...
       
     
   </div>
@@ -2961,7 +2962,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-         1 仿函数
+        1 仿函数
 仿函数（functors），可认为重载了operator()的类，表现上类似函数，为算法服务。
 
 
@@ -2970,8 +2971,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 仿函数继承 unary_function 或 binary_function，以记录入参和返回值类型供算法提问。
 仿函数传给算法时，应该传入一个仿函数对象，如：less&lt;int&gt;().
 
- 2 适配器
-STL...
+2 适配器
+STL中存...
       
     
   </div>
@@ -3102,10 +3103,10 @@ STL...
     
       
         关联式容器对数据按一定的规则进行存储，因而擅长对数据进行查找，可以认为关联式容器是一个小型的内存数据库。STL的关联式容器依赖两个重要的数据结构，一个是红黑树，一个是哈希表。
- 1 rb_tree
+1 rb_tree
 
 红黑树是一种平衡的二叉搜索树，红黑树提供遍历操作及iterator，按照正常规则（++iter）遍历（中序遍历），便能获得排序状态。
-不应该改变红黑树节点中的 key 部分，因为红黑树依赖其进行...
+不应该改变红黑树节点中的 key 部分，因为红黑树依赖其进行排...
       
     
   </div>
@@ -3169,11 +3170,11 @@ STL...
   <div class='md article-desc' itemprop="articleBody">
     
       
-         1 容器的分类
+        1 容器的分类
 STL容器从内存结构上可分为序列式容器和关联性容器，序列式容器更关注于快速存取，而关联性容器更关注于快速查找。两大类容器分支又有一些内含关系，具体如下。
 
- 2 list
-先从简单的链表说起，以说明容器与迭代器的关系。每个容器都有自己的专属迭代器，正是迭代器的出现，帮助容器屏蔽了内存存储上的差异。list的结构和源码如下，由于侯捷先生的胶片展示的不能再清晰，这里不做更多解释...
+2 list
+先从简单的链表说起，以说明容器与迭代器的关系。每个容器都有自己的专属迭代器，正是迭代器的出现，帮助容器屏蔽了内存存储上的差异。list的结构和源码如下，由于侯捷先生的胶片展示的不能再清晰，这里不做更多解释。（...
       
     
   </div>
@@ -3237,9 +3238,9 @@ STL容器从内存结构上可分为序列式容器和关联性容器，序列�
   <div class='md article-desc' itemprop="articleBody">
     
       
-         1 内存的申请和释放
-C内存管理的都是堆（Heap）内存，C中全局的内存申请和释放函数是 operator new和 operator delete可以被重载（但不推荐）.
-operator new用于申请裸空间（注意区别于new，并不调用构造函数），其最终会调用 malloc；内存释放的动作是 operator delete，最终调用 free。但是malloc在申请内存会产生额外开销(...
+        1 内存的申请和释放
+C++内存管理的都是堆（Heap）内存，C++中全局的内存申请和释放函数是 operator new和 operator delete可以被重载（但不推荐）.
+operator new用于申请裸空间（注意区别于new，并不调用构造函数），其最终会调用 malloc；内存释放的动作是 operator delete，最终调用 free。但是malloc在申请内存会产生额外...
       
     
   </div>
@@ -3303,13 +3304,13 @@ operator new用于申请裸空间（注意区别于new，并不调用构造函�
   <div class='md article-desc' itemprop="articleBody">
     
       
-         1 操作符重载
+        1 操作符重载
 对某个对象运行某个操作符时，希望该对象表现出对应的行为，需要重载操作符。以下是list的迭代器的操作符重载例子：
 
- 2 模板方法
- 2.1 泛化
+2 模板方法
+2.1 泛化
 对于类定义或者函数定义，不指定内含的数据类型，允许用户在使用时才指定具体的数据类型。即是对类定义和函数定义进行泛化。
-一种是对类进行泛化，形成类模板。具体类型需在使用时指定，如图中的 complex c2(2,6), &lt;&...
+一种是对类进行泛化，形成类模板。具体类型需在使用时指定，如图中的 complex c2(2,6), &lt;&gt;...
       
     
   </div>
@@ -3374,7 +3375,7 @@ operator new用于申请裸空间（注意区别于new，并不调用构造函�
     
       
         使用一个东西，却不明白他的道理，不高明！
-我喜欢侯捷先生说的这句话，作为一个C程序员，几乎每天都要和STL打交道，如果不明白他背后的原理，不舒服。或许现在的STL足够稳定，使用指导书足够丰富，以至于使用者确实可以不用关心STL的内部实现。但是，STL作为C的高水准程序库，是从业者提升内功的代码典范，加之有侯捷先生的书籍和授课资料。因此，这里把STL源码学习过程中的一些东西记录下来，以备以后查...
+我喜欢侯捷先生说的这句话，作为一个C++程序员，几乎每天都要和STL打交道，如果不明白他背后的原理，不舒服。或许现在的STL足够稳定，使用指导书足够丰富，以至于使用者确实可以不用关心STL的内部实现。但是，STL作为C++的高水准程序库，是从业者提升内功的代码典范，加之有侯捷先生的书籍和授课资料。因此，这里把STL源码学习过程中的一些东西记录下来，以...
       
     
   </div>

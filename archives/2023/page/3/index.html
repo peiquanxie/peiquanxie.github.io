@@ -1799,7 +1799,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1731038511593),
+    lastupdate: new Date(1731044201349),
     sidebar: {
       for_page: ["blogger","category","webinfo","music"],
       for_post: ["toc"],
@@ -2225,7 +2225,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd end-->
   <!-- front-matter head_end begin -->
   <!-- front-matter head_end end -->
-</head>
+<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head>
   <body itemscope itemtype="http://schema.org/WebPage">
     <!-- import body_begin begin-->
     <!-- import body_begin end-->
@@ -2616,7 +2616,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-         1 基本语法
+        1 基本语法
 
 
 &lt;launch&gt; launch文件中的根元素采用&lt;launch&gt;标签定义
@@ -2624,7 +2624,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 &lt;node&gt; 启动节点，格式：
 1&lt;node pkg=&quot;package-name&quot; name=&quot;node-name&quot; type=&quot;exec-name&quot;/&gt;
-其中，pkg 是节点所在功能包名...
+其中，pkg 是节点所在功能包名称...
       
     
   </div>
@@ -2688,10 +2688,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-         1 全局参数模型
+        1 全局参数模型
 
- 1.1 全局参数配置（CPP）
-1234567891011121314151617181920212223242526272829#include &lt;string&gt;#include &lt;ros/ros.h&gt;#include &lt;std_srvs/Empty.h&gt;int main(int argc, char **argv)&#123;	...
+1.1 全局参数配置（CPP）
+1234567891011121314151617181920212223242526272829#include &lt;string&gt;#include &lt;ros/ros.h&gt;#include &lt;std_srvs/Empty.h&gt;int main(int argc, char **argv)&#123;	in...
       
     
   </div>
@@ -2755,8 +2755,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-         1 Client（CPP）
-123456789101112131415161718192021222324252627#include &lt;ros/ros.h&gt;#include &lt;turtlesim/Spawn.h&gt;int main(int argc, char** argv)&#123;    // 初始化ROS节点	ros::init(argc, argv, &q...
+        1 Client（CPP）
+123456789101112131415161718192021222324252627#include &lt;ros/ros.h&gt;#include &lt;turtlesim/Spawn.h&gt;int main(int argc, char** argv)&#123;    // 初始化ROS节点	ros::init(argc, argv, &qu...
       
     
   </div>
@@ -2820,8 +2820,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-         1 Publisher（CPP）
-12345678910111213141516171819202122232425262728#include &lt;ros/ros.h&gt;#include &lt;geometry_msgs/Twist.h&gt;int main(int argc, char **argv)&#123;    // ROS节点初始化    ros::init(ar...
+        1 Publisher（CPP）
+12345678910111213141516171819202122232425262728#include &lt;ros/ros.h&gt;#include &lt;geometry_msgs/Twist.h&gt;int main(int argc, char **argv)&#123;    // ROS节点初始化    ros::init(arg...
       
     
   </div>
@@ -2885,9 +2885,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-         0 安装
+        0 安装
 工作环境：x86_64 + ubuntu20.04 + ros-noetic
-12345678sudo mkdir /etc/apt/sources.list.d/sudo sh -c &#x27;echo &quot;deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main&quot; &gt; /etc/ap...
+12345678sudo mkdir /etc/apt/sources.list.d/sudo sh -c &#x27;echo &quot;deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main&quot; &gt; /etc/apt...
       
     
   </div>
@@ -2954,11 +2954,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
 命令一页纸：https://blog-images-submit.oss-cn-beijing.aliyuncs.com/ROS1/ROScheatsheet_catkin.pdf
 
- 1 node相关命令
+1 node相关命令
 rosnode list
 rosnode info &lt;node_name&gt;
 rosnode ping &lt;node_name&gt;
-rosnode ping --al...
+rosnode ping --all...
       
     
   </div>
@@ -3028,7 +3028,8 @@ ROS包含：通信框架 + 开发工具 + 应用功能 + 生态系统
 开发工具包括：CLI命令，rqt，Rviz，TF-Tree，Gazebo仿真等等。
 应用功能包括：导航Navigation，建图SLAM，机械臂规划Movelt等等。
 生态系统包括：发行版，软件源，wiki，Blog等等。
- 相关概念：...
+相关概念：
+...
       
     
   </div>
@@ -3092,11 +3093,11 @@ ROS包含：通信框架 + 开发工具 + 应用功能 + 生态系统
   <div class='md article-desc' itemprop="articleBody">
     
       
-         1 topic发布与订阅
+        1 topic发布与订阅
 发布端接口：
 12publisher_ = node.create_publisher(msg_type,&quot;topic_name&quot;, 10) publisher_.publish(msg) 
 订阅者接口：
-1subscribe_ = node.create_subscription(msg_type, &quot;topic_name&quot...
+1subscribe_ = node.create_subscription(msg_type, &quot;topic_name&quot;...
       
     
   </div>
@@ -3224,12 +3225,12 @@ ROS包含：通信框架 + 开发工具 + 应用功能 + 生态系统
   <div class='md article-desc' itemprop="articleBody">
     
       
-         1 创建cpp节点
- 1.1 创建工作空间
+        1 创建cpp节点
+1.1 创建工作空间
 1mkdir -p workspace/src/
- 1.2 创建功能包
+1.2 创建功能包
 12cd workspace/srcros2 pkg create example_cpp --build-type ament_cmake --dependencies rclcpp
-此时可以看到ROS2为我们创建了example_cpp文件夹，且该文件夹下包含includ...
+此时可以看到ROS2为我们创建了example_cpp文件夹，且该文件夹下包含include、s...
       
     
   </div>

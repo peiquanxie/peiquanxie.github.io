@@ -1799,7 +1799,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1731038511593),
+    lastupdate: new Date(1731044201349),
     sidebar: {
       for_page: ["blogger","category","webinfo","music"],
       for_post: ["toc"],
@@ -2225,7 +2225,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd end-->
   <!-- front-matter head_end begin -->
   <!-- front-matter head_end end -->
-</head>
+<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head>
   <body itemscope itemtype="http://schema.org/WebPage">
     <!-- import body_begin begin-->
     <!-- import body_begin end-->
@@ -2630,12 +2630,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-         0 软件包介绍
+        0 软件包介绍
 protobuf是google定义的一套数据传输格式和规范，用于不同应用或进程之间进行通信时使用。protobuf 支持跨平台, 跨语言, 支持目前绝大多数语言, 例如C++, C#, Java, Python等。
- 1 Why protobuf ?
+1 Why protobuf ?
 先来看看目前常用的 序列化 / 反序列化 方法:
 
-将原始数据结构序列化为 字节流 传输。(这是一种脆弱的数据传输方法，它要...
+将原始数据结构序列化为 字节流 传输。(这是一种脆弱的数据传输方法，它要求 ...
       
     
   </div>
@@ -2699,10 +2699,10 @@ protobuf是google定义的一套数据传输格式和规范，用于不同应用
   <div class='md article-desc' itemprop="articleBody">
     
       
-         1 软件包介绍
+        1 软件包介绍
 gtest是google提供的一个轻量级单元测试框架，它提供了丰富的断言、致命和非致命失败判断，能进行值参数化测试、类型参数化测试、“死亡测试”。
- 2 软件包安装
-12345git clone https://github.com/google/googletest.gitcd googletest mkdir build &amp;&amp; cd buildcmake...
+2 软件包安装
+12345git clone https://github.com/google/googletest.gitcd googletest mkdir build &amp;&amp; cd buildcmake ....
       
     
   </div>
@@ -2766,10 +2766,10 @@ gtest是google提供的一个轻量级单元测试框架，它提供了丰富的
   <div class='md article-desc' itemprop="articleBody">
     
       
-         1 软件包介绍
+        1 软件包介绍
 glog是google提供的一个轻量级C/C++日志库，提供日志文件记录管理等功能。
- 2 软件包安装
-123456git clone https://github.com/google/glog.gitsudo apt install autoconf automake libtoolcd glog &amp;&amp; mkdir build &amp;&amp; cd...
+2 软件包安装
+123456git clone https://github.com/google/glog.gitsudo apt install autoconf automake libtoolcd glog &amp;&amp; mkdir build &amp;&amp; cd b...
       
     
   </div>
@@ -2833,10 +2833,10 @@ glog是google提供的一个轻量级C/C++日志库，提供日志文件记录�
   <div class='md article-desc' itemprop="articleBody">
     
       
-         1 软件包介绍
+        1 软件包介绍
 Gflags是一种命令行解析工具(处理命令行参数的库)，主要用于C++程序 解析用命令行执行可执行文件时传入的参数。
 Gflags支持的参数定义类型如下:
-123456DEFINE_bool:   booleanDEFINE_int32:  32-bit integerDEFINE_int64:  64-bit integerDEFINE_uint64: unsigned ...
+123456DEFINE_bool:   booleanDEFINE_int32:  32-bit integerDEFINE_int64:  64-bit integerDEFINE_uint64: unsigned 6...
       
     
   </div>

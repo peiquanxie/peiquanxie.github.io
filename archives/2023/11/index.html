@@ -1799,7 +1799,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1731038511593),
+    lastupdate: new Date(1731044201349),
     sidebar: {
       for_page: ["blogger","category","webinfo","music"],
       for_post: ["toc"],
@@ -2225,7 +2225,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd end-->
   <!-- front-matter head_end begin -->
   <!-- front-matter head_end end -->
-</head>
+<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head>
   <body itemscope itemtype="http://schema.org/WebPage">
     <!-- import body_begin begin-->
     <!-- import body_begin end-->
@@ -2635,8 +2635,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       
         每个C++程序至少有一个线程，即main线程。随后，程序可以发起更多线程，他们以别的函数作为入口。当main函数返回时，程序随即退出，其他线程也会随着终结（当然如果有detach线程，情况不一样）。其中，任何线程发生错误崩溃，都会导致整个进程退出。
- 1 新起线程
-123#include &lt;thread&gt;void do_some_work();std::thread my_thr...
+1 新起线程
+123#include &lt;thread&gt;void do_some_work();std::thread my_thre...
       
     
   </div>
@@ -2701,8 +2701,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       
         何为线程同步？有时候我们需要规范线程的执行顺序，令独立线程上的行为同步。以下介绍C++标准库提供的线程同步工具。
- 1 信号量
-1234567891011121314151617#include &lt;semaphore.h&gt;sem_t semaphore;sem_init(&amp;semaphore, 0, 0);void data_preparation_thread()&#1...
+1 信号量
+1234567891011121314151617#include &lt;semaphore.h&gt;sem_t semaphore;sem_init(&amp;semaphore, 0, 0);void data_preparation_thread()&#12...
       
     
   </div>
@@ -2767,9 +2767,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       
         如果线程间所有的共享数据都是只读，就不会有问题。多线程共享数据的问题大多由写数据引起，以下介绍线程间共享数据的安全做法。
- 1 互斥锁
+1 互斥锁
 C++中，保护共享数据最基础的方式就是互斥（std::lock_guard + std:mutex）。互斥意味着，两个或两个以上线程操作同一个数据，必须排队等待。
-12345678910#include &lt;list&gt;#include &lt;mu...
+12345678910#include &lt;list&gt;#include &lt;mut...
       
     
   </div>
@@ -2833,16 +2833,16 @@ C++中，保护共享数据最基础的方式就是互斥（std::lock_guard + st
   <div class='md article-desc' itemprop="articleBody">
     
       
-         为什么使用并发？
+        为什么使用并发？
 分离关注点和性能提升。（唯一原因）
 性能提升的两种方式：任务并行 &amp; 数据并行。
- 为什么不使用并发？
+为什么不使用并发？
 收益小于代价。
 使用并发的代码通常更难理解，会直接拉高开发和维护成本，同时也更可能引起错误。因而除非并发能带来明显的性能提升和代码清晰度，否则别使用并发。
- 多线程带来的代价
+多线程带来的代价
 
 线程启动开销。系统为线程分配内核资源和栈空间，都会耗费时间。
-资源消耗：每个线程都需...
+资源消耗：每个线程都需要独立...
       
     
   </div>
@@ -2906,12 +2906,12 @@ C++中，保护共享数据最基础的方式就是互斥（std::lock_guard + st
   <div class='md article-desc' itemprop="articleBody">
     
       
-         0 软件包介绍
+        0 软件包介绍
 protobuf是google定义的一套数据传输格式和规范，用于不同应用或进程之间进行通信时使用。protobuf 支持跨平台, 跨语言, 支持目前绝大多数语言, 例如C++, C#, Java, Python等。
- 1 Why protobuf ?
+1 Why protobuf ?
 先来看看目前常用的 序列化 / 反序列化 方法:
 
-将原始数据结构序列化为 字节流 传输。(这是一种脆弱的数据传输方法，它要...
+将原始数据结构序列化为 字节流 传输。(这是一种脆弱的数据传输方法，它要求 ...
       
     
   </div>
@@ -2975,10 +2975,10 @@ protobuf是google定义的一套数据传输格式和规范，用于不同应用
   <div class='md article-desc' itemprop="articleBody">
     
       
-         1 软件包介绍
+        1 软件包介绍
 gtest是google提供的一个轻量级单元测试框架，它提供了丰富的断言、致命和非致命失败判断，能进行值参数化测试、类型参数化测试、“死亡测试”。
- 2 软件包安装
-12345git clone https://github.com/google/googletest.gitcd googletest mkdir build &amp;&amp; cd buildcmake...
+2 软件包安装
+12345git clone https://github.com/google/googletest.gitcd googletest mkdir build &amp;&amp; cd buildcmake ....
       
     
   </div>
@@ -3042,10 +3042,10 @@ gtest是google提供的一个轻量级单元测试框架，它提供了丰富的
   <div class='md article-desc' itemprop="articleBody">
     
       
-         1 软件包介绍
+        1 软件包介绍
 glog是google提供的一个轻量级C/C++日志库，提供日志文件记录管理等功能。
- 2 软件包安装
-123456git clone https://github.com/google/glog.gitsudo apt install autoconf automake libtoolcd glog &amp;&amp; mkdir build &amp;&amp; cd...
+2 软件包安装
+123456git clone https://github.com/google/glog.gitsudo apt install autoconf automake libtoolcd glog &amp;&amp; mkdir build &amp;&amp; cd b...
       
     
   </div>

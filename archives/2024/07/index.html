@@ -1799,7 +1799,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1731038511593),
+    lastupdate: new Date(1731044201349),
     sidebar: {
       for_page: ["blogger","category","webinfo","music"],
       for_post: ["toc"],
@@ -2225,7 +2225,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd end-->
   <!-- front-matter head_end begin -->
   <!-- front-matter head_end end -->
-</head>
+<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head>
   <body itemscope itemtype="http://schema.org/WebPage">
     <!-- import body_begin begin-->
     <!-- import body_begin end-->
@@ -2633,9 +2633,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 对于一个全局变量，每个线程都希望拥有它的一个副本，维护专属于自己的变量值，应该如何实现？
 进一步的，如果希望一个类在每个线程中有且只有一个副本，应该如何实现？
 
- 1 线程局部变量
- 1.1 POD 线程局部变量
-对于问题一，其实GCC已经提供了简单的解决方案，通过 __thread 关键字就可以实现简单类...
+1 线程局部变量
+1.1 POD 线程局部变量
+对于问题一，其实GCC已经提供了简单的解决方案，通过 __thread 关键字就可以实现简单类型的...
       
     
   </div>
@@ -2700,9 +2700,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       
         最近写了一个简单又好用的 CLI 程序，在这里分享出来。所谓的 CLI ，就是让我们的C++程序拥有命令行操作界面，类似于MySQL的命令行操作数据库。当你的程序复杂到一定程度，我想你可能需要一些诊断命令来查看程序的运行状态，抑或是通过命令来临时设置一些变量（比如：动态设置日志打印等级）。或许有一些框架已经具备以上功能，但简单实现这个并不难，以下是具体的分析和实现。
- 1 需求分析
+1 需求分析
 
-拥有命...
+拥有命令...
       
     
   </div>

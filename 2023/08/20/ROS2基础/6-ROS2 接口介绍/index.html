@@ -1801,7 +1801,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1731038511593),
+    lastupdate: new Date(1731044201349),
     sidebar: {
       for_page: ["blogger","category","webinfo","music"],
       for_post: ["toc"],
@@ -2227,7 +2227,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd end-->
   <!-- front-matter head_end begin -->
   <!-- front-matter head_end end -->
-</head>
+<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head>
   <body itemscope itemtype="http://schema.org/WebPage">
     <!-- import body_begin begin-->
     <!-- import body_begin end-->
@@ -2689,32 +2689,32 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
     <p>ROS2提供了四种通信方式，包括：话题（topic）、服务（service）、动作（action）和 参数（parameter）。通信会涉及到接口，我们可以通过 <code>ros2 interface list</code> 列出ROS2提供的所有接口，通过 <code>ros2 interface show &lt;interface_name&gt;</code> 或  <code>ros2 interface proto &lt;message_name&gt;</code> 查看接口的具体格式。但是，当我们不能在内置接口中找到适合于我们项目的接口时，我们需要自定义接口。以下讲解如何自定义接口。</p>
-<h2 id="1-接口格式"><a class="markdownIt-Anchor" href="#1-接口格式"></a> 1 接口格式</h2>
-<h3 id="11-topic接口格式"><a class="markdownIt-Anchor" href="#11-topic接口格式"></a> 1.1 topic接口格式</h3>
+<h2 id="1-接口格式">1 接口格式</h2>
+<h3 id="1-1-topic接口格式">1.1 topic接口格式</h3>
 <p>接口存放路径：interface_pkg/msg/Xxx.msg</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">string name</span><br><span class="line">sensor_msgs/Image image   #支持嵌套</span><br></pre></td></tr></table></figure>
-<h3 id="12-service接口格式"><a class="markdownIt-Anchor" href="#12-service接口格式"></a> 1.2 service接口格式</h3>
+<h3 id="1-2-service接口格式">1.2 service接口格式</h3>
 <p>接口存放路径：interface_pkg/srv/Xxx.srv</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">string name</span><br><span class="line">int32 a</span><br><span class="line">int64 b</span><br><span class="line">---</span><br><span class="line">int32 ret    # 返回值</span><br></pre></td></tr></table></figure>
-<h3 id="13-action接口格式"><a class="markdownIt-Anchor" href="#13-action接口格式"></a> 1.3 action接口格式</h3>
+<h3 id="1-3-action接口格式">1.3 action接口格式</h3>
 <p>接口存放路径：interface_pkg/action/Xxx.action</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">int32 target       # 目标值   </span><br><span class="line">---</span><br><span class="line">int32[] sequence   # 差值</span><br><span class="line">---</span><br><span class="line">int32[] partial_sequence # 当前值</span><br></pre></td></tr></table></figure>
-<h2 id="2-创建接口"><a class="markdownIt-Anchor" href="#2-创建接口"></a> 2 创建接口</h2>
-<h3 id="21-创建接口功能包"><a class="markdownIt-Anchor" href="#21-创建接口功能包"></a> 2.1 创建接口功能包</h3>
+<h2 id="2-创建接口">2 创建接口</h2>
+<h3 id="2-1-创建接口功能包">2.1 创建接口功能包</h3>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ros2 pkg create example_test_interfaces --build-type ament_cmake --dependencies rosidl_default_generators</span><br></pre></td></tr></table></figure>
 <p>其中，–build-type 参数值必须为 ament_cmake； --dependencies 指定功能包依赖，<code>rosidl_default_generators</code>必须添加，其他根据自己接口依赖添加即可，当然也可以通过事后修改 package.xml 添加依赖。创建完后可看见新增接口文件夹，目录如下：</p>
-<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/ROS2/image-20230820163448430.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/ROS2/image-20230820163448430.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20230820163448430" /></p>
-<h3 id="22-添加接口文件"><a class="markdownIt-Anchor" href="#22-添加接口文件"></a> 2.2 添加接口文件</h3>
+<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/ROS2/image-20230820163448430.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/ROS2/image-20230820163448430.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20230820163448430"></p>
+<h3 id="2-2-添加接口文件">2.2 添加接口文件</h3>
 <p>将自己定义的接口放入 example_test_interfaces 文件夹合适位置，注意要按照上一节的接口格式来定义和存放接口。我们这个先定义一个简单的 topic 接口，在 example_test_interfaces 下新建 msg 目录，并在 msg 目录下新建 Test.msg 文件(首字母大写)，内容如下：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">string name</span><br><span class="line">uint32 value</span><br><span class="line">bool flag</span><br></pre></td></tr></table></figure>
-<h3 id="23-修改cmakelists文件"><a class="markdownIt-Anchor" href="#23-修改cmakelists文件"></a> 2.3 修改CMakeLists文件</h3>
+<h3 id="2-3-修改cmakelists文件">2.3 修改CMakeLists文件</h3>
 <p>在CMakeLists里面添加要编译的接口，为什么接口也要编译？其实ROS需要将 msg、srv、action文件转换为Python和C++的头文件，这样我们的节点代码才能读取接口。CMakeLists修改如下：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 查找依赖，有新增需添加</span><br><span class="line">find_package(rosidl_default_generators REQUIRED)</span><br><span class="line"></span><br><span class="line"># 生成接口头文件</span><br><span class="line">rosidl_generate_interfaces($&#123;PROJECT_NAME&#125;</span><br><span class="line">  &quot;msg/Test.msg&quot;</span><br><span class="line">  # DEPENDENCIES geometry_msgs  # 有依赖需要添加</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-<h3 id="24-修改packagexml文件"><a class="markdownIt-Anchor" href="#24-修改packagexml文件"></a> 2.4 修改package.xml文件</h3>
+<h3 id="2-4-修改package-xml文件">2.4 修改package.xml文件</h3>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">在 &lt;depend&gt;rosidl_default_generators&lt;/depend&gt; 下面添加：</span><br><span class="line">&lt;member_of_group&gt;rosidl_interface_packages&lt;/member_of_group&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="25-编译接口包"><a class="markdownIt-Anchor" href="#25-编译接口包"></a> 2.5 编译接口包</h3>
+<h3 id="2-5-编译接口包">2.5 编译接口包</h3>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd workspace</span><br><span class="line">colcon build --packages-select example_test_interfaces</span><br></pre></td></tr></table></figure>
-<h3 id="26-查看测试"><a class="markdownIt-Anchor" href="#26-查看测试"></a> 2.6 查看测试</h3>
+<h3 id="2-6-查看测试">2.6 查看测试</h3>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> install/setup.bash</span><br><span class="line">ros2 interface show example_test_interfaces/msg/Test</span><br></pre></td></tr></table></figure>
 
   </div>
@@ -2834,19 +2834,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class='prev' href='/2023/08/20/ROS2%E5%9F%BA%E7%A1%80/7-ROS2%20%E9%80%9A%E4%BF%A1%E6%B1%87%E6%80%BB(Python%E7%AF%87)/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>7-ROS2通信汇总(Python篇)</p>
-          <p class='content'> 1 topic发布与订阅
+          <p class='content'>1 topic发布与订阅
 发布端接口：
-12publisher_ = node.create_publisher(msg_type,&quot;topic_name&quot;, 10) pu...</p>
+12publisher_ = node.create_publisher(msg_type,&quot;topic_name&quot;, 10) pub...</p>
         </a>
       
       
         <a class='next' href='/2023/08/20/ROS2%E5%9F%BA%E7%A1%80/5-ROS2%E5%88%9B%E5%BB%BA%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%8A%82%E7%82%B9/'>
           <p class='title'>5-ROS2创建第一个节点<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'> 1 创建cpp节点
- 1.1 创建工作空间
+          <p class='content'>1 创建cpp节点
+1.1 创建工作空间
 1mkdir -p workspace/src/
- 1.2 创建功能包
-12cd workspace/srcros2 pkg create exam...</p>
+1.2 创建功能包
+12cd workspace/srcros2 pkg create example...</p>
         </a>
       
     </div>
@@ -2905,7 +2905,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%8E%A5%E5%8F%A3%E6%A0%BC%E5%BC%8F"><span class="toc-text"> 1 接口格式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#11-topic%E6%8E%A5%E5%8F%A3%E6%A0%BC%E5%BC%8F"><span class="toc-text"> 1.1 topic接口格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-service%E6%8E%A5%E5%8F%A3%E6%A0%BC%E5%BC%8F"><span class="toc-text"> 1.2 service接口格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-action%E6%8E%A5%E5%8F%A3%E6%A0%BC%E5%BC%8F"><span class="toc-text"> 1.3 action接口格式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%88%9B%E5%BB%BA%E6%8E%A5%E5%8F%A3"><span class="toc-text"> 2 创建接口</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#21-%E5%88%9B%E5%BB%BA%E6%8E%A5%E5%8F%A3%E5%8A%9F%E8%83%BD%E5%8C%85"><span class="toc-text"> 2.1 创建接口功能包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#22-%E6%B7%BB%E5%8A%A0%E6%8E%A5%E5%8F%A3%E6%96%87%E4%BB%B6"><span class="toc-text"> 2.2 添加接口文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#23-%E4%BF%AE%E6%94%B9cmakelists%E6%96%87%E4%BB%B6"><span class="toc-text"> 2.3 修改CMakeLists文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#24-%E4%BF%AE%E6%94%B9packagexml%E6%96%87%E4%BB%B6"><span class="toc-text"> 2.4 修改package.xml文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#25-%E7%BC%96%E8%AF%91%E6%8E%A5%E5%8F%A3%E5%8C%85"><span class="toc-text"> 2.5 编译接口包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#26-%E6%9F%A5%E7%9C%8B%E6%B5%8B%E8%AF%95"><span class="toc-text"> 2.6 查看测试</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%8E%A5%E5%8F%A3%E6%A0%BC%E5%BC%8F"><span class="toc-text">1 接口格式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-topic%E6%8E%A5%E5%8F%A3%E6%A0%BC%E5%BC%8F"><span class="toc-text">1.1 topic接口格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-service%E6%8E%A5%E5%8F%A3%E6%A0%BC%E5%BC%8F"><span class="toc-text">1.2 service接口格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-action%E6%8E%A5%E5%8F%A3%E6%A0%BC%E5%BC%8F"><span class="toc-text">1.3 action接口格式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%88%9B%E5%BB%BA%E6%8E%A5%E5%8F%A3"><span class="toc-text">2 创建接口</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E5%88%9B%E5%BB%BA%E6%8E%A5%E5%8F%A3%E5%8A%9F%E8%83%BD%E5%8C%85"><span class="toc-text">2.1 创建接口功能包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E6%B7%BB%E5%8A%A0%E6%8E%A5%E5%8F%A3%E6%96%87%E4%BB%B6"><span class="toc-text">2.2 添加接口文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-%E4%BF%AE%E6%94%B9cmakelists%E6%96%87%E4%BB%B6"><span class="toc-text">2.3 修改CMakeLists文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-%E4%BF%AE%E6%94%B9package-xml%E6%96%87%E4%BB%B6"><span class="toc-text">2.4 修改package.xml文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-%E7%BC%96%E8%AF%91%E6%8E%A5%E5%8F%A3%E5%8C%85"><span class="toc-text">2.5 编译接口包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-%E6%9F%A5%E7%9C%8B%E6%B5%8B%E8%AF%95"><span class="toc-text">2.6 查看测试</span></a></li></ol></li></ol>
     </div>
   </section>
 

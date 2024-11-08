@@ -42,7 +42,7 @@
 <meta property="og:title" content="5-STL源码笔记-关联式容器">
 <meta property="og:url" content="https://xie-peiquan.gitee.io/2024/10/09/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/5-STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0-%E5%85%B3%E8%81%94%E5%BC%8F%E5%AE%B9%E5%99%A8/index.html">
 <meta property="og:site_name" content="PQ.XIE BLOG">
-<meta property="og:description" content="关联式容器对数据按一定的规则进行存储，因而擅长对数据进行查找，可以认为关联式容器是一个小型的内存数据库。STL的关联式容器依赖两个重要的数据结构，一个是红黑树，一个是哈希表。  1 rb_tree  红黑树是一种平衡的二叉搜索树，红黑树提供遍历操作及iterator，按照正常规则（++iter）遍历（中序遍历），便能获得排序状态。 不应该改变红黑树节点中的 key 部分，因为红黑树依赖其进行排序。">
+<meta property="og:description" content="关联式容器对数据按一定的规则进行存储，因而擅长对数据进行查找，可以认为关联式容器是一个小型的内存数据库。STL的关联式容器依赖两个重要的数据结构，一个是红黑树，一个是哈希表。 1 rb_tree  红黑树是一种平衡的二叉搜索树，红黑树提供遍历操作及iterator，按照正常规则（++iter）遍历（中序遍历），便能获得排序状态。 不应该改变红黑树节点中的 key 部分，因为红黑树依赖其进行排序。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2024-10-08T16:08:35.369Z">
@@ -1801,7 +1801,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1731038511593),
+    lastupdate: new Date(1731044201349),
     sidebar: {
       for_page: ["blogger","category","webinfo","music"],
       for_post: ["toc"],
@@ -2227,7 +2227,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd end-->
   <!-- front-matter head_end begin -->
   <!-- front-matter head_end end -->
-</head>
+<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head>
   <body itemscope itemtype="http://schema.org/WebPage">
     <!-- import body_begin begin-->
     <!-- import body_begin end-->
@@ -2689,69 +2689,69 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
     <p>关联式容器对数据按一定的规则进行存储，因而擅长对数据进行查找，可以认为关联式容器是一个小型的内存数据库。STL的关联式容器依赖两个重要的数据结构，一个是<strong>红黑树</strong>，一个是<strong>哈希表</strong>。</p>
-<h2 id="1-rb_tree"><a class="markdownIt-Anchor" href="#1-rb_tree"></a> 1 rb_tree</h2>
+<h2 id="1-rb-tree">1 rb_tree</h2>
 <ul>
 <li>红黑树是一种平衡的二叉搜索树，红黑树提供遍历操作及iterator，按照正常规则（++iter）遍历（中序遍历），便能获得排序状态。</li>
 <li>不应该改变红黑树节点中的 key 部分，因为红黑树依赖其进行排序。</li>
 <li>红黑树提供两种 insert 操作：insert_unique() 和 insert_equal() .前者表示节点的 key 在整棵树中独一无二，后者表示节点的 key 可重复。</li>
 </ul>
-<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/%E6%97%A0%E6%A0%87%E9%A2%98.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/%E6%97%A0%E6%A0%87%E9%A2%98.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="无标题" /></p>
-<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241008152625217.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241008152625217.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241008152625217" /></p>
+<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/%E6%97%A0%E6%A0%87%E9%A2%98.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/%E6%97%A0%E6%A0%87%E9%A2%98.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="无标题"></p>
+<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241008152625217.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241008152625217.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241008152625217"></p>
 <ul>
 <li>模板中，Key是键的类型，Value是<code>(key | data)</code>的合体类型，KeyOfValue是从Value中提取 key 的方法，Compare是比较 key 大小的方法。</li>
 <li>KeyOfValue 和 Compare 通常要继承 unary_function 或 binary_function，其包含函数对象的入参类型和返回类型。</li>
 <li>红黑树的实现同样也借助了dummy_node，简化代码。</li>
 </ul>
-<h2 id="2-set-multiset"><a class="markdownIt-Anchor" href="#2-set-multiset"></a> 2 set &amp; multiset</h2>
+<h2 id="2-set-multiset">2 set &amp; multiset</h2>
 <ul>
 <li>set &amp; multiset 是以红黑树为底层结构的，因此这两个容器都是有序的。</li>
 <li>set &amp; multiset 的 key 即是 value, value 即是 key。因此无法对其 value 进行更改。（set / multiset 的 iterator是<code>const-iterator</code>）</li>
 <li>set 的 key 是独一无二的，因此其插入使用 rb_tree的 <code>insert_unique()</code>；multiset的 key 是可以重复的，其插入使用的是 rb_tree的 <code>insert_equal()</code>。</li>
 </ul>
-<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241008155256933.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241008155256933.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241008155256933" /></p>
+<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241008155256933.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241008155256933.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241008155256933"></p>
 <ul>
 <li>技术上，set / multiset 均是rb_tree的 container_adapter。对于rb_tree的模版参数，<code>key_type</code> 和 <code>value_type</code> 均取自于外部<code>Key</code>，<code>KeyOfValue</code>方法取自于<code>identity</code>仿函数，<code>Compare</code>方法默认取自于<code>less&lt;Key&gt;</code>。</li>
 <li>注意，若传入set / multiset 的key不是简单类型，需要重载 &lt; 操作符以告知容器如何比较key 大小。</li>
 </ul>
-<h2 id="3-map-multimap"><a class="markdownIt-Anchor" href="#3-map-multimap"></a> 3 map &amp; multimap</h2>
+<h2 id="3-map-multimap">3 map &amp; multimap</h2>
 <ul>
 <li>map &amp; multimap 是以红黑树为底层结构的，因此这两个容器都是有序的。</li>
 <li>map &amp; multimap 的节点值是<code>(key | data)</code>的结合体, 因此节点的 data 部分可以更改，但 key 部分不能更改。(借助 <code>std::pair&lt;const Key, T&gt;</code>)</li>
 <li>map 的 key 是独一无二的，因此其插入使用 rb_tree的 <code>insert_unique()</code>；multimap的 key 是可以重复的，其插入使用的是 rb_tree的 <code>insert_equal()</code>。</li>
 </ul>
-<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241008165056524.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241008165056524.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241008165056524" /></p>
+<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241008165056524.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241008165056524.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241008165056524"></p>
 <ul>
 <li>技术上，map / multimap 均是rb_tree的 container_adapter。对于rb_tree的模版参数，<code>key_type</code> 取自于外部<code>Key</code>，<code>value_type</code>取自于<code>pair&lt;const Key,T&gt;</code>，<code>KeyOfValue</code>方法取自于 <code>select1st&lt;value_type&gt;</code> 仿函数，<code>Compare</code>方法默认取自于<code>less&lt;Key&gt;</code>。</li>
 <li>注意，若传入map / multimap 的key不是简单类型，需要重载 &lt; 操作符以告知容器如何比较 key 大小。</li>
 </ul>
-<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241008172716058.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241008172716058.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241008172716058" /></p>
+<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241008172716058.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241008172716058.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241008172716058"></p>
 <ul>
 <li>operator[] 操作符，如果key不存在，则<code>&lt;key,default-value&gt;</code> 会被插入到map中。</li>
 <li>lower_bound 是二分查找的一个版本，其返回的结果指向第一个大于等于 key 的元素的迭代器（左边界）。</li>
 </ul>
-<h2 id="4-hash_table"><a class="markdownIt-Anchor" href="#4-hash_table"></a> 4 hash_table</h2>
-<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241008230312630.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241008230312630.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241008230312630" /></p>
+<h2 id="4-hash-table">4 hash_table</h2>
+<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241008230312630.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241008230312630.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241008230312630"></p>
 <ul>
 <li>STL中的<code>hashtable</code>采用<code>buckets+list</code>的结构，当发生哈希碰撞时，相同哈希值的value挂在同一链表上。</li>
 <li>GNU C的hashtable默认buckets数为53，buckets扩充时选用53倍数附近的质数（经验值）.</li>
 <li><strong>当元素个数大于buckets数时，发生rehash</strong>. 为避免rehash，在hashtable初始化时指定buckets数量大小。</li>
 </ul>
-<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241008231312074.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241008231312074.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241008231312074" /></p>
+<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241008231312074.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241008231312074.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241008231312074"></p>
 <ul>
 <li>模板参数中，Value是 (key | data)结合体类型，Key是键类型，HashFcn是哈希函数，ExtractKey是指明如何从Value中提取key的方法，EqualKey是判断key是否相等的方法。</li>
 <li>hashtable 的 buckets是个vector，其元素是指向链表节点的指针，链表节点也叫hashtable_node.</li>
 <li>hashtable_iterator 包含两根指针，<code>*cur</code>指向当前遍历的链表节点，<code>*ht</code>指向当前节点所属的bucket.</li>
 </ul>
-<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241008233536959.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241008233536959.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241008233536959" /></p>
-<h2 id="5-hash-function-hash-code"><a class="markdownIt-Anchor" href="#5-hash-function-hash-code"></a> 5 hash-function &amp; hash-code</h2>
-<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241008234322471.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241008234322471.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241008234322471" /></p>
-<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241008234715308.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241008234715308.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241008234715308" /></p>
+<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241008233536959.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241008233536959.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241008233536959"></p>
+<h2 id="5-hash-function-hash-code">5 hash-function &amp; hash-code</h2>
+<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241008234322471.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241008234322471.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241008234322471"></p>
+<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241008234715308.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241008234715308.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241008234715308"></p>
 <ul>
 <li>hash function的目的，就是要对元素映射到一个足够散乱的值（hash code）. hash code越是散乱，越不容易发生哈希冲突。</li>
 <li>得到hash code后，还需经过mod操作计算出该元素最终应该放置于哪个bucket.</li>
 </ul>
-<h2 id="6-unordered容器"><a class="markdownIt-Anchor" href="#6-unordered容器"></a> 6 unordered容器</h2>
-<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241009000035385.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241009000035385.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241009000035385" /></p>
+<h2 id="6-unordered容器">6 unordered容器</h2>
+<p><img src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241009000035385.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/STL/image-20241009000035385.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20241009000035385"></p>
 <ul>
 <li>使用unordered_set / unordered_multiset 时，如果key是基本类型，则模板参数只需要指定 类型 T 即可。</li>
 <li>使用unordered_map / unordered_multimap 时，如果key是基本类型，则模板参数只需要指定 类型 Key和T 即可。</li>
@@ -2883,11 +2883,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class='next' href='/2024/10/07/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/4-%E8%BF%AD%E4%BB%A3%E5%99%A8&%E5%BA%8F%E5%88%97%E5%BC%8F%E5%AE%B9%E5%99%A8/'>
           <p class='title'>4-迭代器&序列式容器<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'> 1 容器的分类
+          <p class='content'>1 容器的分类
 STL容器从内存结构上可分为序列式容器和关联性容器，序列式容器更关注于快速存取，而关联性容器更关注于快速查找。两大类容器分支又有一些内含关系，具体如下。
 
- 2 list
-先从...</p>
+2 list
+先从简单...</p>
         </a>
       
     </div>
@@ -2946,7 +2946,7 @@ STL容器从内存结构上可分为序列式容器和关联性容器，序列�
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-rb_tree"><span class="toc-text"> 1 rb_tree</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-set-multiset"><span class="toc-text"> 2 set &amp; multiset</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-map-multimap"><span class="toc-text"> 3 map &amp; multimap</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-hash_table"><span class="toc-text"> 4 hash_table</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-hash-function-hash-code"><span class="toc-text"> 5 hash-function &amp; hash-code</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-unordered%E5%AE%B9%E5%99%A8"><span class="toc-text"> 6 unordered容器</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-rb-tree"><span class="toc-text">1 rb_tree</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-set-multiset"><span class="toc-text">2 set &amp; multiset</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-map-multimap"><span class="toc-text">3 map &amp; multimap</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-hash-table"><span class="toc-text">4 hash_table</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-hash-function-hash-code"><span class="toc-text">5 hash-function &amp; hash-code</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-unordered%E5%AE%B9%E5%99%A8"><span class="toc-text">6 unordered容器</span></a></li></ol>
     </div>
   </section>
 

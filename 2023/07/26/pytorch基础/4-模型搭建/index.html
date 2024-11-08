@@ -42,7 +42,7 @@
 <meta property="og:title" content="4-模型搭建">
 <meta property="og:url" content="https://xie-peiquan.gitee.io/2023/07/26/pytorch%E5%9F%BA%E7%A1%80/4-%E6%A8%A1%E5%9E%8B%E6%90%AD%E5%BB%BA/index.html">
 <meta property="og:site_name" content="PQ.XIE BLOG">
-<meta property="og:description" content="1 神经网络搭建  1.1 通过 forward 构建 我们可以通过继承 nn.Module，构建我们自己的类来定义我们的神经网络。其中，我们在__init__方法中实现各个子Module的初始化，并在forward 方法中组织这些子Module，形成神经网络。 12345678910111213141516171819class NeuralNetwork(nn.Module):    def">
+<meta property="og:description" content="1 神经网络搭建 1.1 通过 forward 构建 我们可以通过继承 nn.Module，构建我们自己的类来定义我们的神经网络。其中，我们在__init__方法中实现各个子Module的初始化，并在forward 方法中组织这些子Module，形成神经网络。 12345678910111213141516171819class NeuralNetwork(nn.Module):    def _">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2023-07-26T09:18:44.419Z">
@@ -1801,7 +1801,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1731038511593),
+    lastupdate: new Date(1731044201349),
     sidebar: {
       for_page: ["blogger","category","webinfo","music"],
       for_post: ["toc"],
@@ -2227,7 +2227,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd end-->
   <!-- front-matter head_end begin -->
   <!-- front-matter head_end end -->
-</head>
+<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head>
   <body itemscope itemtype="http://schema.org/WebPage">
     <!-- import body_begin begin-->
     <!-- import body_begin end-->
@@ -2688,25 +2688,25 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h2 id="1-神经网络搭建"><a class="markdownIt-Anchor" href="#1-神经网络搭建"></a> 1 神经网络搭建</h2>
-<h3 id="11-通过-forward-构建"><a class="markdownIt-Anchor" href="#11-通过-forward-构建"></a> 1.1 通过 forward 构建</h3>
+    <h2 id="1-神经网络搭建">1 神经网络搭建</h2>
+<h3 id="1-1-通过-forward-构建">1.1 通过 forward 构建</h3>
 <p>我们可以通过继承 nn.Module，构建我们自己的类来定义我们的神经网络。其中，我们在__init__方法中实现各个子Module的初始化，并在forward 方法中组织这些子Module，形成神经网络。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">NeuralNetwork</span>(nn.Module):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">super</span>(NeuralNetwork, self).__init__()</span><br><span class="line">        self.flatten = nn.Flatten()</span><br><span class="line">        self.linear_relu_stack = nn.Sequential(</span><br><span class="line">            nn.Linear(<span class="number">28</span>*<span class="number">28</span>, <span class="number">512</span>),</span><br><span class="line">            nn.ReLU(),</span><br><span class="line">            nn.Linear(<span class="number">512</span>, <span class="number">512</span>),</span><br><span class="line">            nn.ReLU(),</span><br><span class="line">            nn.Linear(<span class="number">512</span>, <span class="number">10</span>),</span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">forward</span>(<span class="params">self, x</span>):</span><br><span class="line">        x = self.flatten(x)</span><br><span class="line">        logits = self.linear_relu_stack(x)</span><br><span class="line">        <span class="keyword">return</span> logits</span><br><span class="line"></span><br><span class="line">model = NeuralNetwork().to(device)</span><br><span class="line">logits = model(input_image)</span><br></pre></td></tr></table></figure>
-<h3 id="12-通过-sequential-构建"><a class="markdownIt-Anchor" href="#12-通过-sequential-构建"></a> 1.2 通过 Sequential 构建</h3>
+<h3 id="1-2-通过-sequential-构建">1.2 通过 Sequential 构建</h3>
 <p>nn.Sequential是一个有序模块的容器。数据以定义的顺序通过所有的模块。你可以使用 序列容器来组建一个快速的网络。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">seq_modules = nn.Sequential(</span><br><span class="line">    flatten,</span><br><span class="line">    layer1,</span><br><span class="line">    nn.ReLU(),</span><br><span class="line">    nn.Linear(<span class="number">20</span>, <span class="number">10</span>)</span><br><span class="line">)</span><br><span class="line">logits = seq_modules(input_image)</span><br></pre></td></tr></table></figure>
-<h2 id="2-模型参数"><a class="markdownIt-Anchor" href="#2-模型参数"></a> 2 模型参数</h2>
+<h2 id="2-模型参数">2 模型参数</h2>
 <p>神经网络中的许多层都是参数化的，也就是说，层相关的权重和偏置在训练中被优化。nn.Module的子类会自动跟踪你的模型对象中定义的所有字段，并使用你的模型的 parameters() 或 named_parameters() 方法访问所有参数。</p>
 <p>在这个例子中，我们遍历每个参数，并打印其大小和预览其值。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Model structure: &quot;</span>, model, <span class="string">&quot;\n\n&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> name, param <span class="keyword">in</span> model.named_parameters():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;Layer: <span class="subst">&#123;name&#125;</span> | Size: <span class="subst">&#123;param.size()&#125;</span> | Values : <span class="subst">&#123;param[:<span class="number">2</span>]&#125;</span> \n&quot;</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="3-反向传播"><a class="markdownIt-Anchor" href="#3-反向传播"></a> 3 反向传播</h2>
+<h2 id="3-反向传播">3 反向传播</h2>
 <p>在训练神经网络时，最常使用的算法是反向传播算法。在这种算法中，参数（模型权重）是根据损失函数相对于给定参数的梯度来调整的。</p>
-<h3 id="31-自动梯度计算"><a class="markdownIt-Anchor" href="#31-自动梯度计算"></a> 3.1 自动梯度计算</h3>
+<h3 id="3-1-自动梯度计算">3.1 自动梯度计算</h3>
 <p>为了计算这些梯度，PyTorch有一个内置的微分引擎，叫做torch.autograd。它支持对任何计算图的梯度进行自动计算。考虑最简单的单层神经网络，输入x，参数w和b，以及一些损失函数。</p>
 <img src="https://gcore.jsdelivr.net/gh/cvtutorials/cvtutorials_picbed/pytorch_official/comp-graph.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/cvtutorials/cvtutorials_picbed/pytorch_official/comp-graph.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="计算图"  />
 <p>**在这个网络中，w和b是参数，我们需要进行优化。因此，我们需要能够计算损失值相对于这些变量的梯度（梯度只对于模型参数有意义）。**为了做到这一点，我们设置了这些tensor的 requires_grad 属性。它可以在PyTorch中以如下方式定义：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 正向传播</span></span><br><span class="line"><span class="keyword">import</span> torch</span><br><span class="line">x = torch.ones(<span class="number">5</span>)  <span class="comment"># input tensor</span></span><br><span class="line">y = torch.zeros(<span class="number">3</span>)  <span class="comment"># expected output</span></span><br><span class="line">w = torch.randn(<span class="number">5</span>, <span class="number">3</span>, requires_grad=<span class="literal">True</span>)  <span class="comment"># 需要更新的weight</span></span><br><span class="line">b = torch.randn(<span class="number">3</span>, requires_grad=<span class="literal">True</span>) <span class="comment"># 需要更新的bias</span></span><br><span class="line">z = torch.matmul(x, w)+b</span><br><span class="line">loss = torch.nn.functional.binary_cross_entropy_with_logits(z, y)</span><br><span class="line"></span><br><span class="line"><span class="comment">#反向传播</span></span><br><span class="line">loss.backward()  <span class="comment">#该步骤包含对梯度的自动计算，梯度值通过以下查看。</span></span><br><span class="line"><span class="built_in">print</span>(w.grad)</span><br><span class="line"><span class="built_in">print</span>(b.grad)</span><br></pre></td></tr></table></figure>
-<h3 id="32-autograd的机制"><a class="markdownIt-Anchor" href="#32-autograd的机制"></a> 3.2 autograd的机制</h3>
+<h3 id="3-2-autograd的机制">3.2 autograd的机制</h3>
 <p>首先了解tensor有哪些属性：</p>
 <ul>
 <li>data : 被包装的张量</li>
@@ -2721,14 +2721,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>Tensor和Function互相结合就可以构建一个记录有整个计算过程的有向无环图(Directed Acyclic Graph，DAG)。每个Tensor都有一个.grad_fn属性，该属性即创建该Tensor的Function。</p>
 <p>DAG的节点是Function对象，边表示数据依赖，从输出指向输入。 **每当对Tensor施加一个运算的时候，就会产生一个Function对象，它产生运算的结果，记录运算的发生，并且记录运算的输入。**Tensor使用.grad_fn属性记录这个计算图的入口。<strong>反向传播过程中，autograd引擎会按照逆序，通过Function的backward依次计算梯度。</strong></p>
 <p><strong>注意事项</strong></p>
-<p>（1）梯度不自动清零，如果不清零梯度会累加，所以需要在每次梯度后人为清零。<br />
-（2）依赖于叶子结点的结点，requires_grad默认为True。<br />
-（3）叶子结点不可执行in-place，因为其他节点在计算梯度时需要用到叶子节点，所以叶子地址中的值不得改变否则会是其他节点求梯度时出错。所以叶子节点不能进行原位计算。<br />
+<p>（1）梯度不自动清零，如果不清零梯度会累加，所以需要在每次梯度后人为清零。<br>
+（2）依赖于叶子结点的结点，requires_grad默认为True。<br>
+（3）叶子结点不可执行in-place，因为其他节点在计算梯度时需要用到叶子节点，所以叶子地址中的值不得改变否则会是其他节点求梯度时出错。所以叶子节点不能进行原位计算。<br>
 （4）在 y.backward()时，如果 y 是标量量，则不需要为backward()传⼊入任何参数；否则，需要传⼊一个与y同形的Tensor。</p>
 <p>（5）只能获得计算图的叶子节点的grad属性，这些节点的requires_grad属性设置为True。对于图中的所有其他节点，梯度将不可用。</p>
 <p>（6）只能在一个给定的图上使用一次backward来进行梯度计算。如果需要在同一个图上进行多次backward调用，需要在backward调用中传递 retain_graph=True。</p>
 <p>（7）在PyTorch中，DAG是动态的。需要注意的是，图是从头开始重新创建的；在每次调用.backward()后，autograd开始填充一个新的图。这正是允许你在模型中使用控制流语句的原因；如果需要，你可以在每次迭代时改变形状、大小和操作。</p>
-<h3 id="33-禁用梯度跟踪"><a class="markdownIt-Anchor" href="#33-禁用梯度跟踪"></a> 3.3 禁用梯度跟踪</h3>
+<h3 id="3-3-禁用梯度跟踪">3.3 禁用梯度跟踪</h3>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 方法一：利用torch.no_grad()块包围正向传播代码</span></span><br><span class="line"><span class="keyword">with</span> torch.no_grad():</span><br><span class="line">    z = torch.matmul(x, w)+b</span><br><span class="line"></span><br><span class="line"><span class="comment"># 方法二：利用detach方法</span></span><br><span class="line">z = torch.matmul(x, w)+b</span><br><span class="line">z_det = z.detach()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 方法三：设置requires_grad</span></span><br><span class="line"><span class="keyword">for</span> name, param <span class="keyword">in</span> model.named_parameters():</span><br><span class="line">    param.requires_grad = <span class="literal">False</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
   </div>
@@ -2848,20 +2848,20 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class='prev' href='/2023/07/26/pytorch%E5%9F%BA%E7%A1%80/5-%E6%A8%A1%E5%9E%8B%E8%B0%83%E5%8F%82/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>5-模型调参</p>
-          <p class='content'> 1 超参数
+          <p class='content'>1 超参数
 超参数是可调整的参数，让你控制模型优化过程。不同的超参数值会影响模型的训练和收敛率。
 常用的超参数如下：
 
 epoch : 在整个数据集上迭代的次数。
-batch : 每一次更新参...</p>
+batch : 每一次更新参数...</p>
         </a>
       
       
         <a class='next' href='/2023/07/25/pytorch%E5%9F%BA%E7%A1%80/3-%E6%95%B0%E6%8D%AE%E5%87%86%E5%A4%87/'>
           <p class='title'>3-数据准备<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'> 1 Dataset
- 1.1  图像（path+label形式）
-12345678910111213141516171819202122232425import osimport pandas...</p>
+          <p class='content'>1 Dataset
+1.1  图像（path+label形式）
+12345678910111213141516171819202122232425import osimport pandas a...</p>
         </a>
       
     </div>
@@ -2920,7 +2920,7 @@ batch : 每一次更新参...</p>
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%90%AD%E5%BB%BA"><span class="toc-text"> 1 神经网络搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#11-%E9%80%9A%E8%BF%87-forward-%E6%9E%84%E5%BB%BA"><span class="toc-text"> 1.1 通过 forward 构建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-%E9%80%9A%E8%BF%87-sequential-%E6%9E%84%E5%BB%BA"><span class="toc-text"> 1.2 通过 Sequential 构建</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%A8%A1%E5%9E%8B%E5%8F%82%E6%95%B0"><span class="toc-text"> 2 模型参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD"><span class="toc-text"> 3 反向传播</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#31-%E8%87%AA%E5%8A%A8%E6%A2%AF%E5%BA%A6%E8%AE%A1%E7%AE%97"><span class="toc-text"> 3.1 自动梯度计算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#32-autograd%E7%9A%84%E6%9C%BA%E5%88%B6"><span class="toc-text"> 3.2 autograd的机制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#33-%E7%A6%81%E7%94%A8%E6%A2%AF%E5%BA%A6%E8%B7%9F%E8%B8%AA"><span class="toc-text"> 3.3 禁用梯度跟踪</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%90%AD%E5%BB%BA"><span class="toc-text">1 神经网络搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E9%80%9A%E8%BF%87-forward-%E6%9E%84%E5%BB%BA"><span class="toc-text">1.1 通过 forward 构建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E9%80%9A%E8%BF%87-sequential-%E6%9E%84%E5%BB%BA"><span class="toc-text">1.2 通过 Sequential 构建</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%A8%A1%E5%9E%8B%E5%8F%82%E6%95%B0"><span class="toc-text">2 模型参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD"><span class="toc-text">3 反向传播</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E8%87%AA%E5%8A%A8%E6%A2%AF%E5%BA%A6%E8%AE%A1%E7%AE%97"><span class="toc-text">3.1 自动梯度计算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-autograd%E7%9A%84%E6%9C%BA%E5%88%B6"><span class="toc-text">3.2 autograd的机制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-%E7%A6%81%E7%94%A8%E6%A2%AF%E5%BA%A6%E8%B7%9F%E8%B8%AA"><span class="toc-text">3.3 禁用梯度跟踪</span></a></li></ol></li></ol>
     </div>
   </section>
 

@@ -1799,7 +1799,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1731038511593),
+    lastupdate: new Date(1731044201349),
     sidebar: {
       for_page: ["blogger","category","webinfo","music"],
       for_post: ["toc"],
@@ -2225,7 +2225,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd end-->
   <!-- front-matter head_end begin -->
   <!-- front-matter head_end end -->
-</head>
+<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head>
   <body itemscope itemtype="http://schema.org/WebPage">
     <!-- import body_begin begin-->
     <!-- import body_begin end-->
@@ -2621,9 +2621,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 对于一个全局变量，每个线程都希望拥有它的一个副本，维护专属于自己的变量值，应该如何实现？
 进一步的，如果希望一个类在每个线程中有且只有一个副本，应该如何实现？
 
- 1 线程局部变量
- 1.1 POD 线程局部变量
-对于问题一，其实GCC已经提供了简单的解决方案，通过 __thread 关键字就可以实现简单类...
+1 线程局部变量
+1.1 POD 线程局部变量
+对于问题一，其实GCC已经提供了简单的解决方案，通过 __thread 关键字就可以实现简单类型的...
       
     
   </div>
@@ -2688,9 +2688,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       
         最近写了一个简单又好用的 CLI 程序，在这里分享出来。所谓的 CLI ，就是让我们的C++程序拥有命令行操作界面，类似于MySQL的命令行操作数据库。当你的程序复杂到一定程度，我想你可能需要一些诊断命令来查看程序的运行状态，抑或是通过命令来临时设置一些变量（比如：动态设置日志打印等级）。或许有一些框架已经具备以上功能，但简单实现这个并不难，以下是具体的分析和实现。
- 1 需求分析
+1 需求分析
 
-拥有命...
+拥有命令...
       
     
   </div>
@@ -2882,13 +2882,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-         1 事务并发的问题
- 1.1 脏写（Dirty Write）
+        1 事务并发的问题
+1.1 脏写（Dirty Write）
 如果一个事务修改了另一个未提交事务修改过的数据，那就意味着发生了 脏写。（我在写，别人也在写）
- 1.2 脏读（Dirty Read）
+1.2 脏读（Dirty Read）
 如果一个事务读到了另一个未提交事务修改过的数据，那就意味着发生了 脏读。（我在读，别人在写）
- 1.3 不可重复读（Non-Repeatable Read）
-如果一个事务只能读到另一个已经提交的...
+1.3 不可重复读（Non-Repeatable Read）
+如果一个事务只能读到另一个已经提交的事务修改...
       
     
   </div>
@@ -3017,11 +3017,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-         1 MySQL中的连接
- 1.1 交叉连接
+        1 MySQL中的连接
+1.1 交叉连接
 将 A 表的每一个条目与 B 表的每一个条目都交叉一遍，这样的结果集也称为 笛卡尔积 。交叉连接出来的表很大，这种连接方式要慎用。
 1SELECT * FROM t1, t2 WHERE t1.m1 &gt; 1 AND t1.m1 = t2.m2 AND t2.n2 &lt; &#x27;d&#x27;;
-MySQL是怎么执行以上语句的呢？过程...
+MySQL是怎么执行以上语句的呢？过程如下...
       
     
   </div>
@@ -3085,13 +3085,13 @@ MySQL是怎么执行以上语句的呢？过程...
   <div class='md article-desc' itemprop="articleBody">
     
       
-         1 索引的代价
+        1 索引的代价
 
 空间上的代价：每建立一个索引都要为它建立一棵 B+ 树，每一棵 B+ 树的每一个节点都是一个数据页，一个页默认会占用 16KB 的存储空间。
 时间上的代价：每次对表中的数据进行增、删、改操作时，都需要去修改各个 B+ 树索引。
 
- 2 B+树索引场景
-这里先创建一个表作为以下说明的例子。其中 id 是主键，而 idx_name_birthday_phone_number ...
+2 B+树索引场景
+这里先创建一个表作为以下说明的例子。其中 id 是主键，而 idx_name_birthday_phone_number 是二...
       
     
   </div>
@@ -3155,8 +3155,7 @@ MySQL是怎么执行以上语句的呢？过程...
   <div class='md article-desc' itemprop="articleBody">
     
       
-        SQLite 提供的 C/CPP API 实在是太简陋，使用C开发的伙伴一定会感到极为不方便。事实上有很多用C包装的中间件，可以极大方便我们操作数据库。这里我整理了 sqlite_modern_cpp 的使用方法，相比于一些 orm 中间件，它简单而纯粹。如果对 orm 感兴趣的话，也可以看一下 sqlite_orm 这份代码。这两份代码都是 header_only的，部署起来十分简单。
- ...
+        SQLite 提供的 C/CPP API 实在是太简陋，使用C++开发的伙伴一定会感到极为不方便。事实上有很多用C++包装的中间件，可以极大方便我们操作数据库。这里我整理了 sqlite_modern_cpp 的使用方法，相比于一些 orm 中间件，它简单而纯粹。如果对 orm 感兴趣的话，也可以看一下 sqlite_orm 这份代码。这两份代码都是 header_only的，部署起来十分简...
       
     
   </div>
@@ -3220,13 +3219,13 @@ MySQL是怎么执行以上语句的呢？过程...
   <div class='md article-desc' itemprop="articleBody">
     
       
-         基础语法
- 创建数据库
+        基础语法
+创建数据库
 存在则连接，不存在则创建。 .database 可查询存在哪些数据库。
 1.open xxx.db
- 创建表
+创建表
 ID 作为主键，NOT NULL 的约束表示在表中创建纪录时这些字段不能为 NULL。.tables 可查询存在哪些表。
-1234567CREATE TABLE COMPANY(   ID INT PRIMARY KEY     NOT NULL,   NA...
+1234567CREATE TABLE COMPANY(   ID INT PRIMARY KEY     NOT NULL,   NAME ...
       
     
   </div>
