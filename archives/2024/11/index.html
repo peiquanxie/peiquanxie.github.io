@@ -5,8 +5,8 @@
   <meta name="Volantis" content="5.8.0">
   <meta charset="utf-8">
   <!-- SEO相关 -->
-  
-  <link rel="canonical" href="https://xie-peiquan.gitee.io/2023/11/28/并发编程基础/3-线程同步/"/>
+  <meta name="robots" content="noindex,follow">
+  <link rel="canonical" href="https://xie-peiquan.gitee.io/archives/2024/11/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -34,21 +34,19 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>3-线程同步 - PQ.XIE BLOG</title>
-  <meta name="keywords" content="并发编程,日常唠嗑">
+  <title>归档：2024/11 - PQ.XIE BLOG</title>
+  <meta name="keywords" content="日常唠嗑">
   <meta desc name="description" content="个人博客 - PQ.XIE - PQ.XIE BLOG">
   
-<meta property="og:type" content="article">
-<meta property="og:title" content="3-线程同步">
-<meta property="og:url" content="https://xie-peiquan.gitee.io/2023/11/28/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/3-%E7%BA%BF%E7%A8%8B%E5%90%8C%E6%AD%A5/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="PQ.XIE BLOG">
+<meta property="og:url" content="https://xie-peiquan.gitee.io/archives/2024/11/index.html">
 <meta property="og:site_name" content="PQ.XIE BLOG">
-<meta property="og:description" content="何为线程同步？有时候我们需要规范线程的执行顺序，令独立线程上的行为同步。以下介绍C++标准库提供的线程同步工具。 1 信号量 1234567891011121314151617#include &lt;semaphore.h&gt;sem_t semaphore;sem_init(&amp;semaphore, 0, 0);void data_preparation_thread()&amp;#123;">
+<meta property="og:description" content="个人博客">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2023-11-28T10:40:04.602Z">
-<meta property="article:modified_time" content="2023-12-28T03:30:31.448Z">
 <meta property="article:author" content="PQ.XIE">
-<meta property="article:tag" content="并发编程">
+<meta property="article:tag" content="日常唠嗑">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -2236,7 +2234,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <!-- Custom Files bodyBegin end-->
     <!-- front-matter body_begin begin -->
     <!-- front-matter body_begin end -->
-    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur show" style='opacity: 0' >
+    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur " style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -2505,7 +2503,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="none" class='cover-wrapper post search' style="display: none;">
+      <div id="half" class='cover-wrapper  search' style="display: ;">
         
   <div class='cover-bg lazyload placeholder' data-bg="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/background.jpeg"></div>
 
@@ -2583,8 +2581,22 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="body-wrapper">
           
 <div id="l_main" class=''>
-  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2023/11/28/并发编程基础/3-线程同步/">
+	
+		
+  <section class="post-list">
+    
+      
+        
+          
+        
+      
+    
+    
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2024/11/10/数字信号处理/2-傅里叶变换/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="PQ.XIE BLOG">
   </span>
@@ -2593,293 +2605,67 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <meta itemprop="description" content="个人博客">
   </span>
   
-
-
+  
   
     <span hidden>
       <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
     </span>
   
-  <div class="article-meta" id="top">
-    
-    
-    
-      <h1 class="title" itemprop="name headline">
-        3-线程同步
-      </h1>
-      <div class='new-meta-box'>
-        
-          
-            
-<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <a itemprop="url" class='author' href="/" rel="nofollow">
-    <img itemprop="image" src="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/202307251013361.png" class="lazyload" data-srcset="https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/202307251013361.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-    <p itemprop="name">PQ.XIE</p>
-  </a>
-</div>
-
-          
-        
-          
-            
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/" rel="nofollow"><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><p>并发编程</p></a></div>
-  <span hidden itemprop="keywords">并发编程</span>
-
-
-          
-        
-          
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-11-28T18:40:04+08:00">
-  <a class='notlink'>
-    <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>2023年11月28日</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-  <div class="new-meta-item wordcount">
-    <a class='notlink'>
-      <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：2.1k 字</p>
-    </a>
-  </div>
-  <div class="new-meta-item readtime">
-    <a class='notlink'>
-      <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：10 分钟</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            
-
-
-<div class="new-meta-item browse">
-  <a class='notlink'>
-    <p>
-      <i class="fa-solid fa-eye fa-fw" aria-hidden="true"></i>
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2024/11/10/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/2-%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/"  itemprop="url">
+        2-傅里叶变换
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
       
-      <span id="busuanzi_value_page_pv"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+        果然出来混总要还的，大学没认真学的知识，到头来还得再翻一翻。好在有了一些工作经验的加持，对傅里叶变换有了新的理解。这里把傅里叶变换的理论知识给整理出来，为后续的离散傅里叶变换和快速傅里叶变换打打基础。
+我们知道，平面内的任何一个点可以用两个正交基来表示，比如我们熟悉的笛卡尔坐标系，其中x轴和y轴就是两个正交的基底，其内积为零。那么傅里叶变换在寻求什么？他在寻求平面上的函数（连续的点），用若干...
       
-      <span>次</span>
-    </p>
-  </a>
-</div>
-
-
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2024-11-10T19:08:50+08:00">2024-11-10</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E7%AE%97%E6%B3%95/">信号处理算法</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E7%AE%97%E6%B3%95/" itemprop="url"><span itemprop="name">信号处理算法</span></a>
+            </span>
           
         
-          
-        
-        <!-- Custom Files topMeta begin-->
-        
-        <!-- Custom Files topMeta end-->
       </div>
-    
-  </div>
-
-
-  <div id="layoutHelper-page-plugins"></div>
-  <div id="post-body" itemprop="articleBody">
-    <p>何为线程同步？有时候我们需要规范线程的执行顺序，令独立线程上的行为同步。以下介绍C++标准库提供的线程同步工具。</p>
-<h2 id="1-信号量">1 信号量</h2>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;semaphore.h&gt;</span></span></span><br><span class="line"><span class="type">sem_t</span> semaphore;</span><br><span class="line"><span class="built_in">sem_init</span>(&amp;semaphore, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">data_preparation_thread</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">more_data_to_prepare</span>())&#123;</span><br><span class="line">        ......</span><br><span class="line">        <span class="built_in">sem_post</span>(&amp;semaphore);    		<span class="comment">//信号量发送（增加）</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">data_processing_thread</span><span class="params">()</span>   </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">        <span class="built_in">sem_wait</span>(&amp;semaphore);			<span class="comment">//等待信号量（减小）</span></span><br><span class="line">        ......</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="2-条件变量">2 条件变量</h2>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">std::mutex mut;</span><br><span class="line">std::queue&lt;data_chunk&gt; data_queue;    ⇽---  ①</span><br><span class="line">std::condition_variable data_cond;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">data_preparation_thread</span><span class="params">()</span>            <span class="comment">// 由线程乙运行</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">more_data_to_prepare</span>())</span><br><span class="line">    &#123;</span><br><span class="line">        data_chunk <span class="type">const</span> data=<span class="built_in">prepare_data</span>();</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="function">std::lock_guard&lt;std::mutex&gt; <span class="title">lk</span><span class="params">(mut)</span></span>;</span><br><span class="line">            data_queue.<span class="built_in">push</span>(data);    ⇽---  ②</span><br><span class="line">        &#125;</span><br><span class="line">        data_cond.<span class="built_in">notify_one</span>();    ⇽---  ③</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">data_processing_thread</span><span class="params">()</span>           <span class="comment">// 由线程甲运行</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="literal">true</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function">std::unique_lock&lt;std::mutex&gt; <span class="title">lk</span><span class="params">(mut)</span></span>;    ⇽---  ④</span><br><span class="line">        data_cond.<span class="built_in">wait</span>(</span><br><span class="line">            lk,[]&#123;<span class="keyword">return</span> !data_queue.<span class="built_in">empty</span>();&#125;);    ⇽---  ⑤</span><br><span class="line">        data_chunk data=data_queue.<span class="built_in">front</span>();</span><br><span class="line">        data_queue.<span class="built_in">pop</span>();</span><br><span class="line">        lk.<span class="built_in">unlock</span>();    ⇽---  ⑥</span><br><span class="line">        <span class="built_in">process</span>(data);</span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">is_last_chunk</span>(data))</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>以上，data_cond.wait() 建议配合 data_cond.notify_one() 一起用。notify_one() 通知条件变量，使wait() 从阻塞中被唤醒，重新尝试获取锁，再次查验条件。<strong>也就是 data_cond.wait() 并非一直检查条件，而是需要 notify_one() 触发。</strong> <strong>当有多个线程阻塞等待时，用notify_all() .</strong></p>
-<p>另外，为什么这里要使用 std::unique_lock 呢？因为当条件不成立时，wait()要释放锁。而std::lock_guard 无法提供这种灵活性。</p>
-<h3 id="利用条件变量构建线程安全队列">利用条件变量构建线程安全队列</h3>
-<p>虽然std::queue 的操作是原子性的，但是并不代表线程安全，其接口还是存在固有的条件竞争。我们需要把front()和pop()合并成一个函数，这与栈容器的top()和pop()合并相似。另外，为了增加灵活性，这里提供pop的两个变体，try_pop()和wait_and_pop()，一个非阻塞一个阻塞。以下是类定义：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;memory&gt;</span>    ⇽---  ①为使用std::shared_ptr而包含此头文件</span></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">threadsafe_queue</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">threadsafe_queue</span>();</span><br><span class="line">    <span class="built_in">threadsafe_queue</span>(<span class="type">const</span> threadsafe_queue&amp;);</span><br><span class="line">    threadsafe_queue&amp; <span class="keyword">operator</span>=(</span><br><span class="line">        <span class="type">const</span> threadsafe_queue&amp;) = <span class="keyword">delete</span>;    ⇽---  ②为简化设计而禁止赋值操作</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">push</span><span class="params">(T new_value)</span></span>;</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">try_pop</span><span class="params">(T&amp; value)</span></span>;    ⇽---  ③</span><br><span class="line">    <span class="function">std::shared_ptr&lt;T&gt; <span class="title">try_pop</span><span class="params">()</span></span>;    ⇽---  ④</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">wait_and_pop</span><span class="params">(T&amp; value)</span></span>;</span><br><span class="line">    <span class="function">std::shared_ptr&lt;T&gt; <span class="title">wait_and_pop</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">empty</span><span class="params">()</span> <span class="type">const</span></span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>完整接口实现如下：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;memory&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;mutex&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;condition_variable&gt;</span></span></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">threadsafe_queue</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">mutable</span> std::mutex mut;    ⇽---  ①互斥必须用<span class="keyword">mutable</span>修饰（针对<span class="type">const</span>对象，准许其数据成员发生变动）</span><br><span class="line">    std::queue&lt;T&gt; data_queue;</span><br><span class="line">    std::condition_variable data_cond;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">threadsafe_queue</span>()</span><br><span class="line">    &#123;&#125;</span><br><span class="line">    <span class="built_in">threadsafe_queue</span>(threadsafe_queue <span class="type">const</span>&amp; other)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function">std::lock_guard&lt;std::mutex&gt; <span class="title">lk</span><span class="params">(other.mut)</span></span>;</span><br><span class="line">        data_queue=other.data_queue;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">push</span><span class="params">(T new_value)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="function">std::lock_guard&lt;std::mutex&gt; <span class="title">lk</span><span class="params">(mut)</span></span>;</span><br><span class="line">        data_queue.<span class="built_in">push</span>(new_value);</span><br><span class="line">        data_cond.<span class="built_in">notify_one</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">wait_and_pop</span><span class="params">(T&amp; value)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="function">std::unique_lock&lt;std::mutex&gt; <span class="title">lk</span><span class="params">(mut)</span></span>;</span><br><span class="line">        data_cond.<span class="built_in">wait</span>(lk,[<span class="keyword">this</span>]&#123;<span class="keyword">return</span> !data_queue.<span class="built_in">empty</span>();&#125;);</span><br><span class="line">        value=data_queue.<span class="built_in">front</span>();</span><br><span class="line">        data_queue.<span class="built_in">pop</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function">std::shared_ptr&lt;T&gt; <span class="title">wait_and_pop</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="function">std::unique_lock&lt;std::mutex&gt; <span class="title">lk</span><span class="params">(mut)</span></span>;</span><br><span class="line">        data_cond.<span class="built_in">wait</span>(lk,[<span class="keyword">this</span>]&#123;<span class="keyword">return</span> !data_queue.<span class="built_in">empty</span>();&#125;);</span><br><span class="line">        <span class="function">std::shared_ptr&lt;T&gt; <span class="title">res</span><span class="params">(std::make_shared&lt;T&gt;(data_queue.front()))</span></span>;</span><br><span class="line">        data_queue.<span class="built_in">pop</span>();</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">try_pop</span><span class="params">(T&amp; value)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="function">std::lock_guard&lt;std::mutex&gt; <span class="title">lk</span><span class="params">(mut)</span></span>;</span><br><span class="line">        <span class="keyword">if</span>(data_queue.<span class="built_in">empty</span>())</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        value=data_queue.<span class="built_in">front</span>();</span><br><span class="line">        data_queue.<span class="built_in">pop</span>();</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function">std::shared_ptr&lt;T&gt; <span class="title">try_pop</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="function">std::lock_guard&lt;std::mutex&gt; <span class="title">lk</span><span class="params">(mut)</span></span>;</span><br><span class="line">        <span class="keyword">if</span>(data_queue.<span class="built_in">empty</span>())</span><br><span class="line">            <span class="keyword">return</span> std::<span class="built_in">shared_ptr</span>&lt;T&gt;();</span><br><span class="line">        <span class="function">std::shared_ptr&lt;T&gt; <span class="title">res</span><span class="params">(std::make_shared&lt;T&gt;(data_queue.front()))</span></span>;</span><br><span class="line">        data_queue.<span class="built_in">pop</span>();</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">empty</span><span class="params">()</span> <span class="type">const</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="function">std::lock_guard&lt;std::mutex&gt; <span class="title">lk</span><span class="params">(mut)</span></span>;</span><br><span class="line">        <span class="keyword">return</span> data_queue.<span class="built_in">empty</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="3-future机制">3 future机制</h2>
-<p>如果某个线程按计划只需等待一次，那么利用 future 等待更合适。标准库中有std::future 和 std::shared_future，其参照了std::unique_ptr 和 std::shared_ptr. <strong>注意，虽然future对象能用于线程间通信，但是future对象不提供同步访问。若有多个线程访问同一个future对象，必须用互斥访问。</strong></p>
-<h3 id="3-1-async-异步运行">3.1  async 异步运行</h3>
-<p>使用 std::async 启动一个异步任务。与 std::thread 对象等待运行方式的不同， std::async 会返回一个 std::future 对象，这个对象持有最终计算出来的结果。当你需要这个值时，你只需要调用 future 对象的get()方法阻塞获取。</p>
-<p><strong>std::async是C++中一种快速建立并行的方法，类似的，python中ProcessPoolExecutor也可以快速并行。</strong></p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;future&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">find_the_answer_to_ltuae</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">do_other_stuff</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    std::future&lt;<span class="type">int</span>&gt; the_answer=std::<span class="built_in">async</span>(find_the_answer_to_ltuae);</span><br><span class="line">    <span class="built_in">do_other_stuff</span>();</span><br><span class="line">    std::cout&lt;&lt;<span class="string">&quot;The answer is &quot;</span>&lt;&lt;the_answer.<span class="built_in">get</span>()&lt;&lt;std::endl;   <span class="comment">//阻塞获取</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>std::async 的传参与 std::thread的传参一致，若传入的是普通函数，则第一个参数是函数对象，其余为函数的入参；若传入的是类成员函数，则第一个参数为类成员函数地址，第二个参数是对象地址，其余为函数入参。注意如果要传引用，用std::ref()包装。</p>
-<p>std::async 有两种运行方式，一种是起新线程的异步运行方法，一种是在当前线程的同步运行方法。通过设定 std::async 的第一个参数，可以指定运行方式。该参数值可以是 std::launch::deferred 或 std::launch::async，前者指定在本线程上延迟执行函数，后者则新起一个线程执行。<strong>注：若不设定，则由系统自行选择。</strong></p>
-<h3 id="3-2-packaged-task-打包任务">3.2 packaged_task 打包任务</h3>
-<p>std::packaged_task&lt;&gt;可打包函数对象和future对象，他可以作为线程池的构件单元。std::packaged_task&lt;&gt;是一个类模板，其模板参数是函数签名，如：void()表示一个函数，无入参，无返回值。std::packaged_task&lt;&gt;对象具有 get_futrue()方法，能够返回future对象。std::packaged_task 是个可调用对象，调用时函数开始运行。</p>
-<p>std::packaged_task 这种特性使得可以在线程间传递任务，即当前线程将任务包装在 std::packaged_task 中，获得对应 future 对象后，传递给另外的线程，并由其触发任务运行。等需要用到结果时，再用future 对象获取。以下代码是GUI前端向后台线程推处理任务，其将用户的请求（点击事件等）传递给后台线程。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;deque&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;mutex&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;future&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;thread&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;utility&gt;</span></span></span><br><span class="line"></span><br><span class="line">std::mutex m;</span><br><span class="line">std::deque&lt;std::packaged_task&lt;<span class="type">void</span>()&gt;&gt; tasks;</span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">gui_shutdown_message_received</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">get_and_process_gui_message</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">gui_thread</span><span class="params">()</span>    ⇽---  ①</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(!<span class="built_in">gui_shutdown_message_received</span>())    ⇽---  ②</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">get_and_process_gui_message</span>();    ⇽---  ③</span><br><span class="line">        std::packaged_task&lt;<span class="built_in">void</span>()&gt; task;</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="function">std::lock_guard&lt;std::mutex&gt; <span class="title">lk</span><span class="params">(m)</span></span>;</span><br><span class="line">            <span class="keyword">if</span>(tasks.<span class="built_in">empty</span>())    ⇽---  ④</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            task=std::<span class="built_in">move</span>(tasks.<span class="built_in">front</span>());    ⇽---  ⑤</span><br><span class="line">            tasks.<span class="built_in">pop_front</span>();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">task</span>();    ⇽---  ⑥</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">std::thread <span class="title">gui_bg_thread</span><span class="params">(gui_thread)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> Func&gt;</span></span><br><span class="line"><span class="function">std::future&lt;<span class="type">void</span>&gt; <span class="title">post_task_for_gui_thread</span><span class="params">(Func f)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="function">std::packaged_task&lt;<span class="title">void</span><span class="params">()</span>&gt; <span class="title">task</span><span class="params">(f)</span></span>;    ⇽---  ⑦</span><br><span class="line">    std::future&lt;<span class="type">void</span>&gt; res=task.<span class="built_in">get_future</span>();    ⇽---  ⑧</span><br><span class="line">    <span class="function">std::lock_guard&lt;std::mutex&gt; <span class="title">lk</span><span class="params">(m)</span></span>;</span><br><span class="line">    tasks.<span class="built_in">push_back</span>(std::<span class="built_in">move</span>(task));    ⇽---  ⑨</span><br><span class="line">    <span class="keyword">return</span> res;    ⇽---  ⑩</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="3-3-promise-等待设定值">3.3  promise 等待设定值</h3>
-<p>std::promise 配合 std::futrue 可实现以下机制：等待数据的线程在 futrue 上阻塞，提供数据的线程则利用 promise 设定关联值，使futrue就绪。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;thread&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;future&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">initiazer</span><span class="params">(std::promise&lt;<span class="type">int</span>&gt; * promObj)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    std::cout&lt;&lt;<span class="string">&quot;新线程内部&quot;</span>&lt;&lt;std::endl;</span><br><span class="line">    promObj-&gt;<span class="built_in">set_value</span>(<span class="number">35</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    std::promise&lt;<span class="type">int</span>&gt; promiseObj;</span><br><span class="line">    std::future&lt;<span class="type">int</span>&gt; futureObj = promiseObj.<span class="built_in">get_future</span>();</span><br><span class="line">    <span class="function">std::thread <span class="title">th</span><span class="params">(initiazer, &amp;promiseObj)</span></span>;</span><br><span class="line">    std::cout&lt;&lt;futureObj.<span class="built_in">get</span>()&lt;&lt;std::endl;</span><br><span class="line">    th.<span class="built_in">join</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="3-4-shared-future-共享期待">3.4 shared_future 共享期待</h3>
-<p>std::future只有一个实例可以获得特定的同步结果，而 std::shared_future 实例是可拷贝的，所以多个对象可以引用同一关联“期望”的结果。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">std::promise&lt;std::string&gt; p;</span><br><span class="line"><span class="function">std::shared_future&lt;std::string&gt; <span class="title">sf</span><span class="params">(p.get_future())</span></span>;    ⇽---  ①隐式转移归属权</span><br></pre></td></tr></table></figure>
-<h3 id="3-5-等待多个futrue">3.5 等待多个futrue</h3>
-<p>当线程需要汇总各个std::async任务的处理结果时，需要逐个等待future对象，可能写出如下代码：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">std::future&lt;FinalResult&gt; <span class="title">process_data</span><span class="params">(std::vector&lt;MyData&gt;&amp; vec)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">size_t</span> <span class="type">const</span> chunk_size=whatever;</span><br><span class="line">    std::vector&lt;std::future&lt;ChunkResult&gt;&gt; results;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> begin=vec.<span class="built_in">begin</span>(),end=vec.<span class="built_in">end</span>();beg!=end;)&#123;</span><br><span class="line">        <span class="type">size_t</span> <span class="type">const</span> remaining_size=end-begin;</span><br><span class="line">        <span class="type">size_t</span> <span class="type">const</span> this_chunk_size=std::<span class="built_in">min</span>(remaining_size,chunk_size);</span><br><span class="line">        results.<span class="built_in">push_back</span>(</span><br><span class="line">            std::<span class="built_in">async</span>(process_chunk,begin,begin+this_chunk_size));</span><br><span class="line">        begin+=this_chunk_size;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> std::<span class="built_in">async</span>([all_results=std::<span class="built_in">move</span>(results)]()&#123;</span><br><span class="line">        std::vector&lt;ChunkResult&gt; v;</span><br><span class="line">        v.<span class="built_in">reserve</span>(all_results.<span class="built_in">size</span>());</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span>&amp; f: all_results)</span><br><span class="line">        &#123;</span><br><span class="line">             v.<span class="built_in">push_back</span>(f.<span class="built_in">get</span>());    ⇽---  ①</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">gather_results</span>(v);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>当有任务完成时，代码①被唤醒，随之又进入休眠，等待下一个任务唤醒。我们有更简洁的写法，可以减少这种切换开销。采用 <code>std::experimental::when_all</code> 等待所有任务结束再唤醒。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">std::<span class="function">experimental::future&lt;FinalResult&gt; <span class="title">process_data</span><span class="params">(</span></span></span><br><span class="line"><span class="params"><span class="function">    std::vector&lt;MyData&gt;&amp; vec)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">size_t</span> <span class="type">const</span> chunk_size=whatever;</span><br><span class="line">    std::vector&lt;std::experimental::future&lt;ChunkResult&gt;&gt; results;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> begin=vec.<span class="built_in">begin</span>(),end=vec.<span class="built_in">end</span>();beg!=end;)&#123;</span><br><span class="line">        <span class="type">size_t</span> <span class="type">const</span> remaining_size=end-begin;</span><br><span class="line">        <span class="type">size_t</span> <span class="type">const</span> this_chunk_size=std::<span class="built_in">min</span>(remaining_size,chunk_size);</span><br><span class="line">        results.<span class="built_in">push_back</span>(</span><br><span class="line">            <span class="built_in">spawn_async</span>(</span><br><span class="line">            process_chunk,begin,begin+this_chunk_size));</span><br><span class="line">        begin+=this_chunk_size;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> std::experimental::<span class="built_in">when_all</span>(</span><br><span class="line">        results.<span class="built_in">begin</span>(),results.<span class="built_in">end</span>()).<span class="built_in">then</span>(    ⇽---  ①</span><br><span class="line">        [](std::future&lt;std::vector&lt;</span><br><span class="line">             std::experimental::future&lt;ChunkResult&gt;&gt;&gt; ready_results)</span><br><span class="line">        &#123;</span><br><span class="line">            std::vector&lt;std::experimental::future&lt;ChunkResult&gt;&gt;</span><br><span class="line">                all_results=ready_results .<span class="built_in">get</span>();</span><br><span class="line">            std::vector&lt;ChunkResult&gt; v;</span><br><span class="line">            v.<span class="built_in">reserve</span>(all_results.<span class="built_in">size</span>());</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">auto</span>&amp; f: all_results)</span><br><span class="line">            &#123;</span><br><span class="line">                v.<span class="built_in">push_back</span>(f.<span class="built_in">get</span>());    ⇽---  ②</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">gather_results</span>(v);</span><br><span class="line">        &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-  </div>
-  
-  
-    
-    <div class='footer'>
-       <!-- 参考资料、相关资料等 -->
       
-       <!-- 相关文章 -->
-      
-      <!-- 版权声明组件 -->
-      
-      <!-- 打赏组件 -->
-      
-        <div class='donate'>
-          <div class='imgs'>
-            
-              <img src='https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/%E8%B5%9E%E8%B5%8F%E7%A0%81.JPG'>
-            
-          </div>
+        <div>
+          <a class='readmore' href='/2024/11/10/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/2-%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/' itemprop="url">
+            阅读全文
+          </a>
         </div>
       
     </div>
-  
-  
-    
 
+  
 
-  <div class='article-meta' id="bottom">
-    <div class='new-meta-box'>
-      
-        
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-12-28T11:30:31+08:00">
-  <a class='notlink'>
-    <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2023年12月28日</p>
-  </a>
 </div>
 
-        
-      
-        
-          
-  <div class="new-meta-item share -mob-share-list">
-  <div class="-mob-share-list share-body">
-    
-      
-        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://xie-peiquan.gitee.io/2023/11/28/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/3-%E7%BA%BF%E7%A8%8B%E5%90%8C%E6%AD%A5/&title=3-线程同步 - PQ.XIE BLOG&summary="
-          
-          >
-          
-            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://xie-peiquan.gitee.io/2023/11/28/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/3-%E7%BA%BF%E7%A8%8B%E5%90%8C%E6%AD%A5/&title=3-线程同步 - PQ.XIE BLOG&summary="
-          
-          >
-          
-            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://xie-peiquan.gitee.io/2023/11/28/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/3-%E7%BA%BF%E7%A8%8B%E5%90%8C%E6%AD%A5/&title=3-线程同步 - PQ.XIE BLOG&summary="
-          
-          >
-          
-            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-          
-        </a>
-      
-    
-      
-        
-        <div class='hoverbox'>
-          <a class='share'><img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/wechat.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/wechat.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></a>
-          <div class='target'>
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZgAAAGYCAAAAABaUKuJAAAGA0lEQVR42u3cS25cSQwEQN3/0vJ+BsJjJvnaMhC1s9RdH0ZtEiz569v4leNLCcAYYMAYYMAYYIxHmK9y/Pf70/m233s82A+fb+d9+nx6jse6gAEDBgwYMGDAgAEDZgyzPfj0IG0Bn4Cf4NPzTdfbrgsGDBgwYMCAAQMGDJg9zNXCnwp0bUHbi5BeiDhogwEDBgwYMGDAgAED5nWYNEimQOm8V4229txgwIABAwYMGDBgwID592CmwW5boOuG2vW+wYABAwYMGDBgwIAB8zmYduE0eKUNsOt5thehDcaP5wMDBgwYMGDAgAEDBswYZhvc/PuonmDAgAEDBgQYMGDAgHmE2Y504WmgawNcGvDaYNqu87gPMGDAgAEDBgwYMGDAPMKkB20DZ9tg+y0XYTpvuy8wYMCAAQMGDBgwYMDMYdKCToGmG99egHUhyvnbixwnfzBgwIABAwYMGDBgwDw2ytqCXDe00qA4Da7Tc6XrbtcHAwYMGDBgwIABAwZMD5M2stIAmTbEtoF2e863AigYMGDAgAEDBgwYMGB6mLMJjwJY2gjbBsj251dBGgwYMGDAgAEDBgwYMD3MdzjSDU7nu4K6CrhbiHQeMGDAgAEDBgwYMGDAzGHShlH7+xSyDcBXwfDj64IBAwYMGDBgwIABA6bux0wDX3ugNEBuC3gdCLeNwTr5gwEDBgwYMGDAgAED5rwhtg1kbQBtL9T2wd/2YoEBAwYMGDBgwIABA6aHSSduG2tXDbJt4f72z8GAAQMGDBgwYMCAAdPDpBDtA7e0gN/L0Rbu6gKlDyLBgAEDBgwYMGDAgAGzh0kB2qC5PVA6/zYoTy9Sul8wYMCAAQMGDBgwYMDMYbYBrAWsG0lHhbxuCJ4FcjBgwIABAwYMGDBgwIxh0kbVNshdPRQ8a1AdBdc0cD6+xAQDBgwYMGDAgAEDBswjTBqU2oD4VkPsqqBtcFwDggEDBgwYMGDAgAED5hGmDWRXD962gfStxlt6UbYXGwwYMGDAgAEDBgwYMHOYNgi2BXz7+20jLP1cu5/Hf4MBAwYMGDBgwIABA2YMcxWg0iDXBrP0e283xLYXHAwYMGDAgAEDBgwYMHuYtzZ41WDbjrQBt93HOLCCAQMGDBgwYMCAAQPmHOatn7cXpA287UXYNtQe5wUDBgwYMGDAgAEDBswapn2Ilz54a0HSda+Cblufx3qAAQMGDBgwYMCAAQPmEabdwFsNrjaopg26aYHbhmD6PTBgwIABAwYMGDBgwOQw28DYNpquA2d6ga4bam1dwYABAwYMGDBgwIABk8NcHXBa2G3gOwt0YeCdniP9PRgwYMCAAQMGDBgwYOYw6dgGqinAW/u7+nkcHKfgYMCAAQMGDBgwYMCAGcOkBUs33ga6NNi91RhrA2gcuMGAAQMGDBgwYMCAAfMI0zaqpoWYXoD2oFcNvk9D/bgOGDBgwIABAwYMGDBgxjBXjaptA+m6UZYGz21DbX1xwYABAwYMGDBgwIAB8wizPWgaUKcbvS7MNUR6seOACQYMGDBgwIABAwYMmEeYdgNvBdQriLaBtz1fGjjBgAEDBgwYMGDAgAHz3h8ubQ921VhrA2za2NqePz4fGDBgwIABAwYMGDBgYphtQbejbTC1hdwG06t1wYABAwYMGDBgwIABk//hUvtw77rxlAa9tx78tQ3D9QUHAwYMGDBgwIABAwbMuB/TjvRgadBr4aYXrw2g2wbbOPmDAQMGDBgwYMCAAQNmHDDT4Lbd2Da4Ts+TXpzpxWz3BwYMGDBgwIABAwYMmB6m3cj2c1vg9nPbxtu2sfcjHBgwYMCAAQMGDBgwYGKYeKLlA7irRlX7cC9dfwtaB0wwYMCAAQMGDBgwYMCcwaQBLg1g6eda8KsAur0YYMCAAQMGDBgwYMCA+RzMeOGX5r1uhF1dpLhxBgYMGDBgwIABAwYMmBimfZjXFrp9IHcW6MJG3PYBZN0oAwMGDBgwYMCAAQMGzPl/wHAV3D7VQGvnXwfINGCCAQMGDBgwYMCAAQPmfzDG7xpgwBhgwBhgwBhgjB/HH6JM/LyeBzDnAAAAAElFTkSuQmCC">
           </div>
-        </div>
-      
-    
-      
-    
-  </div>
-</div>
-
-
-
         
       
-        
-      
-    </div>
-    <!-- Custom Files bottomMeta begin -->
     
-    <!-- Custom Files bottomMeta end -->
-  </div>
-
-
+  </section>
   
-  
-
-  
-    <div class="prev-next">
-      
-        <a class='prev' href='/2023/11/28/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/1-%E7%BA%BF%E7%A8%8B%E7%AE%A1%E7%90%86/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>1-线程管理</p>
-          <p class='content'>每个C++程序至少有一个线程，即main线程。随后，程序可以发起更多线程，他们以别的函数作为入口。当main函数返回时，程序随即退出，其他线程也会随着终结（当然如果有detach线程，情况不一样...</p>
-        </a>
-      
-      
-        <a class='next' href='/2023/11/28/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/2-%E5%85%B1%E4%BA%AB%E6%95%B0%E6%8D%AE/'>
-          <p class='title'>2-共享数据<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>如果线程间所有的共享数据都是只读，就不会有问题。多线程共享数据的问题大多由写数据引起，以下介绍线程间共享数据的安全做法。
-1 互斥锁
-C++中，保护共享数据最基础的方式就是互斥（std::loc...</p>
-        </a>
-      
-    </div>
-  
-  <!-- Custom Files postEnd begin-->
-  
-  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> 
-  <!-- Custom Files postEnd end-->
-</article>
-
-
-  
-
-
-  <article class="post white-box shadow floatable blur" id="comments">
-    <span hidden>
-      <meta itemprop="discussionUrl" content="/2023/11/28/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/3-%E7%BA%BF%E7%A8%8B%E5%90%8C%E6%AD%A5/index.html#comments">
-    </span>
-    <p ct><i class='fas fa-comments'></i> 评论区</p>
     
-
-    <div id="layoutHelper-comments"></div>
-
-  </article>
+  
 
 
-
-
-
-
+	
 </div>
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   
@@ -2888,48 +2674,267 @@ C++中，保护共享数据最基础的方式就是互斥（std::loc...</p>
     
     
       
+<section class="widget blogger desktop mobile pjax">
+  <div class='content'>
+    
+      
+        <a class='avatar flat-box circle' href='/about/'>
+          <img no-lazy src='https://blog-images-submit.oss-cn-beijing.aliyuncs.com/imgs/touxiang.jpg'/>
+        </a>
+      
+    
+    
+      <div class='text'>
+        
+        
+          <p>在熟悉的异乡我将自己一年年流放，穿过鲜花走过荆棘只为自由之地</p>
+
+        
+        
+      </div>
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="mailto:212951692@qq.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="https://space.bilibili.com/408812449"
+              class="social fa-brands fa-bilibili flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="https://gitee.com/xie-peiquan"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="https://music.163.com/#/playlist?id=61676459"
+              class="social fas fa-headphones-alt flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+    
+  
+
+  
+    
+    
+      
+  
+  <section class="widget category desktop mobile pjax">
+    
+  <header>
+    
+      <a href='/categories/'><i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+    
+  </header>
+
+
+    <div class='content'>
+      <ul class="entry navigation">
+        
+          <li><a class="flat-box"
+            title="/categories/C-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/" href="/categories/C-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/"
+            active-action="action-categoriesC-E5B9B6E58F91E7BC96E7A88BE59FBAE7A180"
+            ><div class='name'>C++并发编程基础</div><div class='badge'>(9)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/C-%E9%82%A3%E4%BA%9B%E4%BA%8B/" href="/categories/C-%E9%82%A3%E4%BA%9B%E4%BA%8B/"
+            active-action="action-categoriesC-E982A3E4BA9BE4BA8B"
+            ><div class='name'>C++那些事</div><div class='badge'>(9)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/Pytorch%E5%9F%BA%E7%A1%80/" href="/categories/Pytorch%E5%9F%BA%E7%A1%80/"
+            active-action="action-categoriesPytorchE59FBAE7A180"
+            ><div class='name'>Pytorch基础</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/ROS1/" href="/categories/ROS1/"
+            active-action="action-categoriesROS1"
+            ><div class='name'>ROS1</div><div class='badge'>(12)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/ROS2%E5%9F%BA%E7%A1%80/" href="/categories/ROS2%E5%9F%BA%E7%A1%80/"
+            active-action="action-categoriesROS2E59FBAE7A180"
+            ><div class='name'>ROS2基础</div><div class='badge'>(7)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/" href="/categories/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/"
+            active-action="action-categoriesSTLE6BA90E7A081E7AC94E8AEB0"
+            ><div class='name'>STL源码笔记</div><div class='badge'>(8)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E7%AE%97%E6%B3%95/" href="/categories/%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E7%AE%97%E6%B3%95/"
+            active-action="action-categoriesE4BFA1E58FB7E5A484E79086E7AE97E6B395"
+            ><div class='name'>信号处理算法</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E5%85%88%E8%B4%A4%E6%96%87%E9%9B%86/" href="/categories/%E5%85%88%E8%B4%A4%E6%96%87%E9%9B%86/"
+            active-action="action-categoriesE58588E8B4A4E69687E99B86"
+            ><div class='name'>先贤文集</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E5%BB%BA%E7%AB%99/" href="/categories/%E5%BB%BA%E7%AB%99/"
+            active-action="action-categoriesE5BBBAE7AB99"
+            ><div class='name'>建站</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"
+            active-action="action-categoriesE695B0E68DAEE5BA93"
+            ><div class='name'>数据库</div><div class='badge'>(6)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E6%B7%B7%E5%90%88%E7%BC%96%E7%A8%8B/" href="/categories/%E6%B7%B7%E5%90%88%E7%BC%96%E7%A8%8B/"
+            active-action="action-categoriesE6B7B7E59088E7BC96E7A88B"
+            ><div class='name'>混合编程</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E9%9F%B3%E4%B9%90/" href="/categories/%E9%9F%B3%E4%B9%90/"
+            active-action="action-categoriesE99FB3E4B990"
+            ><div class='name'>音乐</div><div class='badge'>(1)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+    
+  
+
+  
+    
+    
+      
+<section class="widget desktop pjax">
+  
+  <header>
+    
+      <i class="fa-solid fa-award fa-fw" aria-hidden="true"></i><span class='name'>站点信息</span>
+    
+  </header>
+
+
+  <div class='content'>
+    <div class="webinfo">
+      
+        <div class="webinfo-item">
+          <div>文章数目：</div>
+          <div>63 篇</div>
+        </div>
+      
+
+      
+        <div class="webinfo-item">
+          <div>已运行时间：</div>
+          <div id="webinfo-runtime-count"></div>
+        </div>
+      
+
+
+      
+        <div class="webinfo-item">
+          <div>本站总字数：</div>
+          <div>70.8k 字</div>
+        </div>
+      
+
+      
+        <div class="webinfo-item">
+          <div>本站访客数：</div>
+          
+          <div><span id="busuanzi_value_site_uv"><i class="fa-solid fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 人</div>
+          
+        </div>
+      
+
+      
+        <div class="webinfo-item">
+          <div>本站总访问量：</div>
+          
+          <div><span id="busuanzi_value_site_pv"><i class="fa-solid fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 次</div>
+          
+        </div>
+      
+
+      
+        <div class="webinfo-item">
+          <div>最后活动时间：</div>
+          <div id="last-update-show">2024-11-10 日</div>
+        </div>
+      
+    </div>
+  </div>
+</section>
+
+    
+  
+
+  
+    
+    
+      
+
+  <section class='widget desktop  music'>
+    
+
+    <div class='content'>
+      
+
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='false'
+      volume='0.7'
+      loop='all'
+      order='random'
+      fixed='false'
+      list-max-height='320px'
+      server='netease'
+      type='playlist'
+      id='8822642200'
+      list-folded='true'>
+    </meting-js>
+  
+
+
+    </div>
+  </section>
+
+
     
   
 
 
 <div class="widget-sticky pjax">
 
-  
-  
-
-
-  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
-    
-  <header>
-    
-      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
-    
-  </header>
-
-
-    <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%BF%A1%E5%8F%B7%E9%87%8F"><span class="toc-text">1 信号量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%9D%A1%E4%BB%B6%E5%8F%98%E9%87%8F"><span class="toc-text">2 条件变量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A9%E7%94%A8%E6%9D%A1%E4%BB%B6%E5%8F%98%E9%87%8F%E6%9E%84%E5%BB%BA%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E9%98%9F%E5%88%97"><span class="toc-text">利用条件变量构建线程安全队列</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-future%E6%9C%BA%E5%88%B6"><span class="toc-text">3 future机制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-async-%E5%BC%82%E6%AD%A5%E8%BF%90%E8%A1%8C"><span class="toc-text">3.1  async 异步运行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-packaged-task-%E6%89%93%E5%8C%85%E4%BB%BB%E5%8A%A1"><span class="toc-text">3.2 packaged_task 打包任务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-promise-%E7%AD%89%E5%BE%85%E8%AE%BE%E5%AE%9A%E5%80%BC"><span class="toc-text">3.3  promise 等待设定值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-shared-future-%E5%85%B1%E4%BA%AB%E6%9C%9F%E5%BE%85"><span class="toc-text">3.4 shared_future 共享期待</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-%E7%AD%89%E5%BE%85%E5%A4%9A%E4%B8%AAfutrue"><span class="toc-text">3.5 等待多个futrue</span></a></li></ol></li></ol>
-    </div>
-  </section>
-
-  
-
 </div>
 
 
 <!-- 没有 pjax 占位会报错 万恶的 pjax -->
-
-  <div class="pjax">
-    <!-- pjax占位 -->
-  </div>
-
-  <div class="pjax">
-    <!-- pjax占位 -->
-  </div>
-
-  <div class="pjax">
-    <!-- pjax占位 -->
-  </div>
 
   <div class="pjax">
     <!-- pjax占位 -->
@@ -2957,14 +2962,13 @@ C++中，保护共享数据最基础的方式就是互斥（std::loc...</p>
 </aside>
 
 
-
           <!--此文件用来存放一些不方便取值的变量-->
 <!--思路大概是将值藏到重加载的区域内-->
 
 <pjax>
 <script>
   window.pdata={}
-  pdata.ispage=true;
+  pdata.ispage=false;
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -2973,14 +2977,14 @@ C++中，保护共享数据最基础的方式就是互斥（std::loc...</p>
     // header
     var l_header=document.getElementById("l_header");
     
-    l_header.classList.add("show");
+    l_header.classList.remove("show");
     
     
       // cover
       var cover_wrapper=document.querySelector('#l_cover .cover-wrapper');
       var scroll_down=document.getElementById('scroll-down');
-      cover_wrapper.id="none";
-      cover_wrapper.style.display="none";
+      cover_wrapper.id="half";
+      cover_wrapper.style.display="";
       scroll_down.style.display="none";
     
   
@@ -3982,7 +3986,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://xie-peiquan.gitee.io/","name":"PQ.XIE BLOG"}},{"@type":"ListItem","position":2,"item":{"@id":"https://xie-peiquan.gitee.io/categories/C-并发编程基础/","name":"C++并发编程基础"}},{"@type":"ListItem","position":3,"item":{"@id":"https://xie-peiquan.gitee.io/2023/11/28/并发编程基础/3-线程同步/","name":"3-线程同步"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","keywords":"日常唠嗑","description":"个人博客","author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","description":"个人博客"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://xie-peiquan.gitee.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"3-线程同步","description":"个人博客","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://xie-peiquan.gitee.io/2023/11/28/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/3-%E7%BA%BF%E7%A8%8B%E5%90%8C%E6%AD%A5/"},"author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://xie-peiquan.gitee.io/2023/11/28/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/3-%E7%BA%BF%E7%A8%8B%E5%90%8C%E6%AD%A5/","wordCount":0,"datePublished":"2023-11-28T10:40:04.602Z","dateModified":"2023-12-28T03:30:31.448Z","articleSection":"C++并发编程基础","keywords":"并发编程","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://xie-peiquan.gitee.io/","name":"PQ.XIE BLOG"}},{"@type":"ListItem","position":2,"item":{"@id":"https://xie-peiquan.gitee.io/archives/","name":"Archive"}},{"@type":"ListItem","position":3,"item":{"@id":"https://xie-peiquan.gitee.io/archives/2024/","name":"2024年"}},{"@type":"ListItem","position":4,"item":{"@id":"https://xie-peiquan.gitee.io/archives/2024/11/","name":"11月"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","keywords":"日常唠嗑","description":"个人博客","author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","description":"个人博客"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://xie-peiquan.gitee.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"个人博客","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
