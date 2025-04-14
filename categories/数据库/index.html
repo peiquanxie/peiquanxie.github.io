@@ -1799,7 +1799,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1744277613159),
+    lastupdate: new Date(1744611778050),
     sidebar: {
       for_page: ["blogger","category","webinfo","music"],
       for_post: ["toc"],
@@ -2608,7 +2608,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2024/03/20/数据库/9-MySQL事务隔离/">
+  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/1970/01/01/数据库/1-SQLite语法一页纸/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="PQ.XIE BLOG">
   </span>
@@ -2626,344 +2626,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2024/03/20/%E6%95%B0%E6%8D%AE%E5%BA%93/9-MySQL%E4%BA%8B%E5%8A%A1%E9%9A%94%E7%A6%BB/"  itemprop="url">
-        9-MySQL事务隔离
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        1 事务并发的问题
-1.1 脏写（Dirty Write）
-如果一个事务修改了另一个未提交事务修改过的数据，那就意味着发生了 脏写。（我在写，别人也在写）
-1.2 脏读（Dirty Read）
-如果一个事务读到了另一个未提交事务修改过的数据，那就意味着发生了 脏读。（我在读，别人在写）
-1.3 不可重复读（Non-Repeatable Read）
-如果一个事务只能读到另一个已经提交的事务修改...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2024-03-20T17:19:03+08:00">2024-03-20</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url"><span itemprop="name">数据库</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2024/03/20/%E6%95%B0%E6%8D%AE%E5%BA%93/9-MySQL%E4%BA%8B%E5%8A%A1%E9%9A%94%E7%A6%BB/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2024/03/19/数据库/5-MySQL-InnoDB索引/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-    <meta itemprop="description" content="个人博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2024/03/19/%E6%95%B0%E6%8D%AE%E5%BA%93/5-MySQL-InnoDB%E7%B4%A2%E5%BC%95/"  itemprop="url">
-        5-MySQL-InnoDB索引
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        快速的查找一般是建立在数据有序的基础上，而有序一般是依赖一个可以用来排序的 键 来排列。我们把这种通过键查找到对应数值的过程叫 索引查找 。如果我们要查找的目标不能通过 键 来查找，那么查找就只能从头到尾的遍历所有数据页，这对于大数据库来讲，是慢得可怕的。慢得原因也很明显，它没有走索引。
-那么以上涉及到两个问题，一个是InnoDB是如何快速索引的？一个是如果我们的SQL查询语句不能走索引，怎...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2024-03-19T15:18:12+08:00">2024-03-19</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url"><span itemprop="name">数据库</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2024/03/19/%E6%95%B0%E6%8D%AE%E5%BA%93/5-MySQL-InnoDB%E7%B4%A2%E5%BC%95/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2024/03/19/数据库/7-MySQL-连接/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-    <meta itemprop="description" content="个人博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2024/03/19/%E6%95%B0%E6%8D%AE%E5%BA%93/7-MySQL-%E8%BF%9E%E6%8E%A5/"  itemprop="url">
-        7-MySQL-连接
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        1 MySQL中的连接
-1.1 交叉连接
-将 A 表的每一个条目与 B 表的每一个条目都交叉一遍，这样的结果集也称为 笛卡尔积 。交叉连接出来的表很大，这种连接方式要慎用。
-1SELECT * FROM t1, t2 WHERE t1.m1 &gt; 1 AND t1.m1 = t2.m2 AND t2.n2 &lt; &#x27;d&#x27;;
-MySQL是怎么执行以上语句的呢？过程如下...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2024-03-19T15:17:53+08:00">2024-03-19</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url"><span itemprop="name">数据库</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2024/03/19/%E6%95%B0%E6%8D%AE%E5%BA%93/7-MySQL-%E8%BF%9E%E6%8E%A5/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2024/03/19/数据库/6-MySQL-B+树/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-    <meta itemprop="description" content="个人博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2024/03/19/%E6%95%B0%E6%8D%AE%E5%BA%93/6-MySQL-B+%E6%A0%91/"  itemprop="url">
-        6-MySQL-B+树
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        1 索引的代价
-
-空间上的代价：每建立一个索引都要为它建立一棵 B+ 树，每一棵 B+ 树的每一个节点都是一个数据页，一个页默认会占用 16KB 的存储空间。
-时间上的代价：每次对表中的数据进行增、删、改操作时，都需要去修改各个 B+ 树索引。
-
-2 B+树索引场景
-这里先创建一个表作为以下说明的例子。其中 id 是主键，而 idx_name_birthday_phone_number 是二...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2024-03-19T15:17:44+08:00">2024-03-19</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url"><span itemprop="name">数据库</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2024/03/19/%E6%95%B0%E6%8D%AE%E5%BA%93/6-MySQL-B+%E6%A0%91/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2024/03/01/数据库/2-SQLite中间件/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-    <meta itemprop="description" content="个人博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2024/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/2-SQLite%E4%B8%AD%E9%97%B4%E4%BB%B6/"  itemprop="url">
-        2-SQLite中间件
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        SQLite 提供的 C/CPP API 实在是太简陋，使用C++开发的伙伴一定会感到极为不方便。事实上有很多用C++包装的中间件，可以极大方便我们操作数据库。这里我整理了 sqlite_modern_cpp 的使用方法，相比于一些 orm 中间件，它简单而纯粹。如果对 orm 感兴趣的话，也可以看一下 sqlite_orm 这份代码。这两份代码都是 header_only的，部署起来十分简...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2024-03-01T16:30:24+08:00">2024-03-01</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url"><span itemprop="name">数据库</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2024/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/2-SQLite%E4%B8%AD%E9%97%B4%E4%BB%B6/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2024/03/01/数据库/1-SQLite语法一页纸/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-    <meta itemprop="description" content="个人博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2024/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/1-SQLite%E8%AF%AD%E6%B3%95%E4%B8%80%E9%A1%B5%E7%BA%B8/"  itemprop="url">
+      <a href="/1970/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/1-SQLite%E8%AF%AD%E6%B3%95%E4%B8%80%E9%A1%B5%E7%BA%B8/"  itemprop="url">
         1-SQLite语法一页纸
       </a>
     </h2>
@@ -2985,7 +2648,7 @@ ID 作为主键，NOT NULL 的约束表示在表中创建纪录时这些字段�
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2024-03-01T16:30:21+08:00">2024-03-01</time>
+        <time itemprop="dateCreated datePublished" datetime="1970-01-01T08:00:00+08:00">1970-01-01</time>
         
           <span class="dot"></span>
           <a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
@@ -2998,7 +2661,344 @@ ID 作为主键，NOT NULL 的约束表示在表中创建纪录时这些字段�
       </div>
       
         <div>
-          <a class='readmore' href='/2024/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/1-SQLite%E8%AF%AD%E6%B3%95%E4%B8%80%E9%A1%B5%E7%BA%B8/' itemprop="url">
+          <a class='readmore' href='/1970/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/1-SQLite%E8%AF%AD%E6%B3%95%E4%B8%80%E9%A1%B5%E7%BA%B8/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/1970/01/01/数据库/2-SQLite中间件/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="PQ.XIE BLOG">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="PQ.XIE BLOG">
+    <meta itemprop="description" content="个人博客">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/1970/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/2-SQLite%E4%B8%AD%E9%97%B4%E4%BB%B6/"  itemprop="url">
+        2-SQLite中间件
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        SQLite 提供的 C/CPP API 实在是太简陋，使用C++开发的伙伴一定会感到极为不方便。事实上有很多用C++包装的中间件，可以极大方便我们操作数据库。这里我整理了 sqlite_modern_cpp 的使用方法，相比于一些 orm 中间件，它简单而纯粹。如果对 orm 感兴趣的话，也可以看一下 sqlite_orm 这份代码。这两份代码都是 header_only的，部署起来十分简...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="1970-01-01T08:00:00+08:00">1970-01-01</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url"><span itemprop="name">数据库</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/1970/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/2-SQLite%E4%B8%AD%E9%97%B4%E4%BB%B6/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/1970/01/01/数据库/5-MySQL-InnoDB索引/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="PQ.XIE BLOG">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="PQ.XIE BLOG">
+    <meta itemprop="description" content="个人博客">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/1970/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/5-MySQL-InnoDB%E7%B4%A2%E5%BC%95/"  itemprop="url">
+        5-MySQL-InnoDB索引
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        快速的查找一般是建立在数据有序的基础上，而有序一般是依赖一个可以用来排序的 键 来排列。我们把这种通过键查找到对应数值的过程叫 索引查找 。如果我们要查找的目标不能通过 键 来查找，那么查找就只能从头到尾的遍历所有数据页，这对于大数据库来讲，是慢得可怕的。慢得原因也很明显，它没有走索引。
+那么以上涉及到两个问题，一个是InnoDB是如何快速索引的？一个是如果我们的SQL查询语句不能走索引，怎...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="1970-01-01T08:00:00+08:00">1970-01-01</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url"><span itemprop="name">数据库</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/1970/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/5-MySQL-InnoDB%E7%B4%A2%E5%BC%95/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/1970/01/01/数据库/7-MySQL-连接/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="PQ.XIE BLOG">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="PQ.XIE BLOG">
+    <meta itemprop="description" content="个人博客">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/1970/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/7-MySQL-%E8%BF%9E%E6%8E%A5/"  itemprop="url">
+        7-MySQL-连接
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        1 MySQL中的连接
+1.1 交叉连接
+将 A 表的每一个条目与 B 表的每一个条目都交叉一遍，这样的结果集也称为 笛卡尔积 。交叉连接出来的表很大，这种连接方式要慎用。
+1SELECT * FROM t1, t2 WHERE t1.m1 &gt; 1 AND t1.m1 = t2.m2 AND t2.n2 &lt; &#x27;d&#x27;;
+MySQL是怎么执行以上语句的呢？过程如下...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="1970-01-01T08:00:00+08:00">1970-01-01</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url"><span itemprop="name">数据库</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/1970/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/7-MySQL-%E8%BF%9E%E6%8E%A5/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/1970/01/01/数据库/6-MySQL-B+树/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="PQ.XIE BLOG">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="PQ.XIE BLOG">
+    <meta itemprop="description" content="个人博客">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/1970/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/6-MySQL-B+%E6%A0%91/"  itemprop="url">
+        6-MySQL-B+树
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        1 索引的代价
+
+空间上的代价：每建立一个索引都要为它建立一棵 B+ 树，每一棵 B+ 树的每一个节点都是一个数据页，一个页默认会占用 16KB 的存储空间。
+时间上的代价：每次对表中的数据进行增、删、改操作时，都需要去修改各个 B+ 树索引。
+
+2 B+树索引场景
+这里先创建一个表作为以下说明的例子。其中 id 是主键，而 idx_name_birthday_phone_number 是二...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="1970-01-01T08:00:00+08:00">1970-01-01</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url"><span itemprop="name">数据库</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/1970/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/6-MySQL-B+%E6%A0%91/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/1970/01/01/数据库/9-MySQL事务隔离/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="PQ.XIE BLOG">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="PQ.XIE BLOG">
+    <meta itemprop="description" content="个人博客">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/1970/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/9-MySQL%E4%BA%8B%E5%8A%A1%E9%9A%94%E7%A6%BB/"  itemprop="url">
+        9-MySQL事务隔离
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        1 事务并发的问题
+1.1 脏写（Dirty Write）
+如果一个事务修改了另一个未提交事务修改过的数据，那就意味着发生了 脏写。（我在写，别人也在写）
+1.2 脏读（Dirty Read）
+如果一个事务读到了另一个未提交事务修改过的数据，那就意味着发生了 脏读。（我在读，别人在写）
+1.3 不可重复读（Non-Repeatable Read）
+如果一个事务只能读到另一个已经提交的事务修改...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="1970-01-01T08:00:00+08:00">1970-01-01</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url"><span itemprop="name">数据库</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/1970/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/9-MySQL%E4%BA%8B%E5%8A%A1%E9%9A%94%E7%A6%BB/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3243,7 +3243,7 @@ ID 作为主键，NOT NULL 的约束表示在表中创建纪录时这些字段�
       
         <div class="webinfo-item">
           <div>最后活动时间：</div>
-          <div id="last-update-show">2025-04-10 日</div>
+          <div id="last-update-show">2025-04-14 日</div>
         </div>
       
     </div>
