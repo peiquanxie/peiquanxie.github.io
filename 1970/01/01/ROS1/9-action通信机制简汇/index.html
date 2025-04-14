@@ -1801,7 +1801,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1744611778050),
+    lastupdate: new Date(1744612369232),
     sidebar: {
       for_page: ["blogger","category","webinfo","music"],
       for_post: ["toc"],
@@ -2845,9 +2845,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/1970/01/01/ROS1/8-%E5%9D%90%E6%A0%87%E5%8F%98%E6%8D%A2TF%E7%AE%80%E8%BF%B0/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>8-坐标变换TF简述</p>
-          <p class='content'>在一个机器人系统中，一般会存在多个部件，每个部件可能会有自己的运动轨迹，这样在一个机器人中就存在多个坐标系。通常，我们会根据坐标系间的差距来驱动某个部件的运动，这里就存在坐标变换。这里简单举例，...</p>
+        <a class='prev' href='/1970/01/01/ROS1/ROS1%E9%9B%B6%E7%A2%8E%E7%AC%94%E8%AE%B0/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>ROS1零碎笔记</p>
+          <p class='content'>ros::spin 和 ros::spinOnce 的区别
+这俩函数学名叫ROS消息回调处理函数，即消息回调要经过他俩中一个才能回调执行。
+两者区别在于 spin 有进无出，一直阻塞等待消息到来...</p>
         </a>
       
       

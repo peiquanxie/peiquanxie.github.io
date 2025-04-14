@@ -1801,7 +1801,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1744611778050),
+    lastupdate: new Date(1744612369232),
     sidebar: {
       for_page: ["blogger","category","webinfo","music"],
       for_post: ["toc"],
@@ -2812,22 +2812,17 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/1970/01/01/pytorch%E5%9F%BA%E7%A1%80/4-%E6%A8%A1%E5%9E%8B%E6%90%AD%E5%BB%BA/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>4-模型搭建</p>
-          <p class='content'>1 神经网络搭建
-1.1 通过 forward 构建
-我们可以通过继承 nn.Module，构建我们自己的类来定义我们的神经网络。其中，我们在__init__方法中实现各个子Module的初始化...</p>
+        <a class='prev' href='/1970/01/01/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/1-%E7%BA%BF%E7%A8%8B%E7%AE%A1%E7%90%86/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>1-线程管理</p>
+          <p class='content'>每个C++程序至少有一个线程，即main线程。随后，程序可以发起更多线程，他们以别的函数作为入口。当main函数返回时，程序随即退出，其他线程也会随着终结（当然如果有detach线程，情况不一样...</p>
         </a>
       
       
-        <a class='next' href='/1970/01/01/pytorch%E5%9F%BA%E7%A1%80/5-%E6%A8%A1%E5%9E%8B%E8%B0%83%E5%8F%82/'>
-          <p class='title'>5-模型调参<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>1 超参数
-超参数是可调整的参数，让你控制模型优化过程。不同的超参数值会影响模型的训练和收敛率。
-常用的超参数如下：
-
-epoch : 在整个数据集上迭代的次数。
-batch : 每一次更新参数...</p>
+        <a class='next' href='/1970/01/01/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/2-%E5%85%B1%E4%BA%AB%E6%95%B0%E6%8D%AE/'>
+          <p class='title'>2-共享数据<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>如果线程间所有的共享数据都是只读，就不会有问题。多线程共享数据的问题大多由写数据引起，以下介绍线程间共享数据的安全做法。
+1 互斥锁
+C++中，保护共享数据最基础的方式就是互斥（std::loc...</p>
         </a>
       
     </div>

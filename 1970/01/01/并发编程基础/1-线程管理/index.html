@@ -1801,7 +1801,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1744611778050),
+    lastupdate: new Date(1744612369232),
     sidebar: {
       for_page: ["blogger","category","webinfo","music"],
       for_post: ["toc"],
@@ -2842,11 +2842,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         </a>
       
       
-        <a class='next' href='/1970/01/01/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/2-%E5%85%B1%E4%BA%AB%E6%95%B0%E6%8D%AE/'>
-          <p class='title'>2-共享数据<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>如果线程间所有的共享数据都是只读，就不会有问题。多线程共享数据的问题大多由写数据引起，以下介绍线程间共享数据的安全做法。
-1 互斥锁
-C++中，保护共享数据最基础的方式就是互斥（std::loc...</p>
+        <a class='next' href='/1970/01/01/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/10.%E8%AE%A9pthread%E6%9B%B4%E5%A5%BD%E7%94%A8/'>
+          <p class='title'>10-让pthread更好用<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>事实上std::thread正是从pthread中继承发展而来的，你可以发现他们的用法几乎一致。由于一些历史原因，可能我们还是得用到pthread线程库。但pthread 有一些用法不太灵活，我...</p>
         </a>
       
     </div>

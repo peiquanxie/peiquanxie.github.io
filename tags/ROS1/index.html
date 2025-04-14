@@ -1799,7 +1799,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1744611778050),
+    lastupdate: new Date(1744612369232),
     sidebar: {
       for_page: ["blogger","category","webinfo","music"],
       for_post: ["toc"],
@@ -2616,7 +2616,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/1970/01/01/ROS1/10-动态参数机制简汇/">
+  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/1970/01/01/ROS1/2-ROS1命令汇总/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="PQ.XIE BLOG">
   </span>
@@ -2634,17 +2634,22 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/1970/01/01/ROS1/10-%E5%8A%A8%E6%80%81%E5%8F%82%E6%95%B0%E6%9C%BA%E5%88%B6%E7%AE%80%E6%B1%87/"  itemprop="url">
-        10-动态参数机制简汇
+      <a href="/1970/01/01/ROS1/2-ROS1%E5%91%BD%E4%BB%A4%E6%B1%87%E6%80%BB/"  itemprop="url">
+        2-ROS1命令汇总
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        1 动态参数的作用
-​		ROS中的参数服务器无法在线动态更新，也就是说如果Listener不主动查询参数值，就无法获知Talker是否已经修改了参数。这就对ROS参数服务器的使用造成了很大的局限，很多场景下我们还是需要动态更新参数的机制，例如参数调试、功能切换等，所以ROS提供了另外一个非常有用的功能包 —— dynamic_reconfigure，实现这种动态配置参数的机制。
-​		动态...
+        
+命令一页纸：https://blog-images-submit.oss-cn-beijing.aliyuncs.com/ROS1/ROScheatsheet_catkin.pdf
+
+1 node相关命令
+rosnode list
+rosnode info &lt;node_name&gt;
+rosnode ping &lt;node_name&gt;
+rosnode ping --all...
       
     
   </div>
@@ -2665,7 +2670,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       </div>
       
         <div>
-          <a class='readmore' href='/1970/01/01/ROS1/10-%E5%8A%A8%E6%80%81%E5%8F%82%E6%95%B0%E6%9C%BA%E5%88%B6%E7%AE%80%E6%B1%87/' itemprop="url">
+          <a class='readmore' href='/1970/01/01/ROS1/2-ROS1%E5%91%BD%E4%BB%A4%E6%B1%87%E6%80%BB/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -2753,7 +2758,7 @@ ROS包含：通信框架 + 开发工具 + 应用功能 + 生态系统
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/1970/01/01/ROS1/2-ROS1命令汇总/">
+  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/1970/01/01/ROS1/10-动态参数机制简汇/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="PQ.XIE BLOG">
   </span>
@@ -2771,22 +2776,17 @@ ROS包含：通信框架 + 开发工具 + 应用功能 + 生态系统
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/1970/01/01/ROS1/2-ROS1%E5%91%BD%E4%BB%A4%E6%B1%87%E6%80%BB/"  itemprop="url">
-        2-ROS1命令汇总
+      <a href="/1970/01/01/ROS1/10-%E5%8A%A8%E6%80%81%E5%8F%82%E6%95%B0%E6%9C%BA%E5%88%B6%E7%AE%80%E6%B1%87/"  itemprop="url">
+        10-动态参数机制简汇
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        
-命令一页纸：https://blog-images-submit.oss-cn-beijing.aliyuncs.com/ROS1/ROScheatsheet_catkin.pdf
-
-1 node相关命令
-rosnode list
-rosnode info &lt;node_name&gt;
-rosnode ping &lt;node_name&gt;
-rosnode ping --all...
+        1 动态参数的作用
+​		ROS中的参数服务器无法在线动态更新，也就是说如果Listener不主动查询参数值，就无法获知Talker是否已经修改了参数。这就对ROS参数服务器的使用造成了很大的局限，很多场景下我们还是需要动态更新参数的机制，例如参数调试、功能切换等，所以ROS提供了另外一个非常有用的功能包 —— dynamic_reconfigure，实现这种动态配置参数的机制。
+​		动态...
       
     
   </div>
@@ -2807,73 +2807,7 @@ rosnode ping --all...
       </div>
       
         <div>
-          <a class='readmore' href='/1970/01/01/ROS1/2-ROS1%E5%91%BD%E4%BB%A4%E6%B1%87%E6%80%BB/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/1970/01/01/ROS1/3-ROS1快速开始/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-    <meta itemprop="description" content="个人博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/1970/01/01/ROS1/3-ROS1%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B/"  itemprop="url">
-        3-ROS1快速开始
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        0 安装
-工作环境：x86_64 + ubuntu20.04 + ros-noetic
-12345678sudo mkdir /etc/apt/sources.list.d/sudo sh -c &#x27;echo &quot;deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main&quot; &gt; /etc/apt...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="1970-01-01T08:00:00+08:00">1970-01-01</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/ROS1/">ROS1</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/ROS1/" itemprop="url"><span itemprop="name">ROS1</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/1970/01/01/ROS1/3-ROS1%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B/' itemprop="url">
+          <a class='readmore' href='/1970/01/01/ROS1/10-%E5%8A%A8%E6%80%81%E5%8F%82%E6%95%B0%E6%9C%BA%E5%88%B6%E7%AE%80%E6%B1%87/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -2959,7 +2893,7 @@ rosnode ping --all...
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/1970/01/01/ROS1/4-topic通信机制简汇/">
+  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/1970/01/01/ROS1/3-ROS1快速开始/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="PQ.XIE BLOG">
   </span>
@@ -2977,16 +2911,17 @@ rosnode ping --all...
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/1970/01/01/ROS1/4-topic%E9%80%9A%E4%BF%A1%E6%9C%BA%E5%88%B6%E7%AE%80%E6%B1%87/"  itemprop="url">
-        4-topic通信机制简汇
+      <a href="/1970/01/01/ROS1/3-ROS1%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B/"  itemprop="url">
+        3-ROS1快速开始
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        1 Publisher（CPP）
-12345678910111213141516171819202122232425262728#include &lt;ros/ros.h&gt;#include &lt;geometry_msgs/Twist.h&gt;int main(int argc, char **argv)&#123;    // ROS节点初始化    ros::init(arg...
+        0 安装
+工作环境：x86_64 + ubuntu20.04 + ros-noetic
+12345678sudo mkdir /etc/apt/sources.list.d/sudo sh -c &#x27;echo &quot;deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main&quot; &gt; /etc/apt...
       
     
   </div>
@@ -3007,7 +2942,74 @@ rosnode ping --all...
       </div>
       
         <div>
-          <a class='readmore' href='/1970/01/01/ROS1/4-topic%E9%80%9A%E4%BF%A1%E6%9C%BA%E5%88%B6%E7%AE%80%E6%B1%87/' itemprop="url">
+          <a class='readmore' href='/1970/01/01/ROS1/3-ROS1%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/1970/01/01/ROS1/6-param通信机制简汇/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="PQ.XIE BLOG">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="PQ.XIE BLOG">
+    <meta itemprop="description" content="个人博客">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/1970/01/01/ROS1/6-param%E9%80%9A%E4%BF%A1%E6%9C%BA%E5%88%B6%E7%AE%80%E6%B1%87/"  itemprop="url">
+        6-param通信机制简汇
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        1 全局参数模型
+
+1.1 全局参数配置（CPP）
+1234567891011121314151617181920212223242526272829#include &lt;string&gt;#include &lt;ros/ros.h&gt;#include &lt;std_srvs/Empty.h&gt;int main(int argc, char **argv)&#123;	in...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="1970-01-01T08:00:00+08:00">1970-01-01</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/ROS1/">ROS1</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/ROS1/" itemprop="url"><span itemprop="name">ROS1</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/1970/01/01/ROS1/6-param%E9%80%9A%E4%BF%A1%E6%9C%BA%E5%88%B6%E7%AE%80%E6%B1%87/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3089,7 +3091,7 @@ rosnode ping --all...
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/1970/01/01/ROS1/6-param通信机制简汇/">
+  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/1970/01/01/ROS1/4-topic通信机制简汇/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="PQ.XIE BLOG">
   </span>
@@ -3107,18 +3109,16 @@ rosnode ping --all...
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/1970/01/01/ROS1/6-param%E9%80%9A%E4%BF%A1%E6%9C%BA%E5%88%B6%E7%AE%80%E6%B1%87/"  itemprop="url">
-        6-param通信机制简汇
+      <a href="/1970/01/01/ROS1/4-topic%E9%80%9A%E4%BF%A1%E6%9C%BA%E5%88%B6%E7%AE%80%E6%B1%87/"  itemprop="url">
+        4-topic通信机制简汇
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        1 全局参数模型
-
-1.1 全局参数配置（CPP）
-1234567891011121314151617181920212223242526272829#include &lt;string&gt;#include &lt;ros/ros.h&gt;#include &lt;std_srvs/Empty.h&gt;int main(int argc, char **argv)&#123;	in...
+        1 Publisher（CPP）
+12345678910111213141516171819202122232425262728#include &lt;ros/ros.h&gt;#include &lt;geometry_msgs/Twist.h&gt;int main(int argc, char **argv)&#123;    // ROS节点初始化    ros::init(arg...
       
     
   </div>
@@ -3139,7 +3139,7 @@ rosnode ping --all...
       </div>
       
         <div>
-          <a class='readmore' href='/1970/01/01/ROS1/6-param%E9%80%9A%E4%BF%A1%E6%9C%BA%E5%88%B6%E7%AE%80%E6%B1%87/' itemprop="url">
+          <a class='readmore' href='/1970/01/01/ROS1/4-topic%E9%80%9A%E4%BF%A1%E6%9C%BA%E5%88%B6%E7%AE%80%E6%B1%87/' itemprop="url">
             阅读全文
           </a>
         </div>

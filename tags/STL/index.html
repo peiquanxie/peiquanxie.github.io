@@ -1799,7 +1799,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1744611778050),
+    lastupdate: new Date(1744612369232),
     sidebar: {
       for_page: ["blogger","category","webinfo","music"],
       for_post: ["toc"],
@@ -2612,6 +2612,72 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/1970/01/01/STL源码笔记/3-STL源码笔记-分配器/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="PQ.XIE BLOG">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="PQ.XIE BLOG">
+    <meta itemprop="description" content="个人博客">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/1970/01/01/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/3-STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0-%E5%88%86%E9%85%8D%E5%99%A8/"  itemprop="url">
+        3-STL源码笔记-分配器
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        1 内存的申请和释放
+C++内存管理的都是堆（Heap）内存，C++中全局的内存申请和释放函数是 operator new和 operator delete可以被重载（但不推荐）.
+operator new用于申请裸空间（注意区别于new，并不调用构造函数），其最终会调用 malloc；内存释放的动作是 operator delete，最终调用 free。但是malloc在申请内存会产生额外...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="1970-01-01T08:00:00+08:00">1970-01-01</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/">STL源码笔记</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/" itemprop="url"><span itemprop="name">STL源码笔记</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/1970/01/01/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/3-STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0-%E5%88%86%E9%85%8D%E5%99%A8/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
   <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/1970/01/01/STL源码笔记/2-STL源码笔记-前置基础/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="PQ.XIE BLOG">
@@ -2747,74 +2813,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/1970/01/01/STL源码笔记/4-迭代器&序列式容器/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-    <meta itemprop="description" content="个人博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/1970/01/01/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/4-%E8%BF%AD%E4%BB%A3%E5%99%A8&%E5%BA%8F%E5%88%97%E5%BC%8F%E5%AE%B9%E5%99%A8/"  itemprop="url">
-        4-迭代器&序列式容器
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        1 容器的分类
-STL容器从内存结构上可分为序列式容器和关联性容器，序列式容器更关注于快速存取，而关联性容器更关注于快速查找。两大类容器分支又有一些内含关系，具体如下。
-
-2 list
-先从简单的链表说起，以说明容器与迭代器的关系。每个容器都有自己的专属迭代器，正是迭代器的出现，帮助容器屏蔽了内存存储上的差异。list的结构和源码如下，由于侯捷先生的胶片展示的不能再清晰，这里不做更多解释。（...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="1970-01-01T08:00:00+08:00">1970-01-01</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/">STL源码笔记</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/" itemprop="url"><span itemprop="name">STL源码笔记</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/1970/01/01/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/4-%E8%BF%AD%E4%BB%A3%E5%99%A8&%E5%BA%8F%E5%88%97%E5%BC%8F%E5%AE%B9%E5%99%A8/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
   <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/1970/01/01/STL源码笔记/5-STL源码笔记-关联式容器/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="PQ.XIE BLOG">
@@ -2883,7 +2881,7 @@ STL容器从内存结构上可分为序列式容器和关联性容器，序列�
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/1970/01/01/STL源码笔记/3-STL源码笔记-分配器/">
+  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/1970/01/01/STL源码笔记/4-迭代器&序列式容器/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="PQ.XIE BLOG">
   </span>
@@ -2901,17 +2899,19 @@ STL容器从内存结构上可分为序列式容器和关联性容器，序列�
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/1970/01/01/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/3-STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0-%E5%88%86%E9%85%8D%E5%99%A8/"  itemprop="url">
-        3-STL源码笔记-分配器
+      <a href="/1970/01/01/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/4-%E8%BF%AD%E4%BB%A3%E5%99%A8&%E5%BA%8F%E5%88%97%E5%BC%8F%E5%AE%B9%E5%99%A8/"  itemprop="url">
+        4-迭代器&序列式容器
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        1 内存的申请和释放
-C++内存管理的都是堆（Heap）内存，C++中全局的内存申请和释放函数是 operator new和 operator delete可以被重载（但不推荐）.
-operator new用于申请裸空间（注意区别于new，并不调用构造函数），其最终会调用 malloc；内存释放的动作是 operator delete，最终调用 free。但是malloc在申请内存会产生额外...
+        1 容器的分类
+STL容器从内存结构上可分为序列式容器和关联性容器，序列式容器更关注于快速存取，而关联性容器更关注于快速查找。两大类容器分支又有一些内含关系，具体如下。
+
+2 list
+先从简单的链表说起，以说明容器与迭代器的关系。每个容器都有自己的专属迭代器，正是迭代器的出现，帮助容器屏蔽了内存存储上的差异。list的结构和源码如下，由于侯捷先生的胶片展示的不能再清晰，这里不做更多解释。（...
       
     
   </div>
@@ -2932,7 +2932,73 @@ operator new用于申请裸空间（注意区别于new，并不调用构造函�
       </div>
       
         <div>
-          <a class='readmore' href='/1970/01/01/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/3-STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0-%E5%88%86%E9%85%8D%E5%99%A8/' itemprop="url">
+          <a class='readmore' href='/1970/01/01/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/4-%E8%BF%AD%E4%BB%A3%E5%99%A8&%E5%BA%8F%E5%88%97%E5%BC%8F%E5%AE%B9%E5%99%A8/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/1970/01/01/STL源码笔记/8-STL源码笔记-零散/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="PQ.XIE BLOG">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="PQ.XIE BLOG">
+    <meta itemprop="description" content="个人博客">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/1970/01/01/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/8-STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0-%E9%9B%B6%E6%95%A3/"  itemprop="url">
+        8-STL源码笔记-零散
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        1 万能Hash
+自定义hash function的形式
+123456789101112131415161718#include &lt;functional&gt;class Customer&#123;    ...&#125;;//仿函数形式class CustomerHash&#123;public:    std::size_t operator()(const Customer&...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="1970-01-01T08:00:00+08:00">1970-01-01</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/">STL源码笔记</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/" itemprop="url"><span itemprop="name">STL源码笔记</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/1970/01/01/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/8-STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0-%E9%9B%B6%E6%95%A3/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3073,72 +3139,6 @@ STL中存...
       
         <div>
           <a class='readmore' href='/1970/01/01/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/7-%E4%BB%BF%E5%87%BD%E6%95%B0&%E9%80%82%E9%85%8D%E5%99%A8/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/1970/01/01/STL源码笔记/8-STL源码笔记-零散/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-    <meta itemprop="description" content="个人博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/1970/01/01/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/8-STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0-%E9%9B%B6%E6%95%A3/"  itemprop="url">
-        8-STL源码笔记-零散
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        1 万能Hash
-自定义hash function的形式
-123456789101112131415161718#include &lt;functional&gt;class Customer&#123;    ...&#125;;//仿函数形式class CustomerHash&#123;public:    std::size_t operator()(const Customer&...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="1970-01-01T08:00:00+08:00">1970-01-01</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/">STL源码笔记</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/" itemprop="url"><span itemprop="name">STL源码笔记</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/1970/01/01/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/8-STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0-%E9%9B%B6%E6%95%A3/' itemprop="url">
             阅读全文
           </a>
         </div>
