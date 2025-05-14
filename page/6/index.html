@@ -1799,7 +1799,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1747188207346),
+    lastupdate: new Date(1747188988163),
     sidebar: {
       for_page: ["blogger","category","webinfo","music"],
       for_post: ["toc"],
@@ -2589,7 +2589,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2023/09/03/ROS1/4-topic通信机制简汇/">
+  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2023/09/11/ROS1/ROS1零碎笔记/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="PQ.XIE BLOG">
   </span>
@@ -2607,16 +2607,17 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/09/03/ROS1/4-topic%E9%80%9A%E4%BF%A1%E6%9C%BA%E5%88%B6%E7%AE%80%E6%B1%87/"  itemprop="url">
-        4-topic通信机制简汇
+      <a href="/2023/09/11/ROS1/ROS1%E9%9B%B6%E7%A2%8E%E7%AC%94%E8%AE%B0/"  itemprop="url">
+        ROS1零碎笔记
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        1 Publisher（CPP）
-12345678910111213141516171819202122232425262728#include &lt;ros/ros.h&gt;#include &lt;geometry_msgs/Twist.h&gt;int main(int argc, char **argv)&#123;    // ROS节点初始化    ros::init(arg...
+        ros::spin 和 ros::spinOnce 的区别
+这俩函数学名叫ROS消息回调处理函数，即消息回调要经过他俩中一个才能回调执行。
+两者区别在于 spin 有进无出，一直阻塞等待消息到来才去回调处理函数；而 **spinOnce ** 查询一次消息队列，不管有没有消息都会往下执行，spinOnce 往往需要考虑调用消息的时机，调用频率，以及消息池的大小，这些都要根据现实情况协调好，不...
       
     
   </div>
@@ -2624,7 +2625,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-09-03T16:26:35+08:00">2023-09-03</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-09-11T11:22:55+08:00">2023-09-11</time>
         
           <span class="dot"></span>
           <a class="category-link" href="/categories/ROS1/">ROS1</a>
@@ -2637,7 +2638,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       </div>
       
         <div>
-          <a class='readmore' href='/2023/09/03/ROS1/4-topic%E9%80%9A%E4%BF%A1%E6%9C%BA%E5%88%B6%E7%AE%80%E6%B1%87/' itemprop="url">
+          <a class='readmore' href='/2023/09/11/ROS1/ROS1%E9%9B%B6%E7%A2%8E%E7%AC%94%E8%AE%B0/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -2654,7 +2655,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2023/09/03/ROS1/3-ROS1快速开始/">
+  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2023/09/10/ROS1/3-ROS1快速开始/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="PQ.XIE BLOG">
   </span>
@@ -2672,7 +2673,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/09/03/ROS1/3-ROS1%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B/"  itemprop="url">
+      <a href="/2023/09/10/ROS1/3-ROS1%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B/"  itemprop="url">
         3-ROS1快速开始
       </a>
     </h2>
@@ -2690,7 +2691,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-09-03T16:26:34+08:00">2023-09-03</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-09-10T09:17:43+08:00">2023-09-10</time>
         
           <span class="dot"></span>
           <a class="category-link" href="/categories/ROS1/">ROS1</a>
@@ -2703,7 +2704,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       </div>
       
         <div>
-          <a class='readmore' href='/2023/09/03/ROS1/3-ROS1%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B/' itemprop="url">
+          <a class='readmore' href='/2023/09/10/ROS1/3-ROS1%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -2720,7 +2721,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2023/09/03/ROS1/2-ROS1命令汇总/">
+  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2023/09/09/ROS1/2-ROS1命令汇总/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="PQ.XIE BLOG">
   </span>
@@ -2738,7 +2739,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/09/03/ROS1/2-ROS1%E5%91%BD%E4%BB%A4%E6%B1%87%E6%80%BB/"  itemprop="url">
+      <a href="/2023/09/09/ROS1/2-ROS1%E5%91%BD%E4%BB%A4%E6%B1%87%E6%80%BB/"  itemprop="url">
         2-ROS1命令汇总
       </a>
     </h2>
@@ -2761,7 +2762,7 @@ rosnode ping --all...
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-09-03T16:26:34+08:00">2023-09-03</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-09-09T18:38:55+08:00">2023-09-09</time>
         
           <span class="dot"></span>
           <a class="category-link" href="/categories/ROS1/">ROS1</a>
@@ -2774,7 +2775,7 @@ rosnode ping --all...
       </div>
       
         <div>
-          <a class='readmore' href='/2023/09/03/ROS1/2-ROS1%E5%91%BD%E4%BB%A4%E6%B1%87%E6%80%BB/' itemprop="url">
+          <a class='readmore' href='/2023/09/09/ROS1/2-ROS1%E5%91%BD%E4%BB%A4%E6%B1%87%E6%80%BB/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -2900,7 +2901,7 @@ ROS包含：通信框架 + 开发工具 + 应用功能 + 生态系统
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-08-20T17:29:20+08:00">2023-08-20</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-08-20T17:29:55+08:00">2023-08-20</time>
         
           <span class="dot"></span>
           <a class="category-link" href="/categories/ROS2%E5%9F%BA%E7%A1%80/">ROS2基础</a>
@@ -2964,7 +2965,7 @@ ROS包含：通信框架 + 开发工具 + 应用功能 + 生态系统
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-08-20T17:29:20+08:00">2023-08-20</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-08-20T17:29:45+08:00">2023-08-20</time>
         
           <span class="dot"></span>
           <a class="category-link" href="/categories/ROS2%E5%9F%BA%E7%A1%80/">ROS2基础</a>
@@ -3033,7 +3034,7 @@ ROS包含：通信框架 + 开发工具 + 应用功能 + 生态系统
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-08-20T17:29:19+08:00">2023-08-20</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-08-20T17:29:31+08:00">2023-08-20</time>
         
           <span class="dot"></span>
           <a class="category-link" href="/categories/ROS2%E5%9F%BA%E7%A1%80/">ROS2基础</a>
@@ -3105,7 +3106,7 @@ ROS包含：通信框架 + 开发工具 + 应用功能 + 生态系统
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-08-20T17:29:19+08:00">2023-08-20</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-08-20T17:29:21+08:00">2023-08-20</time>
         
           <span class="dot"></span>
           <a class="category-link" href="/categories/ROS2%E5%9F%BA%E7%A1%80/">ROS2基础</a>
@@ -3204,7 +3205,7 @@ DDS实现层其实就是对不同常见的DDS接口进行再次的封装...
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2023/08/20/ROS2基础/2-ROS2安装(X86篇)/">
+  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2023/08/20/ROS2基础/1-ROS2安装(armhf篇)/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="PQ.XIE BLOG">
   </span>
@@ -3222,21 +3223,21 @@ DDS实现层其实就是对不同常见的DDS接口进行再次的封装...
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/08/20/ROS2%E5%9F%BA%E7%A1%80/2-ROS2%E5%AE%89%E8%A3%85(X86%E7%AF%87)/"  itemprop="url">
-        2-ROS2安装(X86篇)
+      <a href="/2023/08/20/ROS2%E5%9F%BA%E7%A1%80/1-ROS2%E5%AE%89%E8%A3%85(armhf%E7%AF%87)/"  itemprop="url">
+        1-ROS2安装(armhf篇)
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        本篇安装环境如下：
-CPU架构：amd_64
+        由于ROS官方并没有提供armhf CPU架构的ROS2二进制安装文件，本篇整理了从ROS2源码编译安装的方法。本篇安装环境如下：
+CPU架构：armv7l
 操作系统：ubuntu20.04
 1 更换镜像源（可选）
 更换镜像源可以加速各种依赖库下载速度，这里提供常用的 ubuntu镜像源 和 pip源。
 1.1 更换ubuntu镜像源
-这里采用清华源，同学们可到该网站  https://mirror.tuna.tsinghua.edu.cn/help/ubuntu/ 寻找自己系统版本对应的源。需要注意...
+这里采用清华源，同学们可到该网站  https://mi...
       
     
   </div>
@@ -3257,7 +3258,7 @@ CPU架构：amd_64
       </div>
       
         <div>
-          <a class='readmore' href='/2023/08/20/ROS2%E5%9F%BA%E7%A1%80/2-ROS2%E5%AE%89%E8%A3%85(X86%E7%AF%87)/' itemprop="url">
+          <a class='readmore' href='/2023/08/20/ROS2%E5%9F%BA%E7%A1%80/1-ROS2%E5%AE%89%E8%A3%85(armhf%E7%AF%87)/' itemprop="url">
             阅读全文
           </a>
         </div>
