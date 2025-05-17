@@ -1799,7 +1799,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1747188988163),
+    lastupdate: new Date(1747466642978),
     sidebar: {
       for_page: ["blogger","category","webinfo","music"],
       for_post: ["toc"],
@@ -2589,6 +2589,146 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2024/10/09/STL源码笔记/7-仿函数&适配器/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="PQ.XIE BLOG">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="PQ.XIE BLOG">
+    <meta itemprop="description" content="个人博客">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2024/10/09/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/7-%E4%BB%BF%E5%87%BD%E6%95%B0&%E9%80%82%E9%85%8D%E5%99%A8/"  itemprop="url">
+        7-仿函数&适配器
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        1 仿函数
+仿函数（functors），可认为重载了operator()的类，表现上类似函数，为算法服务。
+
+
+
+仿函数重载了 operator()操作符，以供算法调用。
+仿函数继承 unary_function 或 binary_function，以记录入参和返回值类型供算法提问。
+仿函数传给算法时，应该传入一个仿函数对象，如：less&lt;int&gt;().
+
+2 适配器
+STL中存...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2024-10-09T17:12:54+08:00">2024-10-09</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/">STL源码笔记</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/" itemprop="url"><span itemprop="name">STL源码笔记</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2024/10/09/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/7-%E4%BB%BF%E5%87%BD%E6%95%B0&%E9%80%82%E9%85%8D%E5%99%A8/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2024/10/09/STL源码笔记/6-迭代器&算法/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="PQ.XIE BLOG">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="PQ.XIE BLOG">
+    <meta itemprop="description" content="个人博客">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2024/10/09/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/6-%E8%BF%AD%E4%BB%A3%E5%99%A8&%E7%AE%97%E6%B3%95/"  itemprop="url">
+        6-迭代器&算法
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        算法是STL六大部件中重要的一个，其是个function template. 算法看不见容器，对其一无所知，一切信息都需要从Iterator中取得，所以Iterator需要具备能回答算法询问的东西。
+算法的典型形式如下所示：
+123456789template &lt;typename Iterator&gt;Algorithm(Iterator iter1, Iterator iter2)...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2024-10-09T17:12:53+08:00">2024-10-09</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/">STL源码笔记</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/" itemprop="url"><span itemprop="name">STL源码笔记</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2024/10/09/STL%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0/6-%E8%BF%AD%E4%BB%A3%E5%99%A8&%E7%AE%97%E6%B3%95/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
   <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2024/10/09/C++那些事/7-简单的CLI/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="PQ.XIE BLOG">
@@ -3125,140 +3265,6 @@ operator new用于申请裸空间（注意区别于new，并不调用构造函�
           </div>
         
       
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2024/07/01/C++那些事/5-IO多路复用/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-    <meta itemprop="description" content="个人博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2024/07/01/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/5-IO%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8/"  itemprop="url">
-        5-I/O多路复用
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        我们经常在单个线程中去管理某个数据 I/O ，但当软件变得复杂时，尤其是高并发的生产环境中，一个线程对应一个 I/O 会面临资源吃紧的情况。IO多路复用（Input/Output Multiplexing）是一种在单个线程中管理多个输入/输出通道的技术。它允许一个线程同时监听多个输入流（例如网络套接字、文件描述符等），并在有数据可读或可写时进行相应的处理，而不需要为每个通道创建一个独立的线程...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2024-07-01T17:15:35+08:00">2024-07-01</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/C-%E9%82%A3%E4%BA%9B%E4%BA%8B/">C++那些事</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/C-%E9%82%A3%E4%BA%9B%E4%BA%8B/" itemprop="url"><span itemprop="name">C++那些事</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2024/07/01/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/5-IO%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2024/03/27/数据库/1-SQLite语法一页纸/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-    <meta itemprop="description" content="个人博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2024/03/27/%E6%95%B0%E6%8D%AE%E5%BA%93/1-SQLite%E8%AF%AD%E6%B3%95%E4%B8%80%E9%A1%B5%E7%BA%B8/"  itemprop="url">
-        1-SQLite语法一页纸
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        基础语法
-创建数据库
-存在则连接，不存在则创建。 .database 可查询存在哪些数据库。
-1.open xxx.db
-创建表
-ID 作为主键，NOT NULL 的约束表示在表中创建纪录时这些字段不能为 NULL。.tables 可查询存在哪些表。
-1234567CREATE TABLE COMPANY(   ID INT PRIMARY KEY     NOT NULL,   NAME ...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2024-03-27T11:08:18+08:00">2024-03-27</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url"><span itemprop="name">数据库</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2024/03/27/%E6%95%B0%E6%8D%AE%E5%BA%93/1-SQLite%E8%AF%AD%E6%B3%95%E4%B8%80%E9%A1%B5%E7%BA%B8/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-
-  
-
-</div>
-
-          </div>
-        
-      
     
   </section>
   
@@ -3419,6 +3425,11 @@ ID 作为主键，NOT NULL 的约束表示在表中创建纪录时这些字段�
             ><div class='name'>先贤文集</div><div class='badge'>(2)</div></a></li>
         
           <li><a class="flat-box"
+            title="/categories/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/" href="/categories/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/"
+            active-action="action-categoriesE5B9B6E8A18CE8AEA1E7AE97"
+            ><div class='name'>并行计算</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box"
             title="/categories/%E5%BB%BA%E7%AB%99/" href="/categories/%E5%BB%BA%E7%AB%99/"
             active-action="action-categoriesE5BBBAE7AB99"
             ><div class='name'>建站</div><div class='badge'>(1)</div></a></li>
@@ -3469,7 +3480,7 @@ ID 作为主键，NOT NULL 的约束表示在表中创建纪录时这些字段�
       
         <div class="webinfo-item">
           <div>文章数目：</div>
-          <div>67 篇</div>
+          <div>69 篇</div>
         </div>
       
 
@@ -3484,7 +3495,7 @@ ID 作为主键，NOT NULL 的约束表示在表中创建纪录时这些字段�
       
         <div class="webinfo-item">
           <div>本站总字数：</div>
-          <div>76.1k 字</div>
+          <div>80.8k 字</div>
         </div>
       
 
@@ -3509,7 +3520,7 @@ ID 作为主键，NOT NULL 的约束表示在表中创建纪录时这些字段�
       
         <div class="webinfo-item">
           <div>最后活动时间：</div>
-          <div id="last-update-show">2025-05-14 日</div>
+          <div id="last-update-show">2025-05-17 日</div>
         </div>
       
     </div>
