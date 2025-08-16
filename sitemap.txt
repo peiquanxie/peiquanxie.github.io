@@ -1,3 +1,4 @@
+https://xie-peiquan.gitee.io/2025/08/16/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/DCIC%202020%20%E6%99%BA%E6%85%A7%E6%B5%B7%E6%B4%8B%E5%BB%BA%E8%AE%BE/
 https://xie-peiquan.gitee.io/2025/05/17/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/openmp%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/
 https://xie-peiquan.gitee.io/2025/05/17/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/armv7-A_neon%E6%8C%87%E4%BB%A4%E6%80%BB%E7%BB%93/
 https://xie-peiquan.gitee.io/2024/11/08/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/1-%E5%8A%A8%E6%80%81%E6%97%B6%E9%97%B4%E8%A7%84%E6%95%B4%E7%AE%97%E6%B3%95/
@@ -91,6 +92,7 @@ https://xie-peiquan.gitee.io/tags/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/
 https://xie-peiquan.gitee.io/tags/%E9%80%9A%E4%BF%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/
 https://xie-peiquan.gitee.io/tags/SQLite/
 https://xie-peiquan.gitee.io/tags/MySQL/
+https://xie-peiquan.gitee.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/
 https://xie-peiquan.gitee.io/tags/%E6%AF%9B%E6%B3%BD%E4%B8%9C%E9%80%89%E9%9B%86/
 https://xie-peiquan.gitee.io/tags/%E6%B7%B7%E5%90%88%E7%BC%96%E7%A8%8B/
 https://xie-peiquan.gitee.io/tags/%E8%81%8A%E7%82%B9%E9%9F%B3%E4%B9%90/
@@ -105,6 +107,7 @@ https://xie-peiquan.gitee.io/categories/C-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E
 https://xie-peiquan.gitee.io/categories/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/
 https://xie-peiquan.gitee.io/categories/%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E7%AE%97%E6%B3%95/
 https://xie-peiquan.gitee.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/
+https://xie-peiquan.gitee.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/
 https://xie-peiquan.gitee.io/categories/%E7%A4%BE%E4%BC%9A%E7%A7%91%E5%AD%A6/
 https://xie-peiquan.gitee.io/categories/%E6%B7%B7%E5%90%88%E7%BC%96%E7%A8%8B/
 https://xie-peiquan.gitee.io/categories/%E9%9F%B3%E4%B9%90/
