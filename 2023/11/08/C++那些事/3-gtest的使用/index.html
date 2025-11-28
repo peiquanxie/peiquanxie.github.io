@@ -46,7 +46,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2023-11-08T09:13:52.000Z">
-<meta property="article:modified_time" content="2025-05-14T02:14:15.244Z">
+<meta property="article:modified_time" content="2025-10-11T06:33:00.842Z">
 <meta property="article:author" content="PQ.XIE">
 <meta property="article:tag" content="C++库">
 <meta name="twitter:card" content="summary">
@@ -1801,7 +1801,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1755758441118),
+    lastupdate: new Date(1764299183302),
     sidebar: {
       for_page: ["blogger","category","webinfo","music"],
       for_post: ["toc"],
@@ -2644,7 +2644,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：1.4k 字</p>
+      <p>字数：1.6k 字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -2699,10 +2699,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">g++ ./mytest.cpp -lgtest -std=c++14 -lgtest_main -lpthread -o mytest</span><br></pre></td></tr></table></figure>
 <p>其中链接 -lgtest_main 是因为测试的 main 函数在 gtest_main.a 库中，由它拉起所有的测试用例。</p>
 <h3 id="3-2-断言接口">3.2 断言接口</h3>
-<p>gtest中，断言的宏可以分为两类，一类是ASSERT系列，一类是EXPECT系列。<br>
-<strong>ASSERT_*</strong> 系列的断言（Fatal assertion），当检查点失败时，退出当前函数（注意：并非退出当前案例）。<br>
-<strong>EXPECT_*</strong> 系列的断言(Nonfatal assertion)，当检查点失败时，继续执行下一个检查点（每一个断言表示一个测试点）。<br>
-通常情况应该首选使用 EXPECT_ ，因为 ASSERT_ 在报告完错误后不会进行清理工作，有可能导致内存泄露问题。</p>
+<p>gtest中，断言的宏可以分为两类，一类是ASSERT系列，一类是EXPECT系列。</p>
+<ul>
+<li>​​ASSERT_（致命断言）​​：当断言失败时，它会立即终止当前测试函数（注意，是当前 TEST或 TEST_F函数）的执行。这意味着该断言之后的所有代码都不会再运行。这就像是遇到一个无法逾越的障碍，必须停下来。</li>
+<li>​​EXPECT_（非致命断言）​​：当断言失败时，它会生成一个错误记录，但测试函数会继续执行下一个断言。这允许你在单次测试运行中验证多个独立条件，并看到所有失败的检查点。这更像是收集一系列问题，然后统一汇报。</li>
+<li>一般使用 ASSERT_ 验证关键前提​。使用 EXPECT_ 的场景：验证多个独立条件​。</li>
+</ul>
 <h4 id="3-2-1-布尔型检查">3.2.1 布尔型检查</h4>
 <table>
 <thead>
@@ -2871,7 +2873,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>其中，test_suite_name 为测试组名，test_name 为测试用例名，一个测试组可包含多个测试用例。<strong>注意这里同一个 test_suite 下的 test 会可能相互影响。</strong></p>
 <h4 id="3-3-2-test-f">3.3.2 TEST_F</h4>
 <p><code>TEST_F(test_fixture, test_name)</code></p>
-<p>TEST_F与TEST的区别是，TEST_F提供了一个初始化函数（SetUp）和一个清理函数(TearDown)，运行每一个TEST_F都会调用 SetUp 和 TearDown 函数，因此所有的TEST_F是互相独立的，都是在初始化状态下运行。<strong>多个测试场景需要相同数据配置的情况，用 TEST_F。</strong></p>
+<ul>
+<li>TEST宏的作用是创建一个简单测试，它定义了一个测试函数，在这个函数里可以使用任何C++代码并使用提供的断言来进行检查。</li>
+<li>TEST_F主要是进行多样测试，就是多种不同情况的测试TestCase中都会使用相同一份的测试数据的时候将会才用它。即用相同的数据测试不同的行为，如果采用TEST宏进行测试那么将会为不同的测试case创建一份数据。TEST_F宏将会共用一份避免重复拷贝共具灵活性。</li>
+</ul>
 <p>使用 TEST_F 前需要创建一个测试类，继承于::testing::Test类。在类内部使用public或者protected定义其成员，使测试子类可以使用其成员。为什么要定义这个测试类？是为了方便我们为每个 TEST_F 创建一个干净独立的环境，即需要<strong>定义初始化和清理函数</strong>。一般的，“构造函数/析构函数” 和 “SetUp/TearDown” 这两对都可以用来进行初始化和清理。<strong>需要注意不要在 构造/析构函数 里抛出异常。</strong></p>
 <p>以下选自 apollo 项目的 ConfigManagerTest 片段：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">ConfigManagerTest</span> : <span class="keyword">public</span> testing::Test &#123;</span><br><span class="line"> <span class="keyword">protected</span>:</span><br><span class="line">  <span class="built_in">ConfigManagerTest</span>() : <span class="built_in">config_manager_</span>(<span class="literal">NULL</span>) &#123;&#125;</span><br><span class="line">  <span class="keyword">virtual</span> ~<span class="built_in">ConfigManagerTest</span>() &#123;&#125;</span><br><span class="line">  <span class="function"><span class="keyword">virtual</span> <span class="type">void</span> <span class="title">SetUp</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    FLAGS_work_root = <span class="string">&quot;modules/perception/data&quot;</span>;</span><br><span class="line">    FLAGS_config_manager_path = <span class="string">&quot;./config_manager_test/config_manager.config&quot;</span>;</span><br><span class="line">    config_manager_ = ConfigManager::<span class="built_in">instance</span>();</span><br><span class="line">  &#125;</span><br><span class="line"> <span class="keyword">protected</span>:</span><br><span class="line">  ConfigManager* config_manager_;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">TEST_F</span>(ConfigManagerTest, test_Init) &#123;</span><br><span class="line">  <span class="built_in">EXPECT_TRUE</span>(config_manager_-&gt;<span class="built_in">Init</span>());</span><br><span class="line">  <span class="built_in">EXPECT_EQ</span>(config_manager_-&gt;<span class="built_in">NumModels</span>(), <span class="number">3u</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">TEST_F</span>(ConfigManagerTest, test_Reset) &#123;</span><br><span class="line">  <span class="built_in">EXPECT_TRUE</span>(config_manager_-&gt;<span class="built_in">Reset</span>());</span><br><span class="line">  std::string wrong_root = <span class="string">&quot;wrong_root&quot;</span>;</span><br><span class="line">  config_manager_-&gt;<span class="built_in">SetWorkRoot</span>(wrong_root);</span><br><span class="line">  <span class="built_in">EXPECT_FALSE</span>(config_manager_-&gt;<span class="built_in">Reset</span>());</span><br><span class="line">  config_manager_-&gt;<span class="built_in">SetWorkRoot</span>(FLAGS_work_root);   </span><br></pre></td></tr></table></figure>
@@ -2927,10 +2932,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2025-05-14T10:14:15+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2025-10-11T14:33:00+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2025年5月14日</p>
+    <p>更新于：2025年10月11日</p>
   </a>
 </div>
 
@@ -4155,7 +4160,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://xie-peiquan.gitee.io/","name":"PQ.XIE BLOG"}},{"@type":"ListItem","position":2,"item":{"@id":"https://xie-peiquan.gitee.io/categories/C-那些事/","name":"C++那些事"}},{"@type":"ListItem","position":3,"item":{"@id":"https://xie-peiquan.gitee.io/2023/11/08/C++那些事/3-gtest的使用/","name":"3-gtest的使用"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","keywords":"日常唠嗑","description":"个人博客","author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","description":"个人博客"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://xie-peiquan.gitee.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"3-gtest的使用","description":"个人博客","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://xie-peiquan.gitee.io/2023/11/08/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/3-gtest%E7%9A%84%E4%BD%BF%E7%94%A8/"},"author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://xie-peiquan.gitee.io/2023/11/08/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/3-gtest%E7%9A%84%E4%BD%BF%E7%94%A8/","wordCount":0,"datePublished":"2023-11-08T09:13:52.000Z","dateModified":"2025-05-14T02:14:15.244Z","articleSection":"C++那些事","keywords":"C++库","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://xie-peiquan.gitee.io/","name":"PQ.XIE BLOG"}},{"@type":"ListItem","position":2,"item":{"@id":"https://xie-peiquan.gitee.io/categories/C-那些事/","name":"C++那些事"}},{"@type":"ListItem","position":3,"item":{"@id":"https://xie-peiquan.gitee.io/2023/11/08/C++那些事/3-gtest的使用/","name":"3-gtest的使用"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","keywords":"日常唠嗑","description":"个人博客","author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/","description":"个人博客"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","url":"https://xie-peiquan.gitee.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://xie-peiquan.gitee.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"3-gtest的使用","description":"个人博客","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://xie-peiquan.gitee.io/2023/11/08/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/3-gtest%E7%9A%84%E4%BD%BF%E7%94%A8/"},"author":{"@type":"Person","name":"PQ.XIE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://xie-peiquan.gitee.io/"},"publisher":{"@type":"Organization","name":"PQ.XIE BLOG","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://xie-peiquan.gitee.io/2023/11/08/C++%E9%82%A3%E4%BA%9B%E4%BA%8B/3-gtest%E7%9A%84%E4%BD%BF%E7%94%A8/","wordCount":0,"datePublished":"2023-11-08T09:13:52.000Z","dateModified":"2025-10-11T06:33:00.842Z","articleSection":"C++那些事","keywords":"C++库","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

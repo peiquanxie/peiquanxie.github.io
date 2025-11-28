@@ -1799,7 +1799,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1755758441118),
+    lastupdate: new Date(1764299183302),
     sidebar: {
       for_page: ["blogger","category","webinfo","music"],
       for_post: ["toc"],
@@ -2589,6 +2589,134 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2023/09/15/ROS1/9-action通信机制简汇/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="PQ.XIE BLOG">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="PQ.XIE BLOG">
+    <meta itemprop="description" content="个人博客">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/09/15/ROS1/9-action%E9%80%9A%E4%BF%A1%E6%9C%BA%E5%88%B6%E7%AE%80%E6%B1%87/"  itemprop="url">
+        9-action通信机制简汇
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        action实现了一种类似于service的请求/响应通讯机制，区别在于action带有反馈机制，用来不断向客户端反馈任务的进度，并且还支持在任务中途中止运行。操作起来就像这样子，客户端给服务端抛出一个目标，然后客户端就可以去干别的事情了，在任务执行期间，客户端会以消息的形式，周期性地接收到来自服务端的进度反馈，如果没有终止任务的话这个过程会一直延续到收到最终的结果。当然也可以随时终止当前的...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-09-15T17:12:07+08:00">2023-09-15</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/ROS1/">ROS1</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/ROS1/" itemprop="url"><span itemprop="name">ROS1</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/09/15/ROS1/9-action%E9%80%9A%E4%BF%A1%E6%9C%BA%E5%88%B6%E7%AE%80%E6%B1%87/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2023/09/15/ROS1/8-坐标变换TF简述/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="PQ.XIE BLOG">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="PQ.XIE BLOG">
+    <meta itemprop="description" content="个人博客">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/09/15/ROS1/8-%E5%9D%90%E6%A0%87%E5%8F%98%E6%8D%A2TF%E7%AE%80%E8%BF%B0/"  itemprop="url">
+        8-坐标变换TF简述
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        在一个机器人系统中，一般会存在多个部件，每个部件可能会有自己的运动轨迹，这样在一个机器人中就存在多个坐标系。通常，我们会根据坐标系间的差距来驱动某个部件的运动，这里就存在坐标变换。这里简单举例，如下图(古月居)，我们常见的ROS小车激光雷达测距，假设这里只存在车身和雷达两个部件，这里有两个坐标系：车身坐标系（base_link）和雷达坐标系（base_laser）。雷达测距的结果是墙面相对于...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-09-15T11:16:23+08:00">2023-09-15</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/ROS1/">ROS1</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/ROS1/" itemprop="url"><span itemprop="name">ROS1</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/09/15/ROS1/8-%E5%9D%90%E6%A0%87%E5%8F%98%E6%8D%A2TF%E7%AE%80%E8%BF%B0/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
   <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2023/09/15/ROS1/7-launch启动节点/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="PQ.XIE BLOG">
@@ -3129,138 +3257,6 @@ ROS包含：通信框架 + 开发工具 + 应用功能 + 生态系统
           </div>
         
       
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2023/08/20/ROS2基础/7-ROS2 通信汇总(Python篇)/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-    <meta itemprop="description" content="个人博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/08/20/ROS2%E5%9F%BA%E7%A1%80/7-ROS2%20%E9%80%9A%E4%BF%A1%E6%B1%87%E6%80%BB(Python%E7%AF%87)/"  itemprop="url">
-        7-ROS2通信汇总(Python篇)
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        1 topic发布与订阅
-发布端接口：
-12publisher_ = node.create_publisher(msg_type,&quot;topic_name&quot;, 10) publisher_.publish(msg) 
-订阅者接口：
-1subscribe_ = node.create_subscription(msg_type, &quot;topic_name&quot;...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-08-20T17:29:55+08:00">2023-08-20</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/ROS2%E5%9F%BA%E7%A1%80/">ROS2基础</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/ROS2%E5%9F%BA%E7%A1%80/" itemprop="url"><span itemprop="name">ROS2基础</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/08/20/ROS2%E5%9F%BA%E7%A1%80/7-ROS2%20%E9%80%9A%E4%BF%A1%E6%B1%87%E6%80%BB(Python%E7%AF%87)/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://xie-peiquan.gitee.io/2023/08/20/ROS2基础/6-ROS2 接口介绍/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="PQ.XIE BLOG">
-    <meta itemprop="description" content="个人博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/08/20/ROS2%E5%9F%BA%E7%A1%80/6-ROS2%20%E6%8E%A5%E5%8F%A3%E4%BB%8B%E7%BB%8D/"  itemprop="url">
-        6-ROS2 接口介绍
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        ROS2提供了四种通信方式，包括：话题（topic）、服务（service）、动作（action）和 参数（parameter）。通信会涉及到接口，我们可以通过 ros2 interface list 列出ROS2提供的所有接口，通过 ros2 interface show &lt;interface_name&gt; 或  ros2 interface proto &lt;message_...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-08-20T17:29:45+08:00">2023-08-20</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/ROS2%E5%9F%BA%E7%A1%80/">ROS2基础</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/ROS2%E5%9F%BA%E7%A1%80/" itemprop="url"><span itemprop="name">ROS2基础</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/08/20/ROS2%E5%9F%BA%E7%A1%80/6-ROS2%20%E6%8E%A5%E5%8F%A3%E4%BB%8B%E7%BB%8D/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-
-  
-
-</div>
-
-          </div>
-        
-      
     
   </section>
   
@@ -3421,6 +3417,11 @@ ROS包含：通信框架 + 开发工具 + 应用功能 + 生态系统
             ><div class='name'>先贤文集</div><div class='badge'>(2)</div></a></li>
         
           <li><a class="flat-box"
+            title="/categories/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/" href="/categories/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/"
+            active-action="action-categoriesE59FBAE7A180E7AE97E6B395"
+            ><div class='name'>基础算法</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
             title="/categories/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/" href="/categories/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/"
             active-action="action-categoriesE5B9B6E8A18CE8AEA1E7AE97"
             ><div class='name'>并行计算</div><div class='badge'>(2)</div></a></li>
@@ -3438,7 +3439,7 @@ ROS包含：通信框架 + 开发工具 + 应用功能 + 生态系统
           <li><a class="flat-box"
             title="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"
             active-action="action-categoriesE69CBAE599A8E5ADA6E4B9A0"
-            ><div class='name'>机器学习</div><div class='badge'>(2)</div></a></li>
+            ><div class='name'>机器学习</div><div class='badge'>(3)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E6%B7%B7%E5%90%88%E7%BC%96%E7%A8%8B/" href="/categories/%E6%B7%B7%E5%90%88%E7%BC%96%E7%A8%8B/"
@@ -3481,7 +3482,7 @@ ROS包含：通信框架 + 开发工具 + 应用功能 + 生态系统
       
         <div class="webinfo-item">
           <div>文章数目：</div>
-          <div>71 篇</div>
+          <div>73 篇</div>
         </div>
       
 
@@ -3496,7 +3497,7 @@ ROS包含：通信框架 + 开发工具 + 应用功能 + 生态系统
       
         <div class="webinfo-item">
           <div>本站总字数：</div>
-          <div>84.2k 字</div>
+          <div>93.9k 字</div>
         </div>
       
 
@@ -3521,7 +3522,7 @@ ROS包含：通信框架 + 开发工具 + 应用功能 + 生态系统
       
         <div class="webinfo-item">
           <div>最后活动时间：</div>
-          <div id="last-update-show">2025-08-21 日</div>
+          <div id="last-update-show">2025-11-28 日</div>
         </div>
       
     </div>
